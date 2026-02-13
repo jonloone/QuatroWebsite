@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import Wallpaper from './Wallpaper.astro'
+
+interface Props extends HTMLAttributes<'div'> {
+  wallpaper?: 'green' | 'blue' | 'purple' | 'brown'
+  backgroundImage?: string
+  placement: 'bottom' | 'bottom-left' | 'bottom-right' | 'top' | 'top-left' | 'top-right'
+}
+
+const { wallpaper, backgroundImage, placement, class: className, ...props } = Astro.props
+---
+
+<Wallpaper color={wallpaper} backgroundImage={backgroundImage} data-placement={placement} class:list={['group', className]} {...props}>
+  <div class="relative [--padding:min(10%,--spacing(16))] group-data-[placement=bottom]:px-(--padding) group-data-[placement=bottom]:pt-(--padding) group-data-[placement=bottom-left]:pt-(--padding) group-data-[placement=bottom-left]:pr-(--padding) group-data-[placement=bottom-right]:pt-(--padding) group-data-[placement=bottom-right]:pl-(--padding) group-data-[placement=top]:px-(--padding) group-data-[placement=top]:pb-(--padding) group-data-[placement=top-left]:pr-(--padding) group-data-[placement=top-left]:pb-(--padding) group-data-[placement=top-right]:pb-(--padding) group-data-[placement=top-right]:pl-(--padding)">
+    <div class="*:relative *:ring-1 *:ring-black/10 group-data-[placement=bottom]:*:rounded-t-sm group-data-[placement=bottom-left]:*:rounded-tr-sm group-data-[placement=bottom-right]:*:rounded-tl-sm group-data-[placement=top]:*:rounded-b-sm group-data-[placement=top-left]:*:rounded-br-sm group-data-[placement=top-right]:*:rounded-bl-sm">
+      <slot />
+    </div>
+  </div>
+</Wallpaper>

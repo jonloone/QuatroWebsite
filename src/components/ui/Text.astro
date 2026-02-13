@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'div'> {
+  size?: 'md' | 'lg'
+}
+
+const { size = 'md', class: className, ...props } = Astro.props
+
+const sizeClasses = {
+  md: 'text-base/7',
+  lg: 'text-lg/8',
+}
+---
+
+<div class:list={[sizeClasses[size], 'text-neutral-600', className]} {...props}>
+  <slot />
+</div>

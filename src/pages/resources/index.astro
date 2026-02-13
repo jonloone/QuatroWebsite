@@ -1,0 +1,37 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+---
+
+<MarketingLayout
+  title="Resources — Case Studies, White Papers & Documentation"
+  description="Explore Quatro resources including case studies, white papers, insights, and documentation."
+>
+  <Hero
+    eyebrow="Resources"
+    title="Learn How Operations Leaders Succeed"
+    description="Case studies, white papers, insights, and documentation to help you get the most from Quatro."
+  />
+
+  <Section>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <a href="/resources/case-studies" class="rounded-xl border border-neutral-200 bg-white p-6 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Case Studies</h3>
+        <p class="mt-2 text-sm text-neutral-600">Real-world success stories from Quatro customers.</p>
+      </a>
+      <a href="/resources/white-papers" class="rounded-xl border border-neutral-200 bg-white p-6 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">White Papers</h3>
+        <p class="mt-2 text-sm text-neutral-600">In-depth technical and strategic guides.</p>
+      </a>
+      <a href="/resources/insights" class="rounded-xl border border-neutral-200 bg-white p-6 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Insights</h3>
+        <p class="mt-2 text-sm text-neutral-600">Industry perspectives and thought leadership.</p>
+      </a>
+      <a href="/resources/documentation" class="rounded-xl border border-neutral-200 bg-white p-6 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Documentation</h3>
+        <p class="mt-2 text-sm text-neutral-600">Technical documentation and API references.</p>
+      </a>
+    </div>
+  </Section>
+</MarketingLayout>

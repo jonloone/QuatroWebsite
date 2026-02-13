@@ -1,0 +1,62 @@
+---
+import Container from '@/components/ui/Container.astro'
+import BoltIcon from '@/components/icons/BoltIcon.astro'
+import ShieldIcon from '@/components/icons/ShieldIcon.astro'
+import CogIcon from '@/components/icons/CogIcon.astro'
+import BuildingLibraryIcon from '@/components/icons/BuildingLibraryIcon.astro'
+import GlobeAltIcon from '@/components/icons/GlobeAltIcon.astro'
+
+interface Industry {
+  name: string
+  href: string
+  icon: 'bolt' | 'shield' | 'cog' | 'building' | 'globe'
+}
+
+interface Props {
+  heading?: string
+  industries: Industry[]
+  class?: string
+}
+
+const {
+  heading = 'Trusted Across Critical Industries',
+  industries,
+  class: className,
+} = Astro.props
+
+const iconMap = {
+  bolt: BoltIcon,
+  shield: ShieldIcon,
+  cog: CogIcon,
+  building: BuildingLibraryIcon,
+  globe: GlobeAltIcon,
+}
+---
+
+<section class:list={['bg-neutral-100 py-16 sm:py-20', className]}>
+  <Container>
+    <h2 class="mb-10 text-center font-display text-xl tracking-tight text-neutral-800 sm:text-2xl">
+      {heading}
+    </h2>
+
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-6">
+      {industries.map((industry) => {
+        const IconComponent = iconMap[industry.icon]
+        return (
+          <a
+            href={industry.href}
+            class="group flex flex-col items-center gap-3 bg-white p-6 text-center transition hover:bg-brand-50"
+            style="border: 1px solid rgba(226,232,240,1);"
+          >
+            <div class="flex h-12 w-12 items-center justify-center bg-neutral-100 text-neutral-500 transition group-hover:bg-brand-100 group-hover:text-brand-600">
+              <IconComponent class="h-6 w-6" />
+            </div>
+            <span class="text-sm font-medium text-neutral-700 transition group-hover:text-brand-700">
+              {industry.name}
+            </span>
+          </a>
+        )
+      })}
+    </div>
+  </Container>
+</section>

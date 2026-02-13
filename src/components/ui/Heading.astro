@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'h1'> {
+  color?: 'dark/light' | 'light'
+}
+
+const { color = 'dark/light', class: className, ...props } = Astro.props
+
+const colorClasses = {
+  'dark/light': 'text-neutral-800',
+  light: 'text-white',
+}
+---
+
+<h1
+  class:list={['font-display text-5xl/12 tracking-tight text-balance sm:text-[5rem]/20', colorClasses[color], className]}
+  {...props}
+>
+  <slot />
+</h1>

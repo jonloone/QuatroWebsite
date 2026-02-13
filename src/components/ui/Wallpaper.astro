@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'div'> {
+  color?: 'green' | 'blue' | 'purple' | 'brown'
+  backgroundImage?: string
+}
+
+const { color, backgroundImage, class: className, ...props } = Astro.props
+---
+
+<div
+  data-color={color}
+  class:list={['relative overflow-hidden bg-neutral-50 bg-contain bg-no-repeat bg-center', className]}
+  style={backgroundImage ? { backgroundImage: `url('${backgroundImage}')` } : undefined}
+  {...props}
+>
+  <div class="relative">
+    <slot />
+  </div>
+</div>

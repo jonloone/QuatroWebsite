@@ -1,0 +1,30 @@
+---
+import Container from '@/components/ui/Container.astro'
+
+interface Props {
+  text: string
+  link: { label: string; href: string }
+  icon?: string
+  class?: string
+}
+
+const { text, link, icon, class: className } = Astro.props
+---
+
+<div class:list={['bg-[#F4A261] py-2.5', className]}>
+  <Container>
+    <a
+      href={link.href}
+      class="flex items-center justify-center gap-2 text-sm font-medium text-neutral-800 transition hover:text-neutral-900"
+    >
+      {icon && (
+        <span class="text-lg" aria-hidden="true">{icon}</span>
+      )}
+      <span>{text}</span>
+      <span class="font-normal">{link.label}</span>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+      </svg>
+    </a>
+  </Container>
+</div>

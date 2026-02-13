@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+
+const solutions = (await getCollection('solutions')).sort((a, b) => a.data.order - b.data.order)
+---
+
+<MarketingLayout
+  title="Solutions — Industrial Intelligence Use Cases"
+  description="Quatro delivers solutions for asset monitoring, pipeline security, operational intelligence, and more."
+>
+  <Hero
+    eyebrow="Solutions"
+    title="Solutions for Every Operational Challenge"
+    description="From asset monitoring to fleet logistics, Quatro delivers industrial intelligence for your specific use case."
+    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
+  />
+
+  <Section>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {solutions.map((solution) => (
+        <a
+          href={`/solutions/${solution.id.replace(/\.md$/, '')}`}
+          class="group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-md"
+        >
+          <h3 class="font-display text-lg font-bold text-neutral-800 group-hover:text-brand-600">
+            {solution.data.title}
+          </h3>
+          <p class="mt-2 flex-1 text-sm text-neutral-600">{solution.data.description}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {solution.data.stats.slice(0, 2).map((stat) => (
+              <span class="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600">
+                {stat.value} {stat.label}
+              </span>
+            ))}
+          </div>
+          <span class="mt-4 inline-block font-display text-sm font-semibold text-brand-500 group-hover:underline">
+            Learn more &rarr;
+          </span>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <CtaBanner
+    title="Ready to Solve Your Challenge?"
+    description="See how Quatro addresses your specific operational needs."
+    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to Sales', href: '/contact/sales' }}
+  />
+</MarketingLayout>

@@ -1,0 +1,183 @@
+---
+import QuatroLogo from '@/components/QuatroLogo.astro'
+import { primaryNavigation } from '@/lib/navigation'
+import NavDropdown from './NavDropdown.astro'
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 transition-all duration-300">
+  <style>:root { --scroll-padding-top: 5rem }</style>
+  <nav id="nav-pill" class="mx-auto w-full max-w-6xl rounded-full px-5 py-2.5 transition-all duration-300" style="background-color: rgba(0,0,0,0.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);">
+    <div class="flex items-center gap-4">
+      <!-- Left: Logo -->
+      <a href="/" class="flex items-center shrink-0" aria-label="Quatro home">
+        <QuatroLogo id="nav-logo" light class="h-7 w-auto" />
+      </a>
+
+      <!-- Center: Nav links -->
+      <div class="flex flex-1 items-center justify-center gap-6 max-lg:hidden">
+        {primaryNavigation.map((item) => (
+          <NavDropdown
+            label={item.name}
+            items={item.items}
+            cta={item.cta}
+            variant={item.variant}
+            featured={item.featured}
+          />
+        ))}
+      </div>
+
+      <!-- Right: Pill "Get a Quote" -->
+      <div class="flex items-center shrink-0 max-lg:hidden">
+        <a
+          href="/contact/demo"
+          class="rounded-full font-mono text-xs uppercase tracking-widest px-6 py-2.5 text-white transition-all duration-200 hover:opacity-90"
+          style="background-color: #0ACF83;"
+        >
+          Get a Quote
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="mobile-menu-open"
+        aria-label="Open menu"
+        class="inline-flex p-1.5 lg:hidden ml-auto transition-colors duration-300"
+        style="color: #ffffff;"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" class="size-6">
+          <path
+            fill-rule="evenodd"
+            d="M3.748 8.248a.75.75 0 0 1 .75-.75h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75ZM3.748 15.75a.75.75 0 0 1 .75-.751h15a.75.75 0 0 1 0 1.5h-15a.75.75 0 0 1-.75-.75Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu dialog -->
+  <dialog id="mobile-menu" class="fixed inset-0 z-50 m-0 h-full w-full max-h-full max-w-full bg-transparent backdrop:bg-transparent">
+    <div class="fixed inset-0 overflow-y-auto px-6 py-6 lg:px-10" style="background-color: var(--color-paper);">
+      <div class="flex justify-end">
+        <button
+          id="mobile-menu-close"
+          aria-label="Close menu"
+          class="inline-flex p-1.5"
+          style="color: var(--color-neutral-800);"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 flex flex-col gap-6">
+        {primaryNavigation.map((section) => (
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-grid); opacity: 0.5;">
+              {section.name}
+            </div>
+            <div class="mt-2 flex flex-col">
+              {section.items.map((item) => (
+                <a
+                  href={item.href}
+                  class="block py-2 font-display text-sm font-semibold transition-colors duration-150"
+                  style="color: var(--color-neutral-800);"
+                >
+                  {item.name}
+                </a>
+              ))}
+              <a
+                href={section.cta.href}
+                class="block py-2 font-display text-sm font-semibold transition-colors duration-150"
+                style="color: var(--color-neutral-800);"
+              >
+                {section.cta.name}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 flex flex-col gap-3" style="border-top: 1px solid rgba(226,232,240,0.7); padding-top: 1.5rem;">
+        <a
+          href="/contact/demo"
+          class="rounded-full font-mono text-xs uppercase tracking-widest px-4 py-2.5 text-white text-center transition-all duration-200"
+          style="background-color: #0ACF83;"
+        >
+          Get a Quote
+        </a>
+      </div>
+    </div>
+  </dialog>
+</header>
+
+<script>
+  const openBtn = document.getElementById('mobile-menu-open')
+  const closeBtn = document.getElementById('mobile-menu-close')
+  const dialog = document.getElementById('mobile-menu') as HTMLDialogElement
+
+  openBtn?.addEventListener('click', () => {
+    dialog?.showModal()
+  })
+
+  closeBtn?.addEventListener('click', () => {
+    dialog?.close()
+  })
+
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) {
+      dialog.close()
+    }
+  })
+
+  // Scroll-driven dark↔light nav transition
+  const navPill = document.getElementById('nav-pill')
+  const hero = document.querySelector('[data-hero]') as HTMLElement | null
+  const logoSvg = document.getElementById('nav-logo')
+  const wordmarkPath = logoSvg?.querySelector('path:first-child') as SVGPathElement | null
+  const navLinks = document.querySelectorAll('[data-nav-link]') as NodeListOf<HTMLElement>
+  const hamburger = document.getElementById('mobile-menu-open')
+
+  function applyNavState(scrolled: boolean) {
+    if (!navPill) return
+    if (scrolled) {
+      // White pill state
+      navPill.style.backgroundColor = 'rgba(255,255,255,0.85)'
+      navPill.style.backdropFilter = 'blur(12px)'
+      ;(navPill.style as any).webkitBackdropFilter = 'blur(12px)'
+      navPill.style.border = '1px solid rgba(226,232,240,0.6)'
+      navPill.style.boxShadow = '0 4px 24px rgba(15,23,42,0.08)'
+      if (wordmarkPath) wordmarkPath.setAttribute('fill', '#00060C')
+      navLinks.forEach(l => l.style.color = 'rgba(15,23,42,0.8)')
+      if (hamburger) hamburger.style.color = '#0F172A'
+    } else {
+      // Dark state
+      navPill.style.backgroundColor = 'rgba(0,0,0,0.3)'
+      navPill.style.backdropFilter = 'blur(12px)'
+      ;(navPill.style as any).webkitBackdropFilter = 'blur(12px)'
+      navPill.style.border = '1px solid rgba(255,255,255,0.1)'
+      navPill.style.boxShadow = ''
+      if (wordmarkPath) wordmarkPath.setAttribute('fill', '#ffffff')
+      navLinks.forEach(l => l.style.color = 'rgba(255,255,255,0.8)')
+      if (hamburger) hamburger.style.color = '#ffffff'
+    }
+  }
+
+  // If no hero section on this page, always use scrolled (white) state
+  if (!hero) {
+    applyNavState(true)
+  } else {
+    // Apply initial state
+    applyNavState(false)
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.offsetHeight - 80
+      applyNavState(window.scrollY > heroBottom)
+    })
+  }
+</script>

@@ -1,0 +1,36 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Section from '@/components/marketing/Section.astro'
+---
+
+<MarketingLayout
+  title="Security"
+  description="Learn about Quatro's security practices and compliance certifications."
+>
+  <Section>
+    <div class="mx-auto max-w-3xl">
+      <h1 class="font-display text-3xl font-bold text-neutral-800 sm:text-4xl">Security</h1>
+      <p class="mt-4 text-sm text-neutral-500">Last updated: February 2026</p>
+
+      <div class="prose prose-neutral mt-8">
+        <p class="text-neutral-600">
+          Security is fundamental to everything we do at Quatro. Our platform is built on a zero-trust architecture designed to meet the security requirements of critical infrastructure operators.
+        </p>
+
+        <h2 class="mt-8 font-display text-xl font-bold text-neutral-800">Security Features</h2>
+        <ul class="mt-4 space-y-2 text-neutral-600">
+          <li>End-to-end encryption</li>
+          <li>Role-based access control</li>
+          <li>Audit logging</li>
+          <li>SOC 2 Type II certified</li>
+          <li>ISO 27001 certified</li>
+        </ul>
+
+        <h2 class="mt-8 font-display text-xl font-bold text-neutral-800">Responsible Disclosure</h2>
+        <p class="mt-4 text-neutral-600">
+          If you discover a security vulnerability, please report it to security@quatro.io.
+        </p>
+      </div>
+    </div>
+  </Section>
+</MarketingLayout>

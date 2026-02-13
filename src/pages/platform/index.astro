@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+
+const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order)
+---
+
+<MarketingLayout
+  title="Platform — Industrial Intelligence from Edge to Enterprise"
+  description="The Quatro Platform delivers industrial intelligence through three integrated products: Connect, Operate, and Command. From data ingestion to operational action."
+>
+  <Hero
+    eyebrow="The Quatro Platform"
+    title="Industrial Intelligence from Edge to Enterprise"
+    description="Three products. One unified platform. Connect your data, operate with intelligence, command with confidence."
+    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Architect', href: '/contact/sales' }}
+  />
+
+  <Section>
+    <div class="mb-12 text-center">
+      <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
+        The Platform Stack
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base text-neutral-600">
+        Every product builds on the last. Start where you need to and scale up as your operations demand.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {products.map((product, index) => (
+        <a
+          href={`/platform/${product.id.replace(/\.md$/, '')}`}
+          class="group block rounded-2xl border border-neutral-200 bg-white p-8 transition-all hover:border-brand-300 hover:shadow-lg"
+        >
+          <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex-1">
+              <div class="flex items-center gap-3">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 font-mono text-sm font-bold text-neutral-800">
+                  {index + 1}
+                </span>
+                <h3 class="font-display text-xl font-bold text-neutral-800 group-hover:text-brand-600">
+                  {product.data.title}
+                </h3>
+              </div>
+              <p class="mt-3 text-lg font-medium text-neutral-700">{product.data.tagline}</p>
+              <p class="mt-2 text-base text-neutral-600">{product.data.description}</p>
+            </div>
+            <div class="flex items-center gap-4 lg:flex-shrink-0">
+              <div class="grid grid-cols-2 gap-4 text-center">
+                {product.data.stats.slice(0, 2).map((stat) => (
+                  <div>
+                    <div class="font-display text-lg font-bold text-brand-500">{stat.value}</div>
+                    <div class="text-xs text-neutral-500">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+              <span class="text-brand-500 transition-transform group-hover:translate-x-1">
+                &rarr;
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <CtaBanner
+    title="Ready to See the Platform in Action?"
+    description="Get a personalized walkthrough of the platform tailored to your industry and use cases."
+    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to Sales', href: '/contact/sales' }}
+  />
+</MarketingLayout>

@@ -1,0 +1,183 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/jetbrains-mono';
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('/fonts/RoobertTRIAL-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('/fonts/RoobertTRIAL-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('/fonts/RoobertTRIAL-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Reckless';
+  src: url('/fonts/RecklessTRIAL-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Reckless';
+  src: url('/fonts/RecklessTRIAL-Light.otf') format('opentype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Reckless', ui-serif, Georgia, serif;
+  --font-display: 'Roobert', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  /* Brand — Deep Teal scale */
+  --color-brand-50: #ecf7f3;
+  --color-brand-100: #d0ebe0;
+  --color-brand-200: #a3d5c0;
+  --color-brand-300: #6fba98;
+  --color-brand-400: #307a5a;
+  --color-brand-500: #0f4c3a;
+  --color-brand-600: #0c3f30;
+  --color-brand-700: #093326;
+  --color-brand-800: #06261c;
+  --color-brand-900: #031a12;
+  --color-brand-950: #010d09;
+
+  /* Neutral — Slate scale */
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #0F172A;
+  --color-neutral-900: #020617;
+  --color-neutral-950: #010313;
+
+  /* Accent — Terracotta only */
+  --color-accent-coral: #c05621;
+
+  /* Semantic aliases */
+  --color-forest: #0f4c3a;
+  --color-paper: #F9FAFB;
+  --color-grid: #475569;
+  --color-structure: #E2E8F0;
+
+  /* Glow shadows */
+  --shadow-glow-forest: 0 0 40px rgba(15, 76, 58, 0.3);
+  --shadow-card: 0 4px 24px rgba(15, 23, 42, 0.08);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-neutral-50);
+    --scroll-padding-top: 0;
+    scroll-padding-top: var(--scroll-padding-top);
+  }
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.35s linear,
+              transform 0.35s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children (grids) */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 80ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 240ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 320ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 400ms; }
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Fade-up (no rotation) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s linear,
+              transform 0.4s ease-out;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-stagger > .fade-up:nth-child(1) { transition-delay: 0ms; }
+.fade-stagger > .fade-up:nth-child(2) { transition-delay: 80ms; }
+.fade-stagger > .fade-up:nth-child(3) { transition-delay: 160ms; }
+.fade-stagger > .fade-up:nth-child(4) { transition-delay: 240ms; }
+.fade-stagger > .fade-up:nth-child(5) { transition-delay: 320ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up { opacity: 1; transform: none; transition: none; }
+}
+
+/* Pulse animation for status dots */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Marquee scroll for connector bar */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot { animation: none; opacity: 1; }
+  .animate-marquee { animation: none; }
+}
+
+@layer utilities {
+  .border-hairline { border: 1px solid #E2E8F0; }
+  .img-technical {
+    mix-blend-mode: luminosity;
+    opacity: 0.9;
+    transition: all 0.3s ease-out;
+  }
+  .img-technical:hover,
+  .group:hover .img-technical {
+    mix-blend-mode: normal;
+    opacity: 1;
+  }
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+}

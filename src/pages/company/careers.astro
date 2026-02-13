@@ -1,0 +1,27 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+---
+
+<MarketingLayout
+  title="Careers — Join Our Growing Team"
+  description="Join Quatro and help build the future of industrial intelligence."
+>
+  <Hero
+    eyebrow="Careers"
+    title="Build the Future of Industrial Intelligence"
+    description="Join a team of engineers, designers, and operators building the platform that powers critical operations worldwide."
+    primaryCta={{ label: 'View Open Roles', href: '#openings' }}
+  />
+
+  <Section id="openings">
+    <div class="mb-12 text-center">
+      <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
+        Open Positions
+      </h2>
+    </div>
+    <Placeholder label="Job Listings" class="min-h-[400px]" />
+  </Section>
+</MarketingLayout>

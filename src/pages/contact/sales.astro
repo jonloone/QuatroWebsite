@@ -1,0 +1,23 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+---
+
+<MarketingLayout
+  title="Talk to Sales — Enterprise Pricing & Deployment"
+  description="Discuss pricing, deployment options, and enterprise requirements with our sales team."
+>
+  <Hero
+    eyebrow="Sales"
+    title="Let's Discuss Your Requirements"
+    description="Our sales team can help with pricing, deployment options, and enterprise requirements."
+  />
+
+  <Section>
+    <div class="mx-auto max-w-2xl">
+      <Placeholder label="Sales Contact Form" class="min-h-[400px]" />
+    </div>
+  </Section>
+</MarketingLayout>

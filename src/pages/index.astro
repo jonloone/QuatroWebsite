@@ -1,0 +1,564 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SiteHeader from '@/components/layout/SiteHeader.astro'
+import SiteFooter from '@/components/layout/SiteFooter.astro'
+---
+
+<BaseLayout
+  title="Quatro — Plataforma de Inteligencia Industrial"
+  description="Quatro unifica OT e IT en una sola plataforma de inteligencia — diseñada para la infraestructura y la realidad operativa de América Latina."
+>
+
+  <SiteHeader />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       1. HERO — Full-screen background image
+       ═══════════════════════════════════════════════════════════════ -->
+  <section data-hero class="relative min-h-screen flex items-end overflow-hidden px-6 pb-20 lg:pb-28">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="/images/hero-bg.png" alt="" class="h-full w-full object-cover" />
+      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);"></div>
+    </div>
+
+    <!-- connect.png — bottom right graphic, overflows right edge -->
+    <img src="/images/connect.png" alt="" class="absolute bottom-0 w-[90%] lg:w-[70%] object-contain pointer-events-none select-none" style="right: -20%;" />
+
+    <div class="relative z-10 mx-auto max-w-5xl w-full text-left pt-16">
+      <!-- Status badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 mb-10" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);">
+        <div class="w-2 h-2 rounded-full pulse-dot" style="background-color: #409473;"></div>
+        <span class="font-mono text-xs uppercase tracking-[0.05em] text-white/80">
+          Plataforma v4.2 — Operacional
+        </span>
+      </div>
+
+      <!-- Eyebrow -->
+      <p class="font-mono text-xs uppercase tracking-[0.05em] text-white/60 mb-8">
+        Para equipos de operaciones en infraestructura crítica
+      </p>
+
+      <!-- H1 — Reckless Light -->
+      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-white">
+        Construido con ustedes.<br />
+        Para sus operaciones.<br />
+        Bajo su control.
+      </h1>
+
+      <!-- Subhead -->
+      <p class="mt-8 font-sans text-base lg:text-lg text-white/60 max-w-xl leading-relaxed">
+        Quatro unifica OT e IT en una sola plataforma de inteligencia — diseñada para la infraestructura y la realidad operativa de América Latina.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <a
+          href="/contact/demo"
+          class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear"
+          style="background-color: #409473;"
+        >
+          Hablemos
+        </a>
+        <a
+          href="/platform"
+          class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear hover:bg-white/10"
+          style="border: 1px solid rgba(255,255,255,0.2);"
+        >
+          Conozca la plataforma &rarr;
+        </a>
+      </div>
+
+      <!-- Microcopy -->
+      <p class="mt-4 font-mono text-xs text-white/40">
+        Cuéntenos sobre su operación. Sin compromiso.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       LOGO BAR — Dark trust strip
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-14 lg:py-16 px-6" style="background-color: var(--color-neutral-800); border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.15em] text-white/40 text-center mb-10">
+        Infraestructura crítica confía en Quatro
+      </p>
+      <div class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+        <img alt="[Cliente 1]" src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg" width="158" height="48" class="col-span-2 max-h-10 w-full object-contain brightness-0 invert opacity-40 lg:col-span-1" />
+        <img alt="[Cliente 2]" src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg" width="158" height="48" class="col-span-2 max-h-10 w-full object-contain brightness-0 invert opacity-40 lg:col-span-1" />
+        <img alt="[Cliente 3]" src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg" width="158" height="48" class="col-span-2 max-h-10 w-full object-contain brightness-0 invert opacity-40 lg:col-span-1" />
+        <img alt="[Cliente 4]" src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg" width="158" height="48" class="col-span-2 max-h-10 w-full object-contain brightness-0 invert opacity-40 sm:col-start-2 lg:col-span-1" />
+        <img alt="[Cliente 5]" src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg" width="158" height="48" class="col-span-2 col-start-2 max-h-10 w-full object-contain brightness-0 invert opacity-40 sm:col-start-auto lg:col-span-1" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       2. REGIONAL COMMITMENT — Pattern A (Grid Section)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
+        <!-- Sidebar label -->
+        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: #C7C7C7;">
+          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: #7A7A7A;">Presencia</span>
+        </div>
+        <!-- Main content -->
+        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
+          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
+            Presencia<br />Compromiso<br />Regional
+          </h2>
+          <!-- Card grid -->
+          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid #C7C7C7; border-left: 1px solid #C7C7C7;">
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Equipos en América Latina</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Ingenieros y consultores que conocen su industria y hablan su idioma.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Sus datos en su país</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Arquitectura edge-first con soberanía de datos regional garantizada.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Soporte en su idioma</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Documentación, capacitación y soporte técnico en español y portugués.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       3. PROBLEM STATEMENT — Pattern A (Grid Section)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
+        <!-- Sidebar label -->
+        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: #C7C7C7;">
+          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: #7A7A7A;">Desafío</span>
+        </div>
+        <!-- Main content -->
+        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
+          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
+            Desafío<br />Operativo<br />Real
+          </h2>
+          <p class="mt-8 font-sans text-base leading-relaxed max-w-2xl" style="color: var(--color-neutral-500);">
+            Su operación merece tecnología diseñada para su infraestructura. Los sistemas heredados de proveedores extranjeros no fueron pensados para las distancias, la conectividad ni la realidad regulatoria de América Latina.
+          </p>
+          <!-- Card grid -->
+          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid #C7C7C7; border-left: 1px solid #C7C7C7;">
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Dependencia de proveedores extranjeros</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Licencias en dólares, soporte en otro huso horario y actualizaciones que no consideran su contexto operativo.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Operaciones remotas sin visibilidad</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Activos distribuidos en miles de kilómetros con conectividad intermitente. Los datos llegan tarde — o no llegan.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">El conocimiento se está yendo</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Los operadores con décadas de experiencia se están retirando. Su conocimiento vive en sus cabezas, no en sus sistemas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       4. DATA SOVEREIGNTY — Pattern A (Grid Section)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
+        <!-- Sidebar label -->
+        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: #C7C7C7;">
+          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: #7A7A7A;">Soberanía</span>
+        </div>
+        <!-- Main content -->
+        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
+          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
+            Sus<br />Datos<br />Control
+          </h2>
+          <!-- Card grid -->
+          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid #C7C7C7; border-left: 1px solid #C7C7C7;">
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Arquitectura Edge-First</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Procesamiento local en cada sitio. Los datos se analizan donde se generan — con o sin conexión a la nube.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Despliegue Flexible</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">On-premise, nube privada, híbrido o air-gapped. Se adapta a sus requisitos de seguridad y regulación.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Formatos Abiertos</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">APIs abiertas y formatos estándar. Sus datos son suyos — siempre exportables, siempre accesibles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       5. THE PLATFORM — Pattern B (Palantir Vertical List)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-6xl">
+      <!-- Editorial intro -->
+      <p class="font-sans text-2xl lg:text-4xl font-light leading-snug max-w-4xl" style="color: var(--color-neutral-800);">
+        Nuestra plataforma unifica OT e IT en un solo sistema de inteligencia — diseñada para la infraestructura y la realidad operativa de <span style="color: var(--color-forest);">América Latina</span>.
+      </p>
+
+      <!-- Sub-heading -->
+      <h2 class="font-display text-xl font-bold mt-16 mb-8" style="color: var(--color-forest);">
+        Nuestra Plataforma
+      </h2>
+
+      <!-- Connect -->
+      <a href="/platform/connect" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid #C7C7C7;">
+        <div>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Integren sus datos. Más de 8,000 conectores industriales. Conectividad universal para su infraestructura.</p>
+          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.1</span>
+        </div>
+        <div class="text-right lg:text-right">
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Connect</span>
+        </div>
+      </a>
+
+      <!-- Operate -->
+      <a href="/platform/operate" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid #C7C7C7;">
+        <div>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Operen con inteligencia. Detección de anomalías con IA, mantenimiento predictivo y optimización de procesos.</p>
+          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.2</span>
+        </div>
+        <div class="text-right lg:text-right">
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Operate</span>
+        </div>
+      </a>
+
+      <!-- Command -->
+      <a href="/platform/command" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+        <div>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Vean todo. Respondan como un solo equipo. Centro de comando unificado para operaciones distribuidas.</p>
+          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.3</span>
+        </div>
+        <div class="text-right lg:text-right">
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Command</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       6. WHY QUATRO — Pattern A (Grid Section, Dark)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative px-6 overflow-hidden" style="border-top: 1px solid #C7C7C7;">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="/images/bg.jpg" alt="" class="h-full w-full object-cover" />
+      <div class="absolute inset-0" style="background: rgba(0,0,0,0.8);"></div>
+    </div>
+    <div class="relative z-10 mx-auto max-w-6xl">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
+        <!-- Sidebar label -->
+        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: rgba(255,255,255,0.1);">
+          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: #7A7A7A;">Por Qué</span>
+        </div>
+        <!-- Main content -->
+        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
+          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95] text-white">
+            Regional<br />Diseñado<br />Suyo
+          </h2>
+          <!-- Card grid — 2 rows of 3 -->
+          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.1);">
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <span class="font-mono text-xs text-white/60">01</span>
+              <h3 class="font-display text-lg font-bold mt-2 text-white">Presencia Regional</h3>
+              <p class="mt-2 font-sans text-sm text-white/50">Equipos de ingeniería y soporte en la región. Implementación con contexto local.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <span class="font-mono text-xs text-white/60">02</span>
+              <h3 class="font-display text-lg font-bold mt-2 text-white">Soberanía de Datos</h3>
+              <p class="mt-2 font-sans text-sm text-white/50">Sus datos operativos se quedan en su país. Cumplimiento con regulaciones locales.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <span class="font-mono text-xs text-white/60">03</span>
+              <h3 class="font-display text-lg font-bold mt-2 text-white">Inversión Flexible</h3>
+              <p class="mt-2 font-sans text-sm text-white/50">CAPEX, OPEX o modelos híbridos. Facturación en moneda local cuando es posible.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <span class="font-mono text-xs text-white/60">04</span>
+              <h3 class="font-display text-lg font-bold mt-2 text-white">Diseñado para Su Infraestructura</h3>
+              <p class="mt-2 font-sans text-sm text-white/50">Funciona con conectividad intermitente, equipos legacy y condiciones reales.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <span class="font-mono text-xs text-white/60">05</span>
+              <h3 class="font-display text-lg font-bold mt-2 text-white">Integración con Sistemas Existentes</h3>
+              <p class="mt-2 font-sans text-sm text-white/50">No reemplacen su SCADA. Quatro se integra sobre lo que ya tienen.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <span class="font-mono text-xs text-white/60">06</span>
+              <h3 class="font-display text-lg font-bold mt-2 text-white">Soporte en Su Idioma</h3>
+              <p class="mt-2 font-sans text-sm text-white/50">Documentación, UI, capacitación y soporte técnico en español y portugués.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       7. HOW IT WORKS — Pattern A (Grid Section)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
+        <!-- Sidebar label -->
+        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: #C7C7C7;">
+          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: #7A7A7A;">Proceso</span>
+        </div>
+        <!-- Main content -->
+        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
+          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
+            Conectar<br />Configurar<br />Operar
+          </h2>
+          <!-- Card grid -->
+          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid #C7C7C7; border-left: 1px solid #C7C7C7;">
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Conectar — Semana 1–2</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Mapeo de infraestructura, integración con fuentes de datos existentes y despliegue de conectores en sitio.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Configurar — Semana 3–4</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Configuración de analítica, dashboards personalizados y calibración de alertas con su equipo de operaciones.</p>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Operar — Semana 5+</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Plataforma en producción con soporte continuo. Expansión progresiva a más sitios y casos de uso.</p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="mt-12">
+            <a
+              href="/contact/demo"
+              class="inline-block font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear"
+              style="background-color: var(--color-forest);"
+            >
+              Hablemos sobre su operación
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       8. INDUSTRIES — Pattern B (Palantir Vertical List)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-6xl">
+      <!-- Editorial intro -->
+      <p class="font-sans text-2xl lg:text-4xl font-light leading-snug max-w-4xl" style="color: var(--color-neutral-800);">
+        Construida para las industrias que mueven <span style="color: var(--color-forest);">América Latina</span> — desde el subsuelo hasta la última milla.
+      </p>
+
+      <!-- Sub-heading -->
+      <h2 class="font-display text-xl font-bold mt-16 mb-8" style="color: var(--color-forest);">
+        Nuestras Industrias
+      </h2>
+
+      <!-- Petróleo y Gas -->
+      <a href="/industries/energy" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid #C7C7C7;">
+        <div>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Monitoreo de ductos, optimización de producción y gestión de integridad — desde el pozo hasta la refinería.</p>
+          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.1</span>
+        </div>
+        <div class="text-right lg:text-right">
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Petróleo y Gas</span>
+        </div>
+      </a>
+
+      <!-- Minería y Minerales -->
+      <a href="#" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid #C7C7C7;">
+        <div>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Monitoreo de flotillas y activos pesados. Gestión de relaves y cumplimiento ambiental.</p>
+          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.2</span>
+        </div>
+        <div class="text-right lg:text-right">
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Minería y Minerales</span>
+        </div>
+      </a>
+
+      <!-- Energía y Servicios Públicos -->
+      <a href="/industries/infrastructure" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid #C7C7C7;">
+        <div>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Gestión de red eléctrica, integración de renovables y distribución inteligente.</p>
+          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.3</span>
+        </div>
+        <div class="text-right lg:text-right">
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Energía y Servicios Públicos</span>
+        </div>
+      </a>
+
+      <!-- Servicios Municipales -->
+      <a href="/industries/cities" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid #C7C7C7;">
+        <div>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Transporte público, alumbrado inteligente y gestión de servicios urbanos.</p>
+          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.4</span>
+        </div>
+        <div class="text-right lg:text-right">
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Servicios Municipales</span>
+        </div>
+      </a>
+
+      <!-- Telecomunicaciones -->
+      <a href="#" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+        <div>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Monitoreo de torres y antenas. Gestión de energía en sitios remotos.</p>
+          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.5</span>
+        </div>
+        <div class="text-right lg:text-right">
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Telecomunicaciones</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       9. CASE STUDIES — Pattern A (Grid Section)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
+        <!-- Sidebar label -->
+        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: #C7C7C7;">
+          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: #7A7A7A;">Resultados</span>
+        </div>
+        <!-- Main content -->
+        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
+          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
+            Operaciones<br />Resultados<br />Reales
+          </h2>
+          <!-- Card grid -->
+          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid #C7C7C7; border-left: 1px solid #C7C7C7;">
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">[Petróleo y Gas]</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">[Descripción breve del desafío operativo, la solución implementada y los resultados medibles obtenidos.]</p>
+              <a href="#" class="inline-block mt-4 font-mono text-xs uppercase tracking-[0.05em] transition-colors duration-300 ease-linear hover:underline" style="color: var(--color-forest);">
+                Leer caso &rarr;
+              </a>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">[Minería]</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">[Descripción breve del desafío operativo, la solución implementada y los resultados medibles obtenidos.]</p>
+              <a href="#" class="inline-block mt-4 font-mono text-xs uppercase tracking-[0.05em] transition-colors duration-300 ease-linear hover:underline" style="color: var(--color-forest);">
+                Leer caso &rarr;
+              </a>
+            </div>
+            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid #C7C7C7; border-bottom: 1px solid #C7C7C7;">
+              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
+              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">[Energía]</h3>
+              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">[Descripción breve del desafío operativo, la solución implementada y los resultados medibles obtenidos.]</p>
+              <a href="#" class="inline-block mt-4 font-mono text-xs uppercase tracking-[0.05em] transition-colors duration-300 ease-linear hover:underline" style="color: var(--color-forest);">
+                Leer caso &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       10. TESTIMONIAL — Placeholder
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="mx-auto max-w-3xl text-center">
+      <blockquote>
+        <p class="font-sans text-2xl lg:text-3xl font-light leading-relaxed" style="color: var(--color-forest);">
+          &ldquo;[Testimonio del cliente sobre cómo Quatro transformó su operación — resultados específicos, tiempos de implementación, impacto medible.]&rdquo;
+        </p>
+        <footer class="mt-8">
+          <span class="font-display text-sm font-bold" style="color: var(--color-neutral-800);">[Nombre], [Cargo]</span>
+          <br />
+          <span class="font-mono text-xs uppercase tracking-[0.05em]" style="color: var(--color-neutral-400);">[Empresa] — [País]</span>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       11. FINAL CTA — Forest with dot grid
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-12 lg:py-20 px-6" style="border-top: 1px solid #C7C7C7;">
+    <div class="relative mx-auto max-w-6xl py-16 lg:py-24 px-8 lg:px-16 overflow-hidden" style="background-color: var(--color-forest);">
+      <!-- Background image -->
+      <div class="absolute inset-0">
+        <img src="/images/cta.jpg" alt="" class="h-full w-full object-cover" />
+        <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);"></div>
+      </div>
+      <div class="relative z-10">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="font-sans text-3xl lg:text-5xl font-light text-white leading-tight">
+            Su operación merece tecnología que fue construida para su realidad.
+          </h2>
+          <p class="mt-6 font-sans text-lg text-white/70 leading-relaxed">
+            Hablemos sobre sus desafíos operativos. Nuestro equipo de ingeniería evalúa su infraestructura y entrega un plan de implementación en menos de dos semanas.
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="/contact/demo"
+              class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 transition-colors duration-300 ease-linear"
+              style="background-color: white; color: var(--color-forest);"
+            >
+              Hablemos
+            </a>
+          </div>
+
+          <!-- Contact placeholders -->
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-6">
+            <span class="font-mono text-xs text-white/50">WhatsApp: [+número]</span>
+            <span class="font-mono text-xs text-white/50">[email]</span>
+          </div>
+
+          <!-- Microcopy -->
+          <p class="mt-4 font-mono text-xs text-white/40">
+            Programa piloto disponible para empresas de operaciones industriales en la región.
+          </p>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="mt-14 pt-8 flex flex-wrap items-center justify-center gap-8" style="border-top: 1px solid rgba(255,255,255,0.15);">
+          <a href="/resources/documentation" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Documentación</a>
+          <a href="/platform" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">API</a>
+          <a href="/resources/case-studies" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Casos de Estudio</a>
+          <a href="/legal/security" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Seguridad</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <SiteFooter />
+
+</BaseLayout>

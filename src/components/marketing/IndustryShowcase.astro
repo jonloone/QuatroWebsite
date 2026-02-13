@@ -1,0 +1,89 @@
+---
+import Container from '@/components/ui/Container.astro'
+
+interface Industry {
+  name: string
+  href: string
+  headline: string
+  outcomes: string[]
+}
+
+interface Props {
+  heading?: string
+  industries: Industry[]
+  class?: string
+}
+
+const { heading = 'Built for the Industries That Build the World', industries, class: className } = Astro.props
+const [featured, ...rest] = industries
+---
+
+<section class:list={['bg-neutral-100 py-16 sm:py-24', className]}>
+  <Container>
+    <h2 class="mb-12 text-center font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
+      {heading}
+    </h2>
+    <div class="grid gap-6 lg:grid-cols-2">
+      <!-- Featured industry - larger card -->
+      <a
+        href={featured.href}
+        class="group flex flex-col bg-white p-8 transition hover:border-brand-300 sm:p-10"
+        style="border: 1px solid rgba(226,232,240,1);"
+      >
+        <!-- Image placeholder -->
+        <div class="mb-6 flex h-48 items-center justify-center bg-neutral-200">
+          <svg class="h-10 w-10 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+        </div>
+        <div class="mb-4 flex h-12 w-12 items-center justify-center bg-brand-100 text-brand-500">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-bold text-neutral-800 sm:text-2xl">{featured.name}</h3>
+        <p class="mt-2 text-base font-medium text-brand-500">{featured.headline}</p>
+        <ul class="mt-6 flex-1 space-y-3">
+          {featured.outcomes.map((outcome) => (
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 h-4 w-4 flex-shrink-0 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-sm leading-relaxed text-neutral-600">{outcome}</span>
+            </li>
+          ))}
+        </ul>
+        <div class="mt-6 text-sm font-normal text-brand-500 group-hover:text-brand-600">
+          Explore {featured.name} Solutions &rarr;
+        </div>
+      </a>
+
+      <!-- Grid of remaining industries -->
+      <div class="grid gap-4 sm:grid-cols-2">
+        {rest.map((industry) => (
+          <a
+            href={industry.href}
+            class="group flex flex-col bg-white p-6 transition hover:border-brand-300"
+            style="border: 1px solid rgba(226,232,240,1);"
+          >
+            <h3 class="font-display text-lg font-bold text-neutral-800">{industry.name}</h3>
+            <p class="mt-1 text-sm font-medium text-brand-500">{industry.headline}</p>
+            <ul class="mt-4 flex-1 space-y-2">
+              {industry.outcomes.slice(0, 2).map((outcome) => (
+                <li class="flex items-start gap-2">
+                  <svg class="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-xs leading-relaxed text-neutral-600">{outcome}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-4 text-xs font-normal text-brand-500 group-hover:text-brand-600">
+              Learn more &rarr;
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

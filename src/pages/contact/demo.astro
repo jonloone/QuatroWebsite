@@ -1,0 +1,23 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+---
+
+<MarketingLayout
+  title="Schedule a Demo — See Quatro in Action"
+  description="Schedule a personalized demo to see how Quatro can transform your operations."
+>
+  <Hero
+    eyebrow="Request Demo"
+    title="See Quatro in Action"
+    description="Get a personalized walkthrough of the platform tailored to your industry and use cases. No pressure, no generic demos."
+  />
+
+  <Section>
+    <div class="mx-auto max-w-2xl">
+      <Placeholder label="Demo Request Form" class="min-h-[400px]" />
+    </div>
+  </Section>
+</MarketingLayout>

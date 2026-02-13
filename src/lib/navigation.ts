@@ -1,30 +1,29 @@
-import {
-  LinkIcon,
-  CogIcon,
-  CommandLineIcon,
-  ChartBarIcon,
-  ShieldCheckIcon,
-  LightBulbIcon,
-  LockClosedIcon,
-  TruckIcon,
-  BoltIcon,
-  GlobeAltIcon,
-  ShieldIcon,
-  WrenchScrewdriverIcon,
-  BuildingLibraryIcon,
-  BuildingOffice2Icon,
-  UserGroupIcon,
-  BriefcaseIcon,
-  NewspaperIcon,
-} from '@/components/icons/nav-icons'
-
 export type NavDropdownVariant = 'stacked' | 'two-column' | 'featured'
+
+// Icon function placeholders - these are matched by name in NavDropdown.astro
+function LinkIcon() {}
+function CogIcon() {}
+function CommandLineIcon() {}
+function ChartBarIcon() {}
+function ShieldCheckIcon() {}
+function LightBulbIcon() {}
+function LockClosedIcon() {}
+function TruckIcon() {}
+function BoltIcon() {}
+function GlobeAltIcon() {}
+function ShieldIcon() {}
+function WrenchScrewdriverIcon() {}
+function BuildingLibraryIcon() {}
+function BuildingOffice2Icon() {}
+function UserGroupIcon() {}
+function BriefcaseIcon() {}
+function NewspaperIcon() {}
 
 export interface NavItem {
   name: string
   description: string
   href: string
-  icon: React.ComponentType<{ className?: string }>
+  icon: () => void
 }
 
 export interface FeaturedCaseStudy {

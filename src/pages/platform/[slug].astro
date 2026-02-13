@@ -1,0 +1,83 @@
+---
+import { getCollection, getEntry } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import ProblemSolution from '@/components/marketing/ProblemSolution.astro'
+import StatStrip from '@/components/marketing/StatStrip.astro'
+import Section from '@/components/marketing/Section.astro'
+import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
+import ProductProgression from '@/components/marketing/ProductProgression.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+
+export async function getStaticPaths() {
+  const products = await getCollection('products')
+  return products.map((product) => ({
+    params: { slug: product.id.replace(/\.md$/, '') },
+    props: { product },
+  }))
+}
+
+const { product } = Astro.props
+const { Content } = await product.render()
+const { title, tagline, description, hero, problems, solutions, stats, capabilities } = product.data
+---
+
+<MarketingLayout
+  title={`${title} — ${tagline}`}
+  description={description}
+>
+  <Hero
+    eyebrow={hero.eyebrow}
+    title={hero.title}
+    description={hero.description}
+    primaryCta={hero.primaryCta}
+    secondaryCta={hero.secondaryCta}
+  >
+    <Placeholder slot="demo" label={`${title} Visualization`} class="h-full min-h-[400px]" />
+  </Hero>
+
+  <ProblemSolution
+    problemHeading={`The Challenge`}
+    solutionHeading={`The ${title} Solution`}
+    problems={problems}
+    solutions={solutions}
+  />
+
+  <StatStrip stats={stats} />
+
+  <Section>
+    <FeatureGrid
+      title="Core Capabilities"
+      subtitle={`Everything you need from ${title}.`}
+      features={capabilities.map(c => ({ name: c.name, description: c.description }))}
+      columns={3}
+    />
+  </Section>
+
+  <!-- Rendered markdown content (protocols, deployment options, etc.) -->
+  <Section class="bg-neutral-800/2.5">
+    <div class="prose prose-neutral mx-auto max-w-3xl prose-headings:font-display prose-headings:text-neutral-800 prose-h2:text-2xl prose-h3:text-lg prose-p:text-neutral-600 prose-strong:text-neutral-800 prose-ul:text-neutral-600">
+      <Content />
+    </div>
+  </Section>
+
+  <Section>
+    <div class="mb-12 text-center">
+      <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
+        {title} Is Part of the Platform
+      </h2>
+      <p class="mt-4 text-lg text-neutral-600">
+        Every Quatro product builds on the others.
+      </p>
+    </div>
+    <ProductProgression />
+  </Section>
+
+  <CtaBanner
+    title={`Ready to Get Started with ${title}?`}
+    description={`See how ${title} transforms your operations in a live walkthrough.`}
+    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Architect', href: '/contact/sales' }}
+  />
+</MarketingLayout>

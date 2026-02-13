@@ -1,0 +1,144 @@
+---
+import Container from '@/components/ui/Container.astro'
+import Button from '@/components/ui/Button.astro'
+
+interface Feature {
+  title: string
+  description: string
+  stat?: { value: string; label: string }
+  color?: 'orange' | 'blue' | 'teal'
+  illustration?: string
+}
+
+interface Props {
+  eyebrow?: string
+  heading?: string
+  features: Feature[]
+  ctaButton?: { label: string; href: string }
+  class?: string
+}
+
+const {
+  eyebrow = 'Product',
+  heading = 'AI engineered to transform customer service',
+  features,
+  ctaButton,
+  class: className
+} = Astro.props
+
+const colorClasses = {
+  orange: 'bg-[#F4A261]',
+  blue: 'bg-[#60A5FA]',
+  teal: 'bg-brand-500',
+}
+---
+
+<section class:list={['bg-white py-16 sm:py-24', className]}>
+  <Container>
+    <!-- Section Header -->
+    <div class="mb-16 max-w-3xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">
+        {eyebrow}
+      </p>
+      <h2 class="mt-4 font-display text-3xl tracking-tight text-neutral-800 sm:text-4xl lg:text-5xl">
+        {heading}
+      </h2>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid gap-12 lg:gap-16">
+      {features.map((feature, index) => (
+        <div class:list={[
+          'grid items-center gap-8 lg:grid-cols-2 lg:gap-16',
+          index % 2 === 1 && 'lg:[direction:rtl]'
+        ]}>
+          <!-- Text Content -->
+          <div class="lg:[direction:ltr]">
+            <h3 class="font-display text-xl font-semibold tracking-tight text-neutral-800 sm:text-2xl">
+              {feature.title}
+            </h3>
+            <p class="mt-4 text-base leading-relaxed text-neutral-600 sm:text-lg">
+              {feature.description}
+            </p>
+          </div>
+
+          <!-- Stat Card or Illustration -->
+          <div class="lg:[direction:ltr]" data-parallax-card data-parallax-speed={index % 2 === 0 ? '-0.05' : '0.05'}>
+            {feature.stat ? (
+              <div class="flex justify-center lg:justify-start">
+                <div class:list={[
+                  'inline-flex flex-col items-center justify-center px-12 py-10 sm:px-16 sm:py-12',
+                  colorClasses[feature.color || 'teal']
+                ]}>
+                  <span class="font-display text-5xl font-bold text-neutral-900 sm:text-6xl lg:text-7xl">
+                    {feature.stat.value}
+                  </span>
+                  <span class="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-800/70">
+                    {feature.stat.label}
+                  </span>
+                </div>
+              </div>
+            ) : feature.illustration === 'guardrails' ? (
+              <div class="flex justify-center lg:justify-start">
+                <div class="inline-flex flex-col gap-3 bg-neutral-50 p-6 sm:p-8" style="border: 1px solid rgba(226,232,240,1);">
+                  <div class="flex items-center gap-3">
+                    <div class="h-3 w-3 bg-green-500"></div>
+                    <span class="text-sm font-medium text-neutral-700">Customer guardrails active</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="h-3 w-3 bg-green-500"></div>
+                    <span class="text-sm font-medium text-neutral-700">Compliance checks passed</span>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="h-3 w-3 bg-amber-500"></div>
+                    <span class="text-sm font-medium text-neutral-700">Escalation triggered → Human expert</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div class="flex justify-center lg:justify-start">
+                <div class="bg-neutral-100 p-8">
+                  <img
+                    src={feature.illustration || `https://picsum.photos/seed/feature${index}/400/300`}
+                    alt=""
+                    class=""
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {ctaButton && (
+      <div class="mt-16 text-center">
+        <Button href={ctaButton.href} variant="soft" size="lg">
+          {ctaButton.label}
+        </Button>
+      </div>
+    )}
+  </Container>
+</section>
+
+<script>
+  const cards = document.querySelectorAll<HTMLElement>('[data-parallax-card]');
+  if (cards.length > 0 && window.matchMedia('(min-width: 1024px)').matches) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          cards.forEach((card) => {
+            const rect = card.getBoundingClientRect();
+            const offset = (rect.top + rect.height / 2) - (window.innerHeight / 2);
+            const speed = parseFloat(card.dataset.parallaxSpeed || '0');
+            card.style.transform = `translateY(${offset * speed}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+</script>

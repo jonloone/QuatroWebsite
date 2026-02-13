@@ -1,0 +1,61 @@
+---
+import Container from '@/components/ui/Container.astro'
+
+interface Logo {
+  src: string
+  name: string
+  width?: number
+  height?: number
+}
+
+interface Props {
+  logos?: Logo[]
+  tagline?: string
+  class?: string
+}
+
+const {
+  logos,
+  tagline = 'Trusted by financial businesses',
+  class: className,
+} = Astro.props
+
+const placeholderLogos = ['ZEGO', 'plum', 'Yotta', 'yonder', 'Kuda', 'PeopleAid']
+---
+
+<section class:list={['bg-white py-10 sm:py-12', className]}>
+  <Container>
+    <div class="flex flex-col items-center gap-8">
+      <p class="text-center text-sm font-medium uppercase tracking-wider text-neutral-500">
+        {tagline}
+      </p>
+      {logos && logos.length > 0 ? (
+        <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+          {logos.map((logo) => (
+            <img
+              src={logo.src}
+              alt={logo.name}
+              width={logo.width || 120}
+              height={logo.height || 40}
+              class="h-8 w-auto object-contain opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"
+              loading="lazy"
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+          {placeholderLogos.map((name) => (
+            <div
+              class="flex h-8 w-24 items-center justify-center rounded bg-neutral-100"
+              title={name}
+            >
+              <span class="text-sm font-normal text-neutral-400">
+                {name}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </Container>
+</section>

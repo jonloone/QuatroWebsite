@@ -1,0 +1,115 @@
+---
+import Button from '@/components/ui/Button.astro'
+import Container from '@/components/ui/Container.astro'
+
+interface Props {
+  eyebrow?: string
+  title?: string
+  description?: string
+  primaryCta?: { label: string; href: string }
+  secondaryCta?: { label: string; href: string } | null
+  textLink?: { label: string; href: string }
+  microcopy?: string
+  illustration?: string
+  class?: string
+}
+
+const {
+  eyebrow,
+  title = 'The only AI support agent built for financial services',
+  description,
+  primaryCta = { label: 'Request a demo', href: '/contact/demo' },
+  secondaryCta = null,
+  textLink,
+  microcopy,
+  illustration,
+  class: className,
+} = Astro.props
+---
+
+<section class:list={['relative overflow-hidden', className]} style="background-color: var(--color-forest);">
+  <div class="relative py-16 sm:py-24">
+    <Container>
+      {illustration ? (
+        <!-- Two-column layout: Text left, illustration right -->
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <!-- Left: Text content -->
+          <div class="flex flex-col items-start gap-6">
+            {eyebrow && (
+              <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60">
+                {eyebrow}
+              </p>
+            )}
+            <h2 class="font-display text-3xl tracking-tight text-white sm:text-4xl lg:text-5xl">
+              {title}
+            </h2>
+            {description && (
+              <p class="max-w-xl text-lg text-white/60">
+                {description}
+              </p>
+            )}
+            <div class="flex flex-wrap items-center gap-4">
+              <Button href={primaryCta.href} size="lg">
+                {primaryCta.label}
+              </Button>
+              {secondaryCta && (
+                <Button href={secondaryCta.href} size="lg" color="light">
+                  {secondaryCta.label}
+                </Button>
+              )}
+              {!secondaryCta && textLink && (
+                <a href={textLink.href} class="text-sm font-medium text-white/60 transition hover:text-white">
+                  {textLink.label} &rarr;
+                </a>
+              )}
+            </div>
+            {microcopy && <div class="text-sm text-white/40">{microcopy}</div>}
+          </div>
+
+          <!-- Right: Illustration -->
+          <div class="hidden lg:flex lg:justify-end">
+            <img
+              src={illustration}
+              alt=""
+              class="w-full max-w-md"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      ) : (
+        <!-- Centered layout -->
+        <div class="flex flex-col items-center gap-6 text-center">
+          {eyebrow && (
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60">
+              {eyebrow}
+            </p>
+          )}
+          <h2 class="max-w-3xl font-display text-3xl tracking-tight text-white sm:text-4xl lg:text-5xl">
+            {title}
+          </h2>
+          {description && (
+            <p class="max-w-2xl text-lg text-white/60">
+              {description}
+            </p>
+          )}
+          <div class="flex items-center gap-4">
+            <Button href={primaryCta.href} size="lg">
+              {primaryCta.label}
+            </Button>
+            {secondaryCta && (
+              <Button href={secondaryCta.href} size="lg" color="light">
+                {secondaryCta.label}
+              </Button>
+            )}
+            {!secondaryCta && textLink && (
+              <a href={textLink.href} class="text-sm font-medium text-white/60 transition hover:text-white">
+                {textLink.label} &rarr;
+              </a>
+            )}
+          </div>
+          {microcopy && <div class="text-sm text-white/40">{microcopy}</div>}
+        </div>
+      )}
+    </Container>
+  </div>
+</section>

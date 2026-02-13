@@ -1,0 +1,118 @@
+---
+import Container from '@/components/ui/Container.astro'
+
+interface Stat {
+  before?: string
+  after?: string
+  value?: string
+  label: string
+}
+
+interface Props {
+  eyebrow?: string
+  quote: string
+  company: string
+  logo?: string
+  stats?: Stat[]
+  caseStudyLink?: { label: string; href: string }
+  illustration?: string
+  class?: string
+}
+
+const {
+  eyebrow = 'Customer story',
+  quote,
+  company,
+  logo,
+  stats,
+  caseStudyLink,
+  illustration,
+  class: className,
+} = Astro.props
+---
+
+<section class:list={['relative overflow-hidden py-16 sm:py-24', className]} style="background-color: var(--color-forest);">
+  <Container class="relative">
+    <!-- Eyebrow -->
+    <p class="mb-8 font-mono text-[10px] uppercase tracking-[0.1em] text-white/60">
+      {eyebrow}
+    </p>
+
+    <!-- Two-column layout: Quote card (left) + Stats & illustration (right) -->
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+      <!-- Left Column: Quote Card -->
+      <div class="bg-white/10 p-8 lg:p-10" style="border: 1px solid rgba(255,255,255,0.1);">
+        <!-- Quote text -->
+        <blockquote class="text-lg leading-relaxed text-white sm:text-xl">
+          "{quote}"
+        </blockquote>
+
+        <!-- Company Logo -->
+        <div class="mt-8 flex items-center gap-4">
+          {logo ? (
+            <img
+              src={logo}
+              alt={company}
+              class="h-6 w-auto opacity-70"
+              loading="lazy"
+            />
+          ) : (
+            <div class="flex h-8 items-center px-4" style="border: 1px solid rgba(255,255,255,0.2);">
+              <span class="text-sm font-normal text-white/60">{company}</span>
+            </div>
+          )}
+        </div>
+
+        <!-- Case Study Link -->
+        {caseStudyLink && (
+          <a
+            href={caseStudyLink.href}
+            class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand-400 transition hover:text-brand-300"
+          >
+            <span>{caseStudyLink.label}</span>
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        )}
+      </div>
+
+      <!-- Right Column: Stats + Illustration -->
+      <div class="flex flex-col gap-8">
+        <!-- Stats -->
+        {stats && stats.length > 0 && (
+          <div class="flex flex-wrap gap-6">
+            {stats.map((stat) => (
+              <div class="bg-white/10 px-6 py-5" style="border: 1px solid rgba(255,255,255,0.1);">
+                {stat.before && stat.after ? (
+                  <div class="flex items-center gap-3">
+                    <span class="font-display text-2xl font-semibold text-white/40 line-through decoration-white/20">{stat.before}</span>
+                    <svg class="h-5 w-5 text-white/30" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                    <span class="font-display text-2xl font-bold text-brand-400">{stat.after}</span>
+                  </div>
+                ) : (
+                  <span class="font-display text-2xl font-bold text-brand-400">{stat.value}</span>
+                )}
+                <div class="mt-1 font-mono text-[10px] uppercase tracking-[0.1em] text-white/40">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <!-- Illustration -->
+        {illustration && (
+          <div class="mt-4">
+            <img
+              src={illustration}
+              alt=""
+              class="w-full max-w-md"
+              loading="lazy"
+            />
+          </div>
+        )}
+      </div>
+    </div>
+  </Container>
+</section>

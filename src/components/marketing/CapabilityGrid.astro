@@ -1,0 +1,70 @@
+---
+import Container from '@/components/ui/Container.astro'
+import LinkIcon from '@/components/icons/LinkIcon.astro'
+import CpuIcon from '@/components/icons/CpuIcon.astro'
+import ShieldCheckIcon from '@/components/icons/ShieldCheckIcon.astro'
+import ChartBarIcon from '@/components/icons/ChartBarIcon.astro'
+import GlobeAltIcon from '@/components/icons/GlobeAltIcon.astro'
+import CogIcon from '@/components/icons/CogIcon.astro'
+
+interface Capability {
+  icon: 'link' | 'cpu' | 'shield' | 'chart' | 'globe' | 'cog'
+  title: string
+  description?: string
+}
+
+interface Props {
+  heading?: string
+  subheading?: string
+  capabilities: Capability[]
+  class?: string
+}
+
+const {
+  heading = 'Platform Capabilities',
+  subheading,
+  capabilities,
+  class: className,
+} = Astro.props
+
+const iconMap = {
+  link: LinkIcon,
+  cpu: CpuIcon,
+  shield: ShieldCheckIcon,
+  chart: ChartBarIcon,
+  globe: GlobeAltIcon,
+  cog: CogIcon,
+}
+---
+
+<section class:list={['bg-neutral-50 py-16 sm:py-24', className]}>
+  <Container>
+    <div class="mb-12 text-center">
+      <h2 class="font-display text-2xl tracking-tight text-neutral-800 sm:text-3xl">
+        {heading}
+      </h2>
+      {subheading && (
+        <p class="mx-auto mt-4 max-w-2xl text-base text-neutral-600">
+          {subheading}
+        </p>
+      )}
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 lg:gap-6">
+      {capabilities.map((cap) => {
+        const IconComponent = iconMap[cap.icon]
+        return (
+          <div class="group flex flex-col items-center bg-white p-6 text-center transition hover:border-brand-300" style="border: 1px solid rgba(226,232,240,1);">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center bg-brand-50 text-brand-500 transition group-hover:bg-brand-100">
+              <IconComponent class="h-6 w-6" />
+            </div>
+            <h3 class="text-sm font-display font-semibold text-neutral-800">{cap.title}</h3>
+            {cap.description && (
+              <p class="mt-1 text-xs text-neutral-500">{cap.description}</p>
+            )}
+          </div>
+        )
+      })}
+    </div>
+  </Container>
+</section>

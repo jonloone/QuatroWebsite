@@ -1,0 +1,33 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+---
+
+<MarketingLayout
+  title="Contact — Get in Touch with Quatro"
+  description="Contact Quatro to schedule a demo, talk to sales, or get support."
+>
+  <Hero
+    eyebrow="Contact Us"
+    title="Let's Talk Operations"
+    description="Whether you're ready to transform your operations or just exploring options, we're here to help."
+  />
+
+  <Section>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/contact/demo" class="rounded-xl border border-neutral-200 bg-white p-8 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Schedule a Demo</h3>
+        <p class="mt-2 text-sm text-neutral-600">See Quatro in action with a personalized walkthrough.</p>
+      </a>
+      <a href="/contact/sales" class="rounded-xl border border-neutral-200 bg-white p-8 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Talk to Sales</h3>
+        <p class="mt-2 text-sm text-neutral-600">Discuss pricing, deployment, and enterprise requirements.</p>
+      </a>
+      <a href="/contact/support" class="rounded-xl border border-neutral-200 bg-white p-8 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Get Support</h3>
+        <p class="mt-2 text-sm text-neutral-600">Get help with your existing Quatro deployment.</p>
+      </a>
+    </div>
+  </Section>
+</MarketingLayout>

@@ -1,0 +1,156 @@
+---
+import Container from '@/components/ui/Container.astro'
+
+interface BlogPost {
+  title: string
+  excerpt?: string
+  image?: string
+  href: string
+  category?: string
+  date?: string
+}
+
+interface Props {
+  eyebrow?: string
+  heading?: string
+  subheading?: string
+  featured: BlogPost
+  posts: BlogPost[]
+  viewAllLink?: { label: string; href: string }
+  class?: string
+}
+
+const {
+  eyebrow = 'Blog',
+  heading = 'Our latest insights',
+  subheading,
+  featured,
+  posts,
+  viewAllLink,
+  class: className,
+} = Astro.props
+---
+
+<section class:list={['bg-white py-16 sm:py-24', className]}>
+  <Container>
+    <!-- Header -->
+    <div class="mb-12">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">
+        {eyebrow}
+      </p>
+      <div class="mt-4 flex items-end justify-between">
+        <h2 class="font-display text-3xl tracking-tight text-neutral-800 sm:text-4xl lg:text-5xl">
+          {heading}
+        </h2>
+        {viewAllLink && (
+          <a
+            href={viewAllLink.href}
+            class="hidden items-center gap-2 text-sm font-display font-semibold text-neutral-800 transition hover:text-brand-600 sm:inline-flex"
+          >
+            <span>{viewAllLink.label}</span>
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        )}
+      </div>
+      {subheading && (
+        <p class="mt-4 max-w-2xl text-base text-neutral-600 sm:text-lg">
+          {subheading}
+        </p>
+      )}
+    </div>
+
+    <!-- Featured Post (Full width with image) -->
+    <a href={featured.href} class="group mb-12 block">
+      <article class="grid gap-8 lg:grid-cols-2 lg:items-center">
+        <!-- Text Content -->
+        <div class="order-2 lg:order-1">
+          {featured.category && (
+            <span class="mb-3 inline-block font-mono text-[10px] uppercase tracking-[0.1em] text-brand-600">
+              {featured.category}
+            </span>
+          )}
+          <h3 class="font-display text-2xl font-semibold tracking-tight text-neutral-800 group-hover:text-brand-600 sm:text-3xl">
+            {featured.title}
+          </h3>
+          {featured.excerpt && (
+            <p class="mt-4 text-base text-neutral-600">
+              {featured.excerpt}
+            </p>
+          )}
+          <div class="mt-6 flex items-center gap-2 text-sm font-medium text-neutral-800 group-hover:text-brand-600">
+            <span>Read article</span>
+            <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="order-1 lg:order-2">
+          {featured.image && (
+            <div class="overflow-hidden">
+              <img
+                src={featured.image}
+                alt=""
+                class="aspect-[4/3] w-full object-cover transition group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+          )}
+        </div>
+      </article>
+    </a>
+
+    <!-- Smaller Posts Grid -->
+    <div class="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.slice(0, 3).map((post) => (
+        <a href={post.href} class="reveal group">
+          <article class="flex h-full flex-col overflow-hidden bg-white transition" style="border: 1px solid rgba(226,232,240,1);">
+            {post.image && (
+              <div class="aspect-[16/9] overflow-hidden">
+                <img
+                  src={post.image}
+                  alt=""
+                  class="h-full w-full object-cover transition group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            )}
+            <div class="flex flex-1 flex-col p-5">
+              {post.category && (
+                <span class="mb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-brand-600">
+                  {post.category}
+                </span>
+              )}
+              <h3 class="font-display font-semibold text-neutral-800 group-hover:text-brand-600">
+                {post.title}
+              </h3>
+              {post.date && (
+                <p class="mt-auto pt-3 font-mono text-[10px] uppercase tracking-[0.05em] text-neutral-500">
+                  {post.date}
+                </p>
+              )}
+            </div>
+          </article>
+        </a>
+      ))}
+    </div>
+
+    {/* Mobile View All Link */}
+    {viewAllLink && (
+      <div class="mt-10 text-center sm:hidden">
+        <a
+          href={viewAllLink.href}
+          class="inline-flex items-center gap-2 text-sm font-display font-semibold text-neutral-800 transition hover:text-brand-600"
+        >
+          <span>{viewAllLink.label}</span>
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    )}
+  </Container>
+</section>

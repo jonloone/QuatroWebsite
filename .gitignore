@@ -7,9 +7,9 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# astro
+/dist/
+/.astro/
 
 # production
 /build
@@ -25,6 +25,7 @@ yarn-error.log*
 
 # env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -39,3 +40,4 @@ yarn-error.log*
 /UI-kit/
 /branding/
 /reference/
+/vault/

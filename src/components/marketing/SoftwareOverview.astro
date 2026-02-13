@@ -1,0 +1,74 @@
+---
+import Container from '@/components/ui/Container.astro'
+
+interface SoftwareItem {
+  name: string
+  description: string
+  href?: string
+}
+
+interface Props {
+  heading?: string
+  items: SoftwareItem[]
+  class?: string
+}
+
+const {
+  heading = 'Our Software',
+  items,
+  class: className,
+} = Astro.props
+
+// Format index as /0.1, /0.2, etc.
+const formatIndex = (i: number) => `/0.${i + 1}`
+---
+
+<section class:list={['bg-white py-16 sm:py-24', className]}>
+  <Container>
+    <!-- Heading -->
+    <h2 class="mb-12 font-display text-3xl tracking-tight text-neutral-800 sm:text-4xl lg:mb-16 lg:text-5xl">
+      {heading}
+    </h2>
+
+    <!-- Software List -->
+    <div class="divide-y divide-neutral-200">
+      {items.map((item, index) => (
+        <a
+          href={item.href || '#'}
+          class="group relative grid grid-cols-12 items-center gap-4 py-10 transition hover:bg-neutral-50 sm:py-12 lg:py-16"
+        >
+          <!-- Left: Description + Index -->
+          <div class="col-span-12 sm:col-span-4 lg:col-span-3">
+            <p class="text-sm leading-relaxed text-neutral-500 sm:text-base">
+              {item.description}
+            </p>
+            <p class="mt-4 font-mono text-xs text-neutral-400">
+              {formatIndex(index)}
+            </p>
+          </div>
+
+          <!-- Center: Watermark Logo (subtle) -->
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none hidden sm:block">
+            <svg class="h-32 w-32 lg:h-40 lg:w-40" viewBox="0 0 100 100" fill="currentColor">
+              <path d="M50 5 L95 27.5 L95 72.5 L50 95 L5 72.5 L5 27.5 Z" />
+            </svg>
+          </div>
+
+          <!-- Right: Large Product Name -->
+          <div class="col-span-12 flex items-center justify-start sm:col-span-8 sm:justify-end lg:col-span-9">
+            <span class="font-display text-5xl tracking-tight text-neutral-800 transition group-hover:text-brand-600 sm:text-6xl lg:text-7xl xl:text-8xl">
+              {item.name}
+            </span>
+          </div>
+
+          <!-- Hover Arrow -->
+          <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-0 transition group-hover:opacity-100">
+            <svg class="h-6 w-6 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Container>
+</section>

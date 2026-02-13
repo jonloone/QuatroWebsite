@@ -1,0 +1,136 @@
+---
+import Container from '@/components/ui/Container.astro'
+
+interface ComparisonItem {
+  title: string
+  description: string
+  illustration?: string
+  callouts?: string[]
+}
+
+interface Props {
+  eyebrow?: string
+  heading?: string
+  left: ComparisonItem
+  right: ComparisonItem
+  class?: string
+}
+
+const {
+  eyebrow = 'Beyond human support',
+  heading,
+  left,
+  right,
+  class: className,
+} = Astro.props
+---
+
+<section class:list={['bg-neutral-100 py-16 sm:py-24', className]}>
+  <Container>
+    <!-- Section Header -->
+    <div class="mb-12 lg:mb-16">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">
+        {eyebrow}
+      </p>
+      {heading && (
+        <h2 class="mt-4 font-display text-3xl tracking-tight text-neutral-800 sm:text-4xl lg:text-5xl">
+          {heading}
+        </h2>
+      )}
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
+      <!-- Left Column: Typical AI agents -->
+      <div class="bg-white p-6 sm:p-8 lg:p-10" style="border: 1px solid rgba(226,232,240,1);">
+        <h3 class="mb-6 font-display text-xl font-semibold text-neutral-500">
+          {left.title}
+        </h3>
+
+        <!-- Illustration -->
+        {left.illustration && (
+          <div class="mb-6">
+            <img
+              src={left.illustration}
+              alt=""
+              class="w-full"
+              loading="lazy"
+            />
+          </div>
+        )}
+
+        <!-- Description -->
+        {left.description && (
+          <p class="text-base text-neutral-600">
+            {left.description}
+          </p>
+        )}
+
+        <!-- Callouts -->
+        {left.callouts && left.callouts.length > 0 && (
+          <div class="mt-6 space-y-3">
+            {left.callouts.map((callout) => (
+              <div class="flex items-start gap-3 bg-neutral-100 px-4 py-3">
+                <svg
+                  class="mt-0.5 h-5 w-5 flex-shrink-0 text-neutral-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                </svg>
+                <span class="text-sm text-neutral-600">{callout}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <!-- Right Column: Quatro -->
+      <div class="bg-white p-6 sm:p-8 lg:p-10" style="border: 2px solid var(--color-forest);">
+        <h3 class="mb-6 font-display text-xl font-semibold text-brand-600">
+          {right.title}
+        </h3>
+
+        <!-- Illustration -->
+        {right.illustration && (
+          <div class="mb-6">
+            <img
+              src={right.illustration}
+              alt=""
+              class="w-full"
+              loading="lazy"
+            />
+          </div>
+        )}
+
+        <!-- Description -->
+        {right.description && (
+          <p class="text-base text-neutral-600">
+            {right.description}
+          </p>
+        )}
+
+        <!-- Callouts -->
+        {right.callouts && right.callouts.length > 0 && (
+          <div class="mt-6 space-y-3">
+            {right.callouts.map((callout) => (
+              <div class="flex items-start gap-3 bg-brand-50 px-4 py-3">
+                <svg
+                  class="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                </svg>
+                <span class="text-sm text-neutral-700">{callout}</span>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </Container>
+</section>

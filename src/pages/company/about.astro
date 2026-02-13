@@ -1,0 +1,37 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+---
+
+<MarketingLayout
+  title="About — Our Mission, Vision & Values"
+  description="Learn about Quatro's mission to deliver industrial intelligence at the speed of operations."
+>
+  <Hero
+    eyebrow="About Quatro"
+    title="Industrial Intelligence at the Speed of Operations"
+    description="We're building the platform that unifies OT and IT, enabling organizations to connect, operate, and command their most critical operations."
+  />
+
+  <Section>
+    <div class="grid gap-12 lg:grid-cols-2">
+      <div>
+        <h2 class="font-display text-2xl font-bold text-neutral-800">Our Mission</h2>
+        <p class="mt-4 text-lg text-neutral-600">
+          To deliver industrial intelligence that enables organizations to see everything, act faster, and command with confidence.
+        </p>
+      </div>
+      <Placeholder label="Company Image" class="min-h-[300px]" />
+    </div>
+  </Section>
+
+  <CtaBanner
+    title="Join Our Journey"
+    description="See how Quatro can transform your operations."
+    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
+    secondaryCta={{ label: 'View Careers', href: '/company/careers' }}
+  />
+</MarketingLayout>
