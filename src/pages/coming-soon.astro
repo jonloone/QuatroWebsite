@@ -12,16 +12,16 @@ import QuatroLogo from '@/components/QuatroLogo.astro'
   <header class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4">
     <nav class="mx-auto w-full max-w-6xl rounded-full px-5 py-2.5"
          style="background-color: rgba(0,0,0,0.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);">
-      <div class="flex items-center justify-between">
-        <!-- Logo -->
+      <div class="flex items-center justify-center sm:justify-between">
+        <!-- Logo — larger + centered on mobile -->
         <a href="/" aria-label="Quatro home">
-          <QuatroLogo light class="h-7 w-auto" />
+          <QuatroLogo light class="h-9 sm:h-7 w-auto" />
         </a>
-        <!-- CTA — WhatsApp -->
+        <!-- CTA — WhatsApp (hidden on mobile) -->
         <a href="https://wa.me/593958603963"
            target="_blank"
            rel="noopener noreferrer"
-           class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.05em] px-6 py-2.5 text-white transition-colors duration-200"
+           class="hidden sm:inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.05em] px-6 py-2.5 text-white transition-colors duration-200"
            style="background-color: #409473;">
           <svg class="h-4 w-4" viewBox="0 0 345 345.24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path class="fill-white" d="M172.51,0C78.22,0,1.47,76.74,1.43,171.06c-.01,30.15,7.87,59.58,22.84,85.52L0,345.24l90.69-23.79c24.99,13.63,53.12,20.81,81.75,20.82h.07c94.28,0,171.03-76.75,171.07-171.07,.02-45.71-17.76-88.69-50.06-121.02C261.22,17.84,218.27,.02,172.51,0Zm0,313.38h-.06c-25.51,0-50.54-6.87-72.37-19.82l-5.19-3.08-53.81,14.12,14.36-52.47-3.38-5.38c-14.23-22.64-21.75-48.81-21.74-75.67,.03-78.4,63.82-142.18,142.25-142.18,37.98,.01,73.68,14.82,100.52,41.7,26.85,26.87,41.62,62.6,41.61,100.59-.03,78.4-63.82,142.19-142.19,142.19Zm77.99-106.49c-4.27-2.14-25.29-12.48-29.21-13.91-3.92-1.43-6.77-2.14-9.62,2.14-2.85,4.28-11.04,13.91-13.53,16.76-2.49,2.86-4.99,3.21-9.26,1.07-4.27-2.14-18.05-6.66-34.37-21.22-12.71-11.33-21.29-25.33-23.78-29.61-2.49-4.28-.27-6.59,1.88-8.72,1.92-1.91,4.27-4.99,6.41-7.49,2.14-2.5,2.85-4.28,4.27-7.14,1.42-2.85,.71-5.35-.36-7.49-1.07-2.14-9.62-23.18-13.18-31.74-3.47-8.33-6.99-7.21-9.62-7.34-2.49-.13-5.34-.15-8.19-.15s-7.48,1.07-11.4,5.35c-3.92,4.28-14.96,14.62-14.96,35.66s15.32,41.37,17.45,44.22c2.14,2.85,30.14,46.03,73.02,64.54,10.2,4.4,18.16,7.03,24.37,9,10.24,3.25,19.56,2.79,26.92,1.69,8.21-1.23,25.29-10.34,28.85-20.33,3.56-9.98,3.56-18.54,2.49-20.33-1.07-1.78-3.92-2.85-8.19-4.99Z"/>
@@ -40,8 +40,8 @@ import QuatroLogo from '@/components/QuatroLogo.astro'
       <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);"></div>
     </div>
 
-    <!-- connect.png — bottom right graphic -->
-    <img src="/images/connect.png" alt="" class="absolute bottom-0 w-[90%] lg:w-[70%] object-contain pointer-events-none select-none" style="right: -20%;" />
+    <!-- connect.png — bottom right graphic (hidden on mobile) -->
+    <img src="/images/connect.png" alt="" class="hidden sm:block absolute bottom-0 w-[90%] lg:w-[70%] object-contain pointer-events-none select-none" style="right: -20%;" />
 
     <div class="relative z-10 mx-auto max-w-5xl w-full text-left pt-16">
       <!-- Status badge -->
@@ -71,8 +71,20 @@ import QuatroLogo from '@/components/QuatroLogo.astro'
 
       <!-- CTAs -->
       <div class="mt-10 flex flex-col gap-6">
-        <!-- TODO: Configure form action -->
-        <form action="#" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-lg">
+        <form action="https://formsubmit.co/esteban@lmi-int.com" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-lg">
+          <input type="hidden" name="_subject" value="Nuevo registro — Quatro Coming Soon" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://quatro.lat/coming-soon" />
+          <label for="name" class="sr-only">Nombre</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Su nombre"
+            required
+            class="sm:w-40 font-mono text-sm px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-white/30"
+            style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);"
+          />
           <label for="email" class="sr-only">Email</label>
           <input
             type="email"
