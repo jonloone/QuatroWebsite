@@ -51,8 +51,9 @@ export const footerNavigation = {
     items: [
       { name: 'Overview', href: '/platform' },
       { name: 'Connect', href: '/platform/connect' },
-      { name: 'Operate', href: '/platform/operate' },
-      { name: 'Command', href: '/platform/command' },
+      { name: 'Visibility', href: '/platform/visibility' },
+      { name: 'Operations', href: '/platform/operations' },
+      { name: 'Intelligence', href: '/platform/intelligence' },
     ],
   },
   solutions: {
@@ -121,20 +122,26 @@ export const primaryNavigation: PrimaryNavItem[] = [
     items: [
       {
         name: 'Connect',
-        description: 'Integrate sensors, devices, and data streams',
+        description: 'Edge hardware & 8,000+ integrations',
         href: '/platform/connect',
         icon: LinkIcon,
       },
       {
-        name: 'Operate',
-        description: 'Monitor and manage operations in real-time',
-        href: '/platform/operate',
+        name: 'Visibility',
+        description: 'Real-time dashboards & operational awareness',
+        href: '/platform/visibility',
+        icon: ChartBarIcon,
+      },
+      {
+        name: 'Operations',
+        description: 'Predictive intelligence & automation',
+        href: '/platform/operations',
         icon: CogIcon,
       },
       {
-        name: 'Command',
-        description: 'Orchestrate responses and automate actions',
-        href: '/platform/command',
+        name: 'Intelligence',
+        description: 'Enterprise orchestration & multi-site coordination',
+        href: '/platform/intelligence',
         icon: CommandLineIcon,
       },
     ],

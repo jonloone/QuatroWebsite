@@ -46,8 +46,9 @@ capabilities:
     description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support."
 platformMapping:
   connect: "8,000+ connectors for routers, switches, radios, and optical transport. Native SNMP, NETCONF/YANG, TL1, and gRPC support with vendor-neutral normalization."
-  operate: "AI-driven analytics for anomaly detection, capacity planning, and root-cause analysis. Cross-domain correlation reduces alarm volume by 80%."
-  command: "Automated provisioning and fault remediation playbooks. Intelligent dispatch considers technician location, certification, and travel time."
+  visibility: "Live network dashboards with real-time health monitoring, SLA compliance tracking, and context-aware alerting across all vendor equipment in a unified NOC view."
+  operations: "AI-driven anomaly detection, capacity planning, and root-cause analysis. Cross-domain correlation reduces alarm volume by 80% and predicts faults before they impact service."
+  intelligence: "Enterprise-wide NOC orchestration with automated provisioning and fault remediation playbooks. Intelligent dispatch coordinates technicians across multi-site operations by location, certification, and travel time."
 proofPoint:
   industry: "Infrastructure — Telecommunications"
   headline: "Multi-Site Tower Operations"

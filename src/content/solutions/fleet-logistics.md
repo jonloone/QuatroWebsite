@@ -46,8 +46,9 @@ capabilities:
     description: "Unified dispatch console for managing fleet, crews, and deliveries with intelligent assignment and real-time tracking."
 platformMapping:
   connect: "Ingests data from any GPS, telematics device, or IoT sensor. Normalizes data from mixed hardware fleets without requiring vendor standardization."
-  operate: "AI analytics for route optimization, predictive maintenance, and driver safety. Digital twin enables fleet sizing and depot placement modeling."
-  command: "Centralized dispatch with automated playbooks for breakdowns, delays, and priority insertions. Mobile apps keep drivers connected even during connectivity loss."
+  visibility: "Live fleet dashboards with real-time vehicle tracking, cargo condition monitoring, and driver compliance status. Unified alerting for delivery SLAs and asset health across the entire fleet."
+  operations: "AI analytics for route optimization, predictive maintenance, and driver safety scoring. Anomaly detection identifies mechanical issues and route deviations before they impact operations."
+  intelligence: "Enterprise fleet orchestration with centralized dispatch, automated playbooks for breakdowns, delays, and priority insertions. Multi-depot resource scheduling keeps drivers connected even during connectivity loss."
 proofPoint:
   industry: "Infrastructure — Logistics"
   headline: "National Fleet Optimization"

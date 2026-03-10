@@ -46,8 +46,9 @@ capabilities:
     description: "OEE, availability, throughput, and custom KPIs tracked continuously with benchmarking across sites and time periods."
 platformMapping:
   connect: "Universal connectivity to IT, OT, IoT, and enterprise systems through 8,000+ connectors. Data contextualization enriches every stream with asset hierarchies and process metadata."
-  operate: "AI analytics engine learns operational baselines and continuously improves. Digital twin enables simulation and scenario planning. AI Analyst Agents surface what matters."
-  command: "AI decision support with risk scoring and recommendation engine. Cross-domain orchestration coordinates responses across operations, security, and logistics."
+  visibility: "Live cross-domain dashboards with real-time KPI tracking, asset health monitoring, and intelligent alerting. Unified operational views replace 5-7 separate department consoles."
+  operations: "AI analytics engine learns operational baselines and continuously improves. Digital twin enables simulation and scenario planning. AI Analyst Agents surface anomalies and predict outcomes."
+  intelligence: "Enterprise orchestration with AI decision support, risk scoring, and recommendation engine. Cross-domain coordination aligns responses across operations, security, and logistics at scale."
 proofPoint:
   industry: "Energy — Integrated Utility"
   headline: "Unified Grid Operations"

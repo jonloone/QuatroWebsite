@@ -3,10 +3,10 @@ const products = [
   {
     step: '01',
     name: 'Connect',
-    tagline: 'Get your data in.',
+    tagline: 'Bridge your equipment to the digital world.',
     description:
-      'Converge any data source into a unified operational fabric. 8,000+ protocol connectors normalize OT, IT, and IoT data at the edge — SCADA, Modbus, OPC-UA, MQTT, and beyond.',
-    capabilities: ['OT/IT Convergence', 'Edge Normalization', '8,000+ Connectors', 'Legacy Integration', 'Secure Pipelines'],
+      'IECEx-certified edge hardware with 8,000+ integrations. Connect any equipment across 300+ protocols — no rip-and-replace, no downtime.',
+    capabilities: ['8,000+ Integrations', '300+ Protocols', 'IECEx Certified', 'Edge Processing', 'Auto-Discovery'],
     href: '/platform/connect',
     cardBg: 'bg-white',
     border: 'border-brand-200',
@@ -19,12 +19,12 @@ const products = [
   },
   {
     step: '02',
-    name: 'Operate',
-    tagline: 'Run your operations.',
+    name: 'Visibility',
+    tagline: 'See everything. In real time.',
     description:
-      'Real-time monitoring, AI-powered analytics, and predictive intelligence across your entire operation. Fuses video analytics, sensor data, and security monitoring into a single operational view.',
-    capabilities: ['Real-Time Monitoring', 'Predictive Maintenance', 'Video Analytics', 'Anomaly Detection', 'Performance Management'],
-    href: '/platform/operate',
+      'Live operational dashboards, intelligent alerting, asset management, and compliance reporting. Share real-time views with any stakeholder — zero-login required.',
+    capabilities: ['Live Dashboards', 'Intelligent Alerting', 'Asset Management', 'Document Intelligence', 'Zero-Login Sharing'],
+    href: '/platform/visibility',
     cardBg: 'bg-brand-50',
     border: 'border-brand-300',
     pill: 'bg-brand-200 text-brand-800',
@@ -36,12 +36,29 @@ const products = [
   },
   {
     step: '03',
-    name: 'Command',
-    tagline: 'See everything. Act decisively.',
+    name: 'Operations',
+    tagline: 'Predict and prevent. Automatically.',
     description:
-      'Unified operations center with cross-domain orchestration, threat response, and fleet coordination. Every insight from Connect and Operate converges into decisive action.',
-    capabilities: ['Operations Center', 'Cross-Domain Orchestration', 'Fleet Coordination', 'Threat Response', 'AI Decision Support'],
-    href: '/platform/command',
+      'AI-powered anomaly detection, automated root cause analysis, and scripted responses. Your team stops fighting fires and starts preventing them.',
+    capabilities: ['Anomaly Detection', 'Predictive AI', 'Root Cause Analysis', 'Automation Engine', 'Low-Code Builder'],
+    href: '/platform/operations',
+    cardBg: 'bg-brand-100',
+    border: 'border-brand-400',
+    pill: 'bg-brand-300 text-brand-900',
+    stepColor: 'text-brand-600',
+    nameColor: 'text-neutral-800',
+    taglineColor: 'text-brand-700',
+    descColor: 'text-neutral-600',
+    linkColor: 'text-brand-700 hover:text-brand-800',
+  },
+  {
+    step: '04',
+    name: 'Intelligence',
+    tagline: 'Orchestrate your entire enterprise.',
+    description:
+      'End-to-end process orchestration, resource scheduling, and multi-site federated operations. From managing operations to orchestrating them at enterprise scale.',
+    capabilities: ['Process Orchestration', 'Resource Scheduling', 'Multi-Site Federation', 'Lifecycle Management', 'Enterprise Resilience'],
+    href: '/platform/intelligence',
     cardBg: 'bg-brand-950',
     border: 'border-brand-800',
     pill: 'bg-brand-800 text-brand-200',
@@ -55,53 +72,35 @@ const products = [
 ---
 
 <div>
-  <div class="grid items-stretch gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr]">
+  <div class="grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
     {products.map((product, i) => (
-      <Fragment>
-        <div class:list={['flex flex-col border p-6 sm:p-8', product.cardBg, product.border]}>
-          <!-- Image placeholder -->
-          <div class="mb-4 flex h-32 items-center justify-center bg-neutral-200">
-            <svg class="h-10 w-10 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-            </svg>
-          </div>
-          <p class:list={['text-sm font-normal', product.stepColor]}>{product.step}</p>
-          <h3 class:list={['mt-2 font-display text-2xl font-bold', product.nameColor]}>{product.name}</h3>
-          <p class:list={['mt-1 text-sm font-medium', product.taglineColor]}>{product.tagline}</p>
-          <p class:list={['mt-4 text-sm leading-relaxed', product.descColor]}>{product.description}</p>
-          <div class="mt-6 flex flex-wrap gap-2">
-            {product.capabilities.map((cap) => (
-              <span class:list={['rounded-sm px-3 py-1 text-xs font-medium', product.pill]}>
-                {cap}
-              </span>
-            ))}
-          </div>
-          <div class="mt-auto pt-6">
-            <a href={product.href} class:list={['text-sm font-normal', product.linkColor]}>
-              Learn More &rarr;
-            </a>
-          </div>
+      <div class:list={['flex flex-col border p-6 sm:p-8', product.cardBg, product.border]}>
+        <!-- Image placeholder -->
+        <div class="mb-4 flex h-32 items-center justify-center bg-neutral-200/50">
+          <svg class="h-10 w-10 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
         </div>
-        {i < products.length - 1 && (
-          <Fragment>
-            <!-- Arrow Right (desktop) -->
-            <div class="hidden items-center lg:flex">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-brand-300">
-                <path d="M5 12h14m0 0l-6-6m6 6l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <!-- Arrow Down (mobile) -->
-            <div class="flex items-center justify-center lg:hidden">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="text-brand-300">
-                <path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-          </Fragment>
-        )}
-      </Fragment>
+        <p class:list={['text-sm font-normal', product.stepColor]}>{product.step}</p>
+        <h3 class:list={['mt-2 font-display text-2xl font-bold', product.nameColor]}>{product.name}</h3>
+        <p class:list={['mt-1 text-sm font-medium', product.taglineColor]}>{product.tagline}</p>
+        <p class:list={['mt-4 text-sm leading-relaxed', product.descColor]}>{product.description}</p>
+        <div class="mt-6 flex flex-wrap gap-2">
+          {product.capabilities.map((cap) => (
+            <span class:list={['rounded-sm px-3 py-1 text-xs font-medium', product.pill]}>
+              {cap}
+            </span>
+          ))}
+        </div>
+        <div class="mt-auto pt-6">
+          <a href={product.href} class:list={['text-sm font-normal', product.linkColor]}>
+            Learn More &rarr;
+          </a>
+        </div>
+      </div>
     ))}
   </div>
   <p class="mt-10 text-center text-sm text-neutral-500">
-    Every product builds on the last. Start where you need to.
+    Every tier builds on the last. Start where you need to.
   </p>
 </div>
