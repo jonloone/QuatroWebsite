@@ -46,8 +46,9 @@ capabilities:
     description: "Air quality, weather, and energy data correlated with operational systems. Pollutant concentrations trigger traffic rerouting and public notifications."
 platformMapping:
   connect: "8,000+ connectors for traffic controllers (NTCIP), cameras (ONVIF), building systems (BACnet, KNX), transit (GTFS, SIRI), and environmental sensors. Edge processing at intersections and vehicles."
-  operate: "AI video analytics with behavioral analysis and crowd dynamics. Traffic pattern prediction, predictive maintenance for infrastructure, and environmental correlation. 80% fewer false alarms."
-  command: "Unified city operations center with cross-agency coordination. Emergency response playbooks orchestrate multi-department response. Fleet dispatch for public works and waste collection."
+  visibility: "Live city dashboards with real-time traffic, public safety, and infrastructure monitoring. Unified alerting across all departments with compliance reporting and asset management in a single operations center view."
+  operations: "AI video analytics with behavioral analysis and crowd dynamics. Traffic pattern prediction, predictive maintenance for infrastructure, and environmental anomaly detection. 80% fewer false alarms."
+  intelligence: "Unified city operations center with cross-agency orchestration. Emergency response playbooks coordinate multi-department response, resource scheduling, and fleet dispatch for public works and waste collection."
 proofPoint:
   industry: "Cities — Public Safety"
   headline: "Unified Urban Surveillance"

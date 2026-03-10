@@ -46,8 +46,9 @@ capabilities:
     description: "Real-time SLA compliance tracking with automated report generation. Replace hours of manual data aggregation."
 platformMapping:
   connect: "8,000+ connectors with protocol-native adapters for SNMP, NETCONF, TL1, gRPC, BACnet, KNX, and GPS/telematics. Edge processing at tower sites, vehicles, and buildings."
-  operate: "AI-driven alarm correlation and root cause analysis. Predictive maintenance, route optimization, and anomaly detection. 80% fewer false alarms through multi-domain intelligence."
-  command: "Centralized multi-site NOC operations. Automated provisioning and fault remediation playbooks. Intelligent dispatch with technician certification matching."
+  visibility: "Live infrastructure dashboards with real-time monitoring across telecom, fleet, and facility systems. Unified alerting, SLA compliance tracking, and asset management in a single operational view."
+  operations: "AI-driven alarm correlation and root cause analysis. Predictive maintenance, route optimization, and anomaly detection. 80% fewer false alarms through multi-domain intelligence."
+  intelligence: "Centralized multi-site NOC orchestration with automated provisioning and fault remediation playbooks. Intelligent dispatch coordinates technician certification matching and resource scheduling across all sites."
 proofPoint:
   industry: "Infrastructure — Telecommunications"
   headline: "900+ Site Tower Operations"

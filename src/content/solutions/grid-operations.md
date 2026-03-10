@@ -46,8 +46,9 @@ capabilities:
     description: "Virtual models for contingency analysis, DER hosting capacity studies, and storm impact modeling before conditions materialize."
 platformMapping:
   connect: "Native connectivity for DNP3, IEC 61850, and OPC-UA. Mirrors data from legacy SCADA in real time while adding DER connectivity through SunSpec, OCPP, and IEEE 2030.5."
-  operate: "AI analytics for predictive maintenance, grid anomaly detection, and DER performance optimization. Digital twin enables contingency analysis and storm modeling."
-  command: "Automated storm playbooks coordinate 200+ substations. Intelligent dispatch assigns certified crews with switching authority. NERC CIP audit trails generated automatically."
+  visibility: "Live grid dashboards with real-time substation monitoring, DER status tracking, and load visualization. Intelligent alerting with NERC CIP compliance reporting across the entire grid."
+  operations: "AI analytics for predictive maintenance, grid anomaly detection, and DER performance optimization. Digital twin enables contingency analysis, storm modeling, and root cause identification."
+  intelligence: "Enterprise grid orchestration with automated storm playbooks coordinating 200+ substations. Intelligent dispatch assigns certified crews with switching authority across multi-site operations."
 proofPoint:
   industry: "Energy — Integrated Utility"
   headline: "Storm Response & Grid Modernization"

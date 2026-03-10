@@ -46,8 +46,9 @@ capabilities:
     description: "Correlate physical security events with SCADA data and cyber alerts for unified threat assessment across domains."
 platformMapping:
   connect: "Camera-agnostic integration with 99% of IP cameras via ONVIF. Multi-sensor ingestion spans radar, lidar, thermal, fiber-optic, and access control systems."
-  operate: "AI video analytics perform real-time behavioral analysis. Multi-sensor fusion requires verification before alerting — dramatically reducing false positives."
-  command: "Automated playbooks coordinate multi-step responses in seconds. Intelligent dispatch assigns the nearest qualified responder with GPS-based routing."
+  visibility: "Live security dashboards with real-time camera feeds, access control status, and sensor health monitoring. Unified alerting across all security domains with compliance reporting."
+  operations: "AI video analytics perform real-time behavioral analysis and anomaly detection. Multi-sensor fusion requires verification before alerting — dramatically reducing false positives."
+  intelligence: "Multi-site security orchestration with automated playbooks that coordinate responses in seconds. Intelligent dispatch assigns the nearest qualified responder with GPS-based routing across all locations."
 proofPoint:
   industry: "Energy — Transmission & Distribution"
   headline: "Substation & Pipeline Security"

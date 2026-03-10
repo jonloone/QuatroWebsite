@@ -1,11 +1,12 @@
 ---
 interface Props {
   connect: string
-  operate: string
-  command: string
+  visibility: string
+  operations: string
+  intelligence: string
 }
 
-const { connect, operate, command } = Astro.props
+const { connect, visibility, operations, intelligence } = Astro.props
 ---
 
 <div class="py-16 sm:py-24">
@@ -15,11 +16,11 @@ const { connect, operate, command } = Astro.props
         How the Platform Enables This
       </h2>
       <p class="mt-4 text-lg text-neutral-600">
-        Three integrated layers working together to deliver results.
+        Four integrated tiers working together to deliver results.
       </p>
     </div>
 
-    <div class="mt-12 grid gap-8 lg:grid-cols-3">
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <!-- Connect -->
       <div class="relative bg-neutral-50 p-8" style="border: 1px solid rgba(226,232,240,1);">
         <div class="mb-4 flex items-center gap-3">
@@ -39,18 +40,19 @@ const { connect, operate, command } = Astro.props
         </a>
       </div>
 
-      <!-- Operate -->
+      <!-- Visibility -->
       <div class="relative bg-neutral-50 p-8" style="border: 1px solid rgba(226,232,240,1);">
         <div class="mb-4 flex items-center gap-3">
           <div class="flex h-10 w-10 items-center justify-center bg-brand-500 text-white">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
-          <h3 class="font-display text-xl tracking-tight text-neutral-800">Operate</h3>
+          <h3 class="font-display text-xl tracking-tight text-neutral-800">Visibility</h3>
         </div>
-        <p class="text-sm leading-relaxed text-neutral-600">{operate}</p>
-        <a href="/platform/operate" class="mt-4 inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
+        <p class="text-sm leading-relaxed text-neutral-600">{visibility}</p>
+        <a href="/platform/visibility" class="mt-4 inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
           Learn more
           <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -58,7 +60,26 @@ const { connect, operate, command } = Astro.props
         </a>
       </div>
 
-      <!-- Command -->
+      <!-- Operations -->
+      <div class="relative bg-neutral-50 p-8" style="border: 1px solid rgba(226,232,240,1);">
+        <div class="mb-4 flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center bg-brand-500 text-white">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl tracking-tight text-neutral-800">Operations</h3>
+        </div>
+        <p class="text-sm leading-relaxed text-neutral-600">{operations}</p>
+        <a href="/platform/operations" class="mt-4 inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
+          Learn more
+          <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Intelligence -->
       <div class="relative bg-neutral-50 p-8" style="border: 1px solid rgba(226,232,240,1);">
         <div class="mb-4 flex items-center gap-3">
           <div class="flex h-10 w-10 items-center justify-center bg-brand-500 text-white">
@@ -66,10 +87,10 @@ const { connect, operate, command } = Astro.props
               <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
             </svg>
           </div>
-          <h3 class="font-display text-xl tracking-tight text-neutral-800">Command</h3>
+          <h3 class="font-display text-xl tracking-tight text-neutral-800">Intelligence</h3>
         </div>
-        <p class="text-sm leading-relaxed text-neutral-600">{command}</p>
-        <a href="/platform/command" class="mt-4 inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
+        <p class="text-sm leading-relaxed text-neutral-600">{intelligence}</p>
+        <a href="/platform/intelligence" class="mt-4 inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
           Learn more
           <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -84,11 +105,15 @@ const { connect, operate, command } = Astro.props
       <svg class="h-4 w-4 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
       </svg>
-      <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">AI Intelligence</span>
+      <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">Awareness</span>
       <svg class="h-4 w-4 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
       </svg>
-      <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">Coordinated Response</span>
+      <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">Prediction</span>
+      <svg class="h-4 w-4 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+      </svg>
+      <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">Orchestration</span>
     </div>
   </div>
 </div>

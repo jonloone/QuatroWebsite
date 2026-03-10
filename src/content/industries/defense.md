@@ -46,8 +46,9 @@ capabilities:
     description: "Every detection, alert, decision, and action logged with timestamp and chain-of-command context. Satisfies defense oversight and legal requirements."
 platformMapping:
   connect: "Multi-sensor ingestion for cameras, radar, lidar, fiber-optic, seismic, and RF sensors. STANAG support for NATO interoperability. Edge processing for air-gapped environments."
-  operate: "AI video analytics with real-time object detection, classification, and tracking. Multi-sensor fusion reduces false alarms by 80%. Anomaly detection across all monitored domains."
-  command: "Federated command across 12+ FOBs. Automated force protection playbooks. Role-based workspaces for commander, watch officer, analyst, and responder roles."
+  visibility: "Live situational dashboards with real-time sensor feeds, perimeter status, and force readiness monitoring. Role-based alerting with compliance audit trails across all installations."
+  operations: "AI video analytics with real-time object detection, classification, and tracking. Multi-sensor fusion reduces false alarms by 80%. Anomaly detection and root cause analysis across all monitored domains."
+  intelligence: "Federated command orchestration across 12+ FOBs with automated force protection playbooks. Multi-site coordination with role-based workspaces for commander, watch officer, analyst, and responder roles."
 proofPoint:
   industry: "Defense — Installation Security"
   headline: "15,000-Acre Installation Transformation"

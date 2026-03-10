@@ -64,8 +64,9 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   {platformMapping && (
     <PlatformMapSection
       connect={platformMapping.connect}
-      operate={platformMapping.operate}
-      command={platformMapping.command}
+      visibility={platformMapping.visibility}
+      operations={platformMapping.operations}
+      intelligence={platformMapping.intelligence}
     />
   )}
 

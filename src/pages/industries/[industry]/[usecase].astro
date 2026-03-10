@@ -8,20 +8,23 @@ import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
 import CtaBanner from '@/components/marketing/CtaBanner.astro'
 import PlatformMapSection from '@/components/marketing/PlatformMapSection.astro'
 import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
 
 export async function getStaticPaths() {
-  const solutions = await getCollection('solutions')
-  return solutions.map((solution) => ({
-    params: { slug: solution.id.replace(/\.md$/, '') },
-    props: { solution },
+  const useCases = await getCollection('use-cases')
+  return useCases.map((useCase) => ({
+    params: {
+      industry: useCase.data.industrySlug,
+      usecase: useCase.id.replace(/\.md$/, ''),
+    },
+    props: { useCase },
   }))
 }
 
-const { solution } = Astro.props
-const { Content } = await solution.render()
-const { title, tagline, description, hero, challenges, capabilities, stats, platformMapping, proofPoint, cta } = solution.data
+const { useCase } = Astro.props
+const { Content } = await useCase.render()
+const { title, industry, industrySlug, tagline, description, hero, challenges, capabilities, stats, platformMapping, proofPoint, cta } = useCase.data
 
-// Default CTA values
 const ctaPrimary = cta?.primary || { label: 'Schedule a Demo', href: '/contact/demo' }
 const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact/sales' }
 ---
@@ -30,13 +33,30 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   title={`${title} — ${tagline}`}
   description={description}
 >
+  <!-- Breadcrumb -->
+  <div class="bg-neutral-50 px-6 py-3" style="border-bottom: 1px solid rgba(226,232,240,1);">
+    <div class="mx-auto max-w-7xl">
+      <nav class="flex items-center gap-2 text-sm text-neutral-500">
+        <a href="/" class="hover:text-neutral-700">Home</a>
+        <span>/</span>
+        <a href="/industries" class="hover:text-neutral-700">Industries</a>
+        <span>/</span>
+        <a href={`/industries/${industrySlug}`} class="hover:text-neutral-700">{industry}</a>
+        <span>/</span>
+        <span class="text-neutral-800">{title}</span>
+      </nav>
+    </div>
+  </div>
+
   <Hero
     eyebrow={hero.eyebrow}
     title={hero.title}
     description={hero.description}
     primaryCta={hero.primaryCta}
     secondaryCta={hero.secondaryCta}
-  />
+  >
+    <Placeholder slot="demo" label={`${title} Dashboard`} class="h-full min-h-[400px]" />
+  </Hero>
 
   <StatStrip stats={stats} />
 
@@ -44,7 +64,7 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   <Section>
     <FeatureGrid
       title="The Challenge"
-      subtitle="Critical operational pain points this solution addresses."
+      subtitle="Critical operational pain points this use case addresses."
       features={challenges.map(c => ({ name: c.title, description: c.description }))}
       columns={challenges.length === 4 ? 4 : challenges.length === 3 ? 3 : 2}
     />
@@ -54,7 +74,7 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   <Section class="bg-neutral-800/2.5">
     <FeatureGrid
       title="Key Capabilities"
-      subtitle={`Everything you need for ${title.toLowerCase()}.`}
+      subtitle={`How Quatro delivers ${title.toLowerCase()}.`}
       features={capabilities.map(c => ({ name: c.name, description: c.description }))}
       columns={3}
     />
@@ -70,9 +90,16 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
     />
   )}
 
+  <!-- Rendered markdown content -->
+  <Section>
+    <div class="prose prose-neutral mx-auto max-w-3xl prose-headings:font-display prose-headings:text-neutral-800 prose-h2:text-2xl prose-h3:text-lg prose-p:text-neutral-600 prose-strong:text-neutral-800 prose-ul:text-neutral-600">
+      <Content />
+    </div>
+  </Section>
+
   <!-- Proof Point -->
   {proofPoint && (
-    <Section>
+    <Section class="bg-neutral-800/2.5">
       <div class="text-center mb-12">
         <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">Proven Results</h2>
         <p class="mt-4 text-lg text-neutral-600">Real outcomes from organizations like yours.</p>
@@ -88,6 +115,21 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
       </div>
     </Section>
   )}
+
+  <!-- Back to Industry Hub -->
+  <Section>
+    <div class="text-center">
+      <a
+        href={`/industries/${industrySlug}`}
+        class="inline-flex items-center gap-2 text-sm font-medium text-brand-600 hover:text-brand-700"
+      >
+        <svg class="h-4 w-4 rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+        Back to {industry} Solutions
+      </a>
+    </div>
+  </Section>
 
   <CtaBanner
     title={`Ready for ${title}?`}

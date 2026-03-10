@@ -46,8 +46,9 @@ capabilities:
     description: "Context-aware alerts with ML prioritization that reduce alarm fatigue by up to 80%."
 platformMapping:
   connect: "Universal data ingestion from 8,000+ connectors including OPC-UA, Modbus, MQTT, and legacy historians. No tag-based licensing means you can collect every data point without cost penalties."
-  operate: "AI analytics engine forecasts equipment degradation 2-4 weeks before failure using vibration, thermal, and multi-sensor correlation. Digital twin models enable what-if analysis."
-  command: "Automated maintenance playbooks trigger work orders, dispatch qualified technicians, and track resolution with complete audit trails."
+  visibility: "Live asset dashboards with real-time health monitoring, lifecycle tracking, and context-aware alerting. Unified asset management views with compliance reporting across all sites."
+  operations: "AI analytics engine forecasts equipment degradation 2-4 weeks before failure using vibration, thermal, and multi-sensor correlation. Anomaly detection and root cause analysis with digital twin what-if modeling."
+  intelligence: "Enterprise asset orchestration with automated maintenance playbooks that trigger work orders, dispatch qualified technicians, and coordinate multi-site resource scheduling with complete audit trails."
 proofPoint:
   industry: "Energy — Oil & Gas"
   headline: "Upstream Production Optimization"

@@ -46,8 +46,9 @@ capabilities:
     description: "Continuous NERC CIP, PHMSA, and EPA audit trails. Replace 40+ hours/month of manual documentation with real-time compliance reporting."
 platformMapping:
   connect: "Native connectivity for DNP3, IEC 61850, OPC-UA, and MQTT. Mirrors data from legacy SCADA and historians without tag-based licensing. 8,000+ connectors for any energy asset."
-  operate: "AI analytics for predictive maintenance, multi-method leak detection, and grid anomaly detection. Digital twin enables contingency analysis and DER hosting capacity studies."
-  command: "Automated storm playbooks coordinate 200+ substations. Intelligent dispatch assigns certified crews. NERC CIP and PHMSA audit trails generated automatically."
+  visibility: "Live energy dashboards with real-time grid, pipeline, and DER monitoring. Intelligent alerting with NERC CIP and PHMSA compliance reporting across all generation, transmission, and distribution assets."
+  operations: "AI analytics for predictive maintenance, multi-method leak detection, and grid anomaly detection. Digital twin enables contingency analysis, DER hosting capacity studies, and root cause identification."
+  intelligence: "Enterprise energy orchestration with automated storm playbooks coordinating 200+ substations. Intelligent dispatch assigns certified crews and schedules resources across multi-site operations."
 proofPoint:
   industry: "Energy — Integrated Utility"
   headline: "Storm Response & Grid Modernization"

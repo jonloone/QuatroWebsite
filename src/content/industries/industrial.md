@@ -46,8 +46,9 @@ capabilities:
     description: "Enterprise-wide visibility and coordinated response across multiple facilities. Standardize best practices and benchmark performance."
 platformMapping:
   connect: "8,000+ connectors for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss."
-  operate: "AI analytics for predictive maintenance, OEE tracking, and anomaly detection. Digital twin enables simulation and scenario planning. 80% fewer false alarms than threshold-based systems."
-  command: "Multi-plant coordination and automated incident response. Resource dispatch based on real-time demand, location, and skill requirements."
+  visibility: "Live plant dashboards with real-time OEE metrics, equipment health monitoring, and context-aware alerting. Unified asset management and compliance reporting across all production lines."
+  operations: "AI analytics for predictive maintenance, OEE optimization, and anomaly detection. Digital twin enables simulation and scenario planning. 80% fewer false alarms through root cause analysis."
+  intelligence: "Enterprise-wide multi-plant orchestration with automated incident response. Resource scheduling and dispatch based on real-time demand, location, and skill requirements across facilities."
 proofPoint:
   industry: "Industrial — Chemical Manufacturing"
   headline: "Multi-Plant Safety & Efficiency Transformation"

@@ -46,8 +46,9 @@ capabilities:
     description: "Complete chronological record for PHMSA, NEB, and API 1160 reporting with exportable audit packages."
 platformMapping:
   connect: "SCADA integration through OPC-UA, Modbus, and DNP3 with edge processing at remote stations. Ingests flow, pressure, temperature, and valve status from every metering point."
-  operate: "AI-powered multi-method leak detection with satellite corridor monitoring. Cross-domain correlation ties operational anomalies to security events automatically."
-  command: "Automated playbooks isolate segments, notify control rooms, dispatch field crews, and alert regulators — all within seconds of confirmed detection."
+  visibility: "Live pipeline dashboards with real-time flow, pressure, and valve status monitoring. Corridor surveillance views, regulatory compliance reporting, and context-aware alerting across all metering points."
+  operations: "AI-powered multi-method leak detection with satellite corridor monitoring. Predictive analytics and cross-domain correlation tie operational anomalies to security events automatically."
+  intelligence: "Enterprise-wide pipeline orchestration with automated playbooks that isolate segments, notify control rooms, dispatch field crews, and alert regulators — coordinating multi-site response within seconds of confirmed detection."
 proofPoint:
   industry: "Energy — Oil & Gas Midstream"
   headline: "Transmission Pipeline Transformation"

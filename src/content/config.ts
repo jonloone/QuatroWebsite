@@ -7,8 +7,9 @@ const ctaSchema = z.object({
 
 const platformMappingSchema = z.object({
   connect: z.string(),
-  operate: z.string(),
-  command: z.string(),
+  visibility: z.string(),
+  operations: z.string(),
+  intelligence: z.string(),
 })
 
 const proofPointSchema = z.object({
@@ -177,6 +178,50 @@ const caseStudiesCollection = defineCollection({
   }),
 })
 
+const useCasesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    industry: z.string(),
+    industrySlug: z.string(),
+    tagline: z.string(),
+    description: z.string(),
+    order: z.number(),
+    hero: z.object({
+      eyebrow: z.string(),
+      title: z.string(),
+      description: z.string(),
+      primaryCta: ctaSchema,
+      secondaryCta: ctaSchema.optional(),
+    }),
+    challenges: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+      })
+    ),
+    capabilities: z.array(
+      z.object({
+        name: z.string(),
+        description: z.string(),
+      })
+    ),
+    stats: z.array(
+      z.object({
+        value: z.string(),
+        label: z.string(),
+      })
+    ),
+    platformMapping: platformMappingSchema.optional(),
+    proofPoint: proofPointSchema.optional(),
+    cta: z.object({
+      primary: ctaSchema,
+      secondary: ctaSchema.optional(),
+      microcopy: z.string().optional(),
+    }).optional(),
+  }),
+})
+
 const teamCollection = defineCollection({
   type: 'data',
   schema: z.object({
@@ -193,6 +238,7 @@ export const collections = {
   products: productsCollection,
   industries: industriesCollection,
   solutions: solutionsCollection,
+  'use-cases': useCasesCollection,
   testimonials: testimonialsCollection,
   'case-studies': caseStudiesCollection,
   team: teamCollection,
