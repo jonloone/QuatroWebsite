@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
 import ProblemSolution from '@/components/marketing/ProblemSolution.astro'
@@ -8,6 +8,8 @@ import Section from '@/components/marketing/Section.astro'
 import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
 import ProductProgression from '@/components/marketing/ProductProgression.astro'
 import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import ProtocolShowcase from '@/components/marketing/ProtocolShowcase.astro'
+import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
 
 export async function getStaticPaths() {
   const products = await getCollection('products')
@@ -18,12 +20,12 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props
-const { Content } = await product.render()
-const { title, tagline, description, hero, heroImage, problems, solutions, stats, capabilities } = product.data
+const { title, tagline, description, hero, problems, solutions, stats, capabilities, protocolShowcase, deploymentOptions, proofPoint, deepDive } = product.data
+const brandedTitle = `Quatro ${title}`
 ---
 
 <MarketingLayout
-  title={`${title} — ${tagline}`}
+  title={`${brandedTitle} — ${tagline}`}
   description={description}
 >
   <Hero
@@ -33,15 +35,11 @@ const { title, tagline, description, hero, heroImage, problems, solutions, stats
     description={hero.description}
     primaryCta={hero.primaryCta}
     secondaryCta={hero.secondaryCta}
-  >
-    {heroImage && (
-      <img slot="demo" src={heroImage} alt={`${title} platform visualization`} class="h-full w-full object-contain" />
-    )}
-  </Hero>
+  />
 
   <ProblemSolution
     problemHeading={`The Challenge`}
-    solutionHeading={`The ${title} Solution`}
+    solutionHeading={`The ${brandedTitle} Solution`}
     problems={problems}
     solutions={solutions}
   />
@@ -51,34 +49,92 @@ const { title, tagline, description, hero, heroImage, problems, solutions, stats
   <Section divider>
     <FeatureGrid
       title="Core Capabilities"
-      subtitle={`Everything you need from ${title}.`}
+      subtitle={`Everything you need from ${brandedTitle}.`}
       features={capabilities.map(c => ({ name: c.name, description: c.description, icon: c.icon }))}
       columns={3}
     />
   </Section>
 
-  <!-- Rendered markdown content (protocols, deployment options, etc.) -->
-  <Section divider dark>
-    <div class="prose prose-invert mx-auto max-w-3xl prose-headings:font-display prose-headings:text-white prose-h2:text-2xl prose-h3:text-lg prose-p:text-neutral-300 prose-strong:text-white prose-ul:text-neutral-300">
-      <Content />
-    </div>
-  </Section>
+  {/* Protocol Showcase — Connect */}
+  {protocolShowcase && (
+    <Section divider dark>
+      <ProtocolShowcase
+        title={protocolShowcase.title}
+        subtitle={protocolShowcase.subtitle}
+        categories={protocolShowcase.categories}
+        footnote={protocolShowcase.footnote}
+        dark
+      />
+    </Section>
+  )}
+
+  {/* Deployment Options — Connect */}
+  {deploymentOptions && (
+    <Section divider>
+      <FeatureGrid
+        title={deploymentOptions.title}
+        subtitle={deploymentOptions.subtitle}
+        features={deploymentOptions.options.map(opt => ({
+          name: opt.name,
+          description: `${opt.description} Best for: ${opt.bestFor}`,
+          icon: opt.icon,
+        }))}
+        columns={4}
+      />
+    </Section>
+  )}
+
+  {/* Deep Dive — Operate & Command */}
+  {deepDive && (
+    <Section divider dark>
+      <FeatureGrid
+        dark
+        title={deepDive.title}
+        subtitle={deepDive.subtitle}
+        features={deepDive.sections.map(s => ({
+          name: s.title,
+          description: s.description,
+          icon: s.icon,
+        }))}
+        columns={3}
+      />
+    </Section>
+  )}
+
+  {/* Proof Point */}
+  {proofPoint && (
+    <Section divider>
+      <div class="mb-12 text-center">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">Proven Results</h2>
+        <p class="mt-4 text-lg text-neutral-600">Real outcomes from enterprise deployments.</p>
+      </div>
+      <div class="mx-auto max-w-3xl">
+        <ProofPointCard
+          industryLabel={proofPoint.industry}
+          headline={proofPoint.headline}
+          metrics={proofPoint.metrics}
+          narrative={proofPoint.narrative}
+          cta={{ label: 'Read the full case study', href: '/resources/case-studies' }}
+        />
+      </div>
+    </Section>
+  )}
 
   <Section divider>
     <div class="mb-12 text-center">
       <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
-        {title} Is Part of the Platform
+        {brandedTitle} Is Part of the Platform
       </h2>
       <p class="mt-4 text-lg text-neutral-600">
         Every Quatro product builds on the others.
       </p>
     </div>
-    <ProductProgression />
+    <ProductProgression current={product.id.replace(/\.md$/, '')} />
   </Section>
 
   <CtaBanner
-    title={`Ready to Get Started with ${title}?`}
-    description={`See how ${title} transforms your operations in a live walkthrough.`}
+    title={`Ready to Get Started with ${brandedTitle}?`}
+    description={`See how ${brandedTitle} transforms your operations in a live walkthrough.`}
     primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
     secondaryCta={{ label: 'Talk to an Architect', href: '/contact/sales' }}
   />

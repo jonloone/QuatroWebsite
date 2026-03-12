@@ -60,90 +60,94 @@ capabilities:
   - name: "Enterprise Security"
     description: "Zero-trust architecture with end-to-end encryption, role-based access control, audit logging, and compliance certifications. Meets the security requirements of critical infrastructure operators."
     icon: "shield"
+protocolShowcase:
+  title: "Protocol & Connector Showcase"
+  subtitle: "Out-of-the-box connectivity for every layer of the industrial stack."
+  categories:
+    - name: "Industrial Protocols"
+      icon: "link"
+      items:
+        - "OPC-UA / OPC-DA"
+        - "Modbus TCP/RTU"
+        - "EtherNet/IP"
+        - "PROFINET"
+        - "DNP3"
+        - "IEC 61850"
+    - name: "IoT & Messaging"
+      icon: "globe"
+      items:
+        - "MQTT / Sparkplug B"
+        - "AMQP"
+        - "Kafka"
+        - "CoAP"
+        - "HTTP/REST"
+        - "WebSocket"
+    - name: "Building & Infrastructure"
+      icon: "layers"
+      items:
+        - "BACnet"
+        - "KNX"
+        - "LonWorks"
+        - "DALI"
+        - "Modbus (HVAC)"
+        - "SNMP"
+    - name: "IT & Enterprise"
+      icon: "database"
+      items:
+        - "SQL / NoSQL Databases"
+        - "SAP Interfaces"
+        - "OSIsoft PI (Migration)"
+        - "Aveva Historian"
+        - "REST APIs"
+        - "File Ingest (CSV/XML/JSON)"
+    - name: "Edge & Gateway"
+      icon: "cpu"
+      items:
+        - "Siemens S7"
+        - "Allen-Bradley"
+        - "Mitsubishi MELSEC"
+        - "Schneider Electric"
+        - "ABB Controllers"
+        - "GE Fanuc"
+    - name: "Cloud & Analytics"
+      icon: "chart-bar"
+      items:
+        - "AWS IoT Core"
+        - "Azure IoT Hub"
+        - "Google Cloud IoT"
+        - "Snowflake"
+        - "Databricks"
+        - "Power BI Direct Query"
+  footnote: "And thousands more. Can't find your protocol? We'll build the connector."
+deploymentOptions:
+  title: "Deployment Options"
+  subtitle: "Deploy anywhere your operations run — cloud, on-premises, edge, or all three."
+  options:
+    - name: "Cloud"
+      description: "Fully managed SaaS deployment with automatic scaling, updates, and maintenance. Zero infrastructure overhead."
+      bestFor: "Teams wanting fastest time-to-value with minimal IT involvement."
+      icon: "globe"
+    - name: "On-Premises"
+      description: "Deploy within your data center or private cloud for complete data sovereignty and network isolation."
+      bestFor: "Regulated industries requiring data residency and air-gapped environments."
+      icon: "shield"
+    - name: "Edge"
+      description: "Lightweight deployment on edge hardware for local processing, buffering, and real-time response at remote sites."
+      bestFor: "Distributed operations with intermittent connectivity or latency-sensitive processes."
+      icon: "cpu"
+    - name: "Hybrid"
+      description: "Combine edge, on-premises, and cloud deployments into a unified architecture with seamless data flow between tiers."
+      bestFor: "Enterprise operations spanning multiple sites, regions, and network boundaries."
+      icon: "layers"
+proofPoint:
+  industry: "Oil & Gas"
+  headline: "Global Operator Replaces 40+ Legacy Databases With a Single Platform"
+  metrics:
+    - value: "200,000+"
+      label: "Data Points Unified"
+    - value: "60%"
+      label: "Less Integration Maintenance"
+    - value: "40+"
+      label: "Legacy Databases Consolidated"
+  narrative: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified Connect deployment. The result: real-time visibility across 200,000+ data points, 60% reduction in integration maintenance, and a foundation for predictive analytics that was impossible with fragmented legacy systems."
 ---
-
-## Protocol & Connector Showcase
-
-Connect provides out-of-the-box connectivity for every layer of the industrial stack:
-
-### Industrial Protocols
-- OPC-UA / OPC-DA
-- Modbus TCP/RTU
-- EtherNet/IP
-- PROFINET
-- DNP3
-- IEC 61850
-
-### IoT & Messaging
-- MQTT / Sparkplug B
-- AMQP
-- Kafka
-- CoAP
-- HTTP/REST
-- WebSocket
-
-### Building & Infrastructure
-- BACnet
-- KNX
-- LonWorks
-- DALI
-- Modbus (HVAC)
-- SNMP
-
-### IT & Enterprise
-- SQL / NoSQL Databases
-- SAP Interfaces
-- OSIsoft PI (Migration)
-- Aveva Historian
-- REST APIs
-- File Ingest (CSV/XML/JSON)
-
-### Edge & Gateway
-- Siemens S7
-- Allen-Bradley
-- Mitsubishi MELSEC
-- Schneider Electric
-- ABB Controllers
-- GE Fanuc
-
-### Cloud & Analytics
-- AWS IoT Core
-- Azure IoT Hub
-- Google Cloud IoT
-- Snowflake
-- Databricks
-- Power BI Direct Query
-
-And thousands more. Can't find your protocol? We'll build the connector.
-
-## Deployment Options
-
-Deploy anywhere your operations run — cloud, on-premises, edge, or all three.
-
-### Cloud
-Fully managed SaaS deployment with automatic scaling, updates, and maintenance. Zero infrastructure overhead.
-
-**Best for:** Teams wanting fastest time-to-value with minimal IT involvement.
-
-### On-Premises
-Deploy within your data center or private cloud for complete data sovereignty and network isolation.
-
-**Best for:** Regulated industries requiring data residency and air-gapped environments.
-
-### Edge
-Lightweight deployment on edge hardware for local processing, buffering, and real-time response at remote sites.
-
-**Best for:** Distributed operations with intermittent connectivity or latency-sensitive processes.
-
-### Hybrid
-Combine edge, on-premises, and cloud deployments into a unified architecture with seamless data flow between tiers.
-
-**Best for:** Enterprise operations spanning multiple sites, regions, and network boundaries.
-
-## Proof Point
-
-**Industry:** Oil & Gas
-
-**Headline:** Global Operator Replaces 40+ Legacy Databases With a Single Platform
-
-A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified Connect deployment. The result: real-time visibility across 200,000+ data points, 60% reduction in integration maintenance, and a foundation for predictive analytics that was impossible with fragmented legacy systems.

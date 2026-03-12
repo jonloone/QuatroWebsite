@@ -1,0 +1,129 @@
+---
+import Database from 'phosphor-astro/Database.astro'
+import ChartLine from 'phosphor-astro/ChartLine.astro'
+import Tag from 'phosphor-astro/Tag.astro'
+import Cpu from 'phosphor-astro/Cpu.astro'
+import Code from 'phosphor-astro/Code.astro'
+import ShieldCheck from 'phosphor-astro/ShieldCheck.astro'
+import Monitor from 'phosphor-astro/Monitor.astro'
+import Wrench from 'phosphor-astro/Wrench.astro'
+import Warning from 'phosphor-astro/Warning.astro'
+import Layout from 'phosphor-astro/Layout.astro'
+import Phone from 'phosphor-astro/Phone.astro'
+import MapTrifold from 'phosphor-astro/MapTrifold.astro'
+import TreeStructure from 'phosphor-astro/TreeStructure.astro'
+import Users from 'phosphor-astro/Users.astro'
+import Truck from 'phosphor-astro/Truck.astro'
+import Stack from 'phosphor-astro/Stack.astro'
+import Link from 'phosphor-astro/Link.astro'
+import Globe from 'phosphor-astro/Globe.astro'
+import Gear from 'phosphor-astro/Gear.astro'
+import ChartBar from 'phosphor-astro/ChartBar.astro'
+
+const iconMap: Record<string, any> = {
+  database: Database,
+  chart: ChartLine,
+  tag: Tag,
+  cpu: Cpu,
+  code: Code,
+  shield: ShieldCheck,
+  monitor: Monitor,
+  wrench: Wrench,
+  alert: Warning,
+  layout: Layout,
+  phone: Phone,
+  map: MapTrifold,
+  workflow: TreeStructure,
+  users: Users,
+  truck: Truck,
+  layers: Stack,
+  link: Link,
+  globe: Globe,
+  cog: Gear,
+  'chart-bar': ChartBar,
+}
+
+interface Category {
+  name: string
+  icon: string
+  items: string[]
+}
+
+interface Props {
+  title?: string
+  subtitle?: string
+  categories: Category[]
+  footnote?: string
+  dark?: boolean
+}
+
+const { title, subtitle, categories, footnote, dark = false } = Astro.props
+---
+
+<div>
+  {(title || subtitle) && (
+    <div class="mb-12 text-center">
+      {title && (
+        <h2 class:list={[
+          'font-display text-2xl font-bold tracking-tight sm:text-3xl',
+          dark ? 'text-white' : 'text-neutral-800'
+        ]}>{title}</h2>
+      )}
+      {subtitle && (
+        <p class:list={[
+          'mt-4 text-lg',
+          dark ? 'text-neutral-300' : 'text-neutral-600'
+        ]}>{subtitle}</p>
+      )}
+    </div>
+  )}
+
+  <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {categories.map((category) => {
+      const IconComponent = iconMap[category.icon]
+      return (
+        <div
+          class="rounded-lg p-6"
+          style={dark
+            ? 'border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);'
+            : 'border: 1px solid rgba(226,232,240,1);'
+          }
+        >
+          {IconComponent && (
+            <div class:list={[
+              'mb-3 flex h-10 w-10 items-center justify-center rounded-md',
+              dark ? 'bg-brand-500/20 text-brand-400' : 'bg-brand-50 text-brand-600'
+            ]}>
+              <IconComponent size={22} />
+            </div>
+          )}
+          <h3 class:list={[
+            'font-display text-base font-semibold',
+            dark ? 'text-white' : 'text-neutral-800'
+          ]}>{category.name}</h3>
+          <ul class="mt-3 space-y-1.5">
+            {category.items.map((item) => (
+              <li class:list={[
+                'flex items-center gap-2 text-sm',
+                dark ? 'text-neutral-400' : 'text-neutral-600'
+              ]}>
+                <span class:list={[
+                  'h-1 w-1 flex-shrink-0 rounded-full',
+                  dark ? 'bg-brand-400' : 'bg-brand-500'
+                ]} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    })}
+  </div>
+
+  {footnote && (
+    <p class:list={[
+      'mt-8 text-center text-sm italic',
+      dark ? 'text-neutral-400' : 'text-neutral-500'
+    ]}>{footnote}</p>
+  )}
+</div>

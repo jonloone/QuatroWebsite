@@ -60,20 +60,17 @@ capabilities:
   - name: "Mobile Access"
     description: "Full operational visibility from any device. Receive alerts, view dashboards, and investigate issues from the field."
     icon: "phone"
+deepDive:
+  title: "Operational Intelligence at Scale"
+  subtitle: "From monitoring dashboards to predictive maintenance, Operate gives you the tools to run smarter operations."
+  sections:
+    - title: "Built on Connect"
+      description: "Operate leverages the unified data foundation provided by Connect. Every data point from every source is available for monitoring, analysis, and prediction — no additional integration required."
+      icon: "link"
+    - title: "AI-Powered Insights"
+      description: "Machine learning models trained on your operational data surface insights that traditional analytics miss. Anomaly detection, predictive maintenance, and pattern recognition work continuously in the background."
+      icon: "chart"
+    - title: "Designed for Operators"
+      description: "Purpose-built for industrial operations, not adapted from IT monitoring tools. Role-based dashboards, industrial-grade reliability, and interfaces designed for control room environments."
+      icon: "monitor"
 ---
-
-## Operational Intelligence at Scale
-
-From monitoring dashboards to predictive maintenance, Operate gives you the tools to run smarter operations.
-
-### Built on Connect
-
-Operate leverages the unified data foundation provided by Connect. Every data point from every source is available for monitoring, analysis, and prediction — no additional integration required.
-
-### AI-Powered Insights
-
-Machine learning models trained on your operational data surface insights that traditional analytics miss. Anomaly detection, predictive maintenance, and pattern recognition work continuously in the background.
-
-### Designed for Operators
-
-Purpose-built for industrial operations, not adapted from IT monitoring tools. Role-based dashboards, industrial-grade reliability, and interfaces designed for control room environments.

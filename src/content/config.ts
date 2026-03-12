@@ -14,7 +14,7 @@ const platformMappingSchema = z.object({
 const proofPointSchema = z.object({
   industry: z.string(),
   headline: z.string(),
-  metrics: z.array(z.object({ value: z.string(), label: z.string() })),
+  metrics: z.array(z.object({ value: z.string(), label: z.string() })).optional(),
   narrative: z.string(),
 })
 
@@ -58,6 +58,36 @@ const productsCollection = defineCollection({
         icon: z.string(),
       })
     ),
+    protocolShowcase: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      categories: z.array(z.object({
+        name: z.string(),
+        icon: z.string(),
+        items: z.array(z.string()),
+      })),
+      footnote: z.string().optional(),
+    }).optional(),
+    deploymentOptions: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      options: z.array(z.object({
+        name: z.string(),
+        description: z.string(),
+        bestFor: z.string(),
+        icon: z.string(),
+      })),
+    }).optional(),
+    proofPoint: proofPointSchema.optional(),
+    deepDive: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      sections: z.array(z.object({
+        title: z.string(),
+        description: z.string(),
+        icon: z.string().optional(),
+      })),
+    }).optional(),
   }),
 })
 

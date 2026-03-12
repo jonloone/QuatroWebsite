@@ -60,20 +60,17 @@ capabilities:
   - name: "Cross-Domain Integration"
     description: "Unified command across IT, OT, physical security, and business systems. Break down silos between operational domains."
     icon: "layers"
+deepDive:
+  title: "Command & Control at Enterprise Scale"
+  subtitle: "From threat response to fleet coordination, Command gives you the tools to orchestrate decisive action."
+  sections:
+    - title: "The Complete Picture"
+      description: "Command brings together insights from Connect (data) and Operate (analytics) into a unified operational view. See everything happening across your operations in real-time."
+      icon: "layers"
+    - title: "Designed for Critical Operations"
+      description: "Built for the demands of 24/7 operations centers. Redundant architecture, offline capabilities, and interfaces designed for high-stakes decision-making."
+      icon: "shield"
+    - title: "Orchestration at Scale"
+      description: "Coordinate response across multiple sites, teams, and external stakeholders. Automated playbooks ensure consistent execution while keeping humans in control of critical decisions."
+      icon: "workflow"
 ---
-
-## Command & Control at Enterprise Scale
-
-From threat response to fleet coordination, Command gives you the tools to orchestrate decisive action.
-
-### The Complete Picture
-
-Command brings together insights from Connect (data) and Operate (analytics) into a unified operational view. See everything happening across your operations in real-time.
-
-### Designed for Critical Operations
-
-Built for the demands of 24/7 operations centers. Redundant architecture, offline capabilities, and interfaces designed for high-stakes decision-making.
-
-### Orchestration at Scale
-
-Coordinate response across multiple sites, teams, and external stakeholders. Automated playbooks ensure consistent execution while keeping humans in control of critical decisions.
