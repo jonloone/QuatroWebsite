@@ -1,6 +1,7 @@
 ---
 title: "Industrial"
 tagline: "Cross-Domain Plant Intelligence"
+heroImage: "/images/industry-industrial.png"
 description: "Unified operational intelligence that correlates production, maintenance, quality, and safety data — reducing downtime by 35% and eliminating the silos that blind your operations."
 order: 3
 hero:

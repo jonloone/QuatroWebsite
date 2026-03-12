@@ -31,6 +31,7 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   description={description}
 >
   <Hero
+    variant="dark"
     eyebrow={hero.eyebrow}
     title={hero.title}
     description={hero.description}
@@ -41,7 +42,7 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   <StatStrip stats={stats} />
 
   <!-- Challenges Grid -->
-  <Section>
+  <Section divider>
     <FeatureGrid
       title="The Challenge"
       subtitle="Critical operational pain points this solution addresses."
@@ -51,11 +52,12 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   </Section>
 
   <!-- Capabilities Grid -->
-  <Section class="bg-neutral-800/2.5">
+  <Section divider dark>
     <FeatureGrid
+      dark
       title="Key Capabilities"
       subtitle={`Everything you need for ${title.toLowerCase()}.`}
-      features={capabilities.map(c => ({ name: c.name, description: c.description }))}
+      features={capabilities.map(c => ({ name: c.name, description: c.description, icon: c.icon }))}
       columns={3}
     />
   </Section>
@@ -71,7 +73,7 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
 
   <!-- Proof Point -->
   {proofPoint && (
-    <Section>
+    <Section divider>
       <div class="text-center mb-12">
         <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">Proven Results</h2>
         <p class="mt-4 text-lg text-neutral-600">Real outcomes from organizations like yours.</p>

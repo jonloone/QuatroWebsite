@@ -1,6 +1,7 @@
 ---
 title: "Energy"
 tagline: "Overlay Modernization for Grid & Pipeline"
+heroImage: "/images/industry-energy.png"
 description: "Unified operational intelligence that overlays existing SCADA with AI analytics, DER integration, and cross-domain correlation — delivering modern capabilities in months, not years."
 order: 1
 hero:

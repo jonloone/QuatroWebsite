@@ -2,13 +2,26 @@
 import type { HTMLAttributes } from 'astro/types'
 import Container from '@/components/ui/Container.astro'
 
-interface Props extends HTMLAttributes<'section'> {}
+interface Props extends HTMLAttributes<'section'> {
+  divider?: boolean
+  dark?: boolean
+}
 
-const { class: className, ...props } = Astro.props
+const { divider = false, dark = false, class: className, ...props } = Astro.props
 ---
 
-<section class:list={['py-16 sm:py-24', className]} {...props}>
-  <Container>
+<section
+  class:list={['py-16 sm:py-24 relative overflow-hidden', className]}
+  style={divider ? 'border-top: 1px solid var(--color-structure)' : undefined}
+  {...props}
+>
+  {dark && (
+    <div class="absolute inset-0">
+      <img src="/images/bg.jpg" alt="" class="h-full w-full object-cover" />
+      <div class="absolute inset-0" style="background: rgba(0,0,0,0.8);"></div>
+    </div>
+  )}
+  <Container class={dark ? 'relative z-10' : ''}>
     <slot />
   </Container>
 </section>

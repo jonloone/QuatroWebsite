@@ -1,6 +1,7 @@
 ---
 title: "Connect"
 tagline: "Industrial Data Platform & Historian Alternative"
+heroImage: "/images/product-connect-card.png"
 description: "Connect bridges your OT infrastructure to modern analytics. 8,000+ connectors, high-performance time-series storage, open APIs, and no tag-based licensing."
 order: 1
 hero:

@@ -1,6 +1,7 @@
 ---
 title: "Infrastructure"
 tagline: "Unified Multi-Vendor Operations"
+heroImage: "/images/industry-infrastructure.png"
 description: "Replace 5+ siloed vendor tools with one unified platform. 80% fewer false alarms, 55% faster MTTR, and AI-driven intelligence across telecom, transportation, logistics, and facilities."
 order: 4
 hero:

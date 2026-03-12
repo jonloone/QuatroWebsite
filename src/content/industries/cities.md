@@ -1,6 +1,7 @@
 ---
 title: "Smart Cities"
 tagline: "Cross-Domain Urban Intelligence"
+heroImage: "/images/industry-cities.png"
 description: "Unified operational intelligence connecting mobility, public safety, infrastructure, and environmental domains — transforming departmental silos into coordinated city operations."
 order: 5
 hero:

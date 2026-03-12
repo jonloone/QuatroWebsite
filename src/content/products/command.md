@@ -1,6 +1,7 @@
 ---
 title: "Command"
 tagline: "Unified Operations Center & Orchestration"
+heroImage: "/images/feature-command-center.png"
 description: "Quatro Command delivers a unified operations center with cross-domain orchestration, threat response, and fleet coordination."
 order: 3
 hero:

@@ -1,6 +1,7 @@
 ---
 title: "Operate"
 tagline: "Real-Time Monitoring & Predictive Intelligence"
+heroImage: "/images/product-platform.png"
 description: "Quatro Operate delivers real-time monitoring, AI-powered analytics, and predictive intelligence across your entire operation."
 order: 2
 hero:

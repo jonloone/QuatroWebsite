@@ -1,6 +1,7 @@
 ---
 title: "Defense"
 tagline: "Mission-Ready Operational Intelligence"
+heroImage: "/images/induistry-defense.png"
 description: "Unified platform across physical, cyber, and operational domains — purpose-built for air-gapped environments with COTS deployment speed and defense-grade compliance."
 order: 2
 hero:

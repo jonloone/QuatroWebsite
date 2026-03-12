@@ -25,6 +25,7 @@ const productsCollection = defineCollection({
     tagline: z.string(),
     description: z.string(),
     order: z.number(),
+    heroImage: z.string().optional(),
     hero: z.object({
       eyebrow: z.string(),
       title: z.string(),
@@ -67,6 +68,7 @@ const industriesCollection = defineCollection({
     tagline: z.string(),
     description: z.string(),
     order: z.number(),
+    heroImage: z.string().optional(),
     hero: z.object({
       eyebrow: z.string(),
       title: z.string(),

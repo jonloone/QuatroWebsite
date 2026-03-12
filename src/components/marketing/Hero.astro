@@ -9,6 +9,7 @@ interface Props {
   primaryCta?: { label: string; href: string }
   microcopy?: string
   variant?: 'light' | 'dark'
+  backgroundImage?: string
   class?: string
 }
 
@@ -19,13 +20,14 @@ const {
   primaryCta,
   microcopy,
   variant = 'light',
+  backgroundImage,
   class: className,
 } = Astro.props
 
 const isLight = variant === 'light'
 ---
 
-<section data-hero-section class:list={['flex flex-col gap-16 px-2 pb-16', className]}>
+<section data-hero data-hero-section class:list={[className]}>
   {isLight ? (
     <!-- Light variant: neutral background, monospaced eyebrow -->
     <div class="relative overflow-hidden bg-neutral-100 min-h-[600px] lg:min-h-[700px]">
@@ -69,7 +71,7 @@ const isLight = variant === 'light'
     <!-- Dark variant: dark background with image overlay -->
     <div
       class="relative overflow-hidden bg-cover bg-center min-h-[600px] lg:min-h-[700px]"
-      style="background-image: url('/images/bg555.png')"
+      style={`background-image: url('${backgroundImage || '/images/bg555.png'}')`}
     >
       <!-- Dark overlay for text legibility -->
       <div class="absolute inset-0 bg-neutral-900/60"></div>
