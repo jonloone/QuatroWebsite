@@ -1,0 +1,24 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+---
+
+<MarketingLayout
+  lang="es"
+  title="Soporte — Obtenga Ayuda con Quatro"
+  description="Obtenga ayuda con su despliegue actual de Quatro."
+>
+  <Hero
+    eyebrow="Soporte"
+    title="Estamos para Ayudarle"
+    description="Obtenga asistencia con su despliegue actual de Quatro. Nuestro equipo de soporte está disponible 24/7 para clientes empresariales."
+  />
+
+  <Section>
+    <div class="mx-auto max-w-2xl">
+      <Placeholder label="Support Request Form" class="min-h-[400px]" />
+    </div>
+  </Section>
+</MarketingLayout>

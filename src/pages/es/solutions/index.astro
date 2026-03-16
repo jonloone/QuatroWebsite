@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+
+const solutions = (await getCollection('solutions-es')).sort((a, b) => a.data.order - b.data.order)
+---
+
+<MarketingLayout
+  lang="es"
+  title="Soluciones — Casos de Uso de Inteligencia Industrial"
+  description="Quatro ofrece soluciones para monitoreo de activos, seguridad de ductos, inteligencia operativa y más."
+>
+  <Hero
+    variant="dark"
+    eyebrow="Soluciones"
+    title="Soluciones para Cada Desafío Operativo"
+    description="Desde monitoreo de activos hasta logística de flotas, Quatro ofrece inteligencia industrial para su caso de uso específico."
+    primaryCta={{ label: 'Agendar una Demo', href: '/es/contact/demo' }}
+  />
+
+  <Section>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {solutions.map((solution) => (
+        <a
+          href={`/es/solutions/${solution.id.replace(/\.md$/, '')}`}
+          class="group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-md"
+        >
+          <h3 class="font-display text-lg font-bold text-neutral-800 group-hover:text-brand-600">
+            {solution.data.title}
+          </h3>
+          <p class="mt-2 flex-1 text-sm text-neutral-600">{solution.data.description}</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {solution.data.stats.slice(0, 2).map((stat) => (
+              <span class="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600">
+                {stat.value} {stat.label}
+              </span>
+            ))}
+          </div>
+          <span class="mt-4 inline-block font-display text-sm font-semibold text-brand-500 group-hover:underline">
+            Conocer más &rarr;
+          </span>
+        </a>
+      ))}
+    </div>
+  </Section>
+
+  <CtaBanner
+    title="¿Listo para Resolver su Desafío?"
+    description="Descubra cómo Quatro responde a sus necesidades operativas específicas."
+    primaryCta={{ label: 'Agendar una Demo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hablar con Ventas', href: '/es/contact/sales' }}
+  />
+</MarketingLayout>

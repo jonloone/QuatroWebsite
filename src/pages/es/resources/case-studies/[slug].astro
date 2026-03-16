@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import StatStrip from '@/components/marketing/StatStrip.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+
+export async function getStaticPaths() {
+  const caseStudies = await getCollection('case-studies-es')
+  return caseStudies.map((caseStudy) => ({
+    params: { slug: caseStudy.id.replace(/\.md$/, '') },
+    props: { caseStudy },
+  }))
+}
+
+const { caseStudy } = Astro.props
+const { Content } = await caseStudy.render()
+const { title, industryLabel, headline, excerpt, stats } = caseStudy.data
+---
+
+<MarketingLayout
+  lang="es"
+  title={`${title} — Caso de Éxito`}
+  description={excerpt}
+>
+  <Hero
+    eyebrow={industryLabel}
+    title={headline}
+    description={excerpt}
+    primaryCta={{ label: 'Agendar una Demo', href: '/es/contact/demo' }}
+  />
+
+  {stats && stats.length > 0 && <StatStrip stats={stats} />}
+
+  <Section>
+    <div class="prose prose-neutral mx-auto max-w-3xl prose-headings:font-display prose-headings:text-neutral-800 prose-h2:text-2xl prose-h3:text-lg prose-p:text-neutral-600 prose-strong:text-neutral-800 prose-ul:text-neutral-600 prose-li:text-neutral-600">
+      <Content />
+    </div>
+  </Section>
+
+  <CtaBanner
+    title="¿Listo para Resultados Similares?"
+    description="Descubra cómo Quatro puede transformar sus operaciones."
+    primaryCta={{ label: 'Agendar una Demo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hablar con Ventas', href: '/es/contact/sales' }}
+  />
+</MarketingLayout>

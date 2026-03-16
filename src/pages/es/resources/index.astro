@@ -1,0 +1,38 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+---
+
+<MarketingLayout
+  lang="es"
+  title="Recursos — Casos de Éxito, White Papers y Documentación"
+  description="Explore los recursos de Quatro: casos de éxito, white papers, artículos y documentación."
+>
+  <Hero
+    eyebrow="Recursos"
+    title="Descubra Cómo los Líderes Operativos Tienen Éxito"
+    description="Casos de éxito, white papers, artículos y documentación para aprovechar al máximo Quatro."
+  />
+
+  <Section>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <a href="/es/resources/case-studies" class="rounded-xl border border-neutral-200 bg-white p-6 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Casos de Éxito</h3>
+        <p class="mt-2 text-sm text-neutral-600">Historias de éxito reales de clientes de Quatro.</p>
+      </a>
+      <a href="/es/resources/white-papers" class="rounded-xl border border-neutral-200 bg-white p-6 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">White Papers</h3>
+        <p class="mt-2 text-sm text-neutral-600">Guías técnicas y estratégicas en profundidad.</p>
+      </a>
+      <a href="/es/resources/insights" class="rounded-xl border border-neutral-200 bg-white p-6 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Artículos</h3>
+        <p class="mt-2 text-sm text-neutral-600">Perspectivas de la industria y liderazgo de pensamiento.</p>
+      </a>
+      <a href="/es/resources/documentation" class="rounded-xl border border-neutral-200 bg-white p-6 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Documentación</h3>
+        <p class="mt-2 text-sm text-neutral-600">Documentación técnica y referencias de API.</p>
+      </a>
+    </div>
+  </Section>
+</MarketingLayout>

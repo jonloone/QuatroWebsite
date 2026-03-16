@@ -1,0 +1,34 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+---
+
+<MarketingLayout
+  lang="es"
+  title="Contacto — Comuníquese con Quatro"
+  description="Comuníquese con Quatro para agendar una demo, hablar con ventas u obtener soporte."
+>
+  <Hero
+    eyebrow="Contáctenos"
+    title="Hablemos de sus Operaciones"
+    description="Ya sea que esté listo para transformar sus operaciones o apenas explorando opciones, estamos aquí para ayudarle."
+  />
+
+  <Section>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <a href="/es/contact/demo" class="rounded-xl border border-neutral-200 bg-white p-8 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Agendar una Demo</h3>
+        <p class="mt-2 text-sm text-neutral-600">Vea Quatro en acción con un recorrido personalizado de la plataforma.</p>
+      </a>
+      <a href="/es/contact/sales" class="rounded-xl border border-neutral-200 bg-white p-8 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Hablar con Ventas</h3>
+        <p class="mt-2 text-sm text-neutral-600">Converse sobre precios, opciones de despliegue y requerimientos empresariales.</p>
+      </a>
+      <a href="/es/contact/support" class="rounded-xl border border-neutral-200 bg-white p-8 hover:border-brand-300 hover:shadow-md">
+        <h3 class="font-display text-lg font-bold text-neutral-800">Obtener Soporte</h3>
+        <p class="mt-2 text-sm text-neutral-600">Obtenga ayuda con su despliegue actual de Quatro.</p>
+      </a>
+    </div>
+  </Section>
+</MarketingLayout>

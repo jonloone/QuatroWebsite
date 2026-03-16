@@ -1,0 +1,101 @@
+---
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import StatStrip from '@/components/marketing/StatStrip.astro'
+import Section from '@/components/marketing/Section.astro'
+import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import PlatformMapSection from '@/components/marketing/PlatformMapSection.astro'
+import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
+
+export async function getStaticPaths() {
+  const solutions = await getCollection('solutions-es')
+  return solutions.map((solution) => ({
+    params: { slug: solution.id.replace(/\.md$/, '') },
+    props: { solution },
+  }))
+}
+
+const { solution } = Astro.props
+const { Content } = await solution.render()
+const { title, tagline, description, hero, challenges, capabilities, stats, platformMapping, proofPoint, cta } = solution.data
+
+// Default CTA values
+const ctaPrimary = cta?.primary || { label: 'Agendar una Demo', href: '/es/contact/demo' }
+const ctaSecondary = cta?.secondary || { label: 'Hablar con Ventas', href: '/es/contact/sales' }
+---
+
+<MarketingLayout
+  lang="es"
+  title={`${title} — ${tagline}`}
+  description={description}
+>
+  <Hero
+    variant="dark"
+    eyebrow={hero.eyebrow}
+    title={hero.title}
+    description={hero.description}
+    primaryCta={hero.primaryCta}
+    secondaryCta={hero.secondaryCta}
+  />
+
+  <StatStrip stats={stats} />
+
+  <!-- Challenges Grid -->
+  <Section divider>
+    <FeatureGrid
+      title="El Desafío"
+      subtitle="Puntos críticos operativos que esta solución aborda."
+      features={challenges.map(c => ({ name: c.title, description: c.description }))}
+      columns={challenges.length === 4 ? 4 : challenges.length === 3 ? 3 : 2}
+    />
+  </Section>
+
+  <!-- Capabilities Grid -->
+  <Section divider dark>
+    <FeatureGrid
+      dark
+      title="Capacidades Clave"
+      subtitle={`Todo lo que necesita para ${title.toLowerCase()}.`}
+      features={capabilities.map(c => ({ name: c.name, description: c.description, icon: c.icon }))}
+      columns={3}
+    />
+  </Section>
+
+  <!-- Platform Mapping -->
+  {platformMapping && (
+    <PlatformMapSection
+      connect={platformMapping.connect}
+      operate={platformMapping.operate}
+      command={platformMapping.command}
+    />
+  )}
+
+  <!-- Proof Point -->
+  {proofPoint && (
+    <Section divider>
+      <div class="text-center mb-12">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">Resultados Comprobados</h2>
+        <p class="mt-4 text-lg text-neutral-600">Resultados reales de organizaciones como la suya.</p>
+      </div>
+      <div class="mx-auto max-w-3xl">
+        <ProofPointCard
+          industryLabel={proofPoint.industry}
+          headline={proofPoint.headline}
+          metrics={proofPoint.metrics}
+          narrative={proofPoint.narrative}
+          cta={{ label: 'Leer el caso de éxito completo', href: '/es/resources/case-studies' }}
+        />
+      </div>
+    </Section>
+  )}
+
+  <CtaBanner
+    title={`¿Listo para ${title}?`}
+    description={`Descubra cómo Quatro ofrece ${title.toLowerCase()} para sus operaciones.`}
+    primaryCta={ctaPrimary}
+    secondaryCta={ctaSecondary}
+    microcopy={cta?.microcopy}
+  />
+</MarketingLayout>

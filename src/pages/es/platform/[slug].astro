@@ -1,0 +1,142 @@
+---
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import ProblemSolution from '@/components/marketing/ProblemSolution.astro'
+import StatStrip from '@/components/marketing/StatStrip.astro'
+import Section from '@/components/marketing/Section.astro'
+import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
+import ProductProgression from '@/components/marketing/ProductProgression.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import ProtocolShowcase from '@/components/marketing/ProtocolShowcase.astro'
+import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
+
+export async function getStaticPaths() {
+  const products = await getCollection('products-es')
+  return products.map((product) => ({
+    params: { slug: product.id.replace(/\.md$/, '') },
+    props: { product },
+  }))
+}
+
+const { product } = Astro.props
+const { title, tagline, description, hero, problems, solutions, stats, capabilities, protocolShowcase, deploymentOptions, proofPoint, deepDive } = product.data
+const brandedTitle = `Quatro ${title}`
+---
+
+<MarketingLayout
+  lang="es"
+  title={`${brandedTitle} — ${tagline}`}
+  description={description}
+>
+  <Hero
+    variant="dark"
+    eyebrow={hero.eyebrow}
+    title={hero.title}
+    description={hero.description}
+    primaryCta={hero.primaryCta}
+    secondaryCta={hero.secondaryCta}
+  />
+
+  <ProblemSolution
+    problemHeading={`El Desafío`}
+    solutionHeading={`La Solución ${brandedTitle}`}
+    problems={problems}
+    solutions={solutions}
+  />
+
+  <StatStrip stats={stats} />
+
+  <Section divider>
+    <FeatureGrid
+      title="Capacidades Principales"
+      subtitle={`Todo lo que necesita de ${brandedTitle}.`}
+      features={capabilities.map(c => ({ name: c.name, description: c.description, icon: c.icon }))}
+      columns={3}
+    />
+  </Section>
+
+  {/* Protocol Showcase — Connect */}
+  {protocolShowcase && (
+    <Section divider dark>
+      <ProtocolShowcase
+        title={protocolShowcase.title}
+        subtitle={protocolShowcase.subtitle}
+        categories={protocolShowcase.categories}
+        footnote={protocolShowcase.footnote}
+        dark
+      />
+    </Section>
+  )}
+
+  {/* Deployment Options — Connect */}
+  {deploymentOptions && (
+    <Section divider>
+      <FeatureGrid
+        title={deploymentOptions.title}
+        subtitle={deploymentOptions.subtitle}
+        features={deploymentOptions.options.map(opt => ({
+          name: opt.name,
+          description: `${opt.description} Best for: ${opt.bestFor}`,
+          icon: opt.icon,
+        }))}
+        columns={4}
+      />
+    </Section>
+  )}
+
+  {/* Deep Dive — Operate & Command */}
+  {deepDive && (
+    <Section divider dark>
+      <FeatureGrid
+        dark
+        title={deepDive.title}
+        subtitle={deepDive.subtitle}
+        features={deepDive.sections.map(s => ({
+          name: s.title,
+          description: s.description,
+          icon: s.icon,
+        }))}
+        columns={3}
+      />
+    </Section>
+  )}
+
+  {/* Proof Point */}
+  {proofPoint && (
+    <Section divider>
+      <div class="mb-12 text-center">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">Resultados Comprobados</h2>
+        <p class="mt-4 text-lg text-neutral-600">Resultados reales de implementaciones empresariales.</p>
+      </div>
+      <div class="mx-auto max-w-3xl">
+        <ProofPointCard
+          industryLabel={proofPoint.industry}
+          headline={proofPoint.headline}
+          metrics={proofPoint.metrics}
+          narrative={proofPoint.narrative}
+          cta={{ label: 'Leer el caso de éxito completo', href: '/es/resources/case-studies' }}
+        />
+      </div>
+    </Section>
+  )}
+
+  <Section divider>
+    <div class="mb-12 text-center">
+      <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
+        {brandedTitle} es Parte de la Plataforma
+      </h2>
+      <p class="mt-4 text-lg text-neutral-600">
+        Cada producto de Quatro se integra con los demás.
+      </p>
+    </div>
+    <ProductProgression current={product.id.replace(/\.md$/, '')} />
+  </Section>
+
+  <CtaBanner
+    title={`¿Listo para Comenzar con ${brandedTitle}?`}
+    description={`Descubra cómo ${brandedTitle} transforma sus operaciones en un recorrido en vivo.`}
+    primaryCta={{ label: 'Agendar una Demo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hablar con un Arquitecto', href: '/es/contact/sales' }}
+  />
+</MarketingLayout>

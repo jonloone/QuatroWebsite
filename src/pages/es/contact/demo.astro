@@ -1,0 +1,24 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+---
+
+<MarketingLayout
+  lang="es"
+  title="Agendar una Demo — Vea Quatro en Acción"
+  description="Agende una demo personalizada para descubrir cómo Quatro puede transformar sus operaciones."
+>
+  <Hero
+    eyebrow="Solicitar Demo"
+    title="Vea Quatro en Acción"
+    description="Reciba un recorrido personalizado de la plataforma, adaptado a su industria y casos de uso. Sin presión, sin demos genéricas."
+  />
+
+  <Section>
+    <div class="mx-auto max-w-2xl">
+      <Placeholder label="Demo Request Form" class="min-h-[400px]" />
+    </div>
+  </Section>
+</MarketingLayout>

@@ -1,0 +1,22 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+---
+
+<MarketingLayout
+  lang="es"
+  title="White Papers — Guías Técnicas y Estratégicas"
+  description="Guías técnicas y estratégicas en profundidad para líderes de operaciones industriales."
+>
+  <Hero
+    eyebrow="White Papers"
+    title="Guías Técnicas en Profundidad"
+    description="Análisis detallados sobre arquitectura de inteligencia industrial, estrategias de despliegue y mejores prácticas."
+  />
+
+  <Section>
+    <Placeholder label="White Papers Grid" class="min-h-[600px]" />
+  </Section>
+</MarketingLayout>

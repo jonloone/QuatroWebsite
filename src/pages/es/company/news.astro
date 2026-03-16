@@ -1,0 +1,22 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import Placeholder from '@/components/marketing/Placeholder.astro'
+---
+
+<MarketingLayout
+  lang="es"
+  title="Noticias — Últimas Novedades y Anuncios"
+  description="Manténgase al día con las últimas noticias y anuncios de Quatro."
+>
+  <Hero
+    eyebrow="Noticias"
+    title="Últimas Novedades y Anuncios"
+    description="Manténgase al día con lanzamientos de productos, alianzas y novedades de la empresa."
+  />
+
+  <Section>
+    <Placeholder label="News Articles Grid" class="min-h-[600px]" />
+  </Section>
+</MarketingLayout>

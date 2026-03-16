@@ -228,4 +228,9 @@ export const collections = {
   testimonials: testimonialsCollection,
   'case-studies': caseStudiesCollection,
   team: teamCollection,
+  // Spanish collections use the same schemas as their English counterparts
+  'products-es': productsCollection,
+  'solutions-es': solutionsCollection,
+  'industries-es': industriesCollection,
+  'case-studies-es': caseStudiesCollection,
 }
