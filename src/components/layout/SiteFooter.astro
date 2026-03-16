@@ -1,9 +1,18 @@
 ---
+import type { Locale } from '@/lib/i18n'
+import { t, localizeHref } from '@/lib/i18n'
 import QuatroMark from '@/components/QuatroMark.astro'
-import { footerNavigation } from '@/lib/navigation'
+import { getFooterNavigation } from '@/lib/navigation'
 
-const columns = Object.values(footerNavigation)
+interface Props {
+  lang?: Locale
+}
+
+const { lang = 'en' } = Astro.props
+const footerNav = getFooterNavigation(lang)
+const columns = Object.values(footerNav)
 const currentYear = new Date().getFullYear()
+const homeHref = lang === 'es' ? '/es/' : '/'
 ---
 
 <footer class="bg-neutral-950">
@@ -11,14 +20,14 @@ const currentYear = new Date().getFullYear()
     <div class="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col gap-16">
       <!-- Logo and tagline -->
       <div>
-        <a href="/" class="flex items-center gap-3 mb-4" aria-label="Quatro home">
+        <a href={homeHref} class="flex items-center gap-3 mb-4" aria-label={t('nav.home', lang)}>
           <div class="w-7 h-7 flex items-center justify-center" style="background-color: rgba(255,255,255,0.1);">
             <QuatroMark variant="white" class="w-4 h-4" />
           </div>
           <span class="font-display text-sm font-bold text-white">Quatro</span>
         </a>
-        <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40">
-          Industrial intelligence<br />for critical operations.
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 whitespace-pre-line">
+          {t('footer.tagline', lang)}
         </p>
       </div>
 
@@ -43,12 +52,12 @@ const currentYear = new Date().getFullYear()
       <!-- Copyright -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
         <p class="font-mono text-[10px] uppercase tracking-[0.05em] text-white/30">
-          &copy; {currentYear} Quatro. All rights reserved.
+          &copy; {currentYear} Quatro. {t('footer.copyright', lang)}
         </p>
         <div class="flex items-center gap-6">
-          <a href="/legal/privacy" class="font-mono text-[10px] uppercase tracking-[0.05em] text-white/30 hover:text-white/60 transition-colors duration-150">Privacy</a>
-          <a href="/legal/terms" class="font-mono text-[10px] uppercase tracking-[0.05em] text-white/30 hover:text-white/60 transition-colors duration-150">Terms</a>
-          <a href="/legal/security" class="font-mono text-[10px] uppercase tracking-[0.05em] text-white/30 hover:text-white/60 transition-colors duration-150">Security</a>
+          <a href={localizeHref('/legal/privacy', lang)} class="font-mono text-[10px] uppercase tracking-[0.05em] text-white/30 hover:text-white/60 transition-colors duration-150">{t('footer.privacy', lang)}</a>
+          <a href={localizeHref('/legal/terms', lang)} class="font-mono text-[10px] uppercase tracking-[0.05em] text-white/30 hover:text-white/60 transition-colors duration-150">{t('footer.terms', lang)}</a>
+          <a href={localizeHref('/legal/security', lang)} class="font-mono text-[10px] uppercase tracking-[0.05em] text-white/30 hover:text-white/60 transition-colors duration-150">{t('footer.security', lang)}</a>
         </div>
       </div>
     </div>

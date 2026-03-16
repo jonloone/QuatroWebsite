@@ -1,1 +1,2 @@
-
+# Language-based redirect: Spanish browsers → /es/
+/ /es/ 302 Language=es

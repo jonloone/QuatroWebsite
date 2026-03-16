@@ -7,14 +7,15 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
 <BaseLayout
   title="Quatro — Plataforma de Inteligencia Industrial"
   description="Quatro unifica OT e IT en una sola plataforma de inteligencia — diseñada para la infraestructura y la realidad operativa de América Latina."
+  lang="es"
 >
 
-  <SiteHeader />
+  <SiteHeader lang="es" />
 
   <!-- ═══════════════════════════════════════════════════════════════
        1. HERO — Full-screen background image
        ═══════════════════════════════════════════════════════════════ -->
-  <section data-hero class="relative min-h-[600px] lg:min-h-[700px] flex items-end overflow-hidden px-6 pb-20 lg:pb-28">
+  <section data-hero class="relative min-h-[85vh] lg:min-h-[90vh] flex items-end overflow-hidden px-6 pb-20 lg:pb-28">
     <!-- Background image -->
     <div class="absolute inset-0">
       <img src="/images/hero-bg.png" alt="" class="h-full w-full object-cover" />
@@ -53,14 +54,14 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
       <!-- CTAs -->
       <div class="mt-10 flex flex-wrap items-center gap-4">
         <a
-          href="/contact/demo"
+          href="/es/contact/demo"
           class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear"
           style="background-color: var(--color-forest);"
         >
           Hablemos
         </a>
         <a
-          href="/platform"
+          href="/es/platform"
           class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear hover:bg-white/10"
           style="border: 1px solid rgba(255,255,255,0.2);"
         >
@@ -167,7 +168,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
         <!-- Main content -->
         <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
           <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
-            Sus<br />Datos<br />Control
+            Sus<br />Datos<br />Su Control
           </h2>
           <!-- Card grid -->
           <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid var(--color-structure); border-left: 1px solid var(--color-structure);">
@@ -208,7 +209,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
       </h2>
 
       <!-- Connect -->
-      <a href="/platform/connect" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
+      <a href="/es/platform/connect" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
         <div>
           <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Integren sus datos. Más de 8,000 conectores industriales. Conectividad universal para su infraestructura.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.1</span>
@@ -219,7 +220,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
       </a>
 
       <!-- Operate -->
-      <a href="/platform/operate" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
+      <a href="/es/platform/operate" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
         <div>
           <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Operen con inteligencia. Detección de anomalías con IA, mantenimiento predictivo y optimización de procesos.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.2</span>
@@ -230,7 +231,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
       </a>
 
       <!-- Command -->
-      <a href="/platform/command" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
+      <a href="/es/platform/command" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
         <div>
           <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Vean todo. Respondan como un solo equipo. Centro de comando unificado para operaciones distribuidas.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.3</span>
@@ -301,56 +302,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       7. HOW IT WORKS — Pattern A (Grid Section)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: var(--color-structure);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Proceso</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
-            Conectar<br />Configurar<br />Operar
-          </h2>
-          <!-- Card grid -->
-          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid var(--color-structure); border-left: 1px solid var(--color-structure);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Conectar — Semana 1–2</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Mapeo de infraestructura, integración con fuentes de datos existentes y despliegue de conectores en sitio.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Configurar — Semana 3–4</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Configuración de analítica, dashboards personalizados y calibración de alertas con su equipo de operaciones.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Operar — Semana 5+</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Plataforma en producción con soporte continuo. Expansión progresiva a más sitios y casos de uso.</p>
-            </div>
-          </div>
-
-          <!-- CTA -->
-          <div class="mt-12">
-            <a
-              href="/contact/demo"
-              class="inline-block font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear"
-              style="background-color: var(--color-forest);"
-            >
-              Hablemos sobre su operación
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       8. INDUSTRIES — Pattern B (Palantir Vertical List)
+       7. INDUSTRIES — Pattern B (Palantir Vertical List)
        ═══════════════════════════════════════════════════════════════ -->
   <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-6xl">
@@ -365,7 +317,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
       </h2>
 
       <!-- Petróleo y Gas -->
-      <a href="/industries/energy" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
+      <a href="/es/industries/energy" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
         <div>
           <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Monitoreo de ductos, optimización de producción y gestión de integridad — desde el pozo hasta la refinería.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.1</span>
@@ -387,7 +339,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
       </a>
 
       <!-- Energía y Servicios Públicos -->
-      <a href="/industries/infrastructure" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
+      <a href="/es/industries/infrastructure" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
         <div>
           <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Gestión de red eléctrica, integración de renovables y distribución inteligente.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.3</span>
@@ -398,7 +350,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
       </a>
 
       <!-- Servicios Municipales -->
-      <a href="/industries/cities" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
+      <a href="/es/industries/cities" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
         <div>
           <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Transporte público, alumbrado inteligente y gestión de servicios urbanos.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.4</span>
@@ -408,86 +360,21 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
         </div>
       </a>
 
-      <!-- Telecomunicaciones -->
+      <!-- Telecom -->
       <a href="#" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
         <div>
           <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Monitoreo de torres y antenas. Gestión de energía en sitios remotos.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.5</span>
         </div>
         <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Telecomunicaciones</span>
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Telecom</span>
         </div>
       </a>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       9. CASE STUDIES — Pattern A (Grid Section)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: var(--color-structure);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Resultados</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
-            Operaciones<br />Resultados<br />Reales
-          </h2>
-          <!-- Card grid -->
-          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid var(--color-structure); border-left: 1px solid var(--color-structure);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">[Petróleo y Gas]</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">[Descripción breve del desafío operativo, la solución implementada y los resultados medibles obtenidos.]</p>
-              <a href="#" class="inline-block mt-4 font-mono text-xs uppercase tracking-[0.05em] transition-colors duration-300 ease-linear hover:underline" style="color: var(--color-forest);">
-                Leer caso &rarr;
-              </a>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">[Minería]</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">[Descripción breve del desafío operativo, la solución implementada y los resultados medibles obtenidos.]</p>
-              <a href="#" class="inline-block mt-4 font-mono text-xs uppercase tracking-[0.05em] transition-colors duration-300 ease-linear hover:underline" style="color: var(--color-forest);">
-                Leer caso &rarr;
-              </a>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">[Energía]</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">[Descripción breve del desafío operativo, la solución implementada y los resultados medibles obtenidos.]</p>
-              <a href="#" class="inline-block mt-4 font-mono text-xs uppercase tracking-[0.05em] transition-colors duration-300 ease-linear hover:underline" style="color: var(--color-forest);">
-                Leer caso &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       10. TESTIMONIAL — Placeholder
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-3xl text-center">
-      <blockquote>
-        <p class="font-sans text-2xl lg:text-3xl font-light leading-relaxed" style="color: var(--color-forest);">
-          &ldquo;[Testimonio del cliente sobre cómo Quatro transformó su operación — resultados específicos, tiempos de implementación, impacto medible.]&rdquo;
-        </p>
-        <footer class="mt-8">
-          <span class="font-display text-sm font-bold" style="color: var(--color-neutral-800);">[Nombre], [Cargo]</span>
-          <br />
-          <span class="font-mono text-xs uppercase tracking-[0.05em]" style="color: var(--color-neutral-400);">[Empresa] — [País]</span>
-        </footer>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       11. FINAL CTA — Forest with dot grid
+       8. FINAL CTA — Forest with dot grid
        ═══════════════════════════════════════════════════════════════ -->
   <section class="py-12 lg:py-20 px-6" style="border-top: 1px solid var(--color-structure);">
     <div class="relative mx-auto max-w-6xl py-16 lg:py-24 px-8 lg:px-16 overflow-hidden" style="background-color: var(--color-forest);">
@@ -499,7 +386,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
       <div class="relative z-10">
         <div class="mx-auto max-w-2xl text-center">
           <h2 class="font-sans text-3xl lg:text-5xl font-light text-white leading-tight">
-            Su operación merece tecnología que fue construida para su realidad.
+            Su operación merece tecnología construida para su realidad.
           </h2>
           <p class="mt-6 font-sans text-lg text-white/70 leading-relaxed">
             Hablemos sobre sus desafíos operativos. Nuestro equipo de ingeniería evalúa su infraestructura y entrega un plan de implementación en menos de dos semanas.
@@ -507,7 +394,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
 
           <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="/contact/demo"
+              href="/es/contact/demo"
               class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 transition-colors duration-300 ease-linear"
               style="background-color: white; color: var(--color-forest);"
             >
@@ -529,10 +416,10 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
 
         <!-- Trust bar -->
         <div class="mt-14 pt-8 flex flex-wrap items-center justify-center gap-8" style="border-top: 1px solid rgba(255,255,255,0.15);">
-          <a href="/resources/documentation" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Documentación</a>
-          <a href="/platform" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">API</a>
-          <a href="/resources/case-studies" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Casos de Estudio</a>
-          <a href="/legal/security" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Seguridad</a>
+          <a href="/es/resources/documentation" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Documentación</a>
+          <a href="/es/platform" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">API</a>
+          <a href="/es/resources/case-studies" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Casos de Estudio</a>
+          <a href="/es/legal/security" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Seguridad</a>
         </div>
       </div>
     </div>
@@ -541,6 +428,6 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
   <!-- ═══════════════════════════════════════════════════════════════
        FOOTER
        ═══════════════════════════════════════════════════════════════ -->
-  <SiteFooter />
+  <SiteFooter lang="es" />
 
 </BaseLayout>

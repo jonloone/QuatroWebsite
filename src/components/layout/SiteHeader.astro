@@ -1,7 +1,21 @@
 ---
+import type { Locale } from '@/lib/i18n'
+import { t, localizeHref, getAlternateUrl } from '@/lib/i18n'
 import QuatroLogo from '@/components/QuatroLogo.astro'
-import { primaryNavigation } from '@/lib/navigation'
+import { getPrimaryNavigation } from '@/lib/navigation'
 import NavDropdown from './NavDropdown.astro'
+
+interface Props {
+  lang?: Locale
+}
+
+const { lang = 'en' } = Astro.props
+const navigation = getPrimaryNavigation(lang)
+const homeHref = lang === 'es' ? '/es/' : '/'
+const demoHref = localizeHref('/contact/demo', lang)
+const ctaLabel = t('nav.getQuote', lang)
+const switchLabel = t('lang.switch', lang)
+const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
 ---
 
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 transition-all duration-300">
@@ -9,13 +23,13 @@ import NavDropdown from './NavDropdown.astro'
   <nav id="nav-pill" class="mx-auto w-full max-w-6xl rounded-full px-5 py-2.5 transition-all duration-300" style="background-color: rgba(0,0,0,0.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);">
     <div class="flex items-center gap-4">
       <!-- Left: Logo -->
-      <a href="/" class="flex items-center shrink-0" aria-label="Quatro home">
+      <a href={homeHref} class="flex items-center shrink-0" aria-label={t('nav.home', lang)}>
         <QuatroLogo id="nav-logo" light class="h-7 w-auto" />
       </a>
 
       <!-- Center: Nav links -->
       <div class="flex flex-1 items-center justify-center gap-6 max-lg:hidden">
-        {primaryNavigation.map((item) => (
+        {navigation.map((item) => (
           <NavDropdown
             label={item.name}
             items={item.items}
@@ -26,21 +40,29 @@ import NavDropdown from './NavDropdown.astro'
         ))}
       </div>
 
-      <!-- Right: Pill "Get a Quote" -->
-      <div class="flex items-center shrink-0 max-lg:hidden">
+      <!-- Right: Language switcher + CTA -->
+      <div class="flex items-center shrink-0 gap-3 max-lg:hidden">
         <a
-          href="/contact/demo"
+          href={switchHref}
+          class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-2.5 transition-colors duration-200"
+          style="color: rgba(255,255,255,0.5);"
+          data-lang-switch
+        >
+          {switchLabel}
+        </a>
+        <a
+          href={demoHref}
           class="rounded-full font-mono text-xs uppercase tracking-widest px-6 py-2.5 text-white transition-all duration-200 hover:opacity-90"
           style="background-color: #0ACF83;"
         >
-          Get a Quote
+          {ctaLabel}
         </a>
       </div>
 
       <!-- Mobile hamburger -->
       <button
         id="mobile-menu-open"
-        aria-label="Open menu"
+        aria-label={t('nav.openMenu', lang)}
         class="inline-flex p-1.5 lg:hidden ml-auto transition-colors duration-300"
         style="color: #ffffff;"
       >
@@ -61,7 +83,7 @@ import NavDropdown from './NavDropdown.astro'
       <div class="flex justify-end">
         <button
           id="mobile-menu-close"
-          aria-label="Close menu"
+          aria-label={t('nav.closeMenu', lang)}
           class="inline-flex p-1.5"
           style="color: var(--color-neutral-800);"
         >
@@ -78,7 +100,7 @@ import NavDropdown from './NavDropdown.astro'
         </button>
       </div>
       <div class="mt-6 flex flex-col gap-6">
-        {primaryNavigation.map((section) => (
+        {navigation.map((section) => (
           <div>
             <div class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-grid); opacity: 0.5;">
               {section.name}
@@ -106,11 +128,18 @@ import NavDropdown from './NavDropdown.astro'
       </div>
       <div class="mt-8 flex flex-col gap-3" style="border-top: 1px solid rgba(226,232,240,0.7); padding-top: 1.5rem;">
         <a
-          href="/contact/demo"
+          href={switchHref}
+          class="font-mono text-[10px] uppercase tracking-[0.1em] text-center py-2 transition-colors duration-150"
+          style="color: var(--color-neutral-400);"
+        >
+          {t('lang.switchLabel', lang)}
+        </a>
+        <a
+          href={demoHref}
           class="rounded-full font-mono text-xs uppercase tracking-widest px-4 py-2.5 text-white text-center transition-all duration-200"
           style="background-color: #0ACF83;"
         >
-          Get a Quote
+          {ctaLabel}
         </a>
       </div>
     </div>
@@ -143,6 +172,7 @@ import NavDropdown from './NavDropdown.astro'
   const wordmarkPath = logoSvg?.querySelector('path:first-child') as SVGPathElement | null
   const navLinks = document.querySelectorAll('[data-nav-link]') as NodeListOf<HTMLElement>
   const hamburger = document.getElementById('mobile-menu-open')
+  const langSwitch = document.querySelector('[data-lang-switch]') as HTMLElement | null
 
   function applyNavState(scrolled: boolean) {
     if (!navPill) return
@@ -156,6 +186,7 @@ import NavDropdown from './NavDropdown.astro'
       if (wordmarkPath) wordmarkPath.setAttribute('fill', '#00060C')
       navLinks.forEach(l => l.style.color = 'rgba(15,23,42,0.8)')
       if (hamburger) hamburger.style.color = '#0F172A'
+      if (langSwitch) langSwitch.style.color = 'rgba(15,23,42,0.4)'
     } else {
       // Dark state
       navPill.style.backgroundColor = 'rgba(0,0,0,0.3)'
@@ -166,6 +197,7 @@ import NavDropdown from './NavDropdown.astro'
       if (wordmarkPath) wordmarkPath.setAttribute('fill', '#ffffff')
       navLinks.forEach(l => l.style.color = 'rgba(255,255,255,0.8)')
       if (hamburger) hamburger.style.color = '#ffffff'
+      if (langSwitch) langSwitch.style.color = 'rgba(255,255,255,0.5)'
     }
   }
 

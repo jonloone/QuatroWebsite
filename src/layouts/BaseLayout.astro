@@ -1,21 +1,31 @@
 ---
+import type { Locale } from '@/lib/i18n'
+import { getAlternateUrl } from '@/lib/i18n'
+
 interface Props {
   title: string
   description?: string
+  lang?: Locale
 }
 
-const { title, description = 'Quatro unifica OT e IT en una sola plataforma de inteligencia — diseñada para la infraestructura y la realidad operativa de América Latina.' } = Astro.props
+const { title, lang = 'en', description = 'Quatro unifies OT and IT into a single intelligence platform — designed for critical infrastructure and the operational reality of Latin America.' } = Astro.props
 
 const fullTitle = title.includes('Quatro') ? title : `${title} | Quatro`
+
+const enUrl = getAlternateUrl(Astro.url, 'en')
+const esUrl = getAlternateUrl(Astro.url, 'es')
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="alternate" hreflang="en" href={`https://quatro.io${enUrl}`} />
+    <link rel="alternate" hreflang="es" href={`https://quatro.io${esUrl}`} />
+    <link rel="alternate" hreflang="x-default" href={`https://quatro.io${enUrl}`} />
     <title>{fullTitle}</title>
   </head>
   <body class="font-sans text-neutral-800 antialiased">
