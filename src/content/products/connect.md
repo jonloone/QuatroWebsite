@@ -1,15 +1,15 @@
 ---
 title: "Connect"
-tagline: "Industrial Data Platform & Historian Alternative"
+tagline: "See Everything in Real Time"
 heroImage: "/images/product-connect-card.png"
-description: "Connect bridges your OT infrastructure to modern analytics. 8,000+ connectors, high-performance time-series storage, open APIs, and no tag-based licensing."
+description: "Complete operational picture with 8,000+ integrations from 1,000+ vendors. Intelligent alerting, live dashboards, asset management, SLA tracking, compliance reporting. One screen instead of fifteen."
 order: 1
 hero:
   eyebrow: "Quatro Connect"
-  title: "Every Protocol. Every Source. One Unified Foundation."
-  description: "Open architecture that bridges your entire OT infrastructure to modern analytics. 8,000+ connectors, high-performance time-series storage, and full API access — with no tag-based licensing, ever."
+  title: "See Everything, Understand Why, Act Before It Matters"
+  description: "Unified operational visibility across every protocol, device, and system. 8,000+ integrations from 1,000+ vendors. Real-time dashboards, intelligent alerting, asset management, and SLA tracking — all in one unified operational model."
   primaryCta:
-    label: "Schedule a Data Assessment"
+    label: "See It on Your Systems"
     href: "/contact/demo"
   secondaryCta:
     label: "Explore 8,000+ Connectors"
@@ -26,8 +26,8 @@ problems:
 solutions:
   - title: "Open Architecture"
     description: "Built on open standards with full API access. Your data belongs to you — export, query, and integrate without vendor lock-in or proprietary formats."
-  - title: "8,000+ Connectors"
-    description: "Out-of-the-box connectivity for industrial protocols, IoT devices, enterprise systems, and cloud platforms. If it generates data, we connect to it."
+  - title: "8,000+ Integrations From 1,000+ Vendors"
+    description: "Complete visibility into SCADA, DCS, PLC, RTU, and enterprise systems. Industrial protocols, IoT devices, cloud platforms — unified into one operational picture with no custom integrations needed."
   - title: "No Tag-Based Licensing"
     description: "Collect every data point your operations generate. Our licensing model scales with your business, not against it. No per-tag fees, ever."
   - title: "Edge to Cloud"
@@ -42,8 +42,8 @@ stats:
   - value: "10–20x"
     label: "Storage Compression"
 capabilities:
-  - name: "Universal Data Ingestion"
-    description: "Connect to any industrial protocol, IoT device, or enterprise system through a unified ingestion layer. OPC-UA, Modbus, MQTT, BACnet, DNP3, and thousands more — all normalized into a consistent data model."
+  - name: "Unified Operational Visibility"
+    description: "8,000+ integrations bring SCADA, DCS, PLC, RTU, and enterprise systems into one operational picture. OPC-UA, Modbus, MQTT, BACnet, DNP3, and thousands more normalized into a consistent real-time model."
     icon: "database"
   - name: "High-Performance Time-Series Storage"
     description: "Purpose-built time-series engine handles millions of data points per second with 10–20x compression. Years of operational history at your fingertips, without the storage bloat of traditional historians."
@@ -149,5 +149,5 @@ proofPoint:
       label: "Less Integration Maintenance"
     - value: "40+"
       label: "Legacy Databases Consolidated"
-  narrative: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified Connect deployment. The result: real-time visibility across 200,000+ data points, 60% reduction in integration maintenance, and a foundation for predictive analytics that was impossible with fragmented legacy systems."
+  narrative: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified Connect deployment. The result: real-time unified operational visibility across 200,000+ data points, 60% reduction in integration maintenance, and a foundation for predictive intelligence and orchestration that was impossible with fragmented legacy systems. Start with Visibility. Grow to Operations. Scale to Intelligence."
 ---

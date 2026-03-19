@@ -1,6 +1,6 @@
 ---
 title: "Command"
-tagline: "Centro de Operaciones Unificado y Orquestación"
+tagline: "Orqueste a Escala"
 heroImage: "/images/feature-command-center.png"
 description: "Quatro Command ofrece un centro de operaciones unificado con orquestación multidominio, respuesta ante amenazas y coordinación de flotas."
 order: 3
@@ -9,7 +9,7 @@ hero:
   title: "Visibilidad Total. Control con Confianza."
   description: "El centro de operaciones unificado que convierte cada dato de Connect y Operate en acción decisiva. Orquestación multidominio, respuesta ante amenazas y coordinación de flotas en una sola vista."
   primaryCta:
-    label: "Solicite una Demostración"
+    label: "Solicite una Evaluación"
     href: "/es/contact/demo"
   secondaryCta:
     label: "Explore las Capacidades"

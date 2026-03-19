@@ -37,7 +37,7 @@ capabilities:
   - name: "Mantenimiento Predictivo"
     description: "Modelos de IA pronostican fallas de equipos con 2-4 semanas de anticipación utilizando correlación de vibración, temperatura y múltiples sensores."
   - name: "Gestión del Ciclo de Vida de Activos"
-    description: "Seguimiento de extremo a extremo desde la puesta en marcha hasta el desmantelamiento con tecnología de gemelo digital para planificación de reemplazo basada en datos."
+    description: "Seguimiento de extremo a extremo desde la puesta en marcha hasta el desmantelamiento con modelo operacional en tiempo real para planificación de reemplazo basada en datos."
   - name: "Optimización de Rendimiento"
     description: "Seguimiento continuo de OEE y benchmarking entre sitios para identificar mejores prácticas y activos con bajo rendimiento."
   - name: "Detección de Anomalías"
@@ -46,7 +46,7 @@ capabilities:
     description: "Alertas contextuales con priorización por ML que reducen la fatiga de alarmas hasta un 80%."
 platformMapping:
   connect: "Ingesta universal de datos desde más de 8,000 conectores incluyendo OPC-UA, Modbus, MQTT e historiadores legacy. Sin licenciamiento por tags significa que puede recopilar cada punto de datos sin penalidades de costo."
-  operate: "Motor analítico de IA pronostica degradación de equipos con 2-4 semanas de anticipación utilizando correlación de vibración, temperatura y múltiples sensores. Modelos de gemelo digital permiten análisis de escenarios."
+  operate: "Motor analítico de IA pronostica degradación de equipos con 2-4 semanas de anticipación utilizando correlación de vibración, temperatura y múltiples sensores. Modelo operacional en tiempo real permite análisis de escenarios."
   command: "Playbooks automatizados de mantenimiento generan órdenes de trabajo, despachan técnicos calificados y dan seguimiento a la resolución con trazabilidad completa."
 proofPoint:
   industry: "Energía — Petróleo y Gas"

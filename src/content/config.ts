@@ -209,6 +209,71 @@ const caseStudiesCollection = defineCollection({
   }),
 })
 
+const useCasesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    tagline: z.string(),
+    description: z.string(),
+    parentIndustry: z.string(), // e.g. 'energy', 'defense'
+    order: z.number(),
+    hero: z.object({
+      eyebrow: z.string(),
+      title: z.string(),
+      description: z.string(),
+      primaryCta: ctaSchema,
+      secondaryCta: ctaSchema.optional(),
+    }),
+    pain: z.object({
+      narrative: z.string(),
+      quantified: z.array(z.object({
+        metric: z.string(),
+        before: z.string(),
+        after: z.string(),
+      })),
+    }),
+    capabilities: z.array(
+      z.object({
+        name: z.string(),
+        description: z.string(),
+        icon: z.string().optional(),
+      })
+    ),
+    stats: z.array(
+      z.object({
+        value: z.string(),
+        label: z.string(),
+      })
+    ),
+    platformMapping: platformMappingSchema.optional(),
+    proofPoint: proofPointSchema.optional(),
+    objections: z.array(
+      z.object({
+        concern: z.string(),
+        response: z.string(),
+      })
+    ).optional(),
+    adjacentSolutions: z.array(
+      z.object({
+        title: z.string(),
+        description: z.string(),
+        href: z.string(),
+      })
+    ).optional(),
+    crossVertical: z.array(
+      z.object({
+        industry: z.string(),
+        result: z.string(),
+      })
+    ).optional(),
+    cta: z.object({
+      primary: ctaSchema,
+      secondary: ctaSchema.optional(),
+      microcopy: z.string().optional(),
+    }).optional(),
+  }),
+})
+
 const teamCollection = defineCollection({
   type: 'data',
   schema: z.object({
@@ -228,6 +293,7 @@ export const collections = {
   testimonials: testimonialsCollection,
   'case-studies': caseStudiesCollection,
   team: teamCollection,
+  'use-cases': useCasesCollection,
   // Spanish collections use the same schemas as their English counterparts
   'products-es': productsCollection,
   'solutions-es': solutionsCollection,

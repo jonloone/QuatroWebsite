@@ -10,15 +10,15 @@ const solutions = (await getCollection('solutions-es')).sort((a, b) => a.data.or
 
 <MarketingLayout
   lang="es"
-  title="Soluciones — Casos de Uso de Inteligencia Industrial"
+  title="Soluciones — Casos de Uso de Inteligencia Operacional"
   description="Quatro ofrece soluciones para monitoreo de activos, seguridad de ductos, inteligencia operativa y más."
 >
   <Hero
     variant="dark"
     eyebrow="Soluciones"
     title="Soluciones para Cada Desafío Operativo"
-    description="Desde monitoreo de activos hasta logística de flotas, Quatro ofrece inteligencia industrial para su caso de uso específico."
-    primaryCta={{ label: 'Agendar una Demo', href: '/es/contact/demo' }}
+    description="Desde monitoreo de activos hasta logística de flotas, Quatro ofrece inteligencia operacional para su caso de uso específico."
+    primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
   />
 
   <Section>
@@ -40,7 +40,7 @@ const solutions = (await getCollection('solutions-es')).sort((a, b) => a.data.or
             ))}
           </div>
           <span class="mt-4 inline-block font-display text-sm font-semibold text-brand-500 group-hover:underline">
-            Conocer más &rarr;
+            Explorar solución &rarr;
           </span>
         </a>
       ))}
@@ -48,9 +48,9 @@ const solutions = (await getCollection('solutions-es')).sort((a, b) => a.data.or
   </Section>
 
   <CtaBanner
-    title="¿Listo para Resolver su Desafío?"
+    title="Vea la Solución en Sus Datos"
     description="Descubra cómo Quatro responde a sus necesidades operativas específicas."
-    primaryCta={{ label: 'Agendar una Demo', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Hablar con Ventas', href: '/es/contact/sales' }}
+    primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hable con un Ingeniero', href: '/es/contact/sales' }}
   />
 </MarketingLayout>

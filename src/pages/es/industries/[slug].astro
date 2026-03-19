@@ -22,8 +22,8 @@ const { Content } = await industry.render()
 const { title, tagline, description, hero, heroImage, challenges, capabilities, stats, platformMapping, proofPoint, cta } = industry.data
 
 // Default CTA values
-const ctaPrimary = cta?.primary || { label: 'Agendar una Demo', href: '/es/contact/demo' }
-const ctaSecondary = cta?.secondary || { label: 'Hablar con Ventas', href: '/es/contact/sales' }
+const ctaPrimary = cta?.primary || { label: 'Agende una Evaluación', href: '/es/contact/demo' }
+const ctaSecondary = cta?.secondary || { label: 'Hable con un Ingeniero', href: '/es/contact/sales' }
 ---
 
 <MarketingLayout
@@ -93,8 +93,8 @@ const ctaSecondary = cta?.secondary || { label: 'Hablar con Ventas', href: '/es/
   )}
 
   <CtaBanner
-    title={`¿Listo para Transformar sus Operaciones de ${title}?`}
-    description={`Descubra cómo Quatro ofrece inteligencia unificada para ${title.toLowerCase()}.`}
+    title={`Vea la Inteligencia Operacional para ${title}`}
+    description={`Elija un desafío de ${title.toLowerCase()}. Desplegamos en sus sistemas en 4 semanas. Vea el valor antes de comprometerse.`}
     primaryCta={ctaPrimary}
     secondaryCta={ctaSecondary}
     microcopy={cta?.microcopy}

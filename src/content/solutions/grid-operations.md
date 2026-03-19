@@ -42,11 +42,11 @@ capabilities:
     description: "Overlay existing SCADA with modern analytics without touching the safety-critical control path. Migrate at your own pace."
   - name: "Storm Response Automation"
     description: "Automated playbooks pre-position crews, activate mutual aid, and prioritize restoration by customer impact and critical facility status."
-  - name: "Digital Twin for Grid Simulation"
-    description: "Virtual models for contingency analysis, DER hosting capacity studies, and storm impact modeling before conditions materialize."
+  - name: "Real-Time Grid Simulation"
+    description: "Operational models for contingency analysis, DER hosting capacity studies, and storm impact modeling before conditions materialize."
 platformMapping:
   connect: "Native connectivity for DNP3, IEC 61850, and OPC-UA. Mirrors data from legacy SCADA in real time while adding DER connectivity through SunSpec, OCPP, and IEEE 2030.5."
-  operate: "AI analytics for predictive maintenance, grid anomaly detection, and DER performance optimization. Digital twin enables contingency analysis and storm modeling."
+  operate: "AI analytics for predictive maintenance, grid anomaly detection, and DER performance optimization. Real-time operational models enable contingency analysis and storm modeling."
   command: "Automated storm playbooks coordinate 200+ substations. Intelligent dispatch assigns certified crews with switching authority. NERC CIP audit trails generated automatically."
 proofPoint:
   industry: "Energy — Integrated Utility"

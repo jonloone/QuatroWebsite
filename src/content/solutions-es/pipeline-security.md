@@ -1,12 +1,12 @@
 ---
 title: "Seguridad de Ductos"
 tagline: "Integridad y Seguridad Unificadas"
-description: "Detección de fugas multimétodo con correlación cruzada por IA que reduce falsas alarmas en un 75% mientras mejora la sensibilidad de detección al 0.5% del flujo nominal."
+description: "Detección de fugas multimétodo con correlación cruzada inteligente que reduce falsas alarmas en un 75% mientras mejora la sensibilidad de detección al 0.5% del flujo nominal."
 order: 2
 hero:
   eyebrow: "Seguridad de Ductos"
   title: "Detecte Fugas Más Rápido. Responda con Inteligencia."
-  description: "Monitoreo convergente de integridad y seguridad para corredores de ductos. La fusión multimétodo con IA elimina falsas alarmas y cierra la brecha entre detección y respuesta."
+  description: "Monitoreo convergente de integridad y seguridad para corredores de ductos. La fusión multimétodo inteligente elimina falsas alarmas y cierra la brecha entre detección y respuesta."
   primaryCta:
     label: "Solicite una Evaluación de Ductos"
     href: "/es/contact/demo"
@@ -33,20 +33,20 @@ challenges:
     description: "Una detección activa llamadas telefónicas y coordinación improvisada. No existe un playbook unificado que vincule detección con respuesta y resolución."
 capabilities:
   - name: "Modelado RTTM Mejorado"
-    description: "Modelado transitorio adaptativo con IA que aprende el comportamiento hidráulico del ducto y elimina la carga de calibración manual."
+    description: "Modelado transitorio adaptativo con inteligencia predictiva que aprende el comportamiento hidráulico del ducto y elimina la carga de calibración manual."
   - name: "Detección de Fugas Multimétodo"
     description: "Fusión de análisis acústico, onda de presión, balance de masa y estadístico para sensibilidad de detección hasta el 0.5% del flujo nominal."
   - name: "Detección de Intrusión y Respuesta"
     description: "Monitoreo perimetral y de derecho de vía con fusión multisensor que distingue fauna silvestre de amenazas en segundos."
   - name: "Monitoreo Satelital de Corredor"
-    description: "Imágenes satelitales impulsadas por IA detectan invasión, movimiento del terreno y estrés de vegetación a lo largo de miles de kilómetros."
+    description: "Imágenes satelitales con inteligencia predictiva detectan invasión, movimiento del terreno y estrés de vegetación a lo largo de miles de kilómetros."
   - name: "Correlación Multidominio"
     description: "Una anomalía de presión simultánea con una violación perimetral eleva el evento instantáneamente a un escenario potencial de derivación ilícita."
   - name: "Trazabilidad para Cumplimiento"
     description: "Registro cronológico completo para reportes PHMSA, NEB y API 1160 con paquetes de auditoría exportables."
 platformMapping:
   connect: "Integración SCADA mediante OPC-UA, Modbus y DNP3 con procesamiento en el edge en estaciones remotas. Ingesta de flujo, presión, temperatura y estado de válvulas de cada punto de medición."
-  operate: "Detección de fugas multimétodo impulsada por IA con monitoreo satelital de corredor. La correlación multidominio vincula anomalías operacionales con eventos de seguridad automáticamente."
+  operate: "Detección de fugas multimétodo inteligente con monitoreo satelital de corredor. La correlación multidominio vincula anomalías operacionales con eventos de seguridad automáticamente."
   command: "Playbooks automatizados aíslan segmentos, notifican salas de control, despachan equipos de campo y alertan a reguladores — todo en segundos tras la confirmación de detección."
 proofPoint:
   industry: "Energía — Petróleo y Gas Midstream"

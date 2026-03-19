@@ -2,17 +2,17 @@
 title: "Defense"
 tagline: "Mission-Ready Operational Intelligence"
 heroImage: "/images/induistry-defense.png"
-description: "Unified platform across physical, cyber, and operational domains — purpose-built for air-gapped environments with COTS deployment speed and defense-grade compliance."
+description: "Unified command, any classification, any environment. Unified platform across physical, cyber, and operational domains — purpose-built for air-gapped environments with sovereign deployment and defense-grade compliance."
 order: 2
 hero:
   eyebrow: "Defense"
   title: "Unified Command. Any Classification. Any Environment."
   description: "Cross-domain situational awareness that spans physical security, network operations, and logistics — deployed in weeks, not years, with full capability in air-gapped environments."
   primaryCta:
-    label: "Request a Mission Brief"
+    label: "Talk to a Defense Engineer"
     href: "/contact/demo"
   secondaryCta:
-    label: "Download Security Assessment Guide"
+    label: "Talk to a Defense Engineer"
     href: "/contact/sales"
 stats:
   - value: "80%"
@@ -47,7 +47,7 @@ capabilities:
     description: "Every detection, alert, decision, and action logged with timestamp and chain-of-command context. Satisfies defense oversight and legal requirements."
 platformMapping:
   connect: "Multi-sensor ingestion for cameras, radar, lidar, fiber-optic, seismic, and RF sensors. STANAG support for NATO interoperability. Edge processing for air-gapped environments."
-  operate: "AI video analytics with real-time object detection, classification, and tracking. Multi-sensor fusion reduces false alarms by 80%. Anomaly detection across all monitored domains."
+  operate: "Real-time operational model with object detection, classification, and tracking. Multi-sensor fusion reduces false alarms by 80%. Anomaly detection across all monitored domains with predictive intelligence."
   command: "Federated command across 12+ FOBs. Automated force protection playbooks. Role-based workspaces for commander, watch officer, analyst, and responder roles."
 proofPoint:
   industry: "Defense — Installation Security"
@@ -62,10 +62,10 @@ proofPoint:
   narrative: "A 15,000-acre military installation replaced 5 legacy physical security systems with Quatro. AI-assisted perimeter monitoring reduced guard force requirements by 60% while achieving sub-30-second detection-to-response. Multi-sensor fusion reduced false alarms by 80%, restoring operator trust and response effectiveness."
 cta:
   primary:
-    label: "Request a Mission Brief"
+    label: "Talk to a Defense Engineer"
     href: "/contact/demo"
   secondary:
-    label: "See Air-Gapped Deployment"
+    label: "Talk to a Defense Engineer"
     href: "/contact/sales"
-  microcopy: "Typical briefing: 45-60 minutes. We'll assess your current security posture and demonstrate how unified command replaces fragmented systems without requiring network consolidation."
+  microcopy: "Typical assessment: 45-60 minutes. We'll assess your current security posture and demonstrate how unified command delivers multi-domain operational awareness without requiring network consolidation. 4-week proof of value · Air-gapped capable"
 ---

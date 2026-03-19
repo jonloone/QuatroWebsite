@@ -1,7 +1,7 @@
 ---
 title: "Operational Intelligence"
 tagline: "AI-Driven Cross-Domain Insights"
-description: "Unified operational intelligence that correlates data across IT, OT, and IoT domains — reducing MTTR by 35% and eliminating the silos that blind your operations."
+description: "Unified operational intelligence that correlates data across operational and IT domains — reducing MTTR by 35% and eliminating the silos that blind your operations."
 order: 3
 hero:
   eyebrow: "Operational Intelligence"
@@ -24,20 +24,20 @@ stats:
     label: "Intelligence"
 challenges:
   - title: "Data Silos Across Domains"
-    description: "IT, OT, IoT, and enterprise systems operate in isolation. Operators must stitch together partial views from 5-7 different dashboards."
+    description: "Operational, IT, IoT, and enterprise systems operate in isolation. Operators must stitch together partial views from 5-7 different dashboards."
   - title: "Reactive Decision-Making"
     description: "Without AI-driven analytics, operators discover problems only after they manifest as incidents. The window for proactive intervention is lost."
   - title: "No Living Operational Model"
-    description: "Organizations lack a real-time digital twin that mirrors current conditions and enables simulation before committing to production changes."
+    description: "Organizations lack a real-time operational model that mirrors current conditions and enables simulation before committing to production changes."
   - title: "Manual Analysis Bottlenecks"
     description: "Engineers spend 20+ hours per month aggregating data from multiple systems while high-value expertise is consumed by low-value data wrangling."
 capabilities:
-  - name: "Unified Digital Twin"
-    description: "Living, real-time digital replica of your operations built on contextualized data — not a static 3D model, but continuously updated intelligence."
-  - name: "Cross-Domain Data Aggregation"
-    description: "Ingest and correlate data from IT, OT, IoT, and enterprise systems into a single, semantically rich operational view."
-  - name: "AI-Driven Insights"
-    description: "ML models surface hidden patterns, predict outcomes, and recommend actions. AI Analyst Agents proactively highlight what matters."
+  - name: "Unified Operational Intelligence"
+    description: "Living, real-time model of your operations built on contextualized data — continuously updated with actionable insights from all domains."
+  - name: "Unified Operational Visibility"
+    description: "Ingest and correlate data from operational, IT, IoT, and enterprise systems into a single, semantically rich operational view."
+  - name: "Predictive Intelligence"
+    description: "Predictive intelligence surfaces hidden patterns, predicts outcomes, and recommends actions. AI Analyst Agents proactively highlight what matters."
   - name: "Process Automation"
     description: "Intelligent alerting and automated workflows that close the loop from detection to action without manual intervention."
   - name: "No-Code Reporting"
@@ -46,7 +46,7 @@ capabilities:
     description: "OEE, availability, throughput, and custom KPIs tracked continuously with benchmarking across sites and time periods."
 platformMapping:
   connect: "Universal connectivity to IT, OT, IoT, and enterprise systems through 8,000+ connectors. Data contextualization enriches every stream with asset hierarchies and process metadata."
-  operate: "AI analytics engine learns operational baselines and continuously improves. Digital twin enables simulation and scenario planning. AI Analyst Agents surface what matters."
+  operate: "AI analytics engine learns operational baselines and continuously improves. Real-time operational models enable simulation and scenario planning. AI Analyst Agents surface what matters."
   command: "AI decision support with risk scoring and recommendation engine. Cross-domain orchestration coordinates responses across operations, security, and logistics."
 proofPoint:
   industry: "Energy — Integrated Utility"
@@ -58,7 +58,7 @@ proofPoint:
       label: "Weekly Savings"
     - value: "6→1"
       label: "Dashboards Consolidated"
-  narrative: "A utility with 150+ substations deployed Quatro to replace fragmented SCADA historians and manual reporting. Cross-domain correlation reduced MTTR by 40%, and the unified digital twin enabled renewable integration modeling that cut curtailment by 18%."
+  narrative: "A utility with 150+ substations deployed Quatro to replace fragmented SCADA historians and manual reporting. Cross-domain correlation reduced MTTR by 40%, and the unified operational model enabled renewable integration modeling that cut curtailment by 18%."
 cta:
   primary:
     label: "Schedule an Intelligence Assessment"

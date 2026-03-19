@@ -2,12 +2,12 @@
 title: "Industrial"
 tagline: "Cross-Domain Plant Intelligence"
 heroImage: "/images/industry-industrial.png"
-description: "Unified operational intelligence that correlates production, maintenance, quality, and safety data — reducing downtime by 35% and eliminating the silos that blind your operations."
+description: "Plant floor to enterprise, one intelligence layer. Unified operational intelligence that correlates production, maintenance, quality, and safety data — reducing downtime by 35% and eliminating the silos that blind your operations."
 order: 3
 hero:
   eyebrow: "Industrial"
   title: "Plant Floor to Enterprise. One Intelligence Layer."
-  description: "Stop toggling between historians, MES, and maintenance systems. Unified operational intelligence correlates across all domains — surfacing insights that siloed tools structurally cannot detect."
+  description: "Stop toggling between historians, MES, and maintenance systems. Unified operational intelligence correlates across SCADA, DCS, PLC, MES, and ERP — surfacing insights that siloed tools structurally cannot detect."
   primaryCta:
     label: "Schedule a Plant Assessment"
     href: "/contact/demo"
@@ -34,20 +34,20 @@ challenges:
     description: "Retiring operators take decades of process intuition with them. 36% annual turnover in warehousing means institutional knowledge is perpetually at risk."
 capabilities:
   - name: "Predictive Maintenance"
-    description: "AI models forecast equipment failures 2-4 weeks in advance. Multi-sensor correlation catches compound failure modes that single-variable monitoring misses."
+    description: "Predictive intelligence forecasts equipment failures 2-4 weeks in advance. Multi-sensor correlation catches compound failure modes that single-variable monitoring misses."
   - name: "OEE Optimization"
     description: "Real-time availability, performance, and quality metrics correlated with root-cause analytics that identify specific drivers of OEE loss."
   - name: "Cross-Domain Correlation"
     description: "Analyze relationships between maintenance data, process parameters, quality results, energy consumption, and logistics flows simultaneously."
-  - name: "Digital Twin"
-    description: "Real-time digital representations enable simulation and what-if analysis. Reduce trial batches by 40% through virtual process optimization."
+  - name: "Real-Time Operational Model"
+    description: "Real-time operational representations enable simulation and what-if analysis. Reduce trial batches by 40% through virtual process optimization."
   - name: "Legacy Coexistence"
     description: "Layer alongside existing OSIsoft PI, AspenTech, or Honeywell historians without migration. No tag-based licensing at any scale."
   - name: "Multi-Plant Coordination"
     description: "Enterprise-wide visibility and coordinated response across multiple facilities. Standardize best practices and benchmark performance."
 platformMapping:
   connect: "8,000+ connectors for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss."
-  operate: "AI analytics for predictive maintenance, OEE tracking, and anomaly detection. Digital twin enables simulation and scenario planning. 80% fewer false alarms than threshold-based systems."
+  operate: "Predictive intelligence for maintenance, OEE tracking, and anomaly detection. Real-time operational model enables simulation and scenario planning. 80% fewer false alarms than threshold-based systems."
   command: "Multi-plant coordination and automated incident response. Resource dispatch based on real-time demand, location, and skill requirements."
 proofPoint:
   industry: "Industrial — Chemical Manufacturing"
@@ -67,5 +67,5 @@ cta:
   secondary:
     label: "Talk to an Industrial Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your current historian and MES landscape and show how unified intelligence replaces fragmented vendor tools."
+  microcopy: "Typical assessment: 45-60 minutes. We'll map your current historian, MES, and ERP landscape and show how unified intelligence replaces fragmented vendor tools. 4-week proof of value · Credited toward contract"
 ---

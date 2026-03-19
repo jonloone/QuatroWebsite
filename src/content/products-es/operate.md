@@ -1,6 +1,6 @@
 ---
 title: "Operate"
-tagline: "Monitoreo en Tiempo Real e Inteligencia Predictiva"
+tagline: "Entienda Por Qué y Responda Automáticamente"
 heroImage: "/images/product-platform.png"
 description: "Quatro Operate brinda monitoreo en tiempo real, analítica impulsada por IA e inteligencia predictiva en toda su operación."
 order: 2
@@ -9,7 +9,7 @@ hero:
   title: "Inteligencia en Tiempo Real. Capacidad Predictiva."
   description: "Transforme datos operacionales en bruto en inteligencia accionable. Monitoree, analice y prediga en toda su operación — todo en tiempo real."
   primaryCta:
-    label: "Solicite una Demostración"
+    label: "Solicite una Evaluación"
     href: "/es/contact/demo"
   secondaryCta:
     label: "Explore las Capacidades"
@@ -46,7 +46,7 @@ capabilities:
     description: "Visibilidad en vivo de cada activo y proceso con latencia inferior al segundo. Alertas configurables garantizan que las personas indicadas sean notificadas inmediatamente."
     icon: "monitor"
   - name: "Mantenimiento Predictivo"
-    description: "Modelos de machine learning analizan el comportamiento de los equipos para predecir fallas antes de que ocurran, permitiendo mantenimiento planificado en lugar de reparaciones de emergencia."
+    description: "Inteligencia predictiva analiza el comportamiento de los equipos para predecir fallas antes de que ocurran, permitiendo mantenimiento planificado en lugar de reparaciones de emergencia."
     icon: "wrench"
   - name: "Detección de Anomalías"
     description: "La IA monitorea continuamente los patrones operacionales y señala desviaciones del comportamiento normal, detectando problemas que las alertas basadas en reglas no capturan."
@@ -68,7 +68,7 @@ deepDive:
       description: "Operate aprovecha la base de datos unificada de Connect. Cada punto de datos de cada fuente está disponible para monitoreo, análisis y predicción — sin integración adicional requerida."
       icon: "link"
     - title: "Inteligencia Impulsada por IA"
-      description: "Modelos de machine learning entrenados con sus datos operacionales descubren patrones que la analítica tradicional no detecta. Detección de anomalías, mantenimiento predictivo y reconocimiento de patrones operan continuamente en segundo plano."
+      description: "Inteligencia predictiva entrenada con sus datos operacionales descubre patrones que la analítica tradicional no detecta. Detección de anomalías, mantenimiento predictivo y reconocimiento de patrones operan continuamente en segundo plano."
       icon: "chart"
     - title: "Diseñado para Operadores"
       description: "Diseñado específicamente para operaciones industriales, no adaptado de herramientas de monitoreo de TI. Dashboards basados en roles, confiabilidad de grado industrial e interfaces diseñadas para entornos de sala de control."

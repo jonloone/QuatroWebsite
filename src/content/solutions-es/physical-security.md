@@ -1,12 +1,12 @@
 ---
 title: "Seguridad Física"
-tagline: "Detección de Amenazas Impulsada por IA"
-description: "Seguridad física unificada con analítica de video con IA y fusión multisensor que reduce falsas alarmas en un 80% y logra respuesta ante incidentes en menos de 30 segundos."
+tagline: "Detección de Amenazas Inteligente"
+description: "Seguridad física unificada con analítica de video inteligente y fusión multisensor que reduce falsas alarmas en un 80% y logra respuesta ante incidentes en menos de 30 segundos."
 order: 4
 hero:
   eyebrow: "Seguridad Física"
   title: "Detecte Amenazas. Responda al Instante."
-  description: "Transforme la videovigilancia pasiva en seguridad proactiva con analítica impulsada por IA, fusión multisensor y orquestación de respuesta automatizada."
+  description: "Transforme la videovigilancia pasiva en seguridad proactiva con inteligencia predictiva, fusión multisensor y orquestación de respuesta automatizada."
   primaryCta:
     label: "Solicite una Evaluación de Seguridad"
     href: "/es/contact/demo"
@@ -34,7 +34,7 @@ challenges:
 capabilities:
   - name: "Monitoreo Perimetral"
     description: "Detección multisensor con radar, lidar, cámaras térmicas y sensores de fibra óptica con verificación impulsada por IA antes de alertar."
-  - name: "Analítica de Video con IA"
+  - name: "Analítica de Video Inteligente"
     description: "Detección de objetos, reconocimiento de comportamiento y detección de anomalías en el edge — identificando amenazas antes de que escalen."
   - name: "Integración de Control de Acceso"
     description: "Gestión unificada de credenciales con verificación por video e inteligencia multidominio para conciencia completa de identidad."
@@ -42,11 +42,11 @@ capabilities:
     description: "Playbooks predefinidos que coordinan alarmas, notificaciones, reposicionamiento de cámaras y despacho de campo en segundos."
   - name: "Inteligencia Satelital y Geoespacial"
     description: "Monitoree activos remotos y corredores usando imágenes satelitales y detección de cambios basada en IA para cobertura a escala geográfica."
-  - name: "Convergencia OT-Seguridad"
+  - name: "Convergencia Operacional-Seguridad"
     description: "Correlacione eventos de seguridad física con datos SCADA y alertas cibernéticas para evaluación unificada de amenazas entre dominios."
 platformMapping:
   connect: "Integración agnóstica de cámaras compatible con el 99% de cámaras IP vía ONVIF. Ingesta multisensor que abarca radar, lidar, térmico, fibra óptica y sistemas de control de acceso."
-  operate: "La analítica de video con IA realiza análisis conductual en tiempo real. La fusión multisensor requiere verificación antes de alertar — reduciendo drásticamente los falsos positivos."
+  operate: "La analítica de video inteligente realiza análisis conductual en tiempo real. La fusión multisensor requiere verificación antes de alertar — reduciendo drásticamente los falsos positivos."
   command: "Playbooks automatizados coordinan respuestas de múltiples pasos en segundos. El despacho inteligente asigna al respondedor calificado más cercano con ruteo basado en GPS."
 proofPoint:
   industry: "Energía — Transmisión y Distribución"

@@ -2,12 +2,12 @@
 title: "Ciudades Inteligentes"
 tagline: "Inteligencia Urbana Multidominio"
 heroImage: "/images/industry-cities.png"
-description: "Inteligencia operacional unificada que conecta movilidad, seguridad pública, infraestructura y dominios ambientales — transformando silos departamentales en operaciones de ciudad coordinadas."
+description: "Inteligencia operacional unificada que conecta movilidad, seguridad pública, infraestructura y dominios ambientales — transformando silos departamentales en operaciones urbanas coordinadas."
 order: 5
 hero:
   eyebrow: "Ciudades Inteligentes"
   title: "Una Ciudad. Un Centro de Operaciones."
-  description: "Deje de alternar entre 5-10 consolas departamentales. La inteligencia unificada conecta tránsito, seguridad pública, servicios públicos y sistemas ambientales en una imagen operacional coordinada."
+  description: "Deje de alternar entre 5-10 consolas departamentales. La inteligencia operacional unificada conecta tránsito, seguridad pública, servicios públicos y sistemas ambientales en una imagen coordinada."
   primaryCta:
     label: "Solicite una Evaluación de Ciudad"
     href: "/es/contact/demo"
@@ -35,19 +35,19 @@ challenges:
 capabilities:
   - name: "Centro de Operaciones de Ciudad Unificado"
     description: "Imagen operacional común única para todos los departamentos de la ciudad. Reemplace 5-10 consolas separadas con espacios de trabajo basados en roles para cada agencia."
-  - name: "Videovigilancia Urbana con IA"
+  - name: "Videovigilancia Urbana"
     description: "Analítica conductual en tiempo real en redes de cámaras de toda la ciudad. Fusión multisensor con detección de disparos, reconocimiento de placas y control de acceso."
   - name: "Respuesta de Emergencia Inter-Agencia"
     description: "Flujos de trabajo de coordinación automatizados que cruzan fronteras departamentales. Los incidentes multidominio activan respuestas coordinadas entre policía, bomberos, servicios de emergencia y obras públicas."
   - name: "Monitoreo de Infraestructura Inteligente"
     description: "Monitoreo continuo de condición para alumbrado público, semáforos, sistemas de agua e infraestructura distribuida con mantenimiento predictivo."
   - name: "Optimización de Flota Municipal"
-    description: "Optimización de rutas impulsada por IA para recolección de residuos, obras públicas y tránsito. Sensores de nivel de llenado permiten programación de recolección basada en demanda."
+    description: "Optimización de rutas con inteligencia predictiva para recolección de residuos, obras públicas y tránsito. Sensores de nivel de llenado permiten programación de recolección basada en demanda."
   - name: "Inteligencia Ambiental"
     description: "Datos de calidad del aire, clima y energía correlacionados con sistemas operacionales. Las concentraciones de contaminantes activan reruteo de tránsito y notificaciones públicas."
 platformMapping:
   connect: "Más de 8,000 conectores para controladores de tránsito (NTCIP), cámaras (ONVIF), sistemas de edificios (BACnet, KNX), tránsito (GTFS, SIRI) y sensores ambientales. Procesamiento en el edge en intersecciones y vehículos."
-  operate: "Analítica de video con IA con análisis conductual y dinámica de multitudes. Predicción de patrones de tránsito, mantenimiento predictivo para infraestructura y correlación ambiental. 80% menos falsas alarmas."
+  operate: "Analítica de video con análisis conductual y dinámica de multitudes. Predicción de patrones de tránsito, mantenimiento predictivo para infraestructura y correlación ambiental. 80% menos falsas alarmas."
   command: "Centro de operaciones de ciudad unificado con coordinación inter-agencia. Playbooks de respuesta de emergencia orquestan respuesta multi-departamento. Despacho de flotas para obras públicas y recolección de residuos."
 proofPoint:
   industry: "Ciudades — Seguridad Pública"

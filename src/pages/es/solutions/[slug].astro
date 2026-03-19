@@ -22,8 +22,8 @@ const { Content } = await solution.render()
 const { title, tagline, description, hero, challenges, capabilities, stats, platformMapping, proofPoint, cta } = solution.data
 
 // Default CTA values
-const ctaPrimary = cta?.primary || { label: 'Agendar una Demo', href: '/es/contact/demo' }
-const ctaSecondary = cta?.secondary || { label: 'Hablar con Ventas', href: '/es/contact/sales' }
+const ctaPrimary = cta?.primary || { label: 'Agende una Evaluación', href: '/es/contact/demo' }
+const ctaSecondary = cta?.secondary || { label: 'Hable con un Ingeniero', href: '/es/contact/sales' }
 ---
 
 <MarketingLayout
@@ -92,7 +92,7 @@ const ctaSecondary = cta?.secondary || { label: 'Hablar con Ventas', href: '/es/
   )}
 
   <CtaBanner
-    title={`¿Listo para ${title}?`}
+    title={`Vea ${title} en Sus Datos`}
     description={`Descubra cómo Quatro ofrece ${title.toLowerCase()} para sus operaciones.`}
     primaryCta={ctaPrimary}
     secondaryCta={ctaSecondary}

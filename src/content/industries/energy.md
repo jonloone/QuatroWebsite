@@ -2,12 +2,12 @@
 title: "Energy"
 tagline: "Overlay Modernization for Grid & Pipeline"
 heroImage: "/images/industry-energy.png"
-description: "Unified operational intelligence that overlays existing SCADA with AI analytics, DER integration, and cross-domain correlation — delivering modern capabilities in months, not years."
+description: "Modernize without replacing. Unified operational visibility that overlays existing SCADA with AI analytics, DER integration, and cross-domain correlation — delivering modern capabilities in months, not years."
 order: 1
 hero:
   eyebrow: "Energy"
   title: "Modernize Your SCADA. Keep Your Infrastructure."
-  description: "Don't rip out 15-25 year-old control systems. Overlay them with AI-powered analytics, DER connectivity, and unified operations that deploy in months — not the 3-5 years a full replacement demands."
+  description: "Don't rip out 15-25 year-old control systems. Overlay them with AI-powered analytics, DER connectivity, and unified operational visibility that deploy in months — not the 3-5 years a full replacement demands."
   primaryCta:
     label: "Schedule an Energy Assessment"
     href: "/contact/demo"
@@ -30,7 +30,7 @@ challenges:
     description: "Each equipment vendor provides its own management platform. Operators toggle between 5-7 separate tools to diagnose a single issue across generation, transmission, and distribution."
   - title: "DER Integration Complexity"
     description: "Every new solar array, battery, and EV charger adds endpoints with different protocols. Legacy SCADA has no native capability to handle DER telemetry."
-  - title: "Physical-OT Convergence Gap"
+  - title: "Fragmented Operational Visibility"
     description: "Security and operational monitoring operate as separate programs with separate tools. Compound threats spanning physical and cyber domains go unrecognized."
 capabilities:
   - name: "SCADA Overlay Modernization"
@@ -47,7 +47,7 @@ capabilities:
     description: "Continuous NERC CIP, PHMSA, and EPA audit trails. Replace 40+ hours/month of manual documentation with real-time compliance reporting."
 platformMapping:
   connect: "Native connectivity for DNP3, IEC 61850, OPC-UA, and MQTT. Mirrors data from legacy SCADA and historians without tag-based licensing. 8,000+ connectors for any energy asset."
-  operate: "AI analytics for predictive maintenance, multi-method leak detection, and grid anomaly detection. Digital twin enables contingency analysis and DER hosting capacity studies."
+  operate: "Predictive intelligence for maintenance, multi-method leak detection, and grid anomaly detection. Real-time operational model enables contingency analysis and DER hosting capacity studies."
   command: "Automated storm playbooks coordinate 200+ substations. Intelligent dispatch assigns certified crews. NERC CIP and PHMSA audit trails generated automatically."
 proofPoint:
   industry: "Energy — Integrated Utility"
@@ -67,5 +67,5 @@ cta:
   secondary:
     label: "Talk to an Energy Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your current SCADA systems and monitoring tools — and show how overlay modernization delivers unified intelligence in months, not years."
+  microcopy: "Typical assessment: 45-60 minutes. We'll map your current SCADA systems and monitoring tools — and show how overlay modernization delivers unified operational visibility in months, not years. 4-week proof of value · Credited toward contract"
 ---

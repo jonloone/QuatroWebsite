@@ -1,13 +1,13 @@
 ---
 title: "Connect"
-tagline: "Plataforma de Datos Industriales y Alternativa al Historiador"
+tagline: "Vea Todo en Tiempo Real"
 heroImage: "/images/product-connect-card.png"
-description: "Connect integra su infraestructura OT con analítica moderna. Más de 8,000 conectores, almacenamiento de series de tiempo de alto rendimiento, APIs abiertas y sin licenciamiento por tags."
+description: "Connect integra toda su infraestructura operacional con analítica moderna. Más de 8,000 conectores, almacenamiento de series de tiempo de alto rendimiento, APIs abiertas y sin licenciamiento por tags."
 order: 1
 hero:
   eyebrow: "Quatro Connect"
   title: "Cada Protocolo. Cada Fuente. Una Sola Base Unificada."
-  description: "Arquitectura abierta que integra toda su infraestructura OT con analítica moderna. Más de 8,000 conectores, almacenamiento de series de tiempo de alto rendimiento y acceso completo por API — sin licenciamiento por tags, nunca."
+  description: "Arquitectura abierta que integra toda su infraestructura operacional con analítica moderna. Más de 8,000 conectores, almacenamiento de series de tiempo de alto rendimiento y acceso completo por API — sin licenciamiento por tags, nunca."
   primaryCta:
     label: "Solicite una Evaluación de Datos"
     href: "/es/contact/demo"
@@ -55,7 +55,7 @@ capabilities:
     description: "Ejecute analítica, filtrado y agregación en el edge antes de que los datos lleguen a la red. Reduzca ancho de banda, garantice respuesta en tiempo real y mantenga las operaciones incluso con conectividad intermitente."
     icon: "cpu"
   - name: "Acceso Abierto por API"
-    description: "APIs REST y GraphQL completas para cada punto de datos del sistema. Construya dashboards personalizados, alimente pipelines de IA/ML o integre con cualquier herramienta analítica — sin middleware."
+    description: "APIs REST y GraphQL completas para cada punto de datos del sistema. Construya dashboards personalizados, alimente inteligencia predictiva o integre con cualquier herramienta analítica — sin middleware."
     icon: "code"
   - name: "Seguridad Empresarial"
     description: "Arquitectura de confianza cero con cifrado de extremo a extremo, control de acceso basado en roles, registro de auditoría y certificaciones de cumplimiento. Cumple con los requisitos de seguridad de operadores de infraestructura crítica."

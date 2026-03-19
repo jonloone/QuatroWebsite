@@ -9,15 +9,15 @@ const solutions = (await getCollection('solutions')).sort((a, b) => a.data.order
 ---
 
 <MarketingLayout
-  title="Solutions — Industrial Intelligence Use Cases"
-  description="Quatro delivers solutions for asset monitoring, pipeline security, operational intelligence, and more."
+  title="Solutions — Operational Intelligence Use Cases"
+  description="Quatro delivers operational intelligence solutions for asset monitoring, pipeline security, fleet logistics, and more — 8,000+ integrations, deployed your way."
 >
   <Hero
     variant="dark"
     eyebrow="Solutions"
-    title="Solutions for Every Operational Challenge"
-    description="From asset monitoring to fleet logistics, Quatro delivers industrial intelligence for your specific use case."
-    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
+    title="Operational Intelligence for Every Challenge"
+    description="From asset monitoring to fleet logistics, Quatro delivers unified operational visibility for your specific use case."
+    primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
   />
 
   <Section>
@@ -39,7 +39,7 @@ const solutions = (await getCollection('solutions')).sort((a, b) => a.data.order
             ))}
           </div>
           <span class="mt-4 inline-block font-display text-sm font-semibold text-brand-500 group-hover:underline">
-            Learn more &rarr;
+            Explore solution &rarr;
           </span>
         </a>
       ))}
@@ -47,9 +47,9 @@ const solutions = (await getCollection('solutions')).sort((a, b) => a.data.order
   </Section>
 
   <CtaBanner
-    title="Ready to Solve Your Challenge?"
-    description="See how Quatro addresses your specific operational needs."
-    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
-    secondaryCta={{ label: 'Talk to Sales', href: '/contact/sales' }}
+    title="See Operational Intelligence on Your Infrastructure"
+    description="Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
+    primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
   />
 </MarketingLayout>

@@ -12,7 +12,7 @@ hero:
     label: "Solicite un Briefing de Misión"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Descargue la Guía de Evaluación de Seguridad"
+    label: "Hable con un Ingeniero"
     href: "/es/contact/sales"
 stats:
   - value: "80%"
@@ -65,7 +65,7 @@ cta:
     label: "Solicite un Briefing de Misión"
     href: "/es/contact/demo"
   secondary:
-    label: "Vea el Despliegue en Entorno Aislado"
+    label: "Hable con un Ingeniero"
     href: "/es/contact/sales"
   microcopy: "Briefing típico: 45-60 minutos. Evaluaremos su postura de seguridad actual y demostraremos cómo el comando unificado reemplaza los sistemas fragmentados sin requerir consolidación de red."
 ---

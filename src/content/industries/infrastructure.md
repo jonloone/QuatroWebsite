@@ -2,12 +2,12 @@
 title: "Infrastructure"
 tagline: "Unified Multi-Vendor Operations"
 heroImage: "/images/industry-infrastructure.png"
-description: "Replace 5+ siloed vendor tools with one unified platform. 80% fewer false alarms, 55% faster MTTR, and AI-driven intelligence across telecom, transportation, logistics, and facilities."
+description: "One platform, any vendor, any site. Replace 5+ siloed vendor tools with one unified platform. 80% fewer false alarms, 55% faster MTTR, and predictive intelligence across telecom, transportation, logistics, and facilities."
 order: 4
 hero:
   eyebrow: "Infrastructure"
   title: "One Platform. Any Vendor. Any Site."
-  description: "Stop context-switching between vendor-specific NMS tools. Unified operational intelligence normalizes data from every vendor into a single view with AI-driven analytics."
+  description: "Stop context-switching between vendor-specific NMS tools. Unified operational visibility normalizes data from every vendor into a single view with predictive intelligence."
   primaryCta:
     label: "Schedule an Infrastructure Assessment"
     href: "/contact/demo"
@@ -37,17 +37,17 @@ capabilities:
     description: "Consolidate alarms from Nokia, Ericsson, Huawei, and any vendor into a single correlated view. AI-driven root cause identification accelerates resolution."
   - name: "Multi-Site Tower Monitoring"
     description: "Environmental, power, security, and equipment telemetry from 900+ sites. Predictive analytics detect failures before they cause outages."
-  - name: "AI Fleet Optimization"
+  - name: "Predictive Fleet Optimization"
     description: "Dynamic routing factors traffic, weather, vehicle capacity, and delivery windows. Continuous re-routing when conditions change."
   - name: "Predictive Maintenance"
-    description: "AI models forecast equipment failures 2-4 weeks in advance across fleet vehicles, building systems, and network equipment."
+    description: "Predictive intelligence forecasts equipment failures 2-4 weeks in advance across fleet vehicles, building systems, and network equipment."
   - name: "Smart Building Intelligence"
-    description: "Cross-system monitoring across HVAC, lighting, power, and security. AI-optimized energy management targets 25-30% reduction."
+    description: "Cross-system monitoring across HVAC, lighting, power, and security. Predictive intelligence optimizes energy management for 25-30% reduction."
   - name: "Automated SLA Reporting"
     description: "Real-time SLA compliance tracking with automated report generation. Replace hours of manual data aggregation."
 platformMapping:
   connect: "8,000+ connectors with protocol-native adapters for SNMP, NETCONF, TL1, gRPC, BACnet, KNX, and GPS/telematics. Edge processing at tower sites, vehicles, and buildings."
-  operate: "AI-driven alarm correlation and root cause analysis. Predictive maintenance, route optimization, and anomaly detection. 80% fewer false alarms through multi-domain intelligence."
+  operate: "Real-time operational model with alarm correlation and root cause analysis. Predictive intelligence, route optimization, and anomaly detection. 80% fewer false alarms through unified operational visibility."
   command: "Centralized multi-site NOC operations. Automated provisioning and fault remediation playbooks. Intelligent dispatch with technician certification matching."
 proofPoint:
   industry: "Infrastructure — Telecommunications"
@@ -67,5 +67,5 @@ cta:
   secondary:
     label: "Talk to an Infrastructure Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 30-45 minutes. We'll map your vendor tools and monitoring stack — and show how unified intelligence replaces fragmented platforms."
+  microcopy: "Typical assessment: 30-45 minutes. We'll map your vendor tools and monitoring stack — and show how unified operational visibility replaces fragmented platforms. 4-week proof of value · Credited toward contract"
 ---

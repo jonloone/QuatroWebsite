@@ -39,7 +39,7 @@ capabilities:
     description: "Métricas de disponibilidad, rendimiento y calidad en tiempo real correlacionadas con analítica de causa raíz que identifica los impulsores específicos de pérdida de OEE."
   - name: "Correlación Multidominio"
     description: "Analice simultáneamente las relaciones entre datos de mantenimiento, parámetros de proceso, resultados de calidad, consumo energético y flujos logísticos."
-  - name: "Gemelo Digital"
+  - name: "Modelo Operacional en Tiempo Real"
     description: "Representaciones digitales en tiempo real que permiten simulación y análisis de escenarios. Reduzca lotes de prueba en un 40% mediante optimización virtual de procesos."
   - name: "Coexistencia con Legacy"
     description: "Funcione en paralelo con historiadores existentes de OSIsoft PI, AspenTech u Honeywell sin migración. Sin licenciamiento por tags a ninguna escala."
@@ -47,7 +47,7 @@ capabilities:
     description: "Visibilidad a nivel empresarial y respuesta coordinada en múltiples instalaciones. Estandarice mejores prácticas y compare rendimiento entre sitios."
 platformMapping:
   connect: "Más de 8,000 conectores para OPC-UA, Modbus, MQTT, BACnet y sistemas empresariales. Sin licenciamiento por tags. Procesamiento en el edge mantiene la inteligencia local durante pérdida de conectividad."
-  operate: "Analítica de IA para mantenimiento predictivo, seguimiento de OEE y detección de anomalías. El gemelo digital permite simulación y planificación de escenarios. 80% menos falsas alarmas que sistemas basados en umbrales."
+  operate: "Analítica de IA para mantenimiento predictivo, seguimiento de OEE y detección de anomalías. El modelo operacional en tiempo real permite simulación y planificación de escenarios. 80% menos falsas alarmas que sistemas basados en umbrales."
   command: "Coordinación multi-planta y respuesta automatizada ante incidentes. Despacho de recursos basado en demanda en tiempo real, ubicación y requerimientos de competencias."
 proofPoint:
   industry: "Industrial — Manufactura Química"

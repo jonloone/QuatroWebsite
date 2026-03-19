@@ -32,11 +32,11 @@ export function localizeHref(href: string, locale: Locale): string {
 /* ─── Shared UI strings ─── */
 const ui = {
   en: {
-    'nav.getQuote': 'Get a Quote',
+    'nav.getQuote': 'Schedule Assessment',
     'nav.openMenu': 'Open menu',
     'nav.closeMenu': 'Close menu',
     'nav.home': 'Quatro home',
-    'footer.tagline': 'Industrial intelligence\nfor critical operations.',
+    'footer.tagline': 'Operational intelligence\nfor critical infrastructure.',
     'footer.copyright': 'All rights reserved.',
     'footer.privacy': 'Privacy',
     'footer.terms': 'Terms',
@@ -45,11 +45,11 @@ const ui = {
     'lang.switchLabel': 'Ver en Español',
   },
   es: {
-    'nav.getQuote': 'Solicitar Cotización',
+    'nav.getQuote': 'Agendar Evaluación',
     'nav.openMenu': 'Abrir menú',
     'nav.closeMenu': 'Cerrar menú',
     'nav.home': 'Inicio Quatro',
-    'footer.tagline': 'Inteligencia industrial\npara operaciones críticas.',
+    'footer.tagline': 'Inteligencia operacional\npara infraestructura crítica.',
     'footer.copyright': 'Todos los derechos reservados.',
     'footer.privacy': 'Privacidad',
     'footer.terms': 'Términos',

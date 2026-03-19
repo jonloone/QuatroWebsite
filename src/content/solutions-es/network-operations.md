@@ -1,12 +1,12 @@
 ---
 title: "Operaciones de Red"
 tagline: "NOC Unificado Multi-Proveedor"
-description: "Reemplace los silos de proveedores con inteligencia de red unificada. 80% menos falsas alarmas, 55% menor MTTR, y una sola plataforma para los equipos de cualquier proveedor."
+description: "Reemplace los silos de proveedores con inteligencia operacional unificada. 80% menos falsas alarmas, 55% menor MTTR, y una sola plataforma para los equipos de cualquier proveedor."
 order: 7
 hero:
   eyebrow: "Operaciones de Red"
   title: "Un Solo NOC. Cualquier Proveedor. Cero Silos."
-  description: "Deje de alternar entre 5-10 herramientas de proveedor. Inteligencia de red unificada con correlación impulsada por IA, remediación automatizada y cumplimiento de SLA en una sola plataforma."
+  description: "Deje de alternar entre 5-10 herramientas de proveedor. Inteligencia operacional unificada con correlación inteligente, remediación automatizada y cumplimiento de SLA en una sola plataforma."
   primaryCta:
     label: "Solicite una Evaluación de NOC"
     href: "/es/contact/demo"
@@ -46,7 +46,7 @@ capabilities:
     description: "Operaciones centralizadas o federadas en múltiples ubicaciones de NOC con acceso basado en roles y soporte follow-the-sun."
 platformMapping:
   connect: "Más de 8,000 conectores para routers, switches, radios y transporte óptico. Soporte nativo de SNMP, NETCONF/YANG, TL1 y gRPC con normalización agnóstica de proveedores."
-  operate: "Analítica impulsada por IA para detección de anomalías, planificación de capacidad y análisis de causa raíz. La correlación multidominio reduce el volumen de alarmas en un 80%."
+  operate: "Inteligencia predictiva para detección de anomalías, planificación de capacidad y análisis de causa raíz. La correlación multidominio reduce el volumen de alarmas en un 80%."
   command: "Playbooks automatizados de aprovisionamiento y remediación de fallas. Despacho inteligente que considera ubicación del técnico, certificación y tiempo de traslado."
 proofPoint:
   industry: "Infraestructura — Telecomunicaciones"

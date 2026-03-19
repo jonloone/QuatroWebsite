@@ -11,7 +11,7 @@ hero:
     label: "Schedule a Security Assessment"
     href: "/contact/demo"
   secondaryCta:
-    label: "Request a Demo"
+    label: "Talk to a Security Specialist"
     href: "/contact/sales"
 stats:
   - value: "80%"
@@ -64,7 +64,7 @@ cta:
     label: "Schedule a Security Assessment"
     href: "/contact/demo"
   secondary:
-    label: "Request a Demo"
+    label: "Talk to a Security Specialist"
     href: "/contact/sales"
   microcopy: "Typical assessment: 30-45 minutes. We'll evaluate your camera compatibility and show how AI analytics transform existing feeds into proactive threat detection."
 ---

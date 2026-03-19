@@ -22,8 +22,8 @@ const { Content } = await solution.render()
 const { title, tagline, description, hero, challenges, capabilities, stats, platformMapping, proofPoint, cta } = solution.data
 
 // Default CTA values
-const ctaPrimary = cta?.primary || { label: 'Schedule a Demo', href: '/contact/demo' }
-const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact/sales' }
+const ctaPrimary = cta?.primary || { label: 'Schedule an Assessment', href: '/contact/demo' }
+const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/contact/sales' }
 ---
 
 <MarketingLayout
@@ -45,7 +45,7 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   <Section divider>
     <FeatureGrid
       title="The Challenge"
-      subtitle="Critical operational pain points this solution addresses."
+      subtitle="The operational challenges this solution eliminates."
       features={challenges.map(c => ({ name: c.title, description: c.description }))}
       columns={challenges.length === 4 ? 4 : challenges.length === 3 ? 3 : 2}
     />
@@ -91,8 +91,8 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to Sales', href: '/contact
   )}
 
   <CtaBanner
-    title={`Ready for ${title}?`}
-    description={`See how Quatro delivers ${title.toLowerCase()} for your operations.`}
+    title={`See ${title} on Your Infrastructure`}
+    description={`Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit.`}
     primaryCta={ctaPrimary}
     secondaryCta={ctaSecondary}
     microcopy={cta?.microcopy}

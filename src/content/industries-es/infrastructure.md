@@ -2,12 +2,12 @@
 title: "Infraestructura"
 tagline: "Operaciones Unificadas Multi-Proveedor"
 heroImage: "/images/industry-infrastructure.png"
-description: "Reemplace más de 5 herramientas aisladas de proveedores con una sola plataforma unificada. 80% menos falsas alarmas, 55% menor MTTR e inteligencia impulsada por IA en telecomunicaciones, transporte, logística e instalaciones."
+description: "Reemplace más de 5 herramientas aisladas de proveedores con una sola plataforma unificada. 80% menos falsas alarmas, 55% menor MTTR e inteligencia operacional en telecomunicaciones, transporte, logística e instalaciones."
 order: 4
 hero:
   eyebrow: "Infraestructura"
   title: "Una Plataforma. Cualquier Proveedor. Cualquier Sitio."
-  description: "Deje de alternar entre herramientas NMS específicas de cada proveedor. La inteligencia operacional unificada normaliza datos de cada proveedor en una vista única con analítica impulsada por IA."
+  description: "Deje de alternar entre herramientas NMS específicas de cada proveedor. La inteligencia operacional unificada normaliza datos de cada proveedor en una vista única con inteligencia predictiva."
   primaryCta:
     label: "Solicite una Evaluación de Infraestructura"
     href: "/es/contact/demo"
@@ -37,17 +37,17 @@ capabilities:
     description: "Consolide alarmas de Nokia, Ericsson, Huawei y cualquier proveedor en una vista correlacionada única. La identificación de causa raíz impulsada por IA acelera la resolución."
   - name: "Monitoreo Multi-Sitio de Torres"
     description: "Telemetría ambiental, de energía, seguridad y equipos de más de 900 sitios. La analítica predictiva detecta fallas antes de que causen interrupciones."
-  - name: "Optimización de Flotas con IA"
-    description: "Ruteo dinámico que considera tráfico, clima, capacidad del vehículo y ventanas de entrega. Reruteo continuo cuando las condiciones cambian."
+  - name: "Optimización de Flotas"
+    description: "Ruteo dinámico con inteligencia predictiva que considera tráfico, clima, capacidad del vehículo y ventanas de entrega. Reruteo continuo cuando las condiciones cambian."
   - name: "Mantenimiento Predictivo"
     description: "Modelos de IA pronostican fallas de equipos con 2-4 semanas de anticipación en vehículos de flota, sistemas de edificios y equipos de red."
   - name: "Inteligencia de Edificios Inteligentes"
-    description: "Monitoreo entre sistemas de HVAC, iluminación, energía y seguridad. Gestión energética optimizada con IA orientada a reducciones del 25-30%."
+    description: "Monitoreo entre sistemas de HVAC, iluminación, energía y seguridad. Gestión energética optimizada con inteligencia predictiva orientada a reducciones del 25-30%."
   - name: "Reportes Automatizados de SLA"
     description: "Seguimiento de cumplimiento de SLA en tiempo real con generación automatizada de reportes. Reemplace horas de agregación manual de datos."
 platformMapping:
   connect: "Más de 8,000 conectores con adaptadores nativos de protocolo para SNMP, NETCONF, TL1, gRPC, BACnet, KNX y GPS/telemática. Procesamiento en el edge en sitios de torres, vehículos y edificios."
-  operate: "Correlación de alarmas y análisis de causa raíz impulsados por IA. Mantenimiento predictivo, optimización de rutas y detección de anomalías. 80% menos falsas alarmas mediante inteligencia multidominio."
+  operate: "Correlación de alarmas y análisis de causa raíz con inteligencia predictiva. Mantenimiento predictivo, optimización de rutas y detección de anomalías. 80% menos falsas alarmas mediante inteligencia multidominio."
   command: "Operaciones de NOC centralizado multi-sitio. Playbooks automatizados de aprovisionamiento y remediación de fallas. Despacho inteligente con verificación de certificación de técnicos."
 proofPoint:
   industry: "Infraestructura — Telecomunicaciones"

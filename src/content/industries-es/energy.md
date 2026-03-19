@@ -30,7 +30,7 @@ challenges:
     description: "Cada proveedor de equipos proporciona su propia plataforma de gestión. Los operadores alternan entre 5-7 herramientas diferentes para diagnosticar un solo problema entre generación, transmisión y distribución."
   - title: "Complejidad de Integración de DER"
     description: "Cada nuevo arreglo solar, batería y cargador de vehículos eléctricos agrega endpoints con diferentes protocolos. El SCADA legacy no tiene capacidad nativa para manejar telemetría de DER."
-  - title: "Brecha de Convergencia Física-OT"
+  - title: "Brecha de Convergencia Física-Operacional"
     description: "La seguridad y el monitoreo operacional funcionan como programas separados con herramientas separadas. Las amenazas compuestas que abarcan dominios físicos y cibernéticos pasan desapercibidas."
 capabilities:
   - name: "Modernización de SCADA por Superposición"
@@ -47,7 +47,7 @@ capabilities:
     description: "Trazabilidad continua de NERC CIP, PHMSA y EPA. Reemplace más de 40 horas/mes de documentación manual con reportes de cumplimiento en tiempo real."
 platformMapping:
   connect: "Conectividad nativa para DNP3, IEC 61850, OPC-UA y MQTT. Replica datos del SCADA y los historiadores legacy sin licenciamiento por tags. Más de 8,000 conectores para cualquier activo energético."
-  operate: "Analítica de IA para mantenimiento predictivo, detección de fugas multimétodo y detección de anomalías de red. El gemelo digital permite análisis de contingencia y estudios de capacidad de hosting de DER."
+  operate: "Analítica de IA para mantenimiento predictivo, detección de fugas multimétodo y detección de anomalías de red. El modelo operacional en tiempo real permite análisis de contingencia y estudios de capacidad de hosting de DER."
   command: "Playbooks automatizados de tormentas coordinan más de 200 subestaciones. Despacho inteligente asigna cuadrillas certificadas. Trazabilidad NERC CIP y PHMSA generada automáticamente."
 proofPoint:
   industry: "Energía — Empresa de Servicios Integrada"
