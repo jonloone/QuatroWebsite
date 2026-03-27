@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@rollup/rollup-linux-arm64-gnu": "^4.60.0",
     "astro": "^5.2.5",
     "clsx": "^2.1.1",
     "phosphor-astro": "^2.1.0"

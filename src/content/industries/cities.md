@@ -2,7 +2,7 @@
 title: "Smart Cities"
 tagline: "Cross-Domain Urban Intelligence"
 heroImage: "/images/industry-cities.png"
-description: "Unified operational intelligence connecting mobility, public safety, infrastructure, and environmental domains — transforming departmental silos into coordinated city operations."
+description: "Unified operational intelligence connecting mobility, public safety, infrastructure, water systems, and environmental domains — transforming departmental silos into coordinated city operations with measurable citizen outcomes."
 order: 5
 hero:
   eyebrow: "Smart Cities"
@@ -38,13 +38,15 @@ capabilities:
   - name: "AI Urban Surveillance"
     description: "Real-time behavioral analytics across city-wide camera networks. Multi-sensor fusion with gunshot detection, license plate recognition, and access control."
   - name: "Cross-Agency Emergency Response"
-    description: "Automated coordination workflows span department boundaries. Multi-domain incidents trigger coordinated responses across police, fire, EMS, and public works."
+    description: "When a water main breaks, it affects traffic, public safety, fleet dispatch, and environmental monitoring simultaneously. Intelligent coordination recognizes multi-domain impact and recommends coordinated responses across departments — not just workflow automation, but AI-driven impact assessment."
   - name: "Smart Infrastructure Monitoring"
-    description: "Continuous condition monitoring for streetlights, traffic signals, water systems, and distributed infrastructure with predictive maintenance."
+    description: "Continuous condition monitoring for streetlights, traffic signals, water distribution networks, and distributed infrastructure with predictive maintenance. Cross-links to dedicated water system intelligence for treatment plants, leak detection, and compliance monitoring."
   - name: "Municipal Fleet Optimization"
-    description: "AI-powered route optimization for waste collection, public works, and transit. Fill-level sensors enable demand-driven collection scheduling."
+    description: "AI-powered route optimization for waste collection, public works, and transit. Fill-level IoT sensors enable demand-driven collection scheduling. Recycling monitoring and contamination detection. Dynamic routing based on actual container status — not fixed schedules."
   - name: "Environmental Intelligence"
     description: "Air quality, weather, and energy data correlated with operational systems. Pollutant concentrations trigger traffic rerouting and public notifications."
+  - name: "Water Infrastructure Intelligence"
+    description: "Treatment plant monitoring, distribution network management, leak detection, and water quality compliance. From reservoir to tap, unified intelligence across the municipal water system — connecting to city-wide operations for coordinated incident response."
 platformMapping:
   connect: "8,000+ connectors for traffic controllers (NTCIP), cameras (ONVIF), building systems (BACnet, KNX), transit (GTFS, SIRI), and environmental sensors. Edge processing at intersections and vehicles."
   operate: "AI video analytics with behavioral analysis and crowd dynamics. Traffic pattern prediction, predictive maintenance for infrastructure, and environmental correlation. 80% fewer false alarms."
@@ -67,5 +69,5 @@ cta:
   secondary:
     label: "Request a Demo"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your current systems across departments and demonstrate how unified intelligence enables cross-domain coordination."
+  microcopy: "Typical assessment: 45-60 minutes. We'll map your current systems across departments and demonstrate how unified intelligence enables cross-domain coordination. Faster emergency response. Cleaner streets. Lower utility costs."
 ---

@@ -68,7 +68,7 @@ objections:
   - concern: "We've tried automated monitoring before—too many false alarms"
     response: "Previous systems rely on single-sensor thresholds. Our approach fuses 5+ sensor modalities with machine learning to understand your pipeline's normal operating envelope. Comparable solutions report 20-30% false positive rates; our customers typically see 5-10%. The difference is context: we eliminate alerts that don't correlate across pressure, flow, acoustic, and vibration simultaneously."
   - concern: "Our pipelines are decades old—legacy sensors won't work with new systems"
-    description: "Legacy infrastructure is exactly what we're designed for. We work with whatever sensor hardware you have (analog 4-20mA transducers, digital Modbus/DNP3, even pneumatic gauges with manual transcription). Our data normalization layer translates any input format into unified operational intelligence. Zero re-instrumentation required."
+    response: "Legacy infrastructure is exactly what we're designed for. We work with whatever sensor hardware you have (analog 4-20mA transducers, digital Modbus/DNP3, even pneumatic gauges with manual transcription). Our data normalization layer translates any input format into unified operational intelligence. Zero re-instrumentation required."
   - concern: "We don't have the team to manage another software platform"
     response: "The platform is designed for your existing ops staff, not new hires. Think of it as a smart analyst that reduces daily alert triage from 4-5 hours to 30 minutes. Your operators stay in their existing SCADA interface; we integrate alerts directly into their workflow. Onboarding takes 4 weeks, and we provide 24/7 Tier-2 support for the first year."
 adjacentSolutions:

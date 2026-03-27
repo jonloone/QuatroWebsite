@@ -65,7 +65,7 @@ objections:
   - concern: "Won't bad actors just spoof AIS or turn off transponders?"
     response: "Yes, and that's exactly the point. Quatro detects dark ships precisely because they operate without transponders. Multi-sensor fusion (radar, SIGINT, satellite) reveals anomalies that spoofing cannot hide."
   - concern: "How do we avoid civilian casualties in high-traffic zones?"
-    description: "Advanced vessel classification distinguishes commercial traffic, fishing vessels, and hostile actors. Rules of engagement templates and real-time commander approval gates ensure civilian vessels are treated appropriately."
+    response: "Advanced vessel classification distinguishes commercial traffic, fishing vessels, and hostile actors. Rules of engagement templates and real-time commander approval gates ensure civilian vessels are treated appropriately."
   - concern: "Can this handle real-time processing at scale?"
     response: "Yes. Quatro processes thousands of signals per second across distributed edge compute nodes. Latency from data ingest to actionable alert is sub-minute."
 adjacentSolutions:

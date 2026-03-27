@@ -2,12 +2,12 @@
 title: "Infrastructure"
 tagline: "Unified Multi-Vendor Operations"
 heroImage: "/images/industry-infrastructure.png"
-description: "One platform, any vendor, any site. Replace 5+ siloed vendor tools with one unified platform. 80% fewer false alarms, 55% faster MTTR, and predictive intelligence across telecom, transportation, logistics, and facilities."
+description: "One platform, any vendor, any site. Replace 5+ siloed vendor tools with one unified platform. AI-powered fault remediation, predictive intelligence, and commercial operations visibility — 80% fewer false alarms, 55% faster MTTR, and a clear path from NOC operations to enterprise infrastructure intelligence."
 order: 4
 hero:
   eyebrow: "Infrastructure"
   title: "One Platform. Any Vendor. Any Site."
-  description: "Stop context-switching between vendor-specific NMS tools. Unified operational visibility normalizes data from every vendor into a single view with predictive intelligence."
+  description: "Stop context-switching between vendor-specific NMS tools. AI-powered operational visibility normalizes data from every vendor into a single view with intelligent fault remediation, predictive maintenance, and commercial operations intelligence."
   primaryCta:
     label: "Schedule an Infrastructure Assessment"
     href: "/contact/demo"
@@ -34,20 +34,22 @@ challenges:
     description: "Fleet and facility maintenance remains calendar-based or break-fix. Predictive data exists but sits in disconnected systems with no analytics layer."
 capabilities:
   - name: "Unified NOC Operations"
-    description: "Consolidate alarms from Nokia, Ericsson, Huawei, and any vendor into a single correlated view. AI-driven root cause identification accelerates resolution."
+    description: "Consolidate alarms from Nokia, Ericsson, Huawei, and any vendor into a single correlated view. AI-driven root cause identification and intelligent remediation recommendations accelerate resolution — operators handle complex situations with contextual guidance, not just alerts."
   - name: "Multi-Site Tower Monitoring"
     description: "Environmental, power, security, and equipment telemetry from 900+ sites. Predictive analytics detect failures before they cause outages."
   - name: "Predictive Fleet Optimization"
-    description: "Dynamic routing factors traffic, weather, vehicle capacity, and delivery windows. Continuous re-routing when conditions change."
+    description: "AI-powered routing factors traffic, weather, vehicle capacity, and delivery windows. Continuous re-routing when conditions change. Connected to broader logistics corridor intelligence for end-to-end supply chain visibility."
   - name: "Predictive Maintenance"
     description: "Predictive intelligence forecasts equipment failures 2-4 weeks in advance across fleet vehicles, building systems, and network equipment."
   - name: "Smart Building Intelligence"
     description: "Cross-system monitoring across HVAC, lighting, power, and security. Predictive intelligence optimizes energy management for 25-30% reduction."
-  - name: "Automated SLA Reporting"
-    description: "Real-time SLA compliance tracking with automated report generation. Replace hours of manual data aggregation."
+  - name: "AI-Powered Fault Remediation"
+    description: "When issues are detected, the platform diagnoses root cause, recommends remediation steps, and can execute proven playbooks autonomously. AI-assisted troubleshooting that captures institutional expertise and guides operators through resolution — reducing dependency on senior engineers."
+  - name: "Commercial Operations Intelligence"
+    description: "Active SLA management with breach prediction, automated escalation, capacity planning, and cost tracking. Turn NOC operations into revenue operations — connecting network performance to customer experience and commercial impact."
 platformMapping:
   connect: "8,000+ connectors with protocol-native adapters for SNMP, NETCONF, TL1, gRPC, BACnet, KNX, and GPS/telematics. Edge processing at tower sites, vehicles, and buildings."
-  operate: "Real-time operational model with alarm correlation and root cause analysis. Predictive intelligence, route optimization, and anomaly detection. 80% fewer false alarms through unified operational visibility."
+  operate: "AI-powered intelligence with alarm correlation, root cause analysis, and operator guidance. Predictive intelligence, route optimization, and behavioral anomaly detection. 80% fewer false alarms through relationship-aware correlation that understands service dependencies."
   command: "Centralized multi-site NOC operations. Automated provisioning and fault remediation playbooks. Intelligent dispatch with technician certification matching."
 proofPoint:
   industry: "Infrastructure — Telecommunications"

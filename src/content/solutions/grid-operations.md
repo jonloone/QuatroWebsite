@@ -6,7 +6,7 @@ order: 6
 hero:
   eyebrow: "Grid Operations"
   title: "Modern Grid Intelligence. Legacy SCADA Intact."
-  description: "Don't rip out your SCADA. Overlay it with AI-powered analytics, DER integration, and automated storm response that deploys in months, not years."
+  description: "Don't rip out your SCADA. Overlay it with AI-powered operator guidance, predictive analytics, DER integration, and automated storm response that deploys in months, not years."
   primaryCta:
     label: "Schedule a Grid Assessment"
     href: "/contact/demo"
@@ -39,14 +39,16 @@ capabilities:
   - name: "DER Integration"
     description: "Seamless onboarding of solar, wind, battery storage, and EV charging — normalized into your grid operational view."
   - name: "SCADA Modernization"
-    description: "Overlay existing SCADA with modern analytics without touching the safety-critical control path. Migrate at your own pace."
+    description: "Overlay existing SCADA with AI-powered intelligence without touching the safety-critical control path. Operator guidance, pattern recognition, and predictive analytics layer on top of your existing infrastructure. Migrate at your own pace."
   - name: "Storm Response Automation"
-    description: "Automated playbooks pre-position crews, activate mutual aid, and prioritize restoration by customer impact and critical facility status."
+    description: "AI-assisted storm playbooks pre-position crews based on predicted storm trajectory, activate mutual aid, and prioritize restoration by customer impact and critical facility status. Intelligent dispatch matches crew certifications to switching requirements."
   - name: "Real-Time Grid Simulation"
     description: "Operational models for contingency analysis, DER hosting capacity studies, and storm impact modeling before conditions materialize."
+  - name: "AI-Powered Grid Intelligence"
+    description: "Real-time contextual recommendations for grid operators. Pattern recognition identifies emerging issues — cascading outage conditions, DER instability, load imbalances — before threshold alerts fire. New operators perform like veterans with step-by-step guidance."
 platformMapping:
   connect: "Native connectivity for DNP3, IEC 61850, and OPC-UA. Mirrors data from legacy SCADA in real time while adding DER connectivity through SunSpec, OCPP, and IEEE 2030.5."
-  operate: "AI analytics for predictive maintenance, grid anomaly detection, and DER performance optimization. Real-time operational models enable contingency analysis and storm modeling."
+  operate: "AI-powered intelligence for predictive maintenance, grid anomaly detection, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before they cascade. Real-time operational models enable contingency analysis and storm impact modeling."
   command: "Automated storm playbooks coordinate 200+ substations. Intelligent dispatch assigns certified crews with switching authority. NERC CIP audit trails generated automatically."
 proofPoint:
   industry: "Energy — Integrated Utility"

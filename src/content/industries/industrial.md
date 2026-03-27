@@ -2,7 +2,7 @@
 title: "Industrial"
 tagline: "Cross-Domain Plant Intelligence"
 heroImage: "/images/industry-industrial.png"
-description: "Plant floor to enterprise, one intelligence layer. Unified operational intelligence that correlates production, maintenance, quality, and safety data — reducing downtime by 35% and eliminating the silos that blind your operations."
+description: "Plant floor to enterprise, one intelligence layer. AI-powered operational intelligence that correlates production, maintenance, quality, and safety data — reducing downtime by 35%, predicting quality outcomes before batch completion, and guiding operators through complex situations with contextual intelligence."
 order: 3
 hero:
   eyebrow: "Industrial"
@@ -38,16 +38,20 @@ capabilities:
   - name: "OEE Optimization"
     description: "Real-time availability, performance, and quality metrics correlated with root-cause analytics that identify specific drivers of OEE loss."
   - name: "Cross-Domain Correlation"
-    description: "Analyze relationships between maintenance data, process parameters, quality results, energy consumption, and logistics flows simultaneously."
+    description: "AI-powered intelligence analyzes relationships between maintenance data, process parameters, quality results, energy consumption, and logistics flows simultaneously. Pattern recognition surfaces emerging issues before threshold alerts fire — and explains why they matter."
   - name: "Real-Time Operational Model"
-    description: "Real-time operational representations enable simulation and what-if analysis. Reduce trial batches by 40% through virtual process optimization."
+    description: "Real-time operational models enable simulation and what-if analysis. Reduce trial batches by 40% through virtual process optimization. The living operational model understands asset relationships, service dependencies, and production flows — the foundation for AI-guided decision-making."
   - name: "Legacy Coexistence"
     description: "Layer alongside existing OSIsoft PI, AspenTech, or Honeywell historians without migration. No tag-based licensing at any scale."
   - name: "Multi-Plant Coordination"
     description: "Enterprise-wide visibility and coordinated response across multiple facilities. Standardize best practices and benchmark performance."
+  - name: "AI-Powered Operator Guidance"
+    description: "Real-time contextual recommendations for control room operators. When a complex situation develops — simultaneous equipment alerts, quality deviations, production constraints — the platform provides step-by-step guidance based on historical patterns, current conditions, and process relationships. New operators perform like 20-year veterans."
+  - name: "Quality Prediction"
+    description: "Correlate process parameters with quality outcomes before batch completion. AI models identify drift in quality-critical variables and recommend corrective action while product is still in-process — not after it fails final inspection."
 platformMapping:
   connect: "8,000+ connectors for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss."
-  operate: "Predictive intelligence for maintenance, OEE tracking, and anomaly detection. Real-time operational model enables simulation and scenario planning. 80% fewer false alarms than threshold-based systems."
+  operate: "AI-powered intelligence for predictive maintenance, OEE tracking, quality prediction, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold alerts fire. Real-time operational models enable simulation and scenario planning. 80% fewer false alarms through relationship-aware intelligence."
   command: "Multi-plant coordination and automated incident response. Resource dispatch based on real-time demand, location, and skill requirements."
 proofPoint:
   industry: "Industrial — Chemical Manufacturing"

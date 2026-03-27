@@ -35,7 +35,7 @@ capabilities:
   - name: "Real-Time Vehicle Tracking"
     description: "GPS and telemetry for every vehicle on a unified operational map with sub-second position updates and status overlays."
   - name: "AI Route Optimization"
-    description: "Dynamic routing that factors in traffic, weather, vehicle capacity, and delivery windows — with in-flight re-routing when conditions change."
+    description: "Dynamic routing that factors in traffic, weather, vehicle capacity, and delivery windows — with in-flight re-routing when conditions change. Connected to broader logistics corridor intelligence for end-to-end supply chain visibility from port to warehouse to customer."
   - name: "Cargo Monitoring"
     description: "Continuous temperature, humidity, and shock monitoring with automated alerts and compliance-ready chain-of-custody documentation."
   - name: "Driver Safety & Compliance"
@@ -43,11 +43,11 @@ capabilities:
   - name: "Predictive Maintenance"
     description: "AI models correlate diagnostics, usage patterns, and environmental conditions to forecast failures 1-3 weeks in advance."
   - name: "Centralized Dispatch"
-    description: "Unified dispatch console for managing fleet, crews, and deliveries with intelligent assignment and real-time tracking."
+    description: "AI-powered dispatch console for managing fleet, crews, and deliveries with intelligent assignment and real-time tracking. Predictive demand modeling optimizes resource positioning. Connects to port operations, airport logistics, and corridor intelligence for full transportation ecosystem visibility."
 platformMapping:
   connect: "Ingests data from any GPS, telematics device, or IoT sensor. Normalizes data from mixed hardware fleets without requiring vendor standardization."
-  operate: "AI analytics for route optimization, predictive maintenance, and driver safety. Real-time operational models enable fleet sizing and depot placement modeling."
-  command: "Centralized dispatch with automated playbooks for breakdowns, delays, and priority insertions. Mobile apps keep drivers connected even during connectivity loss."
+  operate: "AI intelligence for route optimization, predictive maintenance, and driver safety. Real-time operational models enable fleet sizing, depot placement modeling, and demand forecasting. Behavioral analysis detects vehicle performance shifts before they cause breakdowns."
+  command: "Centralized dispatch with AI-assisted assignment and automated playbooks for breakdowns, delays, and priority insertions. Enterprise intelligence connects fleet operations to warehouse management, customer delivery SLAs, and supply chain performance."
 proofPoint:
   industry: "Infrastructure — Logistics"
   headline: "National Fleet Optimization"

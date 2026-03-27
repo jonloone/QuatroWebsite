@@ -1,0 +1,76 @@
+---
+title: "Water & Environment"
+tagline: "Unified Intelligence for Water and Environmental Operations"
+description: "Real-time operational intelligence that transforms fragmented sensor data across water systems, environmental monitoring, and regulatory compliance into predictive system health, automated compliance reporting, and coordinated environmental protection."
+order: 8
+hero:
+  eyebrow: "Water & Environment"
+  title: "One Platform. Every Water Challenge. Total Visibility."
+  description: "Unified operational intelligence that transforms fragmented data across water systems, environmental monitoring, and regulatory compliance into real-time situational awareness, predictive system health, and coordinated environmental protection — all from a single operational command."
+  primaryCta:
+    label: "Request a Demo"
+    href: "/contact/demo"
+  secondaryCta:
+    label: "Talk to a Water Expert"
+    href: "/contact/sales"
+stats:
+  - value: "40-50%"
+    label: "Water Loss Detected"
+  - value: "Minutes"
+    label: "Leak Detection Time"
+  - value: "8,000+"
+    label: "Sensor Connectors"
+  - value: "Automated"
+    label: "Compliance Reporting"
+challenges:
+  - title: "Invisible Water Loss"
+    description: "Water systems in Latin America lose 40-50% of treated water to undetected leaks. A typical mid-sized city treating 200,000 m3/day loses 100,000 m3/day — detected only when pressure drops or customers complain, days after the leak starts."
+  - title: "Fragmented Sensor Infrastructure"
+    description: "SCADA for treatment plants, separate meter networks, separate pressure sensors, and manual regulatory reporting systems. These systems don't talk to each other. Operators manage through shift logs and spreadsheets."
+  - title: "Regulatory Compliance Burden"
+    description: "SENAGUA requires real-time water quality and system pressure reporting. MAE/MAATE demands environmental monitoring across multiple media. Current practice involves manual data collection, monthly aggregation, and lagged reporting."
+  - title: "Environmental Detection Gaps"
+    description: "A mining operation upstream leaches heavy metals into a protected watershed. The environmental authority doesn't detect degradation until fish kills appear downstream — weeks later. Evidence is degraded and damage is irreversible."
+  - title: "ESG and Climate Adaptation Pressure"
+    description: "Organizations commit to net-zero and environmental restoration targets but current monitoring systems can't prove progress. Auditors require evidence that KPIs actually improved — not just that reports were submitted."
+capabilities:
+  - name: "Hydraulic Network Correlation"
+    description: "Real-time pressure correlation across the entire distribution network. Any deviation signals a leak. The system correlates pressure changes across multiple points to isolate the leak's location — not just 'there's a leak somewhere' but the specific pipe segment."
+  - name: "Automated Leak Detection and Dispatch"
+    description: "Leaks detected within minutes of occurrence with localization accuracy enabling surgical repairs. Automated alert workflows include location probability maps, segment characteristics, crew availability, and material recommendations."
+  - name: "Predictive Pipe Health"
+    description: "Asset heat maps showing failure risk by segment based on pipe age, material, pressure history, quality events, and maintenance records. Prioritized replacement scheduling that prevents catastrophic failures and optimizes capital expenditure."
+  - name: "Water Quality Monitoring"
+    description: "Real-time compliance against SENAGUA thresholds at each monitoring point. Out-of-spec events flagged with probable cause analysis — identifying whether the issue is detention time, treatment failure, or external contamination."
+  - name: "Multi-Media Environmental Monitoring"
+    description: "Unified monitoring across air quality, water quality, effluent discharge, emissions stacks, and noise — all correlated in a single environmental picture. Cross-media contamination patterns detected that single-domain systems miss."
+  - name: "Automated Compliance Reporting"
+    description: "Auto-generated monthly and quarterly reports tied to actual operational data for SENAGUA, MAE/MAATE, and TULSMA frameworks. No spreadsheets. No manual assembly. Real-time compliance verification — operators know immediately when they're out of spec."
+  - name: "Enforcement-Ready Evidence Packages"
+    description: "Every violation event documented with detection timestamp, measured values, regulatory thresholds, operational context, immediate response actions, and recovery confirmation — formatted for regulatory submission or prosecution support."
+  - name: "ESG and Climate Adaptation Tracking"
+    description: "Time-series environmental data attributed by source with progress tracking against organizational ESG commitments. Emissions, water consumption, and energy use measured and reported with evidence for investor reporting."
+platformMapping:
+  connect: "1,000+ vendor integrations across water sensors, environmental monitors, SCADA systems, meter networks, and regulatory databases. Pressure sensors, flow meters, quality probes, environmental IoT — all feeding into unified streams. Connect to what you have, no rip-and-replace."
+  operate: "Real-time hydraulic correlation, time-series anomaly detection, and environmental pattern recognition. Leaks detected automatically, compliance status tracked in real-time, environmental trends analyzed continuously. Machine-learning models trained on historical pressure patterns for predictive localization."
+  command: "Leak localization recommendations and automated dispatch workflows. Predictive failure scoring on pipe segments. Automated compliance reporting for SENAGUA, MAE/MAATE, and TULSMA. Enforcement packages with evidence trails. Governance-grade audit trails for every detection and regulatory handoff."
+proofPoint:
+  industry: "Water & Environment — Municipal Utility"
+  headline: "Water Loss Reduction and Compliance Automation"
+  metrics:
+    - value: "35%"
+      label: "Water Loss Reduction"
+    - value: "Minutes"
+      label: "Leak Detection Time"
+    - value: "90%"
+      label: "Less Compliance Assembly Time"
+  narrative: "A municipal water utility serving 500,000 residents deployed Quatro across its distribution network. Real-time hydraulic correlation detected leaks within minutes — reducing average locate time from 10 days to 4 hours. Water loss dropped 35% in the first year. Automated SENAGUA compliance reporting eliminated 30+ hours per month of manual data assembly, with real-time quality monitoring preventing violations before they reached customers."
+cta:
+  primary:
+    label: "Request a Demo"
+    href: "/contact/demo"
+  secondary:
+    label: "Talk to a Water Expert"
+    href: "/contact/sales"
+  microcopy: "Typical assessment: 45-60 minutes. We'll map your current water system sensors and environmental monitoring — and show how unified intelligence detects leaks in minutes and automates compliance reporting. 90-day proof of value · Credited toward contract"
+---

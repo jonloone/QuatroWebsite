@@ -2,7 +2,7 @@
 title: "Connect"
 tagline: "See Everything in Real Time"
 heroImage: "/images/product-connect-card.png"
-description: "Complete operational picture with 8,000+ integrations from 1,000+ vendors. Intelligent alerting, live dashboards, asset management, SLA tracking, compliance reporting. One screen instead of fifteen."
+description: "Complete operational picture with 8,000+ integrations from 1,000+ vendors. Intelligent alerting, live dashboards, asset management, SLA tracking, compliance reporting. One screen instead of fifteen — and the foundation for AI-powered intelligence that turns operational data into business decisions."
 order: 1
 hero:
   eyebrow: "Quatro Connect"
@@ -31,7 +31,7 @@ solutions:
   - title: "No Tag-Based Licensing"
     description: "Collect every data point your operations generate. Our licensing model scales with your business, not against it. No per-tag fees, ever."
   - title: "Edge to Cloud"
-    description: "Process data at the edge for real-time response, store it in high-performance time-series databases, and stream it to cloud analytics — all in one platform."
+    description: "Process data at the edge for real-time response, store it in high-performance time-series databases, and stream it to cloud analytics — all in one platform. From satellite IoT to factory floor PLC to cloud analytics, one connectivity layer covers the full stack."
 stats:
   - value: "8,000+"
     label: "Connectors"
@@ -49,7 +49,7 @@ capabilities:
     description: "Purpose-built time-series engine handles millions of data points per second with 10–20x compression. Years of operational history at your fingertips, without the storage bloat of traditional historians."
     icon: "chart"
   - name: "Data Contextualization"
-    description: "Automatically tag, classify, and enrich raw data with operational context. Asset hierarchies, equipment relationships, and process metadata transform raw signals into actionable intelligence."
+    description: "Automatically tag, classify, and enrich raw data with operational context. Asset hierarchies, equipment relationships, service dependencies, and process metadata transform raw signals into a living operational model — the foundation for intelligent correlation, root cause analysis, and AI-powered guidance."
     icon: "tag"
   - name: "Edge Processing"
     description: "Run analytics, filtering, and aggregation at the edge before data ever hits the network. Reduce bandwidth, ensure real-time response, and maintain operations even when connectivity is intermittent."
@@ -82,6 +82,7 @@ protocolShowcase:
         - "CoAP"
         - "HTTP/REST"
         - "WebSocket"
+        - "Satellite IoT"
     - name: "Building & Infrastructure"
       icon: "layers"
       items:
@@ -118,7 +119,7 @@ protocolShowcase:
         - "Snowflake"
         - "Databricks"
         - "Power BI Direct Query"
-  footnote: "And thousands more. Can't find your protocol? We'll build the connector."
+  footnote: "And thousands more — with new integrations added continuously from our growing solutions catalog. Can't find your protocol? We'll build the connector."
 deploymentOptions:
   title: "Deployment Options"
   subtitle: "Deploy anywhere your operations run — cloud, on-premises, edge, or all three."
@@ -149,5 +150,5 @@ proofPoint:
       label: "Less Integration Maintenance"
     - value: "40+"
       label: "Legacy Databases Consolidated"
-  narrative: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified Connect deployment. The result: real-time unified operational visibility across 200,000+ data points, 60% reduction in integration maintenance, and a foundation for predictive intelligence and orchestration that was impossible with fragmented legacy systems. Start with Visibility. Grow to Operations. Scale to Intelligence."
+  narrative: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified Connect deployment. The result: real-time unified operational visibility across 200,000+ data points, 60% reduction in integration maintenance, and the data foundation for AI-powered intelligence and enterprise decision-making that was impossible with fragmented legacy systems."
 ---

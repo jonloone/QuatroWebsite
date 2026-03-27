@@ -21,6 +21,8 @@ function BuildingOffice2Icon() {}
 function UserGroupIcon() {}
 function BriefcaseIcon() {}
 function NewspaperIcon() {}
+function SignalIcon() {}
+function BeakerIcon() {}
 
 export interface NavItem {
   name: string
@@ -73,6 +75,15 @@ const footerNavigationData = {
         { name: 'Fleet & Logistics', href: '/solutions/fleet-logistics' },
         { name: 'Grid Operations', href: '/solutions/grid-operations' },
         { name: 'Network Operations', href: '/solutions/network-operations' },
+        { name: 'Teleport Operations', href: '/solutions/teleport-operations' },
+        { name: 'Fleet Health', href: '/solutions/fleet-health' },
+        { name: 'Revenue Assurance', href: '/solutions/satellite-revenue-assurance' },
+        { name: 'Space Domain Awareness', href: '/solutions/space-domain-awareness' },
+        { name: 'Port Operations', href: '/solutions/port-operations' },
+        { name: 'Airport Operations', href: '/solutions/airport-operations' },
+        { name: 'Corridor Intelligence', href: '/solutions/corridor-intelligence' },
+        { name: 'Water Systems', href: '/solutions/water-systems' },
+        { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
       ],
     },
     industries: {
@@ -83,6 +94,19 @@ const footerNavigationData = {
         { name: 'Industrial', href: '/industries/industrial' },
         { name: 'Infrastructure', href: '/industries/infrastructure' },
         { name: 'Cities', href: '/industries/cities' },
+        { name: 'Space & SATCOM', href: '/industries/space-satcom' },
+        { name: 'Transportation', href: '/industries/transportation' },
+        { name: 'Water & Environment', href: '/industries/water-environment' },
+        { name: 'Broadcast & Media', href: '/industries/broadcast-media' },
+      ],
+    },
+    intelligence: {
+      title: 'National Intelligence',
+      items: [
+        { name: 'Overview', href: '/national-intelligence' },
+        { name: 'Youth Vulnerability Index', href: '/national-intelligence/youth-vulnerability-index' },
+        { name: 'Counter-Cartel Operations', href: '/national-intelligence/counter-cartel-operations' },
+        { name: 'Resource Protection', href: '/national-intelligence/resource-protection' },
       ],
     },
     resources: {
@@ -140,6 +164,15 @@ const footerNavigationData = {
         { name: 'Flotas y Logística', href: '/solutions/fleet-logistics' },
         { name: 'Operaciones de Red Eléctrica', href: '/solutions/grid-operations' },
         { name: 'Operaciones de Red', href: '/solutions/network-operations' },
+        { name: 'Operaciones Teleport', href: '/solutions/teleport-operations' },
+        { name: 'Salud de Flota', href: '/solutions/fleet-health' },
+        { name: 'Aseguramiento de Ingresos', href: '/solutions/satellite-revenue-assurance' },
+        { name: 'Conciencia Espacial', href: '/solutions/space-domain-awareness' },
+        { name: 'Operaciones Portuarias', href: '/solutions/port-operations' },
+        { name: 'Operaciones Aeroportuarias', href: '/solutions/airport-operations' },
+        { name: 'Inteligencia de Corredor', href: '/solutions/corridor-intelligence' },
+        { name: 'Sistemas de Agua', href: '/solutions/water-systems' },
+        { name: 'Cumplimiento Ambiental', href: '/solutions/environmental-compliance' },
       ],
     },
     industries: {
@@ -150,6 +183,19 @@ const footerNavigationData = {
         { name: 'Industrial', href: '/industries/industrial' },
         { name: 'Infraestructura', href: '/industries/infrastructure' },
         { name: 'Ciudades', href: '/industries/cities' },
+        { name: 'Espacio y SATCOM', href: '/industries/space-satcom' },
+        { name: 'Transporte', href: '/industries/transportation' },
+        { name: 'Agua y Ambiente', href: '/industries/water-environment' },
+        { name: 'Broadcast y Medios', href: '/industries/broadcast-media' },
+      ],
+    },
+    intelligence: {
+      title: 'Inteligencia Nacional',
+      items: [
+        { name: 'Vista General', href: '/national-intelligence' },
+        { name: 'Vulnerabilidad Juvenil', href: '/national-intelligence/youth-vulnerability-index' },
+        { name: 'Operaciones Contra-Cartel', href: '/national-intelligence/counter-cartel-operations' },
+        { name: 'Protección de Recursos', href: '/national-intelligence/resource-protection' },
       ],
     },
     resources: {
@@ -238,6 +284,9 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
         { name: 'Fleet & Logistics', description: 'Optimize fleet operations and logistics', href: '/solutions/fleet-logistics', icon: TruckIcon },
         { name: 'Grid Operations', description: 'Manage power grid infrastructure', href: '/solutions/grid-operations', icon: BoltIcon },
         { name: 'Network Operations', description: 'Monitor distributed network systems', href: '/solutions/network-operations', icon: GlobeAltIcon },
+        { name: 'Teleport Operations', description: 'Satellite ground segment intelligence', href: '/solutions/teleport-operations', icon: GlobeAltIcon },
+        { name: 'Port Operations', description: 'Maritime and cargo intelligence', href: '/solutions/port-operations', icon: ShieldCheckIcon },
+        { name: 'Water Systems', description: 'Leak detection and water network intelligence', href: '/solutions/water-systems', icon: BeakerIcon },
       ],
       cta: { name: 'All Solutions', href: '/solutions' },
     },
@@ -248,9 +297,14 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       items: [
         { name: 'Energy', description: 'Oil, gas, and renewable energy operations', href: '/industries/energy', icon: BoltIcon },
         { name: 'Defense', description: 'Military and defense applications', href: '/industries/defense', icon: ShieldIcon },
+        { name: 'National Intelligence', description: 'Sovereign security and counter-cartel operations', href: '/national-intelligence', icon: ShieldCheckIcon },
         { name: 'Industrial', description: 'Manufacturing and industrial facilities', href: '/industries/industrial', icon: WrenchScrewdriverIcon },
         { name: 'Infrastructure', description: 'Critical infrastructure protection', href: '/industries/infrastructure', icon: BuildingLibraryIcon },
         { name: 'Cities', description: 'Smart city and municipal operations', href: '/industries/cities', icon: BuildingOffice2Icon },
+        { name: 'Space & SATCOM', description: 'Satellite operations and space domain awareness', href: '/industries/space-satcom', icon: GlobeAltIcon },
+        { name: 'Transportation', description: 'Port, airport, and corridor intelligence', href: '/industries/transportation', icon: TruckIcon },
+        { name: 'Water & Environment', description: 'Water systems and environmental compliance', href: '/industries/water-environment', icon: BeakerIcon },
+        { name: 'Broadcast & Media', description: 'Live production and signal management', href: '/industries/broadcast-media', icon: SignalIcon },
       ],
       cta: { name: 'All Industries', href: '/industries' },
       featured: {
@@ -299,6 +353,9 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
         { name: 'Flotas y Logística', description: 'Optimizar operaciones de flotas y logística', href: '/solutions/fleet-logistics', icon: TruckIcon },
         { name: 'Operaciones de Red Eléctrica', description: 'Gestionar infraestructura de red eléctrica', href: '/solutions/grid-operations', icon: BoltIcon },
         { name: 'Operaciones de Red', description: 'Monitorear sistemas de red distribuidos', href: '/solutions/network-operations', icon: GlobeAltIcon },
+        { name: 'Operaciones Teleport', description: 'Inteligencia de segmento terrestre satelital', href: '/solutions/teleport-operations', icon: GlobeAltIcon },
+        { name: 'Operaciones Portuarias', description: 'Inteligencia marítima y de carga', href: '/solutions/port-operations', icon: ShieldCheckIcon },
+        { name: 'Sistemas de Agua', description: 'Detección de fugas e inteligencia de red hídrica', href: '/solutions/water-systems', icon: BeakerIcon },
       ],
       cta: { name: 'Todas las Soluciones', href: '/solutions' },
     },
@@ -309,9 +366,14 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       items: [
         { name: 'Energía', description: 'Operaciones de petróleo, gas y energía renovable', href: '/industries/energy', icon: BoltIcon },
         { name: 'Defensa', description: 'Aplicaciones militares y de defensa', href: '/industries/defense', icon: ShieldIcon },
+        { name: 'Inteligencia Nacional', description: 'Seguridad soberana y operaciones contra el crimen organizado', href: '/national-intelligence', icon: ShieldCheckIcon },
         { name: 'Industrial', description: 'Manufactura e instalaciones industriales', href: '/industries/industrial', icon: WrenchScrewdriverIcon },
         { name: 'Infraestructura', description: 'Protección de infraestructura crítica', href: '/industries/infrastructure', icon: BuildingLibraryIcon },
         { name: 'Ciudades', description: 'Operaciones de ciudades inteligentes y municipales', href: '/industries/cities', icon: BuildingOffice2Icon },
+        { name: 'Espacio y SATCOM', description: 'Operaciones satelitales y conciencia espacial', href: '/industries/space-satcom', icon: GlobeAltIcon },
+        { name: 'Transporte', description: 'Inteligencia portuaria, aeroportuaria y de corredor', href: '/industries/transportation', icon: TruckIcon },
+        { name: 'Agua y Ambiente', description: 'Sistemas de agua y cumplimiento ambiental', href: '/industries/water-environment', icon: BeakerIcon },
+        { name: 'Broadcast y Medios', description: 'Producción en vivo y gestión de señales', href: '/industries/broadcast-media', icon: SignalIcon },
       ],
       cta: { name: 'Todas las Industrias', href: '/industries' },
       featured: {
