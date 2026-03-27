@@ -1,0 +1,284 @@
+---
+interface Capability {
+  name: string
+  description: string
+  icon?: string
+  featured?: boolean
+  image?: string
+  outcome?: string
+  tier?: 'connect' | 'operate' | 'command'
+}
+
+interface Props {
+  title?: string
+  subtitle?: string
+  capabilities: Capability[]
+}
+
+const { title, subtitle, capabilities } = Astro.props
+
+const featured = capabilities.filter((c) => c.featured)
+const standard = capabilities.filter((c) => !c.featured)
+const hasFeatured = featured.length > 0
+
+// For 4+ featured, split into top row (2) and remaining row
+const extraFeatured = featured.length >= 4 ? featured.slice(2) : []
+---
+
+{hasFeatured && (
+  <div>
+    {(title || subtitle) && (
+      <div class="mb-12 text-center">
+        {title && (
+          <h2 class="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">{title}</h2>
+        )}
+        {subtitle && (
+          <p class="mt-4 text-lg text-neutral-300">{subtitle}</p>
+        )}
+      </div>
+    )}
+
+    <div class="mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-6">
+
+        {/* === 1 FEATURED: full-width editorial block === */}
+        {featured.length === 1 && (
+          <div class="relative lg:col-span-6">
+            <div class="absolute inset-0 rounded-lg bg-neutral-800 max-lg:rounded-t-4xl lg:rounded-tl-4xl lg:rounded-tr-4xl" />
+            <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(theme(borderRadius.4xl)+1px)] lg:rounded-tl-[calc(theme(borderRadius.4xl)+1px)] lg:rounded-tr-[calc(theme(borderRadius.4xl)+1px)]">
+              <div class="grid grid-cols-1 lg:grid-cols-2">
+                {featured[0].image ? (
+                  <img alt="" src={featured[0].image} class="h-80 w-full object-cover object-center lg:h-full" />
+                ) : (
+                  <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800 lg:h-full" />
+                )}
+                <div class="p-8 pt-6">
+                  {featured[0].tier && (
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{featured[0].tier.charAt(0).toUpperCase() + featured[0].tier.slice(1)}</span>
+                  )}
+                  {featured[0].outcome && (
+                    <p class="text-sm font-semibold text-brand-400">{featured[0].outcome}</p>
+                  )}
+                  <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{featured[0].name}</h3>
+                  <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{featured[0].description}</p>
+                </div>
+              </div>
+            </div>
+            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10 max-lg:rounded-t-4xl lg:rounded-tl-4xl lg:rounded-tr-4xl" />
+          </div>
+        )}
+
+        {/* === 2 FEATURED: two equal half-width cards === */}
+        {featured.length === 2 && (
+          <>
+            <div class="relative lg:col-span-3">
+              <div class="absolute inset-0 rounded-lg bg-neutral-800 max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(theme(borderRadius.4xl)+1px)] lg:rounded-tl-[calc(theme(borderRadius.4xl)+1px)]">
+                {featured[0].image ? (
+                  <img alt="" src={featured[0].image} class="h-80 object-cover object-center" />
+                ) : (
+                  <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800" />
+                )}
+                <div class="p-8 pt-4">
+                  {featured[0].tier && (
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{featured[0].tier.charAt(0).toUpperCase() + featured[0].tier.slice(1)}</span>
+                  )}
+                  {featured[0].outcome && (
+                    <p class="text-sm font-semibold text-brand-400">{featured[0].outcome}</p>
+                  )}
+                  <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{featured[0].name}</h3>
+                  <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{featured[0].description}</p>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10 max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
+            </div>
+            <div class="relative lg:col-span-3">
+              <div class="absolute inset-0 rounded-lg bg-neutral-800 lg:rounded-tr-4xl" />
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-tr-[calc(theme(borderRadius.4xl)+1px)]">
+                {featured[1].image ? (
+                  <img alt="" src={featured[1].image} class="h-80 object-cover object-center" />
+                ) : (
+                  <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800" />
+                )}
+                <div class="p-8 pt-4">
+                  {featured[1].tier && (
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{featured[1].tier.charAt(0).toUpperCase() + featured[1].tier.slice(1)}</span>
+                  )}
+                  {featured[1].outcome && (
+                    <p class="text-sm font-semibold text-brand-400">{featured[1].outcome}</p>
+                  )}
+                  <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{featured[1].name}</h3>
+                  <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{featured[1].description}</p>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10 lg:rounded-tr-4xl" />
+            </div>
+          </>
+        )}
+
+        {/* === 3 FEATURED: two top + one full-width editorial === */}
+        {featured.length === 3 && (
+          <>
+            <div class="relative lg:col-span-3">
+              <div class="absolute inset-0 rounded-lg bg-neutral-800 max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(theme(borderRadius.4xl)+1px)] lg:rounded-tl-[calc(theme(borderRadius.4xl)+1px)]">
+                {featured[0].image ? (
+                  <img alt="" src={featured[0].image} class="h-80 object-cover object-center" />
+                ) : (
+                  <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800" />
+                )}
+                <div class="p-8 pt-4">
+                  {featured[0].tier && (
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{featured[0].tier.charAt(0).toUpperCase() + featured[0].tier.slice(1)}</span>
+                  )}
+                  {featured[0].outcome && (
+                    <p class="text-sm font-semibold text-brand-400">{featured[0].outcome}</p>
+                  )}
+                  <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{featured[0].name}</h3>
+                  <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{featured[0].description}</p>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10 max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
+            </div>
+            <div class="relative lg:col-span-3">
+              <div class="absolute inset-0 rounded-lg bg-neutral-800 lg:rounded-tr-4xl" />
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-tr-[calc(theme(borderRadius.4xl)+1px)]">
+                {featured[1].image ? (
+                  <img alt="" src={featured[1].image} class="h-80 object-cover object-center" />
+                ) : (
+                  <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800" />
+                )}
+                <div class="p-8 pt-4">
+                  {featured[1].tier && (
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{featured[1].tier.charAt(0).toUpperCase() + featured[1].tier.slice(1)}</span>
+                  )}
+                  {featured[1].outcome && (
+                    <p class="text-sm font-semibold text-brand-400">{featured[1].outcome}</p>
+                  )}
+                  <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{featured[1].name}</h3>
+                  <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{featured[1].description}</p>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10 lg:rounded-tr-4xl" />
+            </div>
+            <div class="relative lg:col-span-6">
+              <div class="absolute inset-0 rounded-lg bg-neutral-800" />
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                  {featured[2].image ? (
+                    <img alt="" src={featured[2].image} class="h-80 w-full object-cover object-center lg:h-full" />
+                  ) : (
+                    <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800 lg:h-full" />
+                  )}
+                  <div class="p-8 pt-6">
+                    {featured[2].tier && (
+                      <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{featured[2].tier.charAt(0).toUpperCase() + featured[2].tier.slice(1)}</span>
+                    )}
+                    {featured[2].outcome && (
+                      <p class="text-sm font-semibold text-brand-400">{featured[2].outcome}</p>
+                    )}
+                    <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{featured[2].name}</h3>
+                    <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{featured[2].description}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10" />
+            </div>
+          </>
+        )}
+
+        {/* === 4+ FEATURED: two top + remaining in 2-col grid === */}
+        {featured.length >= 4 && (
+          <>
+            <div class="relative lg:col-span-3">
+              <div class="absolute inset-0 rounded-lg bg-neutral-800 max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-t-[calc(theme(borderRadius.4xl)+1px)] lg:rounded-tl-[calc(theme(borderRadius.4xl)+1px)]">
+                {featured[0].image ? (
+                  <img alt="" src={featured[0].image} class="h-80 object-cover object-center" />
+                ) : (
+                  <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800" />
+                )}
+                <div class="p-8 pt-4">
+                  {featured[0].tier && (
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{featured[0].tier.charAt(0).toUpperCase() + featured[0].tier.slice(1)}</span>
+                  )}
+                  {featured[0].outcome && (
+                    <p class="text-sm font-semibold text-brand-400">{featured[0].outcome}</p>
+                  )}
+                  <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{featured[0].name}</h3>
+                  <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{featured[0].description}</p>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10 max-lg:rounded-t-4xl lg:rounded-tl-4xl" />
+            </div>
+            <div class="relative lg:col-span-3">
+              <div class="absolute inset-0 rounded-lg bg-neutral-800 lg:rounded-tr-4xl" />
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-tr-[calc(theme(borderRadius.4xl)+1px)]">
+                {featured[1].image ? (
+                  <img alt="" src={featured[1].image} class="h-80 object-cover object-center" />
+                ) : (
+                  <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800" />
+                )}
+                <div class="p-8 pt-4">
+                  {featured[1].tier && (
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{featured[1].tier.charAt(0).toUpperCase() + featured[1].tier.slice(1)}</span>
+                  )}
+                  {featured[1].outcome && (
+                    <p class="text-sm font-semibold text-brand-400">{featured[1].outcome}</p>
+                  )}
+                  <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{featured[1].name}</h3>
+                  <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{featured[1].description}</p>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10 lg:rounded-tr-4xl" />
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Extra featured cards for 4+ (rendered as a separate grid row) */}
+      {extraFeatured.length > 0 && (
+        <div class="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-6">
+          {extraFeatured.map((cap) => (
+            <div class="relative lg:col-span-3">
+              <div class="absolute inset-0 rounded-lg bg-neutral-800" />
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)]">
+                {cap.image ? (
+                  <img alt="" src={cap.image} class="h-80 object-cover object-center" />
+                ) : (
+                  <div class="h-80 bg-gradient-to-br from-brand-900/40 to-neutral-800" />
+                )}
+                <div class="p-8 pt-4">
+                  {cap.tier && (
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{cap.tier.charAt(0).toUpperCase() + cap.tier.slice(1)}</span>
+                  )}
+                  {cap.outcome && (
+                    <p class="text-sm font-semibold text-brand-400">{cap.outcome}</p>
+                  )}
+                  <h3 class="mt-2 text-lg font-medium tracking-tight text-white">{cap.name}</h3>
+                  <p class="mt-2 max-w-lg text-sm/6 text-neutral-400">{cap.description}</p>
+                </div>
+              </div>
+              <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm outline outline-white/10" />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Standard capabilities grid */}
+      {standard.length > 0 && (
+        <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {standard.map((cap) => (
+            <div class="rounded-lg bg-neutral-800/50 p-6" style="border: 1px solid rgba(255,255,255,0.08);">
+              {cap.tier && (
+                <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{cap.tier.charAt(0).toUpperCase() + cap.tier.slice(1)}</span>
+              )}
+              <h3 class="text-sm font-semibold text-white">{cap.name}</h3>
+              <p class="mt-2 text-sm text-neutral-400">{cap.description}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+)}

@@ -6,8 +6,9 @@ import StatStrip from '@/components/marketing/StatStrip.astro'
 import Section from '@/components/marketing/Section.astro'
 import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
 import CtaBanner from '@/components/marketing/CtaBanner.astro'
-import PlatformMapSection from '@/components/marketing/PlatformMapSection.astro'
 import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
+import BentoUseCases from '@/components/marketing/BentoUseCases.astro'
+import EditorialCapability from '@/components/marketing/EditorialCapability.astro'
 
 export async function getStaticPaths() {
   const solutions = await getCollection('solutions-es')
@@ -19,7 +20,10 @@ export async function getStaticPaths() {
 
 const { solution } = Astro.props
 const { Content } = await solution.render()
-const { title, tagline, description, hero, challenges, capabilities, stats, platformMapping, proofPoint, cta } = solution.data
+const { title, tagline, description, hero, heroImage, challenges, capabilities, stats, platformMapping, proofPoint, cta } = solution.data
+
+const featuredCapabilities = capabilities.filter((c: any) => c.featured)
+const hasFeatured = featuredCapabilities.length > 0
 
 // Default CTA values
 const ctaPrimary = cta?.primary || { label: 'Agende una Evaluación', href: '/es/contact/demo' }
@@ -38,6 +42,7 @@ const ctaSecondary = cta?.secondary || { label: 'Hable con un Ingeniero', href: 
     description={hero.description}
     primaryCta={hero.primaryCta}
     secondaryCta={hero.secondaryCta}
+    backgroundImage={heroImage}
   />
 
   <StatStrip stats={stats} />
@@ -52,41 +57,67 @@ const ctaSecondary = cta?.secondary || { label: 'Hable con un Ingeniero', href: 
     />
   </Section>
 
-  <!-- Capabilities Grid -->
-  <Section divider dark>
-    <FeatureGrid
-      dark
-      title="Capacidades Clave"
-      subtitle={`Todo lo que necesita para ${title.toLowerCase()}.`}
-      features={capabilities.map(c => ({ name: c.name, description: c.description, icon: c.icon }))}
-      columns={3}
-    />
-  </Section>
-
-  <!-- Platform Mapping -->
-  {platformMapping && (
-    <PlatformMapSection
-      connect={platformMapping.connect}
-      operate={platformMapping.operate}
-      command={platformMapping.command}
-    />
+  <!-- Capabilities Section -->
+  {hasFeatured ? (
+    <Section divider dark>
+      <BentoUseCases
+        title="Capacidades Clave"
+        subtitle={`Todo lo que necesita para ${title.toLowerCase()}.`}
+        capabilities={capabilities}
+      />
+    </Section>
+  ) : (
+    <Section divider dark>
+      <FeatureGrid
+        dark
+        title="Capacidades Clave"
+        subtitle={`Todo lo que necesita para ${title.toLowerCase()}.`}
+        features={capabilities.map(c => ({ name: c.name, description: c.description, icon: c.icon }))}
+        columns={3}
+      />
+    </Section>
   )}
 
   <!-- Proof Point -->
   {proofPoint && (
     <Section divider>
-      <div class="text-center mb-12">
-        <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">Resultados Comprobados</h2>
-        <p class="mt-4 text-lg text-neutral-600">Resultados reales de organizaciones como la suya.</p>
-      </div>
-      <div class="mx-auto max-w-3xl">
-        <ProofPointCard
-          industryLabel={proofPoint.industry}
-          headline={proofPoint.headline}
-          metrics={proofPoint.metrics}
-          narrative={proofPoint.narrative}
-          cta={{ label: 'Leer el caso de éxito completo', href: '/es/resources/case-studies' }}
-        />
+      <div class="overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <!-- Proof narrative -->
+            <div class="lg:pr-4 lg:pt-4">
+              <div class="lg:max-w-lg">
+                <p class="text-base/7 font-semibold text-brand-600">Resultados Comprobados</p>
+                <h2 class="mt-2 font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
+                  {proofPoint.headline}
+                </h2>
+                {proofPoint.metrics && proofPoint.metrics.length > 0 && (
+                  <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                    {proofPoint.metrics.map((metric) => (
+                      <div>
+                        <p class="font-display text-2xl text-brand-600">{metric.value}</p>
+                        <p class="mt-1 text-xs text-neutral-500">{metric.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <p class="mt-6 text-base/7 text-neutral-600">{proofPoint.narrative}</p>
+                <a href="/es/resources/case-studies" class="mt-6 inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
+                  Leer el caso de éxito completo
+                  <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <!-- Proof image -->
+            <div class="flex items-start justify-end lg:order-last">
+              <div class="w-full aspect-[16/10] rounded-xl bg-gradient-to-br from-brand-100 to-neutral-100 flex items-center justify-center">
+                <p class="text-sm text-neutral-400">Proof point image placeholder</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Section>
   )}

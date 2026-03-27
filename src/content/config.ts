@@ -116,6 +116,11 @@ const industriesCollection = defineCollection({
       z.object({
         name: z.string(),
         description: z.string(),
+        icon: z.string().optional(),
+        featured: z.boolean().optional(),
+        image: z.string().optional(),
+        outcome: z.string().optional(),
+        tier: z.enum(['connect', 'operate', 'command']).optional(),
       })
     ),
     stats: z.array(
@@ -141,6 +146,7 @@ const solutionsCollection = defineCollection({
     tagline: z.string(),
     description: z.string(),
     order: z.number(),
+    heroImage: z.string().optional(),
     hero: z.object({
       eyebrow: z.string(),
       title: z.string(),
@@ -158,6 +164,11 @@ const solutionsCollection = defineCollection({
       z.object({
         name: z.string(),
         description: z.string(),
+        icon: z.string().optional(),
+        featured: z.boolean().optional(),
+        image: z.string().optional(),
+        outcome: z.string().optional(),
+        tier: z.enum(['connect', 'operate', 'command']).optional(),
       })
     ),
     stats: z.array(

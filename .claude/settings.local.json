@@ -52,7 +52,11 @@
       "Bash(npm uninstall:*)",
       "Bash(npm run preview:*)",
       "Bash(kill:*)",
-      "Bash(ss:*)"
+      "Bash(ss:*)",
+      "Bash(npx astro:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(rm package-lock.json)",
+      "Bash(docker run:*)"
     ]
   }
 }
