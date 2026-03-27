@@ -102,24 +102,7 @@ const brandedTitle = `Quatro ${title}`
     </Section>
   )}
 
-  {/* Proof Point */}
-  {proofPoint && (
-    <Section divider>
-      <div class="mb-12 text-center">
-        <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">Resultados Comprobados</h2>
-        <p class="mt-4 text-lg text-neutral-600">Resultados reales de implementaciones empresariales.</p>
-      </div>
-      <div class="mx-auto max-w-3xl">
-        <ProofPointCard
-          industryLabel={proofPoint.industry}
-          headline={proofPoint.headline}
-          metrics={proofPoint.metrics}
-          narrative={proofPoint.narrative}
-          cta={{ label: 'Leer el caso de éxito completo', href: '/es/resources/case-studies' }}
-        />
-      </div>
-    </Section>
-  )}
+  {/* Proof Point — hidden until real case studies are available */}
 
   <Section divider>
     <div class="mb-12 text-center">

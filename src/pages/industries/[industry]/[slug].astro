@@ -119,24 +119,7 @@ const siblings = allUseCases
     />
   )}
 
-  <!-- Proof Point — Deep Context -->
-  {proofPoint && (
-    <Section divider>
-      <div class="text-center mb-12">
-        <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">Proven Results</h2>
-        <p class="mt-4 text-lg text-neutral-600">Real outcomes from organizations like yours.</p>
-      </div>
-      <div class="mx-auto max-w-3xl">
-        <ProofPointCard
-          industryLabel={proofPoint.industry}
-          headline={proofPoint.headline}
-          metrics={proofPoint.metrics}
-          narrative={proofPoint.narrative}
-          cta={{ label: 'Read the full case study', href: '/resources/case-studies' }}
-        />
-      </div>
-    </Section>
-  )}
+  <!-- Proof Point — hidden until real case studies are available -->
 
   <!-- Objection Handling — Woven Into Narrative -->
   {objections && objections.length > 0 && (

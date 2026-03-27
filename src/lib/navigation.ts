@@ -112,7 +112,6 @@ const footerNavigationData = {
     resources: {
       title: 'Resources',
       items: [
-        { name: 'Case Studies', href: '/resources/case-studies' },
         { name: 'White Papers', href: '/resources/white-papers' },
         { name: 'Insights', href: '/resources/insights' },
         { name: 'Documentation', href: '/resources/documentation' },
@@ -201,7 +200,6 @@ const footerNavigationData = {
     resources: {
       title: 'Recursos',
       items: [
-        { name: 'Casos de Éxito', href: '/resources/case-studies' },
         { name: 'White Papers', href: '/resources/white-papers' },
         { name: 'Artículos', href: '/resources/insights' },
         { name: 'Documentación', href: '/resources/documentation' },
@@ -307,14 +305,6 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
         { name: 'Broadcast & Media', description: 'Live production and signal management', href: '/industries/broadcast-media', icon: SignalIcon },
       ],
       cta: { name: 'All Industries', href: '/industries' },
-      featured: {
-        type: 'case-study',
-        title: 'Energy Sector Success',
-        quote: 'Quatro reduced our incident response time by 73% and gave us complete visibility across 2,400 miles of pipeline infrastructure.',
-        author: 'Sarah Chen',
-        company: 'PetroMax Energy',
-        href: '/resources/case-studies/petromax',
-      },
     },
     {
       name: 'Company',
@@ -376,14 +366,6 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
         { name: 'Broadcast y Medios', description: 'Producción en vivo y gestión de señales', href: '/industries/broadcast-media', icon: SignalIcon },
       ],
       cta: { name: 'Todas las Industrias', href: '/industries' },
-      featured: {
-        type: 'case-study',
-        title: 'Éxito en el Sector Energético',
-        quote: 'Quatro redujo nuestro tiempo de respuesta a incidentes en un 73% y nos dio visibilidad completa en 3.800 km de infraestructura de ductos.',
-        author: 'Sarah Chen',
-        company: 'PetroMax Energy',
-        href: '/resources/case-studies/petromax',
-      },
     },
     {
       name: 'Empresa',
