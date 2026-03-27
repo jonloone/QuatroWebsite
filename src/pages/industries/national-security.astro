@@ -1,0 +1,108 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+import CtaBanner from '@/components/marketing/CtaBanner.astro'
+
+const domains = [
+  {
+    name: 'Defense',
+    description: 'Unified operational intelligence for military installations, forward operating bases, and defense logistics. Quatro connects SCADA, ISR feeds, perimeter sensors, and C2 systems into a single operational picture — deployed on-premise or air-gapped.',
+    href: '/industries/defense',
+    solutions: [
+      { name: 'Physical Security', href: '/solutions/physical-security' },
+      { name: 'Fleet & Logistics', href: '/solutions/fleet-logistics' },
+      { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
+    ],
+  },
+  {
+    name: 'National Intelligence',
+    description: 'Sovereign intelligence platform for counter-narcotics, youth vulnerability mapping, and natural resource protection. AI-powered pattern detection across multi-agency data — built for Latin American security environments.',
+    href: '/national-intelligence',
+    solutions: [
+      { name: 'Counter-Cartel Operations', href: '/national-intelligence/counter-cartel-operations' },
+      { name: 'Youth Vulnerability Index', href: '/national-intelligence/youth-vulnerability-index' },
+      { name: 'Resource Protection', href: '/national-intelligence/resource-protection' },
+    ],
+  },
+]
+---
+
+<MarketingLayout
+  title="National Security — Defense & Sovereign Intelligence"
+  description="Unified command across physical, cyber, and intelligence domains. Sovereign deployment, defense-grade compliance, and AI-powered operations in air-gapped environments."
+>
+  <Hero
+    variant="dark"
+    eyebrow="National Security"
+    title="Unified Command Across Every Security Domain"
+    description="From military installations to counter-narcotics operations — Quatro delivers sovereign operational intelligence with defense-grade compliance and air-gapped deployment."
+    primaryCta={{ label: 'Schedule a Briefing', href: '/contact/demo' }}
+  />
+
+  <Section>
+    <div class="space-y-16">
+      {domains.map((domain) => (
+        <div class="rounded-2xl border border-neutral-200 bg-white p-8 lg:p-10 shadow-sm">
+          <div class="lg:flex lg:gap-12 lg:items-start">
+            <div class="flex-1">
+              <h2 class="font-display text-2xl font-bold text-neutral-800">{domain.name}</h2>
+              <p class="mt-4 text-neutral-600 leading-relaxed">{domain.description}</p>
+              <a
+                href={domain.href}
+                class="mt-6 inline-flex items-center font-display text-sm font-semibold text-brand-500 hover:underline"
+              >
+                Explore {domain.name} &rarr;
+              </a>
+            </div>
+            <div class="mt-8 lg:mt-0 lg:w-72 flex-shrink-0">
+              <h3 class="font-display text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-3">
+                Key Capabilities
+              </h3>
+              <ul class="space-y-2">
+                {domain.solutions.map((sol) => (
+                  <li>
+                    <a
+                      href={sol.href}
+                      class="group flex items-center gap-2 text-sm text-neutral-700 hover:text-brand-600"
+                    >
+                      <span class="h-1.5 w-1.5 rounded-full bg-brand-400 group-hover:bg-brand-600" />
+                      {sol.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- Deployment model callout -->
+  <Section divider dark>
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-4">Deployment</p>
+      <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">
+        Sovereign by Design
+      </h2>
+      <p class="mt-4 text-lg text-white/70 leading-relaxed">
+        On-premise, air-gapped, or hybrid cloud — Quatro deploys where your security requirements demand. No data leaves your perimeter. Full operational capability without external dependencies.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white/50">
+        <span>Air-Gapped Deployment</span>
+        <span>&middot;</span>
+        <span>FedRAMP-Ready Architecture</span>
+        <span>&middot;</span>
+        <span>ITAR / EAR Compliant</span>
+      </div>
+    </div>
+  </Section>
+
+  <CtaBanner
+    title="See Quatro for National Security"
+    description="Sovereign deployment. Defense-grade compliance. Operational in weeks, not quarters."
+    primaryCta={{ label: 'Schedule a Briefing', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+  />
+</MarketingLayout>

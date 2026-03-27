@@ -1,54 +1,154 @@
 ---
-import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
 import Section from '@/components/marketing/Section.astro'
 import CtaBanner from '@/components/marketing/CtaBanner.astro'
 
-const industries = (await getCollection('industries')).sort((a, b) => a.data.order - b.data.order)
+const pillars = [
+  {
+    name: 'Energy',
+    slug: 'energy',
+    description: 'Overlay modernization for grid, pipeline, and industrial operations. Unified intelligence across SCADA, DER, and distributed energy assets.',
+    icon: 'bolt',
+    subVerticals: [
+      { name: 'Oil & Gas', href: '/industries/energy' },
+      { name: 'Grid Operations', href: '/solutions/grid-operations' },
+      { name: 'Pipeline Security', href: '/solutions/pipeline-security' },
+      { name: 'Industrial & Manufacturing', href: '/industries/industrial' },
+      { name: 'Asset Monitoring', href: '/solutions/asset-monitoring' },
+    ],
+    stat: { value: '75%', label: 'Fewer False Alarms' },
+    href: '/industries/energy',
+  },
+  {
+    name: 'National Security',
+    slug: 'national-security',
+    description: 'Unified command across physical, cyber, and intelligence domains — sovereign deployment, defense-grade compliance, and AI-powered operations in air-gapped environments.',
+    icon: 'shield',
+    subVerticals: [
+      { name: 'Defense', href: '/industries/defense' },
+      { name: 'National Intelligence', href: '/national-intelligence' },
+      { name: 'Counter-Cartel Operations', href: '/national-intelligence/counter-cartel-operations' },
+      { name: 'Physical Security', href: '/solutions/physical-security' },
+    ],
+    stat: { value: '80%', label: 'Fewer False Alarms' },
+    href: '/industries/national-security',
+  },
+  {
+    name: 'Networks',
+    slug: 'networks',
+    description: 'Operational intelligence for the convergence of satellite, telecom, and broadcast infrastructure. Fleet health, signal chain, and revenue assurance at scale.',
+    icon: 'signal',
+    subVerticals: [
+      { name: 'Space & SATCOM', href: '/industries/space-satcom' },
+      { name: 'Broadcast & Media', href: '/industries/broadcast-media' },
+      { name: 'Teleport Operations', href: '/solutions/teleport-operations' },
+      { name: 'Network Operations', href: '/solutions/network-operations' },
+      { name: 'Fleet Health', href: '/solutions/fleet-health' },
+    ],
+    stat: { value: '50+', label: 'Satellites Managed' },
+    href: '/industries/networks',
+  },
+  {
+    name: 'Critical Infrastructure',
+    slug: 'critical-infrastructure',
+    description: 'Intelligence for the systems cities and nations depend on — water networks, transportation corridors, municipal operations, and the built environment.',
+    icon: 'building',
+    subVerticals: [
+      { name: 'Cities & Municipal', href: '/industries/cities' },
+      { name: 'Water & Environment', href: '/industries/water-environment' },
+      { name: 'Transportation', href: '/industries/transportation' },
+      { name: 'Infrastructure', href: '/industries/infrastructure' },
+      { name: 'Port Operations', href: '/solutions/port-operations' },
+    ],
+    stat: { value: '8,000+', label: 'Connectors' },
+    href: '/industries/critical-infrastructure',
+  },
+  {
+    name: 'Finance',
+    slug: 'finance',
+    description: 'Intelligence products that unify the 15–30 systems your bank already operates. Customer 360, credit risk, NPA early warning, and regulatory compliance — production-ready in weeks.',
+    icon: 'chart',
+    subVerticals: [
+      { name: 'Banking Intelligence', href: '/industries/finance' },
+      { name: 'Customer 360', href: '/industries/finance' },
+      { name: 'Credit Risk', href: '/industries/finance' },
+      { name: 'Regulatory Compliance', href: '/industries/finance' },
+      { name: 'Claims & Insurance', href: '/industries/finance' },
+    ],
+    stat: { value: '4–6 Weeks', label: 'To Production' },
+    href: '/industries/finance',
+  },
+]
+
+const iconMap: Record<string, string> = {
+  bolt: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
+  shield: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  signal: 'M9.348 14.652a3.75 3.75 0 010-5.304m5.304 0a3.75 3.75 0 010 5.304m-7.425 2.121a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z',
+  building: 'M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z',
+  chart: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z',
+}
 ---
 
 <MarketingLayout
-  title="Industries — Operational Intelligence for Critical Infrastructure"
-  description="Quatro delivers operational intelligence across energy, defense, industrial, infrastructure, and smart city environments — 8,000+ integrations, deployed your way."
+  title="Industries — Operational Intelligence for Critical Operations"
+  description="Quatro delivers operational intelligence across energy, national security, networks, critical infrastructure, and finance — 8,000+ integrations, deployed your way."
 >
   <Hero
     variant="dark"
     eyebrow="Industries"
-    title="Operational Intelligence for the Industries That Matter Most"
-    description="From energy to defense, manufacturing to smart cities — Quatro delivers unified operational visibility tailored to your sector's unique challenges."
+    title="Intelligence for the Operations That Matter Most"
+    description="Five domains. One platform. Quatro delivers unified operational intelligence tailored to your sector — from grid operations to banking compliance."
     primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
   />
 
   <Section>
-    <div class="mb-12 text-center">
-      <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
-        Explore Industry Solutions
-      </h2>
-    </div>
-
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {industries.map((industry) => (
-        <a
-          href={`/industries/${industry.id.replace(/\.md$/, '')}`}
-          class="group flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-lg"
-        >
-          <h3 class="font-display text-xl font-bold text-neutral-800 group-hover:text-brand-600">
-            {industry.data.title}
-          </h3>
-          <p class="mt-2 text-sm font-medium text-brand-500">{industry.data.hero.title}</p>
-          <p class="mt-3 flex-1 text-sm text-neutral-600">{industry.data.description}</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            {industry.data.stats.slice(0, 2).map((stat) => (
-              <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700">
-                {stat.value} {stat.label}
+    <div class="space-y-12">
+      {pillars.map((pillar, index) => (
+        <div class={`flex flex-col lg:flex-row gap-8 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+          <!-- Pillar card -->
+          <div class="flex-1 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-50 text-brand-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={iconMap[pillar.icon]} />
+                </svg>
               </span>
-            ))}
+              <h2 class="font-display text-2xl font-bold text-neutral-800">{pillar.name}</h2>
+            </div>
+            <p class="text-neutral-600 mb-6">{pillar.description}</p>
+            <div class="flex items-center gap-2 mb-6">
+              <span class="text-2xl font-bold text-brand-600">{pillar.stat.value}</span>
+              <span class="text-sm text-neutral-500">{pillar.stat.label}</span>
+            </div>
+            <a
+              href={pillar.href}
+              class="inline-flex items-center font-display text-sm font-semibold text-brand-500 hover:underline"
+            >
+              Explore {pillar.name} &rarr;
+            </a>
           </div>
-          <span class="mt-4 font-display text-sm font-semibold text-brand-500 group-hover:underline">
-            Explore solutions &rarr;
-          </span>
-        </a>
+
+          <!-- Sub-verticals list -->
+          <div class="lg:w-72 flex-shrink-0">
+            <h3 class="font-display text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
+              Solutions
+            </h3>
+            <ul class="space-y-2">
+              {pillar.subVerticals.map((sub) => (
+                <li>
+                  <a
+                    href={sub.href}
+                    class="group flex items-center gap-2 text-sm text-neutral-700 hover:text-brand-600"
+                  >
+                    <span class="h-1.5 w-1.5 rounded-full bg-brand-400 group-hover:bg-brand-600" />
+                    {sub.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       ))}
     </div>
   </Section>

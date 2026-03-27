@@ -1,62 +1,160 @@
 ---
-import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
 import Section from '@/components/marketing/Section.astro'
 import CtaBanner from '@/components/marketing/CtaBanner.astro'
 
-const industries = (await getCollection('industries-es')).sort((a, b) => a.data.order - b.data.order)
+const pillars = [
+  {
+    name: 'Energía',
+    slug: 'energy',
+    description: 'Modernización para operaciones de red eléctrica, ductos e industriales. Inteligencia unificada a través de SCADA, DER y activos de energía distribuida.',
+    icon: 'bolt',
+    subVerticals: [
+      { name: 'Petróleo y Gas', href: '/es/industries/energy' },
+      { name: 'Operaciones de Red Eléctrica', href: '/es/solutions/grid-operations' },
+      { name: 'Seguridad de Ductos', href: '/es/solutions/pipeline-security' },
+      { name: 'Industrial y Manufactura', href: '/es/industries/industrial' },
+      { name: 'Monitoreo de Activos', href: '/es/solutions/asset-monitoring' },
+    ],
+    stat: { value: '75%', label: 'Menos Falsas Alarmas' },
+    href: '/es/industries/energy',
+  },
+  {
+    name: 'Seguridad Nacional',
+    slug: 'national-security',
+    description: 'Comando unificado en dominios físicos, cibernéticos y de inteligencia — despliegue soberano, cumplimiento de grado militar y operaciones impulsadas por IA en ambientes aislados.',
+    icon: 'shield',
+    subVerticals: [
+      { name: 'Defensa', href: '/es/industries/defense' },
+      { name: 'Inteligencia Nacional', href: '/national-intelligence' },
+      { name: 'Operaciones Contra-Cartel', href: '/national-intelligence/counter-cartel-operations' },
+      { name: 'Seguridad Física', href: '/es/solutions/physical-security' },
+    ],
+    stat: { value: '80%', label: 'Menos Falsas Alarmas' },
+    href: '/es/industries/national-security',
+  },
+  {
+    name: 'Redes',
+    slug: 'networks',
+    description: 'Inteligencia operacional para la convergencia de infraestructura satelital, telecomunicaciones y broadcast. Salud de flota, cadena de señal y aseguramiento de ingresos a escala.',
+    icon: 'signal',
+    subVerticals: [
+      { name: 'Espacio y SATCOM', href: '/es/industries/space-satcom' },
+      { name: 'Broadcast y Medios', href: '/es/industries/broadcast-media' },
+      { name: 'Operaciones Teleport', href: '/es/solutions/teleport-operations' },
+      { name: 'Operaciones de Red', href: '/es/solutions/network-operations' },
+      { name: 'Salud de Flota', href: '/es/solutions/fleet-health' },
+    ],
+    stat: { value: '50+', label: 'Satélites Gestionados' },
+    href: '/es/industries/networks',
+  },
+  {
+    name: 'Infraestructura Crítica',
+    slug: 'critical-infrastructure',
+    description: 'Inteligencia para los sistemas de los que dependen ciudades y naciones — redes de agua, corredores de transporte, operaciones municipales y el entorno construido.',
+    icon: 'building',
+    subVerticals: [
+      { name: 'Ciudades y Municipal', href: '/es/industries/cities' },
+      { name: 'Agua y Ambiente', href: '/es/industries/water-environment' },
+      { name: 'Transporte', href: '/es/industries/transportation' },
+      { name: 'Infraestructura', href: '/es/industries/infrastructure' },
+      { name: 'Operaciones Portuarias', href: '/es/solutions/port-operations' },
+    ],
+    stat: { value: '8,000+', label: 'Conectores' },
+    href: '/es/industries/critical-infrastructure',
+  },
+  {
+    name: 'Finanzas',
+    slug: 'finance',
+    description: 'Productos de inteligencia que unifican los 15–30 sistemas que su banco ya opera. Customer 360, riesgo crediticio, alerta temprana de NPA y cumplimiento regulatorio — en producción en semanas.',
+    icon: 'chart',
+    subVerticals: [
+      { name: 'Inteligencia Bancaria', href: '/es/industries/finance' },
+      { name: 'Customer 360', href: '/es/industries/finance' },
+      { name: 'Riesgo Crediticio', href: '/es/industries/finance' },
+      { name: 'Cumplimiento Regulatorio', href: '/es/industries/finance' },
+      { name: 'Seguros y Reclamaciones', href: '/es/industries/finance' },
+    ],
+    stat: { value: '4–6 Semanas', label: 'A Producción' },
+    href: '/es/industries/finance',
+  },
+]
+
+const iconMap: Record<string, string> = {
+  bolt: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
+  shield: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
+  signal: 'M9.348 14.652a3.75 3.75 0 010-5.304m5.304 0a3.75 3.75 0 010 5.304m-7.425 2.121a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z',
+  building: 'M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z',
+  chart: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z',
+}
 ---
 
 <MarketingLayout
   lang="es"
-  title="Industrias — Inteligencia Operacional en Todos los Sectores"
-  description="Quatro ofrece inteligencia operacional en entornos de energía, defensa, manufactura, infraestructura y ciudades inteligentes."
+  title="Industrias — Inteligencia Operacional para Operaciones Críticas"
+  description="Quatro ofrece inteligencia operacional en energía, seguridad nacional, redes, infraestructura crítica y finanzas — 8,000+ integraciones, desplegado a su manera."
 >
   <Hero
     variant="dark"
     eyebrow="Industrias"
-    title="Construido para las Industrias que Construyen el Mundo"
-    description="Desde energía hasta defensa, manufactura hasta ciudades inteligentes — Quatro ofrece inteligencia operacional adaptada a los desafíos únicos de su sector."
+    title="Inteligencia para las Operaciones que Más Importan"
+    description="Cinco dominios. Una plataforma. Quatro ofrece inteligencia operacional unificada adaptada a su sector — desde operaciones de red eléctrica hasta cumplimiento bancario."
     primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
   />
 
   <Section>
-    <div class="mb-12 text-center">
-      <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
-        Explore Soluciones por Industria
-      </h2>
-    </div>
-
-    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {industries.map((industry) => (
-        <a
-          href={`/es/industries/${industry.id.replace(/\.md$/, '')}`}
-          class="group flex flex-col rounded-2xl border border-neutral-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-lg"
-        >
-          <h3 class="font-display text-xl font-bold text-neutral-800 group-hover:text-brand-600">
-            {industry.data.title}
-          </h3>
-          <p class="mt-2 text-sm font-medium text-brand-500">{industry.data.hero.title}</p>
-          <p class="mt-3 flex-1 text-sm text-neutral-600">{industry.data.description}</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            {industry.data.stats.slice(0, 2).map((stat) => (
-              <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700">
-                {stat.value} {stat.label}
+    <div class="space-y-12">
+      {pillars.map((pillar, index) => (
+        <div class={`flex flex-col lg:flex-row gap-8 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+          <div class="flex-1 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-50 text-brand-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={iconMap[pillar.icon]} />
+                </svg>
               </span>
-            ))}
+              <h2 class="font-display text-2xl font-bold text-neutral-800">{pillar.name}</h2>
+            </div>
+            <p class="text-neutral-600 mb-6">{pillar.description}</p>
+            <div class="flex items-center gap-2 mb-6">
+              <span class="text-2xl font-bold text-brand-600">{pillar.stat.value}</span>
+              <span class="text-sm text-neutral-500">{pillar.stat.label}</span>
+            </div>
+            <a
+              href={pillar.href}
+              class="inline-flex items-center font-display text-sm font-semibold text-brand-500 hover:underline"
+            >
+              Explorar {pillar.name} &rarr;
+            </a>
           </div>
-          <span class="mt-4 font-display text-sm font-semibold text-brand-500 group-hover:underline">
-            Explorar soluciones &rarr;
-          </span>
-        </a>
+
+          <div class="lg:w-72 flex-shrink-0">
+            <h3 class="font-display text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
+              Soluciones
+            </h3>
+            <ul class="space-y-2">
+              {pillar.subVerticals.map((sub) => (
+                <li>
+                  <a
+                    href={sub.href}
+                    class="group flex items-center gap-2 text-sm text-neutral-700 hover:text-brand-600"
+                  >
+                    <span class="h-1.5 w-1.5 rounded-full bg-brand-400 group-hover:bg-brand-600" />
+                    {sub.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       ))}
     </div>
   </Section>
 
   <CtaBanner
     title="Vea la Inteligencia Operacional en Su Industria"
-    description="Descubra cómo Quatro responde a los desafíos únicos de su sector."
+    description="Elija un desafío. Desplegamos en sus sistemas en 4 semanas. Vea el valor antes de comprometerse."
     primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
     secondaryCta={{ label: 'Hable con un Ingeniero', href: '/es/contact/sales' }}
   />
