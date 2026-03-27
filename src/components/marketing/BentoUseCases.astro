@@ -265,20 +265,6 @@ const extraFeatured = featured.length >= 4 ? featured.slice(2) : []
         </div>
       )}
 
-      {/* Standard capabilities grid */}
-      {standard.length > 0 && (
-        <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {standard.map((cap) => (
-            <div class="rounded-lg bg-neutral-800/50 p-6" style="border: 1px solid rgba(255,255,255,0.08);">
-              {cap.tier && (
-                <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-medium text-brand-400 mb-2">{cap.tier.charAt(0).toUpperCase() + cap.tier.slice(1)}</span>
-              )}
-              <h3 class="text-sm font-semibold text-white">{cap.name}</h3>
-              <p class="mt-2 text-sm text-neutral-400">{cap.description}</p>
-            </div>
-          ))}
-        </div>
-      )}
     </div>
   </div>
 )}
