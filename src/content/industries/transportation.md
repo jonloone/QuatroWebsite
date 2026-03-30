@@ -1,104 +1,119 @@
 ---
-title: "Transportation"
-tagline: "Unified Intelligence for Logistics Networks"
-heroImage: "/images/industry-transportation.png"
-description: "Real-time operational intelligence that transforms fragmented data across ports, airports, and logistics corridors into situational awareness, predictive routing intelligence, and coordinated multi-node operations — all from a single command environment."
+title: Transportation
+tagline: Unified Intelligence for Logistics Networks
+heroImage: /images/industry-transportation.png
+description: Real-time operational intelligence that transforms fragmented data across ports, airports, and logistics corridors into situational awareness, predictive routing intelligence, and coordinated
+  multi-node operations — all from a single command environment.
 order: 7
 hero:
-  eyebrow: "Transportation & Logistics"
-  title: "Unified Intelligence. Every Node. Total Visibility."
-  description: "Quatro delivers a unified operational intelligence platform that transforms fragmented data across ports, airports, and logistics corridors into real-time situational awareness, predictive routing intelligence, and coordinated multi-node operations — all from a single command environment."
+  eyebrow: Transportation & Logistics
+  title: Unified Intelligence. Every Node. Total Visibility.
+  description: Quatro delivers a unified operational intelligence platform that transforms fragmented data across ports, airports, and logistics corridors into real-time situational awareness, predictive
+    routing intelligence, and coordinated multi-node operations — all from a single command environment.
   primaryCta:
-    label: "Request an Operations Briefing"
-    href: "/contact/demo"
+    label: Request an Operations Briefing
+    href: /contact/demo
   secondaryCta:
-    label: "Talk to a Logistics Expert"
-    href: "/contact/sales"
+    label: Talk to a Logistics Expert
+    href: /contact/sales
 stats:
-  - value: "3"
-    label: "Operational Domains"
-  - value: "8,000+"
-    label: "Infrastructure Integrations"
-  - value: "24-48hr"
-    label: "Predictive Intelligence"
-  - value: "Sovereign"
-    label: "Deployment Ready"
+- value: '3'
+  label: Operational Domains
+- value: 8,000+
+  label: Infrastructure Integrations
+- value: 24-48hr
+  label: Predictive Intelligence
+- value: Sovereign
+  label: Deployment Ready
 challenges:
-  - title: "Port Coordination Bottlenecks"
-    description: "Berth assignment, cargo staging, customs clearance, and truck coordination happen through manual communication between port authorities, shipping lines, freight forwarders, and customs. Ships wait at anchor while systems don't communicate."
-    image: "/images/challenge-transport-multi-modal.png"
-  - title: "Airport Operational Silos"
-    description: "Runway controllers, gate agents, baggage handlers, maintenance teams, and security checkpoints each see their domain. No system coordinates the 30-minute turnaround cycle that determines on-time performance."
-    image: "/images/challenge-transport-utilization.png"
-  - title: "Corridor Fragmentation Across Jurisdictions"
-    description: "Highway incidents go undetected for 20+ minutes. Traffic optimization stops at jurisdiction boundaries. Border delays ripple upstream through toll plazas and staging areas with no cross-agency visibility."
-    image: "/images/challenge-transport-safety.png"
-  - title: "Cross-Node Visibility Gaps"
-    description: "A container ship arrives at port. The logistics coordinator knows the trucker is delayed. The customs inspector knows the manifests arrived by email. The regional coordinator knows about a corridor incident 200 miles inland. But no one sees the full picture."
-    image: "/images/challenge-transport-passenger.png"
-  - title: "Security and Logistics Asymmetry"
-    description: "Smuggling operations see one coordinated supply chain. Your agencies see three separate screens. Criminal networks move product with synchronized timing across ports, corridors, and borders."
+- title: Port Coordination Bottlenecks
+  description: Berth assignment, cargo staging, customs clearance, and truck coordination happen through manual communication between port authorities, shipping lines, freight forwarders, and customs. Ships
+    wait at anchor while systems don't communicate.
+  image: /images/challenge-transport-port-bottleneck.png
+- title: Airport Operational Silos
+  description: Runway controllers, gate agents, baggage handlers, maintenance teams, and security checkpoints each see their domain. No system coordinates the 30-minute turnaround cycle that determines
+    on-time performance.
+  image: /images/challenge-transport-airport-silos.png
+- title: Corridor Fragmentation Across Jurisdictions
+  description: Highway incidents go undetected for 20+ minutes. Traffic optimization stops at jurisdiction boundaries. Border delays ripple upstream through toll plazas and staging areas with no cross-agency
+    visibility.
+  image: /images/challenge-transport-corridor-fragment.png
+- title: Cross-Node Visibility Gaps
+  description: A container ship arrives at port. The logistics coordinator knows the trucker is delayed. The customs inspector knows the manifests arrived by email. The regional coordinator knows about
+    a corridor incident 200 miles inland. But no one sees the full picture.
+  image: /images/challenge-transport-visibility-gaps.png
+- title: Security and Logistics Asymmetry
+  description: Smuggling operations see one coordinated supply chain. Your agencies see three separate screens. Criminal networks move product with synchronized timing across ports, corridors, and borders.
+  image: /images/challenge-transport-asymmetry.png
 capabilities:
-  - name: "Berth Management and Scheduling"
-    description: "Vessel arrival predictions accurate to the hour. Optimal berth assignment 72 hours in advance considering water depth, cargo type, discharge time, and next vessel schedule."
-    featured: true
-    outcome: "72-hour berth predictions. Ships stop waiting at anchor."
-    tier: "operate"
-  - name: "Cross-Node Coordination"
-    description: "Vessel discharge timing at ports informs corridor traffic. Flight arrivals optimize ground operations. Corridor incidents coordinate with border authorities. Every node enriches every other."
-    featured: true
-    outcome: "Every transportation node enriches every other."
-    tier: "command"
-  - name: "Maritime Sovereignty and Intelligence"
-    description: "Every vessel tracked from EEZ entry through port departure. Dark vessel activity detected immediately. Trafficking patterns correlated with known smuggling corridors."
-    featured: true
-    outcome: "EEZ to port. Every vessel tracked. Dark activity detected."
-    tier: "operate"
-  - name: "Runway and Airfield Intelligence"
-    description: "Aircraft approach predictions accurate to the minute. Gate availability predicted before landing. Ground equipment staged for efficient movement. Weather-driven capacity alerts trigger pre-emptive adjustments."
-    image: "/images/cap-transport-fleet-health.png"
-    outcome: "Gate availability predicted before aircraft lands."
-    tier: "operate"
-  - name: "Corridor Traffic and Flow Management"
-    description: "Real-time traffic flow across monitored corridors. Sub-minute incident detection. Congestion predicted 30-60 minutes in advance with weather-driven routing adjustments."
-    image: "/images/cap-transport-route-optimization.png"
-    outcome: "Congestion predicted 30-60 minutes in advance."
-    tier: "operate"
-  - name: "Customs and Border Integration"
-    description: "Cargo manifests pre-reviewed against risk databases before vessel arrival. High-risk cargo flagged for priority inspection. Cross-border shipment status tracked origin to destination."
-    image: "/images/cap-transport-passenger-flow.png"
-    outcome: "Risk-flagged cargo identified before vessel arrival."
-    tier: "command"
-  - name: "Predictive Routing Intelligence"
-    description: "24-48 hour traffic and logistics predictions. Alternate routing recommendations generated before incidents block flow. Supply chain ETA with minute-level accuracy."
-    image: "/images/cap-transport-compliance.png"
-    outcome: "24-48 hour predictive routing with minute-level ETAs."
-    tier: "operate"
-  - name: "Sovereign Multi-Agency Sharing"
-    description: "Generate intelligence products for partner agencies without ceding data control. Share assessed routing, not raw sensors. Every disclosure controlled, audited, and revocable."
-    outcome: "Share intelligence, not data. Full sovereignty."
-    tier: "command"
+- name: Berth Management and Scheduling
+  description: Vessel arrival predictions accurate to the hour. Optimal berth assignment 72 hours in advance considering water depth, cargo type, discharge time, and next vessel schedule.
+  featured: true
+  outcome: 72-hour berth predictions. Ships stop waiting at anchor.
+  tier: operate
+- name: Cross-Node Coordination
+  description: Vessel discharge timing at ports informs corridor traffic. Flight arrivals optimize ground operations. Corridor incidents coordinate with border authorities. Every node enriches every other.
+  featured: true
+  outcome: Every transportation node enriches every other.
+  tier: command
+- name: Maritime Sovereignty and Intelligence
+  description: Every vessel tracked from EEZ entry through port departure. Dark vessel activity detected immediately. Trafficking patterns correlated with known smuggling corridors.
+  featured: true
+  outcome: EEZ to port. Every vessel tracked. Dark activity detected.
+  tier: operate
+- name: Runway and Airfield Intelligence
+  description: Aircraft approach predictions accurate to the minute. Gate availability predicted before landing. Ground equipment staged for efficient movement. Weather-driven capacity alerts trigger pre-emptive
+    adjustments.
+  image: /images/cap-transport-runway.png
+  outcome: Gate availability predicted before aircraft lands.
+  tier: operate
+- name: Corridor Traffic and Flow Management
+  description: Real-time traffic flow across monitored corridors. Sub-minute incident detection. Congestion predicted 30-60 minutes in advance with weather-driven routing adjustments.
+  image: /images/cap-transport-corridor.png
+  outcome: Congestion predicted 30-60 minutes in advance.
+  tier: operate
+- name: Customs and Border Integration
+  description: Cargo manifests pre-reviewed against risk databases before vessel arrival. High-risk cargo flagged for priority inspection. Cross-border shipment status tracked origin to destination.
+  image: /images/cap-transport-customs.png
+  outcome: Risk-flagged cargo identified before vessel arrival.
+  tier: command
+- name: Predictive Routing Intelligence
+  description: 24-48 hour traffic and logistics predictions. Alternate routing recommendations generated before incidents block flow. Supply chain ETA with minute-level accuracy.
+  image: /images/cap-transport-routing.png
+  outcome: 24-48 hour predictive routing with minute-level ETAs.
+  tier: operate
+- name: Sovereign Multi-Agency Sharing
+  description: Generate intelligence products for partner agencies without ceding data control. Share assessed routing, not raw sensors. Every disclosure controlled, audited, and revocable.
+  outcome: Share intelligence, not data. Full sovereignty.
+  tier: command
+  image: /images/cap-transport-sovereign-sharing.png
 platformMapping:
-  connect: "8,000+ integrations across port, airport, and highway infrastructure. AIS vessel tracking, CCTV, traffic sensors, IoT berth monitors, RFID cargo tracking, toll system feeds, radar, and weather data. The physical logistics network becomes machine-readable intelligence."
-  operate: "Secure multi-source data ingestion with cross-node data governance. Real-time fusion and domain-trained predictive algorithms transform fragmented data into a unified logistics intelligence picture — berth predictions, runway optimization, corridor routing, and customs risk assessment."
-  command: "Predictive routing recommendations, incident management workflows, and multi-node coordination dashboards. Operators see the full chain. Right decision-maker, right intelligence, right time. Full audit trail with integration to existing SCADA, PMS, and logistics systems."
+  connect: 8,000+ integrations across port, airport, and highway infrastructure. AIS vessel tracking, CCTV, traffic sensors, IoT berth monitors, RFID cargo tracking, toll system feeds, radar, and weather
+    data. The physical logistics network becomes machine-readable intelligence.
+  operate: Secure multi-source data ingestion with cross-node data governance. Real-time fusion and domain-trained predictive algorithms transform fragmented data into a unified logistics intelligence picture
+    — berth predictions, runway optimization, corridor routing, and customs risk assessment.
+  command: Predictive routing recommendations, incident management workflows, and multi-node coordination dashboards. Operators see the full chain. Right decision-maker, right intelligence, right time.
+    Full audit trail with integration to existing SCADA, PMS, and logistics systems.
 proofPoint:
-  industry: "Transportation — Multi-Modal Logistics"
-  headline: "Port-to-Corridor Coordination"
+  industry: Transportation — Multi-Modal Logistics
+  headline: Port-to-Corridor Coordination
   metrics:
-    - value: "25%"
-      label: "Higher Berth Utilization"
-    - value: "<1 min"
-      label: "Incident Detection"
-    - value: "40%"
-      label: "Faster Border Processing"
-  narrative: "A national transportation authority deployed Quatro across a major deep-water port and connecting highway corridor. Berth planning 72 hours in advance increased utilization 25%. Sub-minute corridor incident detection with automated alternate routing reduced average incident impact from 6 hours to 90 minutes. Customs pre-screening tied to vessel arrival intelligence accelerated border processing by 40%."
+  - value: 25%
+    label: Higher Berth Utilization
+  - value: <1 min
+    label: Incident Detection
+  - value: 40%
+    label: Faster Border Processing
+  narrative: A national transportation authority deployed Quatro across a major deep-water port and connecting highway corridor. Berth planning 72 hours in advance increased utilization 25%. Sub-minute
+    corridor incident detection with automated alternate routing reduced average incident impact from 6 hours to 90 minutes. Customs pre-screening tied to vessel arrival intelligence accelerated border
+    processing by 40%.
 cta:
   primary:
-    label: "Request an Operations Briefing"
-    href: "/contact/demo"
+    label: Request an Operations Briefing
+    href: /contact/demo
   secondary:
-    label: "Talk to a Logistics Expert"
-    href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your current port, airport, or corridor operations and show how unified intelligence connects every node. 90-day proof of value · One port or corridor · Credited toward contract"
+    label: Talk to a Logistics Expert
+    href: /contact/sales
+  microcopy: 'Typical assessment: 45-60 minutes. We''ll map your current port, airport, or corridor operations and show how unified intelligence connects every node. 90-day proof of value · One port or
+    corridor · Credited toward contract'
 ---

@@ -26,16 +26,16 @@ stats:
 challenges:
   - title: "Vendor-Fragmented Signal Management"
     description: "Each equipment vendor provides its own monitoring tool. Operators context-switch between separate control systems for antennas, encoders, routers, and analyzers during live production — when seconds matter."
-    image: "/images/challenge-broadcast-vendor.png"
+    image: "/images/challenge-broadcast-vendor-fragment.png"
   - title: "Hybrid Infrastructure Complexity"
     description: "Legacy SDI systems run alongside SMPTE ST 2110 IP networks. Some equipment speaks ST 2110, others SRT, ST 2022, or ASI. Managing this hybrid infrastructure through separate vendor consoles creates operational friction during every live event."
     image: "/images/challenge-broadcast-hybrid.png"
   - title: "Facility Health Blind Spots"
     description: "Multi-site broadcast facilities are black boxes. Rack equipment, RF chains, and environmental systems run unseen until something fails. When a facility goes down during live production, you lose the entire site."
-    image: "/images/challenge-broadcast-facility.png"
+    image: "/images/challenge-broadcast-blind-spots.png"
   - title: "Distribution Chain Opacity"
     description: "Content distribution spans third-party networks, satellite transponders, and IP circuits. QoS failures appear as viewer experience drops, not actionable alerts. SLA breaches are discovered after the fact."
-    image: "/images/challenge-broadcast-distribution.png"
+    image: "/images/challenge-broadcast-opacity.png"
 capabilities:
   - name: "Multi-Technology Signal Unification"
     description: "Real-time signal visibility across SMPTE ST 2110, ST 2022, SRT, SDI, DVB-ASI, and L-Band satellite — all from a single operational view. 8,000+ integrations across Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and more."
@@ -64,7 +64,7 @@ capabilities:
     tier: "operate"
   - name: "Predictive Equipment Health"
     description: "Know when transmitters, RF chains, and modulation systems are degrading before they fail on air. Facility-wide health scoring across multi-site operations. Resource utilization analytics reveal over-provisioned and at-capacity equipment."
-    image: "/images/cap-broadcast-equipment-health.png"
+    image: "/images/cap-broadcast-predictive.png"
     outcome: "Equipment degradation caught before on-air failure."
     tier: "operate"
 platformMapping:
