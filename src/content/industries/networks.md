@@ -45,16 +45,19 @@ capabilities:
     featured: true
     outcome: "5-15 vendor platforms → 1. Every domain. Every orbit."
     tier: "connect"
+    image: "/images/cap-networks-unified-ops.png"
   - name: "Hybrid Service Assurance"
     description: "End-to-end SLA management across terrestrial and satellite transport layers. Real-time SLA breach prediction 24+ hours in advance. Automated billing correlation between transponder utilization and terrestrial capacity. When traffic shifts from terrestrial to satellite (or between orbits), SLA tracking follows automatically."
     featured: true
     outcome: "E2E SLA visibility across every transport layer."
     tier: "operate"
+    image: "/images/cap-networks-hybrid-sla.png"
   - name: "Predictive Fleet & Constellation Intelligence"
     description: "Predictive failure detection 2-4 weeks in advance across both terrestrial equipment (towers, cabinets, power) and satellite assets (GEO, LEO, MEO fleet health). Cross-domain correlation surfaces compound issues that siloed tools cannot detect — a terrestrial backhaul degradation that will cascade into satellite capacity overload."
     featured: true
     outcome: "2-4 week advance warning. Cross-domain cascade detection."
     tier: "operate"
+    image: "/images/cap-networks-fleet-intel.png"
   - name: "Autonomous Fault Remediation"
     description: "When issues are detected, the platform diagnoses root cause across domains, recommends remediation, and executes proven playbooks autonomously. Institutional expertise captured — new operators perform like 20-year veterans."
     image: "/images/cap-networks-fault-remediation.png"

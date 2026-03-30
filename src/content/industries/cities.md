@@ -42,6 +42,7 @@ capabilities:
     featured: true
     outcome: "5-10 consoles replaced. One operational picture."
     tier: "command"
+    image: "/images/cap-cities-operations-center.png"
   - name: "Cross-Agency Emergency Response"
     description: "When a water main breaks, it affects traffic, safety, fleet dispatch, and environmental monitoring. AI-driven impact assessment coordinates multi-department response automatically."
     featured: true
@@ -53,6 +54,7 @@ capabilities:
     featured: true
     outcome: "85% fewer false alarms across city camera networks."
     tier: "operate"
+    image: "/images/cap-cities-surveillance.png"
   - name: "Smart Infrastructure Monitoring"
     description: "Continuous condition monitoring for streetlights, traffic signals, water distribution, and distributed infrastructure with predictive maintenance. Cross-links to water system intelligence for treatment, leak detection, and compliance."
     image: "/images/cap-cities-infra-monitoring.png"

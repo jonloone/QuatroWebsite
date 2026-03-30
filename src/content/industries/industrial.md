@@ -44,6 +44,7 @@ capabilities:
   featured: true
   outcome: 2-4 week advance warning. $125K/hr downtime avoided.
   tier: operate
+  image: /images/cap-industrial-predictive-maint.png
 - name: AI-Powered Operator Guidance
   description: Real-time contextual recommendations during complex situations — simultaneous equipment alerts, quality deviations, production constraints. Step-by-step guidance based on historical patterns
     and process relationships.

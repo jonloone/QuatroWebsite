@@ -57,6 +57,7 @@ capabilities:
     featured: true
     outcome: "12+ installations. One command interface."
     tier: "command"
+    image: "/images/cap-defense-federated-command.png"
   - name: "Automated Force Protection"
     description: "Pre-defined response playbooks triggered automatically by detected events — escalating alerts, notifying responders, and activating countermeasures."
     image: "/images/cap-defense-force-protection.png"

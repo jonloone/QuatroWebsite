@@ -42,16 +42,19 @@ capabilities:
     featured: true
     outcome: "6 signal technologies. Every vendor. One view."
     tier: "connect"
+    image: "/images/cap-broadcast-signal-unification.png"
   - name: "Live Production Orchestration"
     description: "Real-time resource orchestration during live events — cameras, encoders, transmission equipment. Virtual Signal Groups configure logical signal sources and destinations from any vendor technology. Automated failover when equipment fails during live broadcast."
     featured: true
     outcome: "Automated failover during live broadcast."
     tier: "command"
+    image: "/images/cap-broadcast-live-production.png"
   - name: "Cross-Domain Compound Intelligence"
     description: "A satellite transponder failure triggers not just an alert but a full assessment of affected programs, SLA impact, and recovery recommendations. Production, facility, and distribution intelligence connected — each domain enriching the others."
     featured: true
     outcome: "Full impact assessment in seconds, not hours."
     tier: "operate"
+    image: "/images/cap-broadcast-compound-intel.png"
   - name: "Facility Health Monitoring"
     description: "Real-time facility health across multi-site operations. Equipment monitoring for transmitters, modulators, encoders, RF systems, and routers. Environmental controls for power distribution, cooling, and RF interference. Predictive maintenance alerts before air-time impact."
     image: "/images/cap-broadcast-facility-health.png"

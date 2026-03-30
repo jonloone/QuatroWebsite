@@ -51,16 +51,19 @@ capabilities:
   featured: true
   outcome: 72-hour berth predictions. Ships stop waiting at anchor.
   tier: operate
+  image: /images/cap-transport-berth-mgmt.png
 - name: Cross-Node Coordination
   description: Vessel discharge timing at ports informs corridor traffic. Flight arrivals optimize ground operations. Corridor incidents coordinate with border authorities. Every node enriches every other.
   featured: true
   outcome: Every transportation node enriches every other.
   tier: command
+  image: /images/cap-transport-cross-node.png
 - name: Maritime Sovereignty and Intelligence
   description: Every vessel tracked from EEZ entry through port departure. Dark vessel activity detected immediately. Trafficking patterns correlated with known smuggling corridors.
   featured: true
   outcome: EEZ to port. Every vessel tracked. Dark activity detected.
   tier: operate
+  image: /images/cap-transport-maritime-sovereignty.png
 - name: Runway and Airfield Intelligence
   description: Aircraft approach predictions accurate to the minute. Gate availability predicted before landing. Ground equipment staged for efficient movement. Weather-driven capacity alerts trigger pre-emptive
     adjustments.

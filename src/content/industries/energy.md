@@ -58,6 +58,7 @@ capabilities:
   featured: true
   outcome: Compound threats detected before siloed tools can see them.
   tier: operate
+  image: /images/cap-energy-cross-domain.png
 - name: 'DER Integration: Every New Energy Source, One View'
   description: Native connectivity for SunSpec, OCPP, and IEEE 2030.5. Onboard solar, wind, battery storage, and EV charging into your grid operational view without custom integration.
   outcome: Solar, wind, battery, and EV — one operational view.

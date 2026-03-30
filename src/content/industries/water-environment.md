@@ -45,16 +45,19 @@ capabilities:
     featured: true
     outcome: "Leak location identified to the specific pipe segment."
     tier: "operate"
+    image: "/images/cap-water-hydraulic-correlation.png"
   - name: "Automated Leak Detection and Dispatch"
     description: "Leaks detected within minutes of occurrence with localization accuracy enabling surgical repairs. Automated alert workflows include location probability maps, segment characteristics, crew availability, and material recommendations."
     featured: true
     outcome: "Minutes to detection. Surgical repair accuracy."
     tier: "command"
+    image: "/images/cap-water-leak-detection.png"
   - name: "Automated Compliance Reporting"
     description: "Auto-generated monthly and quarterly reports tied to actual operational data for SENAGUA, MAE/MAATE, and TULSMA frameworks. No spreadsheets. No manual assembly. Real-time compliance verification — operators know immediately when they're out of spec."
     featured: true
     outcome: "Zero manual compliance assembly. Real-time verification."
     tier: "command"
+    image: "/images/cap-water-compliance.png"
   - name: "Predictive Pipe Health"
     description: "Asset heat maps showing failure risk by segment based on pipe age, material, pressure history, quality events, and maintenance records. Prioritized replacement scheduling that prevents catastrophic failures and optimizes capital expenditure."
     image: "/images/cap-water-pipe-health.png"
