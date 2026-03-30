@@ -1,13 +1,13 @@
 ---
 title: "Fleet Health"
-tagline: "Constellation-Scale Predictive Intelligence"
+tagline: "Constellation & Terrestrial Predictive Intelligence"
 heroImage: "/images/solution-fleet-health.png"
-description: "Unified fleet monitoring across GEO, LEO, and NGSO constellations with predictive failure detection 2-4 weeks in advance, cross-orbit capacity optimization, and coordinated maintenance scheduling at constellation scale."
+description: "Unified fleet monitoring across GEO, LEO, and NGSO constellations plus terrestrial equipment health (towers, cabinets, power systems) with predictive failure detection 2-4 weeks in advance, cross-domain capacity optimization, and coordinated maintenance scheduling at scale."
 order: 9
 hero:
   eyebrow: "Fleet Health"
   title: "See Every Orbit. Predict Every Failure."
-  description: "Constellation-scale fleet monitoring, predictive equipment failure detection, and cross-orbit maintenance coordination — transforming reactive equipment replacement into proactive maintenance predicted 2-4 weeks in advance and fleet-wide optimization across every orbit."
+  description: "Constellation-scale fleet monitoring, terrestrial equipment health, predictive failure detection, and cross-domain maintenance coordination — transforming reactive equipment replacement into proactive maintenance predicted 2-4 weeks in advance and fleet-wide optimization across every orbit and transport layer."
   primaryCta:
     label: "Schedule a Fleet Operations Demo"
     href: "/contact/demo"

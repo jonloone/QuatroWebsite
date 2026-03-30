@@ -2,12 +2,12 @@
 title: "Network Operations"
 tagline: "Unified Multi-Vendor NOC"
 heroImage: "/images/solution-network-operations.png"
-description: "Replace vendor silos with unified network intelligence. 80% fewer false alarms, 55% faster MTTR, and one platform for any vendor's equipment."
+description: "Replace vendor silos with unified network intelligence across terrestrial and satellite domains. 80% fewer false alarms, 55% faster MTTR, and one platform for any vendor's equipment — ground to orbit."
 order: 7
 hero:
   eyebrow: "Network Operations"
   title: "One NOC. Any Vendor. Zero Silos."
-  description: "Stop toggling between 5-10 vendor tools. Unified network intelligence with AI-driven correlation, automated remediation, and SLA compliance in one platform."
+  description: "Stop toggling between 5-15 vendor tools across terrestrial and satellite domains. Unified network intelligence with AI-driven correlation, automated remediation, and cross-domain SLA compliance in one platform — from tower site to ground station to orbit."
   primaryCta:
     label: "Schedule a NOC Assessment"
     href: "/contact/demo"
