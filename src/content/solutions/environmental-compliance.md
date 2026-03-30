@@ -1,6 +1,7 @@
 ---
 title: "Environmental Compliance"
 tagline: "Regulatory Automation and Environmental Intelligence"
+heroImage: "/images/solution-environmental-compliance.png"
 description: "Real-time environmental intelligence that monitors emissions, effluent, air quality, and noise across regulatory frameworks — automating compliance reporting, triggering investigation workflows, and generating enforcement-ready evidence packages."
 order: 16
 hero:

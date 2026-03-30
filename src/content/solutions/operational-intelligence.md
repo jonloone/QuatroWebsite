@@ -1,6 +1,7 @@
 ---
 title: "Operational Intelligence"
 tagline: "AI-Powered Operational Intelligence"
+heroImage: "/images/solution-operational-intelligence.png"
 description: "AI-powered intelligence that guides your team through complex operations — not just dashboards that display data. Contextual recommendations, intelligent agents that surface what matters, and the bridge from operational awareness to enterprise-wide decision-making."
 order: 3
 hero:

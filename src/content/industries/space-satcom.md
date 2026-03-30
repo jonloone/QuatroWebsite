@@ -1,6 +1,7 @@
 ---
 title: "Space & SATCOM"
 tagline: "Unified Intelligence for Satellite Operations"
+heroImage: "/images/industry-space-satcom.png"
 description: "One platform for satellite ground segments, fleet operations, revenue assurance, and space domain awareness — transforming fragmented monitoring tools into real-time operational visibility, predictive anomaly detection, and coordinated command and control across the entire constellation."
 order: 6
 hero:

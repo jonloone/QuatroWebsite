@@ -43,6 +43,7 @@ capabilities:
     featured: true
     outcome: "70% faster cross-agency incident response."
     tier: "command"
+    image: "/images/cap-cities-cross-agency.png"
   - name: "AI Urban Surveillance"
     description: "Real-time behavioral analytics across city-wide camera networks. Multi-sensor fusion with gunshot detection, license plate recognition, and access control — 85% fewer false alarms."
     featured: true
@@ -56,6 +57,7 @@ capabilities:
     description: "AI-powered route optimization for waste collection, public works, and transit. Fill-level IoT sensors enable demand-driven scheduling. Dynamic routing based on actual conditions — not fixed schedules."
     outcome: "30% fleet cost reduction through demand-driven routing."
     tier: "command"
+    image: "/images/cap-cities-waste-mgmt.png"
   - name: "Environmental Intelligence"
     description: "Air quality, weather, and energy data correlated with operational systems. Pollutant concentrations trigger traffic rerouting and public notifications automatically."
     outcome: "Automatic response to environmental threshold breaches."
@@ -64,6 +66,7 @@ capabilities:
     description: "Treatment plant monitoring, distribution network management, leak detection, and quality compliance. From reservoir to tap, unified intelligence connected to city-wide operations for coordinated incident response."
     outcome: "Reservoir to tap. One unified water intelligence layer."
     tier: "connect"
+    image: "/images/cap-cities-water-infra.png"
 platformMapping:
   connect: "8,000+ connectors for traffic controllers (NTCIP), cameras (ONVIF), building systems (BACnet, KNX), transit (GTFS, SIRI), and environmental sensors. Edge processing at intersections and vehicles."
   operate: "AI video analytics with behavioral analysis and crowd dynamics. Traffic pattern prediction, predictive maintenance for infrastructure, and environmental correlation. 80% fewer false alarms."

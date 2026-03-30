@@ -23,7 +23,6 @@ const { Content } = await solution.render()
 const { title, tagline, description, hero, heroImage, challenges, capabilities, stats, platformMapping, proofPoint, cta } = solution.data
 
 const featuredCapabilities = capabilities.filter((c: any) => c.featured)
-const nonFeaturedCapabilities = capabilities.filter((c: any) => !c.featured)
 const hasFeatured = featuredCapabilities.length > 0
 
 // Default CTA values
@@ -75,25 +74,6 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/c
         features={capabilities.map(c => ({ name: c.name, description: c.description, icon: c.icon }))}
         columns={3}
       />
-    </Section>
-  )}
-
-  <!-- Editorial Capabilities (non-featured) -->
-  {nonFeaturedCapabilities.length > 0 && (
-    <Section divider>
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 mb-12 text-center">
-        <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">More Capabilities</h2>
-        <p class="mt-4 text-lg text-neutral-600">Additional capabilities for {title.toLowerCase()}.</p>
-      </div>
-      {nonFeaturedCapabilities.map((cap: any, i: number) => (
-        <EditorialCapability
-          name={cap.name}
-          description={cap.description}
-          outcome={cap.outcome}
-          image={cap.image}
-          reverse={i % 2 === 1}
-        />
-      ))}
     </Section>
   )}
 

@@ -1,6 +1,7 @@
 ---
 title: "Corridor Intelligence"
 tagline: "Traffic-to-Border Coordination Intelligence"
+heroImage: "/images/solution-corridor-intelligence.png"
 description: "Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border security across highway corridors — eliminating congestion, preventing accidents, and detecting contraband movement before crossing jurisdictional boundaries."
 order: 14
 hero:

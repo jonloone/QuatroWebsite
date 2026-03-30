@@ -38,11 +38,13 @@ capabilities:
     featured: true
     outcome: "Modern analytics on legacy SCADA — months, not years."
     tier: "connect"
+    image: "/images/cap-energy-scada-overlay.png"
   - name: "Pipeline Integrity & Security"
     description: "Multi-method leak detection with AI cross-correlation — RTTM, acoustic, satellite, and partner-delivered predictive analytics. 0.5% flow sensitivity with an integrated partner ecosystem no single vendor can match."
     featured: true
     outcome: "75% fewer false alarms. 0.5% flow sensitivity."
     tier: "operate"
+    image: "/images/cap-energy-pipeline.png"
   - name: "Cross-Domain Correlation"
     description: "AI correlates operational events with security events, weather, and external sources. Cross-domain agents surface compound threats that siloed tools structurally cannot detect."
     featured: true
@@ -64,6 +66,7 @@ capabilities:
     description: "Real-time contextual recommendations during complex situations — cascading outages, DER instability, simultaneous maintenance events. Step-by-step guidance based on historical patterns, current conditions, and grid relationships."
     outcome: "New operators perform like 20-year veterans."
     tier: "operate"
+    image: "/images/cap-energy-operator-guidance.png"
 platformMapping:
   connect: "Native connectivity for DNP3, IEC 61850, OPC-UA, and MQTT. Mirrors data from legacy SCADA and historians without tag-based licensing. 8,000+ connectors for any energy asset."
   operate: "AI-powered intelligence for predictive maintenance, multi-method leak detection, grid anomaly detection, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold alerts fire. Real-time operational model enables contingency analysis and DER hosting capacity studies."

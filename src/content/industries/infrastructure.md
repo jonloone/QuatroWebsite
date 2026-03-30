@@ -43,11 +43,13 @@ capabilities:
     featured: true
     outcome: "55% faster MTTR. Institutional expertise captured."
     tier: "command"
+    image: "/images/cap-infra-fault-remediation.png"
   - name: "Commercial Operations Intelligence"
     description: "Active SLA management with breach prediction, automated escalation, capacity planning, and cost tracking. Turn NOC operations into revenue operations."
     featured: true
     outcome: "NOC operations become revenue operations."
     tier: "command"
+    image: "/images/cap-infra-commercial-ops.png"
   - name: "Multi-Site Tower Monitoring"
     description: "Environmental, power, security, and equipment telemetry from 900+ sites. Predictive analytics detect failures before they cause outages."
     outcome: "900+ sites monitored. Failures predicted before outages."

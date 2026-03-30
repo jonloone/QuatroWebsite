@@ -1,6 +1,7 @@
 ---
 title: "Water & Environment"
 tagline: "Unified Intelligence for Water and Environmental Operations"
+heroImage: "/images/industry-water-environment.png"
 description: "Real-time operational intelligence that transforms fragmented sensor data across water systems, environmental monitoring, and regulatory compliance into predictive system health, automated compliance reporting, and coordinated environmental protection."
 order: 8
 hero:

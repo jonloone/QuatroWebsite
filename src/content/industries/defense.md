@@ -40,11 +40,13 @@ capabilities:
     featured: true
     outcome: "Full AI capability. Zero external dependencies."
     tier: "connect"
+    image: "/images/cap-defense-air-gapped.png"
   - name: "Perimeter Protection"
     description: "AI video analytics with multi-sensor fusion — camera, radar, lidar, and fiber-optic — delivers sub-30-second detection-to-response across distributed installations."
     featured: true
     outcome: "80% fewer false alarms. Sub-30-second response."
     tier: "operate"
+    image: "/images/cap-defense-perimeter.png"
   - name: "Federated Command"
     description: "Single command interface spanning 12+ installations and FOBs. Maintains local autonomy while enabling centralized oversight without network consolidation."
     featured: true
@@ -66,6 +68,7 @@ capabilities:
     description: "Multi-source intelligence for orbital awareness — satellite tracking, conjunction assessment, and space weather impact correlated with ground operations. Ground to orbit, one platform."
     outcome: "Ground to orbit in one operational picture."
     tier: "operate"
+    image: "/images/cap-defense-space-domain.png"
   - name: "National Security Intelligence"
     description: "Purpose-built applications for counter-narcotics, resource protection, border security, and youth vulnerability assessment. Cross-domain correlation connects physical, signals, financial, and social intelligence."
     outcome: "Multi-agency intelligence for sovereign security."

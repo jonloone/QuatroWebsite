@@ -1,6 +1,7 @@
 ---
 title: "Physical Security"
 tagline: "AI-Powered Threat Detection"
+heroImage: "/images/solution-physical-security.png"
 description: "Unified physical security with AI video analytics and multi-sensor fusion that reduces false alarms by 80% and delivers sub-30-second incident response."
 order: 4
 hero:

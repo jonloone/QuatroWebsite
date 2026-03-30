@@ -43,11 +43,13 @@ capabilities:
     featured: true
     outcome: "New operators perform like 20-year veterans."
     tier: "operate"
+    image: "/images/cap-industrial-operator-guidance.png"
   - name: "Quality Prediction"
     description: "Correlate process parameters with quality outcomes before batch completion. AI models identify drift in quality-critical variables and recommend corrective action while product is still in-process."
     featured: true
     outcome: "Quality issues caught before batch completion."
     tier: "operate"
+    image: "/images/cap-industrial-quality.png"
   - name: "OEE Optimization: Find Every Point of Loss"
     description: "Real-time availability, performance, and quality metrics correlated with root-cause analytics that identify specific drivers of OEE loss across every production line."
     outcome: "22% OEE improvement through root-cause visibility."

@@ -1,6 +1,7 @@
 ---
 title: "Transportation"
 tagline: "Unified Intelligence for Logistics Networks"
+heroImage: "/images/industry-transportation.png"
 description: "Real-time operational intelligence that transforms fragmented data across ports, airports, and logistics corridors into situational awareness, predictive routing intelligence, and coordinated multi-node operations — all from a single command environment."
 order: 7
 hero:

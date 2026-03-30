@@ -1,6 +1,7 @@
 ---
 title: "Satellite Revenue Assurance"
 tagline: "Real-Time Commercial Intelligence"
+heroImage: "/images/solution-satellite-revenue.png"
 description: "Real-time transponder utilization tracking, SLA breach prediction, and automated billing correlation — transforming delayed post-facto billing reconciliation into proactive revenue protection where disputes are prevented before they happen."
 order: 10
 hero:

@@ -1,6 +1,7 @@
 ---
 title: "Fleet Health"
 tagline: "Constellation-Scale Predictive Intelligence"
+heroImage: "/images/solution-fleet-health.png"
 description: "Unified fleet monitoring across GEO, LEO, and NGSO constellations with predictive failure detection 2-4 weeks in advance, cross-orbit capacity optimization, and coordinated maintenance scheduling at constellation scale."
 order: 9
 hero:

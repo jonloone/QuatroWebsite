@@ -1,6 +1,7 @@
 ---
 title: "Grid Operations"
 tagline: "Modernize Without Replacing"
+heroImage: "/images/solution-grid-operations.png"
 description: "Overlay modernization that adds AI analytics, DER integration, and storm response to existing SCADA — delivering results in months, not years."
 order: 6
 hero:

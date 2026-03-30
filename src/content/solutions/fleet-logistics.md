@@ -1,6 +1,7 @@
 ---
 title: "Fleet & Logistics"
 tagline: "AI-Powered Fleet Intelligence"
+heroImage: "/images/solution-fleet-logistics.png"
 description: "Unified fleet management with AI-driven route optimization and predictive maintenance that reduces fuel costs by 14% and improves on-time delivery by 22%."
 order: 5
 hero:

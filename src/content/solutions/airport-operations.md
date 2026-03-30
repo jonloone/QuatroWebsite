@@ -1,6 +1,7 @@
 ---
 title: "Airport Operations"
 tagline: "Runway-to-Gate Coordination Intelligence"
+heroImage: "/images/solution-airport-operations.png"
 description: "Real-time operational intelligence that coordinates runway scheduling, passenger flow, baggage system health, and perimeter security into a single airport operations picture — eliminating delays, preventing system failures, and maintaining security across the aerodrome."
 order: 13
 hero:

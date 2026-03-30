@@ -1,6 +1,7 @@
 ---
 title: "Teleport Operations"
 tagline: "Unified Ground Segment Intelligence"
+heroImage: "/images/solution-teleport-operations.png"
 description: "Replace fragmented M&C and OSS/BSS tools with a single real-time command environment — eliminating tool-switching, data delays, and coordination gaps that slow response to ground segment anomalies."
 order: 8
 hero:

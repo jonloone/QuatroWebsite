@@ -1,6 +1,7 @@
 ---
 title: "Network Operations"
 tagline: "Unified Multi-Vendor NOC"
+heroImage: "/images/solution-network-operations.png"
 description: "Replace vendor silos with unified network intelligence. 80% fewer false alarms, 55% faster MTTR, and one platform for any vendor's equipment."
 order: 7
 hero:

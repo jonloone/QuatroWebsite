@@ -1,6 +1,7 @@
 ---
 title: "Broadcast & Media"
 tagline: "Unified Intelligence for Broadcast Operations"
+heroImage: "/images/industry-broadcast-media.png"
 description: "One platform for live production, facility management, and content distribution — transforming fragmented signal management across SMPTE ST 2110, SRT, SDI, and satellite into real-time orchestration, predictive equipment health, and coordinated multi-site operations."
 order: 9
 hero:

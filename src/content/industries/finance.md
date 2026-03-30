@@ -38,16 +38,19 @@ capabilities:
     featured: true
     outcome: "One answer to 'Who is this customer and what is their total exposure?'"
     tier: "operate"
+    image: "/images/cap-finance-customer-360.png"
   - name: "NPA Early Warning Intelligence"
     description: "Ingest loan performance, payment behavior, and economic indicators to identify pre-NPA stress patterns 30–60 days before accounts cross the threshold. Route high-risk accounts to collections or restructuring proactively."
     featured: true
     outcome: "Risk teams see NPA trends 30–60 days earlier. Provisioning costs decrease."
     tier: "command"
+    image: "/images/cap-finance-npa-warning.png"
   - name: "Regulatory Compliance Intelligence"
     description: "Unify the data foundation across AML/KYC, credit loss modeling, regulatory reporting, and stress testing. Full audit trail from every data point back to source."
     featured: true
     outcome: "Audit-ready compliance with zero reconciliation delays."
     tier: "operate"
+    image: "/images/cap-finance-compliance.png"
   - name: "Credit Risk Intelligence"
     description: "Reconcile exposure across loan origination, core systems, mortgages, cards, and guarantees. True cross-product exposure view for loan committees and stress testing."
     outcome: "Complete exposure data for every credit decision."

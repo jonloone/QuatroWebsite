@@ -1,6 +1,7 @@
 ---
 title: "Asset Monitoring"
 tagline: "Predict Failures Before They Happen"
+heroImage: "/images/solution-asset-monitoring.png"
 description: "AI-powered asset monitoring that shifts operations from reactive to predictive, reducing unplanned downtime by up to 60% across your entire infrastructure."
 order: 1
 hero:
