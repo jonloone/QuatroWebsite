@@ -1,9 +1,9 @@
 ---
 title: "Regulatory Compliance Intelligence"
 tagline: "Compliance as a Data Product, Not a Reporting Project"
+heroImage: "/images/solution-regulatory-compliance.png"
 description: "Unify the data foundation across AML/KYC, credit loss modeling, regulatory reporting, and stress testing — with full audit trail from every data point back to source."
 order: 19
-heroImage: "/images/solution-regulatory-compliance.png"
 hero:
   eyebrow: "Regulatory Compliance"
   title: "Compliance That Runs Continuously — Not Once a Quarter."

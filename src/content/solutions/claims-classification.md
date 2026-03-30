@@ -1,9 +1,9 @@
 ---
 title: "Claims Classification Intelligence"
 tagline: "Reduce Underwriter Load. Accelerate Processing."
+heroImage: "/images/solution-claims-classification.png"
 description: "ML-powered claims classification that predicts accept/reject decisions with confidence scoring — routing high-confidence claims past underwriter review entirely."
 order: 21
-heroImage: "/images/solution-claims-classification.png"
 hero:
   eyebrow: "Claims Classification"
   title: "High-Confidence Claims Don't Need an Underwriter."

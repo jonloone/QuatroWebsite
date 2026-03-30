@@ -1,9 +1,9 @@
 ---
 title: "NPA Early Warning Intelligence"
 tagline: "Predict Non-Performing Assets Before They Hit the Balance Sheet"
+heroImage: "/images/solution-npa-early-warning.png"
 description: "ML-powered early warning that identifies pre-NPA stress patterns 30–60 days before accounts cross the threshold — with production-ready pipelines for collections, restructuring, and proactive engagement."
 order: 18
-heroImage: "/images/solution-npa-early-warning.png"
 hero:
   eyebrow: "NPA Early Warning"
   title: "See the Risk Before It Becomes a Loss."

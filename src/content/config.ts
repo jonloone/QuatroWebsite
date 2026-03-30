@@ -110,6 +110,7 @@ const industriesCollection = defineCollection({
       z.object({
         title: z.string(),
         description: z.string(),
+        image: z.string().optional(),
       })
     ),
     capabilities: z.array(
@@ -158,6 +159,7 @@ const solutionsCollection = defineCollection({
       z.object({
         title: z.string(),
         description: z.string(),
+        image: z.string().optional(),
       })
     ),
     capabilities: z.array(

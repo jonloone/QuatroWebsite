@@ -58,7 +58,7 @@ const useCases = allUseCases
     <FeatureGrid
       title={`${title} Challenges`}
       subtitle="The operational challenges holding your industry back."
-      features={challenges.map(c => ({ name: c.title, description: c.description }))}
+      features={challenges.map(c => ({ name: c.title, description: c.description, image: c.image }))}
       columns={challenges.length === 4 ? 4 : challenges.length === 3 ? 3 : 2}
     />
   </Section>

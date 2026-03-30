@@ -45,6 +45,7 @@ const iconMap: Record<string, any> = {
 
 interface Feature {
   icon?: string
+  image?: string
   name: string
   description?: string
   href?: string
@@ -112,14 +113,18 @@ const gridClasses = {
 
       return (
         <Tag class={linkClass} style={linkStyle} {...linkProps}>
-          {IconComponent && (
+          {feature.image ? (
+            <div class="mb-3 h-40 w-full overflow-hidden rounded-md">
+              <img alt="" src={feature.image} class="h-full w-full object-cover" />
+            </div>
+          ) : IconComponent ? (
             <div class:list={[
               'mb-3 flex h-10 w-10 items-center justify-center rounded-md',
               dark ? 'bg-brand-500/20 text-brand-400' : 'bg-brand-50 text-brand-600'
             ]}>
               <IconComponent size={22} />
             </div>
-          )}
+          ) : null}
           <h3 class:list={[
             'text-base font-display font-semibold',
             dark ? 'text-white' : 'text-neutral-800'

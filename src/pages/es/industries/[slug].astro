@@ -52,7 +52,7 @@ const ctaSecondary = cta?.secondary || { label: 'Hable con un Ingeniero', href: 
     <FeatureGrid
       title={`Desafíos en ${title}`}
       subtitle="Puntos críticos operativos en su industria."
-      features={challenges.map(c => ({ name: c.title, description: c.description }))}
+      features={challenges.map(c => ({ name: c.title, description: c.description, image: c.image }))}
       columns={challenges.length === 4 ? 4 : challenges.length === 3 ? 3 : 2}
     />
   </Section>
