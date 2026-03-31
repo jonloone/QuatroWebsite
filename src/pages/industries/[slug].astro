@@ -2,13 +2,11 @@
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
-import StatStrip from '@/components/marketing/StatStrip.astro'
 import Section from '@/components/marketing/Section.astro'
-import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
+import CapabilityBento from '@/components/marketing/CapabilityBento.astro'
 import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
-import BentoUseCases from '@/components/marketing/BentoUseCases.astro'
-import EditorialCapability from '@/components/marketing/EditorialCapability.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 
 export async function getStaticPaths() {
   const industries = await getCollection('industries')
@@ -20,21 +18,18 @@ export async function getStaticPaths() {
 
 const { industry } = Astro.props
 const { Content } = await industry.render()
-const { title, tagline, description, hero, heroImage, challenges, capabilities, stats, platformMapping, proofPoint, cta } = industry.data
+const { title, tagline, description, hero, heroImage, capabilities, stats, proofPoint, cta } = industry.data
 
-const featuredCapabilities = capabilities.filter((c: any) => c.featured)
-const hasFeatured = featuredCapabilities.length > 0
-
-// Default CTA values
 const ctaPrimary = cta?.primary || { label: 'Schedule an Assessment', href: '/contact/demo' }
 const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/contact/sales' }
 
-// Get use-case sub-pages for this industry
-const slug = industry.id.replace(/\.md$/, '')
-const allUseCases = await getCollection('use-cases')
-const useCases = allUseCases
-  .filter((uc) => uc.data.parentIndustry === slug)
-  .sort((a, b) => a.data.order - b.data.order)
+// Build the editorial outcome statement from the hero description
+const outcomeStatement = hero.description
+  ? hero.description.replace(
+      /(AI-powered|unified|real-time|operational intelligence|operational visibility|modernize|overlay)/i,
+      '<span style="color: var(--color-forest);">$1</span>'
+    )
+  : description
 ---
 
 <MarketingLayout
@@ -51,86 +46,37 @@ const useCases = allUseCases
     backgroundImage={heroImage}
   />
 
-  <StatStrip stats={stats} />
+  <!-- Editorial Outcome Statement -->
+  <EditorialOutcome
+    statement={outcomeStatement}
+    description={description}
+    stats={stats}
+  />
 
-  <!-- Industry Challenges Grid -->
-  <Section divider>
-    <FeatureGrid
-      title={`${title} Challenges`}
-      subtitle="The operational challenges holding your industry back."
-      features={challenges.map(c => ({ name: c.title, description: c.description, image: c.image }))}
-      columns={challenges.length === 4 ? 4 : challenges.length === 3 ? 3 : 2}
-    />
-  </Section>
+  <!-- Capabilities — Dark Bento Grid -->
+  <CapabilityBento
+    title="How Quatro Helps"
+    subtitle={`Purpose-built for ${title.toLowerCase()} operations — measured by outcomes, not features.`}
+    capabilities={capabilities}
+  />
 
-  <!-- Capabilities Section -->
-  {hasFeatured ? (
-    <Section divider dark>
-      <BentoUseCases
-        title="How Quatro Helps"
-        subtitle={`Capabilities purpose-built for ${title.toLowerCase()} operations.`}
-        capabilities={capabilities}
-      />
-    </Section>
-  ) : (
-    <Section divider dark>
-      <FeatureGrid
-        dark
-        title="How Quatro Helps"
-        subtitle={`Capabilities purpose-built for ${title.toLowerCase()} operations.`}
-        features={capabilities.map(c => ({ name: c.name, description: c.description, icon: c.icon }))}
-        columns={3}
-      />
-    </Section>
-  )}
-
-  <!-- Proof Point — hidden until real case studies are available -->
-
-  <!-- Use-Case Sub-Pages -->
-  {useCases.length > 0 && (
+  <!-- Proof Point -->
+  {proofPoint && (
     <Section divider>
-      <div class="mx-auto max-w-4xl">
-        <div class="text-center mb-10">
-          <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
-            {title} Solutions
-          </h2>
-          <p class="mt-4 text-lg text-neutral-600">
-            Deep-dive into specific operational challenges — each with quantified outcomes, objection handling, and proof of impact.
-          </p>
-        </div>
-        <div class={`grid gap-6 ${useCases.length === 2 ? 'md:grid-cols-2 max-w-2xl mx-auto' : 'md:grid-cols-3'}`}>
-          {useCases.map((uc) => (
-            <a
-              href={`/industries/${slug}/${uc.id.replace(/\.md$/, '')}`}
-              class="group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-lg"
-            >
-              <h3 class="font-display text-lg font-bold text-neutral-800 group-hover:text-brand-600">
-                {uc.data.title}
-              </h3>
-              <p class="mt-1 text-sm font-medium text-brand-500">{uc.data.tagline}</p>
-              <p class="mt-3 flex-1 text-sm text-neutral-600">{uc.data.description}</p>
-              <div class="mt-4 flex flex-wrap gap-2">
-                {uc.data.stats.slice(0, 2).map((stat) => (
-                  <span class="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700">
-                    {stat.value} {stat.label}
-                  </span>
-                ))}
-              </div>
-              <span class="mt-4 font-display text-sm font-semibold text-brand-500 group-hover:underline">
-                Explore solution &rarr;
-              </span>
-            </a>
-          ))}
-        </div>
-      </div>
+      <ProofPointCard
+        industryLabel={proofPoint.industry}
+        headline={proofPoint.headline}
+        narrative={proofPoint.narrative}
+        metrics={proofPoint.metrics}
+      />
     </Section>
   )}
 
-  <CtaBanner
-    title={`See Operational Intelligence for ${title}`}
+  <DualCta
+    title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like on your ${title.toLowerCase()} infrastructure.`}
     description={`Pick one ${title.toLowerCase()} challenge. We deploy on your systems in 4 weeks. You see the value before you commit.`}
     primaryCta={ctaPrimary}
     secondaryCta={ctaSecondary}
-    microcopy={cta?.microcopy}
+    microcopy={cta?.microcopy || '4-week proof of value · Credited toward annual contract'}
   />
 </MarketingLayout>

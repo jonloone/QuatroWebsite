@@ -2,14 +2,13 @@
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
-import ProblemSolution from '@/components/marketing/ProblemSolution.astro'
+import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
 import StatStrip from '@/components/marketing/StatStrip.astro'
 import Section from '@/components/marketing/Section.astro'
 import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
 import ProductProgression from '@/components/marketing/ProductProgression.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 import ProtocolShowcase from '@/components/marketing/ProtocolShowcase.astro'
-import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
 
 export async function getStaticPaths() {
   const products = await getCollection('products')
@@ -20,8 +19,11 @@ export async function getStaticPaths() {
 }
 
 const { product } = Astro.props
-const { title, tagline, description, hero, problems, solutions, stats, capabilities, protocolShowcase, deploymentOptions, proofPoint, deepDive } = product.data
+const { title, tagline, description, hero, solutions, stats, capabilities, protocolShowcase, deploymentOptions, deepDive } = product.data
 const brandedTitle = `Quatro ${title}`
+
+// Build editorial statement from solutions data — take the strongest value proposition
+const solutionHighlights = solutions?.slice(0, 2).map(s => s.description).join(' ') || description
 ---
 
 <MarketingLayout
@@ -37,11 +39,13 @@ const brandedTitle = `Quatro ${title}`
     secondaryCta={hero.secondaryCta}
   />
 
-  <ProblemSolution
-    problemHeading={`The Challenge`}
-    solutionHeading={`The ${brandedTitle} Solution`}
-    problems={problems}
-    solutions={solutions}
+  <!-- Editorial Outcome — replaces ProblemSolution -->
+  <EditorialOutcome
+    statement={description.replace(
+      /(8,000\+|1,000\+|AI-powered|real-time|unified|predictive|automated|intelligence|orchestrat)/i,
+      '<span style="color: var(--color-forest);">$1</span>'
+    )}
+    stats={stats}
   />
 
   <StatStrip stats={stats} />
@@ -55,7 +59,6 @@ const brandedTitle = `Quatro ${title}`
     />
   </Section>
 
-  {/* Protocol Showcase — Connect */}
   {protocolShowcase && (
     <Section divider dark>
       <ProtocolShowcase
@@ -68,7 +71,6 @@ const brandedTitle = `Quatro ${title}`
     </Section>
   )}
 
-  {/* Deployment Options — Connect */}
   {deploymentOptions && (
     <Section divider>
       <FeatureGrid
@@ -84,7 +86,6 @@ const brandedTitle = `Quatro ${title}`
     </Section>
   )}
 
-  {/* Deep Dive — Operate & Command */}
   {deepDive && (
     <Section divider dark>
       <FeatureGrid
@@ -101,10 +102,8 @@ const brandedTitle = `Quatro ${title}`
     </Section>
   )}
 
-  {/* Proof Point — hidden until real case studies are available */}
-
   <Section divider>
-    <div class="mb-12 text-center">
+    <div class="mb-12 text-center fade-up">
       <h2 class="font-display text-2xl font-bold tracking-tight text-neutral-800 sm:text-3xl">
         Progressive Value — Start Here, Scale Everywhere
       </h2>
@@ -115,10 +114,11 @@ const brandedTitle = `Quatro ${title}`
     <ProductProgression current={product.id.replace(/\.md$/, '')} />
   </Section>
 
-  <CtaBanner
-    title={`See ${brandedTitle} on Your Infrastructure`}
+  <DualCta
+    title={`See what <span style="color: var(--color-forest);">${brandedTitle}</span> looks like on your infrastructure.`}
     description={`Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit.`}
     primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
     secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    microcopy="4-week proof of value · Credited toward annual contract"
   />
 </MarketingLayout>
