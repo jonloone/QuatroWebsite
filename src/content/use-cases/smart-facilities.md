@@ -47,9 +47,9 @@ stats:
   - value: "30%"
     label: Maintenance cost reduction
 platformMapping:
-  connect: Real-time data from BMS, security, lighting, power, and environmental sensors
-  operate: Unified facilities dashboard with energy optimization and predictive maintenance
-  command: Automated HVAC scheduling, lighting control, and emergency response coordination
+  see: Real-time data from BMS, security, lighting, power, and environmental sensors
+  understand: Unified facilities dashboard with energy optimization and predictive maintenance
+  orchestrate: Automated HVAC scheduling, lighting control, and emergency response coordination
 proofPoint:
   industry: Large Facility Portfolio
   headline: Real estate operator reduced energy consumption by 40% and maintenance costs by 30% across 50-building portfolio

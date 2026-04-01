@@ -21,7 +21,7 @@ stats:
   label: Fewer False Alarms
 - value: 60%
   label: Faster Restoration
-- value: 8,000+
+- value: 9,000+
   label: Connectors
 - value: Months
   label: Not Years
@@ -44,48 +44,41 @@ capabilities:
     control paths.
   featured: true
   outcome: Modern analytics on legacy SCADA — months, not years.
-  tier: connect
   image: /images/cap-energy-scada-overlay.png
 - name: Pipeline Integrity & Security
   description: Multi-method leak detection with AI cross-correlation — RTTM, acoustic, satellite, and partner-delivered predictive analytics. 0.5% flow sensitivity with an integrated partner ecosystem no
     single vendor can match.
   featured: true
   outcome: 75% fewer false alarms. 0.5% flow sensitivity.
-  tier: operate
   image: /images/cap-energy-pipeline.png
 - name: Cross-Domain Correlation
   description: AI correlates operational events with security events, weather, and external sources. Cross-domain agents surface compound threats that siloed tools structurally cannot detect.
   featured: true
   outcome: Compound threats detected before siloed tools can see them.
-  tier: operate
   image: /images/cap-energy-cross-domain.png
 - name: 'DER Integration: Every New Energy Source, One View'
   description: Native connectivity for SunSpec, OCPP, and IEEE 2030.5. Onboard solar, wind, battery storage, and EV charging into your grid operational view without custom integration.
   outcome: Solar, wind, battery, and EV — one operational view.
-  tier: connect
   image: /images/cap-energy-der.png
 - name: Grid Storm Response
   description: Automated playbooks pre-position crews, activate mutual aid, and prioritize restoration by customer impact and critical facility status.
   image: /images/cap-energy-storm-response.png
   outcome: Automated crew pre-positioning. 60% faster restoration.
-  tier: command
 - name: Compliance Automation
   description: Continuous NERC CIP, PHMSA, and EPA audit trails. Replace 40+ hours/month of manual documentation with real-time compliance reporting that scales from grid operations to enterprise energy
     intelligence.
   image: /images/cap-energy-compliance.png
   outcome: 40+ hours/month of manual documentation eliminated.
-  tier: command
 - name: AI-Powered Operator Guidance
   description: Real-time contextual recommendations during complex situations — cascading outages, DER instability, simultaneous maintenance events. Step-by-step guidance based on historical patterns, current
     conditions, and grid relationships.
   image: /images/cap-energy-operator-guidance.png
   outcome: New operators perform like 20-year veterans.
-  tier: operate
 platformMapping:
-  connect: Native connectivity for DNP3, IEC 61850, OPC-UA, and MQTT. Mirrors data from legacy SCADA and historians without tag-based licensing. 8,000+ connectors for any energy asset.
-  operate: AI-powered intelligence for predictive maintenance, multi-method leak detection, grid anomaly detection, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues
+  see: Native connectivity for DNP3, IEC 61850, OPC-UA, and MQTT. Mirrors data from legacy SCADA and historians without tag-based licensing. 9,000+ connectors for any energy asset.
+  understand: AI-powered intelligence for predictive maintenance, multi-method leak detection, grid anomaly detection, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues
     before threshold alerts fire. Real-time operational model enables contingency analysis and DER hosting capacity studies.
-  command: Automated storm playbooks coordinate 200+ substations. AI-assisted dispatch assigns certified crews based on location, switching authority, and predicted storm trajectory. NERC CIP and PHMSA
+  orchestrate: Automated storm playbooks coordinate 200+ substations. AI-assisted dispatch assigns certified crews based on location, switching authority, and predicted storm trajectory. NERC CIP and PHMSA
     audit trails generated automatically.
 proofPoint:
   industry: Energy — Integrated Utility

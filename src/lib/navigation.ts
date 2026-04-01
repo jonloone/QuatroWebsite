@@ -57,12 +57,12 @@ export interface PrimaryNavItem {
 const footerNavigationData = {
   en: {
     products: {
-      title: 'Platform',
+      title: 'The Network',
       items: [
-        { name: 'Overview', href: '/platform' },
-        { name: 'Connect', href: '/platform/connect' },
-        { name: 'Operate', href: '/platform/operate' },
-        { name: 'Command', href: '/platform/command' },
+        { name: 'How It Works', href: '/network' },
+        { name: 'Integrations', href: '/network#integrations' },
+        { name: 'Deployment', href: '/network#deployment' },
+        { name: 'Security', href: '/network#trust' },
       ],
     },
     industries: {
@@ -78,16 +78,16 @@ const footerNavigationData = {
     solutions: {
       title: 'Solutions',
       items: [
-        { name: 'Asset Monitoring', href: '/solutions/asset-monitoring' },
-        { name: 'Pipeline Security', href: '/solutions/pipeline-security' },
+        { name: 'Asset Health', href: '/solutions/asset-health' },
+        { name: 'Pipeline Integrity', href: '/solutions/pipeline-integrity' },
         { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
         { name: 'Physical Security', href: '/solutions/physical-security' },
         { name: 'Fleet & Logistics', href: '/solutions/fleet-logistics' },
-        { name: 'Grid Operations', href: '/solutions/grid-operations' },
+        { name: 'Grid Health', href: '/solutions/grid-health' },
         { name: 'Network Operations', href: '/solutions/network-operations' },
         { name: 'Teleport Operations', href: '/solutions/teleport-operations' },
         { name: 'Fleet Health', href: '/solutions/fleet-health' },
-        { name: 'Hybrid Service Assurance', href: '/solutions/hybrid-service-assurance' },
+        { name: 'Service Assurance', href: '/solutions/service-assurance' },
         { name: 'Space Domain Awareness', href: '/solutions/space-domain-awareness' },
         { name: 'Port Operations', href: '/solutions/port-operations' },
         { name: 'Airport Operations', href: '/solutions/airport-operations' },
@@ -132,12 +132,12 @@ const footerNavigationData = {
   },
   es: {
     products: {
-      title: 'Plataforma',
+      title: 'La Red',
       items: [
-        { name: 'Vista General', href: '/platform' },
-        { name: 'Connect', href: '/platform/connect' },
-        { name: 'Operate', href: '/platform/operate' },
-        { name: 'Command', href: '/platform/command' },
+        { name: 'Cómo Funciona', href: '/network' },
+        { name: 'Integraciones', href: '/network#integrations' },
+        { name: 'Despliegue', href: '/network#deployment' },
+        { name: 'Seguridad', href: '/network#trust' },
       ],
     },
     industries: {
@@ -153,16 +153,16 @@ const footerNavigationData = {
     solutions: {
       title: 'Soluciones',
       items: [
-        { name: 'Monitoreo de Activos', href: '/solutions/asset-monitoring' },
-        { name: 'Seguridad de Ductos', href: '/solutions/pipeline-security' },
+        { name: 'Salud de Activos', href: '/solutions/asset-health' },
+        { name: 'Integridad de Ductos', href: '/solutions/pipeline-integrity' },
         { name: 'Inteligencia Operacional', href: '/solutions/operational-intelligence' },
         { name: 'Seguridad Física', href: '/solutions/physical-security' },
         { name: 'Flotas y Logística', href: '/solutions/fleet-logistics' },
-        { name: 'Operaciones de Red Eléctrica', href: '/solutions/grid-operations' },
+        { name: 'Salud de Red', href: '/solutions/grid-health' },
         { name: 'Operaciones de Red', href: '/solutions/network-operations' },
         { name: 'Operaciones Teleport', href: '/solutions/teleport-operations' },
         { name: 'Salud de Flota', href: '/solutions/fleet-health' },
-        { name: 'Aseguramiento de Servicio Híbrido', href: '/solutions/hybrid-service-assurance' },
+        { name: 'Aseguramiento de Servicio', href: '/solutions/service-assurance' },
         { name: 'Conciencia Espacial', href: '/solutions/space-domain-awareness' },
         { name: 'Operaciones Portuarias', href: '/solutions/port-operations' },
         { name: 'Operaciones Aeroportuarias', href: '/solutions/airport-operations' },
@@ -234,15 +234,16 @@ export const footerNavigation = footerNavigationData.en
 const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
   en: [
     {
-      name: 'Platform',
-      href: '/platform',
+      name: 'The Network',
+      href: '/network',
       variant: 'stacked',
       items: [
-        { name: 'Connect', description: 'Integrate sensors, devices, and data streams', href: '/platform/connect', icon: LinkIcon },
-        { name: 'Operate', description: 'Monitor and manage operations in real-time', href: '/platform/operate', icon: CogIcon },
-        { name: 'Command', description: 'Orchestrate responses and automate actions', href: '/platform/command', icon: CommandLineIcon },
+        { name: 'How It Works', description: 'Two properties of one intelligence network', href: '/network', icon: LinkIcon },
+        { name: 'Integrations', description: '9,000+ native integrations across 1,000+ vendors', href: '/network#integrations', icon: CogIcon },
+        { name: 'Deployment', description: 'Cloud, on-premises, edge, air-gapped, or hybrid', href: '/network#deployment', icon: CommandLineIcon },
+        { name: 'Security', description: 'Sovereign deployment. Your data never leaves your control', href: '/network#trust', icon: ShieldCheckIcon },
       ],
-      cta: { name: 'Platform Overview', href: '/platform' },
+      cta: { name: 'Explore the Network', href: '/network' },
     },
     {
       name: 'Industries',
@@ -272,15 +273,16 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
   ],
   es: [
     {
-      name: 'Plataforma',
-      href: '/platform',
+      name: 'La Red',
+      href: '/network',
       variant: 'stacked',
       items: [
-        { name: 'Connect', description: 'Integrar sensores, dispositivos y flujos de datos', href: '/platform/connect', icon: LinkIcon },
-        { name: 'Operate', description: 'Monitorear y gestionar operaciones en tiempo real', href: '/platform/operate', icon: CogIcon },
-        { name: 'Command', description: 'Orquestar respuestas y automatizar acciones', href: '/platform/command', icon: CommandLineIcon },
+        { name: 'Cómo Funciona', description: 'Dos propiedades de una red de inteligencia', href: '/network', icon: LinkIcon },
+        { name: 'Integraciones', description: '9.000+ integraciones nativas de 1.000+ proveedores', href: '/network#integrations', icon: CogIcon },
+        { name: 'Despliegue', description: 'Nube, on-premises, edge, air-gapped o híbrido', href: '/network#deployment', icon: CommandLineIcon },
+        { name: 'Seguridad', description: 'Despliegue soberano. Sus datos nunca salen de su control', href: '/network#trust', icon: ShieldCheckIcon },
       ],
-      cta: { name: 'Vista General', href: '/platform' },
+      cta: { name: 'Explorar la Red', href: '/network' },
     },
     {
       name: 'Industrias',

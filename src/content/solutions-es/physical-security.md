@@ -44,10 +44,6 @@ capabilities:
     description: "Monitoree activos remotos y corredores usando imágenes satelitales y detección de cambios basada en IA para cobertura a escala geográfica."
   - name: "Convergencia Operacional-Seguridad"
     description: "Correlacione eventos de seguridad física con datos SCADA y alertas cibernéticas para evaluación unificada de amenazas entre dominios."
-platformMapping:
-  connect: "Integración agnóstica de cámaras compatible con el 99% de cámaras IP vía ONVIF. Ingesta multisensor que abarca radar, lidar, térmico, fibra óptica y sistemas de control de acceso."
-  operate: "La analítica de video inteligente realiza análisis conductual en tiempo real. La fusión multisensor requiere verificación antes de alertar — reduciendo drásticamente los falsos positivos."
-  command: "Playbooks automatizados coordinan respuestas de múltiples pasos en segundos. El despacho inteligente asigna al respondedor calificado más cercano con ruteo basado en GPS."
 proofPoint:
   industry: "Energía — Transmisión y Distribución"
   headline: "Seguridad de Subestaciones y Ductos"

@@ -1,10 +1,10 @@
 ---
-title: "Seguridad de Ductos"
+title: "Integridad de Ductos"
 tagline: "Integridad y Seguridad Unificadas"
 description: "Detección de fugas multimétodo con correlación cruzada inteligente que reduce falsas alarmas en un 75% mientras mejora la sensibilidad de detección al 0.5% del flujo nominal."
 order: 2
 hero:
-  eyebrow: "Seguridad de Ductos"
+  eyebrow: "Integridad de Ductos"
   title: "Detecte Fugas Más Rápido. Responda con Inteligencia."
   description: "Monitoreo convergente de integridad y seguridad para corredores de ductos. La fusión multimétodo inteligente elimina falsas alarmas y cierra la brecha entre detección y respuesta."
   primaryCta:
@@ -44,10 +44,6 @@ capabilities:
     description: "Una anomalía de presión simultánea con una violación perimetral eleva el evento instantáneamente a un escenario potencial de derivación ilícita."
   - name: "Trazabilidad para Cumplimiento"
     description: "Registro cronológico completo para reportes PHMSA, NEB y API 1160 con paquetes de auditoría exportables."
-platformMapping:
-  connect: "Integración SCADA mediante OPC-UA, Modbus y DNP3 con procesamiento en el edge en estaciones remotas. Ingesta de flujo, presión, temperatura y estado de válvulas de cada punto de medición."
-  operate: "Detección de fugas multimétodo inteligente con monitoreo satelital de corredor. La correlación multidominio vincula anomalías operacionales con eventos de seguridad automáticamente."
-  command: "Playbooks automatizados aíslan segmentos, notifican salas de control, despachan equipos de campo y alertan a reguladores — todo en segundos tras la confirmación de detección."
 proofPoint:
   industry: "Energía — Petróleo y Gas Midstream"
   headline: "Transformación de Ductos de Transmisión"

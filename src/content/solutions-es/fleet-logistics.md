@@ -44,10 +44,6 @@ capabilities:
     description: "Modelos de IA correlacionan diagnósticos, patrones de uso y condiciones ambientales para pronosticar fallas con 1-3 semanas de anticipación."
   - name: "Despacho Centralizado"
     description: "Consola de despacho unificada para gestionar flotas, equipos y entregas con asignación inteligente y seguimiento en tiempo real."
-platformMapping:
-  connect: "Ingesta de datos de cualquier GPS, dispositivo telemático o sensor IoT. Normaliza datos de flotas con hardware mixto sin requerir estandarización de proveedores."
-  operate: "Analítica de IA para optimización de rutas, mantenimiento predictivo y seguridad del conductor. Modelo operacional en tiempo real permite modelado de dimensionamiento de flota y ubicación de depósitos."
-  command: "Despacho centralizado con playbooks automatizados para averías, retrasos e inserciones prioritarias. Aplicaciones móviles mantienen a los conductores conectados incluso con pérdida de conectividad."
 proofPoint:
   industry: "Infraestructura — Logística"
   headline: "Optimización de Flota Nacional"

@@ -47,9 +47,9 @@ stats:
   - value: "18%"
     label: Changeover time reduction
 platformMapping:
-  connect: Real-time data collection from all production equipment and systems
-  operate: Cross-plant OEE dashboards, bottleneck alerts, quality workflows
-  command: Coordinated changeover schedules and line optimization commands across network
+  see: Real-time data collection from all production equipment and systems
+  understand: Cross-plant OEE dashboards, bottleneck alerts, quality workflows
+  orchestrate: Coordinated changeover schedules and line optimization commands across network
 proofPoint:
   industry: Chemical Manufacturing
   headline: Multi-plant chemical producer unified 8 plants and achieved 22% OEE improvement

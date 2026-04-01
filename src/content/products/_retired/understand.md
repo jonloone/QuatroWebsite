@@ -1,11 +1,11 @@
 ---
-title: "Operate"
+title: "Understand"
 tagline: "Understand Why & Respond Automatically"
 heroImage: "/images/product-platform.png"
 description: "Everything in Visibility PLUS predictive intelligence, automated root cause analysis, automation engine, and low-code tools. Shift from reactive to proactive operations."
 order: 2
 hero:
-  eyebrow: "Quatro Operate"
+  eyebrow: "Quatro Understand"
   title: "See Everything, Understand Why, Act Before It Matters"
   description: "Your operators don't just react to alarms — they act on intelligence. AI-powered guidance delivers contextual recommendations and next-step actions in real time, transforming your team's ability to handle complex situations with confidence. Augmented operations built on unified visibility."
   primaryCta:
@@ -66,8 +66,8 @@ deepDive:
   title: "From Visibility to Operational Intelligence"
   subtitle: "Augmented operations transform your team's ability to handle complexity. AI guidance enhances human expertise today. Tomorrow, autonomous operations work within your defined boundaries."
   sections:
-    - title: "Built on Connect"
-      description: "Operate leverages the unified data foundation provided by Connect. Every data point from every source is available for monitoring, analysis, and prediction — no additional integration required."
+    - title: "Built on See"
+      description: "Understand leverages the unified data foundation provided by See. Every data point from every source is available for monitoring, analysis, and prediction — no additional integration required."
       icon: "link"
     - title: "Intelligence That Guides, Not Just Alerts"
       description: "AI trained on your operational data delivers contextual insights and guided troubleshooting. Contextual insights reveal what's happening and why. Guided recommendations show operators the path forward. Augmented operations where human expertise and machine intelligence combine."

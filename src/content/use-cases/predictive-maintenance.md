@@ -39,7 +39,7 @@ capabilities:
   - name: "Maintenance Work Order Automation"
     description: "Generates prioritized work orders, parts lists, crew assignments, and logistics—ready to dispatch 7-10 days before failure."
     icon: "✅"
-  - name: "8,000+ Integrations"
+  - name: "9,000+ Integrations"
     description: "Integrates with SAP, Maximo, and your CMMS to streamline parts, crew, and logistics scheduling."
     icon: "🔗"
 stats:
@@ -50,9 +50,9 @@ stats:
   - value: "20%"
     label: "Equipment lifespan extension"
 platformMapping:
-  connect: "Telemetry ingestion from 500+ well sites, pump stations, and compressor units (200K+ daily data points)"
-  operate: "Degradation pattern recognition and predictive failure scoring"
-  command: "Maintenance scheduling, work order generation, and parts/crew coordination"
+  see: "Telemetry ingestion from 500+ well sites, pump stations, and compressor units (200K+ daily data points)"
+  understand: "Degradation pattern recognition and predictive failure scoring"
+  orchestrate: "Maintenance scheduling, work order generation, and parts/crew coordination"
 proofPoint:
   industry: "Energy Production Operator"
   headline: "500+ Well Sites, 200K+ Daily Data Points, 14-Day Advance Warning"

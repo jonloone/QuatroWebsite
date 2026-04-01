@@ -47,9 +47,9 @@ stats:
   - value: "70%"
     label: "Illegal fishing reduction rate"
 platformMapping:
-  connect: "Ingest AIS feeds, radar data, satellite imagery, SIGINT signals"
-  operate: "Fuse multi-source data and detect anomalous vessel behavior patterns"
-  command: "Dispatch naval assets with real-time target tracking and engagement authorization"
+  see: "Ingest AIS feeds, radar data, satellite imagery, SIGINT signals"
+  understand: "Fuse multi-source data and detect anomalous vessel behavior patterns"
+  orchestrate: "Dispatch naval assets with real-time target tracking and engagement authorization"
 proofPoint:
   industry: "Regional Naval Command"
   headline: "EEZ Monitoring Across 1,000+ Vessels—Real-Time Dark Ship Detection"

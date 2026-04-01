@@ -6,9 +6,9 @@ const ctaSchema = z.object({
 })
 
 const platformMappingSchema = z.object({
-  connect: z.string(),
-  operate: z.string(),
-  command: z.string(),
+  see: z.string(),
+  understand: z.string(),
+  orchestrate: z.string(),
 })
 
 const proofPointSchema = z.object({
@@ -121,7 +121,7 @@ const industriesCollection = defineCollection({
         featured: z.boolean().optional(),
         image: z.string().optional(),
         outcome: z.string().optional(),
-        tier: z.enum(['connect', 'operate', 'command']).optional(),
+        tier: z.enum(['see', 'understand', 'orchestrate']).optional(),
       })
     ),
     stats: z.array(
@@ -170,7 +170,7 @@ const solutionsCollection = defineCollection({
         featured: z.boolean().optional(),
         image: z.string().optional(),
         outcome: z.string().optional(),
-        tier: z.enum(['connect', 'operate', 'command']).optional(),
+        tier: z.enum(['see', 'understand', 'orchestrate']).optional(),
       })
     ),
     stats: z.array(
@@ -299,6 +299,22 @@ const teamCollection = defineCollection({
   }),
 })
 
+const insightsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    excerpt: z.string(),
+    category: z.enum(['industry-trends', 'use-cases', 'platform', 'case-studies', 'company']),
+    industry: z.string().optional(),
+    heroImage: z.string().optional(),
+    author: z.string().default('Quatro Team'),
+    publishDate: z.coerce.date(),
+    featured: z.boolean().default(false),
+    tags: z.array(z.string()).default([]),
+    readingTime: z.string().optional(),
+  }),
+})
+
 export const collections = {
   products: productsCollection,
   industries: industriesCollection,
@@ -307,6 +323,7 @@ export const collections = {
   'case-studies': caseStudiesCollection,
   team: teamCollection,
   'use-cases': useCasesCollection,
+  insights: insightsCollection,
   // Spanish collections use the same schemas as their English counterparts
   'products-es': productsCollection,
   'solutions-es': solutionsCollection,

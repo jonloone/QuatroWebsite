@@ -2,7 +2,7 @@
 title: "Operador Global Consolida Más de 40 Bases de Datos Legacy"
 industryLabel: "Petróleo y Gas"
 headline: "De Más de 40 Silos de Datos a Una Plataforma Unificada"
-excerpt: "Un operador Fortune 500 de petróleo y gas consolidó más de 40 bases de datos de historiadores regionales en operaciones de upstream, midstream y downstream en un despliegue unificado de Connect."
+excerpt: "Un operador Fortune 500 de petróleo y gas consolidó más de 40 bases de datos de historiadores regionales en operaciones de upstream, midstream y downstream en un despliegue unificado de See."
 company: "Operador Fortune 500 de Petróleo y Gas"
 stats:
   - value: "40+"
@@ -22,7 +22,7 @@ Los equipos de ingeniería dedicaban horas agregando datos de múltiples fuentes
 
 ## Solución
 
-Quatro Connect fue desplegado como una capa de datos unificada, conectándose a cada historiador y sistema SCADA existente sin requerir su reemplazo. Los más de 8,000 conectores de la plataforma normalizaron datos de instancias legacy de OSIsoft PI, historiadores Aveva y docenas de sistemas específicos de proveedores en un formato consistente y consultable.
+Quatro See fue desplegado como una capa de datos unificada, conectándose a cada historiador y sistema SCADA existente sin requerir su reemplazo. Los más de 8,000 conectores de la plataforma normalizaron datos de instancias legacy de OSIsoft PI, historiadores Aveva y docenas de sistemas específicos de proveedores en un formato consistente y consultable.
 
 Los despliegues en el edge en instalaciones remotas garantizaron la recopilación continua de datos incluso con conectividad intermitente, mientras que la capa de analítica en la nube proporcionó visibilidad a nivel empresarial por primera vez.
 

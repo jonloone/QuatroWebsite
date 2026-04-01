@@ -22,7 +22,7 @@ stats:
   - value: "85%"
     label: "Faster Failover"
   - value: "99.99%"
-    label: "Platform Uptime"
+    label: "Network Uptime"
 challenges:
   - title: "Vendor-Siloed Ground Monitoring"
     description: "Each equipment vendor provides its own M&C tool. The antenna controller uses one interface. The modem vendor provides a separate system. The VSAT hub has another dashboard. The RF spectrum analyzer has yet another."
@@ -45,10 +45,6 @@ capabilities:
     description: "Unified provisioning that spans circuit activation, capacity allocation, and service monitoring. New services activated through orchestrated workflows that coordinate across M&C, OSS, and BSS automatically."
   - name: "Cross-Domain Intelligence"
     description: "Ground segment events correlated with fleet health, revenue impact, and space domain awareness simultaneously. A modem failure doesn't just affect one ground station — it affects which satellites can be served and which services need migration. Cross-domain context that siloed tools cannot provide."
-platformMapping:
-  connect: "Native connectivity across all ground segment equipment — antennas, RF chains, VSAT hubs, modems, spectrum analyzers, provisioning engines, and billing systems. 7,000+ connectors across 1,000+ equipment vendors. Sub-minute data ingestion from every metering point."
-  operate: "Streaming analytics with satellite-specific anomaly detection models. Contextual alerts with SLA impact assessment. Automated failover orchestration for pre-approved scenarios. Real-time service health monitoring correlated with billing and provisioning state."
-  command: "Automated playbooks coordinate failover across ground stations. Revenue correlation connects operational events to financial impact. Provisioning workflows orchestrate service activation across M&C, OSS, and BSS systems. Full compliance audit trails."
 proofPoint:
   industry: "Space & SATCOM — Teleport Operator"
   headline: "Ground Segment Unified Command"

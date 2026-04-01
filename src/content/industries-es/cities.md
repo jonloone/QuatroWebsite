@@ -46,9 +46,9 @@ capabilities:
   - name: "Inteligencia Ambiental"
     description: "Datos de calidad del aire, clima y energía correlacionados con sistemas operacionales. Las concentraciones de contaminantes activan reruteo de tránsito y notificaciones públicas."
 platformMapping:
-  connect: "Más de 8,000 conectores para controladores de tránsito (NTCIP), cámaras (ONVIF), sistemas de edificios (BACnet, KNX), tránsito (GTFS, SIRI) y sensores ambientales. Procesamiento en el edge en intersecciones y vehículos."
-  operate: "Analítica de video con análisis conductual y dinámica de multitudes. Predicción de patrones de tránsito, mantenimiento predictivo para infraestructura y correlación ambiental. 80% menos falsas alarmas."
-  command: "Centro de operaciones de ciudad unificado con coordinación inter-agencia. Playbooks de respuesta de emergencia orquestan respuesta multi-departamento. Despacho de flotas para obras públicas y recolección de residuos."
+  see: "Más de 8,000 conectores para controladores de tránsito (NTCIP), cámaras (ONVIF), sistemas de edificios (BACnet, KNX), tránsito (GTFS, SIRI) y sensores ambientales. Procesamiento en el edge en intersecciones y vehículos."
+  understand: "Analítica de video con análisis conductual y dinámica de multitudes. Predicción de patrones de tránsito, mantenimiento predictivo para infraestructura y correlación ambiental. 80% menos falsas alarmas."
+  orchestrate: "Centro de operaciones de ciudad unificado con coordinación inter-agencia. Playbooks de respuesta de emergencia orquestan respuesta multi-departamento. Despacho de flotas para obras públicas y recolección de residuos."
 proofPoint:
   industry: "Ciudades — Seguridad Pública"
   headline: "Videovigilancia Urbana Unificada"

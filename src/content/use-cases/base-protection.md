@@ -47,9 +47,9 @@ stats:
   - value: "60%"
     label: "Security staffing reduction"
 platformMapping:
-  connect: "Ingest CCTV, access control, radar, perimeter sensors"
-  operate: "Correlate multi-source events into unified threat assessment"
-  command: "Dispatch response teams with automated escalation and audit trail"
+  see: "Ingest CCTV, access control, radar, perimeter sensors"
+  understand: "Correlate multi-source events into unified threat assessment"
+  orchestrate: "Dispatch response teams with automated escalation and audit trail"
 proofPoint:
   industry: "U.S. Department of Defense"
   headline: "15,000-Acre Installation Consolidates 5 Systems Into 1 Platform"

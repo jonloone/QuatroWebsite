@@ -7,7 +7,7 @@ order: 13
 hero:
   eyebrow: "Airport Operations"
   title: "Optimize Runways. Flow Passengers. Secure Perimeters."
-  description: "Real-time operational intelligence that coordinates runway scheduling, passenger flow, baggage system health, and perimeter security into a single airport operations picture. When an aircraft is 30 minutes from landing, the platform predicts gate availability, queues ground equipment, and synchronizes operations across the terminal."
+  description: "Real-time operational intelligence that coordinates runway scheduling, passenger flow, baggage system health, and perimeter security into a single airport operations picture. When an aircraft is 30 minutes from landing, the intelligence network predicts gate availability, queues ground equipment, and synchronizes operations across the terminal."
   primaryCta:
     label: "Request an Airport Briefing"
     href: "/contact/demo"
@@ -45,10 +45,6 @@ capabilities:
     description: "An aircraft detected on approach triggers simultaneous coordination — gate assignment, terminal flow plan, baggage handling sequence, and security clearance delivered as one operational picture to the Operations Center."
   - name: "Critical Infrastructure Protection"
     description: "Power systems, HVAC, baggage system health, and facility infrastructure monitored continuously. Integration with border and security agencies through controlled intelligence products — assessed risk shared, not raw operational data."
-platformMapping:
-  connect: "Air traffic control radar, ground radar, runway sensors, parking position databases, passenger information systems, baggage handling systems, ground support equipment monitors, perimeter cameras, access control systems, and weather observation. The airport becomes machine-readable."
-  operate: "Cross-domain coordination engine fuses runway, terminal, baggage, and security data into a single operational picture. Aircraft approach predictions, gate optimization, passenger flow modeling, equipment health monitoring, and perimeter surveillance — all correlated in real time."
-  command: "Daily operations summaries, real-time operational dashboards, weekly efficiency reports, and monthly capacity planning. On-demand aircraft movement packages with gate assignment, GSE staging, baggage sequence, and security clearance in one executable package."
 proofPoint:
   industry: "Transportation — Aviation"
   headline: "Runway-to-Gate Airport Transformation"

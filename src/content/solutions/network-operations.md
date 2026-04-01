@@ -2,12 +2,12 @@
 title: "Network Operations"
 tagline: "Unified Multi-Vendor NOC"
 heroImage: "/images/solution-network-operations.png"
-description: "Replace vendor silos with unified network intelligence across terrestrial and satellite domains. 80% fewer false alarms, 55% faster MTTR, and one platform for any vendor's equipment — ground to orbit."
+description: "Replace vendor silos with unified network intelligence across terrestrial and satellite domains. 80% fewer false alarms, 55% faster MTTR, and one network for any vendor's equipment — ground to orbit."
 order: 7
 hero:
   eyebrow: "Network Operations"
   title: "One NOC. Any Vendor. Zero Silos."
-  description: "Stop toggling between 5-15 vendor tools across terrestrial and satellite domains. Unified network intelligence with AI-driven correlation, automated remediation, and cross-domain SLA compliance in one platform — from tower site to ground station to orbit."
+  description: "Stop toggling between 5-15 vendor tools across terrestrial and satellite domains. Unified network intelligence with AI-driven correlation, automated remediation, and cross-domain SLA compliance in one network — from tower site to ground station to orbit."
   primaryCta:
     label: "Schedule a NOC Assessment"
     href: "/contact/demo"
@@ -19,7 +19,7 @@ stats:
     label: "Fewer False Alarms"
   - value: "55%"
     label: "Faster MTTR"
-  - value: "8,000+"
+  - value: "9,000+"
     label: "Connectors"
   - value: "900+"
     label: "Sites Managed"
@@ -46,11 +46,7 @@ capabilities:
   - name: "Commercial Operations Intelligence"
     description: "Active SLA management with breach prediction, automated escalation, capacity planning, and cost tracking. Connect network performance to customer experience and commercial impact — turning NOC operations into revenue operations."
   - name: "Multi-Site NOC Operations"
-    description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support. AI-powered intelligence provides contextual guidance to operators regardless of experience level — institutional NOC expertise captured in the platform."
-platformMapping:
-  connect: "8,000+ connectors for routers, switches, radios, and optical transport. Native SNMP, NETCONF/YANG, TL1, and gRPC support with vendor-neutral normalization."
-  operate: "AI-driven intelligence for anomaly detection, capacity planning, root-cause analysis, and operator guidance. Cross-domain correlation reduces alarm volume by 80%. Behavioral analysis detects performance shifts before they become service-affecting."
-  command: "Automated provisioning and fault remediation playbooks. AI-assisted dispatch considers technician location, certification, and travel time. Commercial operations intelligence connects network health to SLA compliance and revenue impact."
+    description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support. AI-powered intelligence provides contextual guidance to operators regardless of experience level — institutional NOC expertise captured in the intelligence network."
 proofPoint:
   industry: "Infrastructure — Telecommunications"
   headline: "Multi-Site Tower Operations"

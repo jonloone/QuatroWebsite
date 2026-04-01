@@ -1,11 +1,11 @@
 ---
-title: "Customer 360 Intelligence"
+title: "Customer 360"
 tagline: "One Customer. All Systems. One Governed View."
 description: "Reconcile customer identity across every banking system — core, loans, CRM, digital channels, cards, and wealth management — into a single governed record that risk, compliance, and commercial teams can trust."
 order: 17
 heroImage: "/images/solution-customer-360.png"
 hero:
-  eyebrow: "Customer 360 Intelligence"
+  eyebrow: "Customer 360"
   title: "One Customer. All Systems. One Governed View."
   description: "Your core system defines a customer as an account number. Your loan system uses a borrower ID. Your CRM uses a contact. Quatro reconciles identity across every system and produces one governed customer record."
   primaryCta:
@@ -37,32 +37,28 @@ capabilities:
     description: "Reconcile customer identity across core banking, loans, CRM, digital channels, payment cards, and wealth management using deterministic and probabilistic matching."
     featured: true
     outcome: "One customer record across all systems."
-    tier: "connect"
+    tier: "see"
   - name: "Governed Customer Record"
     description: "Single customer view with governance SLAs on data quality, freshness, and lineage. Every downstream process — risk, compliance, commercial — trusts the same record."
     featured: true
     outcome: "Regulatory examiners get one answer, not four systems."
-    tier: "operate"
+    tier: "understand"
   - name: "Total Exposure View"
     description: "Aggregate exposure across all products — installment loans, credit lines, mortgages, cards, guarantees, and off-balance-sheet items — into a unified risk picture."
     outcome: "Credit decisions based on true cross-system exposure."
-    tier: "operate"
+    tier: "understand"
   - name: "M&A Entity Matching"
     description: "Match customers across merging entities in weeks instead of months. Resolve identity conflicts, normalize product definitions, and produce consolidated views."
     outcome: "Integration timelines compress from months to weeks."
-    tier: "connect"
+    tier: "see"
   - name: "Relationship Intelligence"
     description: "Map customer relationships across products, accounts, guarantees, and connected entities. Surface cross-sell opportunities and relationship value."
     outcome: "Commercial strategy based on full relationship context."
-    tier: "command"
+    tier: "orchestrate"
   - name: "Audit Trail & Lineage"
     description: "Every data point in the customer record traces back to its source system with full lineage. Examination-ready documentation generated automatically."
     outcome: "Compliance confidence in every customer data point."
-    tier: "operate"
-platformMapping:
-  connect: "Native connectivity for core banking, LOS, CRM, digital banking, card processors, and wealth platforms. Deploy on existing systems with no migration."
-  operate: "AI-powered entity resolution reconciles identity across all connected systems. Governance SLAs ensure data quality, freshness, and lineage on every customer record."
-  command: "Unified customer intelligence feeds downstream processes — risk assessment, regulatory reporting, commercial strategy, and branch experience — with one trusted record."
+    tier: "understand"
 proofPoint:
   industry: "Finance — Banking"
   headline: "Cross-System Customer Intelligence"
@@ -73,7 +69,7 @@ proofPoint:
       label: "To Production"
     - value: "Weeks"
       label: "Not Months for M&A"
-  narrative: "Customer 360 Intelligence is the foundation product in Quatro's banking offering. Each additional intelligence product — NPA Early Warning, Credit Risk, Regulatory Compliance — connects to the same governed customer record, creating compound value through the shared knowledge graph."
+  narrative: "Customer 360 is the foundation product in Quatro's banking offering. Each additional product — NPA Early Warning, Credit Risk, Regulatory Compliance — connects to the same governed customer record, creating compound value through the shared knowledge graph."
 cta:
   primary:
     label: "Schedule a Banking Assessment"
@@ -81,5 +77,5 @@ cta:
   secondary:
     label: "Talk to a Financial Services Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 60 minutes. We map your source systems and show how Customer 360 Intelligence delivers a governed customer view in 4–6 weeks."
+  microcopy: "Typical assessment: 60 minutes. We map your source systems and show how Customer 360 delivers a governed customer view in 4–6 weeks."
 ---

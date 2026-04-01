@@ -7,7 +7,7 @@ order: 12
 hero:
   eyebrow: "Port Operations"
   title: "Optimize Berths. Coordinate Cargo. Accelerate Customs."
-  description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture. When a container ship approaches, the platform predicts arrival, reserves optimal berth, alerts cargo handlers, and pre-coordinates customs — one platform, coordinated workflow."
+  description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture. When a container ship approaches, the intelligence network predicts arrival, reserves optimal berth, alerts cargo handlers, and pre-coordinates customs — one network, coordinated workflow."
   primaryCta:
     label: "Request a Port Operations Briefing"
     href: "/contact/demo"
@@ -45,10 +45,6 @@ capabilities:
     description: "A vessel detected 200 nautical miles offshore triggers simultaneous coordination — berth assignment, cargo staging, customs preparation, and security assessment delivered as one operational picture to the Operations Center."
   - name: "Controlled Inter-Agency Sharing"
     description: "Role-based access ensures customs sees risk-relevant data only. Commercial rates, customer names, and shipping company data stay within port operations. Every data access logged and auditable. Coordination is workflow-driven, not email-driven."
-platformMapping:
-  connect: "AIS vessel tracking, weather and tidal data, berth status databases, cargo manifest systems, equipment sensors, warehouse management systems, truck scheduling, and customs databases. The port becomes a stream of machine-readable operational intelligence."
-  operate: "Cross-domain coordination engine fuses berth, cargo, customs, and security data into a single operational picture. Vessel arrival predictions, cargo staging optimization, customs pre-screening, and behavioral anomaly detection — all correlated in real time."
-  command: "Daily port operations briefings, weekly efficiency reports, monthly maritime sovereignty reports, and on-demand cargo discharge packages. Automated dispatch workflows and inter-agency intelligence products with controlled compartmentation."
 proofPoint:
   industry: "Transportation — Maritime Port"
   headline: "Berth-to-Customs Coordination"

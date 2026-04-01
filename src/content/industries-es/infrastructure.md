@@ -46,9 +46,9 @@ capabilities:
   - name: "Reportes Automatizados de SLA"
     description: "Seguimiento de cumplimiento de SLA en tiempo real con generación automatizada de reportes. Reemplace horas de agregación manual de datos."
 platformMapping:
-  connect: "Más de 8,000 conectores con adaptadores nativos de protocolo para SNMP, NETCONF, TL1, gRPC, BACnet, KNX y GPS/telemática. Procesamiento en el edge en sitios de torres, vehículos y edificios."
-  operate: "Correlación de alarmas y análisis de causa raíz con inteligencia predictiva. Mantenimiento predictivo, optimización de rutas y detección de anomalías. 80% menos falsas alarmas mediante inteligencia multidominio."
-  command: "Operaciones de NOC centralizado multi-sitio. Playbooks automatizados de aprovisionamiento y remediación de fallas. Despacho inteligente con verificación de certificación de técnicos."
+  see: "Más de 8,000 conectores con adaptadores nativos de protocolo para SNMP, NETCONF, TL1, gRPC, BACnet, KNX y GPS/telemática. Procesamiento en el edge en sitios de torres, vehículos y edificios."
+  understand: "Correlación de alarmas y análisis de causa raíz con inteligencia predictiva. Mantenimiento predictivo, optimización de rutas y detección de anomalías. 80% menos falsas alarmas mediante inteligencia multidominio."
+  orchestrate: "Operaciones de NOC centralizado multi-sitio. Playbooks automatizados de aprovisionamiento y remediación de fallas. Despacho inteligente con verificación de certificación de técnicos."
 proofPoint:
   industry: "Infraestructura — Telecomunicaciones"
   headline: "Operaciones de Más de 900 Torres"

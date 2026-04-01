@@ -43,51 +43,43 @@ capabilities:
   description: Predictive intelligence forecasts equipment failures 2-4 weeks in advance. Multi-sensor correlation catches compound failure modes that single-variable monitoring misses.
   featured: true
   outcome: 2-4 week advance warning. $125K/hr downtime avoided.
-  tier: operate
   image: /images/cap-industrial-predictive-maint.png
 - name: AI-Powered Operator Guidance
   description: Real-time contextual recommendations during complex situations — simultaneous equipment alerts, quality deviations, production constraints. Step-by-step guidance based on historical patterns
     and process relationships.
   featured: true
   outcome: New operators perform like 20-year veterans.
-  tier: operate
   image: /images/cap-industrial-operator-guidance.png
 - name: Quality Prediction
   description: Correlate process parameters with quality outcomes before batch completion. AI models identify drift in quality-critical variables and recommend corrective action while product is still in-process.
   featured: true
   outcome: Quality issues caught before batch completion.
-  tier: operate
   image: /images/cap-industrial-quality.png
 - name: 'OEE Optimization: Find Every Point of Loss'
   description: Real-time availability, performance, and quality metrics correlated with root-cause analytics that identify specific drivers of OEE loss across every production line.
   image: /images/cap-industrial-oee.png
   outcome: 22% OEE improvement through root-cause visibility.
-  tier: operate
 - name: Cross-Domain Correlation
   description: AI analyzes relationships between maintenance, process parameters, quality, energy, and logistics simultaneously. Pattern recognition surfaces emerging issues before threshold alerts fire.
   image: /images/cap-industrial-quality.png
   outcome: Cross-domain patterns no single system can see.
-  tier: operate
 - name: Real-Time Operational Model
   description: Living digital model that understands asset relationships, service dependencies, and production flows. Reduce trial batches by 40% through virtual process optimization.
   image: /images/cap-industrial-digital-twin.png
   outcome: 40% fewer trial batches through virtual optimization.
-  tier: operate
 - name: 'Legacy Coexistence: No Rip-and-Replace'
   description: Layer alongside existing OSIsoft PI, AspenTech, or Honeywell historians without migration. No tag-based licensing at any scale — collect every data point without cost penalties.
   image: /images/cap-industrial-legacy.png
   outcome: No tag-based licensing. No migration required.
-  tier: connect
 - name: Multi-Plant Coordination
   description: Enterprise-wide visibility across multiple facilities. Standardize best practices, benchmark performance, and coordinate response across your entire manufacturing network.
   outcome: Enterprise-wide visibility across all plants.
-  tier: command
   image: /images/cap-industrial-multi-plant.png
 platformMapping:
-  connect: 8,000+ connectors for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss.
-  operate: AI-powered intelligence for predictive maintenance, OEE tracking, quality prediction, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold
+  see: 9,000+ connectors for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss.
+  understand: AI-powered intelligence for predictive maintenance, OEE tracking, quality prediction, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold
     alerts fire. Real-time operational models enable simulation and scenario planning. 80% fewer false alarms through relationship-aware intelligence.
-  command: Multi-plant coordination and automated incident response. Resource dispatch based on real-time demand, location, and skill requirements.
+  orchestrate: Multi-plant coordination and automated incident response. Resource dispatch based on real-time demand, location, and skill requirements.
 proofPoint:
   industry: Industrial — Chemical Manufacturing
   headline: Multi-Plant Safety & Efficiency Transformation

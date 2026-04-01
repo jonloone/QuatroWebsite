@@ -45,10 +45,6 @@ capabilities:
     description: "Monitor remote assets and corridors using satellite imagery and AI-based change detection for coverage at geographic scale."
   - name: "OT-Security Convergence"
     description: "Correlate physical security events with SCADA data, cyber alerts, and operational context for unified threat assessment across domains. For defense and government applications, extends to national security intelligence — connecting physical security to border operations, counter-narcotics, and resource protection."
-platformMapping:
-  connect: "Camera-agnostic integration with 99% of IP cameras via ONVIF. Multi-sensor ingestion spans radar, lidar, thermal, fiber-optic, and access control systems."
-  operate: "AI video analytics perform real-time behavioral analysis. Multi-sensor fusion requires verification before alerting — dramatically reducing false positives."
-  command: "Automated playbooks coordinate multi-step responses in seconds. AI-assisted dispatch assigns the nearest qualified responder with GPS-based routing. Enterprise intelligence connects security events to operational and business impact assessment."
 proofPoint:
   industry: "Energy — Transmission & Distribution"
   headline: "Substation & Pipeline Security"

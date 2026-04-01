@@ -1,11 +1,11 @@
 ---
-title: "Satellite Revenue Assurance"
+title: "Revenue Assurance"
 tagline: "Real-Time Commercial Intelligence"
 heroImage: "/images/solution-satellite-revenue.png"
 description: "Real-time transponder utilization tracking, SLA breach prediction, and automated billing correlation — transforming delayed post-facto billing reconciliation into proactive revenue protection where disputes are prevented before they happen."
 order: 10
 hero:
-  eyebrow: "Satellite Revenue Assurance"
+  eyebrow: "Revenue Assurance"
   title: "Stop Revenue Leakage. Start Revenue Optimization."
   description: "Real-time transponder utilization tracking, SLA correlation with billing impact, and automated revenue leakage detection — transforming delayed billing reconciliation where 30-50% of SLA disputes go unrecovered into quantified real-time visibility where disputes are prevented before they happen."
   primaryCta:
@@ -45,10 +45,6 @@ capabilities:
     description: "Operational data directly available to revenue teams. When disputes do arise, they resolve in days with shared real-time data — not weeks of manual reconciliation. Dispute rates drop from 15-25 per 100 customers to 2-3."
   - name: "Enterprise Revenue Intelligence"
     description: "When operational intelligence isn't enough, Quatro scales to enterprise intelligence — connecting transponder events to revenue impact, contract compliance, customer lifetime value modeling, and competitive pricing benchmarks across the commercial operation."
-platformMapping:
-  connect: "Ground segment operations data, VSAT hub utilization, modem throughput, RF power levels, billing system feeds, contract terms, service definitions. Integration with SAP, Oracle Billing, and custom billing systems. Real-time data ingestion, not end-of-day batch files."
-  operate: "Real-time SLA breach prediction and transponder utilization analytics. Automated billing correlation mapping operational reality to invoice generation. Dispute prevention through transparent, shared data between operations and commercial teams."
-  command: "Revenue optimization recommendations based on demand forecasting and capacity analytics. Cross-satellite revenue pooling and profitability analysis. Customer churn risk prediction. Automated SLA credit application and proactive customer communication."
 proofPoint:
   industry: "Space & SATCOM — Commercial Operator"
   headline: "Revenue Recovery and Billing Transformation"

@@ -2,7 +2,7 @@
 title: "Fabricante Ahorra $2M con Mantenimiento Predictivo"
 industryLabel: "Manufactura Industrial"
 headline: "Predicción de Fallas con IA Previene Costoso Tiempo Inactivo"
-excerpt: "Un líder global de manufactura desplegó las capacidades de mantenimiento predictivo de Quatro Operate, ahorrando $2M en el primer año al detectar fallas de equipos antes de que ocurrieran."
+excerpt: "Un líder global de manufactura desplegó las capacidades de mantenimiento predictivo de Quatro Understand, ahorrando $2M en el primer año al detectar fallas de equipos antes de que ocurrieran."
 company: "Líder Global de Manufactura"
 stats:
   - value: "$2M+"
@@ -22,7 +22,7 @@ El conocimiento acumulado sobre el comportamiento de los equipos residía en la 
 
 ## Solución
 
-Quatro Connect unificó datos de PLCs, sensores e historiadores existentes en todas las líneas de producción. Los modelos de machine learning de Quatro Operate fueron entrenados con datos históricos de equipos para reconocer patrones que preceden a las fallas — cambios sutiles en vibración, temperatura y rendimiento que los operadores humanos no pueden detectar de manera consistente.
+Quatro See unificó datos de PLCs, sensores e historiadores existentes en todas las líneas de producción. Los modelos de machine learning de Quatro Understand fueron entrenados con datos históricos de equipos para reconocer patrones que preceden a las fallas — cambios sutiles en vibración, temperatura y rendimiento que los operadores humanos no pueden detectar de manera consistente.
 
 El sistema captura y codifica la expertise operacional en playbooks y respuestas automatizadas, asegurando que el conocimiento persista más allá de los operadores individuales.
 

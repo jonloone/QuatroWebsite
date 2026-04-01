@@ -1,5 +1,5 @@
 ---
-title: "NPA Early Warning Intelligence"
+title: "NPA Early Warning"
 tagline: "Predict Non-Performing Assets Before They Hit the Balance Sheet"
 heroImage: "/images/solution-npa-early-warning.png"
 description: "ML-powered early warning that identifies pre-NPA stress patterns 30–60 days before accounts cross the threshold — with production-ready pipelines for collections, restructuring, and proactive engagement."
@@ -37,28 +37,24 @@ capabilities:
     description: "ML models analyze loan performance data, payment behavior, customer financial signals, and economic indicators to identify accounts showing stress patterns weeks before they cross the NPA threshold."
     featured: true
     outcome: "Risk teams see trouble 30–60 days earlier."
-    tier: "operate"
+    tier: "understand"
   - name: "Early Warning Signal Tracking"
     description: "Track days past due, declining payment patterns, overdue amounts, behavioral changes, and external economic shifts. Composite risk scores update continuously."
     featured: true
     outcome: "Continuous risk visibility, not periodic reports."
-    tier: "operate"
+    tier: "understand"
   - name: "Proactive Routing"
     description: "High-risk accounts are automatically routed to collections, restructuring, or proactive engagement workflows based on risk score, account value, and intervention success probability."
     outcome: "Collections teams engage before the threshold, not after."
-    tier: "command"
+    tier: "orchestrate"
   - name: "Provisioning Intelligence"
     description: "Predictive NPA data feeds provisioning models with forward-looking risk signals, reducing unexpected balance sheet impact and improving capital planning accuracy."
     outcome: "Provisioning costs decrease. Portfolio quality improves."
-    tier: "command"
+    tier: "orchestrate"
   - name: "Knowledge Graph Enrichment"
-    description: "When connected to Customer 360 and Credit Risk Intelligence, early warning signals are enriched with true customer exposure, compliance status, and relationship value — making predictions more accurate."
+    description: "When connected to Customer 360 and Credit Risk, early warning signals are enriched with true customer exposure, compliance status, and relationship value — making predictions more accurate."
     outcome: "Each product makes the others more valuable."
-    tier: "operate"
-platformMapping:
-  connect: "Ingest from core banking, loan management systems, collections platforms, and credit bureau feeds. No migration required — deploy on your existing infrastructure."
-  operate: "ML-powered signal detection continuously analyzes payment behavior, DPD trends, overdue patterns, and economic indicators. Production-ready pipeline with governance SLAs."
-  command: "Automated workflows route high-risk accounts to collections, restructuring, or proactive engagement. Pre-configured actions for legal, provisioning, and relationship management."
+    tier: "understand"
 proofPoint:
   industry: "Finance — Lending Operations"
   headline: "Predictive NPA Intelligence in Production"
@@ -77,5 +73,5 @@ cta:
   secondary:
     label: "Talk to a Financial Services Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 60 minutes. We map your loan management systems and show how NPA Early Warning Intelligence detects stress patterns 30–60 days earlier."
+  microcopy: "Typical assessment: 60 minutes. We map your loan management systems and show how NPA Early Warning detects stress patterns 30–60 days earlier."
 ---

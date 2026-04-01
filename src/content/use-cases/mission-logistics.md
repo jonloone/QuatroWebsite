@@ -47,9 +47,9 @@ stats:
   - value: "30%"
     label: "Equipment availability improvement"
 platformMapping:
-  connect: "Integrate ERP systems, inventory databases, personnel tracking, and transport logistics"
-  operate: "Correlate supply demand with asset availability and transit constraints across all FOBs"
-  command: "Prioritize shipments and dispatch supplies and personnel with real-time status visibility"
+  see: "Integrate ERP systems, inventory databases, personnel tracking, and transport logistics"
+  understand: "Correlate supply demand with asset availability and transit constraints across all FOBs"
+  orchestrate: "Prioritize shipments and dispatch supplies and personnel with real-time status visibility"
 proofPoint:
   industry: "U.S. Central Command"
   headline: "Multi-FOB Deployment: 12+ Bases Federated Into Unified Logistics Network"

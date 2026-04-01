@@ -1,18 +1,18 @@
 ---
-title: "Connect"
+title: "See"
 tagline: "See Everything in Real Time"
 heroImage: "/images/product-connect-card.png"
-description: "Complete operational picture with 8,000+ integrations from 1,000+ vendors. Intelligent alerting, live dashboards, asset management, SLA tracking, compliance reporting. One screen instead of fifteen — and the foundation for AI-powered intelligence that turns operational data into business decisions."
+description: "Complete operational picture with 9,000+ integrations from 1,000+ vendors. Intelligent alerting, live dashboards, asset management, SLA tracking, compliance reporting. One screen instead of fifteen — and the foundation for AI-powered intelligence that turns operational data into business decisions."
 order: 1
 hero:
-  eyebrow: "Quatro Connect"
+  eyebrow: "Quatro See"
   title: "See Everything, Understand Why, Act Before It Matters"
-  description: "Unified operational visibility across every protocol, device, and system. 8,000+ integrations from 1,000+ vendors. Real-time dashboards, intelligent alerting, asset management, and SLA tracking — all in one unified operational model."
+  description: "Unified operational visibility across every protocol, device, and system. 9,000+ integrations from 1,000+ vendors. Real-time dashboards, intelligent alerting, asset management, and SLA tracking — all in one unified operational model."
   primaryCta:
     label: "See It on Your Systems"
     href: "/contact/demo"
   secondaryCta:
-    label: "Explore 8,000+ Connectors"
+    label: "Explore 9,000+ Connectors"
     href: "#protocol-showcase"
 problems:
   - title: "Tag-Based Licensing Traps"
@@ -26,14 +26,14 @@ problems:
 solutions:
   - title: "Open Architecture"
     description: "Built on open standards with full API access. Your data belongs to you — export, query, and integrate without vendor lock-in or proprietary formats."
-  - title: "8,000+ Integrations From 1,000+ Vendors"
+  - title: "9,000+ Integrations From 1,000+ Vendors"
     description: "Complete visibility into SCADA, DCS, PLC, RTU, and enterprise systems. Industrial protocols, IoT devices, cloud platforms — unified into one operational picture with no custom integrations needed."
   - title: "No Tag-Based Licensing"
     description: "Collect every data point your operations generate. Our licensing model scales with your business, not against it. No per-tag fees, ever."
   - title: "Edge to Cloud"
     description: "Process data at the edge for real-time response, store it in high-performance time-series databases, and stream it to cloud analytics — all in one platform. From satellite IoT to factory floor PLC to cloud analytics, one connectivity layer covers the full stack."
 stats:
-  - value: "8,000+"
+  - value: "9,000+"
     label: "Connectors"
   - value: "1M+"
     label: "Points/Sec"
@@ -43,7 +43,7 @@ stats:
     label: "Storage Compression"
 capabilities:
   - name: "Unified Operational Visibility"
-    description: "8,000+ integrations bring SCADA, DCS, PLC, RTU, and enterprise systems into one operational picture. OPC-UA, Modbus, MQTT, BACnet, DNP3, and thousands more normalized into a consistent real-time model."
+    description: "9,000+ integrations bring SCADA, DCS, PLC, RTU, and enterprise systems into one operational picture. OPC-UA, Modbus, MQTT, BACnet, DNP3, and thousands more normalized into a consistent real-time model."
     icon: "database"
   - name: "High-Performance Time-Series Storage"
     description: "Purpose-built time-series engine handles millions of data points per second with 10–20x compression. Years of operational history at your fingertips, without the storage bloat of traditional historians."
@@ -150,5 +150,5 @@ proofPoint:
       label: "Less Integration Maintenance"
     - value: "40+"
       label: "Legacy Databases Consolidated"
-  narrative: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified Connect deployment. The result: real-time unified operational visibility across 200,000+ data points, 60% reduction in integration maintenance, and the data foundation for AI-powered intelligence and enterprise decision-making that was impossible with fragmented legacy systems."
+  narrative: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified See deployment. The result: real-time unified operational visibility across 200,000+ data points, 60% reduction in integration maintenance, and the data foundation for AI-powered intelligence and enterprise decision-making that was impossible with fragmented legacy systems."
 ---

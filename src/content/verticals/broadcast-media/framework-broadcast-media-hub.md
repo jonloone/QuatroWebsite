@@ -44,7 +44,7 @@ The three named operational domains serve as the "jobs" the buyer is hiring the 
 `Explore Capabilities →`
 
 **Trust Bar (immediately below hero — non-negotiable per framework):**
-- 8,000+ Integrations
+- 9,000+ Integrations
 - Signal Management Across 6 Technologies
 - 99.99% Platform Uptime
 - Real-Time Orchestration
@@ -90,7 +90,7 @@ This is the broadcast operations bottleneck. SMPTE ST 2110 is the technical answ
 
 When you operate live broadcast — Copa América, FIFA, regional sports, continuous news production — you cannot afford to ask "how do I talk to that signal analyzer" while a camera goes dark. A single missed signal, a misaligned transponder, an equipment failure in secondary systems becomes on-air downtime. Downtime means blank screens for thousands of viewers, missed SLA windows, and reputation damage. Meanwhile, your team has to context-switch between vendor consoles, different authentication systems, and incompatible alert languages. The technical fragmentation becomes operational friction — and friction costs money and air time.
 
-Quatro eliminates the fragmentation. One unified platform sees every signal across every technology (SMPTE ST 2110, ST 2022, SRT, SDI, ASI, L-Band). All vendor equipment — Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and 8,000+ other integrations — feeds into a single operational picture. When a signal fails, you see it once in one place. When you need to orchestrate a resource transition during a live event, you issue one command across your entire broadcast operation.
+Quatro eliminates the fragmentation. One unified platform sees every signal across every technology (SMPTE ST 2110, ST 2022, SRT, SDI, ASI, L-Band). All vendor equipment — Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and 9,000+ other integrations — feeds into a single operational picture. When a signal fails, you see it once in one place. When you need to orchestrate a resource transition during a live event, you issue one command across your entire broadcast operation.
 
 *Framework note: Agitation quantifies the asymmetry — operators manage signal fragmentation in real time, while the system itself is fragmented. Solution is positioned as the resolution (PAS "Solution" beat). Prose format per framework instruction. Escalating consequence: vendor confusion → SLA miss → on-air downtime → business impact.*
 
@@ -163,7 +163,7 @@ Quatro eliminates the fragmentation. One unified platform sees every signal acro
 **Dark section with background overlay.**
 
 ### Visibility — Multi-Technology Signal Ingestion
-Real-time signal ingestion from 8,000+ broadcast and media equipment vendors. Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, RF analyzers, satellite equipment, IP routers, and more. The broadcast operation becomes machine-readable in real time — every signal state, every equipment status, every facility metric.
+Real-time signal ingestion from 9,000+ broadcast and media equipment vendors. Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, RF analyzers, satellite equipment, IP routers, and more. The broadcast operation becomes machine-readable in real time — every signal state, every equipment status, every facility metric.
 
 ### Operations — Orchestration & Correlation
 Multi-protocol signal correlation and orchestration. Event-driven resource allocation. Virtual Signal Groups map logical broadcast flows regardless of physical vendor boundaries. When equipment fails, reroute through backup without manual intervention. When a live event requires resource reallocation, orchestrate across your entire broadcast operation with single command issuance. Role-based command control — directors issue orchestration commands; security and audit trails track every action.
@@ -201,7 +201,7 @@ The same signal intelligence that monitors your live production also informs fac
 
 **Competitive Landscape:**
 
-**vs. Evertz MAGNUM:** Hardware-centric router control and SDI monitoring. Tied to Evertz hardware. Quatro is software-defined and vendor-agnostic — control and monitor equipment from 8,000+ vendors, not just one hardware ecosystem. MAGNUM is SDI-focused; Quatro unifies SDI, SMPTE ST 2110, SRT, ASI, and satellite all at once.
+**vs. Evertz MAGNUM:** Hardware-centric router control and SDI monitoring. Tied to Evertz hardware. Quatro is software-defined and vendor-agnostic — control and monitor equipment from 9,000+ vendors, not just one hardware ecosystem. MAGNUM is SDI-focused; Quatro unifies SDI, SMPTE ST 2110, SRT, ASI, and satellite all at once.
 
 **vs. Grass Valley Orbit (GV Orbit):** GV Orbit is actually a Skyline DataMiner partner (Grass Valley Alliance). It focuses on content supply chain and asset management. Quatro extends into full facility operations, real-time signal orchestration, multi-site health monitoring, and media operations intelligence. Quatro and GV Orbit are complementary — GV Orbit manages the content; Quatro manages the broadcast infrastructure.
 
@@ -245,7 +245,7 @@ Quatro is built on Skyline DataMiner MediaOps — the platform that won BaM Awar
 
 **Vendor Ecosystem & Integration:**
 
-Quatro integrates directly with Grass Valley (Grass Valley Alliance), EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and 1,000+ other broadcast and media vendors. The 8,000+ integration catalog includes broadcast-specific protocols (SMPTE, DVB-ASI, SRT, L-Band satellite control) and equipment classes (RF systems, transmitters, encoders, routers, analyzers) that generic platforms don't support.
+Quatro integrates directly with Grass Valley (Grass Valley Alliance), EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and 1,000+ other broadcast and media vendors. The 9,000+ integration catalog includes broadcast-specific protocols (SMPTE, DVB-ASI, SRT, L-Band satellite control) and equipment classes (RF systems, transmitters, encoders, routers, analyzers) that generic platforms don't support.
 
 **Real-Time Orchestration & Event Operations:**
 
@@ -270,7 +270,7 @@ Broadcast operations are hybrid. SDI and SMPTE ST 2110 coexist for years during 
 | Metric | Value |
 |---|---|
 | Broadcast Vendor Integrations | 1,000+ |
-| Total Platform Integrations | 8,000+ |
+| Total Platform Integrations | 9,000+ |
 | Technologies Unified | 6 (SMPTE ST 2110, ST 2022, SRT, SDI, ASI, L-Band satellite) |
 | Platform Award Recognition | 3 awards in 6 months (BaM, CSI, BIRTV) |
 | Real-Time Orchestration | MediaOps.LIVE — proven in production operations |
@@ -301,7 +301,7 @@ Broadcast operations are hybrid. SDI and SMPTE ST 2110 coexist for years during 
 | Delivery model | Visibility/Operations/Intelligence three-step architecture, clear progression | ✅ |
 | Technical language | Broadcast jargon in body copy (SMPTE, transponder, RF chains), none in hero | ✅ |
 | Technology coverage | Six broadcast technologies listed with unified status; reinforces "Every Signal" promise | ✅ |
-| Vendor ecosystem | Named integrations (Grass Valley Alliance, EVS, Sony, etc.); 8,000+ catalog credibility | ✅ |
+| Vendor ecosystem | Named integrations (Grass Valley Alliance, EVS, Sony, etc.); 9,000+ catalog credibility | ✅ |
 | Regional applicability | Live event operations (Copa América, FIFA, regional sports) — LATAM-relevant use cases | ✅ |
 | Proof points | Awards (BaM, CSI, BIRTV), MediaOps.LIVE proven platform, multi-vendor ecosystem | ✅ |
 
@@ -334,7 +334,7 @@ Broadcast operations are hybrid. SDI and SMPTE ST 2110 coexist for years during 
 | JTBD structure | ✅ Complete | Three named operational domains as "jobs to be done" |
 | PAS narrative | ✅ Complete | Problem (vendor fragmentation) → Agitation (live event downtime) → Solution (unified platform) |
 | Competitive landscape | ✅ Complete | Evertz, GV Orbit, Phabrix, generic IT — differentiation clear |
-| Proof points | ✅ Complete | BaM Award 2024, CSI Award 2024, BIRTV Award 2024; Grass Valley Alliance partnership; 8,000+ integrations |
+| Proof points | ✅ Complete | BaM Award 2024, CSI Award 2024, BIRTV Award 2024; Grass Valley Alliance partnership; 9,000+ integrations |
 | LATAM relevance | ✅ Complete | Copa América, FIFA, regional sports operations; satellite contribution context |
 | Sub-page references | ✅ Complete | Three sub-pages referenced: live-production, facility-management, content-distribution |
 | Delivery model clarity | ✅ Complete | Three-step progression with SLA promise |

@@ -162,7 +162,7 @@ The result is not five separate alerts to five separate agencies. It is one inte
 > Role-based access across military, police, coast guard, customs, and financial regulators. Each agency sees the intelligence relevant to their mission. Automated workflows route intelligence to the right agency. The platform handles coordination — agencies focus on execution. Every action is logged with chain-of-command context.
 
 **Objection 3: "We don't have the sensors/infrastructure for this"**
-> 8,000+ ready-made integrations. The platform connects to what you have today — AIS feeds, existing camera networks, financial reporting systems, police databases. Sensor gaps are identified during the pilot and filled incrementally. You start with what exists.
+> 9,000+ ready-made integrations. The platform connects to what you have today — AIS feeds, existing camera networks, financial reporting systems, police databases. Sensor gaps are identified during the pilot and filled incrementally. You start with what exists.
 
 *Framework note: Three objections mapped to the counter-cartel buyer's specific concerns — sovereignty, inter-agency coordination, and infrastructure readiness. Each resolved in 2-3 confident sentences. No "FAQ" label.*
 

@@ -39,7 +39,7 @@ capabilities:
   - name: "Legacy SCADA Integration"
     description: "Works alongside your existing systems—reads Modbus, DNP3, IEC 60870-5-104, and proprietary protocols without replacement."
     icon: "🔗"
-  - name: "8,000+ Integrations"
+  - name: "9,000+ Integrations"
     description: "Connects to DMS, EMS, DER management, and wholesale market systems seamlessly."
     icon: "🌐"
 stats:
@@ -50,9 +50,9 @@ stats:
   - value: "25%"
     label: "Renewable utilization improvement"
 platformMapping:
-  connect: "SCADA polling, weather integration, and distributed energy resource monitoring across 200+ substations"
-  operate: "Real-time balancing rules engine and renewable forecast aggregation"
-  command: "Load shedding, generation dispatch coordination, and operator dashboards"
+  see: "SCADA polling, weather integration, and distributed energy resource monitoring across 200+ substations"
+  understand: "Real-time balancing rules engine and renewable forecast aggregation"
+  orchestrate: "Load shedding, generation dispatch coordination, and operator dashboards"
 proofPoint:
   industry: "Regional Utility"
   headline: "2M Customers, 200+ Substations, 9-Month Deployment to Full Operations"

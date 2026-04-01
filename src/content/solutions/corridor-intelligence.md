@@ -7,7 +7,7 @@ order: 14
 hero:
   eyebrow: "Corridor Intelligence"
   title: "Optimize Flow. Detect Incidents. Secure Corridors."
-  description: "Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border security across highway corridors. When an accident occurs 200 km from the border, the platform detects it sub-minute, optimizes alternate routes, and coordinates with border authorities on logistics impact."
+  description: "Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border security across highway corridors. When an accident occurs 200 km from the border, the intelligence network detects it sub-minute, optimizes alternate routes, and coordinates with border authorities on logistics impact."
   primaryCta:
     label: "Request a Corridor Briefing"
     href: "/contact/demo"
@@ -45,10 +45,6 @@ capabilities:
     description: "A traffic incident triggers simultaneous response — emergency dispatch, alternate routing for 500+ vehicles, border delay estimates, logistics notifications, and security posture assessment delivered as one operational picture."
   - name: "Sovereign Cross-Border Intelligence"
     description: "Corridor monitoring data shared as intelligence products — assessed risk and behavioral anomalies, not raw vehicle data. Every cross-border disclosure pre-approved and revocable. Commercial confidentiality maintained while security agencies receive targeting intelligence."
-platformMapping:
-  connect: "CCTV camera networks, traffic sensors, toll plaza transaction data, vehicle detection systems, weather monitoring, GPS tracking, shipping manifest systems, customs databases, and border crossing logs. 8,000+ integrations across highway and logistics infrastructure."
-  operate: "Cross-domain coordination engine fuses traffic, border, logistics, and security data into a single corridor intelligence picture. Incident detection, congestion prediction, border volume forecasting, and behavioral pattern analysis — all correlated in real time."
-  command: "Daily corridor operations summaries, real-time traffic dashboards, weekly efficiency reports, and monthly corridor intelligence reports. On-demand incident response packages with emergency routing, border impact, and security assessment."
 proofPoint:
   industry: "Transportation — Highway Corridor"
   headline: "Traffic-to-Border Corridor Transformation"

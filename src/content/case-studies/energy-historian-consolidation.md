@@ -2,7 +2,7 @@
 title: "Global Operator Consolidates 40+ Legacy Databases"
 industryLabel: "Oil & Gas"
 headline: "From 40+ Data Silos to One Unified Platform"
-excerpt: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified Connect deployment."
+excerpt: "A Fortune 500 oil and gas operator consolidated 40+ regional historian databases across upstream, midstream, and downstream operations into a unified See deployment."
 company: "Fortune 500 Oil & Gas Operator"
 stats:
   - value: "40+"
@@ -22,7 +22,7 @@ Engineering teams spent hours aggregating data from multiple sources just to ans
 
 ## Solution
 
-Quatro Connect was deployed as a unified data layer, connecting to every existing historian and SCADA system without requiring replacement. The platform's 8,000+ connectors normalized data from legacy OSIsoft PI instances, Aveva historians, and dozens of vendor-specific systems into a consistent, queryable format.
+Quatro See was deployed as a unified data layer, connecting to every existing historian and SCADA system without requiring replacement. The platform's 9,000+ connectors normalized data from legacy OSIsoft PI instances, Aveva historians, and dozens of vendor-specific systems into a consistent, queryable format.
 
 Edge deployments at remote facilities ensured continuous data collection even with intermittent connectivity, while the cloud-based analytics layer provided enterprise-wide visibility for the first time.
 

@@ -22,7 +22,7 @@ Los técnicos de campo eran enviados frecuentemente sin información completa so
 
 ## Solución
 
-Quatro Command unificó todos los datos de monitoreo en una sola plataforma de NOC, proporcionando visibilidad en tiempo real de cada sitio y sistema. La analítica impulsada por IA correlaciona eventos de múltiples fuentes y presenta las causas raíz probables, reduciendo el ruido que anteriormente abrumaba a los operadores.
+Quatro Orchestrate unificó todos los datos de monitoreo en una sola plataforma de NOC, proporcionando visibilidad en tiempo real de cada sitio y sistema. La analítica impulsada por IA correlaciona eventos de múltiples fuentes y presenta las causas raíz probables, reduciendo el ruido que anteriormente abrumaba a los operadores.
 
 Las capacidades de despacho inteligente garantizan que los técnicos de campo reciban información completa del sitio, historial y guías de resolución antes de llegar. Los modelos de mantenimiento predictivo identifican equipos en riesgo de falla, permitiendo reemplazo proactivo.
 

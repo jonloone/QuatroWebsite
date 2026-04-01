@@ -45,10 +45,6 @@ capabilities:
     description: "Vendor-agnostic data normalization preserves vendor-specific semantics while presenting data in a unified model. Telemetry from different satellite manufacturers correlated correctly — spotting cross-orbit patterns that single-vendor platforms cannot see."
   - name: "Fleet-Wide Health Scoring"
     description: "Real-time health scoring across all stations and satellites. Maintenance recommendations prioritized by failure risk and coordinated to minimize service mission costs. Service mission costs drop 15-25% through better coordination."
-platformMapping:
-  connect: "All satellite telemetry streams from all orbit families and ground command stations. GEO transponder health, LEO pass-by-pass telemetry, NGSO orbital position data, payload telemetry, and service history. Vendor-agnostic ingestion from any satellite manufacturer."
-  operate: "Predictive failure detection trained on historical patterns with 85-92% accuracy. Cross-orbit capacity modeling with business impact quantification. Real-time fleet health scoring across all constellations. Anomaly correlation across orbit families and ground systems."
-  command: "Coordinated maintenance scheduling across all orbits and ground infrastructure. Automated capacity rebalancing recommendations. Service mission planning with logistics optimization. Fleet-wide operational intelligence that connects internal health to external threats."
 proofPoint:
   industry: "Space & SATCOM — Constellation Operator"
   headline: "Multi-Orbit Fleet Intelligence"

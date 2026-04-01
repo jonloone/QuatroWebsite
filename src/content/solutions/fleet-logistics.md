@@ -7,7 +7,7 @@ order: 5
 hero:
   eyebrow: "Fleet & Logistics"
   title: "Optimize Every Mile. Track Every Asset."
-  description: "Transform fragmented fleet tools into unified operational intelligence. AI-powered routing, predictive maintenance, and real-time dispatch in one platform."
+  description: "Transform fragmented fleet tools into unified operational intelligence. AI-powered routing, predictive maintenance, and real-time dispatch in one network."
   primaryCta:
     label: "Schedule a Fleet Assessment"
     href: "/contact/demo"
@@ -21,7 +21,7 @@ stats:
     label: "Better On-Time Delivery"
   - value: "35%"
     label: "Less Vehicle Downtime"
-  - value: "1 Platform"
+  - value: "1 Network"
     label: "Any Hardware"
 challenges:
   - title: "Fragmented Visibility"
@@ -45,10 +45,6 @@ capabilities:
     description: "AI models correlate diagnostics, usage patterns, and environmental conditions to forecast failures 1-3 weeks in advance."
   - name: "Centralized Dispatch"
     description: "AI-powered dispatch console for managing fleet, crews, and deliveries with intelligent assignment and real-time tracking. Predictive demand modeling optimizes resource positioning. Connects to port operations, airport logistics, and corridor intelligence for full transportation ecosystem visibility."
-platformMapping:
-  connect: "Ingests data from any GPS, telematics device, or IoT sensor. Normalizes data from mixed hardware fleets without requiring vendor standardization."
-  operate: "AI intelligence for route optimization, predictive maintenance, and driver safety. Real-time operational models enable fleet sizing, depot placement modeling, and demand forecasting. Behavioral analysis detects vehicle performance shifts before they cause breakdowns."
-  command: "Centralized dispatch with AI-assisted assignment and automated playbooks for breakdowns, delays, and priority insertions. Enterprise intelligence connects fleet operations to warehouse management, customer delivery SLAs, and supply chain performance."
 proofPoint:
   industry: "Infrastructure — Logistics"
   headline: "National Fleet Optimization"

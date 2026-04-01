@@ -47,9 +47,9 @@ stats:
   - value: "60%"
     label: Faster compliance audit prep
 platformMapping:
-  connect: Real-time ingestion of raw materials, equipment sensors, and environmental conditions
-  operate: Real-time quality gates, deviation alerts, and batch state tracking
-  command: Automated hold/release decisions and corrective action workflows
+  see: Real-time ingestion of raw materials, equipment sensors, and environmental conditions
+  understand: Real-time quality gates, deviation alerts, and batch state tracking
+  orchestrate: Automated hold/release decisions and corrective action workflows
 proofPoint:
   industry: Pharmaceutical Manufacturing
   headline: Pharma manufacturer reduced batch rework by 40% and cut audit prep from 12 weeks to 3 weeks

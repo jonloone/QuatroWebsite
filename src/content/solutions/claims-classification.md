@@ -1,5 +1,5 @@
 ---
-title: "Claims Classification Intelligence"
+title: "Claims Classification"
 tagline: "Reduce Underwriter Load. Accelerate Processing."
 heroImage: "/images/solution-claims-classification.png"
 description: "ML-powered claims classification that predicts accept/reject decisions with confidence scoring — routing high-confidence claims past underwriter review entirely."
@@ -7,7 +7,7 @@ order: 21
 hero:
   eyebrow: "Claims Classification"
   title: "High-Confidence Claims Don't Need an Underwriter."
-  description: "Claims Classification Intelligence ingests historical claims data and external signals to predict accept/reject decisions with confidence scoring. High-confidence claims bypass underwriter review — cutting processing time and cost."
+  description: "Claims Classification ingests historical claims data and external signals to predict accept/reject decisions with confidence scoring. High-confidence claims bypass underwriter review — cutting processing time and cost."
   primaryCta:
     label: "Schedule an Insurance Assessment"
     href: "/contact/demo"
@@ -37,28 +37,24 @@ capabilities:
     description: "Train models on historical claims data combined with external signals to predict the outcome of each incoming claim with a confidence score and reasoning."
     featured: true
     outcome: "High-confidence claims bypass underwriter review entirely."
-    tier: "operate"
+    tier: "understand"
   - name: "Confidence Scoring & Reasoning"
     description: "Every prediction includes a confidence score and the factors driving the recommendation — giving claims processors transparent, auditable decision support."
     featured: true
     outcome: "Processors trust the recommendations because they can see the reasoning."
-    tier: "operate"
+    tier: "understand"
   - name: "External Data Integration"
     description: "Enrich claims assessment with weather conditions, vehicle model data, regional claim patterns, and other external signals that improve prediction accuracy."
     outcome: "More accurate classifications from broader context."
-    tier: "connect"
+    tier: "see"
   - name: "Underwriter Focus Routing"
     description: "Route only low-confidence, complex claims to underwriters. Underwriters focus their expertise where it matters most."
     outcome: "Underwriters handle complex cases. Processors handle the rest."
-    tier: "command"
+    tier: "orchestrate"
   - name: "Processing Cost Analytics"
     description: "Track per-claim processing cost, classification accuracy, and underwriter utilization. Continuous feedback loop improves model performance."
     outcome: "Processing costs drop as models improve."
-    tier: "command"
-platformMapping:
-  connect: "Ingest from claims management systems, underwriting platforms, and external data feeds (weather, vehicle, regional patterns)."
-  operate: "ML models trained on historical data classify incoming claims with confidence scoring and reasoning. Models improve continuously with feedback."
-  command: "Automated routing sends high-confidence claims to processors and complex cases to underwriters. Processing cost analytics track ROI."
+    tier: "orchestrate"
 proofPoint:
   industry: "Finance — Insurance"
   headline: "ML Claims Classification in Production"

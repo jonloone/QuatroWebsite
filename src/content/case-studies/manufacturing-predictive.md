@@ -2,7 +2,7 @@
 title: "Manufacturer Saves $2M with Predictive Maintenance"
 industryLabel: "Industrial Manufacturing"
 headline: "AI-Powered Failure Prediction Prevents Costly Downtime"
-excerpt: "A global manufacturing leader deployed Quatro Operate's predictive maintenance capabilities, saving $2M in the first year by catching equipment failures before they happened."
+excerpt: "A global manufacturing leader deployed Quatro Understand's predictive maintenance capabilities, saving $2M in the first year by catching equipment failures before they happened."
 company: "Global Manufacturing Leader"
 stats:
   - value: "$2M+"
@@ -22,7 +22,7 @@ Tribal knowledge about equipment behavior lived in the heads of experienced oper
 
 ## Solution
 
-Quatro Connect unified data from PLCs, sensors, and existing historians across all production lines. Quatro Operate's machine learning models were trained on historical equipment data to recognize patterns that precede failures — subtle changes in vibration, temperature, and performance that human operators couldn't detect consistently.
+Quatro See unified data from PLCs, sensors, and existing historians across all production lines. Quatro Understand's machine learning models were trained on historical equipment data to recognize patterns that precede failures — subtle changes in vibration, temperature, and performance that human operators couldn't detect consistently.
 
 The system captures and codifies operational expertise into playbooks and automated responses, ensuring knowledge persists beyond individual operators.
 

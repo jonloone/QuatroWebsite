@@ -46,9 +46,9 @@ capabilities:
   - name: "Coordinación Multi-Planta"
     description: "Visibilidad a nivel empresarial y respuesta coordinada en múltiples instalaciones. Estandarice mejores prácticas y compare rendimiento entre sitios."
 platformMapping:
-  connect: "Más de 8,000 conectores para OPC-UA, Modbus, MQTT, BACnet y sistemas empresariales. Sin licenciamiento por tags. Procesamiento en el edge mantiene la inteligencia local durante pérdida de conectividad."
-  operate: "Analítica de IA para mantenimiento predictivo, seguimiento de OEE y detección de anomalías. El modelo operacional en tiempo real permite simulación y planificación de escenarios. 80% menos falsas alarmas que sistemas basados en umbrales."
-  command: "Coordinación multi-planta y respuesta automatizada ante incidentes. Despacho de recursos basado en demanda en tiempo real, ubicación y requerimientos de competencias."
+  see: "Más de 8,000 conectores para OPC-UA, Modbus, MQTT, BACnet y sistemas empresariales. Sin licenciamiento por tags. Procesamiento en el edge mantiene la inteligencia local durante pérdida de conectividad."
+  understand: "Analítica de IA para mantenimiento predictivo, seguimiento de OEE y detección de anomalías. El modelo operacional en tiempo real permite simulación y planificación de escenarios. 80% menos falsas alarmas que sistemas basados en umbrales."
+  orchestrate: "Coordinación multi-planta y respuesta automatizada ante incidentes. Despacho de recursos basado en demanda en tiempo real, ubicación y requerimientos de competencias."
 proofPoint:
   industry: "Industrial — Manufactura Química"
   headline: "Transformación de Seguridad y Eficiencia Multi-Planta"

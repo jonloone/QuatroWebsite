@@ -22,7 +22,7 @@ Field technicians were often dispatched without complete information about site 
 
 ## Solution
 
-Quatro Command unified all monitoring data into a single NOC platform, providing real-time visibility across every site and system. AI-powered analytics correlate events across sources and surface probable root causes, reducing the noise that previously overwhelmed operators.
+Quatro Orchestrate unified all monitoring data into a single NOC platform, providing real-time visibility across every site and system. AI-powered analytics correlate events across sources and surface probable root causes, reducing the noise that previously overwhelmed operators.
 
 Smart dispatch capabilities ensure field technicians receive complete site information, history, and troubleshooting guidance before arriving. Predictive maintenance models identify equipment at risk of failure, enabling proactive replacement.
 

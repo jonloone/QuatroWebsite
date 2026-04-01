@@ -1,11 +1,11 @@
 ---
-title: "Pipeline Security"
+title: "Pipeline Integrity"
 tagline: "Unified Integrity and Security"
 heroImage: "/images/solution-pipeline-security.png"
 description: "Multi-method leak detection with AI cross-correlation, partner-delivered predictive analytics and operational decisioning, and satellite corridor monitoring — reducing false alarms by 75% while improving detection sensitivity to 0.5% of nominal flow. An integrated partner ecosystem delivers capabilities no single vendor can match."
 order: 2
 hero:
-  eyebrow: "Pipeline Security"
+  eyebrow: "Pipeline Integrity"
   title: "Detect Leaks Faster. Respond Smarter."
   description: "Converged integrity and security monitoring for pipeline corridors. Multi-method AI fusion, predictive decisioning from our partner ecosystem, and satellite corridor intelligence eliminate false alarms and close the gap between detection, prediction, and response."
   primaryCta:
@@ -46,13 +46,9 @@ capabilities:
   - name: "Predictive Pipeline Intelligence"
     description: "AI models forecast where integrity issues are likely to develop based on historical patterns, environmental conditions, operational stress, and maintenance history. Shift from detecting problems to preventing them — intervene before failures manifest."
   - name: "Enterprise Pipeline Intelligence"
-    description: "When a leak is detected, the operational response is one part of the picture. Quatro scales to enterprise intelligence — connecting pipeline events to revenue impact, regulatory notification requirements, insurance provisions, and environmental liability assessment. From detection to business decision in one platform."
+    description: "When a leak is detected, the operational response is one part of the picture. Quatro scales to enterprise intelligence — connecting pipeline events to revenue impact, regulatory notification requirements, insurance provisions, and environmental liability assessment. From detection to business decision in one network."
   - name: "Compliance Audit Trails"
     description: "Complete chronological record for PHMSA, NEB, and API 1160 reporting with exportable audit packages."
-platformMapping:
-  connect: "SCADA integration through OPC-UA, Modbus, and DNP3 with edge processing at remote stations. Ingests flow, pressure, temperature, and valve status from every metering point. Partner ecosystem connectivity for ECR Platform X DevSafeOps and NOVI Space satellite intelligence."
-  operate: "AI-powered multi-method leak detection with satellite corridor monitoring and predictive pipeline intelligence. Cross-domain correlation ties operational anomalies to security events automatically. Pattern recognition forecasts integrity risks before they manifest."
-  command: "Automated playbooks isolate segments, notify control rooms, dispatch field crews, and alert regulators — all within seconds of confirmed detection. Enterprise intelligence connects pipeline events to financial and regulatory impact."
 proofPoint:
   industry: "Energy — Oil & Gas Midstream"
   headline: "Transmission Pipeline Transformation"

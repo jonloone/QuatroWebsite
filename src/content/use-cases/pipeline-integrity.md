@@ -39,7 +39,7 @@ capabilities:
   - name: "Compliance Automation"
     description: "Generates audit-ready reports with detection timelines, actions taken, and environmental impact assessments."
     icon: "✅"
-  - name: "8,000+ Integrations"
+  - name: "9,000+ Integrations"
     description: "Connects to your existing SCADA, GIS, and safety systems—no rip-and-replace required."
     icon: "🔗"
 stats:
@@ -50,9 +50,9 @@ stats:
   - value: "60%"
     label: "Compliance time savings"
 platformMapping:
-  connect: "Sensor fusion and data normalization from pressure, flow, acoustic, and vibration telemetry"
-  operate: "Real-time anomaly scoring and alert prioritization rules engine"
-  command: "Dispatch workflows and compliance report generation"
+  see: "Sensor fusion and data normalization from pressure, flow, acoustic, and vibration telemetry"
+  understand: "Real-time anomaly scoring and alert prioritization rules engine"
+  orchestrate: "Dispatch workflows and compliance report generation"
 proofPoint:
   industry: "Midstream Operator"
   headline: "3,500+ km Network, Sub-3-Minute Detection-to-Dispatch"

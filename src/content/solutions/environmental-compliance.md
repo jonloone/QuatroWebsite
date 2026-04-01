@@ -45,10 +45,6 @@ capabilities:
     description: "Every violation documented with detection timestamp, measured values, regulatory limits, operational context, response actions, and recovery confirmation. Formatted for regulatory submission or prosecution support with complete chain-of-custody."
   - name: "ESG and Climate Adaptation Reporting"
     description: "Time-series emissions, water consumption, and energy data attributed by source. Progress tracking against organizational ESG commitments with evidence for investor reporting. Identification of high-impact reduction opportunities."
-platformMapping:
-  connect: "Air quality monitors, water quality probes, CEMS systems, flow meters, noise monitors, production logs, weather data, and municipal utilities. Integration across 1,000+ environmental monitoring vendors and protocols. Connect to what you have — no system replacement required."
-  operate: "Continuous threshold verification against MAE/MAATE, SENAGUA, TULSMA, and ARCONEL frameworks. Real-time violation detection with operational attribution. Cross-media environmental correlation revealing contamination patterns that single-domain systems miss."
-  command: "Automated compliance reports on regulatory schedules. Enforcement-ready evidence packages with full evidentiary chains. ESG progress tracking and emissions attribution. Governance-grade audit trails documenting every detection, investigation, and regulatory handoff."
 proofPoint:
   industry: "Water & Environment — Industrial Compliance"
   headline: "Environmental Compliance Transformation"

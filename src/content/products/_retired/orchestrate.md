@@ -1,13 +1,13 @@
 ---
-title: "Command"
+title: "Orchestrate"
 tagline: "Orchestrate at Scale"
 heroImage: "/images/feature-command-center.png"
 description: "Everything in Operations PLUS end-to-end process orchestration, resource-aware scheduling, service lifecycle management, spectrum management, and federated operations. The entire operation runs as one coordinated system."
 order: 3
 hero:
-  eyebrow: "Quatro Command"
+  eyebrow: "Quatro Orchestrate"
   title: "See Everything, Understand Why, Act Before It Matters"
-  description: "The unified operations center that brings every insight from Connect and Operate into decisive, AI-assisted action. Intelligent orchestration adapts to conditions in real time. Your entire operation runs as one coordinated system."
+  description: "The unified operations center that brings every insight from See and Understand into decisive, AI-assisted action. Intelligent orchestration adapts to conditions in real time. Your entire operation runs as one coordinated system."
   primaryCta:
     label: "Talk to an Engineer"
     href: "/contact/demo"
@@ -71,12 +71,12 @@ deepDive:
   subtitle: "AI-assisted orchestration with intelligent adaptation, resource-aware scheduling, and federated operations. Your entire system runs as one coordinated force."
   sections:
     - title: "The Complete Picture"
-      description: "Command brings together insights from Connect (data) and Operate (analytics) into a unified operational view. See everything happening across your operations in real-time."
+      description: "Orchestrate brings together insights from See (data) and Understand (analytics) into a unified operational view. See everything happening across your operations in real-time."
       icon: "layers"
     - title: "Designed for Critical Operations"
       description: "Built for the demands of 24/7 operations centers. Redundant architecture, offline capabilities, and interfaces designed for high-stakes decision-making."
       icon: "shield"
     - title: "The Path to Autonomous Operations"
-      description: "Command enables a clear maturity progression. Start with orchestrated response where your team directs and the system executes. Advance to augmented operations where the system recommends and your team approves. Scale to autonomous operations where the system handles routine scenarios within defined boundaries — freeing your team for high-value decisions."
+      description: "Orchestrate enables a clear maturity progression. Start with orchestrated response where your team directs and the system executes. Advance to augmented operations where the system recommends and your team approves. Scale to autonomous operations where the system handles routine scenarios within defined boundaries — freeing your team for high-value decisions."
       icon: "workflow"
 ---

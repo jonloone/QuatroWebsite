@@ -47,9 +47,9 @@ stats:
   - value: "99.8%"
     label: Availability improvement
 platformMapping:
-  connect: Multi-vendor alert and event ingestion from all infrastructure systems
-  operate: Unified NOC dashboard with correlated incidents and context
-  command: Automated escalation, runbook execution, and coordinated response workflows
+  see: Multi-vendor alert and event ingestion from all infrastructure systems
+  understand: Unified NOC dashboard with correlated incidents and context
+  orchestrate: Automated escalation, runbook execution, and coordinated response workflows
 proofPoint:
   industry: Telecom Infrastructure
   headline: Tower operator reduced alert noise by 80% and improved availability from 99.5% to 99.8% across 900+ sites

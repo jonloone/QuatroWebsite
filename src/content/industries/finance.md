@@ -48,53 +48,45 @@ capabilities:
     can trust.
   featured: true
   outcome: One answer to 'Who is this customer and what is their total exposure?'
-  tier: operate
   image: /images/cap-finance-customer-360.png
 - name: NPA Early Warning Intelligence
   description: Ingest loan performance, payment behavior, and economic indicators to identify pre-NPA stress patterns 30–60 days before accounts cross the threshold. Route high-risk accounts to collections
     or restructuring proactively.
   featured: true
   outcome: Risk teams see NPA trends 30–60 days earlier. Provisioning costs decrease.
-  tier: command
   image: /images/cap-finance-npa-warning.png
 - name: Regulatory Compliance Intelligence
   description: Unify the data foundation across AML/KYC, credit loss modeling, regulatory reporting, and stress testing. Full audit trail from every data point back to source.
   featured: true
   outcome: Audit-ready compliance with zero reconciliation delays.
-  tier: operate
   image: /images/cap-finance-compliance.png
 - name: Credit Risk Intelligence
   description: Reconcile exposure across loan origination, core systems, mortgages, cards, and guarantees. True cross-product exposure view for loan committees and stress testing.
   image: /images/cap-finance-credit-risk.png
   outcome: Complete exposure data for every credit decision.
-  tier: operate
 - name: Next Best Action Intelligence
   description: Real-time decision engine that connects transaction data, account status, and customer history. When a payment declines, the system determines the cause and presents the optimal resolution
     path instantly.
   image: /images/cap-finance-next-action.png
   outcome: Customer friction drops. Cross-sell surfaces at peak engagement.
-  tier: command
 - name: Claims Classification Intelligence
   description: ML models predict accept/reject on incoming claims with confidence scoring. High-confidence claims bypass underwriter review entirely.
   image: /images/cap-finance-claims.png
   outcome: Faster processing, lower costs, underwriters focused on complex cases.
-  tier: command
 - name: M&A Integration Intelligence
   description: Governed semantic layer across pre- and post-merger entities. Resolve customer identity, normalize definitions, and produce consolidated reporting without waiting for core system migration.
   image: /images/cap-finance-ma-integration.png
   outcome: Integration timelines compress from months to weeks.
-  tier: connect
 - name: Data Fingerprinting & Cataloging
   description: Automatically detect, classify, and catalog data attributes across banking systems. Identify PII, map to business categories, and produce a complete data inventory with lineage for migration
     confidence.
   outcome: Cloud migration timelines compress. Compliance risk eliminated.
-  tier: connect
   image: /images/cap-finance-fingerprinting.png
 platformMapping:
-  connect: Deploy on your existing systems — core banking, LOS, CRM, digital channels, card processors, wealth platforms, compliance tools. No rip-and-replace. 8,000+ connectors for any banking data source.
-  operate: AI-powered reconciliation creates governed intelligence products — unified customer identity, cross-system exposure, and regulatory data foundations. Each product includes governance SLAs on
+  see: Deploy on your existing systems — core banking, LOS, CRM, digital channels, card processors, wealth platforms, compliance tools. No rip-and-replace. 9,000+ connectors for any banking data source.
+  understand: AI-powered reconciliation creates governed intelligence products — unified customer identity, cross-system exposure, and regulatory data foundations. Each product includes governance SLAs on
     data quality, freshness, and lineage.
-  command: Act on intelligence — NPA early warning triggers proactive collections, next best action resolves customer friction in real time, claims classification automates underwriter triage, and compliance
+  orchestrate: Act on intelligence — NPA early warning triggers proactive collections, next best action resolves customer friction in real time, claims classification automates underwriter triage, and compliance
     reporting runs continuously.
 proofPoint:
   industry: Finance — Global Banking Group
@@ -107,7 +99,7 @@ proofPoint:
   - value: 30–60 Days
     label: Earlier NPA Detection
   narrative: Quatro's banking intelligence products are deployed at enterprise scale — Lloyds Banking Group (UK) for next best action and claims classification, Mashreq Bank (UAE) for cross-system data
-    sharing, Indiabulls (India) for NPA early warning, and Bradesco (Brazil) for enterprise data products. The same platform, adapted for Latin American regulatory frameworks.
+    sharing, Indiabulls (India) for NPA early warning, and Bradesco (Brazil) for enterprise data products. The same intelligence network, adapted for Latin American regulatory frameworks.
 cta:
   primary:
     label: Schedule a Banking Assessment

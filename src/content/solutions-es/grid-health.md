@@ -1,10 +1,10 @@
 ---
-title: "Operaciones de Red Eléctrica"
+title: "Salud de la Red Eléctrica"
 tagline: "Modernice Sin Reemplazar"
 description: "Modernización por superposición que agrega inteligencia predictiva, integración de DER y respuesta ante tormentas al SCADA existente — entregando resultados en meses, no años."
 order: 6
 hero:
-  eyebrow: "Operaciones de Red Eléctrica"
+  eyebrow: "Salud de la Red Eléctrica"
   title: "Inteligencia de Red Moderna. SCADA Legacy Intacto."
   description: "No reemplace su SCADA. Superpóngale inteligencia predictiva, integración de DER y respuesta automatizada ante tormentas que se despliega en meses, no años."
   primaryCta:
@@ -44,10 +44,6 @@ capabilities:
     description: "Playbooks automatizados preposicionan cuadrillas, activan ayuda mutua y priorizan la restauración por impacto al cliente y estado de instalaciones críticas."
   - name: "Modelo Operacional en Tiempo Real para Simulación de Red"
     description: "Modelos virtuales para análisis de contingencia, estudios de capacidad de hosting de DER y modelado de impacto de tormentas antes de que las condiciones se materialicen."
-platformMapping:
-  connect: "Conectividad nativa para DNP3, IEC 61850 y OPC-UA. Replica datos del SCADA legacy en tiempo real mientras agrega conectividad DER mediante SunSpec, OCPP e IEEE 2030.5."
-  operate: "Analítica de IA para mantenimiento predictivo, detección de anomalías de red y optimización del rendimiento de DER. Modelo operacional en tiempo real permite análisis de contingencia y modelado de tormentas."
-  command: "Playbooks automatizados de tormentas coordinan más de 200 subestaciones. El despacho inteligente asigna cuadrillas certificadas con autoridad de conmutación. Trazabilidad NERC CIP generada automáticamente."
 proofPoint:
   industry: "Energía — Empresa de Servicios Integrada"
   headline: "Respuesta ante Tormentas y Modernización de Red"

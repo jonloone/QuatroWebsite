@@ -2,397 +2,461 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
+import { getCollection } from 'astro:content'
+const insights = (await getCollection('insights'))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 5)
 ---
 
 <BaseLayout
-  title="Quatro — Operational Intelligence for Critical Infrastructure"
-  description="Quatro connects 8,000+ systems into a unified, AI-enriched operational picture — so you see everything, understand why, and act before it matters."
+  title="Quatro — Systems That Think. People Who Build."
+  description="Quatro unifies your entire operation into one intelligence picture — so the people behind your infrastructure stop managing data and start building what's next."
   lang="en"
 >
 
   <SiteHeader lang="en" />
 
   <!-- ═══════════════════════════════════════════════════════════════
-       1. HERO — Full-screen background image
+       1. HERO — Dithering Card
        ═══════════════════════════════════════════════════════════════ -->
-  <section data-hero class="relative min-h-[85vh] lg:min-h-[90vh] flex items-end overflow-hidden px-6 pb-20 lg:pb-28">
-    <!-- Background image -->
-    <div class="absolute inset-0">
-      <img src="/images/hero-bg.png" alt="" class="h-full w-full object-cover" />
-      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);"></div>
-    </div>
+  <section class="pt-24 pb-12 lg:pt-28 lg:pb-20 px-4 md:px-6" data-hero style="background: #0a0a0a;">
+    <div class="w-full max-w-7xl mx-auto relative" data-hero-card>
+      <div class="relative overflow-hidden rounded-[32px] lg:rounded-[48px] min-h-[600px] md:min-h-[700px] flex flex-col items-center justify-center" style="border: 1px solid rgba(15,76,58,0.4); background: #0a0a0a;">
 
-    <!-- connect.png — bottom right graphic, overflows right edge -->
-    <img src="/images/connect.png" alt="" class="absolute bottom-0 w-[90%] lg:w-[70%] object-contain pointer-events-none select-none" style="right: -20%;" />
+        <!-- Canvas dithering overlay — samples hero-bg.png -->
+        <canvas id="hero-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-85"></canvas>
 
-    <div class="relative z-10 mx-auto max-w-5xl w-full text-left pt-16">
-      <!-- Status badge -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-2 mb-10" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);">
-        <div class="w-2 h-2 rounded-full pulse-dot" style="background-color: var(--color-forest);"></div>
-        <span class="font-mono text-xs uppercase tracking-[0.05em] text-white/80">
-          Platform v4.2 — Operational
-        </span>
-      </div>
+        <!-- Dark center vignette for text readability -->
+        <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 50%, transparent 80%);"></div>
 
-      <!-- Eyebrow -->
-      <p class="font-mono text-xs uppercase tracking-[0.05em] text-white/60 mb-8">
-        Operational Intelligence for Critical Infrastructure
-      </p>
+        <!-- Film grain -->
+        <svg style="position:absolute;width:0;height:0;">
+          <filter id="hero-grain-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+        </svg>
+        <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.06]" style="filter: url(#hero-grain-filter);"></div>
 
-      <!-- H1 — Reckless Light -->
-      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-white">
-        See Everything.<br />
-        Understand Why.<br />
-        Act Before It Matters.
-      </h1>
+        <!-- Content — centered -->
+        <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 lg:py-24 max-w-4xl mx-auto">
 
-      <!-- Subhead -->
-      <p class="mt-8 font-sans text-base lg:text-lg text-white/60 max-w-xl leading-relaxed">
-        Quatro connects 8,000+ systems into a unified, AI-enriched operational picture — from pipeline to grid to fleet to facility. Deployed your way. Governed for trust.
-      </p>
+          <!-- Badge -->
+          <div class="inline-flex items-center px-5 py-2.5 rounded-full mb-10" style="border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); backdrop-filter: blur(8px);">
+            <span class="font-mono text-[11px] uppercase tracking-[0.15em] text-white/60">Quatro</span>
+          </div>
 
-      <!-- CTAs -->
-      <div class="mt-10 flex flex-wrap items-center gap-4">
-        <a
-          href="/contact/demo"
-          class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear"
-          style="background-color: var(--color-forest);"
-        >
-          Schedule an Assessment
-        </a>
-        <a
-          href="/platform"
-          class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear hover:bg-white/10"
-          style="border: 1px solid rgba(255,255,255,0.2);"
-        >
-          Explore the Platform &rarr;
-        </a>
-      </div>
+          <!-- H1 -->
+          <h1 class="font-sans font-light text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-white">
+            Systems That Think.<br />
+            <span class="text-white/60">People Who Build.</span>
+          </h1>
 
-      <!-- Microcopy -->
-      <p class="mt-4 font-mono text-xs text-white/40">
-        4-week proof of value &middot; Credited toward contract
-      </p>
+          <!-- Subhead -->
+          <p class="mt-8 font-sans text-base lg:text-lg text-white/50 leading-relaxed max-w-2xl">
+            Quatro unifies your entire operation into one intelligence picture — so the operators, engineers, and decision-makers behind your infrastructure stop managing data and start building what's next.
+          </p>
 
-      <!-- Trust metrics -->
-      <div class="mt-10 pt-6 flex flex-wrap items-center gap-8" style="border-top: 1px solid rgba(255,255,255,0.1);">
-        <div>
-          <span class="font-mono text-xs text-white/40 block">Integrations</span>
-          <span class="font-display text-lg font-bold text-white">8,000+</span>
-        </div>
-        <div>
-          <span class="font-mono text-xs text-white/40 block">Vendors</span>
-          <span class="font-display text-lg font-bold text-white">1,000+</span>
-        </div>
-        <div>
-          <span class="font-mono text-xs text-white/40 block">Deployment</span>
-          <span class="font-display text-lg font-bold text-white">Any Model</span>
-        </div>
-        <div>
-          <span class="font-mono text-xs text-white/40 block">Time to Value</span>
-          <span class="font-display text-lg font-bold text-white">Weeks</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       2. REGIONAL COMMITMENT — Pattern A (Grid Section)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: var(--color-structure);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Presence</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
-            Regional<br />Presence<br />Commitment
-          </h2>
-          <!-- Card grid -->
-          <div class="mt-12 grid md:grid-cols-3 fade-up" style="border-top: 1px solid var(--color-structure); border-left: 1px solid var(--color-structure);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Teams in Latin America</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Engineers and consultants who know your industry and speak your language.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Your Data in Your Country</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Edge-first architecture with guaranteed regional data sovereignty.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Support in Your Language</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Documentation, training, and technical support in Spanish and Portuguese.</p>
-            </div>
+          <!-- CTA — single primary per StoryBrand -->
+          <div class="mt-10">
+            <a
+              href="/contact/demo"
+              class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105"
+              style="background-color: var(--color-forest); color: white;"
+            >
+              Schedule an Assessment
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       3. PROBLEM STATEMENT — Pattern A (Grid Section)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: var(--color-structure);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Challenge</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95] fade-up" style="color: var(--color-forest);">
-            The<br />Intelligence<br />Gap
-          </h2>
-          <!-- PAS narrative prose — creates urgency -->
-          <div class="mt-8 max-w-2xl space-y-6 fade-up">
-            <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
-              At 2:47 AM, a pressure anomaly fires on pipeline segment 47. The alert goes to one monitoring system. The maintenance history is in another. The field team checks a third screen, then calls the control room. By the time anyone has the full picture, forty minutes have passed.
-            </p>
-            <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-700);">
-              This isn't a failure of equipment or people. It's a failure of visibility. Your operation runs on dozens of disconnected systems, each speaking its own protocol, each showing its own slice of reality. Operators toggle between screens. Engineers build manual workarounds. And when something goes wrong, the response is reactive, fragmented, and slow.
-            </p>
-            <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
-              Meanwhile, the operators who know how to read the signals — who know that a 3% pressure drop on that segment means something different in rainy season — are retiring. Their knowledge lives in their heads, not in your systems. Every month, your operation gets harder to run.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       4. DATA SOVEREIGNTY — Pattern A (Grid Section)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: var(--color-structure);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Sovereignty</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
-            Your<br />Data<br />Your Control
-          </h2>
-          <!-- Card grid -->
-          <div class="mt-12 grid md:grid-cols-3 fade-up" style="border-top: 1px solid var(--color-structure); border-left: 1px solid var(--color-structure);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Edge-First Architecture</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Local processing at every site. Data is analyzed where it's generated — with or without cloud connectivity.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Flexible Deployment</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">On-premise, private cloud, hybrid, or air-gapped. Adapts to your security and regulatory requirements.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Open Formats</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Open APIs and standard formats. Your data is yours — always exportable, always accessible.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       5. THE PLATFORM — Pattern B (Palantir Vertical List)
+       2. INDUSTRIES — Palantir-style vertical list
        ═══════════════════════════════════════════════════════════════ -->
   <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-6xl">
-      <!-- Editorial intro -->
-      <p class="font-sans text-2xl lg:text-4xl font-light leading-snug max-w-4xl fade-up" style="color: var(--color-neutral-800);">
-        Three tiers of progressive value — start with visibility, grow to operations, scale to intelligence. Built for the infrastructure reality of <span style="color: var(--color-forest);">Latin America</span>.
-      </p>
-
-      <!-- Sub-heading -->
-      <h2 class="font-display text-xl font-bold mt-16 mb-8" style="color: var(--color-forest);">
-        Our Platform
-      </h2>
-
-      <!-- Connect — Visibility Tier -->
-      <a href="/platform/connect" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">See everything in real time. 8,000+ integrations from 1,000+ vendors. One operational picture instead of fifteen screens.</p>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Connect</span>
-        </div>
-      </a>
-
-      <!-- Operate — Operations Tier -->
-      <a href="/platform/operate" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Understand why and respond automatically. Predictive intelligence, automated root cause analysis, and AI decision support.</p>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Operate</span>
-        </div>
-      </a>
-
-      <!-- Command — Intelligence Tier -->
-      <a href="/platform/command" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Orchestrate the entire operation. End-to-end process orchestration, resource-aware scheduling, and federated command across sites.</p>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Command</span>
-        </div>
-      </a>
-
-      <!-- Compound value story -->
-      <p class="mt-12 font-sans text-base leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-        Start with Visibility — see everything your infrastructure is telling you. As your operation matures, grow into Operations — automated response, predictive intelligence, AI decision support. When you're ready, scale to Intelligence — and the entire operation runs as one coordinated system. No rip-and-replace. Value in weeks, not quarters.
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       6. WHY QUATRO — Pattern A (Grid Section, Dark)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative px-6 overflow-hidden" style="border-top: 1px solid var(--color-structure);">
-    <!-- Background image -->
-    <div class="absolute inset-0">
-      <img src="/images/bg.png" alt="" class="h-full w-full object-cover" />
-      <div class="absolute inset-0" style="background: rgba(0,0,0,0.8);"></div>
-    </div>
-    <div class="relative z-10 mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: rgba(255,255,255,0.1);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Why Quatro</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95] text-white fade-up">
-            Regional<br />By Design<br />Yours to Own
-          </h2>
-          <!-- Card grid — 2 rows of 3 -->
-          <div class="mt-12 grid md:grid-cols-3 fade-up" style="border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.1);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">01</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Regional Presence</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Engineering and support teams in the region. Implementation with local context.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">02</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Data Sovereignty</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Your operational data stays in your country. Compliant with local regulations.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">03</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Flexible Investment</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">CAPEX, OPEX, or hybrid models. Local currency billing where possible.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">04</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Built for Your Infrastructure</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Works with intermittent connectivity, legacy equipment, and real-world conditions.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">05</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Integrates with Existing Systems</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Don't replace your SCADA. Quatro integrates on top of what you already have.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">06</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Support in Your Language</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Documentation, UI, training, and technical support in Spanish and Portuguese.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       8. INDUSTRIES — Pattern B (Palantir Vertical List)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <!-- Editorial intro -->
-      <p class="font-sans text-2xl lg:text-4xl font-light leading-snug max-w-4xl fade-up" style="color: var(--color-neutral-800);">
-        Operational intelligence for the industries that power <span style="color: var(--color-forest);">critical infrastructure</span> — from the wellhead to the last mile.
-      </p>
-
-
-      <!-- Sub-heading -->
-      <h2 class="font-display text-xl font-bold mt-16 mb-8" style="color: var(--color-forest);">
-        Industries We Serve
+      <!-- Editorial intro — large type, frames the platform before listing industries -->
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.15] tracking-tight fade-up" style="color: var(--color-neutral-800);">
+        Operational intelligence for the industries that keep communities <span style="color: var(--color-forest);">connected, powered, and safe</span>.
       </h2>
 
       <!-- Energy -->
-      <a href="/industries/energy" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
+      <a href="/industries/energy" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up mt-16" style="border-top: 1px solid var(--color-structure);">
         <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Pipeline integrity, grid operations, production optimization, and emissions compliance — from wellhead to meter.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.1</span>
+          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Overlay modernization for grid, pipeline, and production operations. Modern analytics on legacy SCADA — months, not years.</p>
         </div>
         <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Energy</span>
+          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Energy</span>
         </div>
       </a>
 
-      <!-- Defense & Government -->
-      <a href="/industries/defense" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
+      <!-- National Security -->
+      <a href="/industries/national-security" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
         <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Multi-domain operational awareness, base protection, and mission logistics — any classification, any environment.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.2</span>
+          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Unified command across physical, cyber, and intelligence domains. Sovereign deployment. Air-gapped capable.</p>
         </div>
         <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Defense</span>
+          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">National Security</span>
         </div>
       </a>
 
-      <!-- Industrial -->
-      <a href="/industries/industrial" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
+      <!-- Networks -->
+      <a href="/industries/networks" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
         <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Predictive maintenance, OEE optimization, and cross-domain plant intelligence — from process line to enterprise.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.3</span>
+          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" /></svg>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Unified operations from ground to orbit. Terrestrial, satellite, and hybrid connectivity in one intelligence network.</p>
         </div>
         <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Industrial</span>
+          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Networks</span>
         </div>
       </a>
 
-      <!-- Infrastructure & Telecom -->
-      <a href="/industries/infrastructure" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
+      <!-- Critical Infrastructure -->
+      <a href="/industries/critical-infrastructure" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
         <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Unified NOC operations, fleet intelligence, and smart facility management — any vendor, any site.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.4</span>
+          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5z" /></svg>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Intelligence for the systems cities depend on — water, transportation, municipal operations, and the built environment.</p>
         </div>
         <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Infrastructure</span>
+          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Critical Infrastructure</span>
         </div>
       </a>
 
-      <!-- Smart Cities -->
-      <a href="/industries/cities" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
+      <!-- Finance -->
+      <a href="/industries/finance" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
         <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Waste management, water systems, public safety, and civic infrastructure — turning data into governance action.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.5</span>
+          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Intelligence products that unify the 15–30 systems your bank already operates. Production-ready in weeks.</p>
         </div>
         <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Smart Cities</span>
+          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Finance</span>
         </div>
       </a>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       11. FINAL CTA — Dithering Card
+       3. THE NETWORK — Utility-framing: connect to intelligence already built
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 px-6" style="background: var(--color-neutral-50, #fafafa); border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+
+      <!-- Editorial lead -->
+      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-8 fade-up" style="color: var(--color-forest);">The Network</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.15] tracking-tight fade-up" style="color: var(--color-neutral-800);">
+        One network. <span style="color: var(--color-neutral-400);">Complete intelligence.</span>
+      </h2>
+
+      <p class="mt-8 font-sans text-lg leading-relaxed max-w-3xl fade-up" style="color: var(--color-neutral-600);">
+        Most platforms connect your systems. Some analyze your data. This network does both — simultaneously — because operational intelligence without business context is just monitoring, and business intelligence without operational data is just reporting.
+      </p>
+
+      <!-- Unified SVG Connection Diagram — single network, two properties -->
+      <div class="mt-16 lg:mt-20 fade-up">
+        <svg viewBox="0 0 960 240" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-4xl mx-auto" role="img" aria-label="Your systems connect to the Quatro intelligence network, which provides both operational intelligence and enterprise meaning, producing industry outcomes">
+
+          <!-- Left node: Your Systems -->
+          <rect x="16" y="40" width="180" height="110" rx="12" stroke="#CBD5E1" stroke-width="1.5" fill="white"/>
+          <text x="106" y="72" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" letter-spacing="0.1em" fill="#94A3B8">YOUR SYSTEMS</text>
+          <text x="106" y="96" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#64748B">SCADA · IoT · PLCs</text>
+          <text x="106" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#64748B">ERP · CRM · Billing</text>
+          <text x="106" y="132" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#64748B">Cloud · Edge · On-prem</text>
+
+          <!-- Connection line left -->
+          <line x1="196" y1="95" x2="278" y2="95" stroke="#0f4c3a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
+          <polygon points="274,90 284,95 274,100" fill="#0f4c3a" opacity="0.4"/>
+
+          <!-- Center node: The Intelligence Network (unified) -->
+          <rect x="284" y="10" width="392" height="170" rx="16" stroke="#0f4c3a" stroke-width="2" fill="#0f4c3a" fill-opacity="0.04"/>
+          <text x="480" y="38" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" letter-spacing="0.1em" fill="#0f4c3a">THE INTELLIGENCE NETWORK</text>
+          <line x1="310" y1="50" x2="650" y2="50" stroke="#0f4c3a" stroke-width="0.5" opacity="0.12"/>
+
+          <!-- Left property: Operational Intelligence -->
+          <text x="390" y="72" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7.5" letter-spacing="0.08em" fill="#0f4c3a" opacity="0.5">OPERATIONAL INTELLIGENCE</text>
+          <circle cx="310" cy="90" r="2.5" fill="#0f4c3a" opacity="0.3"/>
+          <text x="320" y="94" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">9,000+ native integrations</text>
+          <circle cx="310" cy="110" r="2.5" fill="#0f4c3a" opacity="0.3"/>
+          <text x="320" y="114" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Pre-built operational workflows</text>
+          <circle cx="310" cy="130" r="2.5" fill="#0f4c3a" opacity="0.3"/>
+          <text x="320" y="134" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Intelligent alarming</text>
+
+          <!-- Divider line -->
+          <line x1="480" y1="64" x2="480" y2="168" stroke="#0f4c3a" stroke-width="0.5" opacity="0.1"/>
+
+          <!-- Right property: Enterprise Meaning -->
+          <text x="576" y="72" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7.5" letter-spacing="0.08em" fill="#0f4c3a" opacity="0.5">ENTERPRISE MEANING</text>
+          <circle cx="500" cy="90" r="2.5" fill="#0f4c3a" opacity="0.3"/>
+          <text x="510" y="94" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Governed definitions</text>
+          <circle cx="500" cy="110" r="2.5" fill="#0f4c3a" opacity="0.3"/>
+          <text x="510" y="114" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Cross-domain reasoning</text>
+          <circle cx="500" cy="130" r="2.5" fill="#0f4c3a" opacity="0.3"/>
+          <text x="510" y="134" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Financial + operational context</text>
+
+          <!-- Compound value line -->
+          <text x="480" y="162" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7" letter-spacing="0.06em" fill="#0f4c3a" opacity="0.3">EACH SERVICE CONNECTS TO EVERY OTHER THROUGH A SHARED FOUNDATION</text>
+
+          <!-- Status indicator -->
+          <circle cx="648" cy="34" r="4" fill="#0f4c3a" opacity="0.5"/>
+
+          <!-- Connection line right -->
+          <line x1="676" y1="95" x2="758" y2="95" stroke="#0f4c3a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
+          <polygon points="754,90 764,95 754,100" fill="#0f4c3a" opacity="0.4"/>
+
+          <!-- Right node: Industry Outcomes -->
+          <rect x="764" y="40" width="180" height="110" rx="12" stroke="#0f4c3a" stroke-width="1.5" fill="#0f4c3a" fill-opacity="0.06"/>
+          <text x="854" y="72" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" letter-spacing="0.1em" fill="#0f4c3a">OUTCOMES</text>
+          <text x="854" y="96" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#0f4c3a" opacity="0.8">Fewer false alarms</text>
+          <text x="854" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#0f4c3a" opacity="0.8">Faster incident response</text>
+          <text x="854" y="132" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#0f4c3a" opacity="0.8">One intelligence picture</text>
+
+        </svg>
+      </div>
+
+      <!-- Fused narrative — single description, not two columns -->
+      <div class="mt-14 lg:mt-16 fade-up" style="border-top: 1px solid var(--color-structure); padding-top: 2rem;">
+        <p class="font-sans text-base leading-relaxed max-w-3xl" style="color: var(--color-neutral-600);">
+          The network connects to your existing infrastructure through 9,000+ native integrations. It ingests operational signals in real time. And it interprets every signal through a governed model built for your industry — so when an anomaly fires, your team doesn't just see the alert. They see which asset is affected, which customers are impacted, which SLAs are at risk, and what to do about it. Built for the systems and vendors your operation already depends on.
+        </p>
+        <p class="mt-4 font-sans text-sm" style="color: var(--color-neutral-400);">
+          Each intelligence service connects to every other through a shared foundation — so the more you connect, the more you see.
+        </p>
+      </div>
+
+      <!-- Proof metrics strip -->
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 fade-up" style="border-top: 1px solid var(--color-structure); padding-top: 1.5rem;">
+        <div>
+          <span class="font-display text-2xl lg:text-3xl font-light" style="color: var(--color-neutral-800);">9,000+</span>
+          <p class="font-sans text-xs mt-1" style="color: var(--color-neutral-500);">Native integrations</p>
+        </div>
+        <div>
+          <span class="font-display text-2xl lg:text-3xl font-light" style="color: var(--color-neutral-800);">1,000+</span>
+          <p class="font-sans text-xs mt-1" style="color: var(--color-neutral-500);">Vendors supported</p>
+        </div>
+        <div>
+          <span class="font-display text-2xl lg:text-3xl font-light" style="color: var(--color-neutral-800);">125+</span>
+          <p class="font-sans text-xs mt-1" style="color: var(--color-neutral-500);">Countries deployed</p>
+        </div>
+        <div>
+          <span class="font-display text-2xl lg:text-3xl font-light" style="color: var(--color-neutral-800);">Weeks</span>
+          <p class="font-sans text-xs mt-1" style="color: var(--color-neutral-500);">To production</p>
+        </div>
+      </div>
+
+      <!-- Anonymized proof stories -->
+      <div class="mt-10 grid sm:grid-cols-3 gap-6 fade-up" style="border-top: 1px solid var(--color-structure); padding-top: 1.5rem;">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-forest);">National Communications Provider</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">98% of infrastructure unified on one network. 5,000+ devices. Siloed tools and manual workflows replaced with real-time unified operations.</p>
+        </div>
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-forest);">National Infrastructure Operator</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">14,000 elements. 7,000 services. Equipment provisioning reduced from months to weeks. Critical event procedures from months of development to hours.</p>
+        </div>
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-forest);">National Broadband Operator</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">4 million devices monitored. Half a billion KPIs tracked continuously. 20,000 fewer customer site visits per year through proactive intelligence.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       4. THE PLAN — StoryBrand 3-step buyer plan
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-16 lg:py-24 px-6" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-8 fade-up" style="color: var(--color-forest);">How It Works</p>
+
+      <div class="grid sm:grid-cols-3 gap-8 lg:gap-12 fade-up">
+        <!-- Step 1 -->
+        <div>
+          <span class="font-display text-4xl lg:text-5xl font-light" style="color: var(--color-forest); opacity: 0.3;">01</span>
+          <h3 class="mt-3 font-sans text-lg font-medium" style="color: var(--color-neutral-800);">Connect</h3>
+          <p class="mt-2 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+            Pick the system that costs you the most to operate. We connect it to the intelligence network — your infrastructure, your data, your control.
+          </p>
+        </div>
+        <!-- Step 2 -->
+        <div>
+          <span class="font-display text-4xl lg:text-5xl font-light" style="color: var(--color-forest); opacity: 0.3;">02</span>
+          <h3 class="mt-3 font-sans text-lg font-medium" style="color: var(--color-neutral-800);">Prove</h3>
+          <p class="mt-2 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+            Four weeks. Measurable results on your stack before you commit. The proof of value is credited toward your contract.
+          </p>
+        </div>
+        <!-- Step 3 -->
+        <div>
+          <span class="font-display text-4xl lg:text-5xl font-light" style="color: var(--color-forest); opacity: 0.3;">03</span>
+          <h3 class="mt-3 font-sans text-lg font-medium" style="color: var(--color-neutral-800);">Expand</h3>
+          <p class="mt-2 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+            Each new intelligence service reveals cross-domain capabilities no single service could produce alone. The network gets smarter as you connect more.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       5. DARK EDITORIAL BRIDGE — Human-first framing + empathy + failure avoidance
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative px-6 overflow-hidden" data-editorial style="border-top: 1px solid var(--color-structure); background: #0a0a0a;">
+    <!-- Canvas dithering overlay -->
+    <canvas id="editorial-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-70"></canvas>
+    <!-- Subtle vignette for text readability -->
+    <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.5) 0%, transparent 70%);"></div>
+    <!-- Film grain -->
+    <svg style="position:absolute;width:0;height:0;">
+      <filter id="editorial-grain-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+    </svg>
+    <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.06]" style="filter: url(#editorial-grain-filter);"></div>
+    <div class="relative z-10 mx-auto max-w-6xl py-20 lg:py-28">
+      <p class="font-mono text-xs uppercase tracking-[0.1em] text-white/40 mb-8 fade-up">Why Quatro</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.2] tracking-tight text-white fade-up">
+        Three operators protect 133,000&nbsp;km² of marine reserve. A grid engineer sees a cascade failure forty minutes before four million people lose power.
+      </h2>
+      <p class="mt-8 font-sans text-lg leading-relaxed max-w-3xl text-white/50 fade-up">
+        Shift handoffs. Intermittent connectivity. Legacy equipment. Decisions that can't wait for a dashboard to load. We built the network for the conditions your teams actually operate in — not the conditions a demo assumes.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       6. INSIGHTS — Tailwind UI Bento Grid
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <div class="flex items-end justify-between mb-3">
+        <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">Insights</p>
+        <a
+          href="/insights"
+          class="hidden sm:inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] transition-colors duration-300 hover:text-[var(--color-forest)]"
+          style="color: var(--color-neutral-500);"
+        >
+          All articles
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+      </div>
+      <p class="max-w-lg font-sans text-3xl lg:text-4xl font-light tracking-tight" style="color: var(--color-neutral-800);">
+        Latest from Quatro
+      </p>
+
+      <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2 fade-up">
+
+        {insights[0] && (
+          <div class="relative lg:col-span-3">
+            <div class="absolute inset-0 rounded-lg bg-white max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]"></div>
+            <a href={`/insights/${insights[0].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
+              {insights[0].data.heroImage && <img alt="" src={insights[0].data.heroImage} class="h-80 object-cover object-center transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
+              <div class="p-10 pt-4">
+                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[0].data.category.replace('-', ' ')}</span>
+                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                  {insights[0].data.title}
+                </h3>
+                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                  {insights[0].data.excerpt.slice(0, 120)}...
+                </p>
+              </div>
+            </a>
+            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" style="outline: 1px solid var(--color-structure);"></div>
+          </div>
+        )}
+
+        {insights[1] && (
+          <div class="relative lg:col-span-3">
+            <div class="absolute inset-0 rounded-lg bg-white lg:rounded-tr-[2rem]"></div>
+            <a href={`/insights/${insights[1].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)] lg:rounded-tr-[calc(2rem+1px)]">
+              {insights[1].data.heroImage && <img alt="" src={insights[1].data.heroImage} class="h-80 object-cover object-left lg:object-right transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
+              <div class="p-10 pt-4">
+                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[1].data.category.replace('-', ' ')}</span>
+                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                  {insights[1].data.title}
+                </h3>
+                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                  {insights[1].data.excerpt.slice(0, 120)}...
+                </p>
+              </div>
+            </a>
+            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm lg:rounded-tr-[2rem]" style="outline: 1px solid var(--color-structure);"></div>
+          </div>
+        )}
+
+        {insights[2] && (
+          <div class="relative lg:col-span-2">
+            <div class="absolute inset-0 rounded-lg bg-white lg:rounded-bl-[2rem]"></div>
+            <a href={`/insights/${insights[2].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)] lg:rounded-bl-[calc(2rem+1px)]">
+              {insights[2].data.heroImage && <img alt="" src={insights[2].data.heroImage} class="h-80 object-cover object-center transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
+              <div class="p-10 pt-4">
+                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[2].data.category.replace('-', ' ')}</span>
+                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                  {insights[2].data.title}
+                </h3>
+                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                  {insights[2].data.excerpt.slice(0, 100)}...
+                </p>
+              </div>
+            </a>
+            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm lg:rounded-bl-[2rem]" style="outline: 1px solid var(--color-structure);"></div>
+          </div>
+        )}
+
+        {insights[3] && (
+          <div class="relative lg:col-span-2">
+            <div class="absolute inset-0 rounded-lg bg-white"></div>
+            <a href={`/insights/${insights[3].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)]">
+              {insights[3].data.heroImage && <img alt="" src={insights[3].data.heroImage} class="h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
+              <div class="p-10 pt-4">
+                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[3].data.category.replace('-', ' ')}</span>
+                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                  {insights[3].data.title}
+                </h3>
+                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                  {insights[3].data.excerpt.slice(0, 100)}...
+                </p>
+              </div>
+            </a>
+            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm" style="outline: 1px solid var(--color-structure);"></div>
+          </div>
+        )}
+
+        {insights[4] && (
+          <div class="relative lg:col-span-2">
+            <div class="absolute inset-0 rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]"></div>
+            <a href={`/insights/${insights[4].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
+              {insights[4].data.heroImage && <img alt="" src={insights[4].data.heroImage} class="h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
+              <div class="p-10 pt-4">
+                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[4].data.category.replace('-', ' ')}</span>
+                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                  {insights[4].data.title}
+                </h3>
+                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                  {insights[4].data.excerpt.slice(0, 100)}...
+                </p>
+              </div>
+            </a>
+            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" style="outline: 1px solid var(--color-structure);"></div>
+          </div>
+        )}
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       7. FINAL CTA — Dithering Card
        ═══════════════════════════════════════════════════════════════ -->
   <section class="py-12 lg:py-20 px-4 md:px-6" style="border-top: 1px solid var(--color-structure);">
     <div class="w-full max-w-7xl mx-auto relative" data-cta-card>
-      <div class="relative overflow-hidden rounded-[32px] lg:rounded-[48px] min-h-[550px] md:min-h-[600px] flex flex-col items-center justify-center" style="border: 1px solid var(--color-structure); background: #0a0a0a;">
+      <div class="relative overflow-hidden rounded-[32px] lg:rounded-[48px] min-h-[550px] md:min-h-[600px] flex flex-col items-center justify-center" style="border: 1px solid rgba(15,76,58,0.4); background: #0a0a0a;">
 
         <!-- Canvas dithering overlay -->
         <canvas id="cta-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-60"></canvas>
@@ -411,28 +475,19 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
 
         <!-- Content -->
         <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 lg:py-24 max-w-3xl mx-auto fade-up">
-          <!-- Status badge -->
-          <div class="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full mb-10" style="border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05);">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style="background-color: var(--color-forest);"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2" style="background-color: var(--color-forest);"></span>
-            </span>
-            <span class="font-mono text-[11px] uppercase tracking-[0.15em] text-white/60">Operational Intelligence</span>
-          </div>
-
           <!-- Headline -->
           <h2 class="font-sans text-3xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight">
-            See everything.<br/>
-            <span class="text-white/50">Act before it matters.</span>
+            Connect one system.<br/>
+            <span class="text-white/50">Four weeks. Your infrastructure.</span>
           </h2>
 
           <!-- Description -->
           <p class="mt-6 font-sans text-base lg:text-lg text-white/50 leading-relaxed max-w-xl">
-            Pick one operational challenge. We deploy on your systems in 4 weeks. You see the value before you commit.
+            Pick the system that costs you the most to operate. We connect it to the network, deploy on your stack, and prove the value before you commit.
           </p>
 
-          <!-- CTAs -->
-          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <!-- Single CTA -->
+          <div class="mt-10 flex flex-col items-center gap-3">
             <a
               href="/contact/demo"
               class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105"
@@ -441,47 +496,23 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
               Schedule an Assessment
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <a
-              href="/contact/sales"
-              class="font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full text-white/80 transition-all duration-300 ease-out hover:bg-white/10 hover:scale-105"
-              style="border: 1px solid rgba(255,255,255,0.15);"
-            >
-              Talk to an Engineer
-            </a>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/35">4-week proof of value. Credited toward contract.</p>
           </div>
-
-          <!-- Microcopy -->
-          <p class="mt-5 font-mono text-xs text-white/30">
-            4-week proof of value &middot; Credited toward annual contract
-          </p>
         </div>
 
-        <!-- Trust bar -->
+        <!-- Sovereignty signal -->
         <div class="relative z-10 w-full px-8 pb-8">
-          <div class="pt-6 flex flex-wrap items-center justify-center gap-8" style="border-top: 1px solid rgba(255,255,255,0.08);">
-            <a href="/resources/documentation" class="font-mono text-[11px] uppercase tracking-[0.15em] text-white/30 hover:text-white/60 transition-colors duration-300">Documentation</a>
-            <a href="/platform" class="font-mono text-[11px] uppercase tracking-[0.15em] text-white/30 hover:text-white/60 transition-colors duration-300">API</a>
-            <a href="/legal/security" class="font-mono text-[11px] uppercase tracking-[0.15em] text-white/30 hover:text-white/60 transition-colors duration-300">Security</a>
+          <div class="pt-6 flex items-center justify-center" style="border-top: 1px solid rgba(255,255,255,0.08);">
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/30 text-center">Deployed on your infrastructure.&nbsp; Air-gapped capable.&nbsp; Your data never leaves your control.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Dithering shader script -->
+  <!-- Dithering shader script — drives both hero and CTA canvases -->
   <script>
     (() => {
-      const canvas = document.getElementById('cta-dither-canvas') as HTMLCanvasElement | null;
-      if (!canvas) return;
-
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-
-      const card = canvas.closest('[data-cta-card]') as HTMLElement;
-      let isHovered = false;
-      let animId: number;
-      let startTime = performance.now();
-
       // 4x4 Bayer dithering matrix (normalized 0-1)
       const bayer4x4 = [
         [ 0/16,  8/16,  2/16, 10/16],
@@ -490,150 +521,185 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
         [15/16,  7/16, 13/16,  5/16]
       ];
 
-      // Dither pixel block size (larger = more visible retro pattern)
-      const pixelSize = 3;
-
-      // Load the background image
-      const bgImg = new Image();
-      bgImg.crossOrigin = 'anonymous';
-      bgImg.src = '/images/cta.png';
-
-      // Offscreen canvas for sampling the image
-      const offscreen = document.createElement('canvas');
-      const offCtx = offscreen.getContext('2d')!;
-      let imgLoaded = false;
-
-      bgImg.onload = () => {
-        imgLoaded = true;
-      };
-
-      function resize() {
-        const rect = canvas!.getBoundingClientRect();
-        // Use 1x resolution so dither pixels are clearly visible
-        canvas!.width = rect.width;
-        canvas!.height = rect.height;
+      interface DitherConfig {
+        canvasId: string;
+        hoverSelector: string;
+        imageSrc: string;
+        pixelSize: number;
+        baseSpeed: number;
+        hoverSpeed: number;
+        greenBlend: number; // 0-1, how much forest green vs source image color
       }
 
-      function render(time: number) {
-        if (!ctx || !canvas) return;
-        const w = canvas.width;
-        const h = canvas.height;
-        if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
+      function initDither(config: DitherConfig) {
+        const canvas = document.getElementById(config.canvasId) as HTMLCanvasElement | null;
+        if (!canvas) return;
 
-        const elapsed = (time - startTime) / 1000;
-        const speed = isHovered ? 0.5 : 0.12;
-        const t = elapsed * speed;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
 
-        // Sample the background image at canvas resolution
-        let srcPixels: Uint8ClampedArray | null = null;
-        if (imgLoaded) {
-          offscreen.width = w;
-          offscreen.height = h;
-          offCtx.drawImage(bgImg, 0, 0, w, h);
-          srcPixels = offCtx.getImageData(0, 0, w, h).data;
+        const card = canvas.closest(config.hoverSelector) as HTMLElement;
+        let isHovered = false;
+        let animId: number;
+        let startTime = performance.now();
+        const pixelSize = config.pixelSize;
+
+        const bgImg = new Image();
+        bgImg.crossOrigin = 'anonymous';
+        bgImg.src = config.imageSrc;
+
+        const offscreen = document.createElement('canvas');
+        const offCtx = offscreen.getContext('2d')!;
+        let imgLoaded = false;
+
+        bgImg.onload = () => { imgLoaded = true; };
+
+        function resize() {
+          const rect = canvas!.getBoundingClientRect();
+          canvas!.width = rect.width;
+          canvas!.height = rect.height;
         }
 
-        const imageData = ctx.createImageData(w, h);
-        const data = imageData.data;
+        function render(time: number) {
+          if (!ctx || !canvas) return;
+          const w = canvas.width;
+          const h = canvas.height;
+          if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
 
-        const cols = Math.ceil(w / pixelSize);
-        const rows = Math.ceil(h / pixelSize);
+          const elapsed = (time - startTime) / 1000;
+          const speed = isHovered ? config.hoverSpeed : config.baseSpeed;
+          const t = elapsed * speed;
 
-        for (let row = 0; row < rows; row++) {
-          for (let col = 0; col < cols; col++) {
-            // Center of this dither cell in pixel coords
-            const centerX = col * pixelSize + (pixelSize >> 1);
-            const centerY = row * pixelSize + (pixelSize >> 1);
+          let srcPixels: Uint8ClampedArray | null = null;
+          if (imgLoaded) {
+            offscreen.width = w;
+            offscreen.height = h;
+            offCtx.drawImage(bgImg, 0, 0, w, h);
+            srcPixels = offCtx.getImageData(0, 0, w, h).data;
+          }
 
-            // Sample image brightness at this point
-            let imgBrightness = 0.3; // fallback if image not loaded
-            if (srcPixels && centerX < w && centerY < h) {
-              const sIdx = (centerY * w + centerX) * 4;
-              // Luminance from RGB
-              imgBrightness = (srcPixels[sIdx] * 0.299 + srcPixels[sIdx+1] * 0.587 + srcPixels[sIdx+2] * 0.114) / 255;
-            }
+          const imageData = ctx.createImageData(w, h);
+          const data = imageData.data;
 
-            // Normalized position
-            const cx = col / cols;
-            const cy = row / rows;
+          const cols = Math.ceil(w / pixelSize);
+          const rows = Math.ceil(h / pixelSize);
 
-            // Animated warp displacement
-            const warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
-            const warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
+          for (let row = 0; row < rows; row++) {
+            for (let col = 0; col < cols; col++) {
+              const centerX = col * pixelSize + (pixelSize >> 1);
+              const centerY = row * pixelSize + (pixelSize >> 1);
 
-            // Warped gradient overlay — adds flowing energy to the image dithering
-            const wx = cx + warpX;
-            const wy = cy + warpY;
-            const d1 = Math.sqrt((wx - 0.5) ** 2 + (wy - 0.5) ** 2);
-            const warpIntensity = 0.3 + 0.25 * Math.sin(d1 * 8.0 - t * 2.0) + 0.15 * Math.cos((wx + wy) * 6.0 + t);
-
-            // Combine: image brightness drives the base, warp adds animated variation
-            let intensity = imgBrightness * 0.7 + warpIntensity * 0.5;
-            intensity = Math.max(0, Math.min(1, intensity));
-
-            // Apply 4x4 ordered dithering threshold
-            const threshold = bayer4x4[row % 4][col % 4];
-            const on = intensity > threshold;
-
-            // Color: tint toward forest green, preserving some image tone
-            let r: number, g: number, b: number, a: number;
-            if (on) {
-              // Blend between image color and forest green based on warp strength
+              let imgBrightness = 0.3;
               if (srcPixels && centerX < w && centerY < h) {
                 const sIdx = (centerY * w + centerX) * 4;
-                const blend = 0.5 + 0.3 * warpIntensity; // more warp = more green
-                r = Math.round(srcPixels[sIdx]     * (1 - blend) + 15  * blend);
-                g = Math.round(srcPixels[sIdx + 1] * (1 - blend) + 76  * blend);
-                b = Math.round(srcPixels[sIdx + 2] * (1 - blend) + 58  * blend);
-              } else {
-                r = 15; g = 76; b = 58;
+                imgBrightness = (srcPixels[sIdx] * 0.299 + srcPixels[sIdx+1] * 0.587 + srcPixels[sIdx+2] * 0.114) / 255;
               }
-              a = Math.round(intensity * 220 + 35);
-            } else {
-              r = 0; g = 0; b = 0; a = 0;
-            }
 
-            // Fill the pixel block
-            for (let py = 0; py < pixelSize; py++) {
-              for (let px = 0; px < pixelSize; px++) {
-                const x = col * pixelSize + px;
-                const y = row * pixelSize + py;
-                if (x >= w || y >= h) continue;
-                const idx = (y * w + x) * 4;
-                data[idx]     = r;
-                data[idx + 1] = g;
-                data[idx + 2] = b;
-                data[idx + 3] = a;
+              const cx = col / cols;
+              const cy = row / rows;
+
+              const warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
+              const warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
+
+              const wx = cx + warpX;
+              const wy = cy + warpY;
+              const d1 = Math.sqrt((wx - 0.5) ** 2 + (wy - 0.5) ** 2);
+              const warpIntensity = 0.3 + 0.25 * Math.sin(d1 * 8.0 - t * 2.0) + 0.15 * Math.cos((wx + wy) * 6.0 + t);
+
+              let intensity = imgBrightness * 0.7 + warpIntensity * 0.5;
+              intensity = Math.max(0, Math.min(1, intensity));
+
+              const threshold = bayer4x4[row % 4][col % 4];
+              const on = intensity > threshold;
+
+              let r: number, g: number, b: number, a: number;
+              if (on) {
+                if (srcPixels && centerX < w && centerY < h) {
+                  const sIdx = (centerY * w + centerX) * 4;
+                  const blend = config.greenBlend + (1 - config.greenBlend) * 0.5 * warpIntensity;
+                  r = Math.round(srcPixels[sIdx]     * (1 - blend) + 15  * blend);
+                  g = Math.round(srcPixels[sIdx + 1] * (1 - blend) + 76  * blend);
+                  b = Math.round(srcPixels[sIdx + 2] * (1 - blend) + 58  * blend);
+                } else {
+                  r = 15; g = 76; b = 58;
+                }
+                a = Math.round(intensity * 220 + 35);
+              } else {
+                r = 0; g = 0; b = 0; a = 0;
+              }
+
+              for (let py = 0; py < pixelSize; py++) {
+                for (let px = 0; px < pixelSize; px++) {
+                  const x = col * pixelSize + px;
+                  const y = row * pixelSize + py;
+                  if (x >= w || y >= h) continue;
+                  const idx = (y * w + x) * 4;
+                  data[idx]     = r;
+                  data[idx + 1] = g;
+                  data[idx + 2] = b;
+                  data[idx + 3] = a;
+                }
               }
             }
           }
+
+          ctx.putImageData(imageData, 0, 0);
+          animId = requestAnimationFrame(render);
         }
 
-        ctx.putImageData(imageData, 0, 0);
-        animId = requestAnimationFrame(render);
+        if (card) {
+          card.addEventListener('mouseenter', () => { isHovered = true; });
+          card.addEventListener('mouseleave', () => { isHovered = false; });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              resize();
+              startTime = performance.now();
+              animId = requestAnimationFrame(render);
+            } else {
+              cancelAnimationFrame(animId);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        window.addEventListener('resize', resize);
+        observer.observe(canvas);
       }
 
-      // Hover detection
-      if (card) {
-        card.addEventListener('mouseenter', () => { isHovered = true; });
-        card.addEventListener('mouseleave', () => { isHovered = false; });
-      }
+      // Hero dithering — heavy green tint, samples hero-bg.png
+      initDither({
+        canvasId: 'hero-dither-canvas',
+        hoverSelector: '[data-hero-card]',
+        imageSrc: '/images/hero-bg.png',
+        pixelSize: 3,
+        baseSpeed: 0.1,
+        hoverSpeed: 0.5,
+        greenBlend: 0.75,
+      });
 
-      // Intersection observer — only animate when visible
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            resize();
-            startTime = performance.now();
-            animId = requestAnimationFrame(render);
-          } else {
-            cancelAnimationFrame(animId);
-          }
-        });
-      }, { threshold: 0.1 });
+      // Editorial dithering — subtle, high green blend
+      initDither({
+        canvasId: 'editorial-dither-canvas',
+        hoverSelector: '[data-editorial]',
+        imageSrc: '/images/editorial-map-bg.png',
+        pixelSize: 3,
+        baseSpeed: 0.06,
+        hoverSpeed: 0.3,
+        greenBlend: 0.5,
+      });
 
-      window.addEventListener('resize', resize);
-      observer.observe(canvas);
+      // CTA dithering — moderate green, samples cta.png
+      initDither({
+        canvasId: 'cta-dither-canvas',
+        hoverSelector: '[data-cta-card]',
+        imageSrc: '/images/cta-connected-bg.png',
+        pixelSize: 3,
+        baseSpeed: 0.12,
+        hoverSpeed: 0.5,
+        greenBlend: 0.5,
+      });
     })();
   </script>
 

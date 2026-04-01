@@ -47,9 +47,9 @@ stats:
   - value: "25%"
     label: Maintenance cost reduction
 platformMapping:
-  connect: GPS, telematics, OBD-II data from all fleet vehicles
-  operate: Real-time fleet dashboards, route optimization, maintenance scheduling
-  command: Dynamic route assignment and maintenance dispatch commands
+  see: GPS, telematics, OBD-II data from all fleet vehicles
+  understand: Real-time fleet dashboards, route optimization, maintenance scheduling
+  orchestrate: Dynamic route assignment and maintenance dispatch commands
 proofPoint:
   industry: National Logistics
   headline: Major logistics operator saved $4.2M annually and improved on-time delivery to 95% across 2,500+ vehicles

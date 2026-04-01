@@ -45,7 +45,7 @@ The three operational domains serve as the "jobs" the buyer is hiring the platfo
 
 **Trust Bar (immediately below hero — non-negotiable per framework):**
 - 3 Operational Domains
-- 8,000+ Infrastructure Integrations
+- 9,000+ Infrastructure Integrations
 - 24–48hr Predictive Intelligence
 - Sovereign Deployment Ready
 
@@ -147,7 +147,7 @@ Quatro eliminates the gap. One platform connects every sensor, every node, and e
 **Dark section with background overlay.**
 
 ### Connect — Multi-Modal Sensing
-8,000+ ready-made integrations across port, airport, and highway infrastructure. AIS vessel tracking. CCTV and infrared monitoring. Traffic sensors. IoT berth monitors. RFID cargo tracking. Toll system feeds. The physical logistics network becomes a stream of machine-readable intelligence.
+9,000+ ready-made integrations across port, airport, and highway infrastructure. AIS vessel tracking. CCTV and infrared monitoring. Traffic sensors. IoT berth monitors. RFID cargo tracking. Toll system feeds. The physical logistics network becomes a stream of machine-readable intelligence.
 
 ### Operate — Intelligence Engine
 Secure multi-source data ingestion, cross-node data governance, real-time fusion, domain-trained predictive algorithms. Raw fragmented data from scattered sources transforms into a unified logistics intelligence picture.
@@ -225,7 +225,7 @@ When shipments cross international borders, the platform coordinates with partne
 | Metric | Value |
 |---|---|
 | Operational Domains | 3 (Ports, Airports, Corridors) |
-| Infrastructure Integrations | 8,000+ |
+| Infrastructure Integrations | 9,000+ |
 | Vendor Compatibility | 1,000+ |
 | Prediction Window | 24–48 hours |
 | Deployment Model | Sovereign — air-gapped capable |

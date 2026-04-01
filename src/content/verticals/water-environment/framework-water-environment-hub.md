@@ -44,7 +44,7 @@ The two named intelligence programs serve as the "jobs" the buyer is hiring the 
 
 **Trust Bar (immediately below hero — non-negotiable per framework):**
 - 1,000+ Vendor Integrations
-- 8,000+ Sensor Connectors
+- 9,000+ Sensor Connectors
 - Real-Time Leak Detection
 - Regulatory Compliance Automation
 - Sovereign, Air-Gapped Capable
@@ -231,7 +231,7 @@ Hydroelectric and thermoelectric systems depend on water availability, temperatu
 | Metric | Value |
 |---|---|
 | Vendor Integrations | 1,000+ |
-| Sensor Connectors | 8,000+ |
+| Sensor Connectors | 9,000+ |
 | Real-Time Leak Detection | Minutes |
 | SENAGUA Compliance | Automated |
 | MAE/MAATE Compliance | Automated |

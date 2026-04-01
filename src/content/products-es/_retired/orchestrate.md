@@ -1,13 +1,13 @@
 ---
-title: "Command"
+title: "Orchestrate"
 tagline: "Orqueste a Escala"
 heroImage: "/images/feature-command-center.png"
 description: "Quatro Command ofrece un centro de operaciones unificado con orquestación multidominio, respuesta ante amenazas y coordinación de flotas."
 order: 3
 hero:
-  eyebrow: "Quatro Command"
+  eyebrow: "Quatro Orchestrate"
   title: "Visibilidad Total. Control con Confianza."
-  description: "El centro de operaciones unificado que convierte cada dato de Connect y Operate en acción decisiva. Orquestación multidominio, respuesta ante amenazas y coordinación de flotas en una sola vista."
+  description: "El centro de operaciones unificado que convierte cada dato de See y Understand en acción decisiva. Orquestación multidominio, respuesta ante amenazas y coordinación de flotas en una sola vista."
   primaryCta:
     label: "Solicite una Evaluación"
     href: "/es/contact/demo"
@@ -62,10 +62,10 @@ capabilities:
     icon: "layers"
 deepDive:
   title: "Comando y Control a Escala Empresarial"
-  subtitle: "Desde respuesta ante amenazas hasta coordinación de flotas, Command le brinda las herramientas para orquestar acciones decisivas."
+  subtitle: "Desde respuesta ante amenazas hasta coordinación de flotas, Orchestrate le brinda las herramientas para orquestar acciones decisivas."
   sections:
     - title: "La Imagen Completa"
-      description: "Command integra los datos de Connect (datos) y Operate (analítica) en una vista operacional unificada. Vea todo lo que ocurre en sus operaciones en tiempo real."
+      description: "Orchestrate integra los datos de See (datos) y Understand (analítica) en una vista operacional unificada. Vea todo lo que ocurre en sus operaciones en tiempo real."
       icon: "layers"
     - title: "Diseñado para Operaciones Críticas"
       description: "Construido para las exigencias de centros de operaciones 24/7. Arquitectura redundante, capacidad offline e interfaces diseñadas para la toma de decisiones de alto impacto."

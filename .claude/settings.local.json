@@ -56,7 +56,12 @@
       "Bash(npx astro:*)",
       "mcp__Claude_Preview__preview_start",
       "Bash(rm package-lock.json)",
-      "Bash(docker run:*)"
+      "Bash(docker run:*)",
+      "Bash(BASE=\"/Users/dataos/Library/Mobile Documents/com~apple~CloudDocs/LMIQuatro/QuatroWebsite/src/content/industries\")",
+      "Bash(__NEW_LINE_3cb8694d00f30869__ for:*)",
+      "Bash(do)",
+      "Bash(sed -i '' '/^[[:space:]]*tier:/d' \"$BASE/$f\")",
+      "Bash(done)"
     ]
   }
 }

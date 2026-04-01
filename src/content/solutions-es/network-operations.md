@@ -18,7 +18,7 @@ stats:
     label: "Menos Falsas Alarmas"
   - value: "55%"
     label: "MTTR Más Rápido"
-  - value: "8,000+"
+  - value: "9,000+"
     label: "Conectores"
   - value: "900+"
     label: "Sitios Gestionados"
@@ -44,10 +44,6 @@ capabilities:
     description: "Pronostique fallas de equipos en sitios de torres y centrales correlacionando datos ambientales con métricas de salud de dispositivos."
   - name: "Operaciones de NOC Multi-Sitio"
     description: "Operaciones centralizadas o federadas en múltiples ubicaciones de NOC con acceso basado en roles y soporte follow-the-sun."
-platformMapping:
-  connect: "Más de 8,000 conectores para routers, switches, radios y transporte óptico. Soporte nativo de SNMP, NETCONF/YANG, TL1 y gRPC con normalización agnóstica de proveedores."
-  operate: "Inteligencia predictiva para detección de anomalías, planificación de capacidad y análisis de causa raíz. La correlación multidominio reduce el volumen de alarmas en un 80%."
-  command: "Playbooks automatizados de aprovisionamiento y remediación de fallas. Despacho inteligente que considera ubicación del técnico, certificación y tiempo de traslado."
 proofPoint:
   industry: "Infraestructura — Telecomunicaciones"
   headline: "Operaciones de Torres Multi-Sitio"

@@ -46,7 +46,7 @@ The four named solution areas serve as the "jobs" the buyer is hiring the platfo
 
 **Trust Bar (immediately below hero — non-negotiable per framework):**
 - 7,000+ Ground Segment Connectors
-- 8,000+ Integrations Across 1,000+ Vendors
+- 9,000+ Integrations Across 1,000+ Vendors
 - SatOps Teleport Technology of the Year 2026
 - 99.99% Platform Uptime
 - Air-Gapped & Sovereign Deployment
@@ -135,7 +135,7 @@ Quatro eliminates the gap. One platform connects every ground segment sensor, ev
 
 **What You Get:** Real-time transponder utilization and capacity optimization across all beams. SLA monitoring with breach prediction 24+ hours in advance. Automated billing correlation and revenue leakage detection. Pricing recommendations based on demand forecasting.
 
-**Link:** `/solutions/satellite-revenue-assurance`
+**Link:** `/solutions/revenue-assurance`
 
 **Label:** `COMMERCIAL INTELLIGENCE`
 
@@ -273,7 +273,7 @@ Quatro's approach to satellite operations differs fundamentally from point-solut
 | Metric | Value |
 |---|---|
 | Ground Segment Connectors | 7,000+ |
-| Integrations Across Vendors | 8,000+ across 1,000+ vendors |
+| Integrations Across Vendors | 9,000+ across 1,000+ vendors |
 | Teleport Technology Award | 2026 (Skyline DataMiner SatOps) |
 | Customer Reference | Orange (production deployment) |
 | Platform Uptime | 99.99% |
@@ -301,7 +301,7 @@ Quatro's approach to satellite operations differs fundamentally from point-solut
 | Compound value | Connected Solutions section with four cross-links showing interdependency | ✅ |
 | Delivery model | Visibility/Operations/Intelligence architecture, clear three-step | ✅ |
 | Technical language | Zero architecture jargon in hero; technical depth in delivery section only | ✅ |
-| Vendor-agnosticism | "8,000+ integrations across 1,000+ vendors" mentioned in hero and trust bar | ✅ |
+| Vendor-agnosticism | "9,000+ integrations across 1,000+ vendors" mentioned in hero and trust bar | ✅ |
 | Deployment flexibility | Sovereign and air-gapped deployment explicitly stated | ✅ |
 | Defense adjacency | Space domain awareness and defense capability chain established | ✅ |
 

@@ -1,10 +1,10 @@
 ---
-title: "Monitoreo de Activos"
+title: "Salud de Activos"
 tagline: "Prediga Fallas Antes de Que Ocurran"
-description: "Monitoreo de activos impulsado por IA que transforma las operaciones de reactivas a predictivas, reduciendo el tiempo inactivo no planificado hasta un 60% en toda su infraestructura."
+description: "Monitoreo de salud de activos impulsado por IA que transforma las operaciones de reactivas a predictivas, reduciendo el tiempo inactivo no planificado hasta un 60% en toda su infraestructura."
 order: 1
 hero:
-  eyebrow: "Monitoreo de Activos"
+  eyebrow: "Salud de Activos"
   title: "Controle Cada Activo. Prediga Cada Falla."
   description: "Visibilidad en tiempo real y mantenimiento predictivo impulsado por IA en todo su portafolio de activos. Deje de reaccionar ante fallas y comience a prevenirlas."
   primaryCta:
@@ -16,7 +16,7 @@ hero:
 stats:
   - value: "60%"
     label: "Reducción de Tiempo Inactivo"
-  - value: "8,000+"
+  - value: "9,000+"
     label: "Conectores"
   - value: "2-4 Semanas"
     label: "Alerta Anticipada"
@@ -44,10 +44,6 @@ capabilities:
     description: "Detección basada en ML que aprende las líneas base operacionales y detecta problemas que las alarmas de umbral único no capturan."
   - name: "Alertas Inteligentes"
     description: "Alertas contextuales con priorización por ML que reducen la fatiga de alarmas hasta un 80%."
-platformMapping:
-  connect: "Ingesta universal de datos desde más de 8,000 conectores incluyendo OPC-UA, Modbus, MQTT e historiadores legacy. Sin licenciamiento por tags significa que puede recopilar cada punto de datos sin penalidades de costo."
-  operate: "Motor analítico de IA pronostica degradación de equipos con 2-4 semanas de anticipación utilizando correlación de vibración, temperatura y múltiples sensores. Modelo operacional en tiempo real permite análisis de escenarios."
-  command: "Playbooks automatizados de mantenimiento generan órdenes de trabajo, despachan técnicos calificados y dan seguimiento a la resolución con trazabilidad completa."
 proofPoint:
   industry: "Energía — Petróleo y Gas"
   headline: "Optimización de Producción Upstream"

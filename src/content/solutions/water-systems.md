@@ -45,10 +45,6 @@ capabilities:
     description: "Real-time compliance against SENAGUA thresholds at each monitoring point. Out-of-spec events flagged with probable cause — detention time, treatment failure, or external contamination. Evidence trail for regulatory reporting."
   - name: "Automated SENAGUA Compliance Reporting"
     description: "Auto-generated monthly and quarterly reports tied to actual operational data matching SENAGUA regulatory requirements. No spreadsheets. No manual assembly. Real-time compliance verification with automated submission capability."
-platformMapping:
-  connect: "SCADA systems, pressure sensor networks, flow meters, water quality monitors, GIS systems for network topology. Integration across any manufacturer — Siemens, Schneider, ABB, or specialized water instruments. 1,000+ vendor integrations."
-  operate: "Real-time hydraulic modeling mirroring network topology. Machine-learning leak detection trained on historical pressure patterns. Predictive health models correlating pipe age, material, pressure, quality, and maintenance records. Compliance algorithms verifying real-time data against SENAGUA thresholds."
-  command: "Leak localization recommendations with automated dispatch. Predictive failure scoring with prioritized replacement scheduling. Automated compliance reporting for SENAGUA and municipal authorities. Governance-grade audit trails documenting every detection, action, and regulatory handoff."
 proofPoint:
   industry: "Water & Environment — Municipal Utility"
   headline: "Distribution Network Leak Intelligence"

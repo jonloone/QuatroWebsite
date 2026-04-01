@@ -47,9 +47,9 @@ stats:
   - value: "15%"
     label: "Fuel savings through operational intelligence"
 platformMapping:
-  connect: "Remote data collection from distributed mining equipment"
-  operate: "Real-time dashboards and predictive maintenance workflows"
-  command: "Unified control and scheduling across fleet"
+  see: "Remote data collection from distributed mining equipment"
+  understand: "Real-time dashboards and predictive maintenance workflows"
+  orchestrate: "Unified control and scheduling across fleet"
 proofPoint:
   industry: "Mining"
   headline: "Major iron ore operator increased fleet availability from 65% to 95% in 8 months"

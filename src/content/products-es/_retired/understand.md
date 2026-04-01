@@ -1,11 +1,11 @@
 ---
-title: "Operate"
+title: "Understand"
 tagline: "Entienda Por Qué y Responda Automáticamente"
 heroImage: "/images/product-platform.png"
-description: "Quatro Operate brinda monitoreo en tiempo real, analítica impulsada por IA e inteligencia predictiva en toda su operación."
+description: "Quatro Understand brinda monitoreo en tiempo real, analítica impulsada por IA e inteligencia predictiva en toda su operación."
 order: 2
 hero:
-  eyebrow: "Quatro Operate"
+  eyebrow: "Quatro Understand"
   title: "Inteligencia en Tiempo Real. Capacidad Predictiva."
   description: "Transforme datos operacionales en bruto en inteligencia accionable. Monitoree, analice y prediga en toda su operación — todo en tiempo real."
   primaryCta:
@@ -62,10 +62,10 @@ capabilities:
     icon: "phone"
 deepDive:
   title: "Inteligencia Operacional a Escala"
-  subtitle: "Desde dashboards de monitoreo hasta mantenimiento predictivo, Operate le brinda las herramientas para operar de forma más inteligente."
+  subtitle: "Desde dashboards de monitoreo hasta mantenimiento predictivo, Understand le brinda las herramientas para operar de forma más inteligente."
   sections:
-    - title: "Construido sobre Connect"
-      description: "Operate aprovecha la base de datos unificada de Connect. Cada punto de datos de cada fuente está disponible para monitoreo, análisis y predicción — sin integración adicional requerida."
+    - title: "Construido sobre See"
+      description: "Understand aprovecha la base de datos unificada de See. Cada punto de datos de cada fuente está disponible para monitoreo, análisis y predicción — sin integración adicional requerida."
       icon: "link"
     - title: "Inteligencia Impulsada por IA"
       description: "Inteligencia predictiva entrenada con sus datos operacionales descubre patrones que la analítica tradicional no detecta. Detección de anomalías, mantenimiento predictivo y reconocimiento de patrones operan continuamente en segundo plano."

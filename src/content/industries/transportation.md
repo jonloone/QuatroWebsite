@@ -8,7 +8,7 @@ order: 7
 hero:
   eyebrow: Transportation & Logistics
   title: Unified Intelligence. Every Node. Total Visibility.
-  description: Quatro delivers a unified operational intelligence platform that transforms fragmented data across ports, airports, and logistics corridors into real-time situational awareness, predictive
+  description: Quatro delivers a unified operational intelligence network that transforms fragmented data across ports, airports, and logistics corridors into real-time situational awareness, predictive
     routing intelligence, and coordinated multi-node operations — all from a single command environment.
   primaryCta:
     label: Request an Operations Briefing
@@ -19,7 +19,7 @@ hero:
 stats:
 - value: '3'
   label: Operational Domains
-- value: 8,000+
+- value: 9,000+
   label: Infrastructure Integrations
 - value: 24-48hr
   label: Predictive Intelligence
@@ -50,52 +50,44 @@ capabilities:
   description: Vessel arrival predictions accurate to the hour. Optimal berth assignment 72 hours in advance considering water depth, cargo type, discharge time, and next vessel schedule.
   featured: true
   outcome: 72-hour berth predictions. Ships stop waiting at anchor.
-  tier: operate
   image: /images/cap-transport-berth-mgmt.png
 - name: Cross-Node Coordination
   description: Vessel discharge timing at ports informs corridor traffic. Flight arrivals optimize ground operations. Corridor incidents coordinate with border authorities. Every node enriches every other.
   featured: true
   outcome: Every transportation node enriches every other.
-  tier: command
   image: /images/cap-transport-cross-node.png
 - name: Maritime Sovereignty and Intelligence
   description: Every vessel tracked from EEZ entry through port departure. Dark vessel activity detected immediately. Trafficking patterns correlated with known smuggling corridors.
   featured: true
   outcome: EEZ to port. Every vessel tracked. Dark activity detected.
-  tier: operate
   image: /images/cap-transport-maritime-sovereignty.png
 - name: Runway and Airfield Intelligence
   description: Aircraft approach predictions accurate to the minute. Gate availability predicted before landing. Ground equipment staged for efficient movement. Weather-driven capacity alerts trigger pre-emptive
     adjustments.
   image: /images/cap-transport-runway.png
   outcome: Gate availability predicted before aircraft lands.
-  tier: operate
 - name: Corridor Traffic and Flow Management
   description: Real-time traffic flow across monitored corridors. Sub-minute incident detection. Congestion predicted 30-60 minutes in advance with weather-driven routing adjustments.
   image: /images/cap-transport-corridor.png
   outcome: Congestion predicted 30-60 minutes in advance.
-  tier: operate
 - name: Customs and Border Integration
   description: Cargo manifests pre-reviewed against risk databases before vessel arrival. High-risk cargo flagged for priority inspection. Cross-border shipment status tracked origin to destination.
   image: /images/cap-transport-customs.png
   outcome: Risk-flagged cargo identified before vessel arrival.
-  tier: command
 - name: Predictive Routing Intelligence
   description: 24-48 hour traffic and logistics predictions. Alternate routing recommendations generated before incidents block flow. Supply chain ETA with minute-level accuracy.
   image: /images/cap-transport-routing.png
   outcome: 24-48 hour predictive routing with minute-level ETAs.
-  tier: operate
 - name: Sovereign Multi-Agency Sharing
   description: Generate intelligence products for partner agencies without ceding data control. Share assessed routing, not raw sensors. Every disclosure controlled, audited, and revocable.
   outcome: Share intelligence, not data. Full sovereignty.
-  tier: command
   image: /images/cap-transport-sovereign-sharing.png
 platformMapping:
-  connect: 8,000+ integrations across port, airport, and highway infrastructure. AIS vessel tracking, CCTV, traffic sensors, IoT berth monitors, RFID cargo tracking, toll system feeds, radar, and weather
+  see: 9,000+ integrations across port, airport, and highway infrastructure. AIS vessel tracking, CCTV, traffic sensors, IoT berth monitors, RFID cargo tracking, toll system feeds, radar, and weather
     data. The physical logistics network becomes machine-readable intelligence.
-  operate: Secure multi-source data ingestion with cross-node data governance. Real-time fusion and domain-trained predictive algorithms transform fragmented data into a unified logistics intelligence picture
+  understand: Secure multi-source data ingestion with cross-node data governance. Real-time fusion and domain-trained predictive algorithms transform fragmented data into a unified logistics intelligence picture
     — berth predictions, runway optimization, corridor routing, and customs risk assessment.
-  command: Predictive routing recommendations, incident management workflows, and multi-node coordination dashboards. Operators see the full chain. Right decision-maker, right intelligence, right time.
+  orchestrate: Predictive routing recommendations, incident management workflows, and multi-node coordination dashboards. Operators see the full chain. Right decision-maker, right intelligence, right time.
     Full audit trail with integration to existing SCADA, PMS, and logistics systems.
 proofPoint:
   industry: Transportation — Multi-Modal Logistics

@@ -46,9 +46,9 @@ capabilities:
   - name: "Trazabilidad para Cumplimiento"
     description: "Cada detección, alerta, decisión y acción registrada con marca de tiempo y contexto de cadena de mando. Satisface los requisitos de supervisión y legales de defensa."
 platformMapping:
-  connect: "Ingesta multisensor para cámaras, radar, lidar, fibra óptica, sísmicos y sensores RF. Soporte STANAG para interoperabilidad NATO. Procesamiento en el edge para entornos aislados."
-  operate: "Analítica de video con IA con detección, clasificación y seguimiento de objetos en tiempo real. La fusión multisensor reduce falsas alarmas en un 80%. Detección de anomalías en todos los dominios monitoreados."
-  command: "Comando federado en más de 12 FOBs. Playbooks automatizados de protección de fuerza. Espacios de trabajo basados en roles para comandante, oficial de guardia, analista y respondedor."
+  see: "Ingesta multisensor para cámaras, radar, lidar, fibra óptica, sísmicos y sensores RF. Soporte STANAG para interoperabilidad NATO. Procesamiento en el edge para entornos aislados."
+  understand: "Analítica de video con IA con detección, clasificación y seguimiento de objetos en tiempo real. La fusión multisensor reduce falsas alarmas en un 80%. Detección de anomalías en todos los dominios monitoreados."
+  orchestrate: "Comando federado en más de 12 FOBs. Playbooks automatizados de protección de fuerza. Espacios de trabajo basados en roles para comandante, oficial de guardia, analista y respondedor."
 proofPoint:
   industry: "Defensa — Seguridad de Instalaciones"
   headline: "Transformación de Instalación de 15,000 Acres"

@@ -18,7 +18,7 @@ stats:
     label: "MTTR Más Rápido"
   - value: "80%"
     label: "Menos Falsas Alarmas"
-  - value: "8,000+"
+  - value: "9,000+"
     label: "Conectores"
   - value: "Multidominio"
     label: "Inteligencia"
@@ -44,10 +44,6 @@ capabilities:
     description: "Consulte la capa de inteligencia usando lenguaje natural. Haga preguntas sobre dispositivos, alertas y KPIs sin escribir SQL."
   - name: "Seguimiento de KPIs y Benchmarking"
     description: "OEE, disponibilidad, rendimiento y KPIs personalizados rastreados continuamente con benchmarking entre sitios y períodos de tiempo."
-platformMapping:
-  connect: "Conectividad universal a sistemas operacionales, IoT y empresariales mediante más de 8,000 conectores. La contextualización de datos enriquece cada flujo con jerarquías de activos y metadatos de procesos."
-  operate: "El motor analítico aprende las líneas base operacionales y mejora continuamente. Modelo operacional en tiempo real permite simulación y planificación de escenarios. Los Agentes Analistas destacan lo que importa."
-  command: "Soporte de decisiones inteligente con calificación de riesgo y motor de recomendaciones. La orquestación multidominio coordina respuestas entre operaciones, seguridad y logística."
 proofPoint:
   industry: "Energía — Empresa de Servicios Integrada"
   headline: "Operaciones de Red Unificadas"

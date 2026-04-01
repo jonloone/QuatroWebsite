@@ -47,9 +47,9 @@ stats:
   - value: "3"
     label: "Operators managing ecosystem"
 platformMapping:
-  connect: "AIS feeds, satellite imagery APIs, coastal camera networks"
-  operate: "Automated vessel classification, anomaly detection, alert routing"
-  command: "Command center dashboards, enforcement dispatch, compliance reporting"
+  see: "AIS feeds, satellite imagery APIs, coastal camera networks"
+  understand: "Automated vessel classification, anomaly detection, alert routing"
+  orchestrate: "Command center dashboards, enforcement dispatch, compliance reporting"
 proofPoint:
   industry: "Marine Conservation"
   headline: "90-Day Pilot: 15-30+ Vessel Compliance Discrepancies Identified"

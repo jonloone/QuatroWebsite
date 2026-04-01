@@ -163,7 +163,7 @@ Five competitive comparisons appear across all documents:
 
 **Platform Capabilities:**
 - 7,000+ ground segment connectors
-- 8,000+ integrations across 1,000+ vendors
+- 9,000+ integrations across 1,000+ vendors
 - 99.99% platform uptime
 - Sub-minute anomaly detection latency
 - Multi-orbit support (GEO, LEO, MEO, NGSO)

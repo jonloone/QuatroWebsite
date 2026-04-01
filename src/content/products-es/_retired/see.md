@@ -1,11 +1,11 @@
 ---
-title: "Connect"
+title: "See"
 tagline: "Vea Todo en Tiempo Real"
 heroImage: "/images/product-connect-card.png"
 description: "Connect integra toda su infraestructura operacional con analítica moderna. Más de 8,000 conectores, almacenamiento de series de tiempo de alto rendimiento, APIs abiertas y sin licenciamiento por tags."
 order: 1
 hero:
-  eyebrow: "Quatro Connect"
+  eyebrow: "Quatro See"
   title: "Cada Protocolo. Cada Fuente. Una Sola Base Unificada."
   description: "Arquitectura abierta que integra toda su infraestructura operacional con analítica moderna. Más de 8,000 conectores, almacenamiento de series de tiempo de alto rendimiento y acceso completo por API — sin licenciamiento por tags, nunca."
   primaryCta:
@@ -33,7 +33,7 @@ solutions:
   - title: "Del Edge a la Nube"
     description: "Procese datos en el edge para respuesta en tiempo real, almacénelos en bases de series de tiempo de alto rendimiento y transmítalos a analítica en la nube — todo en una sola plataforma."
 stats:
-  - value: "8,000+"
+  - value: "9,000+"
     label: "Conectores"
   - value: "1M+"
     label: "Puntos/Seg"
@@ -149,5 +149,5 @@ proofPoint:
       label: "Menos Mantenimiento de Integración"
     - value: "40+"
       label: "Bases de Datos Legacy Consolidadas"
-  narrative: "Un operador Fortune 500 de petróleo y gas consolidó más de 40 bases de datos de historiadores regionales en operaciones de upstream, midstream y downstream en un despliegue unificado de Connect. El resultado: visibilidad en tiempo real de más de 200,000 puntos de datos, 60% de reducción en mantenimiento de integración y la base para analítica predictiva que era imposible con los sistemas legacy fragmentados."
+  narrative: "Un operador Fortune 500 de petróleo y gas consolidó más de 40 bases de datos de historiadores regionales en operaciones de upstream, midstream y downstream en un despliegue unificado de See. El resultado: visibilidad en tiempo real de más de 200,000 puntos de datos, 60% de reducción en mantenimiento de integración y la base para analítica predictiva que era imposible con los sistemas legacy fragmentados."
 ---

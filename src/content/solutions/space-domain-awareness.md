@@ -45,10 +45,6 @@ capabilities:
     description: "Every deployment model supported — commercial cloud for unclassified, FedRAMP-authorized for CUI, air-gapped SIPR for classified, standalone disconnected for TS/SCI. FIPS 140-2, NIST SP 800-171, and FedRAMP High compliance."
   - name: "Mission Dependency Mapping"
     description: "Critical comsat dependency mapping correlated with ground operations. When a satellite is threatened, the system identifies which ground missions, allied partners, and operations are affected — connecting orbital mechanics to operational impact."
-platformMapping:
-  connect: "Multi-source ISR feeds ingested at appropriate classification levels. Orbital tracking data, allied partner telemetry, ground situational awareness, signals intelligence, imagery, and human intelligence. Compartmented by need-to-know with automatic data filtering."
-  operate: "Threat-to-impact correlation engine connecting orbital events to ground asset dependencies and mission criticality. Predictive threat models validated at 98%+ conjunction accuracy 72 hours in advance. Maneuver detection under 30 minutes from data ingest to alert."
-  command: "Coordinated response recommendations across command boundaries. Coalition notification workflows with automatic classification filtering. Mission impact modeling and backup capacity activation planning. Full audit trails for every intelligence product shared."
 proofPoint:
   industry: "Defense — Space Operations"
   headline: "Multi-Domain Threat Intelligence"

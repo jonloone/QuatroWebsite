@@ -50,9 +50,9 @@ stats:
   - value: "36"
     label: "Month implementation framework"
 platformMapping:
-  connect: "School records, health system data, community violence reports, justice system feeds"
-  operate: "Youth Vulnerability Index calculation, risk stratification, alert generation"
-  command: "Case management dashboards, intervention dispatch, outcome tracking, governance reporting"
+  see: "School records, health system data, community violence reports, justice system feeds"
+  understand: "Youth Vulnerability Index calculation, risk stratification, alert generation"
+  orchestrate: "Case management dashboards, intervention dispatch, outcome tracking, governance reporting"
 proofPoint:
   industry: "Social Safety & Youth Development"
   headline: "36-Month Framework: Youth Vulnerability Index for Durán, Guayaquil, Esmeraldas"

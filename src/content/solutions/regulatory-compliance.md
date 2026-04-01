@@ -1,5 +1,5 @@
 ---
-title: "Regulatory Compliance Intelligence"
+title: "Regulatory Compliance"
 tagline: "Compliance as a Data Product, Not a Reporting Project"
 heroImage: "/images/solution-regulatory-compliance.png"
 description: "Unify the data foundation across AML/KYC, credit loss modeling, regulatory reporting, and stress testing — with full audit trail from every data point back to source."
@@ -37,32 +37,28 @@ capabilities:
     description: "Single governed data layer for all regulatory requirements — AML/KYC transaction feeds, aggregated loan exposure, reconciled deposit and lending data, and stress testing inputs."
     featured: true
     outcome: "True cross-system compliance visibility."
-    tier: "operate"
+    tier: "understand"
   - name: "AML/KYC Pattern Detection"
     description: "Transaction feeds unified across systems for consistent anti-money laundering and know-your-customer pattern detection. Cross-reference with OFAC/sanctions feeds."
     featured: true
     outcome: "Consistent AML monitoring across all transaction sources."
-    tier: "operate"
+    tier: "understand"
   - name: "Credit Loss Modeling"
     description: "Aggregated exposure data across all loan systems feeds credit loss models with consistent, reconciled inputs. No more manual data gathering per modeling cycle."
     outcome: "Accurate loss modeling with governed data inputs."
-    tier: "operate"
+    tier: "understand"
   - name: "Continuous Regulatory Reporting"
     description: "Reconciled deposit and lending data feeds regulatory reports continuously — not quarterly. Reports generate automatically with full source attribution."
     outcome: "Zero reconciliation delays. Examination cycles pass with confidence."
-    tier: "command"
+    tier: "orchestrate"
   - name: "Stress Testing Intelligence"
     description: "Stress testing inputs with full audit trail back to source. Consistent data foundation across all scenario analyses."
     outcome: "Stress tests built on trusted, traceable data."
-    tier: "command"
+    tier: "orchestrate"
   - name: "LATAM Regulatory Mapping"
     description: "Maps directly to Superintendencia de Bancos (Ecuador), SEPS (cooperatives), UAFE (AML/CFT), CNBV (Mexico), SFC (Colombia), SBS (Peru), and FATF-GAFI frameworks."
     outcome: "Multi-jurisdiction compliance from one data foundation."
-    tier: "operate"
-platformMapping:
-  connect: "Ingest from core banking, transaction monitoring, LOS, deposit systems, compliance platforms, and OFAC/sanctions feeds. Deploy on existing infrastructure."
-  operate: "Governed intelligence products unify compliance data across all regulatory requirements. Full lineage traces every data point back to source system."
-  command: "Continuous regulatory reporting, automated audit documentation, and examination-ready compliance packages generated without manual reconciliation."
+    tier: "understand"
 proofPoint:
   industry: "Finance — Regulatory Compliance"
   headline: "Compliance Intelligence for LATAM Banking"
@@ -81,5 +77,5 @@ cta:
   secondary:
     label: "Talk to a Financial Services Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 60 minutes. We map your compliance data sources and show how Regulatory Compliance Intelligence eliminates manual reconciliation."
+  microcopy: "Typical assessment: 60 minutes. We map your compliance data sources and show how Regulatory Compliance eliminates manual reconciliation."
 ---
