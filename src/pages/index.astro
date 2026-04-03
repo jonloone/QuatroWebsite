@@ -43,7 +43,7 @@ const insights = (await getCollection('insights'))
     <div class="mx-auto max-w-6xl">
       <!-- Editorial intro — large type, frames the platform before listing industries -->
       <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.15] tracking-tight fade-up" style="color: var(--color-neutral-800);">
-        Operational intelligence for the industries that keep communities <span style="color: var(--color-forest);">connected, powered, and safe</span>.
+        Operational intelligence for the industries that keep communities<br /><span style="color: var(--color-forest);">connected, powered, and safe</span>.
       </h2>
 
       <!-- Energy -->
@@ -116,7 +116,7 @@ const insights = (await getCollection('insights'))
       <!-- Editorial lead -->
       <p class="font-mono text-xs uppercase tracking-[0.1em] mb-8 fade-up" style="color: var(--color-forest);">The Intelligence Utility</p>
       <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.15] tracking-tight text-white fade-up">
-        You don't build your own intelligence stack. <span class="text-white/40">You connect to one.</span>
+        You don't build your own intelligence stack.<br /><span class="text-white/40">You connect to one.</span>
       </h2>
       <p class="mt-6 font-sans text-lg lg:text-xl leading-relaxed max-w-3xl text-white/50 fade-up">
         Quatro connects to your existing infrastructure — SCADA, IoT, ERP, every operational system — and intelligence flows. Real-time visibility, predictive reasoning, governed autonomous action. Intelligence that compounds with every system you connect.
@@ -170,56 +170,176 @@ const insights = (await getCollection('insights'))
         </div>
       </div>
 
-      <!-- How it works — streamlined 3-step strip -->
-      <div class="mt-20 lg:mt-24 fade-up" style="border-top: 1px solid rgba(255,255,255,0.06);">
-        <p class="font-mono text-xs uppercase tracking-[0.1em] pt-10 mb-8" style="color: var(--color-forest);">How It Works</p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-10">
-          <div class="flex items-start gap-4">
-            <span class="font-mono text-sm shrink-0 mt-1" style="color: var(--color-forest);">01</span>
-            <div>
-              <p class="font-sans text-lg lg:text-xl font-medium text-white">Connect</p>
-              <p class="mt-1 font-sans text-sm leading-relaxed text-white/35">Sensors, SCADA, cameras, meters, fleet systems — connect the physical world into a single operational model. We deploy hardware if you need it. Data flows from day one.</p>
-            </div>
+      <!-- How it works — visual flow diagram card -->
+      <div class="mt-20 lg:mt-24 fade-up rounded-2xl px-8 py-12 lg:px-12 lg:py-16" style="border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); backdrop-filter: blur(24px) saturate(1.2); -webkit-backdrop-filter: blur(24px) saturate(1.2); box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);">
+        <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-10" style="color: var(--color-forest);">How It Works</p>
+
+        <!-- Flow diagram SVG -->
+        <svg class="w-full h-auto mb-9" viewBox="0 0 1100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            @keyframes hiw-flow { 0% { stroke-dashoffset: 16; } 100% { stroke-dashoffset: 0; } }
+            @keyframes hiw-pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.7; } }
+            .hiw-flow-dash { animation: hiw-flow 1.2s linear infinite; }
+            .hiw-pulse-dot { animation: hiw-pulse 2.5s ease-in-out infinite; }
+          </style>
+
+          <!-- Source dots -->
+          <circle cx="16" cy="30" r="2.5" fill="rgba(0,209,178,0.5)" class="hiw-pulse-dot"/>
+          <circle cx="16" cy="55" r="2.5" fill="rgba(0,209,178,0.5)" class="hiw-pulse-dot" style="animation-delay:0.4s"/>
+          <circle cx="16" cy="80" r="2.5" fill="rgba(0,209,178,0.5)" class="hiw-pulse-dot" style="animation-delay:0.8s"/>
+          <circle cx="16" cy="105" r="2.5" fill="rgba(0,209,178,0.5)" class="hiw-pulse-dot" style="animation-delay:1.2s"/>
+          <circle cx="16" cy="130" r="2.5" fill="rgba(0,209,178,0.5)" class="hiw-pulse-dot" style="animation-delay:1.6s"/>
+
+          <!-- Converging dashed lines -->
+          <line x1="20" y1="30" x2="330" y2="72" stroke="rgba(0,209,178,0.18)" stroke-width="1" stroke-dasharray="4,4" class="hiw-flow-dash"/>
+          <line x1="20" y1="55" x2="330" y2="75" stroke="rgba(0,209,178,0.14)" stroke-width="1" stroke-dasharray="4,4" class="hiw-flow-dash" style="animation-delay:0.2s"/>
+          <line x1="20" y1="80" x2="330" y2="80" stroke="rgba(0,209,178,0.22)" stroke-width="1" stroke-dasharray="4,4" class="hiw-flow-dash" style="animation-delay:0.4s"/>
+          <line x1="20" y1="105" x2="330" y2="85" stroke="rgba(0,209,178,0.14)" stroke-width="1" stroke-dasharray="4,4" class="hiw-flow-dash" style="animation-delay:0.6s"/>
+          <line x1="20" y1="130" x2="330" y2="88" stroke="rgba(0,209,178,0.18)" stroke-width="1" stroke-dasharray="4,4" class="hiw-flow-dash" style="animation-delay:0.8s"/>
+
+          <!-- Model box -->
+          <rect x="330" y="24" rx="6" ry="6" width="400" height="112" fill="rgba(0,209,178,0.03)" stroke="rgba(0,209,178,0.12)" stroke-width="1"/>
+
+          <!-- Connect node on left edge -->
+          <circle cx="330" cy="80" r="5.5" fill="rgba(0,209,178,0.25)" stroke="rgba(0,209,178,0.6)" stroke-width="1.5"/>
+
+          <!-- Layer 1: Ingestion -->
+          <line x1="330" y1="80" x2="390" y2="50" stroke="rgba(0,209,178,0.2)" stroke-width="1"/>
+          <line x1="330" y1="80" x2="390" y2="80" stroke="rgba(0,209,178,0.25)" stroke-width="1"/>
+          <line x1="330" y1="80" x2="390" y2="110" stroke="rgba(0,209,178,0.2)" stroke-width="1"/>
+          <circle cx="390" cy="50" r="3" fill="rgba(0,209,178,0.15)" stroke="rgba(0,209,178,0.4)" stroke-width="1" class="hiw-pulse-dot"/>
+          <circle cx="390" cy="80" r="3" fill="rgba(0,209,178,0.15)" stroke="rgba(0,209,178,0.4)" stroke-width="1" class="hiw-pulse-dot" style="animation-delay:0.3s"/>
+          <circle cx="390" cy="110" r="3" fill="rgba(0,209,178,0.15)" stroke="rgba(0,209,178,0.4)" stroke-width="1" class="hiw-pulse-dot" style="animation-delay:0.6s"/>
+
+          <!-- Layer 2: Semantic modeling (amber) -->
+          <line x1="390" y1="50" x2="470" y2="55" stroke="rgba(244,162,97,0.2)" stroke-width="1"/>
+          <line x1="390" y1="50" x2="470" y2="80" stroke="rgba(244,162,97,0.15)" stroke-width="1"/>
+          <line x1="390" y1="80" x2="470" y2="55" stroke="rgba(244,162,97,0.15)" stroke-width="1"/>
+          <line x1="390" y1="80" x2="470" y2="80" stroke="rgba(244,162,97,0.2)" stroke-width="1"/>
+          <line x1="390" y1="80" x2="470" y2="105" stroke="rgba(244,162,97,0.15)" stroke-width="1"/>
+          <line x1="390" y1="110" x2="470" y2="80" stroke="rgba(244,162,97,0.12)" stroke-width="1"/>
+          <line x1="390" y1="110" x2="470" y2="105" stroke="rgba(244,162,97,0.2)" stroke-width="1"/>
+          <line x1="470" y1="55" x2="470" y2="80" stroke="rgba(244,162,97,0.1)" stroke-width="1" stroke-dasharray="2,3"/>
+          <line x1="470" y1="80" x2="470" y2="105" stroke="rgba(244,162,97,0.1)" stroke-width="1" stroke-dasharray="2,3"/>
+          <circle cx="470" cy="55" r="3.5" fill="rgba(244,162,97,0.12)" stroke="rgba(244,162,97,0.4)" stroke-width="1"/>
+          <circle cx="470" cy="80" r="4" fill="rgba(244,162,97,0.15)" stroke="rgba(244,162,97,0.5)" stroke-width="1.5"/>
+          <circle cx="470" cy="105" r="3.5" fill="rgba(244,162,97,0.12)" stroke="rgba(244,162,97,0.4)" stroke-width="1"/>
+
+          <!-- Layer 3: Governance (white) -->
+          <line x1="470" y1="55" x2="560" y2="48" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <line x1="470" y1="55" x2="560" y2="72" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="470" y1="80" x2="560" y2="72" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <line x1="470" y1="80" x2="560" y2="96" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <line x1="470" y1="105" x2="560" y2="96" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <line x1="470" y1="105" x2="560" y2="116" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <line x1="560" y1="48" x2="560" y2="72" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="2,3"/>
+          <line x1="560" y1="72" x2="560" y2="96" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="2,3"/>
+          <line x1="560" y1="96" x2="560" y2="116" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="2,3"/>
+          <circle cx="560" cy="48" r="2.5" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1" class="hiw-pulse-dot" style="animation-delay:1s"/>
+          <circle cx="560" cy="72" r="3" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <circle cx="560" cy="96" r="3" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+          <circle cx="560" cy="116" r="2.5" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1" class="hiw-pulse-dot" style="animation-delay:1.5s"/>
+
+          <!-- Layer 4: Convergence -->
+          <line x1="560" y1="48" x2="650" y2="65" stroke="rgba(0,209,178,0.12)" stroke-width="1"/>
+          <line x1="560" y1="72" x2="650" y2="65" stroke="rgba(244,162,97,0.12)" stroke-width="1"/>
+          <line x1="560" y1="72" x2="650" y2="95" stroke="rgba(0,209,178,0.12)" stroke-width="1"/>
+          <line x1="560" y1="96" x2="650" y2="95" stroke="rgba(244,162,97,0.12)" stroke-width="1"/>
+          <line x1="560" y1="116" x2="650" y2="95" stroke="rgba(0,209,178,0.1)" stroke-width="1"/>
+          <circle cx="650" cy="65" r="3" fill="rgba(0,209,178,0.1)" stroke="rgba(0,209,178,0.35)" stroke-width="1"/>
+          <circle cx="650" cy="95" r="3" fill="rgba(244,162,97,0.1)" stroke="rgba(244,162,97,0.35)" stroke-width="1"/>
+
+          <!-- Final convergence to exit node -->
+          <line x1="650" y1="65" x2="730" y2="80" stroke="rgba(0,209,178,0.18)" stroke-width="1"/>
+          <line x1="650" y1="95" x2="730" y2="80" stroke="rgba(244,162,97,0.18)" stroke-width="1"/>
+
+          <!-- Act node on right edge -->
+          <circle cx="730" cy="80" r="5.5" fill="rgba(244,162,97,0.25)" stroke="rgba(244,162,97,0.6)" stroke-width="1.5"/>
+
+          <!-- Expanding ripples -->
+          <path d="M 750 80 Q 785 50, 820 80 Q 785 110, 750 80" fill="none" stroke="rgba(244,162,97,0.14)" stroke-width="1"/>
+          <path d="M 760 80 Q 815 32, 870 80 Q 815 128, 760 80" fill="none" stroke="rgba(244,162,97,0.11)" stroke-width="1"/>
+          <path d="M 770 80 Q 850 16, 930 80 Q 850 144, 770 80" fill="none" stroke="rgba(244,162,97,0.08)" stroke-width="1"/>
+          <path d="M 780 80 Q 890 2, 1000 80 Q 890 158, 780 80" fill="none" stroke="rgba(244,162,97,0.06)" stroke-width="1"/>
+          <path d="M 790 80 Q 930 -8, 1070 80 Q 930 168, 790 80" fill="none" stroke="rgba(244,162,97,0.04)" stroke-width="1"/>
+
+          <!-- Action/decision dots -->
+          <circle cx="795" cy="56" r="2.5" fill="rgba(244,162,97,0.55)" class="hiw-pulse-dot"/>
+          <circle cx="795" cy="104" r="2.5" fill="rgba(244,162,97,0.55)" class="hiw-pulse-dot" style="animation-delay:0.8s"/>
+          <circle cx="850" cy="40" r="2" fill="rgba(244,162,97,0.4)" class="hiw-pulse-dot" style="animation-delay:1.4s"/>
+          <circle cx="850" cy="120" r="2" fill="rgba(244,162,97,0.4)" class="hiw-pulse-dot" style="animation-delay:0.5s"/>
+          <circle cx="915" cy="30" r="2" fill="rgba(244,162,97,0.3)" class="hiw-pulse-dot" style="animation-delay:1s"/>
+          <circle cx="915" cy="130" r="2" fill="rgba(244,162,97,0.3)" class="hiw-pulse-dot" style="animation-delay:1.8s"/>
+          <circle cx="980" cy="42" r="1.5" fill="rgba(244,162,97,0.2)" class="hiw-pulse-dot" style="animation-delay:2s"/>
+          <circle cx="980" cy="118" r="1.5" fill="rgba(244,162,97,0.2)" class="hiw-pulse-dot" style="animation-delay:1.3s"/>
+          <circle cx="1050" cy="58" r="1.5" fill="rgba(244,162,97,0.15)" class="hiw-pulse-dot" style="animation-delay:0.3s"/>
+          <circle cx="1050" cy="102" r="1.5" fill="rgba(244,162,97,0.15)" class="hiw-pulse-dot" style="animation-delay:1.6s"/>
+        </svg>
+
+        <!-- 3-column labels — canonical three-question framing -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0">
+          <div class="sm:pr-7">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2.5" style="color: var(--color-forest);">What is it</p>
+            <p class="font-sans text-lg font-semibold text-white tracking-tight mb-2">One operational model</p>
+            <p class="font-sans text-[13px] leading-relaxed text-white/30 max-w-[300px]">Your operations generate data across dozens of systems. An intelligence utility connects to all of them and gives you back one model — with visibility, prediction, and the ability to act.</p>
           </div>
-          <div class="flex items-start gap-4">
-            <span class="font-mono text-sm shrink-0 mt-1" style="color: var(--color-forest);">02</span>
-            <div>
-              <p class="font-sans text-lg lg:text-xl font-medium text-white">Prove</p>
-              <p class="mt-1 font-sans text-sm leading-relaxed text-white/35">Four weeks. Measurable results before you commit. PoV investment credited toward your contract.</p>
-            </div>
+          <div class="sm:px-7">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2.5" style="color: var(--color-forest);">What you get</p>
+            <p class="font-sans text-lg font-semibold text-white tracking-tight mb-2">Your team, enabled</p>
+            <p class="font-sans text-[13px] leading-relaxed text-white/30 max-w-[300px]">Workflows your team runs. Agents that reason across your systems. Automations that execute governed actions. APIs that feed intelligence back into the tools you already use.</p>
           </div>
-          <div class="flex items-start gap-4">
-            <span class="font-mono text-sm shrink-0 mt-1" style="color: var(--color-forest);">03</span>
-            <div>
-              <p class="font-sans text-lg lg:text-xl font-medium text-white">Expand</p>
-              <p class="mt-1 font-sans text-sm leading-relaxed text-white/35">Each new system makes every other system smarter. Intelligence compounds.</p>
-            </div>
+          <div class="sm:pl-7">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2.5" style="color: var(--color-forest);">How it starts</p>
+            <p class="font-sans text-lg font-semibold text-white tracking-tight mb-2">Start with what matters</p>
+            <p class="font-sans text-[13px] leading-relaxed text-white/30 max-w-[300px]">You tell us the outcome that matters. We connect the systems that hold the answer. Your team starts working from the model.</p>
           </div>
         </div>
       </div>
 
-      <!-- Proof stories — large type, real outcomes -->
-      <div class="mt-16 lg:mt-20 space-y-0 fade-up">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid rgba(255,255,255,0.06);">
-          <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Communications Provider</p>
-          <p class="font-sans text-lg lg:text-xl leading-relaxed text-white/60">
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       3b. PROOF STORIES — Light section, real outcomes
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-24 px-6" style="background: var(--color-neutral-50);">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-10 fade-up" style="color: var(--color-forest);">Results in Production</p>
+      <div class="space-y-0 fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid var(--color-structure);">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 shrink-0" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
+            </svg>
+            <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Communications Provider</p>
+          </div>
+          <p class="font-sans text-lg lg:text-xl leading-relaxed" style="color: var(--color-neutral-600);">
             98% of infrastructure unified on one operational view. 5,000+ devices. Siloed tools and manual workflows replaced with real-time unified operations.
           </p>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid rgba(255,255,255,0.06);">
-          <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Infrastructure Operator</p>
-          <p class="font-sans text-lg lg:text-xl leading-relaxed text-white/60">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid var(--color-structure);">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 shrink-0" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
+            </svg>
+            <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Infrastructure Operator</p>
+          </div>
+          <p class="font-sans text-lg lg:text-xl leading-relaxed" style="color: var(--color-neutral-600);">
             14,000 elements. 7,000 services. Equipment provisioning reduced from months to weeks. Critical event procedures from months of development to hours.
           </p>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
-          <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Broadband Operator</p>
-          <p class="font-sans text-lg lg:text-xl leading-relaxed text-white/60">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 shrink-0" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+            <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Broadband Operator</p>
+          </div>
+          <p class="font-sans text-lg lg:text-xl leading-relaxed" style="color: var(--color-neutral-600);">
             4 million devices monitored. Half a billion KPIs tracked continuously. 20,000 fewer customer site visits per year through proactive intelligence.
           </p>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -397,13 +517,13 @@ const insights = (await getCollection('insights'))
         <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 lg:py-24 max-w-3xl mx-auto fade-up">
           <!-- Headline -->
           <h2 class="font-sans text-3xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight">
-            Connect to Quatro.<br/>
-            <span class="text-white/50">Four weeks to intelligence.</span>
+            Start with what matters.<br/>
+            <span class="text-white/50">We connect the systems.</span>
           </h2>
 
           <!-- Description -->
           <p class="mt-6 font-sans text-base lg:text-lg text-white/50 leading-relaxed max-w-xl">
-            Pick the system that costs you the most to operate. Connect it to Quatro, deploy on your stack, and prove the value before you commit. Intelligence flows from day one.
+            Tell us the outcome your team needs. We connect the systems that hold the answer and give your team workflows, agents, and automations that feed intelligence back into the tools they already use.
           </p>
 
           <!-- Single CTA -->
@@ -416,7 +536,7 @@ const insights = (await getCollection('insights'))
               Schedule an Assessment
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/35">4-week proof of value. Credited toward contract.</p>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/35">Your team works from the model.</p>
           </div>
         </div>
 
