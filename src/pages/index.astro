@@ -378,9 +378,66 @@ const insights = (await getCollection('insights'))
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
+       4. xOPS — Adaptive operations suite with video demo
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-20 lg:py-28 px-6" style="background: #0a0a0a;">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Left: Messaging -->
+        <div class="fade-up">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-6">Adaptive Operations</p>
+          <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white">
+            Your operations shape<br />the suite — <span style="color: var(--color-forest);">not the other way around</span>.
+          </h2>
+          <p class="mt-6 font-sans text-base lg:text-lg leading-relaxed text-white/50 max-w-lg">
+            xOps is the adaptive application layer that emerges from your operational model. Asset management, monitoring, orchestration, service assurance — each application molds to your data and evolves as your operations change. No rigid SaaS modules. No feature requests. As the model deepens, new workflows and automations unlock automatically.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">MediaOps</span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">GridOps</span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">SatOps</span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">NetOps</span>
+            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">IoTOps</span>
+          </div>
+          <a
+            href="/utility/xops"
+            class="inline-flex items-center mt-8 font-mono text-xs uppercase tracking-wider transition-colors duration-200 hover:opacity-80"
+            style="color: var(--color-forest);"
+          >
+            Explore xOps <span class="ml-2">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Right: Video embed -->
+        <div class="fade-up">
+          <div class="relative rounded-xl overflow-hidden" style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 0 80px rgba(10,207,131,0.06);">
+            <!-- Browser chrome hint -->
+            <div class="flex items-center gap-1.5 px-4 py-2.5" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <span class="w-2 h-2 rounded-full" style="background: rgba(255,255,255,0.1);"></span>
+              <span class="w-2 h-2 rounded-full" style="background: rgba(255,255,255,0.1);"></span>
+              <span class="w-2 h-2 rounded-full" style="background: rgba(255,255,255,0.1);"></span>
+              <span class="ml-3 font-mono text-[9px] text-white/20 tracking-wider">xOps Dashboard</span>
+            </div>
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              class="w-full h-auto block"
+              poster="/images/platform-screenshot.png"
+            >
+              <source src="/videos/xops-demo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
        5. DARK EDITORIAL BRIDGE — Human-first framing + empathy + failure avoidance
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative px-6 overflow-hidden" data-editorial style="border-top: 1px solid var(--color-structure); background: #0a0a0a;">
+  <section class="relative px-6 overflow-hidden" data-editorial style="border-top: 1px solid rgba(255,255,255,0.06); background: #0a0a0a;">
     <!-- Canvas dithering overlay -->
     <canvas id="editorial-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-70" data-dither-canvas data-image-src="/images/editorial-map-bg.png" data-pixel-size="3" data-base-speed="0.06" data-hover-speed="0.3" data-green-blend="0.5"></canvas>
     <!-- Subtle vignette for text readability -->

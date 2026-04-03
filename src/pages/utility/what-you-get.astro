@@ -9,8 +9,8 @@ import DualCta from '@/components/marketing/DualCta.astro'
 const deliveryMechanisms = [
   {
     name: 'Workflows your team runs',
-    description: 'Operational applications built on live data — not dashboards that display it. Your operators, engineers, and analysts work from applications that connect what they see to what they can do.',
-    outcome: 'Cross-system operational visibility with governed action in the same interface.',
+    description: 'Adaptive operational applications that emerge from your data model — not rigid SaaS modules designed for someone else\'s workflow. Asset management, monitoring, orchestration, service assurance — each application molds to how your operations actually run and evolves as they change.',
+    outcome: 'An adaptive xOps suite that shapes itself to your operations — not the other way around.',
   },
   {
     name: 'Agents that reason across your systems',
@@ -19,8 +19,8 @@ const deliveryMechanisms = [
   },
   {
     name: 'Automations that execute governed actions',
-    description: 'When the model identifies a condition that requires action, governed automations execute it — with audit trails, execution contracts, and deterministic repeatability. Every action is attributable and reversible.',
-    outcome: 'Autonomous operations with the governance regulated industries require.',
+    description: 'When the model identifies a condition that requires action, governed automations execute it — with audit trails, execution contracts, and deterministic repeatability. As your operational model deepens, new automations unlock automatically. Every action is attributable and reversible.',
+    outcome: 'Autonomous operations that expand as your model matures — with the governance regulated industries require.',
   },
   {
     name: 'APIs that feed intelligence back',
@@ -269,6 +269,48 @@ const exampleOutputs = [
     </div>
   </Section>
 
+  <!-- xOps callout — the adaptive application layer -->
+  <section class="py-12 lg:py-16" style="background: #0a0a0a; border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <a href="/utility/xops" class="group block p-8 lg:p-10 rounded-xl fade-up transition-all hover:scale-[1.005]" style="background: rgba(15,76,58,0.08); border: 1px solid rgba(15,76,58,0.2);">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10">
+          <div class="lg:col-span-7">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-3" style="color: var(--color-forest);">The Operations Suite</p>
+            <h3 class="font-display text-xl lg:text-2xl font-bold text-white/90 mb-3">
+              xOps — adaptive applications that mold to your operations.
+            </h3>
+            <p class="text-sm leading-relaxed text-white/45 max-w-xl">
+              No rigid SaaS modules. No vendor feature requests. The operational model generates the applications your team needs — asset management, monitoring, orchestration, service assurance, AI-powered intelligence — and they evolve as your operations change. As the model deepens, new workflows and automations unlock automatically.
+            </p>
+          </div>
+          <div class="lg:col-span-5 flex items-center">
+            <div class="grid grid-cols-2 gap-3 w-full">
+              <div class="p-4 rounded-lg text-center" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                <p class="font-display text-sm font-bold text-white/70">MediaOps</p>
+                <p class="mt-1 font-mono text-[9px] text-white/25">Broadcast</p>
+              </div>
+              <div class="p-4 rounded-lg text-center" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                <p class="font-display text-sm font-bold text-white/70">GridOps</p>
+                <p class="mt-1 font-mono text-[9px] text-white/25">Energy</p>
+              </div>
+              <div class="p-4 rounded-lg text-center" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                <p class="font-display text-sm font-bold text-white/70">SatOps</p>
+                <p class="mt-1 font-mono text-[9px] text-white/25">Satellite</p>
+              </div>
+              <div class="p-4 rounded-lg text-center" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                <p class="font-display text-sm font-bold text-white/70">NetOps</p>
+                <p class="mt-1 font-mono text-[9px] text-white/25">Telecom</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="mt-6 inline-flex items-center font-mono text-[11px] uppercase tracking-wider transition-colors" style="color: var(--color-forest);">
+          Explore the xOps suite <span class="ml-1.5 transition-transform group-hover:translate-x-1">&rarr;</span>
+        </p>
+      </a>
+    </div>
+  </section>
+
   <!-- What this looks like by vertical -->
   <section class="py-20 lg:py-28" style="background: #0a0a0a;">
     <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
@@ -342,30 +384,22 @@ const exampleOutputs = [
   <!-- Navigation to sibling pages -->
   <section class="py-16 lg:py-20" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <a href="/utility" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Overview</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Previous</p>
           <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
             <span class="inline-block transition-transform group-hover:-translate-x-1">&larr;</span>
             What Is It
           </h3>
           <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">One operational model from every system your operations touch.</p>
         </a>
-        <a href="/utility/xops" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Operations</p>
-          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
-            xOps
-            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
-          </h3>
-          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Adaptive operations suite that molds to your data and workflows.</p>
-        </a>
         <a href="/utility/how-it-starts" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Start here</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Next</p>
           <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
             How It Starts
             <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
           </h3>
-          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">You tell us the outcome that matters. We connect the systems. Your team works from the model.</p>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">You tell us the outcome. We connect the systems. Your team works from the model.</p>
         </a>
       </div>
     </div>

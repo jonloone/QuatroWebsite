@@ -70,11 +70,9 @@ const footerNavigationData = {
       items: [
         { name: 'What Is It', href: '/utility' },
         { name: 'What You Get', href: '/utility/what-you-get' },
+        { name: 'xOps', href: '/utility/xops' },
         { name: 'How It Starts', href: '/utility/how-it-starts' },
         { name: 'Technology', href: '/utility/technology' },
-        { name: 'Integrations', href: '/utility#integrations' },
-        { name: 'Deployment', href: '/utility#deployment' },
-        { name: 'Security', href: '/utility#trust' },
       ],
     },
     industries: {
@@ -147,11 +145,9 @@ const footerNavigationData = {
       items: [
         { name: 'Qué Es', href: '/utility' },
         { name: 'Qué Obtiene', href: '/utility/what-you-get' },
+        { name: 'xOps', href: '/utility/xops' },
         { name: 'Cómo Empieza', href: '/utility/how-it-starts' },
         { name: 'Tecnología', href: '/utility/technology' },
-        { name: 'Integraciones', href: '/utility#integrations' },
-        { name: 'Despliegue', href: '/utility#deployment' },
-        { name: 'Seguridad', href: '/utility#trust' },
       ],
     },
     industries: {
@@ -252,10 +248,8 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       variant: 'stacked',
       items: [
         { name: 'What Is It', description: 'One operational model from every system you run', href: '/utility', icon: LinkIcon },
-        { name: 'What You Get', description: 'Workflows, agents, automations, and APIs', href: '/utility/what-you-get', icon: CogIcon },
+        { name: 'What You Get', description: 'Adaptive workflows, agents, automations, and APIs', href: '/utility/what-you-get', icon: CogIcon },
         { name: 'How It Starts', description: 'Tell us the outcome. We connect the systems.', href: '/utility/how-it-starts', icon: CommandLineIcon },
-        { name: 'Technology', description: 'The 6-layer architecture under the hood.', href: '/utility/technology', icon: WrenchScrewdriverIcon },
-        { name: 'Security', description: 'Sovereign deployment. Governed execution.', href: '/utility#trust', icon: ShieldCheckIcon },
       ],
       cta: { name: 'See How It Works', href: '/utility' },
     },
@@ -309,10 +303,8 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       variant: 'stacked',
       items: [
         { name: 'Qué Es', description: 'Un modelo operacional de todos sus sistemas', href: '/utility', icon: LinkIcon },
-        { name: 'Qué Obtiene', description: 'Flujos de trabajo, agentes, automatizaciones y APIs', href: '/utility/what-you-get', icon: CogIcon },
+        { name: 'Qué Obtiene', description: 'Flujos de trabajo adaptativos, agentes, automatizaciones y APIs', href: '/utility/what-you-get', icon: CogIcon },
         { name: 'Cómo Empieza', description: 'Díganos el resultado. Conectamos los sistemas.', href: '/utility/how-it-starts', icon: CommandLineIcon },
-        { name: 'Tecnología', description: 'La arquitectura de 6 capas bajo el capó.', href: '/utility/technology', icon: WrenchScrewdriverIcon },
-        { name: 'Seguridad', description: 'Despliegue soberano. Ejecución gobernada.', href: '/utility#trust', icon: ShieldCheckIcon },
       ],
       cta: { name: 'Ver Cómo Funciona', href: '/utility' },
     },
