@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
+import { categoryMeta } from '@/lib/category-meta'
 
 export async function getStaticPaths() {
   const insights = await getCollection('insights')
@@ -45,7 +46,11 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
       <div class="mx-auto max-w-3xl">
         <div class="flex items-center gap-3 mb-6">
           <a href="/insights" class="font-mono text-[10px] uppercase tracking-[0.1em] transition-colors duration-200 hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);">
-            ← Insights
+            Insights
+          </a>
+          <span class="font-mono text-[10px]" style="color: var(--color-neutral-300);">/</span>
+          <a href={`/insights/${category}`} class="font-mono text-[10px] uppercase tracking-[0.1em] transition-colors duration-200 hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);">
+            {categoryMeta[category]?.title || category.replace('-', ' ')}
           </a>
         </div>
         <div class="flex items-center gap-3 mb-6">
@@ -93,16 +98,17 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
 
     <!-- Article body -->
     <div class="px-6">
-      <div class="mx-auto max-w-3xl prose prose-neutral
+      <div class="mx-auto max-w-3xl prose prose-neutral lg:prose-lg prose-article
         prose-headings:font-sans prose-headings:font-light prose-headings:tracking-tight
-        prose-h2:text-2xl prose-h2:lg:text-3xl prose-h2:mt-12 prose-h2:mb-4
-        prose-h3:text-lg prose-h3:lg:text-xl prose-h3:mt-8 prose-h3:mb-3
-        prose-p:text-base prose-p:leading-[1.8] prose-p:mb-6
-        prose-strong:font-medium
+        prose-headings:text-[var(--color-neutral-800)]
+        prose-h2:text-2xl prose-h2:lg:text-[1.875rem] prose-h2:mt-16 prose-h2:mb-6 prose-h2:pt-8
+        prose-h3:text-lg prose-h3:lg:text-xl prose-h3:mt-10 prose-h3:mb-4
+        prose-p:leading-[1.8] prose-p:mb-6 prose-p:text-[var(--color-neutral-600)]
+        prose-strong:font-semibold prose-strong:text-[var(--color-neutral-800)]
         prose-a:text-[var(--color-forest)] prose-a:no-underline hover:prose-a:underline
-        prose-li:text-base prose-li:leading-[1.8]
-        prose-blockquote:border-l-[var(--color-forest)] prose-blockquote:font-sans prose-blockquote:not-italic
-      " style="color: var(--color-neutral-600); --tw-prose-headings: var(--color-neutral-800);">
+        prose-li:leading-[1.8] prose-li:text-[var(--color-neutral-600)]
+        prose-blockquote:font-sans prose-blockquote:not-italic
+      ">
         <Content />
       </div>
     </div>

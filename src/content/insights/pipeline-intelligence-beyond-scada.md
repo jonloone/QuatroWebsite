@@ -19,6 +19,11 @@ But SCADA was built for *supervision*, not *intelligence*. It monitors. It alert
 
 The correlation—the story that connects these signals—lives nowhere in the system. It lives in the engineer's experience, in conference calls between teams, in spreadsheets that never quite sync. That cognitive work, that pattern recognition, that diagnosis happens outside the operational model. In the modern pipeline, that's a structural liability.
 
+<div class="callout" data-type="stat">
+<p><strong>6–8</strong></p>
+<p>Average number of disconnected integrity systems in a midstream pipeline operation — each with its own data model, reporting cadence, and audit trail.</p>
+</div>
+
 ## The Fragmentation Problem: Many Systems, No Common Language
 
 Pipeline integrity management didn't break into silos by accident. It evolved into them by necessity. Each function grew independently, optimized for its specific mission.
@@ -101,6 +106,10 @@ All of this data is being generated today. It just isn't connected.
 The operators who move first to connect this data—to build operational intelligence on top of their existing SCADA, ILI, and compliance systems—will own a competitive advantage that's hard to replicate. They'll move from quarterly integrity reviews to continuous risk visibility. From compliance-driven data collection to compliance that emerges from operational intelligence. From reactive maintenance to predictive action.
 
 This isn't about replacing proven technology. It's about building a reasoning layer that lets existing systems communicate and amplify each other's value.
+
+<div class="callout">
+<p>The operators who connect their data first don't just gain visibility — they gain compounding advantage. Each new data stream makes every existing stream more valuable. The cost of waiting isn't static; it grows as competitors build intelligence density you can't replicate quickly.</p>
+</div>
 
 ## The Next Decade
 

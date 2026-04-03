@@ -18,7 +18,6 @@ function ShieldIcon() {}
 function WrenchScrewdriverIcon() {}
 function BuildingLibraryIcon() {}
 function BuildingOffice2Icon() {}
-function UserGroupIcon() {}
 function BriefcaseIcon() {}
 function NewspaperIcon() {}
 function SignalIcon() {}
@@ -41,13 +40,23 @@ export interface FeaturedCaseStudy {
   href: string
 }
 
+export interface FeaturedInsight {
+  type: 'insight'
+  title: string
+  excerpt: string
+  category: string
+  href: string
+}
+
+export type FeaturedContent = FeaturedCaseStudy | FeaturedInsight
+
 export interface PrimaryNavItem {
   name: string
   href: string
   items: NavItem[]
   cta: { name: string; href: string }
   variant?: NavDropdownVariant
-  featured?: FeaturedCaseStudy
+  featured?: FeaturedContent
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -57,11 +66,12 @@ export interface PrimaryNavItem {
 const footerNavigationData = {
   en: {
     products: {
-      title: 'The Utility',
+      title: 'How It Works',
       items: [
         { name: 'What Is It', href: '/utility' },
         { name: 'What You Get', href: '/utility/what-you-get' },
         { name: 'How It Starts', href: '/utility/how-it-starts' },
+        { name: 'Technology', href: '/utility/technology' },
         { name: 'Integrations', href: '/utility#integrations' },
         { name: 'Deployment', href: '/utility#deployment' },
         { name: 'Security', href: '/utility#trust' },
@@ -102,7 +112,7 @@ const footerNavigationData = {
       title: 'Resources',
       items: [
         { name: 'White Papers', href: '/resources/white-papers' },
-        { name: 'Insights', href: '/resources/insights' },
+        { name: 'Insights', href: '/insights' },
         { name: 'Documentation', href: '/resources/documentation' },
       ],
     },
@@ -110,7 +120,6 @@ const footerNavigationData = {
       title: 'Company',
       items: [
         { name: 'About', href: '/company/about' },
-        { name: 'Leadership', href: '/company/leadership' },
         { name: 'Careers', href: '/company/careers' },
         { name: 'News', href: '/company/news' },
       ],
@@ -134,11 +143,12 @@ const footerNavigationData = {
   },
   es: {
     products: {
-      title: 'La Utilidad',
+      title: 'Cómo Funciona',
       items: [
         { name: 'Qué Es', href: '/utility' },
         { name: 'Qué Obtiene', href: '/utility/what-you-get' },
         { name: 'Cómo Empieza', href: '/utility/how-it-starts' },
+        { name: 'Tecnología', href: '/utility/technology' },
         { name: 'Integraciones', href: '/utility#integrations' },
         { name: 'Despliegue', href: '/utility#deployment' },
         { name: 'Seguridad', href: '/utility#trust' },
@@ -179,7 +189,7 @@ const footerNavigationData = {
       title: 'Recursos',
       items: [
         { name: 'White Papers', href: '/resources/white-papers' },
-        { name: 'Artículos', href: '/resources/insights' },
+        { name: 'Artículos', href: '/insights' },
         { name: 'Documentación', href: '/resources/documentation' },
       ],
     },
@@ -187,7 +197,6 @@ const footerNavigationData = {
       title: 'Empresa',
       items: [
         { name: 'Nosotros', href: '/company/about' },
-        { name: 'Liderazgo', href: '/company/leadership' },
         { name: 'Carreras', href: '/company/careers' },
         { name: 'Noticias', href: '/company/news' },
       ],
@@ -238,16 +247,17 @@ export const footerNavigation = footerNavigationData.en
 const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
   en: [
     {
-      name: 'The Utility',
+      name: 'How It Works',
       href: '/utility',
       variant: 'stacked',
       items: [
         { name: 'What Is It', description: 'One operational model from every system you run', href: '/utility', icon: LinkIcon },
         { name: 'What You Get', description: 'Workflows, agents, automations, and APIs', href: '/utility/what-you-get', icon: CogIcon },
         { name: 'How It Starts', description: 'Tell us the outcome. We connect the systems.', href: '/utility/how-it-starts', icon: CommandLineIcon },
+        { name: 'Technology', description: 'The 6-layer architecture under the hood.', href: '/utility/technology', icon: WrenchScrewdriverIcon },
         { name: 'Security', description: 'Sovereign deployment. Governed execution.', href: '/utility#trust', icon: ShieldCheckIcon },
       ],
-      cta: { name: 'Explore the Utility', href: '/utility' },
+      cta: { name: 'See How It Works', href: '/utility' },
     },
     {
       name: 'Industries',
@@ -263,12 +273,29 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       cta: { name: 'All Industries', href: '/industries' },
     },
     {
+      name: 'Insights',
+      href: '/insights',
+      variant: 'featured',
+      items: [
+        { name: 'Industry Trends', description: 'Analysis of operational patterns across sectors', href: '/insights/industry-trends', icon: LightBulbIcon },
+        { name: 'Use Cases', description: 'Real deployment scenarios and outcomes', href: '/insights/use-cases', icon: BeakerIcon },
+        { name: 'Platform', description: 'Technical deep-dives on the utility', href: '/insights/platform', icon: CogIcon },
+      ],
+      cta: { name: 'All Insights', href: '/insights' },
+      featured: {
+        type: 'insight' as const,
+        title: 'Pipeline Intelligence Beyond SCADA',
+        excerpt: 'Why the next decade of oil and gas belongs to operational intelligence — not more sensors.',
+        category: 'industry-trends',
+        href: '/insights/pipeline-intelligence-beyond-scada',
+      },
+    },
+    {
       name: 'Company',
       href: '/company',
       variant: 'stacked',
       items: [
         { name: 'About', description: 'Our mission, vision, and values', href: '/company/about', icon: BuildingLibraryIcon },
-        { name: 'Leadership', description: 'Meet our executive team', href: '/company/leadership', icon: UserGroupIcon },
         { name: 'Careers', description: 'Join our growing team', href: '/company/careers', icon: BriefcaseIcon },
         { name: 'News', description: 'Latest updates and announcements', href: '/company/news', icon: NewspaperIcon },
       ],
@@ -277,16 +304,17 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
   ],
   es: [
     {
-      name: 'La Utilidad',
+      name: 'Cómo Funciona',
       href: '/utility',
       variant: 'stacked',
       items: [
         { name: 'Qué Es', description: 'Un modelo operacional de todos sus sistemas', href: '/utility', icon: LinkIcon },
         { name: 'Qué Obtiene', description: 'Flujos de trabajo, agentes, automatizaciones y APIs', href: '/utility/what-you-get', icon: CogIcon },
         { name: 'Cómo Empieza', description: 'Díganos el resultado. Conectamos los sistemas.', href: '/utility/how-it-starts', icon: CommandLineIcon },
+        { name: 'Tecnología', description: 'La arquitectura de 6 capas bajo el capó.', href: '/utility/technology', icon: WrenchScrewdriverIcon },
         { name: 'Seguridad', description: 'Despliegue soberano. Ejecución gobernada.', href: '/utility#trust', icon: ShieldCheckIcon },
       ],
-      cta: { name: 'Explorar la Utilidad', href: '/utility' },
+      cta: { name: 'Ver Cómo Funciona', href: '/utility' },
     },
     {
       name: 'Industrias',
@@ -302,12 +330,29 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       cta: { name: 'Todas las Industrias', href: '/industries' },
     },
     {
+      name: 'Artículos',
+      href: '/insights',
+      variant: 'featured',
+      items: [
+        { name: 'Tendencias', description: 'Análisis de patrones operacionales por sector', href: '/insights/industry-trends', icon: LightBulbIcon },
+        { name: 'Casos de Uso', description: 'Escenarios reales de despliegue y resultados', href: '/insights/use-cases', icon: BeakerIcon },
+        { name: 'Plataforma', description: 'Análisis técnicos de la utilidad', href: '/insights/platform', icon: CogIcon },
+      ],
+      cta: { name: 'Todos los Artículos', href: '/insights' },
+      featured: {
+        type: 'insight' as const,
+        title: 'Pipeline Intelligence Beyond SCADA',
+        excerpt: 'Why the next decade of oil and gas belongs to operational intelligence — not more sensors.',
+        category: 'industry-trends',
+        href: '/insights/pipeline-intelligence-beyond-scada',
+      },
+    },
+    {
       name: 'Empresa',
       href: '/company',
       variant: 'stacked',
       items: [
         { name: 'Nosotros', description: 'Nuestra misión, visión y valores', href: '/company/about', icon: BuildingLibraryIcon },
-        { name: 'Liderazgo', description: 'Conozca nuestro equipo directivo', href: '/company/leadership', icon: UserGroupIcon },
         { name: 'Carreras', description: 'Únase a nuestro equipo en crecimiento', href: '/company/careers', icon: BriefcaseIcon },
         { name: 'Noticias', description: 'Últimas novedades y anuncios', href: '/company/news', icon: NewspaperIcon },
       ],

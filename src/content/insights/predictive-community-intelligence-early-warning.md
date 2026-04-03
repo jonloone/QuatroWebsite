@@ -1,10 +1,10 @@
 ---
 title: "From Reactive Intervention to Early Warning: The Case for Predictive Community Intelligence"
-category: "industry-trends"
+category: "platform"
 industry: "cities"
 author: "Quatro Team"
-publishDate: 2026-04-02
-featured: true
+publishDate: 2026-03-14
+featured: false
 tags: [community-intelligence, youth-risk, social-safety, malnutrition, predictive-operations, public-health]
 readingTime: "8 min read"
 excerpt: "The data that predicts crises exists in separate systems across education, health, and social services. When connected, it reveals vulnerability before crisis—without surveillance."

@@ -1,10 +1,10 @@
 ---
 title: "The 311 Problem Nobody Talks About: Why Cross-Agency Response Breaks at the Point of Need"
-category: "industry-trends"
+category: "use-cases"
 industry: "cities"
 author: "Quatro Team"
-publishDate: 2026-04-02
-featured: true
+publishDate: 2026-03-25
+featured: false
 tags: ["311", "public-safety", "cross-agency", "municipal-intelligence", "citizen-services"]
 readingTime: "7 min read"
 excerpt: "311 systems are intake tools that capture citizen reports but don't connect them to the operational systems that need to act. The gap isn't in any one agency's capability. It's in the space between agencies."

@@ -3,8 +3,8 @@ title: "The Post-Consolidation Intelligence Gap: Why Merged Operators Still Oper
 category: "industry-trends"
 industry: "networks"
 author: "Quatro Team"
-publishDate: 2026-04-02
-featured: true
+publishDate: 2026-03-28
+featured: false
 tags: [satcom, telco, consolidation, revenue-assurance, operational-intelligence, post-merger]
 readingTime: "8 min read"
 excerpt: "Mergers in SATCOM and telecom create one brand but fifteen separate operational views. Intelligence integration, not system consolidation, is the path to capturing merger value faster."

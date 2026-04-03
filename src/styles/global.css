@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 @import '@fontsource-variable/jetbrains-mono';
 
 @font-face {
@@ -162,6 +163,171 @@
 @media (prefers-reduced-motion: reduce) {
   .pulse-dot { animation: none; opacity: 1; }
   .animate-marquee { animation: none; }
+}
+
+/* ═══ Editorial Article Typography ═══ */
+
+/* Lead paragraph — slightly larger, darker, sets the tone */
+.prose-article > p:first-of-type {
+  font-size: 1.175rem;
+  line-height: 1.85;
+  color: var(--color-neutral-700);
+}
+
+/* Drop cap on first paragraph */
+.prose-article > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.75em;
+  line-height: 0.8;
+  padding-right: 0.1em;
+  padding-top: 0.05em;
+  color: var(--color-forest);
+  font-weight: 300;
+}
+
+/* Section headings — border-top divider + forest accent mark */
+.prose-article > h2 {
+  border-top: 1px solid var(--color-structure);
+  padding-top: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.prose-article > h2::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-forest);
+  margin-bottom: 1rem;
+}
+
+/* First h2 — no divider (directly follows lead) */
+.prose-article > h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Sub-headings in Roobert for contrast with serif body */
+.prose-article > h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Bold text — darker for inline subhead treatment */
+.prose-article strong {
+  color: var(--color-neutral-800);
+}
+
+/* Bold-only paragraphs as visual subheads */
+.prose-article > p > strong:only-child {
+  display: block;
+  font-size: 1.05em;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  margin-top: 0.5rem;
+}
+
+/* Blockquotes as pull-quotes — larger, italic, prominent */
+.prose-article > blockquote {
+  border-left-width: 3px;
+  border-left-color: var(--color-forest);
+  padding-left: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-style: italic;
+  color: var(--color-neutral-700);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Lists — left border accent for differentiation */
+.prose-article > ul,
+.prose-article > ol {
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-structure);
+  margin-left: 0.5rem;
+}
+
+.prose-article > ul li,
+.prose-article > ol li {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Section breaks (hr) — subtle centered dot */
+.prose-article > hr {
+  border: none;
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.prose-article > hr::after {
+  content: '· · ·';
+  color: var(--color-neutral-300);
+  font-size: 1.25rem;
+  letter-spacing: 0.5em;
+}
+
+/* ═══ Callout Boxes ═══ */
+
+/* Base callout — insight variant (default) */
+.prose-article .callout {
+  border-left: 3px solid var(--color-forest);
+  background: rgba(15, 76, 58, 0.04);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  margin: 2rem 0;
+}
+
+.prose-article .callout p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-neutral-700);
+}
+
+.prose-article .callout p + p {
+  margin-top: 0.75rem;
+}
+
+/* Stat variant — large number display */
+.prose-article .callout[data-type="stat"] {
+  border-left-color: var(--color-neutral-800);
+  background: var(--color-neutral-50);
+  text-align: center;
+  padding: 2rem;
+}
+
+.prose-article .callout[data-type="stat"] strong {
+  display: block;
+  font-size: 2.5rem;
+  line-height: 1;
+  font-family: var(--font-display);
+  color: var(--color-forest);
+  margin-bottom: 0.5rem;
+}
+
+/* Warning variant — coral/terracotta accent */
+.prose-article .callout[data-type="warning"] {
+  border-left-color: var(--color-accent-coral);
+  background: rgba(192, 86, 33, 0.04);
+}
+
+/* ═══ Responsive adjustments ═══ */
+@media (max-width: 640px) {
+  .prose-article > p:first-of-type::first-letter {
+    font-size: 3em;
+  }
+
+  .prose-article > blockquote {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+  }
+
+  .prose-article .callout[data-type="stat"] strong {
+    font-size: 2rem;
+  }
 }
 
 @layer utilities {
