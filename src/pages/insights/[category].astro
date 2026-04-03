@@ -155,87 +155,201 @@ const articleHref = (a: any) => `/insights/${a.id.replace(/\.md$/, '')}`
 
   {/* ═══ SCENARIO LAYOUT (Use Cases) ═══ */}
   {meta.layout === 'scenario' && (
-    <section class="py-16 lg:py-20 px-6">
-      <div class="mx-auto max-w-5xl">
-        <div class="grid gap-y-12 lg:gap-y-16">
-          {articles.map((article, i) => (
-            <a
-              href={articleHref(article)}
-              class="group grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 items-start"
-              style={i > 0 ? 'border-top: 1px solid var(--color-structure); padding-top: 3rem;' : ''}
-            >
-              {article.data.heroImage && (
-                <div class="relative overflow-hidden rounded-lg aspect-[4/3]" style="background: var(--color-neutral-50);">
-                  <img src={article.data.heroImage} alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 img-technical" loading="lazy" />
+    <>
+      {/* Lead article — full-width image hero with dither */}
+      {lead && (
+        <section class="px-6 py-8" style="border-bottom: 1px solid var(--color-structure);">
+          <div class="mx-auto max-w-6xl">
+            <a href={articleHref(lead)} class="group block relative overflow-hidden rounded-xl" style="background: #0a0a0a;" data-dither-section>
+              {lead.data.heroImage && (
+                <div class="relative aspect-[16/9] lg:aspect-[21/9]">
+                  <img src={lead.data.heroImage} alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="eager" />
                 </div>
               )}
-              <div>
+              <canvas
+                class="absolute inset-0 w-full h-full z-[1] opacity-50"
+                data-dither-canvas
+                data-image-src={lead.data.heroImage}
+                data-pixel-size="3"
+                data-base-speed="0.06"
+                data-hover-speed="0.3"
+                data-green-blend="0.35"
+              ></canvas>
+              <div class="absolute inset-0 z-[2]" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 50%, transparent 70%);"></div>
+              <svg style="position:absolute;width:0;height:0;">
+                <filter id="scenario-grain">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+                  <feColorMatrix type="saturate" values="0" />
+                </filter>
+              </svg>
+              <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.04]" style="filter: url(#scenario-grain);"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-10 z-[4]">
                 <div class="flex items-center gap-3 mb-3">
-                  {article.data.industry && (
-                    <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); background: rgba(15,76,58,0.06);">
-                      {article.data.industry}
+                  {lead.data.industry && (
+                    <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: white; border: 1px solid rgba(255,255,255,0.1);">
+                      {lead.data.industry}
                     </span>
                   )}
-                  <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
-                    {article.data.readingTime}
+                  <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.7);">
+                    {lead.data.readingTime}
                   </span>
                 </div>
-                <h3 class="font-sans text-xl lg:text-2xl font-light leading-[1.25] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
-                  {article.data.title}
-                </h3>
-                <p class="mt-3 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-                  {article.data.excerpt}
+                <h2 class="font-sans text-2xl sm:text-3xl lg:text-4xl font-light leading-[1.15] tracking-tight text-white max-w-3xl">
+                  {lead.data.title}
+                </h2>
+                <p class="mt-3 font-sans text-sm lg:text-base leading-relaxed max-w-2xl hidden sm:block" style="color: rgba(255,255,255,0.85);">
+                  {lead.data.excerpt}
                 </p>
-                <div class="mt-4 flex items-center gap-4">
-                  <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
-                    {formatDate(article.data.publishDate)}
-                  </span>
-                </div>
+                <p class="mt-4 font-mono text-xs uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.7);">
+                  Read article →
+                </p>
               </div>
             </a>
-          ))}
-        </div>
-      </div>
-    </section>
+          </div>
+        </section>
+      )}
+
+      {/* Remaining articles — horizontal cards */}
+      {rest.length > 0 && (
+        <section class="py-16 lg:py-20 px-6">
+          <div class="mx-auto max-w-5xl">
+            <div class="grid gap-y-12 lg:gap-y-16">
+              {rest.map((article, i) => (
+                <a
+                  href={articleHref(article)}
+                  class="group grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 items-start"
+                  style={i > 0 ? 'border-top: 1px solid var(--color-structure); padding-top: 3rem;' : ''}
+                >
+                  {article.data.heroImage && (
+                    <div class="relative overflow-hidden rounded-lg aspect-[4/3]" style="background: var(--color-neutral-50);">
+                      <img src={article.data.heroImage} alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 img-technical" loading="lazy" />
+                    </div>
+                  )}
+                  <div>
+                    <div class="flex items-center gap-3 mb-3">
+                      {article.data.industry && (
+                        <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); background: rgba(15,76,58,0.06);">
+                          {article.data.industry}
+                        </span>
+                      )}
+                      <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                        {article.data.readingTime}
+                      </span>
+                    </div>
+                    <h3 class="font-sans text-xl lg:text-2xl font-light leading-[1.25] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                      {article.data.title}
+                    </h3>
+                    <p class="mt-3 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                      {article.data.excerpt}
+                    </p>
+                    <div class="mt-4 flex items-center gap-4">
+                      <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                        {formatDate(article.data.publishDate)}
+                      </span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   )}
 
   {/* ═══ TECHNICAL LAYOUT (Platform) ═══ */}
   {meta.layout === 'technical' && (
-    <section class="py-16 lg:py-20 px-6">
-      <div class="mx-auto max-w-3xl">
-        <div class="grid gap-0">
-          {articles.map((article, i) => (
-            <a
-              href={articleHref(article)}
-              class="group grid grid-cols-[3rem_1fr] gap-6 py-10"
-              style={i > 0 ? 'border-top: 1px solid var(--color-structure);' : ''}
-            >
-              <span class="font-mono text-sm tabular-nums pt-1" style="color: var(--color-neutral-300);">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <div>
-                <h3 class="font-sans text-xl lg:text-2xl font-light leading-[1.25] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
-                  {article.data.title}
-                </h3>
-                <p class="mt-3 font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
-                  {article.data.excerpt}
-                </p>
-                <div class="mt-4 flex items-center gap-4">
-                  <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
-                    {formatDate(article.data.publishDate)}
-                  </span>
-                  {article.data.readingTime && (
-                    <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
-                      {article.data.readingTime}
-                    </span>
-                  )}
+    <>
+      {/* Lead article — full-width image hero with dither */}
+      {lead && (
+        <section class="px-6 py-8" style="border-bottom: 1px solid var(--color-structure);">
+          <div class="mx-auto max-w-6xl">
+            <a href={articleHref(lead)} class="group block relative overflow-hidden rounded-xl" style="background: #0a0a0a;" data-dither-section>
+              {lead.data.heroImage && (
+                <div class="relative aspect-[16/9] lg:aspect-[21/9]">
+                  <img src={lead.data.heroImage} alt="" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="eager" />
                 </div>
+              )}
+              <canvas
+                class="absolute inset-0 w-full h-full z-[1] opacity-50"
+                data-dither-canvas
+                data-image-src={lead.data.heroImage}
+                data-pixel-size="3"
+                data-base-speed="0.06"
+                data-hover-speed="0.3"
+                data-green-blend="0.35"
+              ></canvas>
+              <div class="absolute inset-0 z-[2]" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 50%, transparent 70%);"></div>
+              <svg style="position:absolute;width:0;height:0;">
+                <filter id="technical-grain">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+                  <feColorMatrix type="saturate" values="0" />
+                </filter>
+              </svg>
+              <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.04]" style="filter: url(#technical-grain);"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-10 z-[4]">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: white; border: 1px solid rgba(255,255,255,0.1);">
+                    Platform
+                  </span>
+                  <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.7);">
+                    {lead.data.readingTime}
+                  </span>
+                </div>
+                <h2 class="font-sans text-2xl sm:text-3xl lg:text-4xl font-light leading-[1.15] tracking-tight text-white max-w-3xl">
+                  {lead.data.title}
+                </h2>
+                <p class="mt-3 font-sans text-sm lg:text-base leading-relaxed max-w-2xl hidden sm:block" style="color: rgba(255,255,255,0.85);">
+                  {lead.data.excerpt}
+                </p>
+                <p class="mt-4 font-mono text-xs uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.7);">
+                  Read article →
+                </p>
               </div>
             </a>
-          ))}
-        </div>
-      </div>
-    </section>
+          </div>
+        </section>
+      )}
+
+      {/* Remaining articles — numbered reading list */}
+      {rest.length > 0 && (
+        <section class="py-16 lg:py-20 px-6">
+          <div class="mx-auto max-w-3xl">
+            <div class="grid gap-0">
+              {rest.map((article, i) => (
+                <a
+                  href={articleHref(article)}
+                  class="group grid grid-cols-[3rem_1fr] gap-6 py-10"
+                  style={i > 0 ? 'border-top: 1px solid var(--color-structure);' : ''}
+                >
+                  <span class="font-mono text-sm tabular-nums pt-1" style="color: var(--color-neutral-300);">
+                    {String(i + 2).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 class="font-sans text-xl lg:text-2xl font-light leading-[1.25] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                      {article.data.title}
+                    </h3>
+                    <p class="mt-3 font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
+                      {article.data.excerpt}
+                    </p>
+                    <div class="mt-4 flex items-center gap-4">
+                      <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                        {formatDate(article.data.publishDate)}
+                      </span>
+                      {article.data.readingTime && (
+                        <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                          {article.data.readingTime}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   )}
 
   <!-- Cross-links to other categories -->
