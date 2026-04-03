@@ -1,7 +1,7 @@
 ---
 import ArrowRight from '@/components/icons/ArrowRight.astro'
 import ChevronDown from '@/components/icons/ChevronDown.astro'
-import type { FeaturedCaseStudy, NavDropdownVariant, NavItem } from '@/lib/navigation'
+import type { FeaturedContent, NavDropdownVariant, NavItem } from '@/lib/navigation'
 
 import LinkIcon from '@/components/icons/LinkIcon.astro'
 import CogIcon from '@/components/icons/CogIcon.astro'
@@ -21,13 +21,14 @@ import UserGroupIcon from '@/components/icons/UserGroupIcon.astro'
 import BriefcaseIcon from '@/components/icons/BriefcaseIcon.astro'
 import NewspaperIcon from '@/components/icons/NewspaperIcon.astro'
 import SignalIcon from '@/components/icons/SignalIcon.astro'
+import BeakerIcon from '@/components/icons/BeakerIcon.astro'
 
 interface Props {
   label: string
   items: NavItem[]
   cta: { name: string; href: string }
   variant?: NavDropdownVariant
-  featured?: FeaturedCaseStudy
+  featured?: FeaturedContent
 }
 
 const { label, items, cta, variant = 'stacked', featured } = Astro.props
@@ -62,6 +63,7 @@ const iconMap: Record<string, any> = {
   BriefcaseIcon,
   NewspaperIcon,
   SignalIcon,
+  BeakerIcon,
 }
 
 const getIconName = (iconFn: any): string => {
@@ -230,26 +232,51 @@ const rightColumn = items.slice(midpoint)
             </div>
           </div>
           <div class="flex flex-col justify-center p-8" style="border-left: 1px solid rgba(226,232,240,0.7); background-color: var(--color-paper);">
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-brand-500">
-              Case Study
-            </p>
-            <p class="mt-2 font-display text-lg tracking-tight text-neutral-800">
-              {featured.title}
-            </p>
-            <blockquote class="mt-3 text-sm/6 text-neutral-600">
-              &ldquo;{featured.quote}&rdquo;
-            </blockquote>
-            <p class="mt-3 text-sm font-medium text-neutral-800">
-              {featured.author}
-              <span class="text-neutral-500"> &mdash; {featured.company}</span>
-            </p>
-            <a
-              href={featured.href}
-              class="mt-4 inline-flex items-center gap-x-2 text-sm/6 font-display font-medium text-brand-600 hover:text-brand-500 transition-colors duration-150"
-            >
-              Read case study
-              <ArrowRight class="size-4" />
-            </a>
+            {featured.type === 'case-study' && (
+              <>
+                <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-brand-500">
+                  Case Study
+                </p>
+                <p class="mt-2 font-display text-lg tracking-tight text-neutral-800">
+                  {featured.title}
+                </p>
+                <blockquote class="mt-3 text-sm/6 text-neutral-600">
+                  &ldquo;{(featured as any).quote}&rdquo;
+                </blockquote>
+                <p class="mt-3 text-sm font-medium text-neutral-800">
+                  {(featured as any).author}
+                  <span class="text-neutral-500"> &mdash; {(featured as any).company}</span>
+                </p>
+                <a
+                  href={featured.href}
+                  class="mt-4 inline-flex items-center gap-x-2 text-sm/6 font-display font-medium text-brand-600 hover:text-brand-500 transition-colors duration-150"
+                >
+                  Read case study
+                  <ArrowRight class="size-4" />
+                </a>
+              </>
+            )}
+            {featured.type === 'insight' && (
+              <>
+                <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest, #0f4c3a);">
+                  {(featured as any).category?.replace('-', ' ') || 'Insight'}
+                </p>
+                <p class="mt-2 font-display text-lg tracking-tight text-neutral-800">
+                  {featured.title}
+                </p>
+                <p class="mt-3 text-sm/6 text-neutral-600 line-clamp-2">
+                  {(featured as any).excerpt}
+                </p>
+                <a
+                  href={featured.href}
+                  class="mt-4 inline-flex items-center gap-x-2 text-sm/6 font-display font-medium transition-colors duration-150"
+                  style="color: var(--color-forest, #0f4c3a);"
+                >
+                  Read article
+                  <ArrowRight class="size-4" />
+                </a>
+              </>
+            )}
           </div>
         </div>
       )}

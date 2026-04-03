@@ -1,0 +1,498 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import Section from '@/components/marketing/Section.astro'
+import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const accountabilityChain = [
+  { question: 'Is the data trustworthy?', answer: 'Governed data products with quality SLOs, lineage, access policies, and semantic contracts.', layer: 'DataOS' },
+  { question: 'What does the data mean?', answer: 'Ontology, semantic modeling, controlled vocabulary, and entity resolution — shared across every model and agent.', layer: 'DataOS' },
+  { question: 'What intelligence does it produce?', answer: 'Domain-trained reasoning models operating on the governed semantic substrate — not general-purpose LLMs guessing.', layer: 'ECR + Partners' },
+  { question: 'Is the reasoning sound?', answer: 'Model pinning, behavioral regression testing, and deterministic execution for logic and math.', layer: 'Second Wind' },
+  { question: 'Is the action governed?', answer: 'Execution contracts — signed, scoped, and time-bounded. Immutable compiled governance that prompts cannot override.', layer: 'Second Wind' },
+  { question: 'Can we prove what happened?', answer: 'Run manifests — cryptographic proof linking data → reasoning → action → outcome.', layer: 'Second Wind' },
+  { question: 'Does it work behind our firewall?', answer: 'Sovereign on-host execution, air-gapped deployment, local model arbitrage. Your data never leaves your control.', layer: 'All layers' },
+]
+---
+
+<MarketingLayout
+  title="Technology — The Three Body Problem of Enterprise Intelligence"
+  description="Analytics, predictions, and operations run as three disconnected worlds. The intelligence utility is the operating model that unifies them — built on a governed semantic substrate, composable open-source compute, and six purpose-built layers from sensor to autonomous action."
+>
+  <HeroCanvas
+    badge="Technology"
+    title="The Three Body Problem of Enterprise Intelligence."
+    body="Analytics knows what happened. Predictions know what will happen. Operations reacts in real time. But they don't talk to each other. The intelligence utility is the operating model that finally unifies all three into a single execution surface."
+    ctaLabel="Talk to an Engineer"
+    ctaHref="/contact/sales"
+  />
+
+  <!-- The thesis — Three Body Problem -->
+  <section class="py-16 lg:py-24" style="background: #0a0a0a;">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">The problem</p>
+          <h2 class="font-display text-2xl font-bold tracking-tight text-white/90 sm:text-3xl fade-up">
+            Three worlds. Zero shared context.
+          </h2>
+        </div>
+        <div class="lg:col-span-7">
+          <p class="text-base leading-relaxed text-white/50 fade-up">
+            Every enterprise runs three disconnected intelligence systems. <strong class="text-white/70">Analytics</strong> teams build dashboards and data warehouses to understand what happened. <strong class="text-white/70">Data science</strong> teams build prediction models to forecast what will happen. <strong class="text-white/70">Operations</strong> teams run real-time systems to react to what's happening now. Each team has its own tools, its own data pipelines, its own version of the truth. When an anomaly fires in operations, the prediction team doesn't see it. When a forecast shifts, the analytics dashboard doesn't reflect it. When a dashboard reveals a pattern, operations can't act on it automatically.
+          </p>
+          <p class="mt-6 text-base leading-relaxed text-white/50 fade-up">
+            This is the three body problem of enterprise intelligence — and no amount of dashboards, copilots, or point-solution AI fixes it. The problem isn't capability. It's architecture.
+          </p>
+        </div>
+      </div>
+
+      <!-- Three disconnected worlds — visual -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16">
+        <div class="p-6 rounded-xl text-center fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">01</span>
+          <h3 class="mt-3 font-display text-lg font-bold text-white/90">Analytics</h3>
+          <p class="mt-1 text-sm font-medium text-white/30">What happened?</p>
+          <p class="mt-3 text-sm leading-relaxed text-white/40">Warehouses, BI tools, dashboards. Retrospective. Hours or days old. Siloed in the data team.</p>
+        </div>
+        <div class="p-6 rounded-xl text-center fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">02</span>
+          <h3 class="mt-3 font-display text-lg font-bold text-white/90">Predictions</h3>
+          <p class="mt-1 text-sm font-medium text-white/30">What will happen?</p>
+          <p class="mt-3 text-sm leading-relaxed text-white/40">ML models, forecasting, risk scoring. Probabilistic. Disconnected from the systems that need to act on the forecast.</p>
+        </div>
+        <div class="p-6 rounded-xl text-center fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">03</span>
+          <h3 class="mt-3 font-display text-lg font-bold text-white/90">Operations</h3>
+          <p class="mt-1 text-sm font-medium text-white/30">What's happening now?</p>
+          <p class="mt-3 text-sm leading-relaxed text-white/40">SCADA, IoT, real-time monitoring. Reactive. No historical context, no predictive intelligence, no governed automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The answer — the operating model -->
+  <EditorialOutcome
+    statement={`The intelligence utility is the <span style="color: var(--color-forest);">operating model</span> that unifies analytics, predictions, and operations into a single execution surface.`}
+    description="Not another dashboard. Not another copilot. An operating model — a shared semantic substrate where every system, every model, and every team reasons over the same governed data. Analytics feeds predictions. Predictions trigger operations. Operations generate the data that updates analytics. One loop. One truth. One governed path from insight to action."
+  />
+
+  <!-- Where we deploy — infrastructure foundation -->
+  <section class="py-16 lg:py-20" style="background: #0a0a0a;">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">
+        Infrastructure
+      </p>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-white/90 sm:text-3xl mb-4 fade-up">
+        We deploy where you are.
+      </h2>
+      <p class="text-base leading-relaxed text-white/40 max-w-3xl mb-12 fade-up">
+        The intelligence utility runs on the infrastructure your operations already use. Cloud, on-premises, at the edge, or air-gapped — your data stays sovereign, and the stack adapts to your compliance and latency requirements.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <!-- Cloud -->
+        <div class="p-6 rounded-xl text-center fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <div class="flex items-center justify-center gap-4 mb-4">
+            <img src="/images/partners/aws.svg" alt="AWS" class="h-5 w-auto text-white" style="color: white;" />
+            <img src="/images/partners/azure.svg" alt="Azure" class="h-5 w-auto text-white" style="color: white;" />
+            <img src="/images/partners/google-cloud.svg" alt="Google Cloud" class="h-4 w-auto text-white" style="color: white;" />
+          </div>
+          <h3 class="font-display text-base font-bold text-white/90">Cloud</h3>
+          <p class="mt-2 text-sm leading-relaxed text-white/40">
+            AWS, Azure, or GCP. Managed infrastructure with automatic scaling. GovCloud and MACC-eligible.
+          </p>
+        </div>
+
+        <!-- On-Premises / Air-Gapped -->
+        <div class="p-6 rounded-xl text-center fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <div class="flex items-center justify-center h-9 mb-4">
+            <svg class="w-8 h-8 text-white/40" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7" />
+            </svg>
+          </div>
+          <h3 class="font-display text-base font-bold text-white/90">On-Premises & Air-Gapped</h3>
+          <p class="mt-2 text-sm leading-relaxed text-white/40">
+            Your data center, your control. Full sovereignty over compute and storage. Disconnected environments for classified operations.
+          </p>
+        </div>
+
+        <!-- Edge -->
+        <div class="p-6 rounded-xl text-center fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <div class="flex items-center justify-center h-9 mb-4">
+            <svg class="w-8 h-8 text-white/40" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-base font-bold text-white/90">Edge & Hybrid</h3>
+          <p class="mt-2 text-sm leading-relaxed text-white/40">
+            Lightweight deployment at substations, teleports, and remote sites. Edge collects, cloud aggregates, on-prem governs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 6-layer stack overview -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">
+        How the operating model delivers
+      </p>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-white/90 sm:text-3xl mb-4 fade-up">
+        Six layers that close the loop between knowing and doing.
+      </h2>
+      <p class="text-base leading-relaxed text-white/40 max-w-3xl mb-16 fade-up">
+        Unifying analytics, predictions, and operations isn't a feature — it's an architecture. Each layer solves a specific gap that keeps these three worlds apart: connecting the physical systems, giving data shared meaning, applying domain reasoning, orchestrating action, and governing every step with cryptographic proof.
+      </p>
+
+      <!-- Stack layers — bottom to top -->
+      <div class="space-y-3">
+        <!-- Layer 1 -->
+        <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+            <div class="flex-shrink-0 lg:w-48">
+              <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">Layer 1</span>
+              <h3 class="mt-1 font-display text-lg font-bold text-white/90">Operational Data</h3>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm leading-relaxed text-white/40 max-w-2xl">
+                <strong class="text-white/70">DataMiner xOps</strong> connects to 8,000+ protocols across industrial, IT, enterprise, and satellite systems. IoT gateways, VMS cameras, SCADA, environmental sensors, edge devices — every source your operations touch becomes part of the real-time operational model. No custom connectors. No middleware. Data flows from day one.
+              </p>
+            </div>
+            <div class="flex-shrink-0">
+              <img src="/images/partners/dataminer.svg" alt="DataMiner" class="h-6 w-auto" style="filter: brightness(0) invert(1); opacity: 0.4;" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 2 — emphasized as the moat -->
+        <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(15,76,58,0.15); border: 1px solid rgba(15,76,58,0.3);">
+          <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+            <div class="flex-shrink-0 lg:w-48">
+              <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">Layer 2</span>
+              <h3 class="mt-1 font-display text-lg font-bold text-white/90">Semantic Substrate</h3>
+              <span class="inline-block mt-1 font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded" style="background: rgba(15,76,58,0.3); color: var(--color-forest);">The moat</span>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm leading-relaxed text-white/40 max-w-2xl">
+                <strong class="text-white/70">DataOS by Modern</strong> provides the ontology, knowledge graph, and governed data products that give your operational data meaning. Not a database. Not a catalog. The explicit, governed encoding of what things mean, how they're related, how they change over time, and what rules govern their behavior. Every reasoning model, every agent, every automation reasons over this shared substrate.
+              </p>
+            </div>
+            <div class="flex-shrink-0">
+              <img src="/images/partners/dataos.svg" alt="Modern Data Company" class="h-5 w-auto text-white/40" style="color: rgba(255,255,255,0.4);" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 3 -->
+        <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+            <div class="flex-shrink-0 lg:w-48">
+              <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">Layer 3</span>
+              <h3 class="mt-1 font-display text-lg font-bold text-white/90">Domain Intelligence</h3>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm leading-relaxed text-white/40 max-w-2xl">
+                <strong class="text-white/70">ECR and domain partners</strong> provide specialized reasoning models — predictive risk, safety validation, autonomous decision-making — trained on industry data flowing through the utility. These aren't general-purpose LLMs. They're domain-trained models that get smarter with every deployment because they're fed governed data from the semantic substrate.
+              </p>
+            </div>
+            <div class="flex-shrink-0">
+              <span class="font-display text-base font-bold text-white/20">ECR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 4 -->
+        <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+            <div class="flex-shrink-0 lg:w-48">
+              <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">Layer 4</span>
+              <h3 class="mt-1 font-display text-lg font-bold text-white/90">Agent Orchestration</h3>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm leading-relaxed text-white/40 max-w-2xl">
+                LLMs live here as <strong class="text-white/70">commoditized executors</strong> — best model for the best job. Pluggable, pinned for behavioral consistency, replaceable without architectural impact. Multi-agent coordination via MCP and A2A protocols. Human-in-the-loop gates where your governance requires them. The model doesn't matter. The data it reasons over and the governance that constrains it — that's what matters.
+              </p>
+              <div class="flex items-center gap-5 mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.06);">
+                <img src="/images/partners/openai.svg" alt="OpenAI" class="h-4 w-auto opacity-30" />
+                <img src="/images/partners/anthropic.svg" alt="Claude by Anthropic" class="h-4 w-auto opacity-30" />
+                <img src="/images/partners/ollama.svg" alt="Ollama" class="h-4 w-auto opacity-30" />
+                <span class="font-mono text-[10px] text-white/20">+ any model</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 5 -->
+        <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+            <div class="flex-shrink-0 lg:w-48">
+              <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">Layer 5</span>
+              <h3 class="mt-1 font-display text-lg font-bold text-white/90">Governed Execution</h3>
+              <span class="inline-block mt-1 font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 rounded text-white/30" style="background: rgba(255,255,255,0.06);">Nobody else has this</span>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm leading-relaxed text-white/40 max-w-2xl">
+                <strong class="text-white/70">Second Wind</strong> separates probabilistic reasoning from deterministic execution. Governance rules are compiled — a prompt cannot override them. Execution contracts are signed, scoped, and time-bounded. Run manifests produce cryptographic proof linking data → reasoning → action → outcome. This is the layer that crosses the gap from "AI copilot" to "AI that takes action" in regulated environments.
+              </p>
+            </div>
+            <div class="flex-shrink-0">
+              <span class="font-display text-sm font-bold text-white/15">SW</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 6 -->
+        <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+            <div class="flex-shrink-0 lg:w-48">
+              <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">Layer 6</span>
+              <h3 class="mt-1 font-display text-lg font-bold text-white/90">Autonomous Operations</h3>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm leading-relaxed text-white/40 max-w-2xl">
+                The end state. Closed-loop intelligence products — recommend, execute, measure, adapt. Revenue assurance, fleet health, pipeline integrity, ground station operations, smart city coordination. Each product composes multiple reasoning modalities on the same governed substrate. Each action is auditable. Each outcome feeds back into the model.
+              </p>
+            </div>
+            <div class="flex-shrink-0">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-white/15">Products</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Built on open standards — trust signal -->
+  <section class="py-12 lg:py-16" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16">
+        <div class="lg:w-1/3">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-3 fade-up">Built on open standards</p>
+          <h3 class="font-display text-xl font-bold tracking-tight text-white/90 fade-up">
+            Composable compute. No lock-in.
+          </h3>
+          <p class="mt-3 text-sm leading-relaxed text-white/40 fade-up">
+            The intelligence utility runs on battle-tested open-source foundations — the same technologies that power the largest data platforms in the world. Your investment compounds. Your data stays portable.
+          </p>
+        </div>
+        <div class="lg:w-2/3">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="p-5 rounded-xl text-center fade-up flex flex-col items-center justify-center gap-3" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+              <img src="/images/partners/spark.svg" alt="Apache Spark" class="h-8 w-auto" style="filter: brightness(0) invert(1); opacity: 0.4;" />
+              <p class="font-mono text-[10px] uppercase tracking-wider text-white/25">Distributed compute</p>
+            </div>
+            <div class="p-5 rounded-xl text-center fade-up flex flex-col items-center justify-center gap-3" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+              <img src="/images/partners/kafka.svg" alt="Apache Kafka" class="h-8 w-auto" style="filter: brightness(0) invert(1); opacity: 0.4;" />
+              <p class="font-mono text-[10px] uppercase tracking-wider text-white/25">Event streaming</p>
+            </div>
+            <div class="p-5 rounded-xl text-center fade-up flex flex-col items-center justify-center gap-3" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+              <img src="/images/partners/iceberg.svg" alt="Apache Iceberg" class="h-8 w-auto" style="filter: brightness(0) invert(1); opacity: 0.4;" />
+              <p class="font-mono text-[10px] uppercase tracking-wider text-white/25">Open table format</p>
+            </div>
+            <div class="p-5 rounded-xl text-center fade-up flex flex-col items-center justify-center gap-3" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+              <img src="/images/partners/trino.svg" alt="Trino" class="h-8 w-auto" style="filter: brightness(0) invert(1); opacity: 0.4;" />
+              <p class="font-mono text-[10px] uppercase tracking-wider text-white/25">Distributed SQL</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why the semantic substrate is the moat -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+        <div class="lg:col-span-5">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+            Why this operating model wins
+          </p>
+          <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+            The intelligence isn't in the model. It's in the unified substrate.
+          </h2>
+          <p class="mt-4 text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+            Point solutions add another silo. Copilots add another screen. The operating model works because analytics, predictions, and operations share one governed substrate — and that substrate compounds over time in three ways.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="space-y-6">
+            <div class="fade-up">
+              <h3 class="font-display text-base font-bold" style="color: var(--color-neutral-800);">The semantic substrate deepens with every deployment</h3>
+              <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                DataOS builds the ontology progressively — controlled vocabulary, taxonomy, thesaurus, formal ontology engine, full knowledge graph. Each customer deployment adds domain knowledge to the graph. Each reasoning model that operates on the substrate enriches it further. The moat widens with every connection.
+              </p>
+            </div>
+
+            <div class="fade-up">
+              <h3 class="font-display text-base font-bold" style="color: var(--color-neutral-800);">Domain models can't be replicated without the data</h3>
+              <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                ECR's predictive and autonomous reasoning models are trained on industry data flowing through the utility. A competitor without the governed data pipeline can't reproduce these models. The more data flows through the stack, the better the models get, the more valuable the outputs become.
+              </p>
+            </div>
+
+            <div class="fade-up">
+              <h3 class="font-display text-base font-bold" style="color: var(--color-neutral-800);">Governed execution is architectural, not a feature toggle</h3>
+              <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                Second Wind's immutable compiled core means governance rules can't be overridden by a prompt or a model hallucination. DataOS data products become Second Wind knowledge cartridges — governed semantic context injected directly into agent execution. Full lineage from sensor reading through semantic model through reasoning through action.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- The reasoning modalities -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a;">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">
+        Five reasoning modalities
+      </p>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-white/90 sm:text-3xl mb-4 fade-up">
+        Intelligence isn't "LLM + RAG." It's five distinct ways of reasoning.
+      </h2>
+      <p class="text-base leading-relaxed text-white/40 max-w-3xl mb-12 fade-up">
+        The market jumps from "knowledge graph" to "agents" as if reasoning is one thing. It's not. There are fundamentally different types of intelligence that enterprises need — each requiring specialized approaches, all reasoning over the same governed semantic substrate.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          {
+            modality: 'Relational',
+            question: 'How are things connected?',
+            description: 'Graph traversal, entity resolution, network analysis, link prediction. Understanding the structure of relationships between assets, systems, people, and processes.',
+          },
+          {
+            modality: 'Temporal',
+            question: 'What patterns emerge over time?',
+            description: 'Time-series analysis, event sequence mining, temporal pattern recognition, change detection. Understanding how things evolve and what sequences lead to outcomes.',
+          },
+          {
+            modality: 'Spatial',
+            question: 'Where are things and why does it matter?',
+            description: 'GIS analysis, geospatial queries, orbital mechanics, spatial clustering. Understanding how location and physical relationships affect operations.',
+          },
+          {
+            modality: 'Causal',
+            question: 'What causes what?',
+            description: 'Causal inference, structural causal models, counterfactual analysis, root cause analysis. Understanding cause and effect — not just correlation.',
+          },
+          {
+            modality: 'Predictive',
+            question: 'What will happen next?',
+            description: 'ML forecasting, anomaly detection, risk scoring. The competitive edge isn\'t in the model — it\'s in the features, which come from the semantic substrate.',
+          },
+          {
+            modality: 'Prescriptive',
+            question: 'What should we do?',
+            description: 'The composed output of the other five. When all modalities reason over the same governed substrate, prescriptive decisions emerge — executed through Second Wind with full audit trails.',
+          },
+        ].map((item, i) => (
+          <div class="p-6 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+            <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="mt-3 font-display text-base font-bold text-white/90">{item.modality}</h3>
+            <p class="mt-1 text-sm font-medium" style="color: var(--color-forest);">{item.question}</p>
+            <p class="mt-3 text-sm leading-relaxed text-white/40">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- The accountability chain -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-12">
+        <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+          Enterprise accountability
+        </p>
+        <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+          Seven questions every regulated enterprise needs answered.
+        </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+          Enterprise AI adoption stalls because of accountability gaps, not capability gaps. Organizations in energy, defense, healthcare, and financial services need provable answers to these questions before deploying AI that takes action.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        {accountabilityChain.map((item, i) => (
+          <div class="p-6 rounded-xl bg-white fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+            <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+              <div class="flex-shrink-0 lg:w-64">
+                <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">{String(i + 1).padStart(2, '0')}</span>
+                <h3 class="mt-1 font-display text-base font-bold" style="color: var(--color-neutral-800);">{item.question}</h3>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm leading-relaxed" style="color: var(--color-neutral-500);">{item.answer}</p>
+              </div>
+              <div class="flex-shrink-0">
+                <span class="font-mono text-[10px] uppercase tracking-wider px-2 py-1 rounded" style="background: var(--color-neutral-50); color: var(--color-neutral-400);">{item.layer}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-8 text-sm leading-relaxed text-center fade-up" style="color: var(--color-neutral-400);">
+        No other vendor or combination of vendors answers all seven.
+      </p>
+    </div>
+  </Section>
+
+  <!-- Navigation to other utility pages -->
+  <section class="py-16 lg:py-20" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/utility" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Overview</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            What Is It
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">One operational model from every system you run.</p>
+        </a>
+        <a href="/utility/what-you-get" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Delivery</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            What You Get
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Workflows, agents, automations, and APIs your team acts from.</p>
+        </a>
+        <a href="/utility/xops" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Operations</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            xOps
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Adaptive operations suite that molds to your data and workflows.</p>
+        </a>
+        <a href="/utility/how-it-starts" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Start here</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            How It Starts
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Tell us the outcome. We connect the systems.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <DualCta
+    title={`See the architecture in action. <span style="color: var(--color-forest);">Talk to an engineer.</span>`}
+    description="We'll walk through the stack with your systems, your data, and your use case. No slides. No handwaving. Just the architecture applied to your operations."
+    primaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    secondaryCta={{ label: 'Start With an Outcome', href: '/contact/demo' }}
+  />
+</MarketingLayout>

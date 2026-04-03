@@ -1,21 +1,198 @@
 ---
-import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
-import Section from '@/components/marketing/Section.astro'
-import Placeholder from '@/components/marketing/Placeholder.astro'
+import { getCollection } from 'astro:content'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SiteHeader from '@/components/layout/SiteHeader.astro'
+import SiteFooter from '@/components/layout/SiteFooter.astro'
+
+let allNews: any[] = []
+try {
+  allNews = (await getCollection('news'))
+    .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+} catch {
+  // news collection may not exist yet
+}
+
+const categories = [
+  { slug: 'all', label: 'All' },
+  { slug: 'product', label: 'Product' },
+  { slug: 'partnership', label: 'Partnerships' },
+  { slug: 'company', label: 'Company' },
+  { slug: 'event', label: 'Events' },
+]
 ---
 
-<MarketingLayout
-  title="News — Latest Updates & Announcements"
-  description="Stay up to date with the latest news and announcements from Quatro."
+<BaseLayout
+  title="News — Quatro"
+  description="Latest updates, product launches, partnerships, and company news from Quatro."
+  lang="en"
 >
-  <Hero
-    eyebrow="News"
-    title="Latest Updates & Announcements"
-    description="Stay up to date with product launches, partnerships, and company news."
-  />
+  <SiteHeader lang="en" />
 
-  <Section>
-    <Placeholder label="News Articles Grid" class="min-h-[600px]" />
-  </Section>
-</MarketingLayout>
+  <!-- Hero -->
+  <section class="pt-32 pb-16 lg:pt-40 lg:pb-20 px-6" style="border-bottom: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-4" style="color: var(--color-forest);">News</p>
+      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight" style="color: var(--color-neutral-800);">
+        Latest from Quatro.
+      </h1>
+      <p class="mt-6 font-sans text-lg leading-relaxed max-w-2xl" style="color: var(--color-neutral-500);">
+        Product launches, partnerships, and company updates.
+      </p>
+    </div>
+  </section>
+
+  {allNews.length > 0 ? (
+    <!-- Articles grid -->
+    <section class="py-16 lg:py-20 px-6">
+      <div class="mx-auto max-w-5xl">
+        <!-- Search -->
+        <div class="mb-8">
+          <div class="relative max-w-md">
+            <svg class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <input
+              type="text"
+              placeholder="Search news..."
+              data-search-input
+              class="w-full pl-7 pb-3 bg-transparent font-sans text-sm outline-none"
+              style="color: var(--color-neutral-800); border-bottom: 1px solid var(--color-structure);"
+            />
+          </div>
+        </div>
+
+        <!-- Category filters -->
+        <div class="flex items-center gap-6 mb-12 overflow-x-auto pb-2" style="border-bottom: 1px solid var(--color-structure);">
+          {categories.map(cat => (
+            <button
+              class="font-mono text-[11px] uppercase tracking-[0.1em] pb-3 whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-forest)]"
+              style={`color: var(--color-neutral-${cat.slug === 'all' ? '800' : '400'}); ${cat.slug === 'all' ? 'border-bottom: 2px solid var(--color-forest); margin-bottom: -1px;' : ''}`}
+              data-filter={cat.slug}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        <div class="grid gap-y-12 lg:gap-y-16">
+          <p id="no-results" class="font-sans text-base py-12 text-center" style="color: var(--color-neutral-400); display: none;">No news matches your search.</p>
+          {allNews.map((article, i) => (
+            <a
+              href={`/company/news/${article.id.replace(/\.md$/, '')}`}
+              class="group grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 items-start"
+              data-category={article.data.category}
+              data-tags={article.data.tags?.join(',') || ''}
+              style={i > 0 ? 'border-top: 1px solid var(--color-structure); padding-top: 3rem;' : ''}
+            >
+              {article.data.heroImage && (
+                <div class="relative overflow-hidden rounded-lg aspect-[4/3]" style="background: var(--color-neutral-50);">
+                  <img src={article.data.heroImage} alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                </div>
+              )}
+              <div>
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); background: rgba(15,76,58,0.06);">
+                    {article.data.category}
+                  </span>
+                </div>
+                <h3 class="font-sans text-xl lg:text-2xl font-light leading-[1.25] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                  {article.data.title}
+                </h3>
+                <p class="mt-3 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                  {article.data.excerpt}
+                </p>
+                <div class="mt-4">
+                  <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                    {article.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  </span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ) : (
+    <!-- Empty state -->
+    <section class="py-20 lg:py-28 px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="font-sans text-lg leading-relaxed" style="color: var(--color-neutral-400);">
+          News and announcements coming soon.
+        </p>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 px-6" style="border-top: 1px solid var(--color-structure); background: var(--color-neutral-50, #f8fafc);">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-sans text-2xl lg:text-3xl font-light tracking-tight" style="color: var(--color-neutral-800);">
+        See it on your infrastructure.
+      </h2>
+      <p class="mt-4 font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
+        Start with the outcome that matters. We connect the systems. Your team works from the model.
+      </p>
+      <a
+        href="/contact/demo"
+        class="inline-flex items-center gap-2 mt-8 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105"
+        style="background-color: var(--color-forest); color: white;"
+      >
+        Schedule an Assessment
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <SiteFooter lang="en" />
+
+  <script>
+    const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    const articles = document.querySelectorAll<HTMLElement>('[data-category]');
+    const searchInput = document.querySelector<HTMLInputElement>('[data-search-input]');
+    const noResults = document.getElementById('no-results');
+
+    let activeCategory = 'all';
+
+    function applyFilters() {
+      const query = searchInput?.value.toLowerCase().trim() || '';
+      let visibleCount = 0;
+
+      articles.forEach((article) => {
+        const cat = article.getAttribute('data-category') || '';
+        const tags = article.getAttribute('data-tags') || '';
+        const title = article.querySelector('h3')?.textContent?.toLowerCase() || '';
+        const excerpt = article.querySelector('p')?.textContent?.toLowerCase() || '';
+
+        const matchesCategory = activeCategory === 'all' || cat === activeCategory;
+        const matchesSearch = !query || title.includes(query) || excerpt.includes(query) || tags.includes(query);
+        const visible = matchesCategory && matchesSearch;
+
+        article.style.display = visible ? '' : 'none';
+        if (visible) {
+          article.style.borderTop = visibleCount === 0 ? 'none' : '';
+          article.style.paddingTop = visibleCount === 0 ? '0' : '';
+          visibleCount++;
+        }
+      });
+
+      if (noResults) noResults.style.display = visibleCount === 0 ? '' : 'none';
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeCategory = btn.getAttribute('data-filter') || 'all';
+        filterButtons.forEach(b => {
+          b.style.color = `var(--color-neutral-400)`;
+          b.style.borderBottom = '';
+          b.style.marginBottom = '';
+        });
+        btn.style.color = 'var(--color-neutral-800)';
+        btn.style.borderBottom = '2px solid var(--color-forest)';
+        btn.style.marginBottom = '-1px';
+        applyFilters();
+      });
+    });
+
+    searchInput?.addEventListener('input', () => applyFilters());
+  </script>
+</BaseLayout>

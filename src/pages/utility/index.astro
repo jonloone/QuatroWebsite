@@ -1,0 +1,551 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import Section from '@/components/marketing/Section.astro'
+import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const integrationDomains = [
+  { count: '2,200+', domain: 'Industrial & SCADA', examples: 'Modbus, OPC-UA, SNMP, DNP3, IEC 61850' },
+  { count: '1,800+', domain: 'Network & Telecom', examples: 'DOCSIS, GPON, TR-069, streaming telemetry' },
+  { count: '1,500+', domain: 'IT Infrastructure', examples: 'Azure, AWS, VMware, Kubernetes, ServiceNow' },
+  { count: '1,200+', domain: 'Enterprise Systems', examples: 'SAP, Oracle, Salesforce, Workday, Power BI' },
+  { count: '800+', domain: 'IoT & Edge', examples: 'MQTT, LoRaWAN, Zigbee, BACnet, Modbus TCP' },
+  { count: '500+', domain: 'Satellite & Space', examples: 'TT&C, DVB-S2, spectrum analyzers, modem arrays' },
+]
+
+const deploymentOptions = [
+  {
+    name: 'Cloud',
+    description: 'Azure, AWS, or GCP. Managed infrastructure with automatic scaling. MACC-eligible.',
+  },
+  {
+    name: 'On-Premises',
+    description: 'Your data center, your control. Full sovereignty over compute and storage.',
+  },
+  {
+    name: 'Edge',
+    description: 'Lightweight deployment at the operational edge — substations, teleports, remote sites.',
+  },
+  {
+    name: 'Air-Gapped',
+    description: 'Disconnected environments for classified or high-security operations. No external dependencies.',
+  },
+  {
+    name: 'Hybrid',
+    description: 'Combine any of the above. Edge collects, cloud aggregates, on-prem governs.',
+  },
+]
+---
+
+<MarketingLayout
+  title="The Intelligence Utility — Start With the Outcome"
+  description="You tell us the outcome that matters. We connect the systems that hold the answer — not all your data, just the data that matters — and give your team back one operational model they can act from."
+>
+  <HeroCanvas
+    badge="The Intelligence Utility"
+    title="Start With the Outcome. Connect What Matters."
+    body="You tell us the decision your team needs to make. We connect the systems that hold the answer — not all your data, just the data that matters — and give your team back one operational model they can see, reason about, and act from."
+    ctaLabel="Tell Us the Outcome"
+    ctaHref="/contact/demo"
+  />
+
+  <!-- Editorial lead-in -->
+  <EditorialOutcome
+    statement={`Not a platform you build on. A <span style="color: var(--color-forest);">utility you connect to.</span>`}
+    description="Every pipeline, grid, fleet, and facility has the data it needs to run smarter. The problem isn't the data — it's that the systems holding it don't share a common model. Quatro starts with the outcome your team needs, connects only the systems that hold the answer, and gives your team back one governed model they can act from."
+    stats={[
+      { value: '8,000+', label: 'Integrations' },
+      { value: '1,000+', label: 'Vendors' },
+      { value: '5', label: 'Deployment models' },
+    ]}
+  />
+
+  <!-- How the utility works — four moves, right-to-left -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a;">
+    <!-- Grain overlay -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-6 fade-up">
+        How the utility works
+      </p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl tracking-tight text-white/90 leading-tight mb-16 max-w-3xl fade-up">
+        Start with the decision. Work backward to the data that matters.
+      </h2>
+
+      <!-- Right-to-left layered decomposition diagram -->
+      <div class="mb-16 rounded-xl fade-up overflow-hidden" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+
+        <!-- SVG diagram — layered Sales 360-style decomposition -->
+        <div class="px-4 pt-8 pb-2 sm:px-8 sm:pt-10 sm:pb-4 lg:px-10">
+          <svg class="w-full h-auto hidden sm:block" viewBox="0 0 1000 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              @keyframes rtl-flow { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 16; } }
+              @keyframes rtl-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.85; } }
+              .rtl-dash { animation: rtl-flow 1.2s linear infinite; }
+              .rtl-pulse { animation: rtl-pulse 2.5s ease-in-out infinite; }
+            </style>
+
+            <!-- ===== COLUMN HEADERS (numbered right-to-left like the DataOS diagram) ===== -->
+            <!-- Circled numbers -->
+            <circle cx="105" cy="20" r="14" fill="none" stroke="rgba(0,209,178,0.5)" stroke-width="1.5"/>
+            <text x="105" y="25" text-anchor="middle" fill="rgba(0,209,178,0.7)" font-family="monospace" font-size="13" font-weight="bold">1</text>
+
+            <circle cx="315" cy="20" r="14" fill="none" stroke="rgba(0,209,178,0.35)" stroke-width="1.5"/>
+            <text x="315" y="25" text-anchor="middle" fill="rgba(0,209,178,0.5)" font-family="monospace" font-size="13" font-weight="bold">2</text>
+
+            <circle cx="555" cy="20" r="14" fill="none" stroke="rgba(244,162,97,0.35)" stroke-width="1.5"/>
+            <text x="555" y="25" text-anchor="middle" fill="rgba(244,162,97,0.5)" font-family="monospace" font-size="13" font-weight="bold">3</text>
+
+            <circle cx="830" cy="20" r="14" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+            <text x="830" y="25" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="monospace" font-size="13" font-weight="bold">4</text>
+
+            <!-- Column labels -->
+            <text x="105" y="54" text-anchor="middle" fill="rgba(0,209,178,0.6)" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="0.12em">USE CASES</text>
+            <text x="315" y="54" text-anchor="middle" fill="rgba(0,209,178,0.4)" font-family="monospace" font-size="10" letter-spacing="0.12em">METRICS</text>
+            <text x="555" y="54" text-anchor="middle" fill="rgba(244,162,97,0.45)" font-family="monospace" font-size="10" letter-spacing="0.12em">MEASURES × DIMENSIONS</text>
+            <text x="830" y="54" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="monospace" font-size="10" letter-spacing="0.12em">SOURCE ENTITIES</text>
+
+            <!-- Thin column dividers -->
+            <line x1="210" y1="70" x2="210" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="420" y1="70" x2="420" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <line x1="700" y1="70" x2="700" y2="400" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+            <!-- ===== ROW 1: Revenue outcome ===== -->
+
+            <!-- Use case box (green, dashed border) -->
+            <rect x="20" y="80" rx="6" ry="6" width="170" height="44" fill="rgba(0,209,178,0.06)" stroke="rgba(0,209,178,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <text x="105" y="107" text-anchor="middle" fill="rgba(0,209,178,0.8)" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Purchase Behaviour</text>
+
+            <!-- Metric diamonds (amber/gold) -->
+            <g transform="translate(265,92)">
+              <rect x="-10" y="-10" width="20" height="20" rx="2" transform="rotate(45)" fill="rgba(244,192,48,0.15)" stroke="rgba(244,192,48,0.5)" stroke-width="1.2"/>
+            </g>
+            <text x="295" y="97" text-anchor="start" fill="rgba(244,192,48,0.7)" font-family="system-ui, sans-serif" font-size="11">Revenue</text>
+
+            <g transform="translate(265,120)">
+              <rect x="-8" y="-8" width="16" height="16" rx="2" transform="rotate(45)" fill="rgba(244,192,48,0.1)" stroke="rgba(244,192,48,0.35)" stroke-width="1"/>
+            </g>
+            <text x="290" y="125" text-anchor="start" fill="rgba(244,192,48,0.5)" font-family="system-ui, sans-serif" font-size="10">Frequency</text>
+
+            <!-- Connecting flow lines (use case → metrics) -->
+            <line x1="190" y1="102" x2="252" y2="92" stroke="rgba(0,209,178,0.2)" stroke-width="1.5" stroke-dasharray="5,5" class="rtl-dash"/>
+            <line x1="190" y1="102" x2="252" y2="120" stroke="rgba(0,209,178,0.15)" stroke-width="1.5" stroke-dasharray="5,5" class="rtl-dash"/>
+
+            <!-- Measures × Dimensions boxes (amber background) -->
+            <rect x="435" y="76" rx="4" ry="4" width="120" height="26" fill="rgba(244,162,97,0.08)" stroke="rgba(244,162,97,0.25)" stroke-width="1"/>
+            <text x="495" y="93" text-anchor="middle" fill="rgba(244,162,97,0.6)" font-family="monospace" font-size="9">Total Sales Value</text>
+
+            <rect x="565" y="76" rx="4" ry="4" width="120" height="26" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <text x="625" y="93" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="9">Invoice Value</text>
+
+            <rect x="435" y="108" rx="4" ry="4" width="120" height="26" fill="rgba(244,162,97,0.08)" stroke="rgba(244,162,97,0.25)" stroke-width="1"/>
+            <text x="495" y="125" text-anchor="middle" fill="rgba(244,162,97,0.6)" font-family="monospace" font-size="9">Order Frequency</text>
+
+            <rect x="565" y="108" rx="4" ry="4" width="120" height="26" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <text x="625" y="125" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="9">Product Segment</text>
+
+            <!-- × symbol between measures and dimensions -->
+            <text x="558" y="95" text-anchor="middle" fill="rgba(255,255,255,0.15)" font-family="system-ui, sans-serif" font-size="14">×</text>
+            <text x="558" y="127" text-anchor="middle" fill="rgba(255,255,255,0.15)" font-family="system-ui, sans-serif" font-size="14">×</text>
+
+            <!-- Metrics → Measures connections -->
+            <line x1="300" y1="92" x2="435" y2="89" stroke="rgba(244,162,97,0.15)" stroke-width="1" stroke-dasharray="4,4" class="rtl-dash" style="animation-delay:0.2s"/>
+            <line x1="290" y1="120" x2="435" y2="121" stroke="rgba(244,162,97,0.15)" stroke-width="1" stroke-dasharray="4,4" class="rtl-dash" style="animation-delay:0.4s"/>
+
+            <!-- Source entities (dim, right side) -->
+            <rect x="720" y="80" rx="12" ry="12" width="80" height="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="760" y="96" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="system-ui, sans-serif" font-size="9">Sales</text>
+
+            <rect x="815" y="80" rx="12" ry="12" width="80" height="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="855" y="96" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="system-ui, sans-serif" font-size="9">Orders</text>
+
+            <rect x="910" y="80" rx="12" ry="12" width="80" height="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="950" y="96" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="system-ui, sans-serif" font-size="9">Accounts</text>
+
+            <!-- Measures → Sources connections -->
+            <line x1="685" y1="89" x2="720" y2="92" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,4" class="rtl-dash"/>
+            <line x1="685" y1="121" x2="720" y2="92" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3,4" class="rtl-dash" style="animation-delay:0.3s"/>
+
+            <!-- ===== ROW 2: Inventory outcome ===== -->
+
+            <rect x="20" y="175" rx="6" ry="6" width="170" height="44" fill="rgba(0,209,178,0.06)" stroke="rgba(0,209,178,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <text x="105" y="202" text-anchor="middle" fill="rgba(0,209,178,0.8)" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Inventory Management</text>
+
+            <!-- Metric diamond -->
+            <g transform="translate(280,192)">
+              <rect x="-10" y="-10" width="20" height="20" rx="2" transform="rotate(45)" fill="rgba(244,192,48,0.15)" stroke="rgba(244,192,48,0.5)" stroke-width="1.2"/>
+            </g>
+            <text x="310" y="197" text-anchor="start" fill="rgba(244,192,48,0.7)" font-family="system-ui, sans-serif" font-size="11">Inventory In Hand</text>
+
+            <line x1="190" y1="197" x2="267" y2="192" stroke="rgba(0,209,178,0.2)" stroke-width="1.5" stroke-dasharray="5,5" class="rtl-dash"/>
+
+            <!-- Measures × Dimensions for inventory -->
+            <rect x="435" y="176" rx="4" ry="4" width="120" height="26" fill="rgba(244,162,97,0.08)" stroke="rgba(244,162,97,0.25)" stroke-width="1"/>
+            <text x="495" y="193" text-anchor="middle" fill="rgba(244,162,97,0.6)" font-family="monospace" font-size="9">Total Stocks</text>
+
+            <rect x="565" y="176" rx="4" ry="4" width="120" height="26" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <text x="625" y="193" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="9">Warehouse ID</text>
+
+            <rect x="435" y="208" rx="4" ry="4" width="120" height="26" fill="rgba(244,162,97,0.08)" stroke="rgba(244,162,97,0.25)" stroke-width="1"/>
+            <text x="495" y="225" text-anchor="middle" fill="rgba(244,162,97,0.6)" font-family="monospace" font-size="9">Daily Demand Rate</text>
+
+            <rect x="565" y="208" rx="4" ry="4" width="120" height="26" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <text x="625" y="225" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="9">Stock Status</text>
+
+            <text x="558" y="195" text-anchor="middle" fill="rgba(255,255,255,0.15)" font-family="system-ui, sans-serif" font-size="14">×</text>
+            <text x="558" y="227" text-anchor="middle" fill="rgba(255,255,255,0.15)" font-family="system-ui, sans-serif" font-size="14">×</text>
+
+            <line x1="310" y1="192" x2="435" y2="189" stroke="rgba(244,162,97,0.15)" stroke-width="1" stroke-dasharray="4,4" class="rtl-dash" style="animation-delay:0.3s"/>
+
+            <!-- Source entities row 2 -->
+            <rect x="720" y="182" rx="12" ry="12" width="90" height="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="765" y="198" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="system-ui, sans-serif" font-size="9">Inventory</text>
+
+            <rect x="825" y="182" rx="12" ry="12" width="90" height="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="870" y="198" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="system-ui, sans-serif" font-size="9">Warehouses</text>
+
+            <line x1="685" y1="189" x2="720" y2="194" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,4" class="rtl-dash"/>
+
+            <!-- ===== ROW 3: Deals outcome ===== -->
+
+            <rect x="20" y="270" rx="6" ry="6" width="170" height="44" fill="rgba(0,209,178,0.06)" stroke="rgba(0,209,178,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <text x="105" y="297" text-anchor="middle" fill="rgba(0,209,178,0.8)" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Deals &amp; Proposals</text>
+
+            <!-- Metric diamonds -->
+            <g transform="translate(260,280)">
+              <rect x="-10" y="-10" width="20" height="20" rx="2" transform="rotate(45)" fill="rgba(244,192,48,0.15)" stroke="rgba(244,192,48,0.5)" stroke-width="1.2"/>
+            </g>
+            <text x="290" y="285" text-anchor="start" fill="rgba(244,192,48,0.7)" font-family="system-ui, sans-serif" font-size="11">Total Deal Value</text>
+
+            <g transform="translate(260,308)">
+              <rect x="-8" y="-8" width="16" height="16" rx="2" transform="rotate(45)" fill="rgba(244,192,48,0.1)" stroke="rgba(244,192,48,0.35)" stroke-width="1"/>
+            </g>
+            <text x="285" y="313" text-anchor="start" fill="rgba(244,192,48,0.5)" font-family="system-ui, sans-serif" font-size="10">Avg Invoice Value</text>
+
+            <line x1="190" y1="292" x2="247" y2="280" stroke="rgba(0,209,178,0.2)" stroke-width="1.5" stroke-dasharray="5,5" class="rtl-dash"/>
+            <line x1="190" y1="292" x2="247" y2="308" stroke="rgba(0,209,178,0.15)" stroke-width="1.5" stroke-dasharray="5,5" class="rtl-dash"/>
+
+            <!-- Measures × Dimensions -->
+            <rect x="435" y="272" rx="4" ry="4" width="120" height="26" fill="rgba(244,162,97,0.08)" stroke="rgba(244,162,97,0.25)" stroke-width="1"/>
+            <text x="495" y="289" text-anchor="middle" fill="rgba(244,162,97,0.6)" font-family="monospace" font-size="9">Customer Share</text>
+
+            <rect x="565" y="272" rx="4" ry="4" width="120" height="26" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <text x="625" y="289" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="9">Product ID</text>
+
+            <text x="558" y="291" text-anchor="middle" fill="rgba(255,255,255,0.15)" font-family="system-ui, sans-serif" font-size="14">×</text>
+
+            <line x1="295" y1="280" x2="435" y2="285" stroke="rgba(244,162,97,0.15)" stroke-width="1" stroke-dasharray="4,4" class="rtl-dash" style="animation-delay:0.5s"/>
+
+            <!-- Source entities row 3 -->
+            <rect x="720" y="276" rx="12" ry="12" width="80" height="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="760" y="292" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="system-ui, sans-serif" font-size="9">CRM</text>
+
+            <rect x="815" y="276" rx="12" ry="12" width="80" height="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="855" y="292" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="system-ui, sans-serif" font-size="9">Proposals</text>
+
+            <rect x="910" y="276" rx="12" ry="12" width="80" height="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <text x="950" y="292" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="system-ui, sans-serif" font-size="9">Pricing</text>
+
+            <line x1="685" y1="285" x2="720" y2="288" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,4" class="rtl-dash"/>
+
+            <!-- ===== CENTER: GOVERNED DATA PRODUCT band (amber, spans full width) ===== -->
+            <rect x="20" y="340" rx="8" ry="8" width="970" height="52" fill="rgba(244,162,97,0.04)" stroke="rgba(244,162,97,0.18)" stroke-width="1.5"/>
+            <text x="500" y="364" text-anchor="middle" fill="rgba(244,162,97,0.5)" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Governed Data Product</text>
+            <text x="500" y="382" text-anchor="middle" fill="rgba(244,162,97,0.3)" font-family="system-ui, sans-serif" font-size="11">Semantic model connecting use cases to the data that serves them — purpose-built, governed, compounds over time</text>
+
+            <!-- Vertical connections from rows into the data product band -->
+            <line x1="105" y1="124" x2="105" y2="340" stroke="rgba(0,209,178,0.08)" stroke-width="1" stroke-dasharray="3,6"/>
+            <line x1="105" y1="219" x2="105" y2="340" stroke="rgba(0,209,178,0.08)" stroke-width="1" stroke-dasharray="3,6"/>
+            <line x1="105" y1="314" x2="105" y2="340" stroke="rgba(0,209,178,0.08)" stroke-width="1" stroke-dasharray="3,6"/>
+
+            <!-- Right-to-left direction indicator -->
+            <text x="500" y="410" text-anchor="middle" fill="rgba(255,255,255,0.12)" font-family="monospace" font-size="9" letter-spacing="0.15em">← START WITH THE OUTCOME, WORK BACKWARD TO THE DATA</text>
+
+            <!-- Pulsing indicator dots on the flow -->
+            <circle cx="220" cy="92" r="2.5" fill="rgba(0,209,178,0.5)" class="rtl-pulse"/>
+            <circle cx="420" cy="192" r="2.5" fill="rgba(244,162,97,0.5)" class="rtl-pulse" style="animation-delay:0.6s"/>
+            <circle cx="700" cy="288" r="2.5" fill="rgba(255,255,255,0.3)" class="rtl-pulse" style="animation-delay:1.2s"/>
+          </svg>
+
+          <!-- Mobile fallback: stacked cards -->
+          <div class="sm:hidden space-y-4">
+            <div class="p-4 rounded-lg" style="border: 1px solid rgba(0,209,178,0.3); background: rgba(0,209,178,0.06);">
+              <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: rgba(0,209,178,0.7);">1 — Use cases</p>
+              <p class="text-sm text-white/70">Purchase Behaviour, Inventory Management, Deals &amp; Proposals</p>
+            </div>
+            <div class="flex items-center justify-center"><svg class="w-5 h-5 text-white/15 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></div>
+            <div class="p-4 rounded-lg" style="border: 1px solid rgba(244,192,48,0.3); background: rgba(244,192,48,0.06);">
+              <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: rgba(244,192,48,0.7);">2 — Metrics</p>
+              <p class="text-sm text-white/70">Revenue, Frequency, Inventory In Hand, Total Deal Value</p>
+            </div>
+            <div class="flex items-center justify-center"><svg class="w-5 h-5 text-white/15 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></div>
+            <div class="p-4 rounded-lg" style="border: 1px solid rgba(244,162,97,0.3); background: rgba(244,162,97,0.06);">
+              <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: rgba(244,162,97,0.7);">3 — Measures × Dimensions</p>
+              <p class="text-sm text-white/70">Total Sales Value × Invoice Value, Order Frequency × Product Segment</p>
+            </div>
+            <div class="flex items-center justify-center"><svg class="w-5 h-5 text-white/15 rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></div>
+            <div class="p-4 rounded-lg" style="border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);">
+              <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2 text-white/25">4 — Source entities</p>
+              <p class="text-sm text-white/40">Sales, Orders, Accounts, Inventory, Warehouses, CRM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <!-- Move 1: Start with the outcome -->
+        <div class="p-8 lg:p-10 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">01</span>
+          <h3 class="mt-4 font-sans font-light text-2xl sm:text-3xl tracking-tight text-white/90 leading-tight">
+            Start with the outcome
+          </h3>
+          <p class="mt-4 text-sm leading-relaxed text-white/40 max-w-lg">
+            Not "connect everything." The utility starts with a specific use case — a decision someone needs to make, a process that needs to run, a metric that needs to be real-time. Everything that follows is in service of that outcome.
+          </p>
+        </div>
+
+        <!-- Move 2: Connect what matters -->
+        <div class="p-8 lg:p-10 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">02</span>
+          <h3 class="mt-4 font-sans font-light text-2xl sm:text-3xl tracking-tight text-white/90 leading-tight">
+            Connect what matters
+          </h3>
+          <p class="mt-4 text-sm leading-relaxed text-white/40 max-w-lg">
+            The utility identifies which systems hold the data for that specific outcome — and connects them. 8,000+ integrations mean we connect to what you have. But we connect the systems that hold the answer, not every system you own.
+          </p>
+        </div>
+
+        <!-- Move 3: Build the intelligence product -->
+        <div class="p-8 lg:p-10 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">03</span>
+          <h3 class="mt-4 font-sans font-light text-2xl sm:text-3xl tracking-tight text-white/90 leading-tight">
+            Build the intelligence product
+          </h3>
+          <p class="mt-4 text-sm leading-relaxed text-white/40 max-w-lg">
+            Connected data becomes a governed data product — purpose-built for your use case, carrying its own context, quality guarantees, and consumption interfaces. Your team, your algorithms, and your existing tools all work from the same governed truth.
+          </p>
+        </div>
+
+        <!-- Move 4: Close the loop -->
+        <div class="p-8 lg:p-10 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">04</span>
+          <h3 class="mt-4 font-sans font-light text-2xl sm:text-3xl tracking-tight text-white/90 leading-tight">
+            Close the loop
+          </h3>
+          <p class="mt-4 text-sm leading-relaxed text-white/40 max-w-lg">
+            Intelligence flows back into your operations — workflows, agents, automations, APIs. And the results feed back into the model. Did we use the right data? Did we answer the right question? Every cycle makes the operating model smarter.
+          </p>
+        </div>
+      </div>
+
+      <!-- The compounding signal -->
+      <div class="mt-12 pt-8 fade-up" style="border-top: 1px solid rgba(255,255,255,0.06);">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div class="lg:col-span-4">
+            <h4 class="font-display text-lg font-bold text-white/90">Intelligence compounds.</h4>
+          </div>
+          <div class="lg:col-span-8">
+            <p class="text-sm leading-relaxed text-white/40 max-w-2xl">
+              Every use case adds data products that enrich the whole model. Every decision feeds context back in. Every new connection makes every existing connection smarter. This isn't aspirational — it's how the architecture works.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Powered by — orchestration stack -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-12">
+        <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+          What powers it
+        </p>
+        <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+          Three layers that make the operating model work.
+        </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+          IoT gateways, SCADA systems, enterprise applications, edge devices — the utility connects to what your operations already run and orchestrates it through three purpose-built layers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Layer 1: Real-time operational model -->
+        <div class="p-8 rounded-xl bg-white fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+          <div class="h-10 flex items-center mb-4">
+            <span class="font-mono text-sm tabular-nums font-bold" style="color: var(--color-forest);">01</span>
+          </div>
+          <h3 class="font-display text-lg font-bold" style="color: var(--color-neutral-800);">Real-Time Operational Model</h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+            8,000+ integrations across industrial, IT, enterprise, and satellite systems. Builds and maintains the live operational picture — updated continuously, reflecting the real state of your operations right now.
+          </p>
+        </div>
+
+        <!-- Layer 2: Governed semantic layer -->
+        <div class="p-8 rounded-xl bg-white fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+          <div class="h-10 flex items-center mb-4">
+            <span class="font-mono text-sm tabular-nums font-bold" style="color: var(--color-forest);">02</span>
+          </div>
+          <h3 class="font-display text-lg font-bold" style="color: var(--color-neutral-800);">Governed Semantic Layer</h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+            What your data means. Governed data products carry context, lineage, quality guarantees, and policy. Every agent, every automation, every decision reasons over the same governed truth — purpose-built for your use case.
+          </p>
+        </div>
+
+        <!-- Layer 3: Domain-trained reasoning -->
+        <div class="p-8 rounded-xl bg-white fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+          <div class="h-10 flex items-center mb-4">
+            <span class="font-mono text-sm tabular-nums font-bold" style="color: var(--color-forest);">03</span>
+          </div>
+          <h3 class="font-display text-lg font-bold" style="color: var(--color-neutral-800);">Domain-Trained Reasoning</h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+            Specialized intelligence models for predictive risk, safety validation, and autonomous decisions — trained on industry data flowing through the utility. Not generic AI. Domain intelligence that compounds with every deployment.
+          </p>
+        </div>
+      </div>
+
+      <!-- Cloud deployment bar -->
+      <div class="mt-6 p-5 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 fade-up" style="background: var(--color-neutral-50); border: 1px solid var(--color-structure);">
+        <p class="text-sm font-medium" style="color: var(--color-neutral-600);">
+          Deployed on <strong>AWS</strong>, <strong>Azure</strong>, or <strong>Google Cloud</strong> — or on-premises, at the edge, air-gapped, or hybrid.
+        </p>
+        <a href="/utility/technology" class="inline-flex items-center text-sm font-medium whitespace-nowrap" style="color: var(--color-forest);">
+          See the full architecture <span class="ml-1">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Integrations breadth -->
+  <Section>
+    <div class="mx-auto max-w-7xl" id="integrations">
+      <div class="mb-12">
+        <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+          Integrations
+        </p>
+        <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+          8,000+ integrations. 1,000+ vendors. Every protocol that matters.
+        </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+          Powered by the largest multi-vendor integration library in the operational technology space. Connect industrial systems, IT infrastructure, enterprise applications, IoT devices, and satellite ground segments — out of the box.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {integrationDomains.map((domain) => (
+          <div class="p-6 rounded-xl bg-white fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+            <span class="font-display text-2xl font-bold" style="color: var(--color-forest);">{domain.count}</span>
+            <h3 class="mt-2 font-display text-base font-bold" style="color: var(--color-neutral-800);">{domain.domain}</h3>
+            <p class="mt-2 font-mono text-[11px] leading-relaxed" style="color: var(--color-neutral-400);">{domain.examples}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Deployment options -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a;" id="deployment">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">
+        Deployment
+      </p>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-white/90 sm:text-3xl mb-4 fade-up">
+        Deploy your way. Sovereign by default.
+      </h2>
+      <p class="text-base leading-relaxed text-white/40 max-w-3xl mb-12 fade-up">
+        Your data never leaves your control. Whether you run cloud, on-premises, at the edge, air-gapped, or a hybrid of all four — the utility deploys where your operations live.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {deploymentOptions.map((option, i) => (
+          <div
+            class="p-6 rounded-xl fade-up"
+            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);"
+          >
+            <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3 class="mt-3 font-display text-lg font-bold text-white/90">{option.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-white/40">{option.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Security / Trust -->
+  <Section>
+    <div class="mx-auto max-w-7xl" id="trust">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div class="lg:col-span-5">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+            Security & Governance
+          </p>
+          <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+            Sovereign deployment. Governed execution. Auditable action.
+          </h2>
+          <p class="mt-4 text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+            Every action the utility takes is governed, logged, and auditable. Every deployment is sovereign — your data stays under your control, in your infrastructure, under your compliance framework.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { title: 'Sovereign Data', desc: 'Your data never leaves your control. No third-party data lakes. No shared tenancy unless you choose it.' },
+              { title: 'Governed Execution', desc: 'Every autonomous action runs through execution contracts with audit trails. Provably correct, deterministically repeatable.' },
+              { title: 'Compliance-Ready', desc: 'FedRAMP, NERC-CIP, SOC 2, ITAR-ready. The utility meets you at your compliance bar, not the other way around.' },
+              { title: 'Role-Based Access', desc: 'Granular permissions from operator to executive. Every query, every action, every model interaction — attributed and logged.' },
+            ].map((item) => (
+              <div class="p-6 rounded-xl bg-white fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+                <h3 class="font-display text-base font-bold" style="color: var(--color-neutral-800);">{item.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Navigation to other utility pages -->
+  <section class="py-16 lg:py-20" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="/utility/what-you-get" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Delivery</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            What You Get
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Workflows, agents, automations, and APIs — concrete intelligence your team acts from.</p>
+        </a>
+        <a href="/utility/xops" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Operations</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            xOps
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Adaptive operations suite that molds to your data and workflows.</p>
+        </a>
+        <a href="/utility/how-it-starts" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Start here</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            How It Starts
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">You tell us the outcome that matters. We connect the systems. Your team works from the model.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <DualCta
+    title={`Tell us the outcome. We connect the <span style="color: var(--color-forest);">systems that hold the answer.</span>`}
+    description="Your team starts working from the model. The more you connect, the smarter everything gets."
+    primaryCta={{ label: 'Start With an Outcome', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+  />
+</MarketingLayout>

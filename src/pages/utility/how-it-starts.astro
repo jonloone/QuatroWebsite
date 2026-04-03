@@ -1,0 +1,540 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import Section from '@/components/marketing/Section.astro'
+import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const steps = [
+  {
+    number: '01',
+    title: 'You tell us the outcome that matters.',
+    description: 'Not a requirements document. Not an RFP. Just the operational outcome your team needs — the decision you can\'t make today, the risk you can\'t see, the process you can\'t govern.',
+    detail: 'We start right-to-left: from the outcome your team needs, back through the metrics that serve it, to the systems that hold the answer. This is how we scope every engagement.',
+  },
+  {
+    number: '02',
+    title: 'We connect the systems that hold the answer.',
+    description: 'Your infrastructure, your data, your protocols. We connect the systems your operations already run on — not every system you own, just the ones that hold the data for this outcome.',
+    detail: '8,000+ integrations mean we connect to what you have, not what you wish you had. Industrial, IT, enterprise, IoT, satellite — but only the sources this use case requires.',
+  },
+  {
+    number: '03',
+    title: 'We build a governed intelligence product.',
+    description: 'Connected data becomes a semantic data product — purpose-built for your use case. Business owners define what metrics matter. The utility models the relationships, resolves entities across systems, and enforces quality and governance policies automatically.',
+    detail: 'This is what makes the utility different from a dashboard or a data lake. The intelligence product carries its own context: what the data means, how it connects, who owns it, and what quality standards it meets. Your team doesn\'t query raw data — they work from a governed model that understands their domain.',
+  },
+  {
+    number: '04',
+    title: 'Your team starts working from the model.',
+    description: 'Workflows, agents, automations, and APIs — all built on the governed intelligence product, deployed in your infrastructure, governed by your policies. Your team sees the outcome, acts on it, and compounds from there.',
+    detail: 'The model gets smarter with every connection and every action. Each new use case adds data products that enrich the whole. This is day one, not month six.',
+  },
+]
+
+const industries = [
+  {
+    name: 'Energy',
+    outcome: 'Pipeline integrity across 12 monitoring systems',
+    href: '/industries/energy',
+  },
+  {
+    name: 'National Security',
+    outcome: 'Multi-domain awareness with sovereign deployment',
+    href: '/industries/national-security',
+  },
+  {
+    name: 'Networks',
+    outcome: 'NOC unification across terrestrial and satellite',
+    href: '/industries/networks',
+  },
+  {
+    name: 'Critical Infrastructure',
+    outcome: 'Municipal operations in one connected picture',
+    href: '/industries/critical-infrastructure',
+  },
+  {
+    name: 'Finance',
+    outcome: 'Cross-system risk and compliance correlation',
+    href: '/industries/finance',
+  },
+]
+---
+
+<MarketingLayout
+  title="How It Starts — The Intelligence Utility"
+  description="You tell us the outcome that matters. We connect the systems that hold the answer. Your team starts working from the model."
+>
+  <HeroCanvas
+    badge="How It Starts"
+    title="Start With the Outcome. Not the Architecture."
+    body="You tell us the outcome that matters. We connect the systems that hold the answer. Your team starts working from the model."
+    ctaLabel="Tell Us Your Outcome"
+    ctaHref="/contact/demo"
+  />
+
+  <!-- Editorial lead-in -->
+  <EditorialOutcome
+    statement={`Four moves. One conversation. <span style="color: var(--color-forest);">Your team acts from day one.</span>`}
+    description="Every engagement starts the same way — with the outcome your team needs. Not a technology discussion. Not a proof of concept. Just: what do you need to see, decide, or do that you can't today? We work backward from there."
+  />
+
+  <!-- The three steps — dark section, full editorial treatment -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a;">
+    <!-- Grain overlay -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-16 fade-up">
+        The path to intelligence
+      </p>
+
+      <div class="space-y-0">
+        {steps.map((step, i) => (
+          <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 py-10 lg:py-14 fade-up"
+            style={i < steps.length - 1 ? 'border-bottom: 1px solid rgba(255,255,255,0.06);' : ''}
+          >
+            <!-- Number -->
+            <div class="lg:col-span-1">
+              <span class="font-mono text-2xl tabular-nums font-light" style="color: var(--color-forest);">
+                {step.number}
+              </span>
+            </div>
+
+            <!-- Step title -->
+            <div class="lg:col-span-5">
+              <h3 class="font-sans font-light text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white/90 leading-tight">
+                {step.title}
+              </h3>
+            </div>
+
+            <!-- Description + detail -->
+            <div class="lg:col-span-6">
+              <p class="text-base leading-relaxed text-white/60">
+                {step.description}
+              </p>
+              <p class="mt-4 text-sm leading-relaxed text-white/40">
+                {step.detail}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual: The Semantic Data Product — contextual bridge diagram -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10">
+        <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+          Inside step 03
+        </p>
+        <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+          What the governed intelligence product actually looks like.
+        </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+          A contextual bridge between the business purpose and the data your organization already owns — carrying quality, governance, and consumption interfaces that make the data product useful on its own.
+        </p>
+      </div>
+
+      <!-- Semantic data product anatomy SVG -->
+      <div class="rounded-xl p-6 lg:p-10 fade-up" style="background: var(--color-neutral-50); border: 1px solid var(--color-structure);">
+        <svg class="w-full h-auto hidden sm:block" viewBox="0 0 900 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            @keyframes sdp-pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.9; } }
+            @keyframes sdp-flow { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 14; } }
+            .sdp-pulse { animation: sdp-pulse 2.5s ease-in-out infinite; }
+            .sdp-flow { animation: sdp-flow 1.5s linear infinite; }
+          </style>
+
+          <!-- ===== TOP LEFT: Business Purpose ===== -->
+          <rect x="30" y="30" rx="8" ry="8" width="200" height="80" fill="#0f4c3a" fill-opacity="0.08" stroke="#0f4c3a" stroke-opacity="0.3" stroke-width="1.5"/>
+          <text x="130" y="57" text-anchor="middle" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Business Purpose</text>
+          <text x="130" y="77" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="10">(e.g., Pipeline Integrity)</text>
+
+          <!-- ===== TOP RIGHT: Available Data ===== -->
+          <rect x="670" y="30" rx="8" ry="8" width="200" height="80" fill="#64748b" fill-opacity="0.08" stroke="#64748b" stroke-opacity="0.25" stroke-width="1.5"/>
+          <text x="770" y="57" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Available Data</text>
+          <text x="770" y="77" text-anchor="middle" fill="#64748b" fill-opacity="0.6" font-family="system-ui, sans-serif" font-size="10">(owned by the org)</text>
+
+          <!-- ===== BRIDGE connecting them ===== -->
+          <!-- Bridge arch -->
+          <path d="M 230 55 Q 450 -20, 670 55" fill="none" stroke="#C4A265" stroke-opacity="0.35" stroke-width="2"/>
+
+          <!-- Bridge label -->
+          <rect x="370" y="5" rx="10" ry="10" width="160" height="26" fill="#C4A265" fill-opacity="0.1" stroke="#C4A265" stroke-opacity="0.3" stroke-width="1"/>
+          <text x="450" y="22" text-anchor="middle" fill="#C4A265" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="0.08em">CONTEXTUAL BRIDGE</text>
+
+          <!-- Bridge pillars -->
+          <line x1="350" y1="32" x2="350" y2="55" stroke="#C4A265" stroke-opacity="0.2" stroke-width="1.5"/>
+          <line x1="550" y1="32" x2="550" y2="55" stroke="#C4A265" stroke-opacity="0.2" stroke-width="1.5"/>
+
+          <!-- Bridge requirements: left side (quality/consumption) -->
+          <text x="280" y="42" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.45" font-family="system-ui, sans-serif" font-size="9">Quality &amp; Consumption</text>
+          <!-- Bridge requirements: right side (context) -->
+          <text x="620" y="42" text-anchor="middle" fill="#64748b" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="9">Context</text>
+
+          <!-- ===== CENTER: THE SEMANTIC DATA PRODUCT ===== -->
+          <!-- Main product circle/hexagon -->
+          <circle cx="450" cy="170" r="55" fill="#C4A265" fill-opacity="0.06" stroke="#C4A265" stroke-opacity="0.35" stroke-width="2"/>
+          <circle cx="450" cy="170" r="40" fill="#C4A265" fill-opacity="0.04" stroke="#C4A265" stroke-opacity="0.2" stroke-width="1"/>
+          <text x="450" y="163" text-anchor="middle" fill="#C4A265" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Semantic</text>
+          <text x="450" y="180" text-anchor="middle" fill="#C4A265" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Data Product</text>
+
+          <!-- Connecting lines from business purpose and available data down to the product -->
+          <line x1="130" y1="110" x2="400" y2="145" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="5,5" class="sdp-flow"/>
+          <line x1="770" y1="110" x2="500" y2="145" stroke="#64748b" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="5,5" class="sdp-flow"/>
+
+          <!-- ===== LEFT SIDE: Requirements (what the business defines) ===== -->
+          <text x="140" y="155" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="0.08em">REQUIREMENTS</text>
+
+          <!-- Requirement items -->
+          <g transform="translate(40, 170)">
+            <circle cx="12" cy="8" r="6" fill="#0f4c3a" fill-opacity="0.1" stroke="#0f4c3a" stroke-opacity="0.3" stroke-width="1"/>
+            <text x="12" y="11" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="26" y="12" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Popular Metrics</text>
+          </g>
+          <g transform="translate(40, 196)">
+            <circle cx="12" cy="8" r="6" fill="#0f4c3a" fill-opacity="0.1" stroke="#0f4c3a" stroke-opacity="0.3" stroke-width="1"/>
+            <text x="12" y="11" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="26" y="12" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Measures &amp; Dimensions</text>
+          </g>
+          <g transform="translate(40, 222)">
+            <circle cx="12" cy="8" r="6" fill="#0f4c3a" fill-opacity="0.1" stroke="#0f4c3a" stroke-opacity="0.3" stroke-width="1"/>
+            <text x="12" y="11" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="26" y="12" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Relationships &amp; Formulas</text>
+          </g>
+          <g transform="translate(40, 248)">
+            <circle cx="12" cy="8" r="6" fill="#0f4c3a" fill-opacity="0.1" stroke="#0f4c3a" stroke-opacity="0.3" stroke-width="1"/>
+            <text x="12" y="11" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="26" y="12" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Semantics (tags, definitions)</text>
+          </g>
+          <g transform="translate(40, 274)">
+            <circle cx="12" cy="8" r="6" fill="#0f4c3a" fill-opacity="0.1" stroke="#0f4c3a" stroke-opacity="0.3" stroke-width="1"/>
+            <text x="12" y="11" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="26" y="12" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Quality SLOs</text>
+          </g>
+          <g transform="translate(40, 300)">
+            <circle cx="12" cy="8" r="6" fill="#C4A265" fill-opacity="0.15" stroke="#C4A265" stroke-opacity="0.35" stroke-width="1"/>
+            <text x="12" y="11" text-anchor="middle" fill="#C4A265" fill-opacity="0.6" font-family="system-ui, sans-serif" font-size="8">▸</text>
+            <text x="26" y="12" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Policy SLOs</text>
+          </g>
+
+          <!-- Connection from requirements to product -->
+          <line x1="200" y1="230" x2="395" y2="175" stroke="#0f4c3a" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="3,4"/>
+
+          <!-- ===== RIGHT SIDE: Properties the product gains ===== -->
+          <text x="760" y="155" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="0.08em">PRODUCT PROPERTIES</text>
+
+          <!-- Properties -->
+          <g transform="translate(680, 170)">
+            <rect x="0" y="0" rx="4" ry="4" width="170" height="24" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.15" stroke-width="1"/>
+            <circle cx="16" cy="12" r="5" fill="#0f4c3a" fill-opacity="0.2"/>
+            <text x="16" y="15" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.7" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="30" y="16" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Purpose-driven</text>
+          </g>
+          <g transform="translate(680, 200)">
+            <rect x="0" y="0" rx="4" ry="4" width="170" height="24" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.15" stroke-width="1"/>
+            <circle cx="16" cy="12" r="5" fill="#0f4c3a" fill-opacity="0.2"/>
+            <text x="16" y="15" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.7" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="30" y="16" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Discoverable</text>
+          </g>
+          <g transform="translate(680, 230)">
+            <rect x="0" y="0" rx="4" ry="4" width="170" height="24" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.15" stroke-width="1"/>
+            <circle cx="16" cy="12" r="5" fill="#0f4c3a" fill-opacity="0.2"/>
+            <text x="16" y="15" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.7" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="30" y="16" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Addressable</text>
+          </g>
+          <g transform="translate(680, 260)">
+            <rect x="0" y="0" rx="4" ry="4" width="170" height="24" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.15" stroke-width="1"/>
+            <circle cx="16" cy="12" r="5" fill="#0f4c3a" fill-opacity="0.2"/>
+            <text x="16" y="15" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.7" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="30" y="16" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Understandable</text>
+          </g>
+          <g transform="translate(680, 290)">
+            <rect x="0" y="0" rx="4" ry="4" width="170" height="24" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.15" stroke-width="1"/>
+            <circle cx="16" cy="12" r="5" fill="#0f4c3a" fill-opacity="0.2"/>
+            <text x="16" y="15" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.7" font-family="system-ui, sans-serif" font-size="8">✓</text>
+            <text x="30" y="16" fill="#475569" font-family="system-ui, sans-serif" font-size="10">Valuable on its own</text>
+          </g>
+
+          <!-- Connection from product to properties -->
+          <line x1="505" y1="170" x2="680" y2="220" stroke="#0f4c3a" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="3,4"/>
+
+          <!-- ===== BOTTOM: Source-aligned data products feeding in ===== -->
+          <line x1="450" y1="225" x2="450" y2="340" stroke="#C4A265" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="5,5" class="sdp-flow"/>
+
+          <!-- Mapping semantic model box -->
+          <rect x="250" y="350" rx="8" ry="8" width="400" height="50" fill="#C4A265" fill-opacity="0.04" stroke="#C4A265" stroke-opacity="0.2" stroke-width="1.5"/>
+          <text x="450" y="372" text-anchor="middle" fill="#C4A265" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Mapping Semantic Model</text>
+          <text x="450" y="390" text-anchor="middle" fill="#C4A265" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="10">Validation at semantic level before development</text>
+
+          <!-- Arrow down to source-aligned products -->
+          <line x1="450" y1="400" x2="450" y2="425" stroke="#C4A265" stroke-opacity="0.15" stroke-width="1.5"/>
+          <polygon points="445,425 450,435 455,425" fill="#C4A265" fill-opacity="0.2"/>
+
+          <!-- Source-aligned data product pills -->
+          <rect x="100" y="445" rx="12" ry="12" width="140" height="30" fill="#64748b" fill-opacity="0.06" stroke="#64748b" stroke-opacity="0.15" stroke-width="1"/>
+          <text x="170" y="464" text-anchor="middle" fill="#64748b" fill-opacity="0.6" font-family="system-ui, sans-serif" font-size="10">Source: SCADA</text>
+
+          <rect x="260" y="445" rx="12" ry="12" width="140" height="30" fill="#64748b" fill-opacity="0.06" stroke="#64748b" stroke-opacity="0.15" stroke-width="1"/>
+          <text x="330" y="464" text-anchor="middle" fill="#64748b" fill-opacity="0.6" font-family="system-ui, sans-serif" font-size="10">Source: ERP</text>
+
+          <rect x="420" y="445" rx="12" ry="12" width="140" height="30" fill="#64748b" fill-opacity="0.06" stroke="#64748b" stroke-opacity="0.15" stroke-width="1"/>
+          <text x="490" y="464" text-anchor="middle" fill="#64748b" fill-opacity="0.6" font-family="system-ui, sans-serif" font-size="10">Source: IoT</text>
+
+          <rect x="580" y="445" rx="12" ry="12" width="140" height="30" fill="#64748b" fill-opacity="0.06" stroke="#64748b" stroke-opacity="0.15" stroke-width="1"/>
+          <text x="650" y="464" text-anchor="middle" fill="#64748b" fill-opacity="0.6" font-family="system-ui, sans-serif" font-size="10">Source: GIS</text>
+
+          <!-- Label for source row -->
+          <text x="50" y="464" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="8" letter-spacing="0.1em">DATA</text>
+          <text x="50" y="475" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="8" letter-spacing="0.1em">SOURCES</text>
+
+          <!-- Pulse indicators -->
+          <circle cx="450" cy="130" r="3" fill="#C4A265" fill-opacity="0.5" class="sdp-pulse"/>
+          <circle cx="320" cy="375" r="2.5" fill="#C4A265" fill-opacity="0.4" class="sdp-pulse" style="animation-delay:0.8s"/>
+          <circle cx="580" cy="375" r="2.5" fill="#C4A265" fill-opacity="0.4" class="sdp-pulse" style="animation-delay:1.4s"/>
+        </svg>
+
+        <!-- Mobile fallback -->
+        <div class="sm:hidden space-y-6">
+          <div class="p-4 rounded-lg" style="border: 1px solid rgba(15,76,58,0.2); background: rgba(15,76,58,0.04);">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-forest);">Business purpose</p>
+            <p class="text-sm" style="color: var(--color-neutral-600);">The outcome your team needs — e.g., pipeline integrity scoring</p>
+          </div>
+          <div class="flex items-center justify-center text-[10px] font-mono uppercase tracking-wider" style="color: var(--color-neutral-400);">↓ contextual bridge ↓</div>
+          <div class="p-4 rounded-lg" style="border: 1px solid rgba(196,162,101,0.3); background: rgba(196,162,101,0.05);">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: #C4A265;">Semantic data product</p>
+            <p class="text-sm" style="color: var(--color-neutral-600);">Carries metrics, measures, relationships, quality SLOs, and governance policies — purpose-built for this use case</p>
+          </div>
+          <div class="flex items-center justify-center text-[10px] font-mono uppercase tracking-wider" style="color: var(--color-neutral-400);">↓ maps to ↓</div>
+          <div class="p-4 rounded-lg" style="border: 1px solid var(--color-structure); background: var(--color-neutral-50);">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-neutral-400);">Source data</p>
+            <p class="text-sm" style="color: var(--color-neutral-500);">SCADA, ERP, IoT, GIS — only the sources this use case requires</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- What "the outcome" looks like by industry -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-12">
+        <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+          Starting outcomes by industry
+        </p>
+        <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+          Every industry starts with one outcome.
+        </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+          The utility works the same way across verticals. What changes is the operational context and the specific intelligence your team needs first.
+        </p>
+      </div>
+
+      <div class="space-y-0">
+        {industries.map((ind, i) => (
+          <a
+            href={ind.href}
+            class="group grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 py-6 lg:py-8 fade-up"
+            style={i < industries.length - 1 ? 'border-bottom: 1px solid var(--color-structure);' : ''}
+          >
+            <div class="lg:col-span-1">
+              <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
+            <div class="lg:col-span-4">
+              <h3 class="font-display text-lg font-bold tracking-tight group-hover:text-brand-600 transition-colors" style="color: var(--color-neutral-800);">
+                {ind.name}
+                <span class="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1">&rarr;</span>
+              </h3>
+            </div>
+            <div class="lg:col-span-7">
+              <p class="text-sm leading-relaxed" style="color: var(--color-neutral-500);">{ind.outcome}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- How intelligence compounds — the feedback loop -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a;">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">
+        The fourth step
+      </p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white/90 leading-tight mb-12 max-w-3xl fade-up">
+        Close the loop. Intelligence compounds.
+      </h2>
+
+      <!-- Feedback loop visual + cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
+        <!-- Left: circular feedback loop SVG -->
+        <div class="lg:col-span-5 flex items-center justify-center fade-up">
+          <svg class="w-full max-w-[380px] h-auto" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              @keyframes fb-rotate { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -30; } }
+              @keyframes fb-glow { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+              .fb-orbit { animation: fb-rotate 3s linear infinite; }
+              .fb-glow { animation: fb-glow 2.5s ease-in-out infinite; }
+            </style>
+
+            <!-- Outer orbit ring (animated dashes) -->
+            <circle cx="190" cy="190" r="150" fill="none" stroke="rgba(0,209,178,0.1)" stroke-width="1.5" stroke-dasharray="8,6" class="fb-orbit"/>
+
+            <!-- Inner orbit ring -->
+            <circle cx="190" cy="190" r="110" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+            <!-- Center: the operating model -->
+            <circle cx="190" cy="190" r="48" fill="rgba(0,209,178,0.06)" stroke="rgba(0,209,178,0.25)" stroke-width="2"/>
+            <circle cx="190" cy="190" r="32" fill="rgba(0,209,178,0.04)" stroke="rgba(0,209,178,0.15)" stroke-width="1"/>
+            <text x="190" y="185" text-anchor="middle" fill="rgba(0,209,178,0.7)" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="0.08em">OPERATING</text>
+            <text x="190" y="199" text-anchor="middle" fill="rgba(0,209,178,0.7)" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="0.08em">MODEL</text>
+
+            <!-- Question 1: Right Data? (top) -->
+            <circle cx="190" cy="40" r="28" fill="rgba(255,255,255,0.04)" stroke="rgba(0,209,178,0.3)" stroke-width="1.5"/>
+            <text x="190" y="36" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Right</text>
+            <text x="190" y="49" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="9" font-weight="600">data?</text>
+            <circle cx="190" cy="40" r="3" fill="rgba(0,209,178,0.5)" class="fb-glow"/>
+
+            <!-- Arrow: top → right -->
+            <path d="M 218 52 Q 290 70, 318 130" fill="none" stroke="rgba(0,209,178,0.2)" stroke-width="1.5" stroke-dasharray="5,4" class="fb-orbit" style="animation-delay:0.5s"/>
+            <polygon points="320,130 314,122 324,120" fill="rgba(0,209,178,0.25)"/>
+
+            <!-- Question 2: Right Question? (bottom-right) -->
+            <circle cx="316" cy="280" r="28" fill="rgba(255,255,255,0.04)" stroke="rgba(244,162,97,0.3)" stroke-width="1.5"/>
+            <text x="316" y="276" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Right</text>
+            <text x="316" y="289" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="9" font-weight="600">question?</text>
+            <circle cx="316" cy="280" r="3" fill="rgba(244,162,97,0.5)" class="fb-glow" style="animation-delay:0.8s"/>
+
+            <!-- Arrow: right → bottom-left -->
+            <path d="M 296 300 Q 240 340, 90 290" fill="none" stroke="rgba(244,162,97,0.2)" stroke-width="1.5" stroke-dasharray="5,4" class="fb-orbit" style="animation-delay:1s"/>
+            <polygon points="90,290 100,288 96,298" fill="rgba(244,162,97,0.25)"/>
+
+            <!-- Question 3: Right Decision? (bottom-left) -->
+            <circle cx="64" cy="280" r="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+            <text x="64" y="276" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="9" font-weight="600">Right</text>
+            <text x="64" y="289" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="system-ui, sans-serif" font-size="9" font-weight="600">decision?</text>
+            <circle cx="64" cy="280" r="3" fill="rgba(255,255,255,0.4)" class="fb-glow" style="animation-delay:1.6s"/>
+
+            <!-- Arrow: bottom-left → top -->
+            <path d="M 58 252 Q 50 150, 168 48" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-dasharray="5,4" class="fb-orbit" style="animation-delay:1.5s"/>
+            <polygon points="168,48 160,54 162,44" fill="rgba(255,255,255,0.2)"/>
+
+            <!-- Connecting lines from questions to center -->
+            <line x1="190" y1="68" x2="190" y2="142" stroke="rgba(0,209,178,0.1)" stroke-width="1" stroke-dasharray="3,4"/>
+            <line x1="295" y1="264" x2="225" y2="220" stroke="rgba(244,162,97,0.1)" stroke-width="1" stroke-dasharray="3,4"/>
+            <line x1="85" y1="264" x2="155" y2="220" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3,4"/>
+
+            <!-- "Every cycle" label -->
+            <text x="190" y="370" text-anchor="middle" fill="rgba(255,255,255,0.12)" font-family="monospace" font-size="8" letter-spacing="0.12em">EVERY CYCLE MAKES THE MODEL SMARTER</text>
+          </svg>
+        </div>
+
+        <!-- Right: three feedback cards -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+            <span class="font-mono text-sm" style="color: var(--color-forest);">Feedback 01</span>
+            <h3 class="mt-4 font-sans font-light text-xl tracking-tight text-white/90 leading-tight">
+              Did we use the right data?
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/40">
+              Every data product tracks whether the sources and quality it relies on actually served the use case. Gaps surface automatically. The model refines what it connects.
+            </p>
+          </div>
+          <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+            <span class="font-mono text-sm" style="color: var(--color-forest);">Feedback 02</span>
+            <h3 class="mt-4 font-sans font-light text-xl tracking-tight text-white/90 leading-tight">
+              Did we answer the right question?
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/40">
+              The metrics and measures that serve each use case are validated against real outcomes. If the question shifted, the intelligence product adapts — new dimensions, new relationships, new context.
+            </p>
+          </div>
+          <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+            <span class="font-mono text-sm" style="color: var(--color-forest);">Feedback 03</span>
+            <h3 class="mt-4 font-sans font-light text-xl tracking-tight text-white/90 leading-tight">
+              Did we make the right decision?
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-white/40">
+              Actions and automations reingest their results into the model. Every decision becomes context for the next one. This is how the operating model gets smarter — not by adding more data, but by learning from what it did.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversation CTA -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 pt-12 fade-up" style="border-top: 1px solid rgba(255,255,255,0.06);">
+        <div>
+          <h3 class="font-sans font-light text-2xl sm:text-3xl tracking-tight text-white/90 leading-tight">
+            It starts with a conversation, not a contract.
+          </h3>
+        </div>
+        <div class="flex flex-col justify-center">
+          <p class="text-base leading-relaxed text-white/60">
+            Tell us the outcome your operations need. We'll show you the systems we connect, the intelligence that flows back, and the model your team works from. If the outcome isn't clear in the first conversation, we haven't done our job.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="/contact/demo"
+              class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-mono text-xs uppercase tracking-[0.05em] text-white transition-all hover:opacity-90"
+              style="background: var(--color-forest);"
+            >
+              Tell us the outcome
+            </a>
+            <a
+              href="/contact/sales"
+              class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-mono text-xs uppercase tracking-[0.05em] text-white/60 transition-all hover:text-white"
+              style="border: 1px solid rgba(255,255,255,0.2);"
+            >
+              Talk to an engineer
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation to sibling pages -->
+  <section class="py-16 lg:py-20" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="/utility" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Overview</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            <span class="inline-block transition-transform group-hover:-translate-x-1">&larr;</span>
+            What Is It
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">One operational model from every system your operations touch.</p>
+        </a>
+        <a href="/utility/what-you-get" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Delivery</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            What You Get
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Workflows, agents, automations, and APIs your team acts from.</p>
+        </a>
+        <a href="/utility/xops" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Operations</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            xOps
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Adaptive operations suite that molds to your data and workflows.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <DualCta
+    title={`Tell us the outcome. We connect the <span style="color: var(--color-forest);">systems that hold the answer.</span>`}
+    description="Your team starts working from the model. One conversation is all it takes to start."
+    primaryCta={{ label: 'Start With an Outcome', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+  />
+</MarketingLayout>

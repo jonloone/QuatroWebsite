@@ -1,0 +1,380 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import Section from '@/components/marketing/Section.astro'
+import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
+import CapabilityIndex from '@/components/marketing/CapabilityIndex.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const deliveryMechanisms = [
+  {
+    name: 'Workflows your team runs',
+    description: 'Operational applications built on live data — not dashboards that display it. Your operators, engineers, and analysts work from applications that connect what they see to what they can do.',
+    outcome: 'Cross-system operational visibility with governed action in the same interface.',
+  },
+  {
+    name: 'Agents that reason across your systems',
+    description: 'AI agents that don\'t just answer questions — they reason against your operational model, correlate across data sources, and surface what matters. Grounded in your governed data, not generic training sets.',
+    outcome: 'Domain-trained intelligence that understands your operations, not just your documents.',
+  },
+  {
+    name: 'Automations that execute governed actions',
+    description: 'When the model identifies a condition that requires action, governed automations execute it — with audit trails, execution contracts, and deterministic repeatability. Every action is attributable and reversible.',
+    outcome: 'Autonomous operations with the governance regulated industries require.',
+  },
+  {
+    name: 'APIs that feed intelligence back',
+    description: 'Intelligence doesn\'t stay locked in Quatro. APIs deliver operational intelligence back into the tools your team already uses — BI platforms, ticketing systems, ERPs, custom applications. The model feeds everywhere.',
+    outcome: 'Intelligence compounds across your entire technology stack, not just inside one tool.',
+  },
+]
+
+const exampleOutputs = [
+  { category: 'Energy', output: 'Pipeline integrity scoring across 12 monitoring systems, with automated compliance reporting' },
+  { category: 'Defense', output: 'Multi-domain awareness from sovereign sensors to command-level decision support' },
+  { category: 'Telecom', output: 'NOC unification across terrestrial, satellite, and hybrid networks in one operational view' },
+  { category: 'Infrastructure', output: 'Water system health across SCADA, GIS, and IoT — with predictive leak detection' },
+  { category: 'Finance', output: 'Cross-system risk correlation from trading floors to compliance reporting' },
+  { category: 'Smart Cities', output: 'Municipal operations from traffic to waste to public safety — connected in one model' },
+]
+---
+
+<MarketingLayout
+  title="What You Get — The Intelligence Utility"
+  description="Workflows your team runs. Agents that reason across your systems. Automations that execute governed actions. APIs that feed intelligence back into the tools you already use."
+>
+  <HeroCanvas
+    badge="What You Get"
+    title="Concrete Intelligence. Not Abstract Promises."
+    body="Workflows your team runs. Agents that reason across your systems. Automations that execute governed actions. APIs that feed intelligence back into the tools you already use. The more you connect, the smarter everything gets."
+    ctaLabel="See It On Your Systems"
+    ctaHref="/contact/demo"
+  />
+
+  <!-- Editorial lead-in -->
+  <EditorialOutcome
+    statement={`What flows back is <span style="color: var(--color-forest);">concrete.</span>`}
+    description="The intelligence utility doesn't deliver dashboards and reports. It gives your team the operational applications, reasoning agents, governed automations, and APIs they need to act — not just to look. Every output is grounded in your governed operational model."
+  />
+
+  <!-- The four delivery mechanisms — dark indexed section -->
+  <CapabilityIndex
+    title="Four delivery mechanisms"
+    capabilities={deliveryMechanisms}
+  />
+
+  <!-- Visual: Data Product → Intelligence Rails → Governed Outputs -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10">
+        <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+          From model to action
+        </p>
+        <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+          Intelligence rails make governed execution possible.
+        </h2>
+        <p class="mt-4 max-w-3xl text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+          Between the data product and the outputs your team uses sits the process ontology — the entity relationships, business rules, execution contracts, and governance policies that give agents and automations the rails to act safely and autonomously.
+        </p>
+      </div>
+
+      <div class="rounded-xl p-6 lg:p-10 fade-up" style="background: var(--color-neutral-50); border: 1px solid var(--color-structure);">
+        <svg class="w-full h-auto hidden sm:block" viewBox="0 0 1000 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            @keyframes rail-flow { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -16; } }
+            @keyframes rail-pulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.85; } }
+            .rail-flow { animation: rail-flow 1.5s linear infinite; }
+            .rail-pulse { animation: rail-pulse 2.5s ease-in-out infinite; }
+          </style>
+
+          <!-- ===== LAYER 1 (LEFT): GOVERNED DATA PRODUCT ===== -->
+          <rect x="20" y="100" rx="10" ry="10" width="200" height="320" fill="#C4A265" fill-opacity="0.04" stroke="#C4A265" stroke-opacity="0.25" stroke-width="1.5"/>
+          <text x="120" y="90" text-anchor="middle" fill="#C4A265" fill-opacity="0.5" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="0.1em">GOVERNED DATA PRODUCT</text>
+
+          <!-- Semantic network inside the data product -->
+          <circle cx="80" cy="160" r="6" fill="#C4A265" fill-opacity="0.18" stroke="#C4A265" stroke-opacity="0.4" stroke-width="1.5"/>
+          <circle cx="140" cy="145" r="5" fill="#C4A265" fill-opacity="0.15" stroke="#C4A265" stroke-opacity="0.35" stroke-width="1"/>
+          <circle cx="170" cy="185" r="5" fill="#C4A265" fill-opacity="0.15" stroke="#C4A265" stroke-opacity="0.35" stroke-width="1"/>
+          <circle cx="110" cy="200" r="7" fill="#C4A265" fill-opacity="0.2" stroke="#C4A265" stroke-opacity="0.45" stroke-width="1.5"/>
+          <circle cx="65" cy="220" r="4" fill="#C4A265" fill-opacity="0.12" stroke="#C4A265" stroke-opacity="0.3" stroke-width="1"/>
+          <circle cx="155" cy="240" r="5" fill="#C4A265" fill-opacity="0.15" stroke="#C4A265" stroke-opacity="0.35" stroke-width="1"/>
+          <circle cx="90" cy="270" r="5" fill="#C4A265" fill-opacity="0.15" stroke="#C4A265" stroke-opacity="0.35" stroke-width="1"/>
+          <circle cx="150" cy="290" r="4" fill="#C4A265" fill-opacity="0.12" stroke="#C4A265" stroke-opacity="0.3" stroke-width="1"/>
+
+          <!-- Internal connections (the ontology graph) -->
+          <line x1="80" y1="160" x2="140" y2="145" stroke="#C4A265" stroke-opacity="0.15" stroke-width="1"/>
+          <line x1="140" y1="145" x2="170" y2="185" stroke="#C4A265" stroke-opacity="0.12" stroke-width="1"/>
+          <line x1="80" y1="160" x2="110" y2="200" stroke="#C4A265" stroke-opacity="0.18" stroke-width="1"/>
+          <line x1="110" y1="200" x2="170" y2="185" stroke="#C4A265" stroke-opacity="0.1" stroke-width="1"/>
+          <line x1="65" y1="220" x2="110" y2="200" stroke="#C4A265" stroke-opacity="0.1" stroke-width="1"/>
+          <line x1="110" y1="200" x2="155" y2="240" stroke="#C4A265" stroke-opacity="0.12" stroke-width="1"/>
+          <line x1="65" y1="220" x2="90" y2="270" stroke="#C4A265" stroke-opacity="0.1" stroke-width="1"/>
+          <line x1="155" y1="240" x2="150" y2="290" stroke="#C4A265" stroke-opacity="0.08" stroke-width="1"/>
+          <line x1="90" y1="270" x2="150" y2="290" stroke="#C4A265" stroke-opacity="0.1" stroke-width="1"/>
+          <line x1="155" y1="240" x2="90" y2="270" stroke="#C4A265" stroke-opacity="0.08" stroke-width="1"/>
+
+          <!-- Data product property labels -->
+          <text x="120" y="340" text-anchor="middle" fill="#C4A265" fill-opacity="0.4" font-family="system-ui, sans-serif" font-size="9">Entities</text>
+          <text x="120" y="355" text-anchor="middle" fill="#C4A265" fill-opacity="0.4" font-family="system-ui, sans-serif" font-size="9">Measures</text>
+          <text x="120" y="370" text-anchor="middle" fill="#C4A265" fill-opacity="0.4" font-family="system-ui, sans-serif" font-size="9">Dimensions</text>
+          <text x="120" y="385" text-anchor="middle" fill="#C4A265" fill-opacity="0.4" font-family="system-ui, sans-serif" font-size="9">Relationships</text>
+          <text x="120" y="400" text-anchor="middle" fill="#C4A265" fill-opacity="0.4" font-family="system-ui, sans-serif" font-size="9">Semantics</text>
+
+          <!-- ===== FLOW: Data Product → Intelligence Rails ===== -->
+          <line x1="220" y1="180" x2="300" y2="140" stroke="#C4A265" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="6,5" class="rail-flow"/>
+          <line x1="220" y1="230" x2="300" y2="230" stroke="#C4A265" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="6,5" class="rail-flow" style="animation-delay:0.3s"/>
+          <line x1="220" y1="280" x2="300" y2="320" stroke="#C4A265" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="6,5" class="rail-flow" style="animation-delay:0.6s"/>
+          <line x1="220" y1="330" x2="300" y2="400" stroke="#C4A265" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="6,5" class="rail-flow" style="animation-delay:0.9s"/>
+
+          <!-- ===== LAYER 2 (CENTER): INTELLIGENCE RAILS ===== -->
+          <!-- Main rails container — the visual centerpiece -->
+          <rect x="300" y="70" rx="12" ry="12" width="380" height="380" fill="#0f4c3a" fill-opacity="0.03" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="2"/>
+          <text x="490" y="55" text-anchor="middle" fill="#0f4c3a" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="0.12em">INTELLIGENCE RAILS</text>
+          <text x="490" y="67" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.4" font-family="system-ui, sans-serif" font-size="9">Process ontology that enables governed execution</text>
+
+          <!-- Rail 1: Entity Relationships -->
+          <rect x="320" y="95" rx="8" ry="8" width="340" height="70" fill="#0f4c3a" fill-opacity="0.04" stroke="#0f4c3a" stroke-opacity="0.12" stroke-width="1"/>
+          <text x="340" y="115" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Entity Relationships</text>
+          <text x="340" y="130" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">How your operational objects relate — assets, people, processes, locations</text>
+
+          <!-- Mini entity graph inside rail 1 -->
+          <circle cx="580" cy="108" r="4" fill="#0f4c3a" fill-opacity="0.15" stroke="#0f4c3a" stroke-opacity="0.3" stroke-width="1" class="rail-pulse"/>
+          <circle cx="610" cy="120" r="5" fill="#0f4c3a" fill-opacity="0.18" stroke="#0f4c3a" stroke-opacity="0.35" stroke-width="1"/>
+          <circle cx="640" cy="105" r="4" fill="#0f4c3a" fill-opacity="0.15" stroke="#0f4c3a" stroke-opacity="0.3" stroke-width="1" class="rail-pulse" style="animation-delay:0.5s"/>
+          <line x1="580" y1="108" x2="610" y2="120" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1"/>
+          <line x1="610" y1="120" x2="640" y2="105" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1"/>
+          <line x1="580" y1="108" x2="640" y2="105" stroke="#0f4c3a" stroke-opacity="0.1" stroke-width="1" stroke-dasharray="2,3"/>
+
+          <!-- Rail 1 → outputs arrow -->
+          <text x="644" y="148" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.2" font-family="monospace" font-size="8">agents reason over this graph</text>
+
+          <!-- Rail 2: Business Rules -->
+          <rect x="320" y="180" rx="8" ry="8" width="340" height="70" fill="#0f4c3a" fill-opacity="0.04" stroke="#0f4c3a" stroke-opacity="0.12" stroke-width="1"/>
+          <text x="340" y="200" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Business Rules</text>
+          <text x="340" y="215" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">Domain logic encoded as computable policy — thresholds, formulas, conditions</text>
+
+          <!-- Mini rule representation -->
+          <rect x="570" y="192" rx="3" ry="3" width="75" height="14" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.15" stroke-width="0.75"/>
+          <text x="607" y="202" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.4" font-family="monospace" font-size="7">IF pressure &gt; X</text>
+          <rect x="570" y="210" rx="3" ry="3" width="75" height="14" fill="#0f4c3a" fill-opacity="0.08" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="0.75"/>
+          <text x="607" y="220" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="monospace" font-size="7">THEN escalate</text>
+
+          <!-- Rail 2 annotation -->
+          <text x="644" y="236" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.2" font-family="monospace" font-size="8">automations execute these rules</text>
+
+          <!-- Rail 3: Execution Contracts -->
+          <rect x="320" y="265" rx="8" ry="8" width="340" height="70" fill="#0f4c3a" fill-opacity="0.04" stroke="#0f4c3a" stroke-opacity="0.12" stroke-width="1"/>
+          <text x="340" y="285" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Execution Contracts</text>
+          <text x="340" y="300" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">Bounded actions — who can do what, under which conditions, with what audit trail</text>
+
+          <!-- Mini contract representation -->
+          <rect x="570" y="275" rx="4" ry="4" width="75" height="48" fill="#0f4c3a" fill-opacity="0.04" stroke="#0f4c3a" stroke-opacity="0.12" stroke-width="0.75"/>
+          <text x="607" y="288" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.35" font-family="monospace" font-size="6">scope: pump_station</text>
+          <text x="607" y="298" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.35" font-family="monospace" font-size="6">action: throttle</text>
+          <text x="607" y="308" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.35" font-family="monospace" font-size="6">approval: auto</text>
+          <text x="607" y="318" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.35" font-family="monospace" font-size="6">audit: immutable</text>
+
+          <!-- Rail 4: Governance Policies -->
+          <rect x="320" y="350" rx="8" ry="8" width="340" height="70" fill="#0f4c3a" fill-opacity="0.04" stroke="#0f4c3a" stroke-opacity="0.12" stroke-width="1"/>
+          <text x="340" y="370" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="11" font-weight="700">Governance Policies</text>
+          <text x="340" y="385" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">Quality SLOs, access control, lineage tracking, compliance constraints</text>
+
+          <!-- Mini governance representation -->
+          <circle cx="585" cy="372" r="5" fill="#0f4c3a" fill-opacity="0.12" stroke="#0f4c3a" stroke-opacity="0.25" stroke-width="1"/>
+          <text x="585" y="375" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="7">Q</text>
+          <circle cx="610" cy="372" r="5" fill="#0f4c3a" fill-opacity="0.12" stroke="#0f4c3a" stroke-opacity="0.25" stroke-width="1"/>
+          <text x="610" y="375" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="7">A</text>
+          <circle cx="635" cy="372" r="5" fill="#0f4c3a" fill-opacity="0.12" stroke="#0f4c3a" stroke-opacity="0.25" stroke-width="1"/>
+          <text x="635" y="375" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.5" font-family="system-ui, sans-serif" font-size="7">L</text>
+
+          <!-- Rail annotation -->
+          <text x="644" y="405" text-anchor="middle" fill="#0f4c3a" fill-opacity="0.2" font-family="monospace" font-size="8">every output inherits these policies</text>
+
+          <!-- ===== FLOW: Intelligence Rails → Outputs ===== -->
+          <line x1="680" y1="130" x2="760" y2="100" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="5,5" class="rail-flow" style="animation-delay:0.2s"/>
+          <line x1="680" y1="215" x2="760" y2="210" stroke="#0f4c3a" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="5,5" class="rail-flow" style="animation-delay:0.5s"/>
+          <line x1="680" y1="300" x2="760" y2="320" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="5,5" class="rail-flow" style="animation-delay:0.8s"/>
+          <line x1="680" y1="385" x2="760" y2="420" stroke="#0f4c3a" stroke-opacity="0.15" stroke-width="1.5" stroke-dasharray="5,5" class="rail-flow" style="animation-delay:1.1s"/>
+
+          <!-- Pulse dots on the flow -->
+          <circle cx="720" cy="115" r="2.5" fill="#0f4c3a" fill-opacity="0.5" class="rail-pulse"/>
+          <circle cx="720" cy="213" r="2.5" fill="#0f4c3a" fill-opacity="0.5" class="rail-pulse" style="animation-delay:0.6s"/>
+          <circle cx="720" cy="310" r="2.5" fill="#0f4c3a" fill-opacity="0.5" class="rail-pulse" style="animation-delay:1.2s"/>
+          <circle cx="720" cy="403" r="2.5" fill="#0f4c3a" fill-opacity="0.5" class="rail-pulse" style="animation-delay:1.8s"/>
+
+          <!-- ===== LAYER 3 (RIGHT): OUTPUTS ===== -->
+
+          <!-- Output 1: Workflows -->
+          <rect x="760" y="75" rx="8" ry="8" width="220" height="55" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1.5"/>
+          <text x="870" y="99" text-anchor="middle" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Workflows</text>
+          <text x="870" y="116" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">Operational apps your team runs</text>
+
+          <!-- Output 2: Agents -->
+          <rect x="760" y="185" rx="8" ry="8" width="220" height="55" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1.5"/>
+          <text x="870" y="209" text-anchor="middle" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="12" font-weight="700">AI Agents</text>
+          <text x="870" y="226" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">Reason over the ontology, act within contracts</text>
+
+          <!-- Output 3: Automations -->
+          <rect x="760" y="295" rx="8" ry="8" width="220" height="55" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1.5"/>
+          <text x="870" y="319" text-anchor="middle" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Automations</text>
+          <text x="870" y="336" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">Governed actions, deterministic, auditable</text>
+
+          <!-- Output 4: APIs -->
+          <rect x="760" y="400" rx="8" ry="8" width="220" height="55" fill="#0f4c3a" fill-opacity="0.06" stroke="#0f4c3a" stroke-opacity="0.2" stroke-width="1.5"/>
+          <text x="870" y="424" text-anchor="middle" fill="#0f4c3a" font-family="system-ui, sans-serif" font-size="12" font-weight="700">APIs</text>
+          <text x="870" y="441" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">Feed intelligence into existing tools</text>
+
+          <!-- ===== FEEDBACK: outputs feed back into the model ===== -->
+          <path d="M 870 460 Q 870 500, 490 510 Q 120 500, 120 420"
+                fill="none" stroke="#C4A265" stroke-opacity="0.12" stroke-width="1.5"
+                stroke-dasharray="6,5" class="rail-flow"/>
+          <polygon points="118,422 120,410 122,422" fill="#C4A265" fill-opacity="0.2"/>
+          <text x="490" y="505" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="8" letter-spacing="0.1em">RESULTS FEED BACK — INTELLIGENCE COMPOUNDS</text>
+        </svg>
+
+        <!-- Mobile fallback -->
+        <div class="sm:hidden space-y-4">
+          <div class="p-4 rounded-lg" style="border: 1px solid rgba(196,162,101,0.3); background: rgba(196,162,101,0.05);">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: #C4A265;">Governed data product</p>
+            <p class="text-sm" style="color: var(--color-neutral-600);">Entities, measures, dimensions, relationships, semantics</p>
+          </div>
+          <div class="flex items-center justify-center text-[10px] font-mono uppercase tracking-wider" style="color: var(--color-neutral-400);">↓ modeled into ↓</div>
+          <div class="p-4 rounded-lg" style="border: 2px solid rgba(15,76,58,0.2); background: rgba(15,76,58,0.03);">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-forest);">Intelligence rails</p>
+            <p class="text-sm mb-3" style="color: var(--color-neutral-600);">The process ontology that enables governed execution:</p>
+            <div class="space-y-2">
+              <p class="text-xs" style="color: var(--color-neutral-500);"><strong style="color: var(--color-neutral-700);">Entity Relationships</strong> — how operational objects relate</p>
+              <p class="text-xs" style="color: var(--color-neutral-500);"><strong style="color: var(--color-neutral-700);">Business Rules</strong> — domain logic as computable policy</p>
+              <p class="text-xs" style="color: var(--color-neutral-500);"><strong style="color: var(--color-neutral-700);">Execution Contracts</strong> — bounded, auditable actions</p>
+              <p class="text-xs" style="color: var(--color-neutral-500);"><strong style="color: var(--color-neutral-700);">Governance Policies</strong> — quality, access, lineage, compliance</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center text-[10px] font-mono uppercase tracking-wider" style="color: var(--color-neutral-400);">↓ enables ↓</div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-3 rounded-lg text-center" style="border: 1px solid var(--color-structure);">
+              <p class="font-display text-sm font-bold" style="color: var(--color-neutral-800);">Workflows</p>
+            </div>
+            <div class="p-3 rounded-lg text-center" style="border: 1px solid var(--color-structure);">
+              <p class="font-display text-sm font-bold" style="color: var(--color-neutral-800);">AI Agents</p>
+            </div>
+            <div class="p-3 rounded-lg text-center" style="border: 1px solid var(--color-structure);">
+              <p class="font-display text-sm font-bold" style="color: var(--color-neutral-800);">Automations</p>
+            </div>
+            <div class="p-3 rounded-lg text-center" style="border: 1px solid var(--color-structure);">
+              <p class="font-display text-sm font-bold" style="color: var(--color-neutral-800);">APIs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- What this looks like by vertical -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a;">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">
+        Intelligence by domain
+      </p>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-white/90 sm:text-3xl mb-12 fade-up">
+        What the utility looks like in your industry.
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {exampleOutputs.map((ex) => (
+          <div
+            class="p-6 rounded-xl fade-up"
+            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);"
+          >
+            <span class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/20">{ex.category}</span>
+            <p class="mt-3 text-sm leading-relaxed text-white/60">{ex.output}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What makes this possible: the data product -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <div class="lg:col-span-5">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+            What powers the output
+          </p>
+          <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+            Every output is built on a governed data product.
+          </h2>
+          <p class="mt-4 text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+            Underneath every workflow, agent, automation, and API is a purpose-built intelligence product — not a raw dataset. It carries its own context: what the data means, who owns it, what quality standards it meets, and how it should be used.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { title: 'Purpose-built', desc: 'Designed for a specific use case, not a generic data dump. Your team defines the outcome — the product is built to serve it.' },
+              { title: 'Semantically rich', desc: 'Carries measures, dimensions, relationships, and quality guarantees. Business people define it. The operating model maintains it.' },
+              { title: 'Multi-interface', desc: 'Consumable through dashboards, APIs, agent queries, and third-party tools — the same governed truth, multiple consumption paths.' },
+              { title: 'Compounds over time', desc: 'Each new data product enriches the whole model. Shared entities, shared context, shared governance — intelligence that grows.' },
+            ].map((item) => (
+              <div class="p-6 rounded-xl bg-white fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+                <h3 class="font-display text-base font-bold" style="color: var(--color-neutral-800);">{item.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- The feedback loop -->
+  <EditorialOutcome
+    statement={`The more you connect, the smarter <span style="color: var(--color-forest);">everything gets.</span>`}
+    description="Every workflow executed feeds results back into the operational model. Every agent decision becomes context for the next one. Every automation outcome refines the prediction. This is the intelligence flywheel — and it's real today, not a roadmap item."
+    stats={[
+      { value: 'Real-time', label: 'Model updates' },
+      { value: 'Governed', label: 'Every action' },
+      { value: 'Auditable', label: 'Every decision' },
+    ]}
+  />
+
+  <!-- Navigation to sibling pages -->
+  <section class="py-16 lg:py-20" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="/utility" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Overview</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            <span class="inline-block transition-transform group-hover:-translate-x-1">&larr;</span>
+            What Is It
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">One operational model from every system your operations touch.</p>
+        </a>
+        <a href="/utility/xops" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Operations</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            xOps
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Adaptive operations suite that molds to your data and workflows.</p>
+        </a>
+        <a href="/utility/how-it-starts" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Start here</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            How It Starts
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">You tell us the outcome that matters. We connect the systems. Your team works from the model.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <DualCta
+    title={`Tell us the outcome. We connect the <span style="color: var(--color-forest);">systems that hold the answer.</span>`}
+    description="Your team starts working from the model. Workflows, agents, automations, and APIs — all from day one."
+    primaryCta={{ label: 'Start With an Outcome', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+  />
+</MarketingLayout>

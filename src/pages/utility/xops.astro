@@ -1,0 +1,420 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import Section from '@/components/marketing/Section.astro'
+import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const operationalDomains = [
+  {
+    id: 'inventory',
+    name: 'Asset &amp; Inventory Management',
+    shortName: 'Inventory',
+    description: 'Full lifecycle visibility across physical and logical assets. Resource Studio, Plan &amp; Build, Asset Manager, Facility Manager, and Planned Maintenance — all reasoning over your live operational model, not a static CMDB.',
+    apps: ['Resource Studio', 'Plan &amp; Build', 'Asset Manager', 'Facility Manager', 'Planned Maintenance'],
+    outcome: 'One asset truth across every system, updated in real time.',
+  },
+  {
+    id: 'monitoring',
+    name: 'Monitoring &amp; Observability',
+    shortName: 'Monitoring',
+    description: 'Cross-system performance monitoring, alarm correlation, and anomaly detection — not per-vendor dashboards. Penalty Box surfaces what matters. IP Network Explorer maps what\'s connected. AIOps finds what\'s wrong before your team does.',
+    apps: ['Penalty Box', 'IP Network Explorer', 'Alarm Console', 'Performance Analyzer'],
+    outcome: 'Unified observability from sensor to SLA.',
+  },
+  {
+    id: 'orchestration',
+    name: 'Orchestration &amp; Control',
+    shortName: 'Orchestration',
+    description: 'Signal routing, virtual group management, and control surface automation — governed actions that execute across vendor boundaries. Orchestrate changes across your entire operational estate from one surface.',
+    apps: ['Virtual Signal Groups', 'Control Surface', 'Service Orchestration'],
+    outcome: 'Cross-vendor orchestration with governed execution.',
+  },
+  {
+    id: 'assurance',
+    name: 'Service Assurance',
+    shortName: 'Assurance',
+    description: 'End-to-end service quality tracking from the physical layer through the business SLA. Service order management, fault correlation, and proactive remediation — all connected to the real-time operational model.',
+    apps: ['Service Order Manager', 'Fault Correlation', 'SLA Tracker'],
+    outcome: 'SLA performance measured against live operations, not stale reports.',
+  },
+  {
+    id: 'intelligence',
+    name: 'AI-Powered Intelligence',
+    shortName: 'AIOps',
+    description: 'Pattern detection, anomaly forecasting, root cause analysis, and recommendation engines — domain-trained models operating on your governed data. Not generic AI bolted onto dashboards. Intelligence that reasons over your operational model.',
+    apps: ['Anomaly Detection', 'Root Cause Analysis', 'Capacity Forecasting', 'Recommendation Engine'],
+    outcome: 'AI that understands your operations, not just your logs.',
+  },
+]
+
+const xopsSolutions = [
+  { name: 'MediaOps', domain: 'Broadcast &amp; Media', description: 'Signal routing, contribution monitoring, playout assurance' },
+  { name: 'GridOps', domain: 'Energy &amp; Utilities', description: 'Grid visibility, substation health, NERC-CIP compliance' },
+  { name: 'SatOps', domain: 'Satellite &amp; Space', description: 'Ground station orchestration, spectrum management, link budgets' },
+  { name: 'NetOps', domain: 'Telecom &amp; Networks', description: 'NOC unification, capacity planning, fault resolution' },
+  { name: 'IoTOps', domain: 'Industrial &amp; IoT', description: 'Device fleet health, edge analytics, sensor correlation' },
+]
+---
+
+<MarketingLayout
+  title="xOps — Adaptive Operations Powered by Your Data"
+  description="An adaptive AI-powered operations suite that molds to your data and your workflows. No SaaS bundles. No rigid modules. Power action from your operational model."
+>
+  <HeroCanvas
+    badge="xOps"
+    title="Your Operations. Your Data. Your Applications."
+    body="An adaptive AI-powered operations suite that molds to your data and your workflows. No SaaS bundles. No rigid feature sets. Applications that emerge from your operational model — powered by DataMiner's 8,000+ integrations."
+    ctaLabel="See xOps On Your Systems"
+    ctaHref="/contact/demo"
+  />
+
+  <!-- Editorial lead-in -->
+  <EditorialOutcome
+    statement={`Not another SaaS bundle. An operations suite that <span style="color: var(--color-forest);">adapts to you.</span>`}
+    description="Traditional operations software forces your team into rigid modules designed for someone else's workflow. xOps takes the opposite approach: connect your systems, model your operations, and the applications your team needs emerge from the data. Every workflow, every dashboard, every automation is shaped by how your operations actually run — not how a vendor decided they should."
+  />
+
+  <!-- The adaptive architecture diagram — dark section -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a;">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">
+        How it works
+      </p>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-white/90 sm:text-3xl mb-4 fade-up">
+        Your data defines the application. Not the other way around.
+      </h2>
+      <p class="text-base leading-relaxed text-white/40 max-w-3xl mb-16 fade-up">
+        xOps connects to your operational systems through DataMiner's 8,000+ protocol integrations, builds a live model of your operations, and surfaces the workflows, dashboards, and automations your team actually needs. The suite adapts as your operations evolve — no module upgrades, no feature requests, no waiting.
+      </p>
+
+      <!-- SVG diagram: Your Systems → Live Operational Model → Adaptive Applications -->
+      <div class="hidden lg:block rounded-xl overflow-hidden fade-up" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+        <svg viewBox="0 0 1000 440" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+          <style>
+            @keyframes xops-flow {
+              0% { stroke-dashoffset: 24; }
+              100% { stroke-dashoffset: 0; }
+            }
+            @keyframes xops-pulse {
+              0%, 100% { opacity: 0.4; }
+              50% { opacity: 1; }
+            }
+            .xops-arrow { stroke-dasharray: 6 6; animation: xops-flow 1.5s linear infinite; }
+            .xops-dot { animation: xops-pulse 2.5s ease-in-out infinite; }
+          </style>
+
+          <!-- Column 1: Your Systems (left) -->
+          <text x="120" y="40" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="'JetBrains Mono Variable', monospace" font-size="9" letter-spacing="0.1em">YOUR SYSTEMS</text>
+
+          <!-- System source pills -->
+          <rect x="30" y="60" width="180" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <text x="120" y="82" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="10">SCADA &amp; Industrial</text>
+
+          <rect x="30" y="108" width="180" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <text x="120" y="130" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="10">Network &amp; Telecom</text>
+
+          <rect x="30" y="156" width="180" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <text x="120" y="178" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="10">IT Infrastructure</text>
+
+          <rect x="30" y="204" width="180" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <text x="120" y="226" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="10">IoT &amp; Edge Sensors</text>
+
+          <rect x="30" y="252" width="180" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <text x="120" y="274" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="10">Enterprise Systems</text>
+
+          <rect x="30" y="300" width="180" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <text x="120" y="322" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="10">Satellite &amp; Space</text>
+
+          <!-- 8,000+ integrations label -->
+          <text x="120" y="366" text-anchor="middle" fill="rgba(15,76,58,0.8)" font-family="'JetBrains Mono Variable', monospace" font-size="9" letter-spacing="0.05em">8,000+ INTEGRATIONS</text>
+
+          <!-- Animated flow arrows: sources → model -->
+          <line x1="215" y1="78" x2="330" y2="180" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+          <line x1="215" y1="126" x2="330" y2="190" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+          <line x1="215" y1="174" x2="330" y2="200" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+          <line x1="215" y1="222" x2="330" y2="210" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+          <line x1="215" y1="270" x2="330" y2="220" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+          <line x1="215" y1="318" x2="330" y2="230" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+
+          <!-- Column 2: Live Operational Model (center) -->
+          <rect x="330" y="55" width="340" height="330" rx="16" fill="rgba(15,76,58,0.08)" stroke="rgba(15,76,58,0.25)" stroke-width="1.5"/>
+
+          <text x="500" y="85" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="'JetBrains Mono Variable', monospace" font-size="9" letter-spacing="0.1em">DATAMINER xOPS</text>
+          <text x="500" y="105" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="'Roobert', system-ui, sans-serif" font-size="16" font-weight="700">Live Operational Model</text>
+
+          <!-- Internal model nodes — interconnected graph -->
+          <circle cx="410" cy="170" r="24" fill="rgba(15,76,58,0.15)" stroke="rgba(15,76,58,0.4)" stroke-width="1" class="xops-dot"/>
+          <text x="410" y="174" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Assets</text>
+
+          <circle cx="500" cy="150" r="24" fill="rgba(15,76,58,0.15)" stroke="rgba(15,76,58,0.4)" stroke-width="1" class="xops-dot" style="animation-delay: 0.4s;"/>
+          <text x="500" y="154" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Services</text>
+
+          <circle cx="590" cy="170" r="24" fill="rgba(15,76,58,0.15)" stroke="rgba(15,76,58,0.4)" stroke-width="1" class="xops-dot" style="animation-delay: 0.8s;"/>
+          <text x="590" y="174" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Alarms</text>
+
+          <circle cx="440" cy="240" r="24" fill="rgba(15,76,58,0.15)" stroke="rgba(15,76,58,0.4)" stroke-width="1" class="xops-dot" style="animation-delay: 1.2s;"/>
+          <text x="440" y="244" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Metrics</text>
+
+          <circle cx="560" cy="240" r="24" fill="rgba(15,76,58,0.15)" stroke="rgba(15,76,58,0.4)" stroke-width="1" class="xops-dot" style="animation-delay: 1.6s;"/>
+          <text x="560" y="244" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Flows</text>
+
+          <circle cx="500" cy="310" r="24" fill="rgba(15,76,58,0.15)" stroke="rgba(15,76,58,0.4)" stroke-width="1" class="xops-dot" style="animation-delay: 2s;"/>
+          <text x="500" y="314" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Topology</text>
+
+          <!-- Inter-node connections -->
+          <line x1="432" y1="174" x2="478" y2="156" stroke="rgba(15,76,58,0.2)" stroke-width="1"/>
+          <line x1="522" y1="156" x2="568" y2="174" stroke="rgba(15,76,58,0.2)" stroke-width="1"/>
+          <line x1="416" y1="192" x2="434" y2="218" stroke="rgba(15,76,58,0.2)" stroke-width="1"/>
+          <line x1="584" y1="192" x2="566" y2="218" stroke="rgba(15,76,58,0.2)" stroke-width="1"/>
+          <line x1="500" y1="174" x2="500" y2="286" stroke="rgba(15,76,58,0.15)" stroke-width="1"/>
+          <line x1="462" y1="244" x2="538" y2="244" stroke="rgba(15,76,58,0.15)" stroke-width="1"/>
+          <line x1="454" y1="258" x2="486" y2="292" stroke="rgba(15,76,58,0.15)" stroke-width="1"/>
+          <line x1="546" y1="258" x2="514" y2="292" stroke="rgba(15,76,58,0.15)" stroke-width="1"/>
+
+          <!-- "Adapts to your data" annotation -->
+          <text x="500" y="365" text-anchor="middle" fill="rgba(15,76,58,0.6)" font-family="'JetBrains Mono Variable', monospace" font-size="8" letter-spacing="0.05em">MODEL ADAPTS TO YOUR DATA</text>
+
+          <!-- Animated flow arrows: model → applications -->
+          <line x1="675" y1="140" x2="780" y2="105" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+          <line x1="675" y1="190" x2="780" y2="180" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+          <line x1="675" y1="210" x2="780" y2="255" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+          <line x1="675" y1="280" x2="780" y2="330" class="xops-arrow" stroke="rgba(15,76,58,0.4)" stroke-width="1"/>
+
+          <!-- Column 3: Adaptive Applications (right) -->
+          <text x="880" y="40" text-anchor="middle" fill="rgba(255,255,255,0.2)" font-family="'JetBrains Mono Variable', monospace" font-size="9" letter-spacing="0.1em">YOUR APPLICATIONS</text>
+
+          <rect x="785" y="60" width="190" height="60" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <text x="880" y="86" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="'Roobert', system-ui, sans-serif" font-size="12" font-weight="600">Workflows</text>
+          <text x="880" y="104" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Your team runs</text>
+
+          <rect x="785" y="135" width="190" height="60" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <text x="880" y="161" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="'Roobert', system-ui, sans-serif" font-size="12" font-weight="600">Dashboards</text>
+          <text x="880" y="179" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Live, not stale</text>
+
+          <rect x="785" y="210" width="190" height="60" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <text x="880" y="236" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="'Roobert', system-ui, sans-serif" font-size="12" font-weight="600">Automations</text>
+          <text x="880" y="254" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Governed actions</text>
+
+          <rect x="785" y="285" width="190" height="60" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <text x="880" y="311" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="'Roobert', system-ui, sans-serif" font-size="12" font-weight="600">AI Agents</text>
+          <text x="880" y="329" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-family="'JetBrains Mono Variable', monospace" font-size="8">Domain-trained reasoning</text>
+
+          <!-- Bottom feedback line -->
+          <path d="M 880 355 Q 880 410 500 410 Q 120 410 120 380" fill="none" stroke="rgba(15,76,58,0.2)" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="500" y="428" text-anchor="middle" fill="rgba(15,76,58,0.4)" font-family="'JetBrains Mono Variable', monospace" font-size="8" letter-spacing="0.05em">RESULTS FEED BACK — THE MODEL GETS SMARTER</text>
+        </svg>
+      </div>
+
+      <!-- Mobile fallback -->
+      <div class="lg:hidden space-y-6 fade-up">
+        <div class="p-5 rounded-xl text-center" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30 mb-2">Your systems</p>
+          <div class="flex flex-wrap justify-center gap-2">
+            {['SCADA', 'Telecom', 'IT', 'IoT', 'ERP', 'Satellite'].map((s) => (
+              <span class="px-3 py-1.5 rounded-full text-xs font-mono text-white/50" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">{s}</span>
+            ))}
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <svg width="24" height="32" viewBox="0 0 24 32"><path d="M12 0 L12 24 M6 18 L12 24 L18 18" stroke="rgba(15,76,58,0.5)" stroke-width="1.5" fill="none"/></svg>
+        </div>
+
+        <div class="p-6 rounded-xl text-center" style="background: rgba(15,76,58,0.08); border: 1px solid rgba(15,76,58,0.25);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30 mb-2">DataMiner xOps</p>
+          <p class="font-display text-lg font-bold text-white/90">Live Operational Model</p>
+          <p class="mt-2 text-sm text-white/40">8,000+ integrations &middot; Adapts to your data</p>
+        </div>
+
+        <div class="flex justify-center">
+          <svg width="24" height="32" viewBox="0 0 24 32"><path d="M12 0 L12 24 M6 18 L12 24 L18 18" stroke="rgba(15,76,58,0.5)" stroke-width="1.5" fill="none"/></svg>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          {['Workflows', 'Dashboards', 'Automations', 'AI Agents'].map((app) => (
+            <div class="p-4 rounded-xl text-center" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+              <p class="font-display text-sm font-bold text-white/80">{app}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The anti-SaaS argument — light editorial -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+        <div class="lg:col-span-5">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+            Why xOps is different
+          </p>
+          <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl fade-up" style="color: var(--color-neutral-800);">
+            SaaS bundles were designed for someone else's operations.
+          </h2>
+          <p class="mt-4 text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+            Every operations team has bought software that was 80% right and 20% someone else's workflow. You pay for features you don't use. You build workarounds for the ones that don't fit. You wait for a vendor's roadmap to solve your problem.
+          </p>
+          <p class="mt-4 text-base leading-relaxed fade-up" style="color: var(--color-neutral-500);">
+            xOps starts from your operational model — the live, connected truth of how your systems actually run — and generates the applications your team needs. When your operations change, the applications change with them.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { title: 'Model-driven, not module-driven', desc: 'Applications emerge from your connected data model. No rigid feature sets. No per-module licensing. Your operations define the application.' },
+              { title: 'Cross-vendor by default', desc: 'xOps doesn\'t care what vendor made the hardware. 8,000+ protocol integrations mean your entire estate — every vendor, every generation — in one operational view.' },
+              { title: 'Low-code application building', desc: 'Your domain experts build the workflows they need using visual tools. No development team required for operational applications. IT governs, operations creates.' },
+              { title: 'Real-time, not batch', desc: 'Every dashboard, every workflow, every automation is fed by the live operational model. Not overnight syncs. Not hourly refreshes. The current state of your operations, always.' },
+            ].map((item) => (
+              <div class="p-6 rounded-xl bg-white fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+                <h3 class="font-display text-base font-bold" style="color: var(--color-neutral-800);">{item.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Five operational domains — dark section -->
+  <section class="py-20 lg:py-28" style="background: #0a0a0a;">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-4 fade-up">
+        Five operational domains
+      </p>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-white/90 sm:text-3xl mb-4 fade-up">
+        One suite. Every operational capability your team needs.
+      </h2>
+      <p class="text-base leading-relaxed text-white/40 max-w-3xl mb-16 fade-up">
+        xOps organizes around five operational domains — each backed by purpose-built applications from the DataMiner ecosystem. Every application reasons over the same live model. Every domain connects to every other domain. No silos.
+      </p>
+
+      <div class="space-y-3">
+        {operationalDomains.map((domain, i) => (
+          <div class="p-6 lg:p-8 rounded-xl fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+            <div class="flex flex-col lg:flex-row lg:items-start gap-4 lg:gap-8">
+              <div class="flex-shrink-0 lg:w-56">
+                <span class="font-mono text-sm tabular-nums" style="color: var(--color-forest);">{String(i + 1).padStart(2, '0')}</span>
+                <h3 class="mt-1 font-display text-lg font-bold text-white/90" set:html={domain.name} />
+                <p class="mt-1 text-sm font-medium" style="color: var(--color-forest);">{domain.outcome}</p>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm leading-relaxed text-white/40 max-w-2xl" set:html={domain.description} />
+                <div class="flex flex-wrap gap-2 mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.06);">
+                  {domain.apps.map((app) => (
+                    <span class="inline-flex px-3 py-1 rounded-full font-mono text-[10px] text-white/40" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">{app}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- xOps solutions by vertical — light section -->
+  <Section>
+    <div class="mx-auto max-w-7xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] fade-up" style="color: var(--color-neutral-400);">
+        Vertical solutions
+      </p>
+      <h2 class="mt-4 font-display text-2xl font-bold tracking-tight sm:text-3xl mb-4 fade-up" style="color: var(--color-neutral-800);">
+        Named for your operations. Built from the same model.
+      </h2>
+      <p class="mt-4 max-w-3xl text-base leading-relaxed mb-12 fade-up" style="color: var(--color-neutral-500);">
+        Every vertical gets its own xOps identity — with applications, workflows, and intelligence tuned to that domain. Under the hood, it's the same adaptive model. The naming tells your team what it does. The architecture tells your IT team it's governed.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {xopsSolutions.map((solution) => (
+          <div class="p-6 rounded-xl bg-white text-center fade-up" style="border: 1px solid var(--color-structure); box-shadow: 0 1px 3px rgba(15,23,42,0.04);">
+            <h3 class="font-display text-lg font-bold" style="color: var(--color-neutral-800);">{solution.name}</h3>
+            <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);" set:html={solution.domain} />
+            <p class="mt-3 text-sm leading-relaxed" style="color: var(--color-neutral-500);" set:html={solution.description} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Powered by DataMiner — trust signal -->
+  <section class="py-12 lg:py-16" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16">
+        <div class="lg:w-1/3">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-3 fade-up">Powered by</p>
+          <div class="flex items-center gap-4 mb-4 fade-up">
+            <img src="/images/partners/dataminer.svg" alt="DataMiner by Skyline Communications" class="h-7 w-auto" style="filter: brightness(0) invert(1); opacity: 0.6;" />
+          </div>
+          <p class="text-sm leading-relaxed text-white/40 fade-up">
+            Skyline Communications' DataMiner is the xOps engine under the hood — the operational model that connects 8,000+ protocols, correlates across vendor boundaries, and powers the adaptive application layer your team works from.
+          </p>
+        </div>
+        <div class="lg:w-2/3">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { stat: '8,000+', label: 'Protocol integrations' },
+              { stat: '1,000+', label: 'Vendors supported' },
+              { stat: '150+', label: 'Countries deployed' },
+              { stat: '25+ yrs', label: 'Operational heritage' },
+            ].map((item) => (
+              <div class="p-5 rounded-xl text-center fade-up" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);">
+                <p class="font-display text-2xl font-bold text-white/90" set:html={item.stat} />
+                <p class="mt-1 font-mono text-[10px] uppercase tracking-wider text-white/25">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation to sibling utility pages -->
+  <section class="py-16 lg:py-20" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href="/utility" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Overview</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            What Is It
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">One operational model from every system you run.</p>
+        </a>
+        <a href="/utility/what-you-get" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Delivery</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            What You Get
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Workflows, agents, automations, and APIs your team acts from.</p>
+        </a>
+        <a href="/utility/how-it-starts" class="group p-8 rounded-xl bg-white transition-all hover:shadow-md fade-up" style="border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">Start here</p>
+          <h3 class="mt-3 font-display text-xl font-bold tracking-tight group-hover:text-brand-600" style="color: var(--color-neutral-800);">
+            How It Starts
+            <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
+          </h3>
+          <p class="mt-2 text-sm leading-relaxed" style="color: var(--color-neutral-500);">Tell us the outcome. We connect the systems.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <DualCta
+    title={`See xOps on <span style="color: var(--color-forest);">your systems.</span>`}
+    description="We connect to your operational estate, build the live model, and show your team the applications that emerge. No slides. No demos of someone else's data."
+    primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    microcopy="4-week proof of value &middot; Credited toward annual contract"
+  />
+</MarketingLayout>
