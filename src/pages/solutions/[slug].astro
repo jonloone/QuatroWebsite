@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import StatStrip from '@/components/marketing/StatStrip.astro'
 import Section from '@/components/marketing/Section.astro'
 import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
 import BentoUseCases from '@/components/marketing/BentoUseCases.astro'
 import EditorialCapability from '@/components/marketing/EditorialCapability.astro'
@@ -34,14 +34,13 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/c
   title={`${title} — ${tagline}`}
   description={description}
 >
-  <Hero
-    variant="dark"
-    eyebrow={hero.eyebrow}
+  <HeroCanvas
+    badge={hero.eyebrow}
     title={hero.title}
-    description={hero.description}
-    primaryCta={hero.primaryCta}
-    secondaryCta={hero.secondaryCta}
-    backgroundImage={heroImage}
+    body={hero.description}
+    ctaLabel={hero.primaryCta?.label || 'Schedule an Assessment'}
+    ctaHref={hero.primaryCta?.href || '/contact/demo'}
+    imageSrc={heroImage || '/images/hero-bg.png'}
   />
 
   <StatStrip stats={stats} />
@@ -79,7 +78,7 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/c
 
   <!-- Proof Point — hidden until real case studies are available -->
 
-  <CtaBanner
+  <DualCta
     title={`See ${title} on Your Infrastructure`}
     description={`Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit.`}
     primaryCta={ctaPrimary}

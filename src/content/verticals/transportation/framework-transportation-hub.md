@@ -27,15 +27,15 @@ This is a **main vertical landing page** (discovery, wide funnel, breadth). The 
 *Framework note: 6 words. Passes the 8-word test. Outcome-focused. Cannot be mistaken for a generic fleet platform — "Every Node" signals ports, airports, corridors, "Total Visibility" signals operational control.*
 
 **Subheadline (JTBD — names the jobs, buyer self-selects):**
-> Quatro delivers a unified operational intelligence platform that transforms fragmented data across ports, airports, and logistics corridors into real-time situational awareness, predictive routing intelligence, and coordinated multi-node operations — all from a single command environment.
+> Quatro delivers a unified operational intelligence utility that connects isolated data across ports, airports, and logistics corridors into real-time situational awareness, predictive routing intelligence, and coordinated multi-node operations — all from a single command environment.
 
 **Solution Menu (JTBD — visible above fold):**
-The three operational domains serve as the "jobs" the buyer is hiring the platform to do:
+The three operational domains serve as the "jobs" the buyer is hiring the utility to do:
 - Port Operations — Berth management, cargo handling, vessel coordination
 - Airport Operations — Runway management, passenger flow, security
 - Corridor Intelligence — Traffic optimization, incident detection, logistics coordination
 
-*Framework note: Each domain is a "job" the buyer hires the platform to do. The buyer scans and self-selects.*
+*Framework note: Each domain is a "job" the buyer hires the utility to do. The buyer scans and self-selects.*
 
 **Primary CTA (verb-first, 5 words max):**
 `Request an Operations Briefing`
@@ -45,7 +45,7 @@ The three operational domains serve as the "jobs" the buyer is hiring the platfo
 
 **Trust Bar (immediately below hero — non-negotiable per framework):**
 - 3 Operational Domains
-- 9,000+ Infrastructure Integrations
+- 8,000+ Infrastructure Integrations
 - 24–48hr Predictive Intelligence
 - Sovereign Deployment Ready
 
@@ -90,7 +90,7 @@ This isn't unique to Ecuador or LATAM. Across every transportation network — m
 
 Meanwhile, smugglers move product across borders with coordinated timing — a shipment departs a port, crosses a border, reaches a warehouse, all synchronized. Criminal networks see one logistics chain. Your agencies see three separate screens.
 
-Quatro eliminates the gap. One platform connects every sensor, every node, and every data source into a single operational picture — with predictive routing intelligence, cross-node correlation, and multi-agency coordination from a unified command environment. Berths become predictable. Corridors become safe. Resources get optimized before breakdowns occur.
+Quatro eliminates the gap. One utility connects every sensor, every node, and every data source into a single operational picture — with predictive routing intelligence, cross-node correlation, and multi-agency coordination from a unified command environment. Berths become predictable. Corridors become safe. Resources get optimized before breakdowns occur.
 
 *Framework note: Agitation establishes the asymmetry — smugglers see one chain, agencies see three screens. Solution is positioned as the resolution (PAS "Solution" beat). Prose format per framework instruction.*
 
@@ -136,18 +136,18 @@ Quatro eliminates the gap. One platform connects every sensor, every node, and e
 | **02 — Operations** | Predictive intelligence and automated coordination. Route optimization. Incident prediction. Resource management. | Understand why delays happen. Act before congestion occurs. Coordinate across nodes automatically. |
 | **03 — Intelligence** | Cross-node correlation and strategic optimization. Anomaly detection. Network pattern analysis. Integration with enterprise systems (ERP, logistics, financial). | Identify systemic inefficiencies. Disrupt smuggling corridors. Optimize capital allocation. |
 
-*Framework note: Card grid provides scanning depth. Each tier is a capability the platform covers — reinforcing the "Every Node" hero promise. The progression (see → understand → act strategically) mirrors the buyer's maturity journey.*
+*Framework note: Card grid provides scanning depth. Each tier is a capability the utility covers — reinforcing the "Every Node" hero promise. The progression (see → understand → act strategically) mirrors the buyer's maturity journey.*
 
 ---
 
 ## Section 6 — DELIVERY MODEL (Connect → Operate → Command)
 
-> **Framework rule:** "Production-ready. Not a platform project." Three steps with SLA promise. This maps to the landing-page-frameworks "DELIVERY MODEL (SLA section)" slot.
+> **Framework rule:** "Production-ready. Not a utility project." Three steps with SLA promise. This maps to the landing-page-frameworks "DELIVERY MODEL (SLA section)" slot.
 
 **Dark section with background overlay.**
 
 ### Connect — Multi-Modal Sensing
-9,000+ ready-made integrations across port, airport, and highway infrastructure. AIS vessel tracking. CCTV and infrared monitoring. Traffic sensors. IoT berth monitors. RFID cargo tracking. Toll system feeds. The physical logistics network becomes a stream of machine-readable intelligence.
+8,000+ ready-made integrations across port, airport, and highway infrastructure. AIS vessel tracking. CCTV and infrared monitoring. Traffic sensors. IoT berth monitors. RFID cargo tracking. Toll system feeds. The physical logistics network becomes a stream of machine-readable intelligence.
 
 ### Operate — Intelligence Engine
 Secure multi-source data ingestion, cross-node data governance, real-time fusion, domain-trained predictive algorithms. Raw fragmented data from scattered sources transforms into a unified logistics intelligence picture.
@@ -155,7 +155,7 @@ Secure multi-source data ingestion, cross-node data governance, real-time fusion
 ### Command — Operational Response
 Predictive routing recommendations, incident management workflows, multi-node coordination dashboards. Operators see the full chain. Right decision-maker, right intelligence, right time. Full audit trail. Integration with existing SCADA, PMS, and logistics systems.
 
-*Framework note: Three-step delivery model mirrors "Connect → Build → Operate" from the landing-page framework. Named architecture layers give the buyer a mental model without requiring technical jargon. Dark section treatment signals "this is the platform depth" — visually separated from the outcome-focused content above.*
+*Framework note: Three-step delivery model mirrors "Connect → Build → Operate" from the landing-page framework. Named architecture layers give the buyer a mental model without requiring technical jargon. Dark section treatment signals "this is the utility depth" — visually separated from the outcome-focused content above.*
 
 ---
 
@@ -185,7 +185,7 @@ The same real-time data that optimizes berth scheduling also detects anomalies i
 
 **Proof of Value — Pilot First, Then Scale**
 
-90-day proof of value. One port or one airport. One high-impact use case (berth optimization or runway management). Working platform, operational baseline, and first predictive intelligence product delivered.
+90-day proof of value. One port or one airport. One high-impact use case (berth optimization or runway management). Working utility, operational baseline, and first predictive intelligence product delivered.
 
 **Four-Phase Scaling Pathway:**
 - Phase 1 — Foundation (Months 4–9): Sensor integration and data maturity. Ground truthing operational data. Cross-node data governance agreements.
@@ -209,11 +209,11 @@ For inter-agency coordination: generate intelligence products for partner agenci
 
 **Cross-Border Intelligence (unique to transportation):**
 
-When shipments cross international borders, the platform coordinates with partner nations' border systems through releasable intelligence products. Detection of smuggling routes triggers alerts across jurisdictions. Legitimate logistics are accelerated through predictive corridor coordination. Every cross-border disclosure is pre-approved and revocable.
+When shipments cross international borders, the utility coordinates with partner nations' border systems through releasable intelligence products. Detection of smuggling routes triggers alerts across jurisdictions. Legitimate logistics are accelerated through predictive corridor coordination. Every cross-border disclosure is pre-approved and revocable.
 
 > Your infrastructure stays in your jurisdiction, on your systems, under your authority. Partners see predictive routing and anomaly alerts. Not your raw operational data.
 
-*Framework note: This handles the primary objection for sovereign buyers — "will a foreign platform control our infrastructure data?" The confident one-line statement at the end ("Partners see predictive routing and anomaly alerts. Not your raw operational data.") follows the framework's instruction to weave objection responses as confident callouts, not defensive FAQs.*
+*Framework note: This handles the primary objection for sovereign buyers — "will a foreign utility control our infrastructure data?" The confident one-line statement at the end ("Partners see predictive routing and anomaly alerts. Not your raw operational data.") follows the framework's instruction to weave objection responses as confident callouts, not defensive FAQs.*
 
 ---
 
@@ -225,12 +225,12 @@ When shipments cross international borders, the platform coordinates with partne
 | Metric | Value |
 |---|---|
 | Operational Domains | 3 (Ports, Airports, Corridors) |
-| Infrastructure Integrations | 9,000+ |
+| Infrastructure Integrations | 8,000+ |
 | Vendor Compatibility | 1,000+ |
 | Prediction Window | 24–48 hours |
 | Deployment Model | Sovereign — air-gapped capable |
 | Time to First Operational Intelligence | Weeks |
-| Platform Uptime | 99.99% |
+| Utility Uptime | 99.99% |
 
 **Footer CTA (mirrors hero):**
 - Primary: `Request an Operations Briefing`

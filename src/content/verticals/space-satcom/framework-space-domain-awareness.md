@@ -84,7 +84,7 @@ Integration is not a technical problem. It's a procedural problem compounded by 
 
 Space domain awareness and operational intelligence were designed as separate domains by necessity. Space Ops Centers were built by satellite operators and military space commands to track spacecraft. Ground operations centers were built by ground combatant commanders to manage ground assets. Intelligence community systems were built by national agencies to manage classified collection and analysis. None were designed to integrate with the others — and for good reason: they operate at different classification levels, different compartmentation regimes, and different command authorities.
 
-But the structural problem is that threats are no longer domain-specific. An orbital event affects ground assets. A ground attack affects satellite utilization. An intelligence report changes the priority of a space mission. Decisions made in isolation are suboptimal. The solution requires a platform that can:
+But the structural problem is that threats are no longer domain-specific. An orbital event affects ground assets. A ground attack affects satellite utilization. An intelligence report changes the priority of a space mission. Decisions made in isolation are suboptimal. The solution requires a utility that can:
 1. Ingest multiple classification levels and compartment data appropriately
 2. Enable correlation across domain boundaries
 3. Provide different views to different authorities without ceding control
@@ -98,7 +98,7 @@ This is what Quatro's defense-specific deployment model enables.
 
 ## Section 3 — HOW IT WORKS (Operational, Not Architectural)
 
-> **Framework rule:** Don't explain the platform. Explain what changes day-to-day. Show before/after workflow. Name the source systems that connect. Describe what the team sees on Monday morning.
+> **Framework rule:** Don't explain the utility. Explain what changes day-to-day. Show before/after workflow. Name the source systems that connect. Describe what the team sees on Monday morning.
 
 ### Capability 1 — Multi-Source ISR Integration (Compartmented)
 
@@ -208,11 +208,11 @@ Quatro Space Domain Awareness is delivered as three service tiers:
 
 **Objection 1: "We can't use cloud or commercial infrastructure. All of this has to be air-gapped and SIPR-classified."**
 
-> Quatro supports every deployment model — commercial cloud for unclassified operations, FedRAMP-authorized cloud for CUI, air-gapped SIPR environments for classified operations, and standalone disconnected systems for TS/SCI. The core platform adapts to your security posture. Start with what you can release — unclassified threat predictions and unclassified operational alerts — then expand to compartmented classified intelligence as your security framework allows. You control the classification level and compartmentation boundaries. We adapt the platform accordingly.
+> Quatro supports every deployment model — commercial cloud for unclassified operations, FedRAMP-authorized cloud for CUI, air-gapped SIPR environments for classified operations, and standalone disconnected systems for TS/SCI. The core utility adapts to your security posture. Start with what you can release — unclassified threat predictions and unclassified operational alerts — then expand to compartmented classified intelligence as your security framework allows. You control the classification level and compartmentation boundaries. We adapt the utility accordingly.
 
 **Objection 2: "This sounds like it requires giving one agency visibility into another agency's operations. Our commands won't accept that."**
 
-> Compartmentation is the core operational design principle. Each command sees exactly what they're cleared for and need to know. A Space Force officer sees space domain data. A combatant commander sees ground mission impact. An intelligence analyst sees the full picture with classification markings. The platform enforces compartmentation automatically — data at the wrong classification level for a user is filtered out before it reaches their screen. More importantly, data sharing is controlled by policy, not technical barriers. If policy says allied partners get threat warnings but not ISR methods, the system enforces that boundary. If policy says the Joint Staff gets full visibility but individual commands don't share with each other, the system enforces that too.
+> Compartmentation is the core operational design principle. Each command sees exactly what they're cleared for and need to know. A Space Force officer sees space domain data. A combatant commander sees ground mission impact. An intelligence analyst sees the full picture with classification markings. The utility enforces compartmentation automatically — data at the wrong classification level for a user is filtered out before it reaches their screen. More importantly, data sharing is controlled by policy, not technical barriers. If policy says allied partners get threat warnings but not ISR methods, the system enforces that boundary. If policy says the Joint Staff gets full visibility but individual commands don't share with each other, the system enforces that too.
 
 **Objection 3: "How do we handle classification reviews and declassification timelines?"**
 

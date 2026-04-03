@@ -18,8 +18,8 @@ stats:
     label: "Menos Falsas Alarmas"
   - value: "55%"
     label: "MTTR Más Rápido"
-  - value: "9,000+"
-    label: "Conectores"
+  - value: "8,000+"
+    label: "Integraciones"
   - value: "900+"
     label: "Sitios Gestionados"
 challenges:

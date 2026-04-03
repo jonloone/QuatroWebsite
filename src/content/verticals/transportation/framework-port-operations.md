@@ -30,7 +30,7 @@ This is a **vertical-specific solution sub-page** (evaluation, narrow focus, dep
 > Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture — eliminating coordination delays and optimizing every movement across the maritime terminal.
 
 **Hook line (the "scene the buyer can picture"):**
-> When a container ship approaches Posorja, the platform automatically predicts arrival time to the hour, reserves optimal berth assignment, alerts cargo handlers to staging location, pre-coordinates with customs for manifest review, and notifies the receiving warehouse. One platform. Coordinated workflow. Arrival to discharge becomes predictable.
+> When a container ship approaches Posorja, the utility automatically predicts arrival time to the hour, reserves optimal berth assignment, alerts cargo handlers to staging location, pre-coordinates with customs for manifest review, and notifies the receiving warehouse. One utility. Coordinated workflow. Arrival to discharge becomes predictable.
 
 **Primary CTA:**
 `Request a Port Operations Briefing`
@@ -109,7 +109,7 @@ Each domain produces intelligence independently. All connect through a single fu
 **What the team sees:** Every vessel tracked from EEZ entry through port departure. Dark vessel activity (AIS dropout or intentional deactivation) detected immediately. Vessel trafficking patterns identified. Port activity correlated with known smuggling corridors and networks. Anomalies — unexpected vessels, unusual discharge timing, overnight operations — flagged in real-time.
 **What outcome it drives:** Smuggling vessel activity detected before discharge. Contraband interdicted at source. Port sovereignty maintained.
 
-*Framework note: Four capabilities, each as "What connects → What the team sees → What outcome it drives." Every description is operational — the buyer pictures their team using the intelligence, not configuring a platform. Named source systems (AIS, VMS, manifest systems, warehouse systems) are real technologies port operators recognize.*
+*Framework note: Four capabilities, each as "What connects → What the team sees → What outcome it drives." Every description is operational — the buyer pictures their team using the intelligence, not configuring a utility. Named source systems (AIS, VMS, manifest systems, warehouse systems) are real technologies port operators recognize.*
 
 ---
 
@@ -123,7 +123,7 @@ Not four separate monitoring systems running in parallel — one port operations
 
 **The Container Arrival Scenario (primary proof of concept):**
 
-When a container ship is detected 200 nautical miles offshore, the platform does not generate a maritime alert and stop. It automatically:
+When a container ship is detected 200 nautical miles offshore, the utility does not generate a maritime alert and stop. It automatically:
 1. Queries the **berth management domain** for optimal berth assignment considering water depth, discharge duration, and arrival timing
 2. Checks the **cargo domain** for staging area readiness, equipment status, and warehouse receiving capacity
 3. Correlates with **customs domain** for risk assessment, inspection requirements, and estimated clearance time
@@ -152,13 +152,13 @@ The result is not four separate alerts to four separate teams. It is one operati
 > **Framework rule:** 2-3 objections woven as confident statements, not FAQ.
 
 **Objection 1: "Our port is too old to integrate real-time systems"**
-> The platform connects to what you have today — AIS feeds, customs databases, cargo manifests, port authority scheduling systems. Integration happens at the data layer, not the system layer. No rip-and-replace. Sensor gaps (apron cameras, cargo handlers IoT) are identified during the pilot and filled incrementally. You start operations with what exists.
+> The utility connects to what you have today — AIS feeds, customs databases, cargo manifests, port authority scheduling systems. Integration happens at the data layer, not the system layer. No rip-and-replace. Sensor gaps (apron cameras, cargo handlers IoT) are identified during the pilot and filled incrementally. You start operations with what exists.
 
 **Objection 2: "Customs won't share data with logistics operators"**
-> Role-based access controls ensure customs operators see only risk-relevant data — manifests, risk scores, inspection status. They never see commercial rates, customer names, or shipping company data. Every data access is logged and auditable. The platform handles data governance; customs focuses on risk assessment. Border agencies maintain information control.
+> Role-based access controls ensure customs operators see only risk-relevant data — manifests, risk scores, inspection status. They never see commercial rates, customer names, or shipping company data. Every data access is logged and auditable. The utility handles data governance; customs focuses on risk assessment. Border agencies maintain information control.
 
 **Objection 3: "Inter-agency coordination at our port has never worked"**
-> Automated workflows route intelligence to the right agency at the right time. Port authority sees berth assignments. Cargo handlers see staging plans. Customs sees risk assessments. Warehouse sees arrival ETAs. The platform coordinates — agencies focus on execution. Role-based dashboards mean each team sees only their scope. Coordination is workflow-driven, not email-driven.
+> Automated workflows route intelligence to the right agency at the right time. Port authority sees berth assignments. Cargo handlers see staging plans. Customs sees risk assessments. Warehouse sees arrival ETAs. The utility coordinates — agencies focus on execution. Role-based dashboards mean each team sees only their scope. Coordination is workflow-driven, not email-driven.
 
 *Framework note: Three objections mapped to the port buyer's specific concerns — aging infrastructure, inter-agency data sharing, and coordination failures. Each resolved in 2-3 confident sentences. No "FAQ" label.*
 

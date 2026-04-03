@@ -2,12 +2,12 @@
 title: "Grid Health"
 tagline: "Modernize Without Replacing"
 heroImage: "/images/solution-grid-operations.png"
-description: "Overlay modernization that adds AI analytics, DER integration, and storm response to existing SCADA — delivering results in months, not years."
+description: "Overlay modernization that adds operational intelligence, DER integration, and storm response to existing SCADA — delivering results in months, not years."
 order: 6
 hero:
   eyebrow: "Grid Health"
   title: "Modern Grid Intelligence. Legacy SCADA Intact."
-  description: "Don't rip out your SCADA. Overlay it with AI-powered operator guidance, predictive analytics, DER integration, and automated storm response that deploys in months, not years."
+  description: "Don't rip out your SCADA. Overlay it with intelligent operator guidance, predictive analytics, DER integration, and governed autonomous action for storm response that deploys in months, not years."
   primaryCta:
     label: "Schedule a Grid Assessment"
     href: "/contact/demo"
@@ -40,12 +40,12 @@ capabilities:
   - name: "DER Integration"
     description: "Seamless onboarding of solar, wind, battery storage, and EV charging — normalized into your grid operational view."
   - name: "SCADA Modernization"
-    description: "Overlay existing SCADA with AI-powered intelligence without touching the safety-critical control path. Operator guidance, pattern recognition, and predictive analytics layer on top of your existing infrastructure. Migrate at your own pace."
+    description: "Overlay existing SCADA with operational intelligence without touching the safety-critical control path. Operator guidance, pattern recognition, and predictive analytics layer on top of your existing infrastructure. Migrate at your own pace."
   - name: "Storm Response Automation"
-    description: "AI-assisted storm playbooks pre-position crews based on predicted storm trajectory, activate mutual aid, and prioritize restoration by customer impact and critical facility status. Intelligent dispatch matches crew certifications to switching requirements."
+    description: "Governed autonomous storm playbooks pre-position crews based on predicted storm trajectory, activate mutual aid, and prioritize restoration by customer impact and critical facility status. Intelligent dispatch matches crew certifications to switching requirements."
   - name: "Real-Time Grid Simulation"
     description: "Operational models for contingency analysis, DER hosting capacity studies, and storm impact modeling before conditions materialize."
-  - name: "AI-Powered Grid Intelligence"
+  - name: "Operational Intelligence for Grid Operators"
     description: "Real-time contextual recommendations for grid operators. Pattern recognition identifies emerging issues — cascading outage conditions, DER instability, load imbalances — before threshold alerts fire. New operators perform like veterans with step-by-step guidance."
 proofPoint:
   industry: "Energy — Integrated Utility"

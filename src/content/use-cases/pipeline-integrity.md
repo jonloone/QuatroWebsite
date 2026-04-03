@@ -7,7 +7,7 @@ order: 1
 hero:
   eyebrow: "Midstream Operations"
   title: "Pipeline Integrity & Leak Detection"
-  description: "Transform pipeline monitoring from reactive maintenance to real-time operational intelligence. Detect leaks in minutes, reduce false alarms by 45%, and compress compliance reporting cycles by 60%."
+  description: "When SCADA systems and field data don't correlate in real-time, leaks go undetected for hours and false alarms overwhelm teams. Detect leaks in minutes, reduce false alarms by 45%, and compress compliance reporting cycles by 60%."
   primaryCta:
     label: "Schedule an Energy Assessment"
     href: "/energy-assessment"
@@ -39,7 +39,7 @@ capabilities:
   - name: "Compliance Automation"
     description: "Generates audit-ready reports with detection timelines, actions taken, and environmental impact assessments."
     icon: "✅"
-  - name: "9,000+ Integrations"
+  - name: "8,000+ Integrations"
     description: "Connects to your existing SCADA, GIS, and safety systems—no rip-and-replace required."
     icon: "🔗"
 stats:
@@ -69,8 +69,8 @@ objections:
     response: "Previous systems rely on single-sensor thresholds. Our approach fuses 5+ sensor modalities with machine learning to understand your pipeline's normal operating envelope. Comparable solutions report 20-30% false positive rates; our customers typically see 5-10%. The difference is context: we eliminate alerts that don't correlate across pressure, flow, acoustic, and vibration simultaneously."
   - concern: "Our pipelines are decades old—legacy sensors won't work with new systems"
     response: "Legacy infrastructure is exactly what we're designed for. We work with whatever sensor hardware you have (analog 4-20mA transducers, digital Modbus/DNP3, even pneumatic gauges with manual transcription). Our data normalization layer translates any input format into unified operational intelligence. Zero re-instrumentation required."
-  - concern: "We don't have the team to manage another software platform"
-    response: "The platform is designed for your existing ops staff, not new hires. Think of it as a smart analyst that reduces daily alert triage from 4-5 hours to 30 minutes. Your operators stay in their existing SCADA interface; we integrate alerts directly into their workflow. Onboarding takes 4 weeks, and we provide 24/7 Tier-2 support for the first year."
+  - concern: "We don't have the team to manage another software tool"
+    response: "Quatro is designed for your existing ops staff, not new hires. Think of it as a smart analyst that reduces daily alert triage from 4-5 hours to 30 minutes. Your operators stay in their existing SCADA interface; we integrate alerts directly into their workflow. Onboarding takes 4 weeks, and we provide 24/7 Tier-2 support for the first year."
 adjacentSolutions:
   - title: "Grid Operations & Renewable Integration"
     description: "Apply the same real-time operational intelligence framework to transmission and distribution networks."

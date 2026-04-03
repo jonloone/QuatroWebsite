@@ -1,7 +1,7 @@
 ---
 title: "Maritime Domain Awareness"
 tagline: "Track Every Vessel. Detect Dark Ships in Minutes."
-description: "Gain real-time operational intelligence across exclusive economic zones and naval operations. Detect vessels operating without transponders, enforce maritime borders, and reduce illegal fishing in minutes instead of days."
+description: "Gain real-time operational intelligence utility across exclusive economic zones and naval operations. Detect vessels operating without transponders, enforce maritime borders, and reduce illegal fishing in minutes instead of days."
 parentIndustry: "defense"
 order: 2
 hero:
@@ -97,7 +97,7 @@ cta:
 Maritime Domain Awareness requires seeing beyond what traditional systems reveal. Quatro fuses AIS broadcasts, radar sweeps, satellite imagery, and signals intelligence into a unified operational picture—and then applies machine learning to detect anomalies.
 
 ### Multi-Sensor Fusion Engine
-All maritime data streams converge into Quatro's event processing layer. The system correlates vessel movements, identifies dark ships (those operating without transponders), and flags suspicious behavior patterns—all in real-time.
+All maritime data streams converge into Quatro's event processing layer. The utility correlates vessel movements, identifies dark ships (those operating without transponders), and flags suspicious behavior patterns—all in real-time.
 
 ### Intelligent Vessel Classification
 Every contact is automatically risk-scored based on:

@@ -1,15 +1,13 @@
 ---
 title: Energy
-tagline: Overlay Modernization for Grid & Pipeline
+tagline: Operational Intelligence for Grid, Pipeline & Production
 heroImage: /images/industry-energy.png
-description: Modernize without replacing. Unified operational intelligence that overlays existing SCADA with AI-powered analytics, predictive maintenance, DER integration, and cross-domain correlation —
-  with a clear path from grid operations to enterprise energy intelligence.
+description: When grid, pipeline, and production systems each describe the same reality differently, risks compound invisibly. Quatro connects your existing SCADA, historians, and DER systems into a single operational intelligence utility — real-time visibility and governed autonomous action without replacing critical infrastructure.
 order: 1
 hero:
   eyebrow: Energy
-  title: Modernize Your SCADA. Keep Your Infrastructure.
-  description: Don't rip out 15-25 year-old control systems. Overlay them with AI-powered operator guidance, predictive analytics, DER connectivity, and unified visibility that deploy in months — not the
-    3-5 years a full replacement demands.
+  title: One Operational Model. Every Energy Decision.
+  description: When SCADA, historians, and DER systems each describe the same grid differently, failure patterns cross system boundaries undetected. Connect them to Quatro and get unified operational intelligence — predictive analytics and governed autonomous action in weeks, without replacing critical infrastructure.
   primaryCta:
     label: Schedule an Energy Assessment
     href: /contact/demo
@@ -21,8 +19,8 @@ stats:
   label: Fewer False Alarms
 - value: 60%
   label: Faster Restoration
-- value: 9,000+
-  label: Connectors
+- value: 8,000+
+  label: Integrations
 - value: Months
   label: Not Years
 challenges:
@@ -39,11 +37,10 @@ challenges:
   description: Security and operational monitoring operate as separate programs with separate tools. Compound threats spanning physical and cyber domains go unrecognized.
   image: /images/challenge-energy-fragmented.png
 capabilities:
-- name: SCADA Overlay Modernization
-  description: Mirror data from existing ABB, Siemens, GE, and Schneider SCADA in real time. Add modern analytics, AI-powered operator guidance, and predictive intelligence without touching safety-critical
-    control paths.
+- name: Connect Legacy & Modern Systems
+  description: Connect existing ABB, Siemens, GE, and Schneider SCADA, historians, and modern DER platforms in real time. Surface contextual operator guidance and predictive intelligence without modifying control paths.
   featured: true
-  outcome: Modern analytics on legacy SCADA — months, not years.
+  outcome: Unified operational view across legacy and modern systems — deployed in months.
   image: /images/cap-energy-scada-overlay.png
 - name: Pipeline Integrity & Security
   description: Multi-method leak detection with AI cross-correlation — RTTM, acoustic, satellite, and partner-delivered predictive analytics. 0.5% flow sensitivity with an integrated partner ecosystem no
@@ -51,35 +48,33 @@ capabilities:
   featured: true
   outcome: 75% fewer false alarms. 0.5% flow sensitivity.
   image: /images/cap-energy-pipeline.png
-- name: Cross-Domain Correlation
-  description: AI correlates operational events with security events, weather, and external sources. Cross-domain agents surface compound threats that siloed tools structurally cannot detect.
+- name: Operational Intelligence Across Domains
+  description: Connect and correlate grid, pipeline, generation, and security data. Intelligence agents surface compound threats and opportunities that siloed tools cannot detect.
   featured: true
-  outcome: Compound threats detected before siloed tools can see them.
+  outcome: Threats and opportunities detected before siloed tools can see them.
   image: /images/cap-energy-cross-domain.png
 - name: 'DER Integration: Every New Energy Source, One View'
   description: Native connectivity for SunSpec, OCPP, and IEEE 2030.5. Onboard solar, wind, battery storage, and EV charging into your grid operational view without custom integration.
   outcome: Solar, wind, battery, and EV — one operational view.
   image: /images/cap-energy-der.png
-- name: Grid Storm Response
-  description: Automated playbooks pre-position crews, activate mutual aid, and prioritize restoration by customer impact and critical facility status.
+- name: Governed Autonomous Storm Response
+  description: Automated playbooks governed by policy pre-position crews, activate mutual aid, and prioritize restoration by customer impact and critical facility status.
   image: /images/cap-energy-storm-response.png
-  outcome: Automated crew pre-positioning. 60% faster restoration.
+  outcome: 60% faster restoration. Governance built in.
 - name: Compliance Automation
   description: Continuous NERC CIP, PHMSA, and EPA audit trails. Replace 40+ hours/month of manual documentation with real-time compliance reporting that scales from grid operations to enterprise energy
     intelligence.
   image: /images/cap-energy-compliance.png
   outcome: 40+ hours/month of manual documentation eliminated.
-- name: AI-Powered Operator Guidance
+- name: Contextual Operator Guidance
   description: Real-time contextual recommendations during complex situations — cascading outages, DER instability, simultaneous maintenance events. Step-by-step guidance based on historical patterns, current
     conditions, and grid relationships.
   image: /images/cap-energy-operator-guidance.png
   outcome: New operators perform like 20-year veterans.
 platformMapping:
-  see: Native connectivity for DNP3, IEC 61850, OPC-UA, and MQTT. Mirrors data from legacy SCADA and historians without tag-based licensing. 9,000+ connectors for any energy asset.
-  understand: AI-powered intelligence for predictive maintenance, multi-method leak detection, grid anomaly detection, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues
-    before threshold alerts fire. Real-time operational model enables contingency analysis and DER hosting capacity studies.
-  orchestrate: Automated storm playbooks coordinate 200+ substations. AI-assisted dispatch assigns certified crews based on location, switching authority, and predicted storm trajectory. NERC CIP and PHMSA
-    audit trails generated automatically.
+  see: Connect grid, pipeline, and production systems. Native support for DNP3, IEC 61850, OPC-UA, MQTT, and SunSpec. Mirror data from SCADA, historians, and field assets without licensing limits. 8,000+ integrations across your energy operations.
+  understand: Intelligence on predictive maintenance, multi-method leak detection, grid anomaly detection, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold alerts fire. Real-time operational models enable contingency analysis, DER hosting capacity studies, and cross-domain risk assessment.
+  orchestrate: Governed autonomous action. Automated storm playbooks coordinate 200+ substations with human oversight. Dispatch assigns crews based on location, switching authority, and predicted trajectory. NERC CIP and PHMSA compliance automated.
 proofPoint:
   industry: Energy — Integrated Utility
   headline: Storm Response & Grid Modernization
@@ -90,8 +85,7 @@ proofPoint:
     label: Saved Truck Rolls/Year
   - value: 9 Months
     label: Deployment Time
-  narrative: A utility serving 2 million customers deployed Quatro across 200+ substations, overlaying legacy ABB, GE, and Siemens SCADA. AI-guided storm response playbooks reduced average restoration time
-    by 60%, and cross-domain correlation saved 2,000 truck rolls per year — all delivered in 9 months versus a 3-5 year replacement timeline.
+  narrative: A utility serving 2 million customers deployed Quatro across 200+ substations, connecting legacy ABB, GE, and Siemens SCADA and field operations. Operational intelligence from governed autonomous playbooks reduced average restoration time by 60%, and cross-domain insight saved 2,000 truck rolls per year — all delivered in 9 months without replacing infrastructure.
 cta:
   primary:
     label: Schedule an Energy Assessment
@@ -99,6 +93,5 @@ cta:
   secondary:
     label: Talk to an Energy Engineer
     href: /contact/sales
-  microcopy: 'Typical assessment: 45-60 minutes. We''ll map your current SCADA systems and monitoring tools — and show how overlay modernization delivers unified operational visibility in months, not years.
-    From grid operations to enterprise energy intelligence. 4-week proof of value · Credited toward contract'
+  microcopy: 'Typical assessment: 45-60 minutes. We''ll map your current SCADA systems and field operations — and show how connecting them to a single operational intelligence utility delivers unified visibility in months. 4-week proof of value · Credited toward contract'
 ---

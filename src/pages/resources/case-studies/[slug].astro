@@ -4,7 +4,7 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
 import Section from '@/components/marketing/Section.astro'
 import StatStrip from '@/components/marketing/StatStrip.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 
 export async function getStaticPaths() {
   const caseStudies = await getCollection('case-studies')
@@ -38,10 +38,11 @@ const { title, industryLabel, headline, excerpt, stats } = caseStudy.data
     </div>
   </Section>
 
-  <CtaBanner
-    title="Ready for Similar Results?"
-    description="See how Quatro can transform your operations."
-    primaryCta={{ label: 'Schedule a Demo', href: '/contact/demo' }}
-    secondaryCta={{ label: 'Talk to Sales', href: '/contact/sales' }}
+  <DualCta
+    title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like for your operation.`}
+    description="Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
+    primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    microcopy="4-week proof of value · Credited toward annual contract"
   />
 </MarketingLayout>

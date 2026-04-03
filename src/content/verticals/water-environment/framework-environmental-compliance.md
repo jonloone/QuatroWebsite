@@ -147,7 +147,7 @@ What's needed is unified environmental intelligence — the ability to correlate
 
 ### Multi-Framework Compliance — Three Regulatory Layers
 
-**Dark section treatment — the platform depth.**
+**Dark section treatment — the utility depth.**
 
 **Regulatory Layer (the Framework):**
 MAE/MAATE (Ministry of Environment, Ecuador) air and water quality standards. SENAGUA (National Water Authority) discharge and consumption requirements. TULSMA (Unified Text of Environmental Legislation) water quality thresholds and ambient quality standards. ARCONEL (National Electricity Agency) grid-related emissions and efficiency standards. Real-time monitoring data continuously verified against thresholds. Violations trigger immediate investigation and remediation workflows.

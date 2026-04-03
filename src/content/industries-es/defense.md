@@ -1,7 +1,7 @@
 ---
 title: "Defensa"
 tagline: "Inteligencia Operacional Lista para la Misión"
-heroImage: "/images/induistry-defense.png"
+heroImage: "/images/industry-defense.png"
 description: "Plataforma unificada en dominios físico, cibernético y operacional — diseñada para entornos aislados con velocidad de despliegue COTS y cumplimiento de grado militar."
 order: 2
 hero:

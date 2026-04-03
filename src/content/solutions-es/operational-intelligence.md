@@ -18,8 +18,8 @@ stats:
     label: "MTTR Más Rápido"
   - value: "80%"
     label: "Menos Falsas Alarmas"
-  - value: "9,000+"
-    label: "Conectores"
+  - value: "8,000+"
+    label: "Integraciones"
   - value: "Multidominio"
     label: "Inteligencia"
 challenges:

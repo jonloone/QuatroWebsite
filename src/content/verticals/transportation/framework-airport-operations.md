@@ -30,7 +30,7 @@ This is a **vertical-specific solution sub-page** (evaluation, narrow focus, dep
 > Real-time operational intelligence that coordinates runway scheduling, passenger flow, baggage system health, and perimeter security into a single airport operations picture — eliminating delays, preventing system failures, and maintaining security posture across the entire aerodrome.
 
 **Hook line (the "scene the buyer can picture"):**
-> When an aircraft is 30 minutes from landing, the platform automatically predicts gate availability, queues ground equipment to staging, alerts baggage handlers for incoming carousel, pre-positions security for deplaning, and notifies departing passengers of final boarding status. One platform. Synchronized operations. Arrival to departure becomes predictable.
+> When an aircraft is 30 minutes from landing, the utility automatically predicts gate availability, queues ground equipment to staging, alerts baggage handlers for incoming carousel, pre-positions security for deplaning, and notifies departing passengers of final boarding status. One utility. Synchronized operations. Arrival to departure becomes predictable.
 
 **Primary CTA:**
 `Request an Airport Operations Briefing`
@@ -110,7 +110,7 @@ Each domain produces intelligence independently. All connect through a single fu
 **What the team sees:** Perimeter activity monitored 24/7 — unauthorized access attempts detected sub-minute. Security checkpoint queues and throughput optimized for efficiency. Passenger behavior anomalies correlated with security risk databases. Aircraft approach patterns monitored for anomalous activity (unscheduled arrivals, unusual approach vectors). Integration with border/security agencies for flight manifest risk assessment.
 **What outcome it drives:** Security posture maintained continuously. Perimeter breaches detected and responded to within minutes. Border/security coordination integrated into airport operations without operational disruption.
 
-*Framework note: Four capabilities, each as "What connects → What the team sees → What outcome it drives." Every description is operational — the buyer pictures their team using the intelligence, not configuring a platform. Named source systems (ATC radar, BHS, GSE monitors, CCTV) are real technologies airport operators recognize.*
+*Framework note: Four capabilities, each as "What connects → What the team sees → What outcome it drives." Every description is operational — the buyer pictures their team using the intelligence, not configuring a utility. Named source systems (ATC radar, BHS, GSE monitors, CCTV) are real technologies airport operators recognize.*
 
 ---
 
@@ -124,7 +124,7 @@ Not four separate monitoring systems running in parallel — one airport operati
 
 **The Aircraft Arrival Scenario (primary proof of concept):**
 
-When an aircraft is detected 50 miles on approach, the platform does not generate a runway alert and stop. It automatically:
+When an aircraft is detected 50 miles on approach, the utility does not generate a runway alert and stop. It automatically:
 1. Queries the **runway domain** for gate availability, ground equipment staging, and aircraft parking position
 2. Checks the **passenger flow domain** for terminal capacity, security checkpoint staffing, and connection passenger routing
 3. Correlates with **baggage domain** for BHS readiness, GSE positioning, and baggage handler staffing
@@ -153,13 +153,13 @@ The result is not four separate alerts to four separate teams. It is one operati
 > **Framework rule:** 2-3 objections woven as confident statements, not FAQ.
 
 **Objection 1: "Our airport systems are fragmented and old — integration is impossible"**
-> The platform connects to what you have today — ATC systems, baggage handling systems, passenger information displays, access control systems. Integration happens at the data layer, not the system layer. No rip-and-replace. Sensor gaps (terminal occupancy cameras, GSE position tracking) are identified during the pilot and filled incrementally. You start operations with what exists.
+> The utility connects to what you have today — ATC systems, baggage handling systems, passenger information displays, access control systems. Integration happens at the data layer, not the system layer. No rip-and-replace. Sensor gaps (terminal occupancy cameras, GSE position tracking) are identified during the pilot and filled incrementally. You start operations with what exists.
 
 **Objection 2: "We have real-time baggage systems already — we don't need another monitoring tool"**
 > Baggage system health is only one piece. The value comes from coordinating baggage timing with runway availability, passenger flow, and security. When your BHS tells you a carousel is ready and your runway says the aircraft is 5 minutes from arrival and your passenger flow shows connecting passengers are queued at security — that's when you have operational intelligence. Single-system monitoring is data. Cross-system correlation is intelligence.
 
 **Objection 3: "Security and operations can't share data — they're separate for a reason"**
-> Role-based access controls ensure security teams see only security-relevant intelligence — manifest risk scores, perimeter anomalies, threat assessments. They never see passenger names, destination data, or commercial flight information. Flight manifest data shared for risk assessment only. Every data access is logged and auditable. The platform handles data governance; security and operations focus on their missions.
+> Role-based access controls ensure security teams see only security-relevant intelligence — manifest risk scores, perimeter anomalies, threat assessments. They never see passenger names, destination data, or commercial flight information. Flight manifest data shared for risk assessment only. Every data access is logged and auditable. The utility handles data governance; security and operations focus on their missions.
 
 *Framework note: Three objections mapped to the airport buyer's specific concerns — aging systems, redundant monitoring, and inter-agency data sharing. Each resolved in 2-3 confident sentences. No "FAQ" label.*
 

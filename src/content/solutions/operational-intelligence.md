@@ -1,8 +1,8 @@
 ---
 title: "Operational Intelligence"
-tagline: "AI-Powered Operational Intelligence"
+tagline: "Operational Intelligence Utility"
 heroImage: "/images/solution-operational-intelligence.png"
-description: "AI-powered intelligence that guides your team through complex operations — not just dashboards that display data. Contextual recommendations, intelligent agents that surface what matters, and the bridge from operational awareness to enterprise-wide decision-making."
+description: "Intelligence that guides your team through complex operations — not just dashboards that display data. Contextual recommendations, intelligent agents that surface what matters, and the bridge from operational awareness to enterprise-wide decision-making."
 order: 3
 hero:
   eyebrow: "Operational Intelligence"
@@ -19,8 +19,8 @@ stats:
     label: "Faster MTTR"
   - value: "80%"
     label: "Alarm Noise Eliminated"
-  - value: "9,000+"
-    label: "Connectors"
+  - value: "8,000+"
+    label: "Integrations"
   - value: "AI-Guided"
     label: "Operator Decisions"
 challenges:
@@ -33,14 +33,14 @@ challenges:
   - title: "Institutional Knowledge Walking Out the Door"
     description: "Experienced operators carry decades of pattern recognition in their heads. When they retire, that intelligence leaves with them. There's no system that captures and applies operational expertise at scale."
 capabilities:
-  - name: "AI-Powered Operator Guidance"
+  - name: "Operator Guidance"
     description: "Real-time contextual recommendations for your operations team. When a complex situation develops, Quatro provides step-by-step guidance based on historical patterns, current conditions, and operational relationships. New operators perform like veterans."
   - name: "Intelligent Agents That Surface What Matters"
     description: "Continuously monitoring agents watch your operations, detect anomalies, recognize patterns, and proactively highlight what needs attention — before alerts fire and before operators notice. They don't just detect problems; they explain why they matter."
   - name: "Relationship-Aware Intelligence"
     description: "Quatro maintains a living model of how your assets, services, and operations relate. When something changes, the intelligence layer traces the impact chain automatically — from root cause to affected services to business exposure."
   - name: "Augmented Operations"
-    description: "Your team handles complex situations confidently because the intelligence network validates procedures, ensures consistency, and provides contextual insights at every step. Faster decisions, fewer errors, safer operations."
+    description: "Your team handles complex situations confidently because the intelligence utility validates procedures, ensures consistency, and provides contextual insights at every step. Faster decisions, fewer errors, safer operations."
   - name: "Custom Intelligence Applications"
     description: "Build intelligence applications tailored to your operations with low-code/no-code tools. Shift dashboards, batch tracking, compliance workflows — without IT projects or vendor professional services."
   - name: "Enterprise Intelligence Bridge"
@@ -55,7 +55,7 @@ proofPoint:
       label: "Weekly Savings"
     - value: "6→1"
       label: "Dashboards Consolidated"
-  narrative: "A utility with 150+ substations deployed Quatro to replace fragmented SCADA historians and manual reporting. AI-guided operations reduced MTTR by 40%, and intelligent relationship mapping enabled renewable integration planning that cut curtailment by 18%."
+  narrative: "A utility with 150+ substations deployed Quatro to unified fragmented SCADA historians and manual reporting. Guided operations reduced MTTR by 40%, and intelligent relationship mapping enabled renewable integration planning that cut curtailment by 18%."
 cta:
   primary:
     label: "Schedule an Intelligence Assessment"

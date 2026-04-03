@@ -88,7 +88,7 @@ The platform operates across three integrated layers, scaling from basic visibil
 
 ### Connect — Multi-Modal Sensing
 
-Continuous ground sensors, periodic AI-powered satellite detection, on-demand autonomous drones, and fixed CCTV/infrared at critical nodes. 9,000+ ready-made integrations connect any sensor, any system, any data source. The physical world — pipelines, borders, coastlines, cities — becomes a stream of machine-readable intelligence.
+Continuous ground sensors, periodic AI-powered satellite detection, on-demand autonomous drones, and fixed CCTV/infrared at critical nodes. 8,000+ ready-made integrations connect any sensor, any system, any data source. The physical world — pipelines, borders, coastlines, cities — becomes a stream of machine-readable intelligence.
 
 ### Operate — Intelligence Engine
 
@@ -151,7 +151,7 @@ The compound value is structural. Each program enriches the shared data foundati
 | Metric | Value |
 |---|---|
 | Security Domains | 7 |
-| Sensor Integrations | 9,000+ |
+| Sensor Integrations | 8,000+ |
 | Vendor Compatibility | 1,000+ |
 | Prediction Window | 24–48 hours |
 | Deployment Model | Sovereign — air-gapped capable |

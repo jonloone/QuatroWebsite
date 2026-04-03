@@ -1,6 +1,8 @@
 import sitemap from '@astrojs/sitemap'
 import { defineConfig } from 'astro/config'
 
+import react from '@astrojs/react';
+
 export default defineConfig({
   site: 'https://quatro.io',
   redirects: {
@@ -15,7 +17,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  integrations: [sitemap()],
+  integrations: [sitemap(), react()],
   vite: {
     css: {
       postcss: './postcss.config.mjs',

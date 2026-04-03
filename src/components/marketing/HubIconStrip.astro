@@ -1,0 +1,46 @@
+---
+/**
+ * HubIconStrip — Dark strip with icons + labels summarizing hub breadth.
+ * Sits flush below the hero canvas as part of the dark zone.
+ */
+
+interface HubItem {
+  label: string
+  /** Heroicons outline SVG path(s) — d attribute only */
+  icon: string
+}
+
+interface Props {
+  items: HubItem[]
+  class?: string
+}
+
+const { items, class: className } = Astro.props
+---
+
+<div
+  class:list={['pt-2 pb-12 lg:pt-4 lg:pb-16 fade-up', className]}
+  style="background: #0a0a0a;"
+>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex flex-wrap justify-center gap-x-14 gap-y-8 lg:gap-x-20">
+      {items.map((item) => (
+        <div class="flex items-center gap-3.5">
+          <svg
+            class="w-7 h-7 shrink-0"
+            style="color: var(--color-forest);"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d={item.icon} />
+          </svg>
+          <span class="font-mono text-sm uppercase tracking-[0.08em] text-white/40">
+            {item.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

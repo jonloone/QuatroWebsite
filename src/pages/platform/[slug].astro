@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
 import StatStrip from '@/components/marketing/StatStrip.astro'
 import Section from '@/components/marketing/Section.astro'
@@ -30,13 +30,12 @@ const solutionHighlights = solutions?.slice(0, 2).map(s => s.description).join('
   title={`${brandedTitle} — ${tagline}`}
   description={description}
 >
-  <Hero
-    variant="dark"
-    eyebrow={hero.eyebrow}
+  <HeroCanvas
+    badge={hero.eyebrow}
     title={hero.title}
-    description={hero.description}
-    primaryCta={hero.primaryCta}
-    secondaryCta={hero.secondaryCta}
+    body={hero.description}
+    ctaLabel={hero.primaryCta?.label || 'Schedule an Assessment'}
+    ctaHref={hero.primaryCta?.href || '/contact/demo'}
   />
 
   <!-- Editorial Outcome — replaces ProblemSolution -->

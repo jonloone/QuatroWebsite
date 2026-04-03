@@ -7,7 +7,7 @@ order: 1
 hero:
   eyebrow: "Marine Conservation"
   title: "Galápagos Conservation Intelligence"
-  description: "Transform vast ocean areas into monitored domains. Detect unauthorized vessels, prevent illegal fishing, and protect biodiversity with a fraction of traditional patrol costs."
+  description: "When patrol capacity and ocean area don't align, illegal fishing accelerates in blind zones. Detect unauthorized vessels and prevent illegal operations across your full exclusive economic zone without the patrol footprint."
   primaryCta:
     label: "Schedule a Civic Assessment"
     href: "/contact/civic-assessment"
@@ -96,7 +96,7 @@ Marine protected areas face an impossible mandate: preserve critical ecosystems 
 
 ## The Operational Intelligence Solution
 
-Quatro integrates AIS vessel feeds, satellite imagery, and coastal camera networks into a unified operational intelligence platform. Automated detection flags suspicious vessels in real time, eliminating the detection lag that currently favors poachers.
+Quatro integrates AIS vessel feeds, satellite imagery, and coastal camera networks into a unified operational intelligence utility, enabling governed autonomous action for real-time enforcement response. Automated detection flags suspicious vessels in real time, eliminating the detection lag that currently favors poachers.
 
 **Key outcomes:**
 - Detection time reduced from 4–6 hours to <15 minutes

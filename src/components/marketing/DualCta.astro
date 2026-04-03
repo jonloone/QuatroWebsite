@@ -1,0 +1,61 @@
+---
+interface Props {
+  title?: string
+  description?: string
+  primaryCta: { label: string; href: string }
+  secondaryCta: { label: string; href: string }
+  microcopy?: string
+  class?: string
+}
+
+const {
+  title,
+  description,
+  primaryCta,
+  secondaryCta,
+  microcopy,
+  class: className,
+} = Astro.props
+---
+
+<section class:list={['py-20 lg:py-28 px-6', className]} style="border-top: 1px solid var(--color-structure);">
+  <div class="mx-auto max-w-6xl">
+
+    {title && (
+      <p class="font-sans text-2xl lg:text-4xl font-light leading-snug max-w-4xl mb-12 fade-up" style="color: var(--color-neutral-800);" set:html={title} />
+    )}
+
+    {description && (
+      <p class="font-sans text-base leading-relaxed max-w-2xl mb-12 fade-up" style="color: var(--color-neutral-500);">
+        {description}
+      </p>
+    )}
+
+    <!-- Dual CTA buttons -->
+    <div class="grid sm:grid-cols-2 gap-0 fade-up" style="border-top: 1px solid var(--color-structure);">
+      <!-- Light CTA -->
+      <a
+        href={primaryCta.href}
+        class="group flex items-center justify-between px-8 py-8 lg:py-10 transition-colors duration-300 ease-linear hover:bg-neutral-100"
+        style="border-bottom: 1px solid var(--color-structure); border-right: 1px solid var(--color-structure);"
+      >
+        <span class="font-display text-xl lg:text-2xl font-bold" style="color: var(--color-neutral-800);">{primaryCta.label}</span>
+        <span class="font-sans text-xl transition-transform duration-300 group-hover:translate-x-1" style="color: var(--color-neutral-400);">&rarr;</span>
+      </a>
+
+      <!-- Dark CTA -->
+      <a
+        href={secondaryCta.href}
+        class="group flex items-center justify-between px-8 py-8 lg:py-10 transition-colors duration-300 ease-linear hover:bg-neutral-800"
+        style="background: var(--color-neutral-800); border-bottom: 1px solid var(--color-structure);"
+      >
+        <span class="font-display text-xl lg:text-2xl font-bold text-white">{secondaryCta.label}</span>
+        <span class="font-sans text-xl text-white/50 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+      </a>
+    </div>
+
+    {microcopy && (
+      <p class="mt-4 font-mono text-xs" style="color: var(--color-neutral-400);">{microcopy}</p>
+    )}
+  </div>
+</section>

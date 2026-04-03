@@ -7,7 +7,7 @@ order: 7
 hero:
   eyebrow: "Network Operations"
   title: "One NOC. Any Vendor. Zero Silos."
-  description: "Stop toggling between 5-15 vendor tools across terrestrial and satellite domains. Unified network intelligence with AI-driven correlation, automated remediation, and cross-domain SLA compliance in one network — from tower site to ground station to orbit."
+  description: "When 5–15 vendor tools each show a different slice of the network, service degradation crosses domain boundaries undetected. Quatro unifies terrestrial and satellite operations with intelligent correlation, governed autonomous remediation, and cross-domain SLA compliance — tower to ground station to orbit."
   primaryCta:
     label: "Schedule a NOC Assessment"
     href: "/contact/demo"
@@ -19,8 +19,8 @@ stats:
     label: "Fewer False Alarms"
   - value: "55%"
     label: "Faster MTTR"
-  - value: "9,000+"
-    label: "Connectors"
+  - value: "8,000+"
+    label: "Integrations"
   - value: "900+"
     label: "Sites Managed"
 challenges:
@@ -40,13 +40,13 @@ capabilities:
   - name: "Provisioning & Orchestration"
     description: "Template-driven provisioning across multi-vendor, multi-domain networks with validation and automatic rollback."
   - name: "Fault Management"
-    description: "Intelligent alarm correlation and root-cause analysis that suppresses symptomatic noise and surfaces actionable events. AI-assisted remediation recommends resolution steps and can execute proven playbooks autonomously — reducing dependency on senior engineers for routine issues."
+    description: "Intelligent alarm correlation and root-cause analysis that suppresses symptomatic noise and surfaces actionable events. Governed autonomous action recommends resolution steps and can execute proven playbooks autonomously — reducing dependency on senior engineers for routine issues."
   - name: "Predictive Maintenance"
     description: "Forecast equipment failures at tower sites and central offices by correlating environmental data with device health metrics."
   - name: "Commercial Operations Intelligence"
     description: "Active SLA management with breach prediction, automated escalation, capacity planning, and cost tracking. Connect network performance to customer experience and commercial impact — turning NOC operations into revenue operations."
   - name: "Multi-Site NOC Operations"
-    description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support. AI-powered intelligence provides contextual guidance to operators regardless of experience level — institutional NOC expertise captured in the intelligence network."
+    description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support. AI-powered intelligence provides contextual guidance to operators regardless of experience level — institutional NOC expertise captured in the intelligence utility."
 proofPoint:
   industry: "Infrastructure — Telecommunications"
   headline: "Multi-Site Tower Operations"
@@ -56,8 +56,8 @@ proofPoint:
     - value: "55%"
       label: "MTTR Reduction"
     - value: "5→1"
-      label: "Platforms Consolidated"
-  narrative: "A regional tower operator managing 900+ sites replaced fragmented vendor NMS platforms with Quatro. AI-driven alarm correlation reduced false alarms by 80%, and enriched trouble tickets cut MTTR by 55%. Five separate monitoring platforms consolidated into one."
+      label: "Systems Unified"
+  narrative: "A regional tower operator managing 900+ sites unified fragmented vendor tools with Quatro. Operational intelligence through alarm correlation reduced false alarms by 80%, and enriched trouble tickets cut MTTR by 55%. Five separate monitoring systems unified into one."
 cta:
   primary:
     label: "Schedule a NOC Assessment"

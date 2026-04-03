@@ -2,12 +2,12 @@
 title: "Broadcast & Media"
 tagline: "Unified Intelligence for Broadcast Operations"
 heroImage: "/images/industry-broadcast-media.png"
-description: "One intelligence network for live production, facility management, and content distribution — transforming fragmented signal management across SMPTE ST 2110, SRT, SDI, and satellite into real-time orchestration, predictive equipment health, and coordinated multi-site operations."
+description: "When SMPTE ST 2110, SRT, SDI, and satellite signals each flow through separate management systems, signal failures cascade across production before anyone connects the cause. Quatro delivers unified operational intelligence for live production, facility management, and content distribution."
 order: 9
 hero:
   eyebrow: "Broadcast & Media"
-  title: "Control Every Signal. Operate One Network."
-  description: "Unified operational intelligence for broadcast and media operations. Transform fragmented signal management, facility monitoring, and content distribution across multiple vendors and technologies into real-time orchestration, predictive equipment health, and coordinated multi-site operations."
+  title: "Every Signal. One Operational View."
+  description: "When live production, facility systems, and distribution networks each report through separate tools, signal failures cascade across the operation before anyone connects the cause. Connect them to Quatro and get real-time orchestration, predictive equipment health, and coordinated multi-site intelligence."
   primaryCta:
     label: "Request a Demo"
     href: "/contact/demo"
@@ -15,7 +15,7 @@ hero:
     label: "Talk to a Broadcast Engineer"
     href: "/contact/sales"
 stats:
-  - value: "9,000+"
+  - value: "8,000+"
     label: "Integrations"
   - value: "6"
     label: "Signal Technologies"
@@ -38,7 +38,7 @@ challenges:
     image: "/images/challenge-broadcast-opacity.png"
 capabilities:
   - name: "Multi-Technology Signal Unification"
-    description: "Real-time signal visibility across SMPTE ST 2110, ST 2022, SRT, SDI, DVB-ASI, and L-Band satellite — all from a single operational view. 9,000+ integrations across Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and more."
+    description: "Real-time signal visibility across SMPTE ST 2110, ST 2022, SRT, SDI, DVB-ASI, and L-Band satellite — all from a single operational view. 8,000+ integrations across Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and more."
     featured: true
     outcome: "6 signal technologies. Every vendor. One view."
     image: "/images/cap-broadcast-signal-unification.png"
@@ -65,7 +65,7 @@ capabilities:
     image: "/images/cap-broadcast-predictive.png"
     outcome: "Equipment degradation caught before on-air failure."
 platformMapping:
-  see: "Real-time signal ingestion from 9,000+ broadcast and media equipment vendors. Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, and more. Six signal technologies unified — SMPTE ST 2110, ST 2022, SRT, SDI, ASI, and L-Band satellite. The broadcast operation becomes machine-readable in real time."
+  see: "Real-time signal ingestion from 8,000+ broadcast and media equipment vendors. Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, and more. Six signal technologies unified — SMPTE ST 2110, ST 2022, SRT, SDI, ASI, and L-Band satellite. The broadcast operation becomes machine-readable in real time."
   understand: "Multi-protocol signal correlation and orchestration. Event-driven resource allocation. Virtual Signal Groups map logical broadcast flows regardless of physical vendor boundaries. Role-based command control — directors issue orchestration commands with full audit trails."
   orchestrate: "Equipment health prediction across multi-site operations. Resource optimization and utilization analytics. Compound intelligence across production, facility, and distribution — coordinated response recommendations that span the entire broadcast operation."
 proofPoint:

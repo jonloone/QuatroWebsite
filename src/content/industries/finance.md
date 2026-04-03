@@ -2,7 +2,7 @@
 title: Finance
 tagline: Intelligence Products for Banking & Financial Services
 heroImage: /images/industry-finance.png
-description: Named intelligence products that unify the 15–30 systems your bank already operates — Customer 360, credit risk, NPA early warning, and regulatory compliance, each production-ready in 4–6 weeks
+description: Named intelligence products that unify the 15–30 systems your bank already operates — Customer 360, credit risk, NPA early warning, and regulatory compliance. Production-ready in 4–6 weeks
   with governance SLAs.
 order: 10
 hero:
@@ -32,7 +32,7 @@ challenges:
   image: /images/challenge-finance-meaning-gap.png
 - title: Reactive Risk Detection
   description: Traditional NPA detection triggers at 90 days past due. By then, recovery options are limited, provisioning is expensive, and the balance sheet impact is locked in. Early warning signals
-    exist across systems but no single platform correlates them.
+    exist across systems but no single utility correlates them.
   image: /images/challenge-finance-reactive-risk.png
 - title: Compliance as Manual Reconciliation
   description: AML monitoring, credit loss modeling, stress testing, and regulatory reporting each pull from different sources with different definitions. Every examination cycle requires weeks of manual
@@ -83,10 +83,10 @@ capabilities:
   outcome: Cloud migration timelines compress. Compliance risk eliminated.
   image: /images/cap-finance-fingerprinting.png
 platformMapping:
-  see: Deploy on your existing systems — core banking, LOS, CRM, digital channels, card processors, wealth platforms, compliance tools. No rip-and-replace. 9,000+ connectors for any banking data source.
-  understand: AI-powered reconciliation creates governed intelligence products — unified customer identity, cross-system exposure, and regulatory data foundations. Each product includes governance SLAs on
+  see: Deploy on your existing systems — core banking, LOS, CRM, digital channels, card processors, wealth platforms, compliance tools. No rip-and-replace. 8,000+ integrations for any banking data source.
+  understand: Operational intelligence from AI-powered reconciliation creates governed products — unified customer identity, cross-system exposure, and regulatory data foundations. Each product includes governance SLAs on
     data quality, freshness, and lineage.
-  orchestrate: Act on intelligence — NPA early warning triggers proactive collections, next best action resolves customer friction in real time, claims classification automates underwriter triage, and compliance
+  orchestrate: Act on intelligence with governed autonomous action — NPA early warning triggers proactive collections, next best action resolves customer friction in real time, claims classification automates underwriter triage, and compliance
     reporting runs continuously.
 proofPoint:
   industry: Finance — Global Banking Group
@@ -99,7 +99,7 @@ proofPoint:
   - value: 30–60 Days
     label: Earlier NPA Detection
   narrative: Quatro's banking intelligence products are deployed at enterprise scale — Lloyds Banking Group (UK) for next best action and claims classification, Mashreq Bank (UAE) for cross-system data
-    sharing, Indiabulls (India) for NPA early warning, and Bradesco (Brazil) for enterprise data products. The same intelligence network, adapted for Latin American regulatory frameworks.
+    sharing, Indiabulls (India) for NPA early warning, and Bradesco (Brazil) for enterprise data products. The same intelligence utility, adapted for Latin American regulatory frameworks.
 cta:
   primary:
     label: Schedule a Banking Assessment

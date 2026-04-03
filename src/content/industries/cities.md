@@ -2,12 +2,12 @@
 title: "Smart Cities"
 tagline: "Cross-Domain Urban Intelligence"
 heroImage: "/images/industry-cities.png"
-description: "Unified operational intelligence connecting mobility, public safety, infrastructure, water systems, and environmental domains — transforming departmental silos into coordinated city operations with measurable citizen outcomes."
+description: "When mobility, public safety, infrastructure, and environmental systems each operate in isolation, coordination gaps become invisible to everyone except citizens. Quatro connects your city's existing systems into one operational intelligence utility — unified coordination with measurable citizen outcomes."
 order: 5
 hero:
   eyebrow: "Smart Cities"
-  title: "One City. One Operations Center."
-  description: "Stop toggling between 5-10 departmental consoles. Unified intelligence connects traffic, public safety, utilities, and environmental systems into a single coordinated operational picture."
+  title: "One City. One Operational Picture."
+  description: "When traffic, public safety, utilities, and environmental monitoring each operate from separate consoles, the patterns that cross departments stay invisible. Connect them to Quatro and get one coordinated operational picture — unified intelligence deployed on your infrastructure with measurable citizen outcomes."
   primaryCta:
     label: "Schedule a City Assessment"
     href: "/contact/demo"
@@ -43,7 +43,7 @@ capabilities:
     outcome: "5-10 consoles replaced. One operational picture."
     image: "/images/cap-cities-operations-center.png"
   - name: "Cross-Agency Emergency Response"
-    description: "When a water main breaks, it affects traffic, safety, fleet dispatch, and environmental monitoring. AI-driven impact assessment coordinates multi-department response automatically."
+    description: "When a water main breaks, it affects traffic, safety, fleet dispatch, and environmental monitoring. Governed autonomous action coordinates multi-department response automatically."
     featured: true
     outcome: "70% faster cross-agency incident response."
     image: "/images/cap-cities-cross-agency.png"
@@ -57,7 +57,7 @@ capabilities:
     image: "/images/cap-cities-infra-monitoring.png"
     outcome: "Predictive maintenance across all city infrastructure."
   - name: "Municipal Fleet Optimization"
-    description: "AI-powered route optimization for waste collection, public works, and transit. Fill-level IoT sensors enable demand-driven scheduling. Dynamic routing based on actual conditions — not fixed schedules."
+    description: "Intelligent route optimization for waste collection, public works, and transit. Fill-level IoT sensors enable demand-driven scheduling. Dynamic routing based on actual conditions — not fixed schedules."
     outcome: "30% fleet cost reduction through demand-driven routing."
     image: "/images/cap-cities-waste-mgmt.png"
   - name: "Environmental Intelligence"
@@ -69,9 +69,9 @@ capabilities:
     outcome: "Reservoir to tap. One unified water intelligence layer."
     image: "/images/cap-cities-water-infra.png"
 platformMapping:
-  see: "9,000+ connectors for traffic controllers (NTCIP), cameras (ONVIF), building systems (BACnet, KNX), transit (GTFS, SIRI), and environmental sensors. Edge processing at intersections and vehicles."
+  see: "8,000+ integrations for traffic controllers (NTCIP), cameras (ONVIF), building systems (BACnet, KNX), transit (GTFS, SIRI), and environmental sensors. Edge processing at intersections and vehicles."
   understand: "AI video analytics with behavioral analysis and crowd dynamics. Traffic pattern prediction, predictive maintenance for infrastructure, and environmental correlation. 80% fewer false alarms."
-  orchestrate: "Unified city operations center with cross-agency coordination. Emergency response playbooks orchestrate multi-department response. Fleet dispatch for public works and waste collection."
+  orchestrate: "Governed autonomous action across city operations. Emergency response playbooks coordinate multi-department response automatically. Fleet dispatch for public works and waste collection."
 proofPoint:
   industry: "Cities — Public Safety"
   headline: "Unified Urban Surveillance"
@@ -90,5 +90,5 @@ cta:
   secondary:
     label: "Request a Demo"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your current systems across departments and demonstrate how unified intelligence enables cross-domain coordination. Faster emergency response. Cleaner streets. Lower utility costs."
+  microcopy: "Typical assessment: 45-60 minutes. We'll map your current systems across departments and show how plugging into operational intelligence enables cross-domain coordination. Faster emergency response. Cleaner streets. Lower utility costs."
 ---

@@ -1,24 +1,23 @@
 ---
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import Section from '@/components/marketing/Section.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 
 const products = (await getCollection('products')).sort((a, b) => a.data.order - b.data.order)
 ---
 
 <MarketingLayout
   title="Platform — Operational Intelligence from Edge to Enterprise"
-  description="The Quatro Platform delivers operational intelligence through three progressive tiers: Visibility, Operations, and Intelligence. 9,000+ integrations. Deploy anywhere."
+  description="The Quatro Intelligence Utility delivers operational intelligence through three progressive tiers: Visibility, Operations, and Intelligence. 8,000+ integrations. Deploy anywhere."
 >
-  <Hero
-    variant="dark"
-    eyebrow="The Quatro Platform"
+  <HeroCanvas
+    badge="The Quatro Intelligence Utility"
     title="Operational Intelligence from Edge to Enterprise"
-    description="Three tiers of progressive value. Start with visibility, grow to operations, scale to intelligence — 9,000+ integrations from 1,000+ vendors. Deploy your way."
-    primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
-    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    body="Three tiers of progressive value. Start with visibility, grow to operations, scale to intelligence — 8,000+ integrations from 1,000+ vendors. Deploy your way."
+    ctaLabel="Schedule an Assessment"
+    ctaHref="/contact/demo"
   />
 
   <Section>
@@ -69,7 +68,7 @@ const products = (await getCollection('products')).sort((a, b) => a.data.order -
     </div>
   </Section>
 
-  <CtaBanner
+  <DualCta
     title="See Operational Intelligence on Your Infrastructure"
     description="Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
     primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}

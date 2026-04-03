@@ -59,8 +59,8 @@ proofPoint:
     - value: "$2.1M"
       label: Annual downtime savings
     - value: "8 sites"
-      label: Unified on single platform
-  narrative: "A distributed mining operation managing haul trucks, loaders, and drilling rigs across eight remote sites was losing $400K monthly to unplanned downtime. No single platform integrated data from legacy and new equipment. Quatro unified their fleet in 90 days. Predictive alerts caught three imminent pump failures that would have cost $150K each. Real-time fuel dashboards revealed inefficient operator patterns that consumed 15% excess fuel. With availability climbing to 95%, the operator unlocked $2.1M in annual production value."
+      label: Unified on single utility
+  narrative: "A distributed mining operation managing haul trucks, loaders, and drilling rigs across eight remote sites was losing $400K monthly to unplanned downtime. No single utility integrated data from legacy and new equipment. Quatro unified their fleet in 90 days. Predictive alerts caught three imminent pump failures that would have cost $150K each. Real-time fuel dashboards revealed inefficient operator patterns that consumed 15% excess fuel. With availability climbing to 95%, the operator unlocked $2.1M in annual production value."
 objections:
   - concern: "Remote sites have poor connectivity—won't cloud-based monitoring just fail?"
     response: "Quatro's Connect module is designed for intermittent and constrained networks. Data is cached locally and synced when connectivity returns, ensuring no loss of critical events even when offline."

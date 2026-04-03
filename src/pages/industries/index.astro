@@ -1,162 +1,161 @@
 ---
+import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import Section from '@/components/marketing/Section.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import IndustryHubCard from '@/components/marketing/IndustryHubCard.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 
+// Pull all industries from content
+const allIndustries = await getCollection('industries')
+const getIndustry = (slug: string) => allIndustries.find((i) => i.id === slug || i.id === `${slug}.md`)
+
+// Define the 5 pillars with their child industries
 const pillars = [
   {
     name: 'Energy',
-    slug: 'energy',
     description: 'Overlay modernization for grid, pipeline, and industrial operations. Unified intelligence across SCADA, DER, and distributed energy assets.',
-    icon: 'bolt',
-    subVerticals: [
-      { name: 'Oil & Gas', href: '/industries/energy' },
+    href: '/industries/energy',
+    heroImage: getIndustry('energy')?.data.heroImage || '/images/industry-energy.png',
+    stats: getIndustry('energy')?.data.stats?.slice(0, 3) || [],
+    children: [
       { name: 'Grid Health', href: '/solutions/grid-health' },
       { name: 'Pipeline Integrity', href: '/solutions/pipeline-integrity' },
       { name: 'Industrial & Manufacturing', href: '/industries/industrial' },
       { name: 'Asset Health', href: '/solutions/asset-health' },
     ],
-    stat: { value: '75%', label: 'Fewer False Alarms' },
-    href: '/industries/energy',
+    featured: true,
   },
   {
     name: 'National Security',
-    slug: 'national-security',
     description: 'Unified command across physical, cyber, and intelligence domains — sovereign deployment, defense-grade compliance, and AI-powered operations in air-gapped environments.',
-    icon: 'shield',
-    subVerticals: [
-      { name: 'Defense', href: '/industries/defense' },
-      { name: 'National Intelligence', href: '/national-intelligence' },
-      { name: 'Counter-Cartel Operations', href: '/national-intelligence/counter-cartel-operations' },
-      { name: 'Physical Security', href: '/solutions/physical-security' },
-    ],
-    stat: { value: '80%', label: 'Fewer False Alarms' },
     href: '/industries/national-security',
+    heroImage: getIndustry('defense')?.data.heroImage || '/images/industry-defense.png',
+    stats: getIndustry('defense')?.data.stats?.slice(0, 3) || [],
+    children: [
+      { name: 'Defense', href: '/industries/defense' },
+      { name: 'Physical Security', href: '/solutions/physical-security' },
+      { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
+    ],
+    featured: true,
   },
   {
     name: 'Networks',
-    slug: 'networks',
-    description: 'Unified operations from ground to orbit. Terrestrial towers, satellite ground segments, multi-orbit constellations, and hybrid connectivity — unified in a single operational picture.',
-    icon: 'signal',
-    subVerticals: [
+    description: 'Unified operations from ground to orbit. Terrestrial towers, satellite ground segments, multi-orbit constellations, and hybrid connectivity — one operational picture.',
+    href: '/industries/networks',
+    heroImage: getIndustry('networks')?.data.heroImage || '/images/industry-networks.png',
+    stats: getIndustry('networks')?.data.stats?.slice(0, 3) || [],
+    children: [
       { name: 'Network Operations', href: '/solutions/network-operations' },
-      { name: 'Teleport Operations', href: '/solutions/teleport-operations' },
       { name: 'Fleet Health', href: '/solutions/fleet-health' },
-      { name: 'Service Assurance', href: '/solutions/service-assurance' },
+      { name: 'Service Assurance', href: '/solutions/hybrid-service-assurance' },
       { name: 'Space Domain Awareness', href: '/solutions/space-domain-awareness' },
     ],
-    stat: { value: '9,000+', label: 'Connectors' },
-    href: '/industries/networks',
+    featured: false,
   },
   {
     name: 'Critical Infrastructure',
-    slug: 'critical-infrastructure',
     description: 'Intelligence for the systems cities and nations depend on — water networks, transportation corridors, municipal operations, and the built environment.',
-    icon: 'building',
-    subVerticals: [
+    href: '/industries/critical-infrastructure',
+    heroImage: getIndustry('cities')?.data.heroImage || '/images/industry-cities.png',
+    stats: [
+      { value: '8,000+', label: 'Integrations' },
+      { value: '85%', label: 'Fewer False Alarms' },
+      { value: '35%', label: 'Water Loss Reduction' },
+    ],
+    children: [
       { name: 'Cities & Municipal', href: '/industries/cities' },
       { name: 'Water & Environment', href: '/industries/water-environment' },
       { name: 'Transportation', href: '/industries/transportation' },
-      { name: 'Infrastructure', href: '/industries/infrastructure' },
-      { name: 'Port Operations', href: '/solutions/port-operations' },
     ],
-    stat: { value: '9,000+', label: 'Connectors' },
-    href: '/industries/critical-infrastructure',
+    featured: false,
   },
   {
     name: 'Finance',
-    slug: 'finance',
-    description: 'Intelligence products that unify the 15–30 systems your bank already operates. Customer 360, credit risk, NPA early warning, and regulatory compliance — production-ready in weeks.',
-    icon: 'chart',
-    subVerticals: [
-      { name: 'Banking Intelligence', href: '/industries/finance' },
-      { name: 'Customer 360', href: '/industries/finance' },
-      { name: 'Credit Risk', href: '/industries/finance' },
-      { name: 'Regulatory Compliance', href: '/industries/finance' },
-      { name: 'Claims & Insurance', href: '/industries/finance' },
-    ],
-    stat: { value: '4–6 Weeks', label: 'To Production' },
+    description: 'Intelligence products that unify the 15-30 systems your bank already operates. Customer 360, credit risk, NPA early warning, and regulatory compliance — production-ready in weeks.',
     href: '/industries/finance',
+    heroImage: getIndustry('finance')?.data.heroImage || '/images/industry-finance.png',
+    stats: getIndustry('finance')?.data.stats?.slice(0, 3) || [],
+    children: [
+      { name: 'Customer 360', href: '/solutions/customer-360' },
+      { name: 'Credit Risk', href: '/solutions/credit-risk' },
+      { name: 'NPA Early Warning', href: '/solutions/npa-early-warning' },
+      { name: 'Regulatory Compliance', href: '/solutions/regulatory-compliance' },
+    ],
+    featured: false,
   },
 ]
 
-const iconMap: Record<string, string> = {
-  bolt: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
-  shield: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
-  signal: 'M9.348 14.652a3.75 3.75 0 010-5.304m5.304 0a3.75 3.75 0 010 5.304m-7.425 2.121a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z',
-  building: 'M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z',
-  chart: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z',
-}
+// All pillars rendered in alternating horizontal layout
 ---
 
 <MarketingLayout
   title="Industries — Operational Intelligence for Critical Operations"
-  description="Quatro delivers operational intelligence across energy, national security, networks, critical infrastructure, and finance — 9,000+ integrations, deployed your way."
+  description="Quatro delivers operational intelligence across energy, national security, networks, critical infrastructure, and finance — 8,000+ integrations, deployed your way."
 >
-  <Hero
-    variant="dark"
-    eyebrow="Industries"
+  <HeroCanvas
+    badge="Industries"
     title="Intelligence for the Operations That Matter Most"
-    description="Five domains. One platform. Quatro delivers unified operational intelligence tailored to your sector — from grid operations to banking compliance."
-    primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
+    body="Five domains. One intelligence utility. Quatro delivers unified operational intelligence tailored to your sector — from grid operations to banking compliance."
+    ctaLabel="Schedule an Assessment"
+    ctaHref="/contact/demo"
   />
 
+  <!-- TOP TWO PILLARS — Full-width landscape cards -->
   <Section>
-    <div class="space-y-12">
-      {pillars.map((pillar, index) => (
-        <div class={`flex flex-col lg:flex-row gap-8 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-          <!-- Pillar card -->
-          <div class="flex-1 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-50 text-brand-600">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d={iconMap[pillar.icon]} />
-                </svg>
-              </span>
-              <h2 class="font-display text-2xl font-bold text-neutral-800">{pillar.name}</h2>
-            </div>
-            <p class="text-neutral-600 mb-6">{pillar.description}</p>
-            <div class="flex items-center gap-2 mb-6">
-              <span class="text-2xl font-bold text-brand-600">{pillar.stat.value}</span>
-              <span class="text-sm text-neutral-500">{pillar.stat.label}</span>
-            </div>
-            <a
-              href={pillar.href}
-              class="inline-flex items-center font-display text-sm font-semibold text-brand-500 hover:underline"
-            >
-              Explore {pillar.name} &rarr;
-            </a>
-          </div>
+    <div class="mb-10 fade-up">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-neutral-400 mb-3">Industries</p>
+      <h2 class="font-display text-2xl font-bold text-neutral-800 sm:text-3xl tracking-tight">
+        Choose Your Domain
+      </h2>
+    </div>
 
-          <!-- Sub-verticals list -->
-          <div class="lg:w-72 flex-shrink-0">
-            <h3 class="font-display text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
-              Solutions
-            </h3>
-            <ul class="space-y-2">
-              {pillar.subVerticals.map((sub) => (
-                <li>
-                  <a
-                    href={sub.href}
-                    class="group flex items-center gap-2 text-sm text-neutral-700 hover:text-brand-600"
-                  >
-                    <span class="h-1.5 w-1.5 rounded-full bg-brand-400 group-hover:bg-brand-600" />
-                    {sub.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+    <div class="space-y-6">
+      {pillars.map((pillar, i) => (
+        <IndustryHubCard
+          title={pillar.name}
+          description={pillar.description}
+          href={pillar.href}
+          heroImage={pillar.heroImage}
+          solutions={pillar.children}
+          reverse={i % 2 === 1}
+        />
       ))}
     </div>
   </Section>
 
-  <CtaBanner
-    title="See Operational Intelligence for Your Industry"
+  <!-- PLATFORM STRIP -->
+  <Section divider dark>
+    <div class="mx-auto max-w-3xl text-center fade-up">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-4">Platform</p>
+      <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">
+        One Architecture. Every Vertical.
+      </h2>
+      <p class="mt-4 text-lg text-white/70 leading-relaxed">
+        8,000+ integrations. AI models trained on operational data. On-premise, cloud, or air-gapped deployment. Quatro adapts the same core architecture to your sector's specific systems and compliance requirements.
+      </p>
+      <div class="mt-10 grid grid-cols-3 gap-px max-w-xl mx-auto" style="background: rgba(255,255,255,0.08);">
+        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
+          <div class="text-2xl font-bold text-white">8,000+</div>
+          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">Integrations</div>
+        </div>
+        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
+          <div class="text-2xl font-bold text-white">4 Weeks</div>
+          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">To First Value</div>
+        </div>
+        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
+          <div class="text-2xl font-bold text-white">Your Cloud</div>
+          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">Or On-Premise</div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
+  <DualCta
+    title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like for your industry.`}
     description="Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
     primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
     secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    microcopy="4-week proof of value · Credited toward annual contract"
   />
 </MarketingLayout>

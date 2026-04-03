@@ -2,12 +2,12 @@
 title: "Asset Health"
 tagline: "Predict Failures Before They Happen"
 heroImage: "/images/solution-asset-monitoring.png"
-description: "AI-powered asset health monitoring that shifts operations from reactive to predictive, reducing unplanned downtime by up to 60% across your entire infrastructure."
+description: "Asset health monitoring that shifts operations from reactive to predictive, reducing unplanned downtime by up to 60% across your entire infrastructure."
 order: 1
 hero:
   eyebrow: "Asset Health"
   title: "Track Every Asset. Predict Every Failure."
-  description: "Real-time visibility and AI-driven predictive maintenance across your entire asset portfolio. Stop reacting to failures and start preventing them."
+  description: "When asset data lives in separate maintenance, SCADA, and ERP systems, failure patterns stay invisible until something breaks. Quatro watches continuously and predicts failures before they happen."
   primaryCta:
     label: "Schedule an Assessment"
     href: "/contact/demo"
@@ -17,8 +17,8 @@ hero:
 stats:
   - value: "60%"
     label: "Downtime Reduction"
-  - value: "9,000+"
-    label: "Connectors"
+  - value: "8,000+"
+    label: "Integrations"
   - value: "2-4 Weeks"
     label: "Advance Warning"
   - value: "80%"
@@ -36,7 +36,7 @@ capabilities:
   - name: "Real-Time Asset Visibility"
     description: "Continuous monitoring of asset health, location, and status across your entire infrastructure with sub-second latency dashboards."
   - name: "Predictive Maintenance"
-    description: "AI models forecast equipment failures 2-4 weeks in advance using vibration, thermal, and multi-sensor correlation. When issues are predicted, the intelligence network provides contextual guidance on what to do — recommended maintenance actions, parts needed, and optimal scheduling windows."
+    description: "AI models forecast equipment failures 2-4 weeks in advance using vibration, thermal, and multi-sensor correlation. When issues are predicted, the intelligence utility provides contextual guidance on what to do — recommended maintenance actions, parts needed, and optimal scheduling windows."
   - name: "Asset Lifecycle Management"
     description: "End-to-end tracking from commissioning to decommissioning with a real-time operational model for data-driven replacement planning."
   - name: "Performance Optimization"
@@ -55,7 +55,7 @@ proofPoint:
       label: "Maintenance Cost Savings"
     - value: "200K+"
       label: "Data Points Monitored"
-  narrative: "A mid-major E&P operator with 500+ well sites deployed Quatro to replace fragmented monitoring systems. Predictive maintenance for the ESP fleet delivered 45% reduction in unplanned downtime and 15% improvement in production uptime through early intervention."
+  narrative: "A mid-major E&P operator with 500+ well sites deployed Quatro to unified fragmented monitoring systems. Predictive maintenance for the ESP fleet delivered 45% reduction in unplanned downtime and 15% improvement in production uptime through early intervention."
 cta:
   primary:
     label: "Schedule an Asset Assessment"

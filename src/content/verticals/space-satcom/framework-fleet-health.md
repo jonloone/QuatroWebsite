@@ -39,7 +39,7 @@ This is a **vertical-specific solution sub-page** (evaluation, narrow focus, dep
 - GEO, LEO, MEO Coverage
 - Constellation-Scale Monitoring
 - Predictive Maintenance (2-4 Week Advance Warning)
-- 99.99% Platform Uptime
+- 99.99% Utility Uptime
 - Multi-Orbit Anomaly Correlation
 
 ### Hero Checklist Compliance
@@ -83,7 +83,7 @@ Maintenance scheduling is reactive. A satellite fails. You schedule a service ca
 
 Fleet monitoring was architected when satellite constellations were small — 5–15 satellites, all in the same orbit, all built by one vendor. Each vendor provided their own ground command and control station. Monitoring was design-specific, not constellation-specific. Modern constellations have 50–500+ satellites across multiple orbits, from multiple vendors, with different lifecycle stages (new spacecraft, mid-life, end-of-life). No vendor designed their ground control system to manage competitor's hardware or to correlate across orbits.
 
-The structural problem is heterogeneity. Unified fleet monitoring requires a platform that sits above the vendor-specific ground control systems, ingests data from all of them simultaneously, and correlates across orbit families, mission types, and vendor boundaries. This platform didn't exist because it requires both technical depth (understanding satellite telemetry and orbital mechanics) and operational breadth (7,000+ connectors to reach across the entire vendor ecosystem).
+The structural problem is heterogeneity. Unified fleet monitoring requires a utility that sits above the vendor-specific ground control systems, ingests data from all of them simultaneously, and correlates across orbit families, mission types, and vendor boundaries. This utility didn't exist because it requires both technical depth (understanding satellite telemetry and orbital mechanics) and operational breadth (7,000+ connectors to reach across the entire vendor ecosystem).
 
 *Framework note: Pain is quantified with six specific data points. Named orbit types (GEO, LEO, MEO, NGSO) and challenge (cross-orbit coordination) serve as the "named systems" the buyer recognizes. The structural reason ("heterogeneity — no vendor designed for competitor's hardware or cross-orbit correlation") reframes the problem as unsolvable-by-existing-tools.*
 
@@ -91,7 +91,7 @@ The structural problem is heterogeneity. Unified fleet monitoring requires a pla
 
 ## Section 3 — HOW IT WORKS (Operational, Not Architectural)
 
-> **Framework rule:** Don't explain the platform. Explain what changes day-to-day. Show before/after workflow. Name the source systems that connect. Describe what the team sees on Monday morning.
+> **Framework rule:** Don't explain the utility. Explain what changes day-to-day. Show before/after workflow. Name the source systems that connect. Describe what the team sees on Monday morning.
 
 ### Capability 1 — Constellation-Scale Telemetry Ingestion
 
@@ -144,7 +144,7 @@ Quatro's predictive maintenance models are trained on satellite telemetry data f
 
 ### Proof Point 2: Cross-Orbit Correlation Performance
 
-Quatro handles heterogeneous telemetry streams from different satellite manufacturers (Boeing, Northrop, Airbus, smaller builders) and different orbit families (GEO, LEO, MEO, NGSO) simultaneously. The platform normalizes telemetry into a common data model while preserving vendor-specific semantics. Cross-orbit anomaly correlation is performed in real-time, enabling the kind of fleet-wide "understand which satellites are affected" reasoning that requires both technical depth and operational breadth.
+Quatro handles heterogeneous telemetry streams from different satellite manufacturers (Boeing, Northrop, Airbus, smaller builders) and different orbit families (GEO, LEO, MEO, NGSO) simultaneously. The utility normalizes telemetry into a common data model while preserving vendor-specific semantics. Cross-orbit anomaly correlation is performed in real-time, enabling the kind of fleet-wide "understand which satellites are affected" reasoning that requires both technical depth and operational breadth.
 
 ### Proof Point 3: Fleet Health Intelligence Service Tiers
 
@@ -192,7 +192,7 @@ Quatro Fleet Health is delivered as three service tiers:
 
 > Quatro is a monitoring and intelligence layer that sits above your ground command stations, not a replacement for them. Your GEO command center stays as the authoritative source for GEO operations. Your LEO ground stations remain in command of LEO operations. Quatro ingests data from both, correlates it, predicts failures, and recommends actions — but the final command authority stays with your teams. You use Quatro because it makes you better at your job, not because it replaces your expertise. Adoption typically starts at 30% of operational decisions within 90 days, rising to 70%+ by month 9 as confidence builds.
 
-**Objection 3: "We don't have the staff to operate another monitoring platform. We're already stretched thin."**
+**Objection 3: "We don't have the staff to operate another monitoring utility. We're already stretched thin."**
 
 > Quatro reduces staffing pressure through automation. Predictive alerts mean technicians are notified of issues weeks before they become critical, allowing planned responses instead of scrambling fire-fighting. Maintenance scheduling is coordinated automatically, reducing cross-team email storms. Capacity rebalancing recommendations are quantified and prioritized, compressing decision time from 4–8 hours to 30 minutes. The time saved from faster anomaly correlation, predictive prioritization, and coordinated scheduling typically frees up 0.5–1 FTE per 100 satellites, allowing your existing staff to focus on strategic rather than tactical operations.
 

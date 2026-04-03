@@ -16,8 +16,8 @@ hero:
 stats:
   - value: "60%"
     label: "Reducción de Tiempo Inactivo"
-  - value: "9,000+"
-    label: "Conectores"
+  - value: "8,000+"
+    label: "Integraciones"
   - value: "2-4 Semanas"
     label: "Alerta Anticipada"
   - value: "80%"

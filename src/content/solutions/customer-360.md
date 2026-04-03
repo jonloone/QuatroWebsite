@@ -69,7 +69,7 @@ proofPoint:
       label: "To Production"
     - value: "Weeks"
       label: "Not Months for M&A"
-  narrative: "Customer 360 is the foundation product in Quatro's banking offering. Each additional product — NPA Early Warning, Credit Risk, Regulatory Compliance — connects to the same governed customer record, creating compound value through the shared knowledge graph."
+  narrative: "Customer 360 is the foundation product in Quatro's banking offering. Each additional product — NPA Early Warning, Credit Risk, Regulatory Compliance — connects to the same governed customer record, creating compound value through operational intelligence."
 cta:
   primary:
     label: "Schedule a Banking Assessment"

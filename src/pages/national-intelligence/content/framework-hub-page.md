@@ -45,7 +45,7 @@ The three named intelligence programs serve as the "jobs" the buyer is hiring th
 
 **Trust Bar (immediately below hero — non-negotiable per framework):**
 - 7 Security Domains
-- 9,000+ Sensor Integrations
+- 8,000+ Sensor Integrations
 - 99.99% Platform Uptime
 - 24-48hr Prediction Window
 
@@ -151,7 +151,7 @@ Quatro eliminates the gap. One platform connects every sensor, every agency, and
 **Dark section with background overlay.**
 
 ### Connect — Multi-Modal Sensing
-9,000+ ready-made integrations. Ground sensors, satellite detection, autonomous drones, CCTV/infrared. The physical world becomes a stream of machine-readable intelligence.
+8,000+ ready-made integrations. Ground sensors, satellite detection, autonomous drones, CCTV/infrared. The physical world becomes a stream of machine-readable intelligence.
 
 ### Operate — Intelligence Engine
 Secure multi-source data ingestion, cross-agency data governance, real-time fusion, domain-trained predictive algorithms. Raw fragmented data transforms into a unified national intelligence picture.
@@ -225,7 +225,7 @@ For coalition contexts: generate intelligence products for partners without cedi
 | Metric | Value |
 |---|---|
 | Security Domains | 7 |
-| Sensor Integrations | 9,000+ |
+| Sensor Integrations | 8,000+ |
 | Vendor Compatibility | 1,000+ |
 | Prediction Window | 24–48 hours |
 | Deployment Model | Sovereign — air-gapped capable |

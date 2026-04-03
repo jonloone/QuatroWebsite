@@ -65,7 +65,7 @@ proofPoint:
       label: "To Production"
     - value: "Complete"
       label: "Guarantee Capture"
-  narrative: "Credit Risk connects to the Customer 360 knowledge graph. When combined with NPA Early Warning, loan committees see not just current exposure but predicted trajectory — making credit decisions more accurate and collections more targeted."
+  narrative: "Credit Risk connects to the Customer 360 unified record. When combined with NPA Early Warning, loan committees see not just current exposure but predicted trajectory — making credit decisions more accurate and collections more targeted."
 cta:
   primary:
     label: "Schedule a Risk Assessment"

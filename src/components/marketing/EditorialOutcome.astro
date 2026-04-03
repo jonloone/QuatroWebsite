@@ -1,0 +1,45 @@
+---
+interface Props {
+  statement: string          // The big editorial statement — HTML allowed for <span> highlight
+  description?: string       // Supporting paragraph
+  stats?: Array<{ value: string; label: string }>
+  class?: string
+}
+
+const {
+  statement,
+  description,
+  stats,
+  class: className,
+} = Astro.props
+---
+
+<section class:list={['py-20 lg:py-32 px-6', className]} style="border-top: 1px solid var(--color-structure);">
+  <div class="mx-auto max-w-6xl">
+
+    <!-- Editorial statement — oversized type -->
+    <h2
+      class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.15] tracking-tight fade-up"
+      style="color: var(--color-neutral-800);"
+      set:html={statement}
+    />
+
+    {description && (
+      <p class="mt-10 font-sans text-lg lg:text-xl leading-relaxed max-w-3xl fade-up" style="color: var(--color-neutral-500);">
+        {description}
+      </p>
+    )}
+
+    <!-- Stats row -->
+    {stats && stats.length > 0 && (
+      <div class="mt-16 pt-8 flex flex-wrap items-start gap-12 lg:gap-16 fade-up" style="border-top: 1px solid var(--color-structure);">
+        {stats.map((stat) => (
+          <div>
+            <span class="font-display text-3xl lg:text-4xl font-bold" style="color: var(--color-forest);">{stat.value}</span>
+            <span class="block mt-2 font-mono text-[11px] uppercase tracking-[0.15em]" style="color: var(--color-neutral-400);">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

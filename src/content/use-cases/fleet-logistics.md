@@ -1,7 +1,7 @@
 ---
 title: Fleet & Logistics Optimization
-tagline: $4.2M in Annual Fuel Savings. One Platform.
-description: Optimize your entire fleet with real-time operational intelligence on fuel consumption, maintenance, and utilization across thousands of vehicles and assets.
+tagline: $4.2M in Annual Fuel Savings. One Utility.
+description: Optimize your entire fleet with real-time operational intelligence utility for fuel consumption, maintenance, and utilization across thousands of vehicles and assets.
 parentIndustry: infrastructure
 order: 1
 hero:

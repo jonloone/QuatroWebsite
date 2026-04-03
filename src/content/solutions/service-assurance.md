@@ -2,12 +2,12 @@
 title: "Service Assurance"
 tagline: "End-to-End SLA Intelligence Across Every Transport Layer"
 heroImage: "/images/solution-hybrid-service-assurance.png"
-description: "Real-time SLA management across terrestrial and satellite transport layers. Breach prediction, automated billing correlation, and revenue optimization — whether traffic is on fiber, tower, GEO transponder, or LEO pass."
+description: "Real-time SLA management across terrestrial and satellite transport layers. Breach prediction, automated billing correlation, and revenue optimization intelligence — whether traffic is on fiber, tower, GEO transponder, or LEO pass."
 order: 10
 hero:
   eyebrow: "Service Assurance"
   title: "One SLA View. Every Transport Layer."
-  description: "Terrestrial SLAs and satellite SLAs measured in different systems, reconciled in different spreadsheets, disputed in different meetings. Quatro unifies service assurance across every transport layer — fiber, tower, GEO, LEO, MEO — with real-time breach prediction, automated billing correlation, and revenue optimization intelligence."
+  description: "Terrestrial SLAs and satellite SLAs measured in different systems, reconciled in different spreadsheets, disputed in different meetings. Quatro's operational intelligence utility unifies service assurance across every transport layer — fiber, tower, GEO, LEO, MEO — with real-time breach prediction, automated billing correlation, and revenue optimization intelligence."
   primaryCta:
     label: "Request a Revenue Assessment"
     href: "/contact/demo"
@@ -36,15 +36,15 @@ capabilities:
   - name: "End-to-End SLA Tracking"
     description: "Unified SLA monitoring across fiber, tower, GEO transponder, LEO pass, and hybrid paths. When traffic shifts between transport layers, SLA tracking follows automatically. One SLA dashboard for the entire service, not per-domain fragments."
   - name: "SLA Breach Prediction"
-    description: "24+ hour advance warning before SLA breaches occur. The intelligence network correlates terrestrial performance trends with satellite capacity forecasts to predict compound breaches that span domains. Pre-approved mitigation workflows trigger before breach, not after."
+    description: "24+ hour advance warning before SLA breaches occur. The operational intelligence utility correlates terrestrial performance trends with satellite capacity forecasts to predict compound breaches that span domains. Pre-approved mitigation workflows trigger before breach, not after."
   - name: "Automated Billing Correlation"
     description: "Real-time billing runs correlated with operational reality across all transport layers. Customer invoices show allocated vs. actual capacity, SLA availability across domains, and credits auto-applied per contract terms. Transparency replaces disputes."
   - name: "Revenue Optimization Intelligence"
     description: "Recommendations for pricing optimization and capacity right-sizing based on real-time utilization patterns across terrestrial and satellite resources. Identifies idle capacity, over-provisioned links, and upsell opportunities."
   - name: "Dispute Prevention Workflows"
-    description: "When issues span domains, the intelligence network provides a complete audit trail — which transport layer was affected, for how long, what the SLA impact was, and what credit is owed. Disputes resolve in days with shared data, not weeks of forensic reconciliation."
+    description: "When issues span domains, the operational intelligence utility provides a complete audit trail — which transport layer was affected, for how long, what the SLA impact was, and what credit is owed. Disputes resolve in days with shared data, not weeks of forensic reconciliation."
   - name: "Cross-Domain Revenue Intelligence"
-    description: "Connect transponder events, terrestrial performance, and customer contract terms into a unified commercial intelligence view. Revenue per service path, customer churn risk, and competitive pricing benchmarks across your hybrid service portfolio."
+    description: "Connect transponder events, terrestrial performance, and customer contract terms into a unified operational intelligence view. Revenue per service path, customer churn risk, and competitive pricing benchmarks across your hybrid service portfolio."
 proofPoint:
   industry: "Networks — Commercial Satellite Operator"
   headline: "Revenue Recovery and Billing Transformation"

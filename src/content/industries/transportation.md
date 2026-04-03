@@ -2,14 +2,12 @@
 title: Transportation
 tagline: Unified Intelligence for Logistics Networks
 heroImage: /images/industry-transportation.png
-description: Real-time operational intelligence that transforms fragmented data across ports, airports, and logistics corridors into situational awareness, predictive routing intelligence, and coordinated
-  multi-node operations — all from a single command environment.
+description: "When port systems, airport operations, and logistics corridors each report through separate tools, delays cascade across the network before anyone connects the cause. Quatro delivers real-time operational intelligence across every logistics node — predictive routing, maritime awareness, and coordinated multi-modal operations."
 order: 7
 hero:
   eyebrow: Transportation & Logistics
-  title: Unified Intelligence. Every Node. Total Visibility.
-  description: Quatro delivers a unified operational intelligence network that transforms fragmented data across ports, airports, and logistics corridors into real-time situational awareness, predictive
-    routing intelligence, and coordinated multi-node operations — all from a single command environment.
+  title: One Operational Model. Every Logistics Node.
+  description: "When port management, airport operations, and corridor logistics each live in separate systems, delays cascade across the supply chain before anyone connects the cause. Connect them to Quatro and get unified situational awareness, predictive routing intelligence, and coordinated multi-node operations from a single command environment."
   primaryCta:
     label: Request an Operations Briefing
     href: /contact/demo
@@ -19,7 +17,7 @@ hero:
 stats:
 - value: '3'
   label: Operational Domains
-- value: 9,000+
+- value: 8,000+
   label: Infrastructure Integrations
 - value: 24-48hr
   label: Predictive Intelligence
@@ -83,9 +81,9 @@ capabilities:
   outcome: Share intelligence, not data. Full sovereignty.
   image: /images/cap-transport-sovereign-sharing.png
 platformMapping:
-  see: 9,000+ integrations across port, airport, and highway infrastructure. AIS vessel tracking, CCTV, traffic sensors, IoT berth monitors, RFID cargo tracking, toll system feeds, radar, and weather
+  see: 8,000+ integrations across port, airport, and highway infrastructure. AIS vessel tracking, CCTV, traffic sensors, IoT berth monitors, RFID cargo tracking, toll system feeds, radar, and weather
     data. The physical logistics network becomes machine-readable intelligence.
-  understand: Secure multi-source data ingestion with cross-node data governance. Real-time fusion and domain-trained predictive algorithms transform fragmented data into a unified logistics intelligence picture
+  understand: Secure multi-source data ingestion with cross-node data governance. Real-time fusion and domain-trained predictive algorithms connect isolated data into a unified logistics intelligence picture
     — berth predictions, runway optimization, corridor routing, and customs risk assessment.
   orchestrate: Predictive routing recommendations, incident management workflows, and multi-node coordination dashboards. Operators see the full chain. Right decision-maker, right intelligence, right time.
     Full audit trail with integration to existing SCADA, PMS, and logistics systems.

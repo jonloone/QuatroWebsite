@@ -34,13 +34,13 @@ challenges:
     description: "Detection triggers phone calls and ad-hoc coordination. No unified playbook ties detection to response to resolution."
 capabilities:
   - name: "Enhanced RTTM Modeling"
-    description: "AI-adaptive transient modeling that learns pipeline hydraulic behavior and eliminates manual calibration burden. Powered by ECR Platform X DevSafeOps — delivering E-RTTM hydraulic detection, predictive analytics, and operational decisioning for pipeline integrity."
+    description: "AI-adaptive transient modeling that learns pipeline hydraulic behavior and eliminates manual calibration burden. Powered by domain-trained predictive analytics — delivering E-RTTM hydraulic detection, predictive analytics, and operational decisioning for pipeline integrity."
   - name: "Multi-Method Leak Detection"
     description: "Fuses acoustic, pressure-wave, mass-balance, and statistical analysis for detection sensitivity down to 0.5% of nominal flow."
   - name: "Intrusion Detection & Response"
     description: "Perimeter and right-of-way monitoring with multi-sensor fusion that distinguishes wildlife from threats in seconds."
   - name: "Satellite Corridor Monitoring"
-    description: "AI-powered satellite imagery from NOVI Space detects encroachment, ground movement, and vegetation stress across thousands of kilometers. Continuous corridor intelligence at geographic scale — without patrol crews."
+    description: "Satellite imagery from NOVI Space detects encroachment, ground movement, and vegetation stress across thousands of kilometers. Continuous corridor intelligence at geographic scale — without patrol crews."
   - name: "Cross-Domain Correlation"
     description: "AI agents correlate operational data across detection domains in real time. A simultaneous pressure anomaly and perimeter breach instantly elevates to potential theft-tap scenario. Compound intelligence that single-method systems structurally cannot produce."
   - name: "Predictive Pipeline Intelligence"
@@ -59,7 +59,7 @@ proofPoint:
       label: "Detection to Dispatch"
     - value: "2 FTE"
       label: "Redeployed"
-  narrative: "A midstream operator with 3,500 km of pipelines replaced legacy RTTM and separate physical security platforms. Multi-method AI fusion with partner-delivered predictive analytics reduced false alarms from 200+/month to ~50, and automated playbooks cut detection-to-dispatch from 22 minutes to under 3 minutes. Satellite corridor monitoring now covers the full pipeline network continuously."
+  narrative: "A midstream operator with 3,500 km of pipelines unified legacy RTTM and separate physical security tools. Multi-method AI fusion with partner-delivered predictive analytics reduced false alarms from 200+/month to ~50, and governed autonomous action cut detection-to-dispatch from 22 minutes to under 3 minutes. Satellite corridor monitoring now covers the full pipeline network continuously."
 cta:
   primary:
     label: "Schedule a Pipeline Assessment"

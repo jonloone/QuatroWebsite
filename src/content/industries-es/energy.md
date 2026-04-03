@@ -19,8 +19,8 @@ stats:
     label: "Menos Falsas Alarmas"
   - value: "60%"
     label: "Restauración Más Rápida"
-  - value: "9,000+"
-    label: "Conectores"
+  - value: "8,000+"
+    label: "Integraciones"
   - value: "Meses"
     label: "No Años"
 challenges:
@@ -46,7 +46,7 @@ capabilities:
   - name: "Automatización de Cumplimiento"
     description: "Trazabilidad continua de NERC CIP, PHMSA y EPA. Reemplace más de 40 horas/mes de documentación manual con reportes de cumplimiento en tiempo real."
 platformMapping:
-  see: "Conectividad nativa para DNP3, IEC 61850, OPC-UA y MQTT. Replica datos del SCADA y los historiadores legacy sin licenciamiento por tags. Más de 8,000 conectores para cualquier activo energético."
+  see: "Conectividad nativa para DNP3, IEC 61850, OPC-UA y MQTT. Replica datos del SCADA y los historiadores legacy sin licenciamiento por tags. Más de 8,000 integraciones para cualquier activo energético."
   understand: "Analítica de IA para mantenimiento predictivo, detección de fugas multimétodo y detección de anomalías de red. El modelo operacional en tiempo real permite análisis de contingencia y estudios de capacidad de hosting de DER."
   orchestrate: "Playbooks automatizados de tormentas coordinan más de 200 subestaciones. Despacho inteligente asigna cuadrillas certificadas. Trazabilidad NERC CIP y PHMSA generada automáticamente."
 proofPoint:

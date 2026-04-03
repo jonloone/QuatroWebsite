@@ -11,7 +11,7 @@ This directory contains 5 production-ready messaging documents for the Quatro Sp
 **Purpose:** Industry landing page showing full scope of Space & SATCOM capabilities
 
 **Key Sections:**
-- HERO: "One Platform. Every Orbit. Total Assurance" (6 words, outcome-focused)
+- HERO: "One Utility. Every Orbit. Total Assurance" (6 words, outcome-focused)
 - INDUSTRY CONTEXT: Convergence moment narrative (IT/OT convergence in satellite)
 - PROBLEM: Three-act PAS story on fragmented M&C/OSS/BSS systems
 - SOLUTION MENU: Four named solution areas with Pain → What You Get structure
@@ -161,10 +161,10 @@ Five competitive comparisons appear across all documents:
 - Skyline DataMiner SatOps: Teleport Technology of the Year 2026 (World Teleport Association)
 - Orange Telecom: Production deployment at major teleport facilities
 
-**Platform Capabilities:**
+**Utility Capabilities:**
 - 7,000+ ground segment connectors
-- 9,000+ integrations across 1,000+ vendors
-- 99.99% platform uptime
+- 8,000+ integrations across 1,000+ vendors
+- 99.99% utility uptime
 - Sub-minute anomaly detection latency
 - Multi-orbit support (GEO, LEO, MEO, NGSO)
 

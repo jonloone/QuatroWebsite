@@ -1,8 +1,8 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import Section from '@/components/marketing/Section.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 
 const pillars = [
   {
@@ -61,7 +61,7 @@ const pillars = [
       { name: 'Infraestructura', href: '/es/industries/infrastructure' },
       { name: 'Operaciones Portuarias', href: '/es/solutions/port-operations' },
     ],
-    stat: { value: '9,000+', label: 'Conectores' },
+    stat: { value: '8,000+', label: 'Integraciones' },
     href: '/es/industries/critical-infrastructure',
   },
   {
@@ -93,14 +93,14 @@ const iconMap: Record<string, string> = {
 <MarketingLayout
   lang="es"
   title="Industrias — Inteligencia Operacional para Operaciones Críticas"
-  description="Quatro ofrece inteligencia operacional en energía, seguridad nacional, redes, infraestructura crítica y finanzas — 9,000+ integraciones, desplegado a su manera."
+  description="Quatro ofrece inteligencia operacional en energía, seguridad nacional, redes, infraestructura crítica y finanzas — 8,000+ integraciones, desplegado a su manera."
 >
-  <Hero
-    variant="dark"
-    eyebrow="Industrias"
+  <HeroCanvas
+    badge="Industrias"
     title="Inteligencia para las Operaciones que Más Importan"
-    description="Cinco dominios. Una plataforma. Quatro ofrece inteligencia operacional unificada adaptada a su sector — desde operaciones de red eléctrica hasta cumplimiento bancario."
-    primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
+    body="Cinco dominios. Una utilidad de inteligencia. Quatro ofrece inteligencia operacional unificada adaptada a su sector — desde operaciones de red eléctrica hasta cumplimiento bancario."
+    ctaLabel="Agende una Evaluación"
+    ctaHref="/es/contact/demo"
   />
 
   <Section>
@@ -152,10 +152,11 @@ const iconMap: Record<string, string> = {
     </div>
   </Section>
 
-  <CtaBanner
-    title="Vea la Inteligencia Operacional en Su Industria"
+  <DualCta
+    title={`Vea cómo la <span style="color: var(--color-forest);">inteligencia operacional</span> funciona en su operación.`}
     description="Elija un desafío. Desplegamos en sus sistemas en 4 semanas. Vea el valor antes de comprometerse."
-    primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Hable con un Ingeniero', href: '/es/contact/sales' }}
+    primaryCta={{ label: 'Solicitar Evaluación', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hablar con un Ingeniero', href: '/es/contact/sales' }}
+    microcopy="Prueba de valor de 4 semanas · Acreditado en contrato anual"
   />
 </MarketingLayout>

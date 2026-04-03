@@ -22,7 +22,7 @@ Engineering teams spent hours aggregating data from multiple sources just to ans
 
 ## Solution
 
-Quatro See was deployed as a unified data layer, connecting to every existing historian and SCADA system without requiring replacement. The platform's 9,000+ connectors normalized data from legacy OSIsoft PI instances, Aveva historians, and dozens of vendor-specific systems into a consistent, queryable format.
+Quatro See was deployed as a unified data layer, connecting to every existing historian and SCADA system without requiring replacement. The platform's 8,000+ integrations normalized data from legacy OSIsoft PI instances, Aveva historians, and dozens of vendor-specific systems into a consistent, queryable format.
 
 Edge deployments at remote facilities ensured continuous data collection even with intermittent connectivity, while the cloud-based analytics layer provided enterprise-wide visibility for the first time.
 

@@ -7,7 +7,7 @@ order: 2
 hero:
   eyebrow: "Transmission & Distribution"
   title: "Grid Balancing & Renewable Integration"
-  description: "Transform your grid from a reactive network into an intelligent, real-time system. Restore outages 60% faster, reduce renewable curtailment by 25%, and maintain stability across 200+ substations without rip-and-replace SCADA upgrades."
+  description: "When SCADA refresh cycles lag behind renewable integration speed, grid instability accelerates and curtailment compounds losses. Restore outages 60% faster, reduce renewable curtailment by 25%, and maintain stability across 200+ substations without rip-and-replace upgrades."
   primaryCta:
     label: "Schedule an Energy Assessment"
     href: "/energy-assessment"
@@ -39,7 +39,7 @@ capabilities:
   - name: "Legacy SCADA Integration"
     description: "Works alongside your existing systems—reads Modbus, DNP3, IEC 60870-5-104, and proprietary protocols without replacement."
     icon: "🔗"
-  - name: "9,000+ Integrations"
+  - name: "8,000+ Integrations"
     description: "Connects to DMS, EMS, DER management, and wholesale market systems seamlessly."
     icon: "🌐"
 stats:
@@ -70,7 +70,7 @@ objections:
   - concern: "Our SCADA is too old to integrate with modern systems"
     response: "We integrate with Modbus, DNP3, Profinet, and proprietary protocols from vendors going back 30+ years. If your SCADA can talk to anything (historian, remote terminal unit, energy management system), it can talk to us. We've deployed alongside systems built in the 1990s with zero modification to the legacy platform."
   - concern: "We don't have the engineering team to run another operational system"
-    response: "The system is built for utility operations staff, not software engineers. Your SCADA operators see a single integrated dashboard showing grid health, renewable output, and recommended actions. No new skills needed—we provide 12 weeks of on-site training and 24/7 Tier-2 support. Most utilities reduce SCADA operator overhead by 30% because manual tasks are automated."
+    response: "Quatro is built for utility operations staff, not software engineers. Your SCADA operators see a single integrated dashboard showing grid health, renewable output, and recommended actions. No new skills needed—we provide 12 weeks of on-site training and 24/7 Tier-2 support. Most utilities reduce SCADA operator overhead by 30% because manual tasks are automated."
 adjacentSolutions:
   - title: "Pipeline Integrity & Leak Detection"
     description: "Apply real-time operational intelligence to midstream networks and distribution pipelines."

@@ -144,7 +144,7 @@ What's needed is hydraulic correlation — the ability to correlate pressure cha
 
 ### Three Operational Layers — Unified Monitoring
 
-**Dark section treatment — the platform depth.**
+**Dark section treatment — the utility depth.**
 
 **Sensor Layer (The Nervous System):**
 Pressure sensors at junctions and mains (analog, digital, 4-20mA, Modbus, Profibus, wireless IoT). Flow meters across treatment, trunk mains, and sector boundaries. Water quality monitors (turbidity, pH, residual chlorine, temperature). Storage tank level sensors. Pump status and power consumption sensors.

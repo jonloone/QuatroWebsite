@@ -7,7 +7,7 @@ order: 3
 hero:
   eyebrow: "Upstream & Midstream Operations"
   title: "Predictive Maintenance for Production Assets"
-  description: "Stop waiting for equipment to fail. Use predictive intelligence to detect degradation 7-14 days in advance, plan maintenance proactively, and keep your 500+ production assets running 24/7."
+  description: "When degradation signals scatter across remote sensors, failures cascade without warning. Detect degradation 7-14 days in advance, plan maintenance proactively, and keep your 500+ production assets running 24/7."
   primaryCta:
     label: "Schedule an Energy Assessment"
     href: "/energy-assessment"
@@ -39,7 +39,7 @@ capabilities:
   - name: "Maintenance Work Order Automation"
     description: "Generates prioritized work orders, parts lists, crew assignments, and logistics—ready to dispatch 7-10 days before failure."
     icon: "✅"
-  - name: "9,000+ Integrations"
+  - name: "8,000+ Integrations"
     description: "Integrates with SAP, Maximo, and your CMMS to streamline parts, crew, and logistics scheduling."
     icon: "🔗"
 stats:
@@ -70,7 +70,7 @@ objections:
   - concern: "Our remote wells aren't instrumented well enough for predictive systems"
     response: "Predictive intelligence works best with rich sensor data, but it's valuable even with sparse instrumentation. We can extract signal from a single temperature or pressure gauge, combining it with production flow data and external factors (weather, grid demand) to score asset health. Many of our customers started with basic sensors and added vibration/acoustic monitoring post-deployment once ROI was proven."
   - concern: "We don't have a dedicated data team to manage and interpret this system"
-    response: "The system is designed for your operations and maintenance teams, not data scientists. It generates actionable work orders: 'Pump 47-A shows bearing degradation—replace seal kit within 10 days, plan 4-hour window.' Your planners and crews don't need to understand machine learning; they just need to act on prioritized guidance. We provide training, and typical adoption takes 6-8 weeks."
+    response: "Quatro is designed for your operations and maintenance teams, not data scientists. It generates actionable work orders: 'Pump 47-A shows bearing degradation—replace seal kit within 10 days, plan 4-hour window.' Your planners and crews don't need to understand machine learning; they just need to act on prioritized guidance. We provide training, and typical adoption takes 6-8 weeks."
 adjacentSolutions:
   - title: "Pipeline Integrity & Leak Detection"
     description: "Apply the same predictive intelligence framework to pipeline corrosion and leak probability forecasting."

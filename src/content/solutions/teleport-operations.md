@@ -16,7 +16,7 @@ hero:
     href: "/contact/sales"
 stats:
   - value: "7,000+"
-    label: "Ground Segment Connectors"
+    label: "Ground Segment Integrations"
   - value: "<60s"
     label: "Anomaly Detection"
   - value: "85%"

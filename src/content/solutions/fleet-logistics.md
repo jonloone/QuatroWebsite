@@ -1,13 +1,13 @@
 ---
 title: "Fleet & Logistics"
-tagline: "AI-Powered Fleet Intelligence"
+tagline: "Operational Fleet Intelligence"
 heroImage: "/images/solution-fleet-logistics.png"
 description: "Unified fleet management with AI-driven route optimization and predictive maintenance that reduces fuel costs by 14% and improves on-time delivery by 22%."
 order: 5
 hero:
   eyebrow: "Fleet & Logistics"
   title: "Optimize Every Mile. Track Every Asset."
-  description: "Transform fragmented fleet tools into unified operational intelligence. AI-powered routing, predictive maintenance, and real-time dispatch in one network."
+  description: "When GPS, maintenance logs, fuel systems, and dispatch tools each operate independently, route inefficiencies and breakdown risks cross fleet boundaries undetected. Quatro unifies them into one operational view — intelligent routing, predictive maintenance, and real-time dispatch."
   primaryCta:
     label: "Schedule a Fleet Assessment"
     href: "/contact/demo"
@@ -44,7 +44,7 @@ capabilities:
   - name: "Predictive Maintenance"
     description: "AI models correlate diagnostics, usage patterns, and environmental conditions to forecast failures 1-3 weeks in advance."
   - name: "Centralized Dispatch"
-    description: "AI-powered dispatch console for managing fleet, crews, and deliveries with intelligent assignment and real-time tracking. Predictive demand modeling optimizes resource positioning. Connects to port operations, airport logistics, and corridor intelligence for full transportation ecosystem visibility."
+    description: "Intelligent dispatch console for managing fleet, crews, and deliveries with intelligent assignment and real-time tracking. Predictive demand modeling optimizes resource positioning. Connects to port operations, airport logistics, and corridor intelligence for full transportation ecosystem visibility."
 proofPoint:
   industry: "Infrastructure — Logistics"
   headline: "National Fleet Optimization"

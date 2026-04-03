@@ -1,0 +1,335 @@
+---
+/**
+ * HeroCanvas — Quatro's signature dither-canvas hero.
+ *
+ * Renders a dark rounded card with an animated Bayer 4×4 dithering canvas,
+ * radial vignette, film grain, and centered content. This is the homepage
+ * hero pattern extracted into a reusable component so every primary page
+ * shares the same visual treatment.
+ *
+ * Usage:
+ *   <HeroCanvas
+ *     badge="Networks"
+ *     title="One Network.<br/><span class='text-white/60'>Every Signal.</span>"
+ *     body="Unified operations from ground to orbit."
+ *     ctaLabel="Schedule an Assessment"
+ *     ctaHref="/contact/demo"
+ *     imageSrc="/images/hero-bg.png"
+ *   />
+ */
+
+interface Props {
+  /** Glassmorphic badge text (top pill). Omit to hide. */
+  badge?: string
+  /** H1 inner HTML — supports <br/> and <span> for two-tone text. */
+  title: string
+  /** Optional body paragraph below the headline. */
+  body?: string
+  /** Primary CTA button label. */
+  ctaLabel?: string
+  /** Primary CTA button href. */
+  ctaHref?: string
+  /** Source image for the dither canvas. Defaults to /images/hero-bg.png. */
+  imageSrc?: string
+  /** Dither pixel block size. Default 3. */
+  pixelSize?: number
+  /** Idle animation speed. Default 0.08 (slightly slower than homepage). */
+  baseSpeed?: number
+  /** Hover animation speed. Default 0.4. */
+  hoverSpeed?: number
+  /** Forest green blend amount 0-1. Default 0.6 (moderate). */
+  greenBlend?: number
+  /** Canvas opacity (Tailwind-style). Default 70. */
+  canvasOpacity?: number
+  /** Min height class override. Default "min-h-[440px] md:min-h-[520px]". */
+  minHeight?: string
+  /** Extra classes on the outer section. */
+  class?: string
+}
+
+const {
+  badge,
+  title,
+  body,
+  ctaLabel = 'Schedule an Assessment',
+  ctaHref = '/contact/demo',
+  imageSrc = '/images/hero-bg.png',
+  pixelSize = 3,
+  baseSpeed = 0.08,
+  hoverSpeed = 0.4,
+  greenBlend = 0.6,
+  canvasOpacity = 70,
+  minHeight = 'min-h-[440px] md:min-h-[520px]',
+  class: className,
+} = Astro.props
+
+// Generate a unique ID per instance so multiple canvases don't collide
+const uid = `dither-${Math.random().toString(36).slice(2, 8)}`
+const canvasId = `${uid}-canvas`
+const grainId = `${uid}-grain`
+---
+
+<section
+  class:list={['pt-24 pb-12 lg:pt-28 lg:pb-20 px-4 md:px-6', className]}
+  data-hero
+  style="background: #0a0a0a;"
+>
+  <div class="w-full max-w-7xl mx-auto relative" data-hero-card>
+    <div
+      class:list={[
+        'relative overflow-hidden rounded-[32px] lg:rounded-[48px] flex flex-col items-center justify-center',
+        minHeight,
+      ]}
+      style="border: 1px solid rgba(15,76,58,0.4); background: #0a0a0a;"
+    >
+      <!-- Canvas dithering overlay -->
+      <canvas
+        id={canvasId}
+        class={`absolute inset-0 w-full h-full z-[1] opacity-${canvasOpacity}`}
+        data-dither-canvas
+        data-image-src={imageSrc}
+        data-pixel-size={String(pixelSize)}
+        data-base-speed={String(baseSpeed)}
+        data-hover-speed={String(hoverSpeed)}
+        data-green-blend={String(greenBlend)}
+      ></canvas>
+
+      <!-- Radial vignette for text readability -->
+      <div
+        class="absolute inset-0 z-[2] pointer-events-none"
+        style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 50%, transparent 80%);"
+      ></div>
+
+      <!-- Film grain -->
+      <svg style="position:absolute;width:0;height:0;">
+        <filter id={grainId}>
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+      </svg>
+      <div
+        class="absolute inset-0 z-[3] pointer-events-none opacity-[0.06]"
+        style={`filter: url(#${grainId});`}
+      ></div>
+
+      <!-- Content — centered -->
+      <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-12 lg:py-16 max-w-4xl mx-auto" data-hero-text>
+        {badge && (
+          <div
+            class="inline-flex items-center px-5 py-2 rounded-full mb-8"
+            style="border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); backdrop-filter: blur(8px);"
+          >
+            <span class="font-mono text-[11px] uppercase tracking-[0.15em] text-white/60">{badge}</span>
+          </div>
+        )}
+
+        <h1
+          class="font-sans font-light text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.08] tracking-tight text-white"
+          set:html={title}
+        />
+
+        {body && (
+          <p class="mt-6 font-sans text-sm lg:text-base text-white/50 leading-relaxed max-w-2xl">
+            {body}
+          </p>
+        )}
+
+        <!-- Slot for custom content between body and CTA -->
+        <slot />
+
+        {ctaLabel && ctaHref && (
+          <div class="mt-10">
+            <a
+              href={ctaHref}
+              class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105"
+              style="background-color: var(--color-forest); color: white;"
+            >
+              {ctaLabel}
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        )}
+      </div>
+
+      <!-- Optional footer slot (e.g. sovereignty signal) -->
+      <slot name="footer" />
+    </div>
+  </div>
+</section>
+
+<!-- Scroll parallax -->
+<script>
+  document.querySelectorAll('[data-hero]').forEach((heroSection) => {
+    const heroText = heroSection.querySelector('[data-hero-text]');
+    if (!heroText) return;
+    const heroHeight = heroSection.getBoundingClientRect().height;
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          if (scrollY < heroHeight) {
+            const progress = Math.min(scrollY / (heroHeight * 0.6), 1);
+            (heroText as HTMLElement).style.transform = `translateY(${-scrollY * 0.3}px)`;
+            (heroText as HTMLElement).style.opacity = String(1 - progress);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  });
+</script>
+
+<!-- Bayer 4×4 dither engine — auto-initializes every [data-dither-canvas] on the page -->
+<script>
+  const bayer4x4 = [
+    [ 0/16,  8/16,  2/16, 10/16],
+    [12/16,  4/16, 14/16,  6/16],
+    [ 3/16, 11/16,  1/16,  9/16],
+    [15/16,  7/16, 13/16,  5/16]
+  ];
+
+  function initDither(canvas: HTMLCanvasElement) {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const imageSrc = canvas.dataset.imageSrc || '/images/hero-bg.png';
+    const pixelSize = parseInt(canvas.dataset.pixelSize || '3', 10);
+    const baseSpeed = parseFloat(canvas.dataset.baseSpeed || '0.08');
+    const hoverSpeed = parseFloat(canvas.dataset.hoverSpeed || '0.4');
+    const greenBlend = parseFloat(canvas.dataset.greenBlend || '0.6');
+
+    const card = canvas.closest('[data-hero-card], [data-editorial], [data-cta-card], [data-dither-section]') as HTMLElement;
+    let isHovered = false;
+    let animId: number;
+    let startTime = performance.now();
+
+    const bgImg = new Image();
+    bgImg.crossOrigin = 'anonymous';
+    bgImg.src = imageSrc;
+
+    const offscreen = document.createElement('canvas');
+    const offCtx = offscreen.getContext('2d')!;
+    let imgLoaded = false;
+
+    bgImg.onload = () => { imgLoaded = true; };
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    }
+
+    function render(time: number) {
+      if (!ctx) return;
+      const w = canvas.width;
+      const h = canvas.height;
+      if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
+
+      const elapsed = (time - startTime) / 1000;
+      const speed = isHovered ? hoverSpeed : baseSpeed;
+      const t = elapsed * speed;
+
+      let srcPixels: Uint8ClampedArray | null = null;
+      if (imgLoaded) {
+        offscreen.width = w;
+        offscreen.height = h;
+        offCtx.drawImage(bgImg, 0, 0, w, h);
+        srcPixels = offCtx.getImageData(0, 0, w, h).data;
+      }
+
+      const imageData = ctx.createImageData(w, h);
+      const data = imageData.data;
+      const cols = Math.ceil(w / pixelSize);
+      const rows = Math.ceil(h / pixelSize);
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const centerX = col * pixelSize + (pixelSize >> 1);
+          const centerY = row * pixelSize + (pixelSize >> 1);
+
+          let imgBrightness = 0.3;
+          if (srcPixels && centerX < w && centerY < h) {
+            const sIdx = (centerY * w + centerX) * 4;
+            imgBrightness = (srcPixels[sIdx] * 0.299 + srcPixels[sIdx+1] * 0.587 + srcPixels[sIdx+2] * 0.114) / 255;
+          }
+
+          const cx = col / cols;
+          const cy = row / rows;
+
+          const warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
+          const warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
+
+          const wx = cx + warpX;
+          const wy = cy + warpY;
+          const d1 = Math.sqrt((wx - 0.5) ** 2 + (wy - 0.5) ** 2);
+          const warpIntensity = 0.3 + 0.25 * Math.sin(d1 * 8.0 - t * 2.0) + 0.15 * Math.cos((wx + wy) * 6.0 + t);
+
+          let intensity = imgBrightness * 0.7 + warpIntensity * 0.5;
+          intensity = Math.max(0, Math.min(1, intensity));
+
+          const threshold = bayer4x4[row % 4][col % 4];
+          const on = intensity > threshold;
+
+          let r: number, g: number, b: number, a: number;
+          if (on) {
+            if (srcPixels && centerX < w && centerY < h) {
+              const sIdx = (centerY * w + centerX) * 4;
+              const blend = greenBlend + (1 - greenBlend) * 0.5 * warpIntensity;
+              r = Math.round(srcPixels[sIdx]     * (1 - blend) + 15  * blend);
+              g = Math.round(srcPixels[sIdx + 1] * (1 - blend) + 76  * blend);
+              b = Math.round(srcPixels[sIdx + 2] * (1 - blend) + 58  * blend);
+            } else {
+              r = 15; g = 76; b = 58;
+            }
+            a = Math.round(intensity * 220 + 35);
+          } else {
+            r = 0; g = 0; b = 0; a = 0;
+          }
+
+          for (let py = 0; py < pixelSize; py++) {
+            for (let px = 0; px < pixelSize; px++) {
+              const x = col * pixelSize + px;
+              const y = row * pixelSize + py;
+              if (x >= w || y >= h) continue;
+              const idx = (y * w + x) * 4;
+              data[idx]     = r;
+              data[idx + 1] = g;
+              data[idx + 2] = b;
+              data[idx + 3] = a;
+            }
+          }
+        }
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+      animId = requestAnimationFrame(render);
+    }
+
+    if (card) {
+      card.addEventListener('mouseenter', () => { isHovered = true; });
+      card.addEventListener('mouseleave', () => { isHovered = false; });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          resize();
+          startTime = performance.now();
+          animId = requestAnimationFrame(render);
+        } else {
+          cancelAnimationFrame(animId);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    window.addEventListener('resize', resize);
+    observer.observe(canvas);
+  }
+
+  // Auto-initialize every dither canvas on the page
+  document.querySelectorAll<HTMLCanvasElement>('[data-dither-canvas]').forEach(initDither);
+</script>

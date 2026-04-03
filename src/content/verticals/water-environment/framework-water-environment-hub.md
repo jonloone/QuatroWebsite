@@ -22,19 +22,19 @@ This is a **main vertical landing page** (discovery, wide funnel, breadth). The 
 `FOR WATER AUTHORITIES & ENVIRONMENTAL OPERATORS`
 
 **H1 (5-Second Clarity — "what you deliver", under 8 words core):**
-> One Platform. Every Water Challenge. Total Visibility.
+> One Utility. Every Water Challenge. Total Visibility.
 
 *Framework note: 7 words. Passes the 8-word test. Outcome-focused. "Every Water Challenge" signals breadth across water systems and environmental protection; "Total Visibility" signals real-time operational intelligence.*
 
 **Subheadline (JTBD — names the jobs, buyer self-selects):**
-> Quatro delivers unified operational intelligence that transforms fragmented data across water systems, environmental monitoring, and regulatory compliance into real-time situational awareness, predictive system health, and coordinated environmental protection — all from a single operational command.
+> Quatro delivers unified operational intelligence that connects isolated data across water systems, environmental monitoring, and regulatory compliance into real-time situational awareness, predictive system health, and coordinated environmental protection — all from a single operational command.
 
 **Solution Menu (JTBD — visible above fold):**
-The two named intelligence programs serve as the "jobs" the buyer is hiring the platform to do:
+The two named intelligence programs serve as the "jobs" the buyer is hiring the utility to do:
 - Water System Intelligence — See every pipe. Detect leaks in minutes. Ensure quality compliance.
 - Environmental Compliance — Monitor every source. Automate reporting. Stay ahead of regulations.
 
-*Framework note: Each program is a "job" the buyer hires the platform to do. The buyer scans and self-selects based on their primary operational challenge.*
+*Framework note: Each program is a "job" the buyer hires the utility to do. The buyer scans and self-selects based on their primary operational challenge.*
 
 **Primary CTA (verb-first, 5 words max):**
 `Request a Demo`
@@ -44,7 +44,7 @@ The two named intelligence programs serve as the "jobs" the buyer is hiring the 
 
 **Trust Bar (immediately below hero — non-negotiable per framework):**
 - 1,000+ Vendor Integrations
-- 9,000+ Sensor Connectors
+- 8,000+ Sensor Connectors
 - Real-Time Leak Detection
 - Regulatory Compliance Automation
 - Sovereign, Air-Gapped Capable
@@ -92,7 +92,7 @@ A leak starts in a distribution line serving 50,000 residents. The system operat
 
 Environmental operators face the same asymmetry. A mining operation upstream starts leaching heavy metals into a protected watershed. The environmental authority doesn't detect water quality degradation until it appears in fish kills downstream — weeks later. By then, evidence is degraded, damage is irreversible, and prosecution requires months of manual data assembly.
 
-Quatro eliminates the gap. One platform connects every water meter, every pressure sensor, every water quality monitor, and every environmental data source into a single operational picture — with real-time anomaly detection, predictive leak localization, automated compliance reporting, and full audit trails for enforcement. Operators see problems before they cascade. Regulators see violations before they cause damage.
+Quatro eliminates the gap. One utility connects every water meter, every pressure sensor, every water quality monitor, and every environmental data source into a single operational picture — with real-time anomaly detection, predictive leak localization, automated compliance reporting, and full audit trails for enforcement. Operators see problems before they cascade. Regulators see violations before they cause damage.
 
 *Framework note: The leak story quantifies the cost (water loss, revenue loss, detection time). The environmental story establishes cross-stakeholder value. Prose format per framework instruction. The solution positioning (Quatro eliminates the gap) follows as the resolution.*
 
@@ -128,7 +128,7 @@ Quatro eliminates the gap. One platform connects every water meter, every pressu
 
 ## Section 5 — DELIVERY MODEL (Connect → Operate → Intelligence)
 
-> **Framework rule:** "Production-ready. Not a platform project." Three steps with clear progression. This maps to the landing-page-frameworks "DELIVERY MODEL" slot.
+> **Framework rule:** "Production-ready. Not a utility project." Three steps with clear progression. This maps to the landing-page-frameworks "DELIVERY MODEL" slot.
 
 **Dark section with background overlay.**
 
@@ -141,7 +141,7 @@ Secure multi-source data ingestion, time-series anomaly detection, hydraulic cor
 ### Intelligence — Predictive Action
 Leak localization recommendations. Predictive failure scoring on pipe segments. Automated compliance reporting for SENAGUA, MAE/MAATE, TULSMA. Environmental enforcement packages with evidence trails. Governance-grade audit trails for every detection, every action, every regulatory handoff.
 
-*Framework note: Three-step delivery model mirrors the operational progression from sensing through intelligence. Named architecture layers give the buyer a mental model without requiring technical jargon. Dark section treatment signals "this is the platform depth" — visually separated from the outcome-focused content above.*
+*Framework note: Three-step delivery model mirrors the operational progression from sensing through intelligence. Named architecture layers give the buyer a mental model without requiring technical jargon. Dark section treatment signals "this is the utility depth" — visually separated from the outcome-focused content above.*
 
 ---
 
@@ -169,7 +169,7 @@ The same data that detects leaks in urban systems reveals water quality risks in
 
 **Proof of Value — 90 Days to Operational Intelligence**
 
-90-day proof of value. One utility or one environmental monitoring region. Working platform, baseline detection model, and first actionable intelligence product delivered.
+90-day proof of value. One utility or one environmental monitoring region. Working utility, baseline detection model, and first actionable intelligence product delivered.
 
 **Three-Phase Implementation Pathway:**
 - Phase 1 — Foundation (Weeks 1–4): Data integration and baseline modeling. System connectors activated, historical data ingested, anomaly detection models trained on 30-90 days of baseline.
@@ -218,7 +218,7 @@ Water system intelligence is a core smart cities capability. Municipal water ope
 **Energy & Grid Operations**
 Hydroelectric and thermoelectric systems depend on water availability, temperature, and quality. Water intelligence informs energy forecasting, grid stability, and climate resilience operations.
 
-*Framework note: These adjacencies are acknowledged but not oversold — the page stays focused on water/environmental value proposition. The references position Quatro as a unified intelligence platform where water/environmental expertise is one pillar of broader operational capability.*
+*Framework note: These adjacencies are acknowledged but not oversold — the page stays focused on water/environmental value proposition. The references position Quatro as a unified intelligence utility where water/environmental expertise is one pillar of broader operational capability.*
 
 ---
 
@@ -231,14 +231,14 @@ Hydroelectric and thermoelectric systems depend on water availability, temperatu
 | Metric | Value |
 |---|---|
 | Vendor Integrations | 1,000+ |
-| Sensor Connectors | 9,000+ |
+| Sensor Connectors | 8,000+ |
 | Real-Time Leak Detection | Minutes |
 | SENAGUA Compliance | Automated |
 | MAE/MAATE Compliance | Automated |
 | TULSMA Water Quality Standards | Integrated |
 | Deployment Model | Sovereign — air-gapped capable |
 | Time to Operational Intelligence | Weeks |
-| Platform Uptime | 99.99% |
+| Utility Uptime | 99.99% |
 
 **Footer CTA (mirrors hero):**
 - Primary: `Request a Demo`

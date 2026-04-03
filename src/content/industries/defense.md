@@ -1,13 +1,13 @@
 ---
 title: "Defense"
 tagline: "Mission-Ready Operational Intelligence"
-heroImage: "/images/induistry-defense.png"
-description: "Unified command across physical, cyber, space, and operational domains — purpose-built for air-gapped environments with sovereign deployment, defense-grade compliance, and AI-powered intelligence that operates fully disconnected."
+heroImage: "/images/industry-defense.png"
+description: "When physical, cyber, space, and operational data live in classification-separated systems, decision advantage disappears. Quatro delivers multi-domain operational intelligence purpose-built for air-gapped environments with sovereign deployment and defense-grade compliance."
 order: 2
 hero:
   eyebrow: "Defense"
-  title: "Unified Command. Any Classification. Any Environment."
-  description: "Cross-domain situational awareness spanning physical security, network operations, logistics, and space domain awareness — deployed in weeks with full AI-powered capability in air-gapped environments."
+  title: "Multi-Domain Intelligence. Any Classification."
+  description: "When threat data crosses physical, cyber, space, and operational boundaries, the systems holding it don't. Quatro delivers unified situational awareness in air-gapped environments with sovereign governance — full operational intelligence capability in weeks."
   primaryCta:
     label: "Talk to a Defense Engineer"
     href: "/contact/demo"
@@ -41,9 +41,9 @@ challenges:
     image: "/images/challenge-defense-multi-domain.png"
 capabilities:
   - name: "Air-Gapped Operations"
-    description: "Full AI-powered analytical capability at the tactical edge without cloud connectivity. Intelligent agents that detect, reason, and recommend — fully operational in disconnected environments at IL4/IL5/IL6."
+    description: "Full operational intelligence at the tactical edge without cloud connectivity. Autonomous agents that detect, reason, and recommend — fully operational in disconnected environments at IL4/IL5/IL6."
     featured: true
-    outcome: "Full AI capability. Zero external dependencies."
+    outcome: "Full intelligence capability. Zero external dependencies."
     image: "/images/cap-defense-air-gapped.png"
   - name: "Perimeter Protection"
     description: "AI video analytics with multi-sensor fusion — camera, radar, lidar, and fiber-optic — delivers sub-30-second detection-to-response across distributed installations."
@@ -55,10 +55,10 @@ capabilities:
     featured: true
     outcome: "12+ installations. One command interface."
     image: "/images/cap-defense-federated-command.png"
-  - name: "Automated Force Protection"
-    description: "Pre-defined response playbooks triggered automatically by detected events — escalating alerts, notifying responders, and activating countermeasures."
+  - name: "Governed Autonomous Response"
+    description: "Pre-defined response playbooks triggered automatically by detected events — escalating alerts, notifying responders, and activating countermeasures within defense policies."
     image: "/images/cap-defense-force-protection.png"
-    outcome: "Automated escalation and countermeasure activation."
+    outcome: "Governed escalation and countermeasure activation."
   - name: "Logistics Intelligence: Hours to Minutes"
     description: "Convoy planning, supply chain visibility, and predictive maintenance for deployed assets — all connected to mission readiness. AI-assisted route optimization integrates real-time threat, weather, and vehicle status."
     image: "/images/cap-defense-logistics.png"
@@ -68,17 +68,17 @@ capabilities:
     image: "/images/cap-defense-compliance.png"
     outcome: "Complete chain-of-command audit trail."
   - name: "Space Domain Awareness"
-    description: "Multi-source intelligence for orbital awareness — satellite tracking, conjunction assessment, and space weather impact correlated with ground operations. Ground to orbit, one intelligence network."
+    description: "Multi-source intelligence for orbital awareness — satellite tracking, conjunction assessment, and space weather impact correlated with ground operations. Ground to orbit, one intelligence utility."
     outcome: "Ground to orbit in one operational picture."
     image: "/images/cap-defense-space-domain.png"
   - name: "National Security Intelligence"
     description: "Purpose-built applications for counter-narcotics, resource protection, border security, and youth vulnerability assessment. Cross-domain correlation connects physical, signals, financial, and social intelligence."
     image: "/images/cap-defense-national-intel.png"
     outcome: "Multi-agency intelligence for sovereign security."
-platformMapping:
-  see: "Multi-sensor ingestion for cameras, radar, lidar, fiber-optic, seismic, and RF sensors. Satellite telemetry and space surveillance data ingestion. STANAG support for NATO interoperability. Edge processing for air-gapped environments."
-  understand: "Real-time operational model with object detection, classification, and tracking. Multi-sensor fusion reduces false alarms by 80%. AI-powered intelligence agents that operate fully in air-gapped environments. Anomaly detection across all monitored domains with predictive intelligence."
-  orchestrate: "Cross-domain orchestration spanning installation security, cyber, logistics, and space. Federated command across distributed locations. Automated force protection playbooks. Role-based workspaces for commander, watch officer, analyst, and responder roles."
+integrations:
+  connect: "Multi-sensor ingestion for cameras, radar, lidar, fiber-optic, seismic, and RF sensors. Satellite telemetry and space surveillance data ingestion. STANAG support for NATO interoperability. Edge processing for air-gapped environments."
+  understand: "Real-time operational model with object detection, classification, and tracking. Multi-sensor fusion reduces false alarms by 80%. Autonomous agents that deliver operational intelligence fully in air-gapped environments. Anomaly detection across all monitored domains with predictive intelligence."
+  orchestrate: "Cross-domain orchestration spanning installation security, cyber, logistics, and space. Federated command across distributed locations. Governed autonomous response playbooks. Role-based workspaces for commander, watch officer, analyst, and responder roles."
 proofPoint:
   industry: "Defense — Installation Security"
   headline: "15,000-Acre Installation Transformation"
@@ -89,7 +89,7 @@ proofPoint:
       label: "Detection-to-Response"
     - value: "5→1"
       label: "Systems Consolidated"
-  narrative: "A 15,000-acre military installation replaced 5 legacy physical security systems with Quatro. AI-assisted perimeter monitoring reduced guard force requirements by 60% while achieving sub-30-second detection-to-response. Multi-sensor fusion reduced false alarms by 80%, restoring operator trust and response effectiveness. The intelligence network now extends from installation security to national intelligence operations, with space domain awareness capabilities connecting ground-based and orbital situational awareness."
+  narrative: "A 15,000-acre military installation replaced 5 legacy physical security systems with Quatro's operational intelligence utility. Perimeter monitoring reduced guard force requirements by 60% while achieving sub-30-second detection-to-response. Multi-sensor fusion reduced false alarms by 80%, restoring operator trust and response effectiveness. The intelligence utility now extends from installation security to national intelligence operations, with space domain awareness capabilities connecting ground-based and orbital situational awareness."
 cta:
   primary:
     label: "Talk to a Defense Engineer"
@@ -97,5 +97,5 @@ cta:
   secondary:
     label: "Request a Defense Brief"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll assess your current security posture and demonstrate how unified command delivers multi-domain operational awareness without requiring network consolidation. 4-week proof of value · Air-gapped capable"
+  microcopy: "Typical assessment: 45-60 minutes. We'll assess your current security posture and show how to connect and get intelligence — multi-domain operational awareness without network consolidation. 4-week proof of value · Air-gapped capable"
 ---

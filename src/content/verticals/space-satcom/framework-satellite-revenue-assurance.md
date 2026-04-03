@@ -86,7 +86,7 @@ Revenue assurance in satellite has been a back-office financial function, not an
 
 The structural problem is the time lag. Billing data latency of 12–48 hours means the revenue assurance team is always looking backward. By the time you discover that a customer was overcharged, weeks have passed. By the time you identify that an SLA was breached, the dispute window has narrowed. By the time you realize that a transponder is sitting idle, the capacity planning cycle has moved on.
 
-Real-time revenue assurance requires operational and financial data to be unified instantly — not as end-of-month reconciliation, but as real-time visibility into which customers are using which capacity, which SLAs are at risk, and which transponders are underutilized. This requires a platform that connects ground segment operations (which has the utilization data) to the billing system (which owns the revenue) in real time. Historically, these are separate systems built by different vendors with no integration pathway.
+Real-time revenue assurance requires operational and financial data to be unified instantly — not as end-of-month reconciliation, but as real-time visibility into which customers are using which capacity, which SLAs are at risk, and which transponders are underutilized. This requires a utility that connects ground segment operations (which has the utilization data) to the billing system (which owns the revenue) in real time. Historically, these are separate systems built by different vendors with no integration pathway.
 
 *Framework note: Pain is quantified with eight specific data points, including unrecovered revenue leakage (1–3% for SLA disputes, 2–5% for underutilized capacity). Named systems and time lags are structural factors the buyer recognizes.*
 
@@ -94,7 +94,7 @@ Real-time revenue assurance requires operational and financial data to be unifie
 
 ## Section 3 — HOW IT WORKS (Operational, Not Architectural)
 
-> **Framework rule:** Don't explain the platform. Explain what changes day-to-day. Show before/after workflow. Name the source systems that connect. Describe what the team sees on Monday morning.
+> **Framework rule:** Don't explain the utility. Explain what changes day-to-day. Show before/after workflow. Name the source systems that connect. Describe what the team sees on Monday morning.
 
 ### Capability 1 — Real-Time Transponder Utilization Tracking
 

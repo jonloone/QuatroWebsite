@@ -7,7 +7,7 @@ order: 19
 hero:
   eyebrow: "Regulatory Compliance"
   title: "Compliance That Runs Continuously — Not Once a Quarter."
-  description: "AML monitoring lives in one system. Credit loss modeling in another. Stress testing builds its own reconciliation. Quatro unifies the data foundation across all regulatory requirements with full audit-trail lineage."
+  description: "AML monitoring lives in one system. Credit loss modeling in another. Stress testing builds its own reconciliation. Quatro's operational intelligence utility unifies the data foundation across all regulatory requirements with full audit-trail lineage."
   primaryCta:
     label: "Schedule a Compliance Assessment"
     href: "/contact/demo"

@@ -1,11 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import Section from '@/components/marketing/Section.astro'
-import EditorialOutcome from '@/components/marketing/EditorialOutcome.astro'
-import CapabilityBento from '@/components/marketing/CapabilityBento.astro'
-import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
+import CapabilityIndex from '@/components/marketing/CapabilityIndex.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
 
 export async function getStaticPaths() {
@@ -22,55 +20,26 @@ const { title, tagline, description, hero, heroImage, capabilities, stats, proof
 
 const ctaPrimary = cta?.primary || { label: 'Schedule an Assessment', href: '/contact/demo' }
 const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/contact/sales' }
-
-// Build the editorial outcome statement from the hero description
-const outcomeStatement = hero.description
-  ? hero.description.replace(
-      /(AI-powered|unified|real-time|operational intelligence|operational visibility|modernize|overlay)/i,
-      '<span style="color: var(--color-forest);">$1</span>'
-    )
-  : description
 ---
 
 <MarketingLayout
   title={`${title} — ${tagline}`}
   description={description}
 >
-  <Hero
-    variant="dark"
-    eyebrow={hero.eyebrow}
+  <HeroCanvas
+    badge={hero.eyebrow}
     title={hero.title}
-    description={hero.description}
-    primaryCta={hero.primaryCta}
-    secondaryCta={hero.secondaryCta}
-    backgroundImage={heroImage}
+    body={hero.description}
+    ctaLabel={hero.primaryCta?.label || 'Schedule an Assessment'}
+    ctaHref={hero.primaryCta?.href || '/contact/demo'}
+    imageSrc={heroImage || '/images/hero-bg.png'}
   />
 
-  <!-- Editorial Outcome Statement -->
-  <EditorialOutcome
-    statement={outcomeStatement}
-    description={description}
-    stats={stats}
-  />
-
-  <!-- Capabilities — Dark Bento Grid -->
-  <CapabilityBento
-    title="How Quatro Helps"
-    subtitle={`Purpose-built for ${title.toLowerCase()} operations — measured by outcomes, not features.`}
+  <!-- Capabilities — Large-type editorial index -->
+  <CapabilityIndex
+    title="Capabilities"
     capabilities={capabilities}
   />
-
-  <!-- Proof Point -->
-  {proofPoint && (
-    <Section divider>
-      <ProofPointCard
-        industryLabel={proofPoint.industry}
-        headline={proofPoint.headline}
-        narrative={proofPoint.narrative}
-        metrics={proofPoint.metrics}
-      />
-    </Section>
-  )}
 
   <DualCta
     title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like on your ${title.toLowerCase()} infrastructure.`}

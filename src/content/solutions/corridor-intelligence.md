@@ -7,7 +7,7 @@ order: 14
 hero:
   eyebrow: "Corridor Intelligence"
   title: "Optimize Flow. Detect Incidents. Secure Corridors."
-  description: "Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border security across highway corridors. When an accident occurs 200 km from the border, the intelligence network detects it sub-minute, optimizes alternate routes, and coordinates with border authorities on logistics impact."
+  description: "Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border security across highway corridors. When an accident occurs 200 km from the border, the intelligence utility detects it sub-minute, optimizes alternate routes, and coordinates with border authorities on logistics impact."
   primaryCta:
     label: "Request a Corridor Briefing"
     href: "/contact/demo"

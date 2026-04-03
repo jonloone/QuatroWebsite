@@ -2,14 +2,12 @@
 title: Industrial
 tagline: Cross-Domain Plant Intelligence
 heroImage: /images/industry-industrial.png
-description: Plant floor to enterprise, one intelligence layer. AI-powered operational intelligence that correlates production, maintenance, quality, and safety data — reducing downtime by 35%, predicting
-  quality outcomes before batch completion, and guiding operators through complex situations with contextual intelligence.
+description: When SCADA, DCS, MES, and ERP systems each hold a different version of what's happening on the plant floor, quality issues and downtime patterns cross system boundaries undetected. Quatro connects them into one operational intelligence layer — predictive maintenance, quality correlation, and governed operator guidance.
 order: 3
 hero:
   eyebrow: Industrial
-  title: Plant Floor to Enterprise. One Intelligence Layer.
-  description: Stop toggling between historians, MES, and maintenance systems. Unified operational intelligence correlates across SCADA, DCS, PLC, MES, and ERP — surfacing insights that siloed tools structurally
-    cannot detect.
+  title: One Intelligence Layer. Plant Floor to Enterprise.
+  description: When historians, MES, and maintenance systems each describe the plant differently, the correlations that predict failures stay invisible. Connect them to Quatro and get unified operational intelligence — insights that siloed tools structurally cannot surface, production-ready in weeks.
   primaryCta:
     label: Schedule a Plant Assessment
     href: /contact/demo
@@ -44,7 +42,7 @@ capabilities:
   featured: true
   outcome: 2-4 week advance warning. $125K/hr downtime avoided.
   image: /images/cap-industrial-predictive-maint.png
-- name: AI-Powered Operator Guidance
+- name: Governed Autonomous Action
   description: Real-time contextual recommendations during complex situations — simultaneous equipment alerts, quality deviations, production constraints. Step-by-step guidance based on historical patterns
     and process relationships.
   featured: true
@@ -61,7 +59,7 @@ capabilities:
   outcome: 22% OEE improvement through root-cause visibility.
 - name: Cross-Domain Correlation
   description: AI analyzes relationships between maintenance, process parameters, quality, energy, and logistics simultaneously. Pattern recognition surfaces emerging issues before threshold alerts fire.
-  image: /images/cap-industrial-quality.png
+  image: /images/cap-industrial-cross-domain.png
   outcome: Cross-domain patterns no single system can see.
 - name: Real-Time Operational Model
   description: Living digital model that understands asset relationships, service dependencies, and production flows. Reduce trial batches by 40% through virtual process optimization.
@@ -76,10 +74,10 @@ capabilities:
   outcome: Enterprise-wide visibility across all plants.
   image: /images/cap-industrial-multi-plant.png
 platformMapping:
-  see: 9,000+ connectors for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss.
-  understand: AI-powered intelligence for predictive maintenance, OEE tracking, quality prediction, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold
+  see: 8,000+ integrations for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss.
+  understand: Operational intelligence utility for predictive maintenance, OEE tracking, quality prediction, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold
     alerts fire. Real-time operational models enable simulation and scenario planning. 80% fewer false alarms through relationship-aware intelligence.
-  orchestrate: Multi-plant coordination and automated incident response. Resource dispatch based on real-time demand, location, and skill requirements.
+  orchestrate: Multi-plant coordination and governed autonomous action. Resource dispatch based on real-time demand, location, and skill requirements.
 proofPoint:
   industry: Industrial — Chemical Manufacturing
   headline: Multi-Plant Safety & Efficiency Transformation

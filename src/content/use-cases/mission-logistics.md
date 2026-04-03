@@ -7,7 +7,7 @@ order: 3
 hero:
   eyebrow: "Supply Chain & Deployment Readiness"
   title: "Mission Logistics & Force Readiness"
-  description: "Cut critical supply response from 13 hours to 6. Federate 12+ forward operating bases into a single logistics intelligence network."
+  description: "Cut critical supply response from 13 hours to 6. Federate 12+ forward operating bases into a single logistics intelligence utility."
   primaryCta:
     label: "Schedule a Defense Assessment"
     href: "/contact/defense-assessment"
@@ -106,7 +106,7 @@ Machine learning forecasts logistics needs before crisis occurs:
 - Model transport delays and proactively reroute shipments
 - Alert commanders to readiness risks days in advance
 
-### Automated Fulfillment Workflows
+### Automated Fulfillment Workflows (Governed Autonomous Action)
 When a supply need is detected:
 - System automatically searches inventory across all FOBs
 - Prioritizes fulfillment based on commander-defined rules and mission urgency

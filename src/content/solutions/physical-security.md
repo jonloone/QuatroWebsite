@@ -1,13 +1,13 @@
 ---
 title: "Physical Security"
-tagline: "AI-Powered Threat Detection"
+tagline: "Intelligent Threat Detection"
 heroImage: "/images/solution-physical-security.png"
-description: "Unified physical security with AI video analytics and multi-sensor fusion that reduces false alarms by 80% and delivers sub-30-second incident response."
+description: "Unified physical security with intelligent video analytics and multi-sensor fusion that reduces false alarms by 80% and delivers sub-30-second incident response."
 order: 4
 hero:
   eyebrow: "Physical Security"
   title: "Detect Threats. Respond Instantly."
-  description: "Transform passive surveillance into proactive security with AI-powered analytics, multi-sensor fusion, and automated response orchestration."
+  description: "Transform passive surveillance into proactive security with intelligent analytics, multi-sensor fusion, and governed autonomous response orchestration."
   primaryCta:
     label: "Schedule a Security Assessment"
     href: "/contact/demo"
@@ -35,16 +35,16 @@ challenges:
 capabilities:
   - name: "Perimeter Monitoring"
     description: "Multi-sensor detection using radar, lidar, thermal cameras, and fiber-optic sensing with AI-driven verification before alerting."
-  - name: "AI Video Analytics"
+  - name: "Intelligent Video Analytics"
     description: "Object detection, behavior recognition, and anomaly detection at the edge — identifying threats before they escalate."
   - name: "Access Control Integration"
     description: "Unified credential management with video verification and cross-domain intelligence for complete identity awareness."
   - name: "Incident Response Automation"
-    description: "AI-assisted playbooks that coordinate alarms, notifications, camera repositioning, and field dispatch in seconds. Intelligent agents assess multi-domain impact — connecting a security event to operational exposure, asset risk, and business impact simultaneously."
+    description: "Governed autonomous playbooks that coordinate alarms, notifications, camera repositioning, and field dispatch in seconds. Intelligent assessment of multi-domain impact — connecting a security event to operational exposure, asset risk, and business impact simultaneously."
   - name: "Satellite & Geospatial Intelligence"
-    description: "Monitor remote assets and corridors using satellite imagery and AI-based change detection for coverage at geographic scale."
-  - name: "OT-Security Convergence"
-    description: "Correlate physical security events with SCADA data, cyber alerts, and operational context for unified threat assessment across domains. For defense and government applications, extends to national security intelligence — connecting physical security to border operations, counter-narcotics, and resource protection."
+    description: "Monitor remote assets and corridors using satellite imagery and intelligent change detection for coverage at geographic scale."
+  - name: "Operational Intelligence Convergence"
+    description: "Correlate physical security events with operational data, cyber alerts, and operational context for unified threat assessment across domains. For defense and government applications, extends to national security intelligence — connecting physical security to border operations, counter-narcotics, and resource protection."
 proofPoint:
   industry: "Energy — Transmission & Distribution"
   headline: "Substation & Pipeline Security"

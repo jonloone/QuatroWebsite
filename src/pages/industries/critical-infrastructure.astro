@@ -1,123 +1,161 @@
 ---
+import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import Section from '@/components/marketing/Section.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import HubIconStrip from '@/components/marketing/HubIconStrip.astro'
+import IndustryHubCard from '@/components/marketing/IndustryHubCard.astro'
+import CapabilityIndex from '@/components/marketing/CapabilityIndex.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 
-const domains = [
-  {
-    name: 'Cities & Municipal',
-    description: 'Unified operational intelligence for smart city operations — traffic management, public safety, utilities coordination, and municipal service delivery. Connect siloed city systems into a single command picture.',
-    href: '/industries/cities',
-    solutions: [
-      { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
-      { name: 'Physical Security', href: '/solutions/physical-security' },
-      { name: 'Asset Health', href: '/solutions/asset-health' },
-    ],
-  },
-  {
-    name: 'Water & Environment',
-    description: 'Leak detection, water quality monitoring, and environmental compliance intelligence. Quatro connects SCADA, IoT sensors, and regulatory systems to protect water networks and natural resources.',
-    href: '/industries/water-environment',
-    solutions: [
-      { name: 'Water Systems', href: '/solutions/water-systems' },
-      { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
-    ],
-  },
-  {
-    name: 'Transportation',
-    description: 'Port, airport, and corridor intelligence — unified visibility across cargo flows, passenger operations, and transportation networks. Real-time situational awareness for the systems that move people and goods.',
-    href: '/industries/transportation',
-    solutions: [
-      { name: 'Port Operations', href: '/solutions/port-operations' },
-      { name: 'Airport Operations', href: '/solutions/airport-operations' },
-      { name: 'Corridor Intelligence', href: '/solutions/corridor-intelligence' },
-    ],
-  },
-  {
-    name: 'Infrastructure',
-    description: 'Critical infrastructure protection for utilities, telecommunications, and essential services. Quatro provides unified monitoring, threat detection, and compliance across distributed infrastructure assets.',
-    href: '/industries/infrastructure',
-    solutions: [
-      { name: 'Pipeline Integrity', href: '/solutions/pipeline-integrity' },
-      { name: 'Asset Health', href: '/solutions/asset-health' },
-      { name: 'Fleet & Logistics', href: '/solutions/fleet-logistics' },
-    ],
-  },
+const allIndustries = await getCollection('industries')
+const childSlugs = ['cities', 'water-environment', 'transportation']
+const children = childSlugs
+  .map((slug) => allIndustries.find((i) => i.id === slug || i.id === `${slug}.md`))
+  .filter(Boolean)
+
+// Insights & case studies
+const allInsights = await getCollection('insights')
+const allCaseStudies = await getCollection('case-studies')
+
+// Map relevant content per domain
+const domainContent: Record<string, { type: 'insight' | 'case-study'; title: string; excerpt: string; href: string; heroImage?: string; category?: string }[]> = {
+  cities: [
+    ...allInsights
+      .filter((i) => {
+        const t = (i.data.tags?.join(' ') + ' ' + i.data.title).toLowerCase()
+        return t.includes('city') || t.includes('cities') || t.includes('urban') || t.includes('municipal') || t.includes('public safety')
+      })
+      .map((i) => ({ type: 'insight' as const, title: i.data.title, excerpt: i.data.excerpt, href: `/insights/${i.id.replace(/\.md$/, '')}`, heroImage: i.data.heroImage, category: i.data.category.replace('-', ' ') })),
+    ...allCaseStudies
+      .filter((c) => c.data.industryLabel.toLowerCase().includes('infrastructure'))
+      .map((c) => ({ type: 'case-study' as const, title: c.data.title, excerpt: c.data.excerpt, href: `/case-studies/${c.id.replace(/\.md$/, '')}`, category: 'case study' })),
+  ].slice(0, 2),
+  'water-environment': [
+    ...allInsights
+      .filter((i) => {
+        const t = (i.data.tags?.join(' ') + ' ' + i.data.title).toLowerCase()
+        return t.includes('water') || t.includes('environment') || t.includes('utility') || t.includes('compliance')
+      })
+      .map((i) => ({ type: 'insight' as const, title: i.data.title, excerpt: i.data.excerpt, href: `/insights/${i.id.replace(/\.md$/, '')}`, heroImage: i.data.heroImage, category: i.data.category.replace('-', ' ') })),
+  ].slice(0, 2),
+  transportation: [
+    ...allInsights
+      .filter((i) => {
+        const t = (i.data.tags?.join(' ') + ' ' + i.data.title).toLowerCase()
+        return t.includes('transport') || t.includes('port') || t.includes('airport') || t.includes('logistics') || t.includes('corridor')
+      })
+      .map((i) => ({ type: 'insight' as const, title: i.data.title, excerpt: i.data.excerpt, href: `/insights/${i.id.replace(/\.md$/, '')}`, heroImage: i.data.heroImage, category: i.data.category.replace('-', ' ') })),
+  ].slice(0, 2),
+}
+
+// Fallback: general infra content for domains with nothing specific
+const generalContent = [
+  ...allInsights
+    .filter((i) => {
+      const t = (i.data.tags?.join(' ') + ' ' + i.data.title + ' ' + (i.data.industry || '')).toLowerCase()
+      return t.includes('infrastructure') || t.includes('scada') || t.includes('predictive')
+    })
+    .map((i) => ({ type: 'insight' as const, title: i.data.title, excerpt: i.data.excerpt, href: `/insights/${i.id.replace(/\.md$/, '')}`, heroImage: i.data.heroImage, category: i.data.category.replace('-', ' ') })),
+  ...allCaseStudies
+    .filter((c) => c.data.industryLabel.toLowerCase().includes('infrastructure'))
+    .map((c) => ({ type: 'case-study' as const, title: c.data.title, excerpt: c.data.excerpt, href: `/case-studies/${c.id.replace(/\.md$/, '')}`, category: 'case study' })),
 ]
+
+// Fill empty domain content with general
+for (const slug of childSlugs) {
+  if (!domainContent[slug] || domainContent[slug].length === 0) {
+    domainContent[slug] = generalContent.slice(0, 2)
+  }
+}
+
+// Gather featured capabilities across child industries
+const featuredCapabilities = children.flatMap((child) =>
+  child.data.capabilities
+    .filter((c) => c.featured)
+    .map((c) => ({ ...c, industry: child.data.title }))
+)
+const extraCapabilities = children.flatMap((child) =>
+  child.data.capabilities
+    .filter((c) => !c.featured)
+    .slice(0, 2)
+    .map((c) => ({ ...c, industry: child.data.title }))
+)
+const allCapabilities = [...featuredCapabilities, ...extraCapabilities].slice(0, 6)
+
+// Grab first available proof point from child industries
+const infraProof = children.find((c) => c.data.proofPoint)?.data.proofPoint
+
+const domainSolutions: Record<string, { name: string; href: string }[]> = {
+  cities: [
+    { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
+    { name: 'Physical Security', href: '/solutions/physical-security' },
+    { name: 'Asset Health', href: '/solutions/asset-health' },
+  ],
+  'water-environment': [
+    { name: 'Water Systems', href: '/solutions/water-systems' },
+    { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
+  ],
+  transportation: [
+    { name: 'Port Operations', href: '/solutions/port-operations' },
+    { name: 'Airport Operations', href: '/solutions/airport-operations' },
+    { name: 'Corridor Intelligence', href: '/solutions/corridor-intelligence' },
+  ],
+}
 ---
 
 <MarketingLayout
   title="Critical Infrastructure — Cities, Water, Transportation & Built Environment"
   description="Intelligence for the systems cities and nations depend on — water networks, transportation corridors, municipal operations, and the built environment."
 >
-  <Hero
-    variant="dark"
-    eyebrow="Critical Infrastructure"
+  <HeroCanvas
+    badge="Critical Infrastructure"
     title="Intelligence for the Systems That Cities Depend On"
-    description="Water networks, transportation corridors, municipal operations — Quatro connects the siloed systems that keep critical infrastructure running."
-    primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
+    body="Water networks, transportation corridors, municipal operations — Quatro connects siloed infrastructure systems into a single operational picture."
+    ctaLabel="Schedule an Assessment"
+    ctaHref="/contact/demo"
+    imageSrc="/images/industry-cities.png"
   />
 
+  <!-- Hub breadth icons -->
+  <HubIconStrip items={[
+    { label: 'Cities', icon: 'M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z' },
+    { label: 'Water & Environment', icon: 'M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418' },
+    { label: 'Transportation', icon: 'M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12' },
+    { label: 'SCADA & IoT', icon: 'M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z' },
+    { label: 'GIS & Sensors', icon: 'M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z' },
+  ]} />
+
+  <!-- DOMAIN CARDS -->
   <Section>
-    <div class="grid gap-8 md:grid-cols-2">
-      {domains.map((domain) => (
-        <div class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm flex flex-col">
-          <h2 class="font-display text-xl font-bold text-neutral-800">{domain.name}</h2>
-          <p class="mt-3 text-sm text-neutral-600 leading-relaxed flex-1">{domain.description}</p>
-          <div class="mt-6">
-            <h3 class="font-display text-xs font-semibold text-neutral-400 uppercase tracking-wider mb-2">
-              Solutions
-            </h3>
-            <ul class="space-y-1.5">
-              {domain.solutions.map((sol) => (
-                <li>
-                  <a
-                    href={sol.href}
-                    class="group flex items-center gap-2 text-sm text-neutral-700 hover:text-brand-600"
-                  >
-                    <span class="h-1.5 w-1.5 rounded-full bg-brand-400 group-hover:bg-brand-600" />
-                    {sol.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <a
-            href={domain.href}
-            class="mt-6 inline-flex items-center font-display text-sm font-semibold text-brand-500 hover:underline"
-          >
-            Explore {domain.name} &rarr;
-          </a>
-        </div>
-      ))}
+    <div class="space-y-6">
+      {children.map((child, i) => {
+        const slug = child.id.replace(/\.md$/, '')
+        return (
+          <IndustryHubCard
+            title={child.data.title}
+            description={child.data.tagline}
+            href={`/industries/${slug}`}
+            heroImage={child.data.heroImage}
+            solutions={domainSolutions[slug] || []}
+            reverse={i % 2 === 1}
+          />
+        )
+      })}
     </div>
   </Section>
 
-  <!-- Public sector callout -->
-  <Section divider dark>
-    <div class="mx-auto max-w-3xl text-center">
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-4">Public Sector</p>
-      <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">
-        Built for Regulated Environments
-      </h2>
-      <p class="mt-4 text-lg text-white/70 leading-relaxed">
-        On-premise or sovereign cloud. Compliance-ready architecture for municipal, state, and federal requirements. Quatro integrates with your existing SCADA, GIS, and BMS systems — no rip-and-replace.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-white/50">
-        <span>NERC CIP Ready</span>
-        <span>&middot;</span>
-        <span>SOC 2 Type II</span>
-        <span>&middot;</span>
-        <span>On-Premise Deployment</span>
-      </div>
-    </div>
-  </Section>
+  <!-- CAPABILITIES INDEX -->
+  <CapabilityIndex
+    title="Capabilities"
+    capabilities={allCapabilities}
+  />
 
-  <CtaBanner
-    title="See Quatro for Critical Infrastructure"
-    description="Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
+  <DualCta
+    title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like on your critical infrastructure.`}
+    description="Pick one infrastructure challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
     primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
     secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    microcopy="4-week proof of value · Credited toward annual contract"
   />
 </MarketingLayout>

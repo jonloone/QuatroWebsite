@@ -1,0 +1,70 @@
+---
+interface Capability {
+  name: string
+  description: string
+  outcome?: string
+  tier?: string
+}
+
+interface Props {
+  title?: string
+  subtitle?: string
+  capabilities: Capability[]
+  class?: string
+}
+
+const {
+  title,
+  subtitle,
+  capabilities,
+  class: className,
+} = Astro.props
+---
+
+<section class:list={['py-20 lg:py-28 px-6', className]} style="border-top: 1px solid var(--color-structure);">
+  <div class="mx-auto max-w-6xl">
+
+    {title && (
+      <div class="mb-16 fade-up">
+        <h2 class="font-display text-xl font-bold" style="color: var(--color-forest);">
+          {title}
+        </h2>
+        {subtitle && (
+          <p class="mt-4 font-sans text-lg leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )}
+
+    <!-- Capability rows -->
+    {capabilities.map((cap, index) => (
+      <div
+        class="group grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16 py-10 lg:py-14 fade-up"
+        style={`border-top: 1px solid var(--color-structure);${index === capabilities.length - 1 ? ' border-bottom: 1px solid var(--color-structure);' : ''}`}
+      >
+        <!-- Left: number + name -->
+        <div>
+          <span class="font-mono text-xs" style="color: var(--color-neutral-400);">
+            [{String(index + 1).padStart(2, '0')}]
+          </span>
+          <h3 class="mt-3 font-display text-2xl lg:text-3xl font-bold leading-tight" style="color: var(--color-neutral-800);">
+            {cap.name}
+          </h3>
+        </div>
+
+        <!-- Right: description + outcome -->
+        <div class="flex flex-col justify-center">
+          <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
+            {cap.description}
+          </p>
+          {cap.outcome && (
+            <p class="mt-4 font-display text-lg font-bold" style="color: var(--color-forest);">
+              {cap.outcome}
+            </p>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

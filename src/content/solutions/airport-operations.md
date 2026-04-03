@@ -7,7 +7,7 @@ order: 13
 hero:
   eyebrow: "Airport Operations"
   title: "Optimize Runways. Flow Passengers. Secure Perimeters."
-  description: "Real-time operational intelligence that coordinates runway scheduling, passenger flow, baggage system health, and perimeter security into a single airport operations picture. When an aircraft is 30 minutes from landing, the intelligence network predicts gate availability, queues ground equipment, and synchronizes operations across the terminal."
+  description: "Real-time operational intelligence that coordinates runway scheduling, passenger flow, baggage system health, and perimeter security into a single airport operations picture. When an aircraft is 30 minutes from landing, the intelligence utility predicts gate availability, queues ground equipment, and synchronizes operations across the terminal."
   primaryCta:
     label: "Request an Airport Briefing"
     href: "/contact/demo"

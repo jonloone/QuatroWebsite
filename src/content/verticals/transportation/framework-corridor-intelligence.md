@@ -30,7 +30,7 @@ This is a **vertical-specific solution sub-page** (evaluation, narrow focus, dep
 > Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border/security coordination across highway corridors — eliminating congestion, preventing accidents, optimizing logistics routing, and detecting contraband movement before crossing jurisdictional boundaries.
 
 **Hook line (the "scene the buyer can picture"):**
-> When a traffic accident occurs on the Pan-American Highway 200 km from the border, the platform immediately detects the incident from camera and sensor data, alerts emergency response with precise GPS coordinates, optimizes alternate routes for 500+ vehicles already in the corridor, notifies customs of the delay, and coordinates with border authorities on the impact to cross-border logistics. One platform. Coordinated response. Incident to resolution becomes 60 minutes instead of 6 hours.
+> When a traffic accident occurs on the Pan-American Highway 200 km from the border, the utility immediately detects the incident from camera and sensor data, alerts emergency response with precise GPS coordinates, optimizes alternate routes for 500+ vehicles already in the corridor, notifies customs of the delay, and coordinates with border authorities on the impact to cross-border logistics. One utility. Coordinated response. Incident to resolution becomes 60 minutes instead of 6 hours.
 
 **Primary CTA:**
 `Request a Corridor Operations Briefing`
@@ -110,7 +110,7 @@ Each domain produces intelligence independently. All connect through a single fu
 **What the team sees:** Suspicious vehicle movement patterns detected (dark vehicles, coordinated convoy timing, repeated route usage). Cargo characteristics flagged (unusual weight-to-volume ratios, concealment indicators). Behavioral anomalies in driver routing (unusual stops, bypass of legitimate checkpoints). Correlation with known smuggling patterns and organizations. Border intelligence feeds to customs inspection priorities.
 **What outcome it drives:** Contraband interdiction increases significantly. High-risk vehicles identified before reaching border. Smuggling organizations' routing patterns disrupted.
 
-*Framework note: Four capabilities, each as "What connects → What the team sees → What outcome it drives." Every description is operational — the buyer pictures their team using the intelligence, not configuring a platform. Named source systems (CCTV, inductive loops, GPS, toll systems, customs databases) are real technologies corridor operators recognize.*
+*Framework note: Four capabilities, each as "What connects → What the team sees → What outcome it drives." Every description is operational — the buyer pictures their team using the intelligence, not configuring a utility. Named source systems (CCTV, inductive loops, GPS, toll systems, customs databases) are real technologies corridor operators recognize.*
 
 ---
 
@@ -124,7 +124,7 @@ Not four separate monitoring systems running in parallel — one corridor system
 
 **The Incident Response Scenario (primary proof of concept):**
 
-When a traffic incident is detected on a monitored corridor segment, the platform does not generate a traffic alert and stop. It automatically:
+When a traffic incident is detected on a monitored corridor segment, the utility does not generate a traffic alert and stop. It automatically:
 1. Queries the **traffic domain** for incident severity, alternate route capacity, and emergency response ETA
 2. Checks the **border domain** for customs staffing impact, cross-border logistics delays, and pre-notification to border authorities
 3. Correlates with **logistics domain** for shipment ETAs affected, warehouse receiving windows impacted, and customer notification requirements
@@ -153,13 +153,13 @@ The result is not four separate alerts to four separate agencies. It is one oper
 > **Framework rule:** 2-3 objections woven as confident statements, not FAQ.
 
 **Objection 1: "Highway authorities, border authorities, and logistics companies won't share real-time data"**
-> The platform connects to what each authority is already willing to share — traffic sensor data is highway authority's operational data; border crossing logs are customs' administrative data; shipment status is logistics' operational data. Data governance is separate per agency. The platform fuses these separate streams into a corridor intelligence picture without requiring any authority to cede control over their data domain.
+> The utility connects to what each authority is already willing to share — traffic sensor data is highway authority's operational data; border crossing logs are customs' administrative data; shipment status is logistics' operational data. Data governance is separate per agency. The utility fuses these separate streams into a corridor intelligence picture without requiring any authority to cede control over their data domain.
 
 **Objection 2: "We've tried corridor coordination before and it failed — agencies won't work together"**
-> Automated workflows replace manual coordination. Traffic authorities see incident detection + route optimization recommendations. Border authorities see pre-notification of logistics flows + risk alerts. Logistics operators see ETA updates + corridor incident status. The platform handles coordination; each agency focuses on their mission. Role-based dashboards ensure each team sees only their scope. Coordination is workflow-driven, not politics-driven.
+> Automated workflows replace manual coordination. Traffic authorities see incident detection + route optimization recommendations. Border authorities see pre-notification of logistics flows + risk alerts. Logistics operators see ETA updates + corridor incident status. The utility handles coordination; each agency focuses on their mission. Role-based dashboards ensure each team sees only their scope. Coordination is workflow-driven, not politics-driven.
 
 **Objection 3: "Cross-border traffic volumes are too high for real-time monitoring"**
-> The platform is designed for high-volume, continuous operations — 5,000+ km corridors, 10,000+ vehicles/day, 24/7 monitoring. Vehicle classification and behavioral analysis run on edge-deployed systems (at toll plazas, checkpoints, monitoring stations) to reduce bandwidth requirements. Only anomalies and summaries flow back to central intelligence. You start with the corridor volume you have; system scales with growth.
+> The utility is designed for high-volume, continuous operations — 5,000+ km corridors, 10,000+ vehicles/day, 24/7 monitoring. Vehicle classification and behavioral analysis run on edge-deployed systems (at toll plazas, checkpoints, monitoring stations) to reduce bandwidth requirements. Only anomalies and summaries flow back to central intelligence. You start with the corridor volume you have; system scales with growth.
 
 *Framework note: Three objections mapped to the corridor buyer's specific concerns — inter-agency data sharing, coordination failure history, and scale. Each resolved in 2-3 confident sentences. No "FAQ" label.*
 

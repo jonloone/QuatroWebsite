@@ -1,0 +1,135 @@
+---
+/**
+ * IndustryHubCard — Alternating horizontal domain card with dither canvas.
+ *
+ * Light card: one side has a dithered image with title overlay,
+ * the other side lists capabilities / solutions in larger type.
+ * Pass `reverse` to flip the image to the right.
+ */
+interface Solution {
+  name: string
+  href: string
+}
+
+interface Stat {
+  value: string
+  label: string
+}
+
+interface Props {
+  title: string
+  description: string
+  href: string
+  heroImage?: string
+  stats?: Stat[]
+  solutions?: Solution[]
+  /** Flip the card — image on the right, content on the left */
+  reverse?: boolean
+  /** @deprecated — ignored, kept for backward compatibility */
+  layout?: 'landscape' | 'portrait'
+  class?: string
+}
+
+const {
+  title,
+  description,
+  href,
+  heroImage,
+  stats = [],
+  solutions = [],
+  reverse = false,
+  class: className,
+} = Astro.props
+
+const uid = `hub-${Math.random().toString(36).slice(2, 8)}`
+const canvasId = `${uid}-canvas`
+---
+
+<a
+  href={href}
+  class:list={[
+    'group relative block overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow-lg transition-shadow fade-up',
+    className,
+  ]}
+  data-dither-section
+>
+  <div class:list={[
+    'grid grid-cols-1 lg:grid-cols-2',
+    reverse && 'lg:[direction:rtl]',
+  ]}>
+    <!-- IMAGE SIDE — dithered canvas with title overlay -->
+    <div class="relative h-72 lg:h-auto lg:min-h-[360px] overflow-hidden" style={reverse ? 'direction:ltr' : ''}>
+      <!-- Dither canvas overlay — light touch, image shows through -->
+      <canvas
+        id={canvasId}
+        class="absolute inset-0 w-full h-full z-[1] opacity-40"
+        data-dither-canvas
+        data-image-src={heroImage || '/images/hero-bg.png'}
+        data-pixel-size="2"
+        data-base-speed="0.04"
+        data-hover-speed="0.25"
+        data-green-blend="0.25"
+      ></canvas>
+
+      <!-- The actual image underneath -->
+      {heroImage ? (
+        <img
+          src={heroImage}
+          alt=""
+          class="absolute inset-0 h-full w-full object-cover z-[0]"
+          aria-hidden="true"
+        />
+      ) : null}
+
+      <!-- Bottom gradient for title legibility -->
+      <div
+        class="absolute inset-0 z-[2] pointer-events-none"
+        style="background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 40%, transparent 65%);"
+      ></div>
+
+      <!-- Title overlay -->
+      <div class="absolute inset-0 z-10 flex items-end p-8 lg:p-10">
+        <h3 class="font-sans font-light text-3xl lg:text-4xl tracking-tight text-white leading-snug">
+          {title}
+        </h3>
+      </div>
+    </div>
+
+    <!-- CONTENT SIDE — description + capabilities -->
+    <div
+      class="flex flex-col justify-center p-8 lg:p-14"
+      style={reverse ? 'direction:ltr' : ''}
+    >
+      <p class="text-lg lg:text-xl leading-relaxed text-neutral-500 max-w-lg">
+        {description}
+      </p>
+
+      {solutions.length > 0 && (
+        <div class="mt-8 space-y-4">
+          <span class="font-mono text-[10px] uppercase tracking-[0.12em] text-neutral-400">
+            Capabilities
+          </span>
+          <ul class="space-y-3">
+            {solutions.map((sol) => (
+              <li class="flex items-center gap-3 text-lg text-neutral-700 group-hover:text-neutral-900 transition-colors">
+                <span
+                  class="w-1.5 h-1.5 rounded-full shrink-0"
+                  style="background-color: var(--color-forest);"
+                ></span>
+                {sol.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <div class="mt-10 inline-flex items-center gap-2 font-mono text-sm uppercase tracking-[0.08em] transition-colors duration-300"
+           style="color: var(--color-forest);">
+        Explore {title}
+        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</a>

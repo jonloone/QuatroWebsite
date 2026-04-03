@@ -22,7 +22,7 @@ This is a **main vertical landing page** (discovery, wide funnel, breadth). The 
 `FOR SATELLITE & SPACE OPERATORS`
 
 **H1 (5-Second Clarity — "what you deliver", under 8 words core):**
-> One Platform. Every Orbit. Total Assurance.
+> One Utility. Every Orbit. Total Assurance.
 
 *Framework note: 6 words. Passes the 8-word test. Outcome-focused. Cannot be mistaken for a generic cloud platform — "Every Orbit" signals GEO + NGSO capability, "Total Assurance" signals reliability and business continuity.*
 
@@ -30,13 +30,13 @@ This is a **main vertical landing page** (discovery, wide funnel, breadth). The 
 > Quatro delivers unified operational intelligence for satellite ground segments, fleet operations, revenue assurance, and space domain awareness — transforming fragmented monitoring tools and separate M&C/OSS/BSS systems into real-time operational visibility, predictive anomaly detection, and coordinated command and control across the entire constellation.
 
 **Solution Menu (JTBD — visible above fold):**
-The four named solution areas serve as the "jobs" the buyer is hiring the platform to do:
+The four named solution areas serve as the "jobs" the buyer is hiring the utility to do:
 - Teleport & Ground Segment Operations — Real-time monitoring of antennas, RF systems, VSAT hubs, modems across all vendors
 - Fleet Health & Multi-Orbit Management — Constellation monitoring, anomaly detection, predictive maintenance across GEO and NGSO
 - Satellite Revenue Assurance — Transponder utilization, capacity optimization, SLA reconciliation, billing correlation
 - Space Domain Awareness — Orbital risk, conjunction assessment, multi-source ISR, mission impact
 
-*Framework note: Each solution is a "job" the buyer hires the platform to do. The buyer scans and self-selects.*
+*Framework note: Each solution is a "job" the buyer hires the utility to do. The buyer scans and self-selects.*
 
 **Primary CTA (verb-first, 5 words max):**
 `Request a Demo`
@@ -46,13 +46,13 @@ The four named solution areas serve as the "jobs" the buyer is hiring the platfo
 
 **Trust Bar (immediately below hero — non-negotiable per framework):**
 - 7,000+ Ground Segment Connectors
-- 9,000+ Integrations Across 1,000+ Vendors
+- 8,000+ Integrations Across 1,000+ Vendors
 - SatOps Teleport Technology of the Year 2026
-- 99.99% Platform Uptime
+- 99.99% Utility Uptime
 - Air-Gapped & Sovereign Deployment
 
 **Microcopy near CTA:**
-> Built on Skyline DataMiner SatOps — the award-winning satellite operations platform trusted by Orange and leading global operators.
+> Built on Skyline DataMiner SatOps — the award-winning satellite operations utility trusted by Orange and leading global operators.
 
 ### Hero Checklist Compliance
 - [x] H1 passes the 5-second test (what: unified operations, who: satellite operators, why: total assurance)
@@ -96,7 +96,7 @@ But what happened in that 30 minutes? The customer connected to 7B experienced s
 
 This is not one incident. This is the operational reality across satellite enterprises worldwide. Fragmented systems mean fragmented visibility. Fragmented visibility means reactive response. Reactive response means revenue loss, SLA breaches, and operational inefficiency that compounds across every ground station, every constellation, and every mission.
 
-Quatro eliminates the gap. One platform connects every ground segment sensor, every fleet monitoring system, every billing and revenue system, and every space domain awareness feed into a single unified operational picture — with real-time anomaly detection, predictive impact assessment, and automated response orchestration that spans from the RF layer to the financial layer.
+Quatro eliminates the gap. One utility connects every ground segment sensor, every fleet monitoring system, every billing and revenue system, and every space domain awareness feed into a single unified operational picture — with real-time anomaly detection, predictive impact assessment, and automated response orchestration that spans from the RF layer to the financial layer.
 
 *Framework note: Agitation quantifies the asymmetry — a 30-minute outage cascades across disconnected systems, creating revenue loss that isn't even visible until hours later. Solution is positioned as the resolution (PAS "Solution" beat). Prose format per framework instruction.*
 
@@ -167,13 +167,13 @@ Quatro eliminates the gap. One platform connects every ground segment sensor, ev
 | 03 | Revenue & Capacity Intelligence | Transponder utilization and capacity optimization. SLA monitoring and breach prediction. Billing correlation and revenue leakage detection. |
 | 04 | Space Domain Awareness | Orbital risk and conjunction assessment. Multi-source ISR integration. Threat-to-asset-to-mission correlation. Coordinated defense response. |
 
-*Framework note: Card grid provides scanning breadth. Each domain is a capability the platform covers — reinforcing the "Every Orbit" hero promise. Numbers signal completeness and rigor.*
+*Framework note: Card grid provides scanning breadth. Each domain is a capability the utility covers — reinforcing the "Every Orbit" hero promise. Numbers signal completeness and rigor.*
 
 ---
 
 ## Section 6 — DELIVERY MODEL (Visibility → Operations → Intelligence)
 
-> **Framework rule:** "Production-ready. Not a platform project." Three steps with SLA promise. This maps to the landing-page-frameworks "DELIVERY MODEL (SLA section)" slot.
+> **Framework rule:** "Production-ready. Not a utility project." Three steps with SLA promise. This maps to the landing-page-frameworks "DELIVERY MODEL (SLA section)" slot.
 
 **Dark section with background overlay.**
 
@@ -181,12 +181,12 @@ Quatro eliminates the gap. One platform connects every ground segment sensor, ev
 7,000+ connectors across 1,000+ vendors — antennas, RF equipment, VSAT hubs, modems, spectrum analyzers, satellite telemetry systems. All ground infrastructure becomes machine-readable operational data. Real-time ingestion with sub-minute latency.
 
 ### Operations — Unified Intelligence Engine
-Streaming analytics and correlation engine ingests all ground segment data, fleet telemetry, and space domain feeds. Real-time anomaly detection. Predictive algorithms trained on satellite-specific patterns. Automated alarming and threshold management. Digital twin models for each asset and service.
+Streaming analytics and correlation engine ingests all ground segment data, fleet telemetry, and space domain feeds. Real-time anomaly detection. Predictive algorithms trained on satellite-specific patterns. Automated alarming and threshold management. Real-time operational models for each asset and service.
 
 ### Intelligence — Orchestrated Response
 Autonomous agents detect anomalies and recommend actions. Provisioning and service activation workflows orchestrate across systems. Command and control interface arms operators with the context they need to make fast, confident decisions. Full audit trail for compliance and forensics.
 
-*Framework note: Three-step delivery model mirrors "Connect → Build → Operate" from the landing-page framework. Named architecture layers give the buyer a mental model without requiring technical jargon. Dark section treatment signals "this is the platform depth" — visually separated from the outcome-focused content above.*
+*Framework note: Three-step delivery model mirrors "Connect → Build → Operate" from the landing-page framework. Named architecture layers give the buyer a mental model without requiring technical jargon. Dark section treatment signals "this is the utility depth" — visually separated from the outcome-focused content above.*
 
 ---
 
@@ -206,7 +206,7 @@ The same data that monitors ground segment health also predicts fleet maintenanc
 
 **Space Domain Awareness → Teleport Operations:** A conjunction event might require maintenance on antenna pointing systems or spectrum analyzers. Space domain awareness that flows into ground operations scheduling prevents overlapping maintenance windows and reduces unplanned downtime.
 
-> Start with one capability. Connect them all. The same unified platform that monitors your ground segments also manages your fleet, protects your revenue, and enables you to navigate space domain challenges. A satellite operations picture emerges not from a single deployment, but from the accumulation of intelligence across domains — each capability enriching the others, each data source compounding the value of every other.
+> Start with one capability. Connect them all. The same unified utility that monitors your ground segments also manages your fleet, protects your revenue, and enables you to navigate space domain challenges. A satellite operations picture emerges not from a single deployment, but from the accumulation of intelligence across domains — each capability enriching the others, each data source compounding the value of every other.
 
 *Framework note: This is the compound value / knowledge graph section adapted for satellite operations. The four cross-links demonstrate structural compound value — each domain makes the others more accurate and valuable. The tagline mirrors the canonical "Start with one. Connect them all." pattern.*
 
@@ -273,10 +273,10 @@ Quatro's approach to satellite operations differs fundamentally from point-solut
 | Metric | Value |
 |---|---|
 | Ground Segment Connectors | 7,000+ |
-| Integrations Across Vendors | 9,000+ across 1,000+ vendors |
+| Integrations Across Vendors | 8,000+ across 1,000+ vendors |
 | Teleport Technology Award | 2026 (Skyline DataMiner SatOps) |
 | Customer Reference | Orange (production deployment) |
-| Platform Uptime | 99.99% |
+| Utility Uptime | 99.99% |
 | Deployment Models | Cloud, Hybrid, Self-Managed, Air-Gapped |
 | Anomaly Detection Latency | Sub-minute |
 | Orbit Coverage | GEO, LEO, MEO, NGSO |
@@ -301,7 +301,7 @@ Quatro's approach to satellite operations differs fundamentally from point-solut
 | Compound value | Connected Solutions section with four cross-links showing interdependency | ✅ |
 | Delivery model | Visibility/Operations/Intelligence architecture, clear three-step | ✅ |
 | Technical language | Zero architecture jargon in hero; technical depth in delivery section only | ✅ |
-| Vendor-agnosticism | "9,000+ integrations across 1,000+ vendors" mentioned in hero and trust bar | ✅ |
+| Vendor-agnosticism | "8,000+ integrations across 1,000+ vendors" mentioned in hero and trust bar | ✅ |
 | Deployment flexibility | Sovereign and air-gapped deployment explicitly stated | ✅ |
 | Defense adjacency | Space domain awareness and defense capability chain established | ✅ |
 

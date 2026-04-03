@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
 import Section from '@/components/marketing/Section.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 
 const caseStudies = (await getCollection('case-studies-es')).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99))
 ---
@@ -52,10 +52,11 @@ const caseStudies = (await getCollection('case-studies-es')).sort((a, b) => (a.d
     </div>
   </Section>
 
-  <CtaBanner
-    title="¿Listo para Escribir su Historia de Éxito?"
-    description="Descubra cómo Quatro puede transformar sus operaciones."
-    primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Hable con un Ingeniero', href: '/es/contact/sales' }}
+  <DualCta
+    title={`Vea cómo la <span style="color: var(--color-forest);">inteligencia operacional</span> funciona en su operación.`}
+    description="Elija un desafío. Desplegamos en sus sistemas en 4 semanas. Vea el valor antes de comprometerse."
+    primaryCta={{ label: 'Solicitar Evaluación', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hablar con un Ingeniero', href: '/es/contact/sales' }}
+    microcopy="Prueba de valor de 4 semanas · Acreditado en contrato anual"
   />
 </MarketingLayout>

@@ -2,12 +2,12 @@
 title: "Claims Classification"
 tagline: "Reduce Underwriter Load. Accelerate Processing."
 heroImage: "/images/solution-claims-classification.png"
-description: "ML-powered claims classification that predicts accept/reject decisions with confidence scoring — routing high-confidence claims past underwriter review entirely."
+description: "When every claim routes through the same manual underwriting queue regardless of complexity, straightforward decisions consume the same time and cost as genuine edge cases. Quatro's Claims Classification scores confidence automatically — routing high-confidence claims past underwriter review entirely."
 order: 21
 hero:
   eyebrow: "Claims Classification"
   title: "High-Confidence Claims Don't Need an Underwriter."
-  description: "Claims Classification ingests historical claims data and external signals to predict accept/reject decisions with confidence scoring. High-confidence claims bypass underwriter review — cutting processing time and cost."
+  description: "Claims Classification ingests historical claims data and external signals to predict accept/reject decisions with confidence scoring. High-confidence claims bypass underwriter review entirely — cutting processing time and cost."
   primaryCta:
     label: "Schedule an Insurance Assessment"
     href: "/contact/demo"
@@ -33,7 +33,7 @@ challenges:
   - title: "Processing Cost Pressure"
     description: "Volume-driven claims operations need to reduce per-claim cost without sacrificing accuracy. Manual review of every claim is unsustainable at scale."
 capabilities:
-  - name: "ML-Powered Accept/Reject Prediction"
+  - name: "Intelligent Accept/Reject Prediction"
     description: "Train models on historical claims data combined with external signals to predict the outcome of each incoming claim with a confidence score and reasoning."
     featured: true
     outcome: "High-confidence claims bypass underwriter review entirely."

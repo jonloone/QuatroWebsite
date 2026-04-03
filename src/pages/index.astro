@@ -2,6 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import FloatingPaths from '@/components/ui/FloatingPaths'
 import { getCollection } from 'astro:content'
 const insights = (await getCollection('insights'))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
@@ -9,70 +11,30 @@ const insights = (await getCollection('insights'))
 ---
 
 <BaseLayout
-  title="Quatro — Systems That Think. People Who Build."
-  description="Quatro unifies your entire operation into one intelligence picture — so the people behind your infrastructure stop managing data and start building what's next."
+  title="Quatro — Connect to Quatro. Your Operations Become Intelligent."
+  description="Quatro is the operational intelligence utility. Connect your operations and get real-time visibility, predictive intelligence, and governed autonomous action — deployed your way."
   lang="en"
 >
 
   <SiteHeader lang="en" />
 
   <!-- ═══════════════════════════════════════════════════════════════
-       1. HERO — Dithering Card
+       1. HERO — Dithering Card (via HeroCanvas component)
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="pt-24 pb-12 lg:pt-28 lg:pb-20 px-4 md:px-6" data-hero style="background: #0a0a0a;">
-    <div class="w-full max-w-7xl mx-auto relative" data-hero-card>
-      <div class="relative overflow-hidden rounded-[32px] lg:rounded-[48px] min-h-[600px] md:min-h-[700px] flex flex-col items-center justify-center" style="border: 1px solid rgba(15,76,58,0.4); background: #0a0a0a;">
-
-        <!-- Canvas dithering overlay — samples hero-bg.png -->
-        <canvas id="hero-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-85"></canvas>
-
-        <!-- Dark center vignette for text readability -->
-        <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 50%, transparent 80%);"></div>
-
-        <!-- Film grain -->
-        <svg style="position:absolute;width:0;height:0;">
-          <filter id="hero-grain-filter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" />
-            <feColorMatrix type="saturate" values="0" />
-          </filter>
-        </svg>
-        <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.06]" style="filter: url(#hero-grain-filter);"></div>
-
-        <!-- Content — centered -->
-        <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 lg:py-24 max-w-4xl mx-auto">
-
-          <!-- Badge -->
-          <div class="inline-flex items-center px-5 py-2.5 rounded-full mb-10" style="border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); backdrop-filter: blur(8px);">
-            <span class="font-mono text-[11px] uppercase tracking-[0.15em] text-white/60">Quatro</span>
-          </div>
-
-          <!-- H1 -->
-          <h1 class="font-sans font-light text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight text-white">
-            Systems That Think.<br />
-            <span class="text-white/60">People Who Build.</span>
-          </h1>
-
-          <!-- Subhead -->
-          <p class="mt-8 font-sans text-base lg:text-lg text-white/50 leading-relaxed max-w-2xl">
-            Quatro unifies your entire operation into one intelligence picture — so the operators, engineers, and decision-makers behind your infrastructure stop managing data and start building what's next.
-          </p>
-
-          <!-- CTA — single primary per StoryBrand -->
-          <div class="mt-10">
-            <a
-              href="/contact/demo"
-              class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105"
-              style="background-color: var(--color-forest); color: white;"
-            >
-              Schedule an Assessment
-              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <HeroCanvas
+    badge="Quatro"
+    title='Connect to Quatro.<br/><span class="text-white/60">Your operations become intelligent.</span>'
+    body="Every pipeline, grid, fleet, and facility generates data. But data isn't intelligence. Connect to Quatro and get real-time visibility, predictive reasoning, and governed autonomous action — deployed your way, governed for trust."
+    ctaLabel="Schedule an Assessment"
+    ctaHref="/contact/demo"
+    imageSrc="/images/hero-bg.png"
+    pixelSize={3}
+    baseSpeed={0.1}
+    hoverSpeed={0.5}
+    greenBlend={0.75}
+    canvasOpacity={85}
+    minHeight="min-h-[480px] md:min-h-[560px]"
+  />
 
   <!-- ═══════════════════════════════════════════════════════════════
        2. INDUSTRIES — Palantir-style vertical list
@@ -88,7 +50,7 @@ const insights = (await getCollection('insights'))
       <a href="/industries/energy" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up mt-16" style="border-top: 1px solid var(--color-structure);">
         <div>
           <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Overlay modernization for grid, pipeline, and production operations. Modern analytics on legacy SCADA — months, not years.</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Connect pipeline, grid, and production operations. Predictive intelligence on legacy SCADA — intelligence flowing in weeks, not years.</p>
         </div>
         <div class="text-right lg:text-right">
           <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Energy</span>
@@ -99,7 +61,7 @@ const insights = (await getCollection('insights'))
       <a href="/industries/national-security" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
         <div>
           <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Unified command across physical, cyber, and intelligence domains. Sovereign deployment. Air-gapped capable.</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Multi-domain operational intelligence with sovereign deployment. Air-gapped capable. Governed and auditable.</p>
         </div>
         <div class="text-right lg:text-right">
           <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">National Security</span>
@@ -110,7 +72,7 @@ const insights = (await getCollection('insights'))
       <a href="/industries/networks" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
         <div>
           <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Unified operations from ground to orbit. Terrestrial, satellite, and hybrid connectivity in one intelligence network.</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Operational intelligence from ground to orbit. Terrestrial, satellite, and hybrid connectivity — one view, one intelligence layer.</p>
         </div>
         <div class="text-right lg:text-right">
           <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Networks</span>
@@ -132,7 +94,7 @@ const insights = (await getCollection('insights'))
       <a href="/industries/finance" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
         <div>
           <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Intelligence products that unify the 15–30 systems your bank already operates. Production-ready in weeks.</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Connect the 15–30 systems your institution already operates. Operational intelligence production-ready in weeks.</p>
         </div>
         <div class="text-right lg:text-right">
           <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Finance</span>
@@ -142,164 +104,122 @@ const insights = (await getCollection('insights'))
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       3. THE NETWORK — Utility-framing: connect to intelligence already built
+       3. THE UTILITY — Intelligence pillars, how it works, proof stories
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 px-6" style="background: var(--color-neutral-50, #fafafa); border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
+  <section class="relative py-24 lg:py-32 px-6 overflow-hidden" style="background: #0a0a0a;">
+    <!-- Animated background paths -->
+    <div class="absolute inset-0 opacity-60">
+      <FloatingPaths client:visible />
+    </div>
+    <div class="relative z-10 mx-auto max-w-6xl">
 
       <!-- Editorial lead -->
-      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-8 fade-up" style="color: var(--color-forest);">The Network</p>
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.15] tracking-tight fade-up" style="color: var(--color-neutral-800);">
-        One network. <span style="color: var(--color-neutral-400);">Complete intelligence.</span>
+      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-8 fade-up" style="color: var(--color-forest);">The Intelligence Utility</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.15] tracking-tight text-white fade-up">
+        You don't build your own intelligence stack. <span class="text-white/40">You connect to one.</span>
       </h2>
-
-      <p class="mt-8 font-sans text-lg leading-relaxed max-w-3xl fade-up" style="color: var(--color-neutral-600);">
-        Most platforms connect your systems. Some analyze your data. This network does both — simultaneously — because operational intelligence without business context is just monitoring, and business intelligence without operational data is just reporting.
+      <p class="mt-6 font-sans text-lg lg:text-xl leading-relaxed max-w-3xl text-white/50 fade-up">
+        Quatro connects to your existing infrastructure — SCADA, IoT, ERP, every operational system — and intelligence flows. Real-time visibility, predictive reasoning, governed autonomous action. Intelligence that compounds with every system you connect.
       </p>
 
-      <!-- Unified SVG Connection Diagram — single network, two properties -->
-      <div class="mt-16 lg:mt-20 fade-up">
-        <svg viewBox="0 0 960 240" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-4xl mx-auto" role="img" aria-label="Your systems connect to the Quatro intelligence network, which provides both operational intelligence and enterprise meaning, producing industry outcomes">
-
-          <!-- Left node: Your Systems -->
-          <rect x="16" y="40" width="180" height="110" rx="12" stroke="#CBD5E1" stroke-width="1.5" fill="white"/>
-          <text x="106" y="72" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" letter-spacing="0.1em" fill="#94A3B8">YOUR SYSTEMS</text>
-          <text x="106" y="96" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#64748B">SCADA · IoT · PLCs</text>
-          <text x="106" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#64748B">ERP · CRM · Billing</text>
-          <text x="106" y="132" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#64748B">Cloud · Edge · On-prem</text>
-
-          <!-- Connection line left -->
-          <line x1="196" y1="95" x2="278" y2="95" stroke="#0f4c3a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
-          <polygon points="274,90 284,95 274,100" fill="#0f4c3a" opacity="0.4"/>
-
-          <!-- Center node: The Intelligence Network (unified) -->
-          <rect x="284" y="10" width="392" height="170" rx="16" stroke="#0f4c3a" stroke-width="2" fill="#0f4c3a" fill-opacity="0.04"/>
-          <text x="480" y="38" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" letter-spacing="0.1em" fill="#0f4c3a">THE INTELLIGENCE NETWORK</text>
-          <line x1="310" y1="50" x2="650" y2="50" stroke="#0f4c3a" stroke-width="0.5" opacity="0.12"/>
-
-          <!-- Left property: Operational Intelligence -->
-          <text x="390" y="72" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7.5" letter-spacing="0.08em" fill="#0f4c3a" opacity="0.5">OPERATIONAL INTELLIGENCE</text>
-          <circle cx="310" cy="90" r="2.5" fill="#0f4c3a" opacity="0.3"/>
-          <text x="320" y="94" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">9,000+ native integrations</text>
-          <circle cx="310" cy="110" r="2.5" fill="#0f4c3a" opacity="0.3"/>
-          <text x="320" y="114" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Pre-built operational workflows</text>
-          <circle cx="310" cy="130" r="2.5" fill="#0f4c3a" opacity="0.3"/>
-          <text x="320" y="134" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Intelligent alarming</text>
-
-          <!-- Divider line -->
-          <line x1="480" y1="64" x2="480" y2="168" stroke="#0f4c3a" stroke-width="0.5" opacity="0.1"/>
-
-          <!-- Right property: Enterprise Meaning -->
-          <text x="576" y="72" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7.5" letter-spacing="0.08em" fill="#0f4c3a" opacity="0.5">ENTERPRISE MEANING</text>
-          <circle cx="500" cy="90" r="2.5" fill="#0f4c3a" opacity="0.3"/>
-          <text x="510" y="94" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Governed definitions</text>
-          <circle cx="500" cy="110" r="2.5" fill="#0f4c3a" opacity="0.3"/>
-          <text x="510" y="114" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Cross-domain reasoning</text>
-          <circle cx="500" cy="130" r="2.5" fill="#0f4c3a" opacity="0.3"/>
-          <text x="510" y="134" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.65">Financial + operational context</text>
-
-          <!-- Compound value line -->
-          <text x="480" y="162" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7" letter-spacing="0.06em" fill="#0f4c3a" opacity="0.3">EACH SERVICE CONNECTS TO EVERY OTHER THROUGH A SHARED FOUNDATION</text>
-
-          <!-- Status indicator -->
-          <circle cx="648" cy="34" r="4" fill="#0f4c3a" opacity="0.5"/>
-
-          <!-- Connection line right -->
-          <line x1="676" y1="95" x2="758" y2="95" stroke="#0f4c3a" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
-          <polygon points="754,90 764,95 754,100" fill="#0f4c3a" opacity="0.4"/>
-
-          <!-- Right node: Industry Outcomes -->
-          <rect x="764" y="40" width="180" height="110" rx="12" stroke="#0f4c3a" stroke-width="1.5" fill="#0f4c3a" fill-opacity="0.06"/>
-          <text x="854" y="72" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" letter-spacing="0.1em" fill="#0f4c3a">OUTCOMES</text>
-          <text x="854" y="96" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#0f4c3a" opacity="0.8">Fewer false alarms</text>
-          <text x="854" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#0f4c3a" opacity="0.8">Faster incident response</text>
-          <text x="854" y="132" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11.5" fill="#0f4c3a" opacity="0.8">One intelligence picture</text>
-
-        </svg>
-      </div>
-
-      <!-- Fused narrative — single description, not two columns -->
-      <div class="mt-14 lg:mt-16 fade-up" style="border-top: 1px solid var(--color-structure); padding-top: 2rem;">
-        <p class="font-sans text-base leading-relaxed max-w-3xl" style="color: var(--color-neutral-600);">
-          The network connects to your existing infrastructure through 9,000+ native integrations. It ingests operational signals in real time. And it interprets every signal through a governed model built for your industry — so when an anomaly fires, your team doesn't just see the alert. They see which asset is affected, which customers are impacted, which SLAs are at risk, and what to do about it. Built for the systems and vendors your operation already depends on.
-        </p>
-        <p class="mt-4 font-sans text-sm" style="color: var(--color-neutral-400);">
-          Each intelligence service connects to every other through a shared foundation — so the more you connect, the more you see.
-        </p>
-      </div>
-
-      <!-- Proof metrics strip -->
-      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 fade-up" style="border-top: 1px solid var(--color-structure); padding-top: 1.5rem;">
+      <!-- Intelligence pillars — what Quatro does, not what it connects to -->
+      <div class="mt-20 lg:mt-24 grid grid-cols-1 sm:grid-cols-2 gap-y-16 gap-x-12 lg:gap-x-16 fade-up">
         <div>
-          <span class="font-display text-2xl lg:text-3xl font-light" style="color: var(--color-neutral-800);">9,000+</span>
-          <p class="font-sans text-xs mt-1" style="color: var(--color-neutral-500);">Native integrations</p>
-        </div>
-        <div>
-          <span class="font-display text-2xl lg:text-3xl font-light" style="color: var(--color-neutral-800);">1,000+</span>
-          <p class="font-sans text-xs mt-1" style="color: var(--color-neutral-500);">Vendors supported</p>
-        </div>
-        <div>
-          <span class="font-display text-2xl lg:text-3xl font-light" style="color: var(--color-neutral-800);">125+</span>
-          <p class="font-sans text-xs mt-1" style="color: var(--color-neutral-500);">Countries deployed</p>
-        </div>
-        <div>
-          <span class="font-display text-2xl lg:text-3xl font-light" style="color: var(--color-neutral-800);">Weeks</span>
-          <p class="font-sans text-xs mt-1" style="color: var(--color-neutral-500);">To production</p>
-        </div>
-      </div>
-
-      <!-- Anonymized proof stories -->
-      <div class="mt-10 grid sm:grid-cols-3 gap-6 fade-up" style="border-top: 1px solid var(--color-structure); padding-top: 1.5rem;">
-        <div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-forest);">National Communications Provider</p>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">98% of infrastructure unified on one network. 5,000+ devices. Siloed tools and manual workflows replaced with real-time unified operations.</p>
-        </div>
-        <div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-forest);">National Infrastructure Operator</p>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">14,000 elements. 7,000 services. Equipment provisioning reduced from months to weeks. Critical event procedures from months of development to hours.</p>
-        </div>
-        <div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-2" style="color: var(--color-forest);">National Broadband Operator</p>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">4 million devices monitored. Half a billion KPIs tracked continuously. 20,000 fewer customer site visits per year through proactive intelligence.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       4. THE PLAN — StoryBrand 3-step buyer plan
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-16 lg:py-24 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-8 fade-up" style="color: var(--color-forest);">How It Works</p>
-
-      <div class="grid sm:grid-cols-3 gap-8 lg:gap-12 fade-up">
-        <!-- Step 1 -->
-        <div>
-          <span class="font-display text-4xl lg:text-5xl font-light" style="color: var(--color-forest); opacity: 0.3;">01</span>
-          <h3 class="mt-3 font-sans text-lg font-medium" style="color: var(--color-neutral-800);">Connect</h3>
-          <p class="mt-2 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-            Pick the system that costs you the most to operate. We connect it to the intelligence network — your infrastructure, your data, your control.
+          <svg class="w-8 h-8 mb-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+          </svg>
+          <h3 class="font-sans font-light text-2xl lg:text-3xl tracking-tight text-white leading-snug">
+            Real-time visibility
+          </h3>
+          <p class="mt-4 font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-md">
+            8,000+ integrations across 1,000+ vendors. Every signal validated, enriched, and contextualized. One screen instead of fifteen. Real-time instead of yesterday's report.
           </p>
         </div>
-        <!-- Step 2 -->
         <div>
-          <span class="font-display text-4xl lg:text-5xl font-light" style="color: var(--color-forest); opacity: 0.3;">02</span>
-          <h3 class="mt-3 font-sans text-lg font-medium" style="color: var(--color-neutral-800);">Prove</h3>
-          <p class="mt-2 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-            Four weeks. Measurable results on your stack before you commit. The proof of value is credited toward your contract.
+          <svg class="w-8 h-8 mb-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+          </svg>
+          <h3 class="font-sans font-light text-2xl lg:text-3xl tracking-tight text-white leading-snug">
+            Predictive intelligence
+          </h3>
+          <p class="mt-4 font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-md">
+            Domain-trained intelligence models forecast failures before they happen. Automated root cause analysis. Intelligence grounded in your operational reality — not generic AI guesses.
           </p>
         </div>
-        <!-- Step 3 -->
         <div>
-          <span class="font-display text-4xl lg:text-5xl font-light" style="color: var(--color-forest); opacity: 0.3;">03</span>
-          <h3 class="mt-3 font-sans text-lg font-medium" style="color: var(--color-neutral-800);">Expand</h3>
-          <p class="mt-2 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-            Each new intelligence service reveals cross-domain capabilities no single service could produce alone. The network gets smarter as you connect more.
+          <svg class="w-8 h-8 mb-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+          </svg>
+          <h3 class="font-sans font-light text-2xl lg:text-3xl tracking-tight text-white leading-snug">
+            Governed autonomous action
+          </h3>
+          <p class="mt-4 font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-md">
+            Cross the gap from copilot to autonomous operations. Every action bounded, auditable, and provably correct. Full accountability from data through reasoning through action.
+          </p>
+        </div>
+        <div>
+          <svg class="w-8 h-8 mb-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+          <h3 class="font-sans font-light text-2xl lg:text-3xl tracking-tight text-white leading-snug">
+            Intelligence compounds
+          </h3>
+          <p class="mt-4 font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-md">
+            Each new system you connect makes every other system smarter. Production-grade intelligence in weeks, not quarters. Deploy cloud, hybrid, or air-gapped.
           </p>
         </div>
       </div>
+
+      <!-- How it works — streamlined 3-step strip -->
+      <div class="mt-20 lg:mt-24 fade-up" style="border-top: 1px solid rgba(255,255,255,0.06);">
+        <p class="font-mono text-xs uppercase tracking-[0.1em] pt-10 mb-8" style="color: var(--color-forest);">How It Works</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-10">
+          <div class="flex items-start gap-4">
+            <span class="font-mono text-sm shrink-0 mt-1" style="color: var(--color-forest);">01</span>
+            <div>
+              <p class="font-sans text-lg lg:text-xl font-medium text-white">Connect</p>
+              <p class="mt-1 font-sans text-sm leading-relaxed text-white/35">Sensors, SCADA, cameras, meters, fleet systems — connect the physical world into a single operational model. We deploy hardware if you need it. Data flows from day one.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="font-mono text-sm shrink-0 mt-1" style="color: var(--color-forest);">02</span>
+            <div>
+              <p class="font-sans text-lg lg:text-xl font-medium text-white">Prove</p>
+              <p class="mt-1 font-sans text-sm leading-relaxed text-white/35">Four weeks. Measurable results before you commit. PoV investment credited toward your contract.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="font-mono text-sm shrink-0 mt-1" style="color: var(--color-forest);">03</span>
+            <div>
+              <p class="font-sans text-lg lg:text-xl font-medium text-white">Expand</p>
+              <p class="mt-1 font-sans text-sm leading-relaxed text-white/35">Each new system makes every other system smarter. Intelligence compounds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof stories — large type, real outcomes -->
+      <div class="mt-16 lg:mt-20 space-y-0 fade-up">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid rgba(255,255,255,0.06);">
+          <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Communications Provider</p>
+          <p class="font-sans text-lg lg:text-xl leading-relaxed text-white/60">
+            98% of infrastructure unified on one operational view. 5,000+ devices. Siloed tools and manual workflows replaced with real-time unified operations.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid rgba(255,255,255,0.06);">
+          <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Infrastructure Operator</p>
+          <p class="font-sans text-lg lg:text-xl leading-relaxed text-white/60">
+            14,000 elements. 7,000 services. Equipment provisioning reduced from months to weeks. Critical event procedures from months of development to hours.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+          <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Broadband Operator</p>
+          <p class="font-sans text-lg lg:text-xl leading-relaxed text-white/60">
+            4 million devices monitored. Half a billion KPIs tracked continuously. 20,000 fewer customer site visits per year through proactive intelligence.
+          </p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -308,7 +228,7 @@ const insights = (await getCollection('insights'))
        ═══════════════════════════════════════════════════════════════ -->
   <section class="relative px-6 overflow-hidden" data-editorial style="border-top: 1px solid var(--color-structure); background: #0a0a0a;">
     <!-- Canvas dithering overlay -->
-    <canvas id="editorial-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-70"></canvas>
+    <canvas id="editorial-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-70" data-dither-canvas data-image-src="/images/editorial-map-bg.png" data-pixel-size="3" data-base-speed="0.06" data-hover-speed="0.3" data-green-blend="0.5"></canvas>
     <!-- Subtle vignette for text readability -->
     <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.5) 0%, transparent 70%);"></div>
     <!-- Film grain -->
@@ -325,7 +245,7 @@ const insights = (await getCollection('insights'))
         Three operators protect 133,000&nbsp;km² of marine reserve. A grid engineer sees a cascade failure forty minutes before four million people lose power.
       </h2>
       <p class="mt-8 font-sans text-lg leading-relaxed max-w-3xl text-white/50 fade-up">
-        Shift handoffs. Intermittent connectivity. Legacy equipment. Decisions that can't wait for a dashboard to load. We built the network for the conditions your teams actually operate in — not the conditions a demo assumes.
+        Shift handoffs. Intermittent connectivity. Legacy equipment. Decisions that can't wait for a dashboard to load. We built the intelligence utility for the conditions your teams actually operate in — not the conditions a demo assumes.
       </p>
     </div>
   </section>
@@ -459,7 +379,7 @@ const insights = (await getCollection('insights'))
       <div class="relative overflow-hidden rounded-[32px] lg:rounded-[48px] min-h-[550px] md:min-h-[600px] flex flex-col items-center justify-center" style="border: 1px solid rgba(15,76,58,0.4); background: #0a0a0a;">
 
         <!-- Canvas dithering overlay -->
-        <canvas id="cta-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-60"></canvas>
+        <canvas id="cta-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-60" data-dither-canvas data-image-src="/images/cta-connected-bg.png" data-pixel-size="3" data-base-speed="0.12" data-hover-speed="0.5" data-green-blend="0.5"></canvas>
 
         <!-- Dark center vignette for text readability -->
         <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 80%);"></div>
@@ -477,13 +397,13 @@ const insights = (await getCollection('insights'))
         <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 lg:py-24 max-w-3xl mx-auto fade-up">
           <!-- Headline -->
           <h2 class="font-sans text-3xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight">
-            Connect one system.<br/>
-            <span class="text-white/50">Four weeks. Your infrastructure.</span>
+            Connect to Quatro.<br/>
+            <span class="text-white/50">Four weeks to intelligence.</span>
           </h2>
 
           <!-- Description -->
           <p class="mt-6 font-sans text-base lg:text-lg text-white/50 leading-relaxed max-w-xl">
-            Pick the system that costs you the most to operate. We connect it to the network, deploy on your stack, and prove the value before you commit.
+            Pick the system that costs you the most to operate. Connect it to Quatro, deploy on your stack, and prove the value before you commit. Intelligence flows from day one.
           </p>
 
           <!-- Single CTA -->
@@ -509,199 +429,6 @@ const insights = (await getCollection('insights'))
       </div>
     </div>
   </section>
-
-  <!-- Dithering shader script — drives both hero and CTA canvases -->
-  <script>
-    (() => {
-      // 4x4 Bayer dithering matrix (normalized 0-1)
-      const bayer4x4 = [
-        [ 0/16,  8/16,  2/16, 10/16],
-        [12/16,  4/16, 14/16,  6/16],
-        [ 3/16, 11/16,  1/16,  9/16],
-        [15/16,  7/16, 13/16,  5/16]
-      ];
-
-      interface DitherConfig {
-        canvasId: string;
-        hoverSelector: string;
-        imageSrc: string;
-        pixelSize: number;
-        baseSpeed: number;
-        hoverSpeed: number;
-        greenBlend: number; // 0-1, how much forest green vs source image color
-      }
-
-      function initDither(config: DitherConfig) {
-        const canvas = document.getElementById(config.canvasId) as HTMLCanvasElement | null;
-        if (!canvas) return;
-
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
-
-        const card = canvas.closest(config.hoverSelector) as HTMLElement;
-        let isHovered = false;
-        let animId: number;
-        let startTime = performance.now();
-        const pixelSize = config.pixelSize;
-
-        const bgImg = new Image();
-        bgImg.crossOrigin = 'anonymous';
-        bgImg.src = config.imageSrc;
-
-        const offscreen = document.createElement('canvas');
-        const offCtx = offscreen.getContext('2d')!;
-        let imgLoaded = false;
-
-        bgImg.onload = () => { imgLoaded = true; };
-
-        function resize() {
-          const rect = canvas!.getBoundingClientRect();
-          canvas!.width = rect.width;
-          canvas!.height = rect.height;
-        }
-
-        function render(time: number) {
-          if (!ctx || !canvas) return;
-          const w = canvas.width;
-          const h = canvas.height;
-          if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
-
-          const elapsed = (time - startTime) / 1000;
-          const speed = isHovered ? config.hoverSpeed : config.baseSpeed;
-          const t = elapsed * speed;
-
-          let srcPixels: Uint8ClampedArray | null = null;
-          if (imgLoaded) {
-            offscreen.width = w;
-            offscreen.height = h;
-            offCtx.drawImage(bgImg, 0, 0, w, h);
-            srcPixels = offCtx.getImageData(0, 0, w, h).data;
-          }
-
-          const imageData = ctx.createImageData(w, h);
-          const data = imageData.data;
-
-          const cols = Math.ceil(w / pixelSize);
-          const rows = Math.ceil(h / pixelSize);
-
-          for (let row = 0; row < rows; row++) {
-            for (let col = 0; col < cols; col++) {
-              const centerX = col * pixelSize + (pixelSize >> 1);
-              const centerY = row * pixelSize + (pixelSize >> 1);
-
-              let imgBrightness = 0.3;
-              if (srcPixels && centerX < w && centerY < h) {
-                const sIdx = (centerY * w + centerX) * 4;
-                imgBrightness = (srcPixels[sIdx] * 0.299 + srcPixels[sIdx+1] * 0.587 + srcPixels[sIdx+2] * 0.114) / 255;
-              }
-
-              const cx = col / cols;
-              const cy = row / rows;
-
-              const warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
-              const warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
-
-              const wx = cx + warpX;
-              const wy = cy + warpY;
-              const d1 = Math.sqrt((wx - 0.5) ** 2 + (wy - 0.5) ** 2);
-              const warpIntensity = 0.3 + 0.25 * Math.sin(d1 * 8.0 - t * 2.0) + 0.15 * Math.cos((wx + wy) * 6.0 + t);
-
-              let intensity = imgBrightness * 0.7 + warpIntensity * 0.5;
-              intensity = Math.max(0, Math.min(1, intensity));
-
-              const threshold = bayer4x4[row % 4][col % 4];
-              const on = intensity > threshold;
-
-              let r: number, g: number, b: number, a: number;
-              if (on) {
-                if (srcPixels && centerX < w && centerY < h) {
-                  const sIdx = (centerY * w + centerX) * 4;
-                  const blend = config.greenBlend + (1 - config.greenBlend) * 0.5 * warpIntensity;
-                  r = Math.round(srcPixels[sIdx]     * (1 - blend) + 15  * blend);
-                  g = Math.round(srcPixels[sIdx + 1] * (1 - blend) + 76  * blend);
-                  b = Math.round(srcPixels[sIdx + 2] * (1 - blend) + 58  * blend);
-                } else {
-                  r = 15; g = 76; b = 58;
-                }
-                a = Math.round(intensity * 220 + 35);
-              } else {
-                r = 0; g = 0; b = 0; a = 0;
-              }
-
-              for (let py = 0; py < pixelSize; py++) {
-                for (let px = 0; px < pixelSize; px++) {
-                  const x = col * pixelSize + px;
-                  const y = row * pixelSize + py;
-                  if (x >= w || y >= h) continue;
-                  const idx = (y * w + x) * 4;
-                  data[idx]     = r;
-                  data[idx + 1] = g;
-                  data[idx + 2] = b;
-                  data[idx + 3] = a;
-                }
-              }
-            }
-          }
-
-          ctx.putImageData(imageData, 0, 0);
-          animId = requestAnimationFrame(render);
-        }
-
-        if (card) {
-          card.addEventListener('mouseenter', () => { isHovered = true; });
-          card.addEventListener('mouseleave', () => { isHovered = false; });
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              resize();
-              startTime = performance.now();
-              animId = requestAnimationFrame(render);
-            } else {
-              cancelAnimationFrame(animId);
-            }
-          });
-        }, { threshold: 0.1 });
-
-        window.addEventListener('resize', resize);
-        observer.observe(canvas);
-      }
-
-      // Hero dithering — heavy green tint, samples hero-bg.png
-      initDither({
-        canvasId: 'hero-dither-canvas',
-        hoverSelector: '[data-hero-card]',
-        imageSrc: '/images/hero-bg.png',
-        pixelSize: 3,
-        baseSpeed: 0.1,
-        hoverSpeed: 0.5,
-        greenBlend: 0.75,
-      });
-
-      // Editorial dithering — subtle, high green blend
-      initDither({
-        canvasId: 'editorial-dither-canvas',
-        hoverSelector: '[data-editorial]',
-        imageSrc: '/images/editorial-map-bg.png',
-        pixelSize: 3,
-        baseSpeed: 0.06,
-        hoverSpeed: 0.3,
-        greenBlend: 0.5,
-      });
-
-      // CTA dithering — moderate green, samples cta.png
-      initDither({
-        canvasId: 'cta-dither-canvas',
-        hoverSelector: '[data-cta-card]',
-        imageSrc: '/images/cta-connected-bg.png',
-        pixelSize: 3,
-        baseSpeed: 0.12,
-        hoverSpeed: 0.5,
-        greenBlend: 0.5,
-      });
-    })();
-  </script>
 
   <!-- ═══════════════════════════════════════════════════════════════
        FOOTER

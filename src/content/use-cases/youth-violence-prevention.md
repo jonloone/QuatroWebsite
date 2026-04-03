@@ -66,9 +66,9 @@ proofPoint:
   narrative: "A 36-month implementation framework targets three cities with the highest youth homicide rates. The Youth Vulnerability Index — built on school, health, community, and justice data — identified 1,200 at-risk youth in Year 1. Early-warning alerts (50+ per month) allowed social workers and community organizations to enroll youth into mentorship, vocational, and counseling programs before crisis. Preliminary data shows 60%+ program retention and measurable reductions in re-involvement with justice systems."
 objections:
   - concern: "This feels like surveillance of young people — is it ethical?"
-    response: "Quatro provides the intelligence layer; trained social workers and community organizations make the interventions. The platform identifies risk using institutional data — humans decide next steps. There is no mass surveillance: only authorized personnel see identifiable data, and every interaction is audited. The goal is to protect youth, not police them."
+    response: "Quatro provides the intelligence layer; trained social workers and community organizations make the interventions. The utility identifies risk using institutional data — humans decide next steps. There is no mass surveillance: only authorized personnel see identifiable data, and every interaction is audited. The goal is to protect youth, not police them."
   - concern: "How do you handle data privacy and sensitive youth records?"
-    response: "Governed access controls ensure only authorized case workers see identifiable information. PII is masked in analytical dashboards. Full audit trails log every data access. Compliance frameworks (GDPR, LGPD) are built in. Your governance board sets data policies; the platform enforces them technically."
+    response: "Governed access controls ensure only authorized case workers see identifiable information. PII is masked in analytical dashboards. Full audit trails log every data access. Compliance frameworks (GDPR, LGPD) are built in. Your governance board sets data policies; the utility enforces them technically."
 adjacentSolutions:
   - title: "Galápagos Conservation Intelligence"
     description: "Apply the same multi-source data fusion and automated detection framework to environmental monitoring and resource protection."
@@ -96,7 +96,7 @@ Youth violence in Latin America's coastal cities claims hundreds of young lives 
 
 ## The Operational Intelligence Solution
 
-Quatro integrates school records, health data, community violence reports, and justice system feeds into a unified platform. The Youth Vulnerability Index — an AI-powered composite risk score — identifies at-risk youth before violence erupts. Early-warning alerts coordinate social workers, mentors, and community organizations around unified intervention strategies.
+Quatro integrates school records, health data, community violence reports, and justice system feeds into a unified operational intelligence utility. The Youth Vulnerability Index — an AI-powered composite risk score — identifies at-risk youth before violence erupts. Early-warning alerts coordinate social workers, mentors, and community organizations around unified intervention strategies.
 
 **Key outcomes:**
 - 1,200+ at-risk youth identified and enrolled in coordinated programs within Year 1

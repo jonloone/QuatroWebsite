@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import Section from '@/components/marketing/Section.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 
 const products = (await getCollection('products-es')).sort((a, b) => a.data.order - b.data.order)
 ---
@@ -13,13 +13,12 @@ const products = (await getCollection('products-es')).sort((a, b) => a.data.orde
   title="Plataforma — Inteligencia Operacional del Borde a la Empresa"
   description="La Plataforma Quatro ofrece inteligencia operacional a través de tres productos integrados: See, Understand y Orchestrate. Desde la ingesta de datos hasta la acción operativa."
 >
-  <Hero
-    variant="dark"
-    eyebrow="La Plataforma Quatro"
+  <HeroCanvas
+    badge="La Plataforma Quatro"
     title="Inteligencia Operacional del Borde a la Empresa"
-    description="Tres productos. Una plataforma unificada. Conecte sus datos, opere con inteligencia, comande con confianza."
-    primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Hablar con un Arquitecto', href: '/es/contact/sales' }}
+    body="Tres productos. Una utilidad de inteligencia unificada. Conecte sus datos, opere con inteligencia, comande con confianza."
+    ctaLabel="Agende una Evaluación"
+    ctaHref="/es/contact/demo"
   />
 
   <Section>
@@ -70,9 +69,9 @@ const products = (await getCollection('products-es')).sort((a, b) => a.data.orde
     </div>
   </Section>
 
-  <CtaBanner
+  <DualCta
     title="Vea la Plataforma en Sus Datos"
-    description="Obtenga un recorrido personalizado de la plataforma adaptado a su industria y casos de uso."
+    description="Obtenga un recorrido personalizado de Quatro adaptado a su industria y casos de uso."
     primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
     secondaryCta={{ label: 'Hable con un Arquitecto', href: '/es/contact/sales' }}
   />

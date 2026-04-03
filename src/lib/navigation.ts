@@ -57,7 +57,7 @@ export interface PrimaryNavItem {
 const footerNavigationData = {
   en: {
     products: {
-      title: 'The Network',
+      title: 'The Utility',
       items: [
         { name: 'How It Works', href: '/network' },
         { name: 'Integrations', href: '/network#integrations' },
@@ -132,7 +132,7 @@ const footerNavigationData = {
   },
   es: {
     products: {
-      title: 'La Red',
+      title: 'La Utilidad',
       items: [
         { name: 'Cómo Funciona', href: '/network' },
         { name: 'Integraciones', href: '/network#integrations' },
@@ -234,16 +234,16 @@ export const footerNavigation = footerNavigationData.en
 const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
   en: [
     {
-      name: 'The Network',
+      name: 'The Utility',
       href: '/network',
       variant: 'stacked',
       items: [
-        { name: 'How It Works', description: 'Two properties of one intelligence network', href: '/network', icon: LinkIcon },
-        { name: 'Integrations', description: '9,000+ native integrations across 1,000+ vendors', href: '/network#integrations', icon: CogIcon },
+        { name: 'How It Works', description: 'Two properties of the intelligence utility', href: '/network', icon: LinkIcon },
+        { name: 'Integrations', description: '8,000+ integrations across 1,000+ vendors', href: '/network#integrations', icon: CogIcon },
         { name: 'Deployment', description: 'Cloud, on-premises, edge, air-gapped, or hybrid', href: '/network#deployment', icon: CommandLineIcon },
         { name: 'Security', description: 'Sovereign deployment. Your data never leaves your control', href: '/network#trust', icon: ShieldCheckIcon },
       ],
-      cta: { name: 'Explore the Network', href: '/network' },
+      cta: { name: 'Explore the Utility', href: '/network' },
     },
     {
       name: 'Industries',
@@ -273,16 +273,16 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
   ],
   es: [
     {
-      name: 'La Red',
+      name: 'La Utilidad',
       href: '/network',
       variant: 'stacked',
       items: [
-        { name: 'Cómo Funciona', description: 'Dos propiedades de una red de inteligencia', href: '/network', icon: LinkIcon },
-        { name: 'Integraciones', description: '9.000+ integraciones nativas de 1.000+ proveedores', href: '/network#integrations', icon: CogIcon },
+        { name: 'Cómo Funciona', description: 'Dos propiedades de la utilidad de inteligencia', href: '/network', icon: LinkIcon },
+        { name: 'Integraciones', description: '8.000+ integraciones de 1.000+ proveedores', href: '/network#integrations', icon: CogIcon },
         { name: 'Despliegue', description: 'Nube, on-premises, edge, air-gapped o híbrido', href: '/network#deployment', icon: CommandLineIcon },
         { name: 'Seguridad', description: 'Despliegue soberano. Sus datos nunca salen de su control', href: '/network#trust', icon: ShieldCheckIcon },
       ],
-      cta: { name: 'Explorar la Red', href: '/network' },
+      cta: { name: 'Explorar la Utilidad', href: '/network' },
     },
     {
       name: 'Industrias',

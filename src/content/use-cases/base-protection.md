@@ -1,13 +1,13 @@
 ---
 title: "Base & Installation Protection"
 tagline: "Sub-30-Second Detection-to-Response"
-description: "Consolidate fragmented security systems into unified operational intelligence for military installations, reducing detection times and staffing requirements while maintaining 24/7 situational awareness across facilities."
+description: "When security systems don't share a common operational model, threat detection spreads and response cascades. Unify them into operational intelligence for military installations to reduce detection times while maintaining 24/7 situational awareness."
 parentIndustry: "defense"
 order: 1
 hero:
   eyebrow: "Military Installation Security"
   title: "Base & Installation Protection"
-  description: "Detect unauthorized access and threats in under 30 seconds. Consolidate 5+ security systems into a single operational intelligence platform."
+  description: "Detect unauthorized access and threats in under 30 seconds. When security systems don't share a common operational model, threat detection spreads across teams and response delays compound risk. Unify them into one intelligence utility."
   primaryCta:
     label: "Schedule a Defense Assessment"
     href: "/contact/defense-assessment"
@@ -31,7 +31,7 @@ capabilities:
     description: "Correlate signals from CCTV, access control, radar, and network sources into a single decision layer."
     icon: "radar"
   - name: "Sub-30-Second Response"
-    description: "AI-powered anomaly detection triggers automated alerts and response workflows in real-time."
+    description: "Anomaly detection triggers automated alerts and response workflows in real-time, enabling governed autonomous action at threat speed."
     icon: "zap"
   - name: "False Alarm Reduction"
     description: "Machine learning reduces noise by 80%, enabling security teams to focus on credible threats."
@@ -52,7 +52,7 @@ platformMapping:
   orchestrate: "Dispatch response teams with automated escalation and audit trail"
 proofPoint:
   industry: "U.S. Department of Defense"
-  headline: "15,000-Acre Installation Consolidates 5 Systems Into 1 Platform"
+  headline: "15,000-Acre Installation Consolidates 5 Systems Into 1 Utility"
   metrics:
     - value: "5"
       label: "Systems consolidated"
@@ -94,7 +94,7 @@ cta:
 
 ## How It Works
 
-Quatro consolidates fragmented security systems into a unified operational intelligence layer. Instead of managing alerts across CCTV, access control, radar, and network sensors separately, your security operations center sees a single, correlated view of threats.
+Quatro consolidates fragmented security systems into a unified intelligence layer, enabling governed autonomous action without replacing your existing infrastructure. Instead of managing alerts across CCTV, access control, radar, and network sensors separately, your security operations center sees a single, correlated view of threats.
 
 ### Real-Time Correlation
 All signals flow into Quatro's event processing engine. Machine learning detects patterns humans would miss—a person appearing in a restricted area at the same time a credential is misused, for example.

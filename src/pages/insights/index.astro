@@ -1,0 +1,158 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SiteHeader from '@/components/layout/SiteHeader.astro'
+import SiteFooter from '@/components/layout/SiteFooter.astro'
+
+const allInsights = (await getCollection('insights'))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+
+const featured = allInsights.filter(i => i.data.featured)
+const latest = allInsights
+
+const categories = [
+  { slug: 'all', label: 'All' },
+  { slug: 'industry-trends', label: 'Industry Trends' },
+  { slug: 'use-cases', label: 'Use Cases' },
+  { slug: 'platform', label: 'Platform' },
+  { slug: 'case-studies', label: 'Case Studies' },
+  { slug: 'company', label: 'Company' },
+]
+---
+
+<BaseLayout
+  title="Insights — Quatro"
+  description="Analysis, use cases, and perspectives on operational intelligence for critical infrastructure."
+  lang="en"
+>
+  <SiteHeader lang="en" />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 lg:pt-40 lg:pb-20 px-6" style="border-bottom: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-4" style="color: var(--color-forest);">Insights</p>
+      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight" style="color: var(--color-neutral-800);">
+        Thinking about operational<br/>intelligence.
+      </h1>
+      <p class="mt-6 font-sans text-lg leading-relaxed max-w-2xl" style="color: var(--color-neutral-500);">
+        Industry analysis, deployment patterns, and perspectives from the teams building intelligence for critical infrastructure.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured article — full width -->
+  {featured.length > 0 && (
+    <section class="py-16 lg:py-20 px-6" style="border-bottom: 1px solid var(--color-structure);">
+      <div class="mx-auto max-w-5xl">
+        <a href={`/insights/${featured[0].id.replace(/\.md$/, '')}`} class="group grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {featured[0].data.heroImage && (
+            <div class="relative overflow-hidden rounded-lg aspect-[4/3]" style="background: var(--color-neutral-50);">
+              <img src={featured[0].data.heroImage} alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 img-technical" loading="lazy" />
+            </div>
+          )}
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); background: rgba(15,76,58,0.06);">
+                {featured[0].data.category.replace('-', ' ')}
+              </span>
+              <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                {featured[0].data.readingTime}
+              </span>
+            </div>
+            <h2 class="font-sans text-2xl lg:text-3xl font-light leading-[1.2] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+              {featured[0].data.title}
+            </h2>
+            <p class="mt-4 font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
+              {featured[0].data.excerpt}
+            </p>
+            <p class="mt-6 font-mono text-xs uppercase tracking-[0.08em]" style="color: var(--color-forest);">
+              Read article →
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- All articles grid -->
+  <section class="py-16 lg:py-20 px-6">
+    <div class="mx-auto max-w-5xl">
+      <div class="flex items-center gap-6 mb-12 overflow-x-auto pb-2" style="border-bottom: 1px solid var(--color-structure);">
+        {categories.map(cat => (
+          <button
+            class="font-mono text-[11px] uppercase tracking-[0.1em] pb-3 whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-forest)]"
+            style={`color: var(--color-neutral-${cat.slug === 'all' ? '800' : '400'}); ${cat.slug === 'all' ? 'border-bottom: 2px solid var(--color-forest); margin-bottom: -1px;' : ''}`}
+            data-filter={cat.slug}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <div class="grid gap-y-12 lg:gap-y-16">
+        {latest.map((article, i) => (
+          <a
+            href={`/insights/${article.id.replace(/\.md$/, '')}`}
+            class="group grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 items-start"
+            data-category={article.data.category}
+            style={i > 0 ? 'border-top: 1px solid var(--color-structure); padding-top: 3rem;' : ''}
+          >
+            {article.data.heroImage && (
+              <div class="relative overflow-hidden rounded-lg aspect-[4/3]" style="background: var(--color-neutral-50);">
+                <img src={article.data.heroImage} alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 img-technical" loading="lazy" />
+              </div>
+            )}
+            <div>
+              <div class="flex items-center gap-3 mb-3">
+                <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); background: rgba(15,76,58,0.06);">
+                  {article.data.category.replace('-', ' ')}
+                </span>
+                {article.data.industry && (
+                  <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                    {article.data.industry}
+                  </span>
+                )}
+              </div>
+              <h3 class="font-sans text-xl lg:text-2xl font-light leading-[1.25] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
+                {article.data.title}
+              </h3>
+              <p class="mt-3 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
+                {article.data.excerpt}
+              </p>
+              <div class="mt-4 flex items-center gap-4">
+                <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                  {article.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </span>
+                <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
+                  {article.data.readingTime}
+                </span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 px-6" style="border-top: 1px solid var(--color-structure); background: var(--color-neutral-50, #f8fafc);">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="font-sans text-2xl lg:text-3xl font-light tracking-tight" style="color: var(--color-neutral-800);">
+        See it on your infrastructure.
+      </h2>
+      <p class="mt-4 font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
+        Pick one system. Four weeks. We prove the value before you commit.
+      </p>
+      <a
+        href="/contact/demo"
+        class="inline-flex items-center gap-2 mt-8 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105"
+        style="background-color: var(--color-forest); color: white;"
+      >
+        Schedule an Assessment
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <SiteFooter lang="en" />
+</BaseLayout>

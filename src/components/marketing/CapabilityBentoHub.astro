@@ -1,0 +1,183 @@
+---
+/**
+ * CapabilityBentoHub — Image-forward capability showcase for hub pages
+ * Pulls featured capabilities from multiple child industries and shows them
+ * in a visual bento grid with v7 images
+ */
+
+interface Capability {
+  name: string
+  description: string
+  outcome?: string
+  image?: string
+  industry?: string
+}
+
+interface Props {
+  title?: string
+  subtitle?: string
+  capabilities: Capability[]
+  class?: string
+}
+
+const {
+  title = 'Capabilities Across Domains',
+  subtitle,
+  capabilities,
+  class: className,
+} = Astro.props
+
+// Take up to 6 capabilities for the bento
+const items = capabilities.slice(0, 6)
+const hero = items[0]
+const secondary = items.slice(1, 3)
+const tertiary = items.slice(3, 6)
+
+// Icon mapping — returns an SVG path based on capability name keywords
+function getIconPath(name: string): string {
+  const n = name.toLowerCase()
+  // Security / surveillance / perimeter
+  if (n.includes('security') || n.includes('surveillance') || n.includes('perimeter'))
+    return 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'
+  // Operations center / command / unified
+  if (n.includes('operations center') || n.includes('command') || n.includes('unified'))
+    return 'M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'
+  // Emergency / response / incident
+  if (n.includes('emergency') || n.includes('response') || n.includes('incident'))
+    return 'M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01'
+  // Fleet / vehicle / logistics / transport
+  if (n.includes('fleet') || n.includes('vehicle') || n.includes('logistics') || n.includes('transport'))
+    return 'M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 18.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM18.5 18.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z'
+  // Water / leak / treatment
+  if (n.includes('water') || n.includes('leak') || n.includes('treatment'))
+    return 'M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z'
+  // Environmental / air quality / climate
+  if (n.includes('environmental') || n.includes('air quality') || n.includes('climate'))
+    return 'M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z'
+  // Smart / monitoring / infrastructure / asset
+  if (n.includes('monitoring') || n.includes('infrastructure') || n.includes('asset') || n.includes('smart'))
+    return 'M22 12h-4l-3 9L9 3l-3 9H2'
+  // AI / analytics / intelligence / prediction
+  if (n.includes('ai') || n.includes('analytics') || n.includes('intelligence') || n.includes('prediction'))
+    return 'M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'
+  // Compliance / regulatory
+  if (n.includes('compliance') || n.includes('regulatory'))
+    return 'M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11'
+  // Network / connectivity
+  if (n.includes('network') || n.includes('connectivity'))
+    return 'M12 20h.01M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 14 0M1.5 9.5a15 15 0 0 1 21 0'
+  // Default: grid/dashboard icon
+  return 'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z'
+}
+---
+
+<section
+  class:list={['relative py-20 lg:py-28 px-6 overflow-hidden', className]}
+  style="background: #0a0a0a;"
+>
+  <!-- Grain -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+  <div class="relative z-10 mx-auto max-w-7xl">
+    {(title || subtitle) && (
+      <div class="mb-12 fade-up">
+        {title && (
+          <h2 class="font-display text-xl font-bold" style="color: var(--color-forest);">
+            {title}
+          </h2>
+        )}
+        {subtitle && (
+          <p class="mt-4 font-sans text-lg leading-relaxed max-w-3xl text-white/50">
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )}
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 fade-stagger">
+
+      {/* Hero capability — spans 7 cols, tall with image */}
+      {hero && (
+        <div class="lg:col-span-7 relative group overflow-hidden rounded-lg fade-up"
+             style="border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);">
+          {hero.image && (
+            <div class="relative h-64 lg:h-72 overflow-hidden">
+              <img src={hero.image} alt={hero.name}
+                   class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 img-technical" />
+              <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/30 to-transparent" />
+            </div>
+          )}
+          <div class="p-6 lg:p-8">
+            {hero.industry && (
+              <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-2">{hero.industry}</p>
+            )}
+            <h3 class="font-display text-xl font-bold text-white">{hero.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-white/50 max-w-lg">{hero.description}</p>
+            {hero.outcome && (
+              <p class="mt-3 font-display text-sm font-bold" style="color: var(--color-forest);">
+                {hero.outcome}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Secondary capabilities — spans 5 cols, stacked */}
+      <div class="lg:col-span-5 grid gap-3">
+        {secondary.map((cap) => (
+          <div class="relative group overflow-hidden rounded-lg fade-up"
+               style="border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);">
+            <div class="flex flex-col sm:flex-row lg:flex-col">
+              {cap.image && (
+                <div class="relative h-40 sm:w-48 sm:h-auto lg:w-full lg:h-36 overflow-hidden flex-shrink-0">
+                  <img src={cap.image} alt={cap.name}
+                       class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 img-technical" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/60 to-transparent" />
+                </div>
+              )}
+              <div class="p-5">
+                {cap.industry && (
+                  <p class="font-mono text-[9px] uppercase tracking-[0.12em] text-white/25 mb-1.5">{cap.industry}</p>
+                )}
+                <h3 class="font-display text-base font-bold text-white">{cap.name}</h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-white/45 line-clamp-2">{cap.description}</p>
+                {cap.outcome && (
+                  <p class="mt-2 font-display text-xs font-bold" style="color: var(--color-forest);">
+                    {cap.outcome}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Tertiary row — 3-up compact cards with icons */}
+    {tertiary.length > 0 && (
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-3 fade-stagger">
+        {tertiary.map((cap) => (
+          <div class="relative group overflow-hidden rounded-lg p-5 fade-up"
+               style="border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03);">
+            <div class="mb-3">
+              <svg class="w-5 h-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d={getIconPath(cap.name)} />
+              </svg>
+            </div>
+            {cap.industry && (
+              <p class="font-mono text-[9px] uppercase tracking-[0.12em] text-white/25 mb-1.5">{cap.industry}</p>
+            )}
+            <h3 class="font-display text-base font-bold text-white">{cap.name}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-white/45 line-clamp-2">{cap.description}</p>
+            {cap.outcome && (
+              <p class="mt-2 font-display text-xs font-bold" style="color: var(--color-forest);">
+                {cap.outcome}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

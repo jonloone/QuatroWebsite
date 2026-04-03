@@ -1,13 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import ProblemSolution from '@/components/marketing/ProblemSolution.astro'
 import StatStrip from '@/components/marketing/StatStrip.astro'
 import Section from '@/components/marketing/Section.astro'
 import FeatureGrid from '@/components/marketing/FeatureGrid.astro'
 import ProductProgression from '@/components/marketing/ProductProgression.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 import ProtocolShowcase from '@/components/marketing/ProtocolShowcase.astro'
 import ProofPointCard from '@/components/marketing/ProofPointCard.astro'
 
@@ -29,13 +29,12 @@ const brandedTitle = `Quatro ${title}`
   title={`${brandedTitle} — ${tagline}`}
   description={description}
 >
-  <Hero
-    variant="dark"
-    eyebrow={hero.eyebrow}
+  <HeroCanvas
+    badge={hero.eyebrow}
     title={hero.title}
-    description={hero.description}
-    primaryCta={hero.primaryCta}
-    secondaryCta={hero.secondaryCta}
+    body={hero.description}
+    ctaLabel={hero.primaryCta?.label || 'Solicitar Evaluación'}
+    ctaHref={hero.primaryCta?.href || '/es/contact/demo'}
   />
 
   <ProblemSolution
@@ -116,7 +115,7 @@ const brandedTitle = `Quatro ${title}`
     <ProductProgression current={product.id.replace(/\.md$/, '')} />
   </Section>
 
-  <CtaBanner
+  <DualCta
     title={`Vea ${brandedTitle} en Sus Datos`}
     description={`Descubra cómo ${brandedTitle} transforma sus operaciones en un recorrido en vivo.`}
     primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}

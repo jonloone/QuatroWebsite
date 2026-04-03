@@ -2,7 +2,7 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
 import Section from '@/components/marketing/Section.astro'
-import CtaBanner from '@/components/marketing/CtaBanner.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
 import Placeholder from '@/components/marketing/Placeholder.astro'
 ---
 
@@ -14,7 +14,7 @@ import Placeholder from '@/components/marketing/Placeholder.astro'
   <Hero
     eyebrow="Sobre Quatro"
     title="Inteligencia Operacional a la Velocidad de las Operaciones"
-    description="Estamos construyendo la plataforma de inteligencia operacional que permite a las organizaciones conectar, operar y comandar sus operaciones más críticas."
+    description="Estamos construyendo la utilidad de inteligencia operacional que permite a las organizaciones conectar, operar y comandar sus operaciones más críticas."
   />
 
   <Section>
@@ -29,10 +29,11 @@ import Placeholder from '@/components/marketing/Placeholder.astro'
     </div>
   </Section>
 
-  <CtaBanner
-    title="Únase a Nuestro Camino"
-    description="Descubra cómo Quatro puede transformar sus operaciones."
-    primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Ver Carreras', href: '/es/company/careers' }}
+  <DualCta
+    title={`Vea cómo la <span style="color: var(--color-forest);">inteligencia operacional</span> funciona en su operación.`}
+    description="Elija un desafío. Desplegamos en sus sistemas en 4 semanas. Vea el valor antes de comprometerse."
+    primaryCta={{ label: 'Solicitar Evaluación', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hablar con un Ingeniero', href: '/es/contact/sales' }}
+    microcopy="Prueba de valor de 4 semanas · Acreditado en contrato anual"
   />
 </MarketingLayout>

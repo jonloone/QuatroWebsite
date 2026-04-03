@@ -38,7 +38,7 @@ This is a **vertical-specific solution sub-page** (evaluation, narrow focus, dep
 **Trust Metrics Below Hero:**
 - SatOps Teleport Technology of the Year 2026
 - 7,000+ Ground Segment Connectors
-- 99.99% Platform Uptime
+- 99.99% Utility Uptime
 - Sub-Minute Anomaly Detection
 - Multi-Vendor Integration Across 1,000+ Equipment Types
 
@@ -87,7 +87,7 @@ This is not a failure of operators or teams. It is a failure of architecture. Th
 
 ## Section 3 — HOW IT WORKS (Operational, Not Architectural)
 
-> **Framework rule:** Don't explain the platform. Explain what changes day-to-day. Show before/after workflow. Name the source systems that connect. Describe what the team sees on Monday morning.
+> **Framework rule:** Don't explain the utility. Explain what changes day-to-day. Show before/after workflow. Name the source systems that connect. Describe what the team sees on Monday morning.
 
 ### Capability 1 — Multi-Vendor Ground Segment Unification
 
@@ -148,7 +148,7 @@ Skyline DataMiner SatOps won Teleport Technology of the Year at SATELLITE 2026 (
 
 **Multi-Vendor Connector Library:** 7,000+ pre-built connectors across 1,000+ equipment vendors and manufacturers. New vendors are added to the connector library continuously. You're never waiting for custom integration work — the connectivity exists.
 
-**99.99% Platform Uptime:** Quatro platform itself maintains four-nines uptime across cloud and self-managed deployments. Your operational intelligence is always available.
+**99.99% Utility Uptime:** Quatro intelligence utility itself maintains four-nines uptime across cloud and self-managed deployments. Your operational intelligence is always available.
 
 **Sub-45-Minute MTTR (Mean Time to Remediation):** Customer deployments show average time-to-fix from anomaly detection to backup activation of 8–15 minutes (previously 75–150 minutes). Operator workload for routine incidents drops by 70% due to automation.
 
@@ -192,9 +192,9 @@ Quatro Teleport & Ground Segment Operations is delivered as three service tiers:
 
 > Quatro has been integrating with legacy ground segment equipment since Skyline DataMiner first started. If your equipment supports SNMP, REST, OPC-UA, Modbus, or serial protocols, it connects. If it has a vendor-provided monitoring API, we integrate with it. The 7,000+ connector library includes everything from 1990s-era antenna controllers to modern software-defined systems. Legacy equipment is often the most critical to monitor precisely because it has no modern APIs — that's exactly what Quatro solves.
 
-**Objection 2: "Do we lose control of our equipment? Will this platform run proprietary teleport operations?"**
+**Objection 2: "Do we lose control of our equipment? Will this utility run proprietary teleport operations?"**
 
-> Your equipment remains under your control, on your infrastructure, with your authentication. Quatro is a control plane — it monitors, alerts, and recommends actions, but the final decision always stays with your team. For pre-approved automated actions (failover to backup capacity, software reboots), you define the thresholds. The platform executes only what you authorize. You can toggle automation on and off at any time. Your operators remain in command.
+> Your equipment remains under your control, on your infrastructure, with your authentication. Quatro is a control plane — it monitors, alerts, and recommends actions, but the final decision always stays with your team. For pre-approved automated actions (failover to backup capacity, software reboots), you define the thresholds. The utility executes only what you authorize. You can toggle automation on and off at any time. Your operators remain in command.
 
 **Objection 3: "We've tried consolidating systems before — it always ends up as just another tool alongside the existing ones."**
 
@@ -265,7 +265,7 @@ The same ground segment data that detects anomalies also tracks transponder util
 
 The same operational intelligence pattern Quatro brings to satellite ground segments has been proven in telecommunications network operations (Orange, Deutsche Telekom), power grid operations (major utilities in LATAM and Europe), and industrial manufacturing. Across all these domains, the problem is identical: legacy systems designed for a simpler era, fragmented vendor monitoring tools, slow response to operational events.
 
-The solution is always the same: unified command environment with real-time anomaly detection, predictive impact assessment, and automated response orchestration. The platform scales from single-site monitoring to enterprise-scale operations. The adoption pattern is predictable: within 90 days of go-live, operators stop using legacy tools for routine monitoring because Quatro is faster and more reliable.
+The solution is always the same: unified command environment with real-time anomaly detection, predictive impact assessment, and automated response orchestration. The utility scales from single-site monitoring to enterprise-scale operations. The adoption pattern is predictable: within 90 days of go-live, operators stop using legacy tools for routine monitoring because Quatro is faster and more reliable.
 
 This isn't theoretical. This is operational pattern proven at scale across domains. Satellite ground operations is the natural next application of this proven approach.
 

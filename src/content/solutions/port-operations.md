@@ -7,7 +7,7 @@ order: 12
 hero:
   eyebrow: "Port Operations"
   title: "Optimize Berths. Coordinate Cargo. Accelerate Customs."
-  description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture. When a container ship approaches, the intelligence network predicts arrival, reserves optimal berth, alerts cargo handlers, and pre-coordinates customs — one network, coordinated workflow."
+  description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture. When a container ship approaches, the intelligence utility predicts arrival, reserves optimal berth, alerts cargo handlers, and pre-coordinates customs — one network, coordinated workflow."
   primaryCta:
     label: "Request a Port Operations Briefing"
     href: "/contact/demo"

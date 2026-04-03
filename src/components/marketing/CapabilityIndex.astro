@@ -1,0 +1,86 @@
+---
+/**
+ * CapabilityIndex — Large-type editorial capability list.
+ *
+ * Each capability gets a full-width row: big serif name on the left,
+ * one-line outcome on the right, separated by fine rules. Forest green
+ * numbering. Reads like an index, not a feature grid.
+ */
+
+interface Capability {
+  name: string
+  description: string
+  outcome?: string
+  image?: string
+  industry?: string
+}
+
+interface Props {
+  title?: string
+  capabilities: Capability[]
+  class?: string
+}
+
+const {
+  title,
+  capabilities,
+  class: className,
+} = Astro.props
+
+const items = capabilities.slice(0, 8)
+---
+
+<section
+  class:list={['py-20 lg:py-28', className]}
+  style="background: #0a0a0a;"
+>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    {title && (
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-16 fade-up">
+        {title}
+      </p>
+    )}
+
+    <div class="space-y-0">
+      {items.map((cap, i) => (
+        <div
+          class="group grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 py-8 lg:py-10 fade-up"
+          style={i < items.length - 1 ? 'border-bottom: 1px solid rgba(255,255,255,0.06);' : ''}
+        >
+          <!-- Number -->
+          <div class="lg:col-span-1 flex items-baseline">
+            <span
+              class="font-mono text-sm tabular-nums"
+              style="color: var(--color-forest);"
+            >
+              {String(i + 1).padStart(2, '0')}
+            </span>
+          </div>
+
+          <!-- Capability name — large type -->
+          <div class="lg:col-span-5 flex items-baseline">
+            <h3 class="font-sans font-light text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white/90 leading-tight">
+              {cap.name}
+            </h3>
+          </div>
+
+          <!-- Outcome / description -->
+          <div class="lg:col-span-5 flex items-baseline lg:pt-2">
+            <p class="text-sm leading-relaxed text-white/40 max-w-lg">
+              {cap.outcome || cap.description}
+            </p>
+          </div>
+
+          <!-- Industry tag -->
+          <div class="lg:col-span-1 flex items-baseline lg:justify-end lg:pt-2">
+            {cap.industry && (
+              <span class="font-mono text-[9px] uppercase tracking-[0.1em] text-white/20 whitespace-nowrap">
+                {cap.industry}
+              </span>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
