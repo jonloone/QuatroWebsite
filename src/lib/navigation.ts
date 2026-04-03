@@ -59,10 +59,12 @@ const footerNavigationData = {
     products: {
       title: 'The Utility',
       items: [
-        { name: 'How It Works', href: '/network' },
-        { name: 'Integrations', href: '/network#integrations' },
-        { name: 'Deployment', href: '/network#deployment' },
-        { name: 'Security', href: '/network#trust' },
+        { name: 'What Is It', href: '/utility' },
+        { name: 'What You Get', href: '/utility/what-you-get' },
+        { name: 'How It Starts', href: '/utility/how-it-starts' },
+        { name: 'Integrations', href: '/utility#integrations' },
+        { name: 'Deployment', href: '/utility#deployment' },
+        { name: 'Security', href: '/utility#trust' },
       ],
     },
     industries: {
@@ -134,10 +136,12 @@ const footerNavigationData = {
     products: {
       title: 'La Utilidad',
       items: [
-        { name: 'Cómo Funciona', href: '/network' },
-        { name: 'Integraciones', href: '/network#integrations' },
-        { name: 'Despliegue', href: '/network#deployment' },
-        { name: 'Seguridad', href: '/network#trust' },
+        { name: 'Qué Es', href: '/utility' },
+        { name: 'Qué Obtiene', href: '/utility/what-you-get' },
+        { name: 'Cómo Empieza', href: '/utility/how-it-starts' },
+        { name: 'Integraciones', href: '/utility#integrations' },
+        { name: 'Despliegue', href: '/utility#deployment' },
+        { name: 'Seguridad', href: '/utility#trust' },
       ],
     },
     industries: {
@@ -235,15 +239,15 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
   en: [
     {
       name: 'The Utility',
-      href: '/network',
+      href: '/utility',
       variant: 'stacked',
       items: [
-        { name: 'How It Works', description: 'Two properties of the intelligence utility', href: '/network', icon: LinkIcon },
-        { name: 'Integrations', description: '8,000+ integrations across 1,000+ vendors', href: '/network#integrations', icon: CogIcon },
-        { name: 'Deployment', description: 'Cloud, on-premises, edge, air-gapped, or hybrid', href: '/network#deployment', icon: CommandLineIcon },
-        { name: 'Security', description: 'Sovereign deployment. Your data never leaves your control', href: '/network#trust', icon: ShieldCheckIcon },
+        { name: 'What Is It', description: 'One operational model from every system you run', href: '/utility', icon: LinkIcon },
+        { name: 'What You Get', description: 'Workflows, agents, automations, and APIs', href: '/utility/what-you-get', icon: CogIcon },
+        { name: 'How It Starts', description: 'Tell us the outcome. We connect the systems.', href: '/utility/how-it-starts', icon: CommandLineIcon },
+        { name: 'Security', description: 'Sovereign deployment. Governed execution.', href: '/utility#trust', icon: ShieldCheckIcon },
       ],
-      cta: { name: 'Explore the Utility', href: '/network' },
+      cta: { name: 'Explore the Utility', href: '/utility' },
     },
     {
       name: 'Industries',
@@ -274,15 +278,15 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
   es: [
     {
       name: 'La Utilidad',
-      href: '/network',
+      href: '/utility',
       variant: 'stacked',
       items: [
-        { name: 'Cómo Funciona', description: 'Dos propiedades de la utilidad de inteligencia', href: '/network', icon: LinkIcon },
-        { name: 'Integraciones', description: '8.000+ integraciones de 1.000+ proveedores', href: '/network#integrations', icon: CogIcon },
-        { name: 'Despliegue', description: 'Nube, on-premises, edge, air-gapped o híbrido', href: '/network#deployment', icon: CommandLineIcon },
-        { name: 'Seguridad', description: 'Despliegue soberano. Sus datos nunca salen de su control', href: '/network#trust', icon: ShieldCheckIcon },
+        { name: 'Qué Es', description: 'Un modelo operacional de todos sus sistemas', href: '/utility', icon: LinkIcon },
+        { name: 'Qué Obtiene', description: 'Flujos de trabajo, agentes, automatizaciones y APIs', href: '/utility/what-you-get', icon: CogIcon },
+        { name: 'Cómo Empieza', description: 'Díganos el resultado. Conectamos los sistemas.', href: '/utility/how-it-starts', icon: CommandLineIcon },
+        { name: 'Seguridad', description: 'Despliegue soberano. Ejecución gobernada.', href: '/utility#trust', icon: ShieldCheckIcon },
       ],
-      cta: { name: 'Explorar la Utilidad', href: '/network' },
+      cta: { name: 'Explorar la Utilidad', href: '/utility' },
     },
     {
       name: 'Industrias',
