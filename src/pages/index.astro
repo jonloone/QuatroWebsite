@@ -4,6 +4,7 @@ import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import FloatingPaths from '@/components/ui/FloatingPaths'
+import OperationalModelFlow from '@/components/ui/OperationalModelFlow'
 import { getCollection } from 'astro:content'
 const insights = (await getCollection('insights'))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
@@ -116,168 +117,36 @@ const insights = (await getCollection('insights'))
       <!-- Editorial lead -->
       <p class="font-mono text-xs uppercase tracking-[0.1em] mb-8 fade-up" style="color: var(--color-forest);">The Intelligence Utility</p>
       <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.15] tracking-tight text-white fade-up">
-        Start with the outcome.<br /><span class="text-white/40">Connect only what matters.</span>
+        Tell us the outcome.<br /><span class="text-white/40">We model the relationships that answer it.</span>
       </h2>
       <p class="mt-6 font-sans text-lg lg:text-xl leading-relaxed max-w-3xl text-white/50 fade-up">
-        Tell us the decision your team needs to make. We work backward to the systems that hold the answer — not all your data, just the data that matters. Your team gets back workflows, agents, automations, and APIs built on a governed operating model that compounds with every use case.
+        Tell us the question your team needs answered. We connect your systems, model the relationships between them — devices, services, customers, circuits, alarms — and build the operational model that governs how your operations run. The result: agents, workflows, automations, and APIs that all draw from the same intelligence — and compound with every use case.
       </p>
 
-      <!-- How it works — visual flow diagram (moved up, bigger, bolder) -->
-      <div class="mt-14 lg:mt-18 fade-up rounded-2xl px-6 py-10 lg:px-10 lg:py-14" style="border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); backdrop-filter: blur(24px) saturate(1.2); -webkit-backdrop-filter: blur(24px) saturate(1.2); box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);">
+      <!-- How it works — visual flow diagram -->
+      <div class="mt-14 lg:mt-18 fade-up rounded-3xl px-6 py-10 lg:px-10 lg:py-14" style="background: #f5f5f4; border: 1px solid #e7e5e4;">
 
-        <!-- Right-to-left flow diagram SVG — bigger, bolder, thicker -->
-        <svg class="w-full h-auto mb-10" viewBox="0 0 1100 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <style>
-            @keyframes hiw-flow-rtl { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 16; } }
-            @keyframes hiw-pulse { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.8; } }
-            @keyframes hiw-feedback { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -20; } }
-            .hiw-flow-rtl { animation: hiw-flow-rtl 1.2s linear infinite; }
-            .hiw-pulse-dot { animation: hiw-pulse 2.5s ease-in-out infinite; }
-            .hiw-feedback-dash { animation: hiw-feedback 2s linear infinite; }
-          </style>
+        <!-- Operational model flow — concrete labeled examples -->
+        <div class="mb-10">
+          <OperationalModelFlow client:visible />
+        </div>
 
-          <!-- ===== LEFT: OUTCOME / USE CASE (bright, prominent) ===== -->
-
-          <!-- Outcome node — large, bright green -->
-          <circle cx="90" cy="105" r="12" fill="rgba(0,209,178,0.25)" stroke="rgba(0,209,178,0.7)" stroke-width="2.5"/>
-          <circle cx="90" cy="105" r="4.5" fill="rgba(0,209,178,0.85)"/>
-
-          <!-- Outcome label -->
-          <text x="90" y="145" text-anchor="middle" fill="rgba(0,209,178,0.7)" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="0.12em">USE CASE</text>
-
-          <!-- Expanding outcome ripples (emanating left) -->
-          <path d="M 65 105 Q 28 72, 5 105 Q 28 138, 65 105" fill="none" stroke="rgba(0,209,178,0.15)" stroke-width="1.5"/>
-          <path d="M 58 105 Q 12 60, -15 105 Q 12 150, 58 105" fill="none" stroke="rgba(0,209,178,0.08)" stroke-width="1.5"/>
-
-          <!-- Outcome dots (actions/decisions radiating left) -->
-          <circle cx="40" cy="78" r="3.5" fill="rgba(0,209,178,0.55)" class="hiw-pulse-dot"/>
-          <circle cx="40" cy="132" r="3.5" fill="rgba(0,209,178,0.55)" class="hiw-pulse-dot" style="animation-delay:0.8s"/>
-          <circle cx="12" cy="65" r="2.5" fill="rgba(0,209,178,0.4)" class="hiw-pulse-dot" style="animation-delay:1.4s"/>
-          <circle cx="12" cy="145" r="2.5" fill="rgba(0,209,178,0.4)" class="hiw-pulse-dot" style="animation-delay:0.5s"/>
-
-          <!-- ===== Arrow: Outcome determines Metrics ===== -->
-          <line x1="104" y1="105" x2="215" y2="105" stroke="rgba(0,209,178,0.3)" stroke-width="1.5" stroke-dasharray="5,5" class="hiw-flow-rtl"/>
-
-          <!-- Metrics cluster -->
-          <circle cx="240" cy="72" r="4" fill="rgba(0,209,178,0.18)" stroke="rgba(0,209,178,0.5)" stroke-width="1.5" class="hiw-pulse-dot"/>
-          <circle cx="240" cy="105" r="5" fill="rgba(0,209,178,0.22)" stroke="rgba(0,209,178,0.55)" stroke-width="1.5"/>
-          <circle cx="240" cy="138" r="4" fill="rgba(0,209,178,0.18)" stroke="rgba(0,209,178,0.5)" stroke-width="1.5" class="hiw-pulse-dot" style="animation-delay:0.6s"/>
-          <line x1="240" y1="72" x2="240" y2="105" stroke="rgba(0,209,178,0.15)" stroke-width="1.5" stroke-dasharray="3,4"/>
-          <line x1="240" y1="105" x2="240" y2="138" stroke="rgba(0,209,178,0.15)" stroke-width="1.5" stroke-dasharray="3,4"/>
-
-          <!-- Metrics label -->
-          <text x="240" y="168" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-family="monospace" font-size="11" letter-spacing="0.1em">METRICS</text>
-
-          <!-- ===== CENTER: GOVERNED DATA PRODUCT (the model box) ===== -->
-          <line x1="260" y1="72" x2="380" y2="72" stroke="rgba(244,162,97,0.18)" stroke-width="1.5" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.2s"/>
-          <line x1="260" y1="105" x2="380" y2="105" stroke="rgba(244,162,97,0.25)" stroke-width="1.5" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.4s"/>
-          <line x1="260" y1="138" x2="380" y2="138" stroke="rgba(244,162,97,0.18)" stroke-width="1.5" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.6s"/>
-
-          <!-- Data product box -->
-          <rect x="380" y="30" rx="8" ry="8" width="360" height="150" fill="rgba(244,162,97,0.04)" stroke="rgba(244,162,97,0.2)" stroke-width="1.5"/>
-
-          <!-- Data product label -->
-          <text x="560" y="22" text-anchor="middle" fill="rgba(244,162,97,0.45)" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="0.12em">GOVERNED DATA PRODUCT</text>
-
-          <!-- Internal semantic network (amber tones) — bigger nodes -->
-          <circle cx="415" cy="65" r="4" fill="rgba(244,162,97,0.15)" stroke="rgba(244,162,97,0.4)" stroke-width="1.5"/>
-          <circle cx="415" cy="105" r="5" fill="rgba(244,162,97,0.18)" stroke="rgba(244,162,97,0.45)" stroke-width="1.5"/>
-          <circle cx="415" cy="145" r="4" fill="rgba(244,162,97,0.15)" stroke="rgba(244,162,97,0.4)" stroke-width="1.5"/>
-
-          <!-- Semantic layer nodes -->
-          <circle cx="500" cy="55" r="4" fill="rgba(244,162,97,0.12)" stroke="rgba(244,162,97,0.35)" stroke-width="1.5" class="hiw-pulse-dot" style="animation-delay:0.3s"/>
-          <circle cx="500" cy="90" r="5" fill="rgba(244,162,97,0.18)" stroke="rgba(244,162,97,0.45)" stroke-width="2"/>
-          <circle cx="500" cy="125" r="4" fill="rgba(244,162,97,0.12)" stroke="rgba(244,162,97,0.35)" stroke-width="1.5" class="hiw-pulse-dot" style="animation-delay:0.9s"/>
-          <circle cx="500" cy="155" r="3" fill="rgba(244,162,97,0.1)" stroke="rgba(244,162,97,0.28)" stroke-width="1"/>
-
-          <!-- Governance nodes (white) -->
-          <circle cx="585" cy="62" r="3.5" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" class="hiw-pulse-dot" style="animation-delay:1s"/>
-          <circle cx="585" cy="98" r="4" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
-          <circle cx="585" cy="134" r="4" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
-
-          <!-- Convergence nodes -->
-          <circle cx="665" cy="80" r="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-          <circle cx="665" cy="128" r="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
-
-          <!-- Internal connections — thicker -->
-          <line x1="415" y1="65" x2="500" y2="55" stroke="rgba(244,162,97,0.18)" stroke-width="1.5"/>
-          <line x1="415" y1="65" x2="500" y2="90" stroke="rgba(244,162,97,0.12)" stroke-width="1.5"/>
-          <line x1="415" y1="105" x2="500" y2="90" stroke="rgba(244,162,97,0.22)" stroke-width="1.5"/>
-          <line x1="415" y1="105" x2="500" y2="125" stroke="rgba(244,162,97,0.15)" stroke-width="1.5"/>
-          <line x1="415" y1="145" x2="500" y2="125" stroke="rgba(244,162,97,0.18)" stroke-width="1.5"/>
-          <line x1="415" y1="145" x2="500" y2="155" stroke="rgba(244,162,97,0.12)" stroke-width="1.5"/>
-          <line x1="500" y1="55" x2="585" y2="62" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-          <line x1="500" y1="90" x2="585" y2="62" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
-          <line x1="500" y1="90" x2="585" y2="98" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-          <line x1="500" y1="125" x2="585" y2="98" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-          <line x1="500" y1="125" x2="585" y2="134" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-          <line x1="500" y1="155" x2="585" y2="134" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
-          <line x1="585" y1="62" x2="665" y2="80" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-          <line x1="585" y1="98" x2="665" y2="80" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-          <line x1="585" y1="98" x2="665" y2="128" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
-          <line x1="585" y1="134" x2="665" y2="128" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-
-          <!-- Vertical dashed connections inside semantic layer -->
-          <line x1="500" y1="55" x2="500" y2="90" stroke="rgba(244,162,97,0.1)" stroke-width="1" stroke-dasharray="3,4"/>
-          <line x1="500" y1="90" x2="500" y2="125" stroke="rgba(244,162,97,0.1)" stroke-width="1" stroke-dasharray="3,4"/>
-          <line x1="585" y1="62" x2="585" y2="98" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3,4"/>
-          <line x1="585" y1="98" x2="585" y2="134" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3,4"/>
-
-          <!-- Connect node on right edge of box -->
-          <circle cx="740" cy="105" r="7" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
-          <line x1="665" y1="80" x2="740" y2="105" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-          <line x1="665" y1="128" x2="740" y2="105" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
-
-          <!-- ===== RIGHT: SOURCE SYSTEMS (dim, secondary) ===== -->
-
-          <!-- Dashed lines from box to source dots -->
-          <line x1="748" y1="105" x2="830" y2="95" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="5,5" class="hiw-flow-rtl"/>
-          <line x1="748" y1="105" x2="830" y2="105" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.3s"/>
-          <line x1="748" y1="105" x2="830" y2="115" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.6s"/>
-
-          <!-- Diverging lines to individual sources -->
-          <line x1="830" y1="95" x2="1084" y2="40" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="5,5" class="hiw-flow-rtl"/>
-          <line x1="830" y1="98" x2="1084" y2="72" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.2s"/>
-          <line x1="830" y1="105" x2="1084" y2="105" stroke="rgba(255,255,255,0.09)" stroke-width="1" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.4s"/>
-          <line x1="830" y1="112" x2="1084" y2="138" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.6s"/>
-          <line x1="830" y1="115" x2="1084" y2="170" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="5,5" class="hiw-flow-rtl" style="animation-delay:0.8s"/>
-
-          <!-- Source system dots (dim white) -->
-          <circle cx="1084" cy="40" r="3" fill="rgba(255,255,255,0.18)" class="hiw-pulse-dot"/>
-          <circle cx="1084" cy="72" r="3" fill="rgba(255,255,255,0.18)" class="hiw-pulse-dot" style="animation-delay:0.4s"/>
-          <circle cx="1084" cy="105" r="3" fill="rgba(255,255,255,0.18)" class="hiw-pulse-dot" style="animation-delay:0.8s"/>
-          <circle cx="1084" cy="138" r="3" fill="rgba(255,255,255,0.18)" class="hiw-pulse-dot" style="animation-delay:1.2s"/>
-          <circle cx="1084" cy="170" r="3" fill="rgba(255,255,255,0.18)" class="hiw-pulse-dot" style="animation-delay:1.6s"/>
-
-          <!-- Source label -->
-          <text x="1084" y="198" text-anchor="middle" fill="rgba(255,255,255,0.15)" font-family="monospace" font-size="11" letter-spacing="0.1em">SOURCES</text>
-
-          <!-- ===== FEEDBACK LOOP: Curved arrow from outcome back under to model ===== -->
-          <path d="M 96 120 Q 96 225, 560 228 Q 735 225, 735 120"
-                fill="none" stroke="rgba(0,209,178,0.12)" stroke-width="1.5"
-                stroke-dasharray="7,5" class="hiw-feedback-dash"/>
-          <!-- Feedback arrow tip -->
-          <polygon points="735,114 730,124 740,124" fill="rgba(0,209,178,0.2)"/>
-          <!-- Feedback label -->
-          <text x="420" y="238" text-anchor="middle" fill="rgba(0,209,178,0.2)" font-family="monospace" font-size="10" letter-spacing="0.1em">FEEDBACK LOOP</text>
-        </svg>
-
-        <!-- 3-column labels — right-to-left framing -->
+        <!-- 3-column labels — reframed around ontology and relationships -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0">
           <div class="sm:pr-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: var(--color-forest);">Start with the outcome</p>
-            <p class="font-sans text-xl font-semibold text-white tracking-tight mb-2">The decision your team needs</p>
-            <p class="font-sans text-sm leading-relaxed text-white/35 max-w-[320px]">Not all your data — the data that matters. You tell us the outcome, and we work backward to the systems that hold the answer. Use case first. Always.</p>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #0f766e;">Start with the question</p>
+            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #292524;">What does your team need to know?</p>
+            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #57534e;">You tell us the outcome. We work backward to the systems that hold the answer — and connect only what matters. Use case first. Always.</p>
           </div>
           <div class="sm:px-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: var(--color-forest);">Build the intelligence product</p>
-            <p class="font-sans text-xl font-semibold text-white tracking-tight mb-2">Governed, purpose-built</p>
-            <p class="font-sans text-sm leading-relaxed text-white/35 max-w-[320px]">Connected data becomes a governed data product — carrying context, quality guarantees, and policy. Your team, your algorithms, and your existing tools all work from the same truth.</p>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #0f766e;">Model the relationships</p>
+            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #292524;">Process ontologies that think like your operations</p>
+            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #57534e;">Devices serve services. Alarms affect circuits. Circuits impact customers. The operational model maps every relationship — and defines the workflows, rules, and intelligence rails that govern what happens next.</p>
           </div>
           <div class="sm:pl-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: var(--color-forest);">Close the loop</p>
-            <p class="font-sans text-xl font-semibold text-white tracking-tight mb-2">Intelligence compounds</p>
-            <p class="font-sans text-sm leading-relaxed text-white/35 max-w-[320px]">Workflows, agents, automations, and APIs feed results back into the model. Every cycle makes the operating model smarter. Every use case enriches the whole.</p>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #0f766e;">Operate from the model</p>
+            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #292524;">Workflows, agents, and automations — shaped by your data</p>
+            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #57534e;">The model doesn't produce reports — it generates the applications your team works from. Every use case feeds results back, making the model smarter and unlocking new automations over time.</p>
           </div>
         </div>
       </div>
@@ -330,14 +199,61 @@ const insights = (await getCollection('insights'))
         </div>
       </div>
 
+
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       3b. PROOF STORIES — Light section, real outcomes
+       4. PROOF STORIES — Light section with xOps callout + real outcomes
        ═══════════════════════════════════════════════════════════════ -->
   <section class="py-20 lg:py-24 px-6" style="background: var(--color-neutral-50);">
     <div class="mx-auto max-w-6xl">
+
+      <!-- xOps callout card — dark card on light background -->
+      <a href="/utility/xops" class="group block mb-16 lg:mb-20 fade-up rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.003]" style="background: #0a0a0a; box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);">
+        <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] items-center">
+          <!-- Left: Text -->
+          <div class="p-8 lg:p-10 xl:p-12">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-4" style="color: var(--color-forest); opacity: 0.6;">xOps — Adaptive Operations</p>
+            <h3 class="font-sans font-light text-2xl sm:text-3xl tracking-tight text-white leading-snug">
+              Your operations shape the suite — <span style="color: var(--color-forest);">not the other way around</span>.
+            </h3>
+            <p class="mt-4 font-sans text-sm leading-relaxed text-white/40 max-w-md">
+              The operational model generates the applications your team works from. Asset management, monitoring, orchestration, service assurance — each one molds to your data. As the model deepens, new workflows and automations unlock automatically.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">MediaOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">GridOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">SatOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">NetOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">IoTOps</span>
+            </div>
+            <span class="inline-flex items-center mt-6 font-mono text-xs uppercase tracking-wider transition-colors duration-200 group-hover:opacity-80" style="color: var(--color-forest);">
+              Explore xOps <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
+            </span>
+          </div>
+          <!-- Right: Video -->
+          <div class="relative" style="border-left: 1px solid rgba(255,255,255,0.06);">
+            <div class="flex items-center gap-1.5 px-4 py-2" style="background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.04);">
+              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(255,255,255,0.12);"></span>
+              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(255,255,255,0.12);"></span>
+              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(255,255,255,0.12);"></span>
+              <span class="ml-2 font-mono text-[8px] text-white/15 tracking-wider">xOps Dashboard</span>
+            </div>
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              class="w-full h-auto block"
+              poster="/images/platform-screenshot.png"
+            >
+              <source src="/videos/xops-demo.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </a>
+
       <p class="font-mono text-xs uppercase tracking-[0.1em] mb-10 fade-up" style="color: var(--color-forest);">Results in Production</p>
       <div class="space-y-0 fade-up">
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid var(--color-structure);">
@@ -378,66 +294,9 @@ const insights = (await getCollection('insights'))
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       4. xOPS — Adaptive operations suite with video demo
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 px-6" style="background: #0a0a0a;">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Left: Messaging -->
-        <div class="fade-up">
-          <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-white/30 mb-6">Adaptive Operations</p>
-          <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white">
-            Your operations shape<br />the suite — <span style="color: var(--color-forest);">not the other way around</span>.
-          </h2>
-          <p class="mt-6 font-sans text-base lg:text-lg leading-relaxed text-white/50 max-w-lg">
-            xOps is the adaptive application layer that emerges from your operational model. Asset management, monitoring, orchestration, service assurance — each application molds to your data and evolves as your operations change. No rigid SaaS modules. No feature requests. As the model deepens, new workflows and automations unlock automatically.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">MediaOps</span>
-            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">GridOps</span>
-            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">SatOps</span>
-            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">NetOps</span>
-            <span class="font-mono text-[10px] uppercase tracking-[0.1em] px-3 py-1.5 rounded-full text-white/50" style="border: 1px solid rgba(255,255,255,0.1);">IoTOps</span>
-          </div>
-          <a
-            href="/utility/xops"
-            class="inline-flex items-center mt-8 font-mono text-xs uppercase tracking-wider transition-colors duration-200 hover:opacity-80"
-            style="color: var(--color-forest);"
-          >
-            Explore xOps <span class="ml-2">&rarr;</span>
-          </a>
-        </div>
-
-        <!-- Right: Video embed -->
-        <div class="fade-up">
-          <div class="relative rounded-xl overflow-hidden" style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 0 80px rgba(10,207,131,0.06);">
-            <!-- Browser chrome hint -->
-            <div class="flex items-center gap-1.5 px-4 py-2.5" style="background: rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <span class="w-2 h-2 rounded-full" style="background: rgba(255,255,255,0.1);"></span>
-              <span class="w-2 h-2 rounded-full" style="background: rgba(255,255,255,0.1);"></span>
-              <span class="w-2 h-2 rounded-full" style="background: rgba(255,255,255,0.1);"></span>
-              <span class="ml-3 font-mono text-[9px] text-white/20 tracking-wider">xOps Dashboard</span>
-            </div>
-            <video
-              autoplay
-              loop
-              muted
-              playsinline
-              class="w-full h-auto block"
-              poster="/images/platform-screenshot.png"
-            >
-              <source src="/videos/xops-demo.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
        5. DARK EDITORIAL BRIDGE — Human-first framing + empathy + failure avoidance
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative px-6 overflow-hidden" data-editorial style="border-top: 1px solid rgba(255,255,255,0.06); background: #0a0a0a;">
+  <section class="relative px-6 overflow-hidden" data-editorial style="border-top: 1px solid var(--color-structure); background: #0a0a0a;">
     <!-- Canvas dithering overlay -->
     <canvas id="editorial-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-70" data-dither-canvas data-image-src="/images/editorial-map-bg.png" data-pixel-size="3" data-base-speed="0.06" data-hover-speed="0.3" data-green-blend="0.5"></canvas>
     <!-- Subtle vignette for text readability -->

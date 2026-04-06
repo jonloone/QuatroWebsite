@@ -27,6 +27,18 @@ const esUrl = getAlternateUrl(Astro.url, 'es')
     <link rel="alternate" hreflang="es" href={`https://quatro.io${esUrl}`} />
     <link rel="alternate" hreflang="x-default" href={`https://quatro.io${enUrl}`} />
     <title>{fullTitle}</title>
+
+    <!-- rb2b visitor identification -->
+    <script is:inline>
+      !function(key) {
+        if (window.reb2b) return;
+        window.reb2b = { loaded: true };
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";
+        document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);
+      }("LNKLDHE5EZOJ");
+    </script>
   </head>
   <body class="font-sans text-neutral-800 antialiased">
     <slot />
