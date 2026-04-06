@@ -165,19 +165,18 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
     }
   })
 
-  // Scroll-driven dark↔light nav transition
+  // Adaptive nav: switches dark/light based on section underneath
   const navPill = document.getElementById('nav-pill')
-  const hero = document.querySelector('[data-hero]') as HTMLElement | null
   const logoSvg = document.getElementById('nav-logo')
   const wordmarkPath = logoSvg?.querySelector('path:first-child') as SVGPathElement | null
   const navLinks = document.querySelectorAll('[data-nav-link]') as NodeListOf<HTMLElement>
   const hamburger = document.getElementById('mobile-menu-open')
   const langSwitch = document.querySelector('[data-lang-switch]') as HTMLElement | null
 
-  function applyNavState(scrolled: boolean) {
+  function applyNavState(dark: boolean) {
     if (!navPill) return
-    if (scrolled) {
-      // White pill state
+    if (!dark) {
+      // Light pill (over light sections)
       navPill.style.backgroundColor = 'rgba(255,255,255,0.85)'
       navPill.style.backdropFilter = 'blur(12px)'
       ;(navPill.style as any).webkitBackdropFilter = 'blur(12px)'
@@ -188,7 +187,7 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
       if (hamburger) hamburger.style.color = '#0F172A'
       if (langSwitch) langSwitch.style.color = 'rgba(15,23,42,0.4)'
     } else {
-      // Dark state
+      // Dark pill (over dark sections)
       navPill.style.backgroundColor = 'rgba(0,0,0,0.3)'
       navPill.style.backdropFilter = 'blur(12px)'
       ;(navPill.style as any).webkitBackdropFilter = 'blur(12px)'
@@ -201,15 +200,71 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
     }
   }
 
-  // If no hero section on this page, always use scrolled (white) state
-  if (!hero) {
-    applyNavState(true)
-  } else {
-    // Apply initial state
-    applyNavState(false)
-    window.addEventListener('scroll', () => {
-      const heroBottom = hero.offsetHeight - 80
-      applyNavState(window.scrollY > heroBottom)
-    })
+  // Detect whether a section has a dark background
+  function isDarkSection(el: Element): boolean {
+    // Check for explicit data attributes first
+    if (el.hasAttribute('data-hero') || el.hasAttribute('data-nav-dark')) return true
+    if (el.hasAttribute('data-nav-light')) return false
+    // Parse rgb/rgba and check luminance
+    const bg = getComputedStyle(el).backgroundColor
+    const rgbaMatch = bg.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*([\d.]+)\)/)
+    if (rgbaMatch) {
+      const alpha = parseFloat(rgbaMatch[4])
+      if (alpha < 0.1) return false // Transparent = light (page default)
+      const [, r, g, b] = rgbaMatch.map(Number)
+      return (0.299 * r + 0.587 * g + 0.114 * b) / 255 < 0.35
+    }
+    const rgbMatch = bg.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/)
+    if (rgbMatch) {
+      const [, r, g, b] = rgbMatch.map(Number)
+      return (0.299 * r + 0.587 * g + 0.114 * b) / 255 < 0.35
+    }
+    return false
   }
+
+  // Gather all top-level sections on the page
+  const sections = Array.from(document.querySelectorAll(
+    'section, [data-hero]'
+  )).filter(el => el.getBoundingClientRect().height > 0 && !el.closest('dialog'))
+
+  // Track which sections are currently intersecting the nav zone
+  const activeSections = new Set<Element>()
+
+  // Observer watches a thin strip at the top where the nav sits (0-80px)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activeSections.add(entry.target)
+      } else {
+        activeSections.delete(entry.target)
+      }
+    })
+
+    // Find the topmost intersecting section
+    let topSection: Element | null = null
+    let topY = Infinity
+    activeSections.forEach(el => {
+      const rect = el.getBoundingClientRect()
+      if (rect.top < topY) {
+        topY = rect.top
+        topSection = el
+      }
+    })
+
+    if (topSection) {
+      applyNavState(isDarkSection(topSection))
+    }
+  }, {
+    rootMargin: '0px 0px -95% 0px', // Only observe the top ~5% of the viewport
+    threshold: 0
+  })
+
+  sections.forEach(s => observer.observe(s))
+
+  // Initial state based on what's at the top right now
+  const initSection = sections.find(s => {
+    const rect = s.getBoundingClientRect()
+    return rect.top <= 80 && rect.bottom > 0
+  })
+  applyNavState(initSection ? isDarkSection(initSection) : false)
 </script>
