@@ -28,6 +28,15 @@ const esUrl = getAlternateUrl(Astro.url, 'es')
     <link rel="alternate" hreflang="x-default" href={`https://quatro.io${enUrl}`} />
     <title>{fullTitle}</title>
 
+    <!-- Google Analytics -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-79JQ9TZC8S"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-79JQ9TZC8S');
+    </script>
+
     <!-- rb2b visitor identification -->
     <script is:inline>
       !function(key) {

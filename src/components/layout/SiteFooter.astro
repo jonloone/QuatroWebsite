@@ -1,7 +1,7 @@
 ---
 import type { Locale } from '@/lib/i18n'
 import { t, localizeHref } from '@/lib/i18n'
-import QuatroMark from '@/components/QuatroMark.astro'
+import QuatroLogo from '@/components/QuatroLogo.astro'
 import { getFooterNavigation } from '@/lib/navigation'
 
 interface Props {
@@ -15,16 +15,13 @@ const currentYear = new Date().getFullYear()
 const homeHref = lang === 'es' ? '/es/' : '/'
 ---
 
-<footer class="bg-neutral-950">
+<footer class="bg-black">
   <div class="py-16 text-neutral-50">
     <div class="mx-auto max-w-7xl px-6 lg:px-10 flex flex-col gap-16">
       <!-- Logo and tagline -->
       <div>
-        <a href={homeHref} class="flex items-center gap-3 mb-4" aria-label={t('nav.home', lang)}>
-          <div class="w-7 h-7 flex items-center justify-center" style="background-color: rgba(255,255,255,0.1);">
-            <QuatroMark variant="white" class="w-4 h-4" />
-          </div>
-          <span class="font-display text-sm font-bold text-white">Quatro</span>
+        <a href={homeHref} class="flex items-center mb-4" aria-label={t('nav.home', lang)}>
+          <QuatroLogo light class="h-7 w-auto" />
         </a>
         <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 whitespace-pre-line">
           {t('footer.tagline', lang)}

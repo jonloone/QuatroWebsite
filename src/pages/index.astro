@@ -124,78 +124,30 @@ const insights = (await getCollection('insights'))
       </p>
 
       <!-- How it works — visual flow diagram -->
-      <div class="mt-14 lg:mt-18 fade-up rounded-3xl px-6 py-10 lg:px-10 lg:py-14" style="background: #f5f5f4; border: 1px solid #e7e5e4;">
+      <div class="mt-14 lg:mt-18 fade-up rounded-3xl px-6 py-10 lg:px-10 lg:py-14" style="background: #111111; border: 1px solid #1a1a1a;">
 
         <!-- Operational model flow — concrete labeled examples -->
         <div class="mb-10">
-          <OperationalModelFlow client:visible />
+          <OperationalModelFlow client:visible theme="dark" />
         </div>
 
         <!-- 3-column labels — reframed around ontology and relationships -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0">
           <div class="sm:pr-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #0f766e;">Start with the question</p>
-            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #292524;">What does your team need to know?</p>
-            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #57534e;">You tell us the outcome. We work backward to the systems that hold the answer — and connect only what matters. Use case first. Always.</p>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #2dd4bf;">Start with the question</p>
+            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #e5e5e5;">What does your team need to know?</p>
+            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #a8a29e;">You tell us the outcome. We work backward to the systems that hold the answer — and connect only what matters. Use case first. Always.</p>
           </div>
           <div class="sm:px-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #0f766e;">Model the relationships</p>
-            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #292524;">Process ontologies that think like your operations</p>
-            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #57534e;">Devices serve services. Alarms affect circuits. Circuits impact customers. The operational model maps every relationship — and defines the workflows, rules, and intelligence rails that govern what happens next.</p>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #2dd4bf;">Model the relationships</p>
+            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #e5e5e5;">Process ontologies that think like your operations</p>
+            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #a8a29e;">Devices serve services. Alarms affect circuits. Circuits impact customers. The operational model maps every relationship — and defines the workflows, rules, and intelligence rails that govern what happens next.</p>
           </div>
           <div class="sm:pl-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #0f766e;">Operate from the model</p>
-            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #292524;">Workflows, agents, and automations — shaped by your data</p>
-            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #57534e;">The model doesn't produce reports — it generates the applications your team works from. Every use case feeds results back, making the model smarter and unlocking new automations over time.</p>
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #2dd4bf;">Operate from the model</p>
+            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #e5e5e5;">Workflows, agents, and automations — shaped by your data</p>
+            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #a8a29e;">The model doesn't produce reports — it generates the applications your team works from. Every use case feeds results back, making the model smarter and unlocking new automations over time.</p>
           </div>
-        </div>
-      </div>
-
-      <!-- Intelligence pillars — what Quatro does -->
-      <div class="mt-20 lg:mt-24 grid grid-cols-1 sm:grid-cols-2 gap-y-16 gap-x-12 lg:gap-x-16 fade-up">
-        <div>
-          <svg class="w-8 h-8 mb-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-          </svg>
-          <h3 class="font-sans font-light text-2xl lg:text-3xl tracking-tight text-white leading-snug">
-            Real-time visibility
-          </h3>
-          <p class="mt-4 font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-md">
-            8,000+ integrations across 1,000+ vendors. Every signal validated, enriched, and contextualized. One screen instead of fifteen. Real-time instead of yesterday's report.
-          </p>
-        </div>
-        <div>
-          <svg class="w-8 h-8 mb-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
-          </svg>
-          <h3 class="font-sans font-light text-2xl lg:text-3xl tracking-tight text-white leading-snug">
-            Predictive intelligence
-          </h3>
-          <p class="mt-4 font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-md">
-            Domain-trained intelligence models forecast failures before they happen. Automated root cause analysis. Intelligence grounded in your operational reality — not generic AI guesses.
-          </p>
-        </div>
-        <div>
-          <svg class="w-8 h-8 mb-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-          </svg>
-          <h3 class="font-sans font-light text-2xl lg:text-3xl tracking-tight text-white leading-snug">
-            Governed autonomous action
-          </h3>
-          <p class="mt-4 font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-md">
-            Cross the gap from copilot to autonomous operations. Every action bounded, auditable, and provably correct. Full accountability from data through reasoning through action.
-          </p>
-        </div>
-        <div>
-          <svg class="w-8 h-8 mb-5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-          </svg>
-          <h3 class="font-sans font-light text-2xl lg:text-3xl tracking-tight text-white leading-snug">
-            Intelligence compounds
-          </h3>
-          <p class="mt-4 font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-md">
-            Each new system you connect makes every other system smarter. Production-grade intelligence in weeks, not quarters. Deploy cloud, hybrid, or air-gapped.
-          </p>
         </div>
       </div>
 
@@ -209,36 +161,36 @@ const insights = (await getCollection('insights'))
   <section class="py-20 lg:py-24 px-6" style="background: var(--color-neutral-50);">
     <div class="mx-auto max-w-6xl">
 
-      <!-- xOps callout card — dark card on light background -->
-      <a href="/utility/xops" class="group block mb-16 lg:mb-20 fade-up rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.003]" style="background: #0a0a0a; box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.06);">
+      <!-- xOps callout card — light card on light background -->
+      <a href="/utility/xops" class="group block mb-16 lg:mb-20 fade-up rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.003]" style="background: #ffffff; box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);">
         <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] items-center">
           <!-- Left: Text -->
           <div class="p-8 lg:p-10 xl:p-12">
             <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-4" style="color: var(--color-forest); opacity: 0.6;">xOps — Adaptive Operations</p>
-            <h3 class="font-sans font-light text-2xl sm:text-3xl tracking-tight text-white leading-snug">
+            <h3 class="font-sans font-light text-2xl sm:text-3xl tracking-tight leading-snug" style="color: #1c1917;">
               Your operations shape the suite — <span style="color: var(--color-forest);">not the other way around</span>.
             </h3>
-            <p class="mt-4 font-sans text-sm leading-relaxed text-white/40 max-w-md">
+            <p class="mt-4 font-sans text-sm leading-relaxed max-w-md" style="color: #78716c;">
               The operational model generates the applications your team works from. Asset management, monitoring, orchestration, service assurance — each one molds to your data. As the model deepens, new workflows and automations unlock automatically.
             </p>
             <div class="mt-5 flex flex-wrap gap-2">
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">MediaOps</span>
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">GridOps</span>
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">SatOps</span>
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">NetOps</span>
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: rgba(0,209,178,0.5); border: 1px solid rgba(0,209,178,0.15);">IoTOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">MediaOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">GridOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">SatOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">NetOps</span>
+              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">IoTOps</span>
             </div>
             <span class="inline-flex items-center mt-6 font-mono text-xs uppercase tracking-wider transition-colors duration-200 group-hover:opacity-80" style="color: var(--color-forest);">
               Explore xOps <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
             </span>
           </div>
           <!-- Right: Video -->
-          <div class="relative" style="border-left: 1px solid rgba(255,255,255,0.06);">
-            <div class="flex items-center gap-1.5 px-4 py-2" style="background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.04);">
-              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(255,255,255,0.12);"></span>
-              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(255,255,255,0.12);"></span>
-              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(255,255,255,0.12);"></span>
-              <span class="ml-2 font-mono text-[8px] text-white/15 tracking-wider">xOps Dashboard</span>
+          <div class="relative" style="border-left: 1px solid rgba(0,0,0,0.06);">
+            <div class="flex items-center gap-1.5 px-4 py-2" style="background: rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.06);">
+              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(0,0,0,0.12);"></span>
+              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(0,0,0,0.12);"></span>
+              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(0,0,0,0.12);"></span>
+              <span class="ml-2 font-mono text-[8px] tracking-wider" style="color: rgba(0,0,0,0.25);">xOps Dashboard</span>
             </div>
             <video
               autoplay
@@ -253,6 +205,56 @@ const insights = (await getCollection('insights'))
           </div>
         </div>
       </a>
+
+      <!-- Intelligence pillars card — clustered under xOps -->
+      <div class="mb-16 lg:mb-20 fade-up rounded-2xl overflow-hidden" style="background: #ffffff; box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);">
+        <div class="p-8 lg:p-10 xl:p-12 grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-10 lg:gap-x-14">
+          <div>
+            <svg class="w-7 h-7 mb-4" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg>
+            <h3 class="font-sans font-semibold text-lg tracking-tight mb-2" style="color: #1c1917;">
+              Real-time visibility
+            </h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: #78716c;">
+              8,000+ integrations across 1,000+ vendors. Every signal validated, enriched, and contextualized. One screen instead of fifteen. Real-time instead of yesterday's report.
+            </p>
+          </div>
+          <div>
+            <svg class="w-7 h-7 mb-4" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+            </svg>
+            <h3 class="font-sans font-semibold text-lg tracking-tight mb-2" style="color: #1c1917;">
+              Predictive intelligence
+            </h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: #78716c;">
+              Domain-trained intelligence models forecast failures before they happen. Automated root cause analysis. Intelligence grounded in your operational reality — not generic AI guesses.
+            </p>
+          </div>
+          <div>
+            <svg class="w-7 h-7 mb-4" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+            </svg>
+            <h3 class="font-sans font-semibold text-lg tracking-tight mb-2" style="color: #1c1917;">
+              Governed autonomous action
+            </h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: #78716c;">
+              Cross the gap from copilot to autonomous operations. Every action bounded, auditable, and provably correct. Full accountability from data through reasoning through action.
+            </p>
+          </div>
+          <div>
+            <svg class="w-7 h-7 mb-4" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            <h3 class="font-sans font-semibold text-lg tracking-tight mb-2" style="color: #1c1917;">
+              Intelligence compounds
+            </h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: #78716c;">
+              Each new system you connect makes every other system smarter. Production-grade intelligence in weeks, not quarters. Deploy cloud, hybrid, or air-gapped.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <p class="font-mono text-xs uppercase tracking-[0.1em] mb-10 fade-up" style="color: var(--color-forest);">Results in Production</p>
       <div class="space-y-0 fade-up">

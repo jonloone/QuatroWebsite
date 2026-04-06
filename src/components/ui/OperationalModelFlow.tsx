@@ -1,11 +1,11 @@
 /**
- * OperationalModelFlow — v10
+ * OperationalModelFlow — v11
  *
- * Fully light section on dark page.
+ * Theme-aware component supporting both light and dark modes.
  * Sharp geometric shapes per system category. No glow. No hint labels.
- * All text WCAG AA against #f5f5f4 (4.5:1 normal, 3:1 large/UI).
  *
- * WCAG reference (computed against #f5f5f4):
+ * Light theme: all text WCAG AA against #f5f5f4 (4.5:1 normal, 3:1 large/UI).
+ * WCAG reference (light, computed against #f5f5f4):
  *   #292524 → 12.5:1  (body text, labels)
  *   #44403c → 8.2:1   (secondary text)
  *   #57534e → 6.0:1   (zone labels, small UI text)
@@ -17,6 +17,19 @@
  *   #b91c1c → 5.9:1   (Field accent)
  *   #0e7490 → 4.9:1   (Spatial accent)
  *   #c2410c → 4.9:1   (Finance accent)
+ *
+ * Dark theme: all accents WCAG AA against #111111 (4.5:1 minimum).
+ * WCAG reference (dark, computed against #111111):
+ *   #e5e5e5 → 15.0:1  (body text)
+ *   #b3b3b3 → 9.0:1   (secondary text)
+ *   #a8a29e → 7.5:1   (zone labels, small UI text)
+ *   #60a5fa → 7.4:1   (Network accent)
+ *   #a78bfa → 6.9:1   (Assets accent)
+ *   #2dd4bf → 10.1:1  (Operations accent)
+ *   #fbbf24 → 11.3:1  (Customer accent)
+ *   #f87171 → 6.8:1   (Field accent)
+ *   #22d3ee → 10.4:1  (Spatial accent)
+ *   #fb923c → 8.3:1   (Finance accent)
  */
 import { useState, useCallback, useEffect } from "react";
 
@@ -58,7 +71,7 @@ interface GhostEdge { from: number; to: number; }
 const SECTION_BG = "#f5f5f4";
 const SECTION_BORDER = "#e7e5e4";
 
-/* System colors — all ≥ 4.5:1 against #f5f5f4 */
+/* Light theme — all ≥ 4.5:1 against #f5f5f4 */
 const SYS_COLORS: Record<string, string> = {
   Network: "#2563eb", Assets: "#7c3aed", Operations: "#0f766e",
   Customer: "#b45309", Field: "#b91c1c", Spatial: "#0e7490",
@@ -80,6 +93,30 @@ const OUTPUT_COLORS: Record<OutputType, { accent: string; bg: string; border: st
   Workflow:   { accent: "#0f766e", bg: "#f0fdfa", border: "#99f6e4" },
   Automation: { accent: "#7c3aed", bg: "#f5f3ff", border: "#ddd6fe" },
   API:        { accent: "#c2410c", bg: "#fff7ed", border: "#fed7aa" },
+};
+
+/* Dark theme — all accents ≥ 4.5:1 against #111111 */
+const SYS_COLORS_DARK: Record<string, string> = {
+  Network: "#60a5fa", Assets: "#a78bfa", Operations: "#2dd4bf",
+  Customer: "#fbbf24", Field: "#f87171", Spatial: "#22d3ee",
+  Finance: "#fb923c",
+};
+const SYS_BG_DARK: Record<string, string> = {
+  Network: "#1e293b", Assets: "#1e1b4b", Operations: "#042f2e",
+  Customer: "#451a03", Field: "#450a0a", Spatial: "#083344",
+  Finance: "#431407",
+};
+const SYS_BORDER_DARK: Record<string, string> = {
+  Network: "#1e40af", Assets: "#4c1d95", Operations: "#115e59",
+  Customer: "#92400e", Field: "#991b1b", Spatial: "#155e75",
+  Finance: "#9a3412",
+};
+
+const OUTPUT_COLORS_DARK: Record<OutputType, { accent: string; bg: string; border: string }> = {
+  Agent:      { accent: "#60a5fa", bg: "#1e293b", border: "#1e40af" },
+  Workflow:   { accent: "#2dd4bf", bg: "#042f2e", border: "#115e59" },
+  Automation: { accent: "#a78bfa", bg: "#1e1b4b", border: "#4c1d95" },
+  API:        { accent: "#fb923c", bg: "#431407", border: "#9a3412" },
 };
 
 /* ── Ghost layer ── */
@@ -272,8 +309,24 @@ const pillW = (verb: string) => Math.max(verb.length * 6.5 + 16, 48);
 const PILL_H = 20, PILL_R = 10;
 const NODE_R = 22;
 
-function DesktopSVG({ sc, visible }: { sc: Scenario; visible: boolean }) {
-  const edgeColor = (e: ModelEdge) => SYS_COLORS[sc.systems[e.from].source] || "#0d9488";
+function DesktopSVG({ sc, visible, theme }: { sc: Scenario; visible: boolean; theme: "light" | "dark" }) {
+  const colors = theme === "dark" ? SYS_COLORS_DARK : SYS_COLORS;
+  const bgColors = theme === "dark" ? SYS_BG_DARK : SYS_BG;
+  const borderColors = theme === "dark" ? SYS_BORDER_DARK : SYS_BORDER;
+  const outputColors = theme === "dark" ? OUTPUT_COLORS_DARK : OUTPUT_COLORS;
+  const ghostStroke = theme === "dark" ? "rgba(255,255,255,0.1)" : "#e7e5e4";
+  const spineStroke = theme === "dark" ? "rgba(255,255,255,0.12)" : "#d6d3d1";
+  const labelColor = theme === "dark" ? "#a8a29e" : "#57534e";
+  const mainTextColor = theme === "dark" ? "#e5e5e5" : "#292524";
+  const secondaryTextColor = theme === "dark" ? "#b3b3b3" : "#44403c";
+  const pillBg = theme === "dark" ? "#1a1a1a" : "white";
+  const pillBorder = theme === "dark" ? "rgba(255,255,255,0.1)" : "#e7e5e4";
+  const forkDiamondFill = theme === "dark" ? "rgba(255,255,255,0.1)" : "#e7e5e4";
+  const forkDiamondStroke = theme === "dark" ? "rgba(255,255,255,0.15)" : "#d6d3d1";
+  const arrowPolygonFill = theme === "dark" ? "rgba(255,255,255,0.25)" : "#a8a29e";
+  const crossLineDash = spineStroke;
+
+  const edgeColor = (e: ModelEdge) => colors[sc.systems[e.from].source] || "#0d9488";
 
   const branchPad = 38;
   const branchSpacing = (H - branchPad * 2) / (sc.outputs.length - 1);
@@ -289,29 +342,29 @@ function DesktopSVG({ sc, visible }: { sc: Scenario; visible: boolean }) {
         {GHOST_EDGES.map((e, i) => {
           const n1 = GHOST_NODES[e.from], n2 = GHOST_NODES[e.to];
           return <line key={`ge-${i}`} x1={mapX(n1.cx)} y1={mapY(n1.cy)} x2={mapX(n2.cx)} y2={mapY(n2.cy)}
-            stroke="#e7e5e4" strokeWidth="0.5" />;
+            stroke={ghostStroke} strokeWidth="0.5" />;
         })}
         {GHOST_NODES.map((n, i) => (
           <rect key={`gn-${i}`} x={mapX(n.cx) - 2} y={mapY(n.cy) - 2} width="4" height="4"
-            fill="#e7e5e4" rx="0.5" transform={`rotate(45,${mapX(n.cx)},${mapY(n.cy)})`} />
+            fill={ghostStroke} rx="0.5" transform={`rotate(45,${mapX(n.cx)},${mapY(n.cy)})`} />
         ))}
       </g>
 
       {/* Spine */}
       <line x1={MODEL_X0} y1={H / 2} x2={BRANCH_X0 - 24} y2={H / 2}
-        stroke="#d6d3d1" strokeWidth="1" strokeDasharray="6,4" />
+        stroke={spineStroke} strokeWidth="1" strokeDasharray="6,4" />
 
-      {/* Zone labels — #57534e = 6.0:1 on #f5f5f4 */}
+      {/* Zone labels */}
       <text x={(MODEL_X0 + MODEL_X1) / 2} y={18} textAnchor="middle"
-        style={{ fontFamily: MONO, fontSize: 10, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: "#57534e" }}>
+        style={{ fontFamily: MONO, fontSize: 10, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: labelColor }}>
         Connect
       </text>
       <text x={(MODEL_X1 + BRANCH_X0) / 2} y={18} textAnchor="middle"
-        style={{ fontFamily: MONO, fontSize: 10, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: "#57534e" }}>
+        style={{ fontFamily: MONO, fontSize: 10, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: labelColor }}>
         Model
       </text>
       <text x={(BRANCH_X0 + BRANCH_X1) / 2} y={18} textAnchor="middle"
-        style={{ fontFamily: MONO, fontSize: 10, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: "#57534e" }}>
+        style={{ fontFamily: MONO, fontSize: 10, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: labelColor }}>
         Deliver
       </text>
 
@@ -327,11 +380,11 @@ function DesktopSVG({ sc, visible }: { sc: Scenario; visible: boolean }) {
           return (
             <g key={`cx-${i}`}>
               <path d={`M${x1},${y1} Q${mx},${cpY} ${x2},${y2}`}
-                fill="none" stroke="#d6d3d1" strokeWidth="0.8" strokeDasharray="3,4" />
+                fill="none" stroke={crossLineDash} strokeWidth="0.8" strokeDasharray="3,4" />
               <rect x={mx - pw / 2} y={cpY + (y1 < y2 ? -20 : 4)} width={pw} height={PILL_H} rx={PILL_R}
-                fill="white" stroke="#e7e5e4" strokeWidth="0.8" />
+                fill={pillBg} stroke={pillBorder} strokeWidth="0.8" />
               <text x={mx} y={cpY + (y1 < y2 ? -8 : 16)} textAnchor="middle" dominantBaseline="middle"
-                style={{ fontFamily: MONO, fontSize: 9, fill: "#57534e" }}>{e.verb}</text>
+                style={{ fontFamily: MONO, fontSize: 9, fill: labelColor }}>{e.verb}</text>
             </g>
           );
         })}
@@ -346,8 +399,8 @@ function DesktopSVG({ sc, visible }: { sc: Scenario; visible: boolean }) {
             <g key={`pe-${i}`}>
               <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={c} strokeWidth="1.2" strokeOpacity="0.25" />
               <rect x={mx - pw / 2} y={my - PILL_H / 2 - 8} width={pw} height={PILL_H} rx={PILL_R}
-                fill={SYS_BG[sc.systems[e.from].source] || "#f0fdfa"}
-                stroke={SYS_BORDER[sc.systems[e.from].source] || "#99f6e4"} strokeWidth="0.8" />
+                fill={bgColors[sc.systems[e.from].source] || "#f0fdfa"}
+                stroke={borderColors[sc.systems[e.from].source] || "#99f6e4"} strokeWidth="0.8" />
               <text x={mx} y={my - 8} textAnchor="middle" dominantBaseline="middle"
                 style={{ fontFamily: MONO, fontSize: 9, fill: c, fontWeight: 500 }}>{e.verb}</text>
             </g>
@@ -357,16 +410,16 @@ function DesktopSVG({ sc, visible }: { sc: Scenario; visible: boolean }) {
         {/* System category nodes */}
         {sc.systems.map((s, i) => {
           const px = mapX(s.cx), py = mapY(s.cy);
-          const c = SYS_COLORS[s.source] || "#0d9488";
-          const bg = SYS_BG[s.source] || "#f0fdfa";
-          const bd = SYS_BORDER[s.source] || "#99f6e4";
+          const c = colors[s.source] || "#0d9488";
+          const bg = bgColors[s.source] || "#f0fdfa";
+          const bd = borderColors[s.source] || "#99f6e4";
           return (
             <g key={`s-${i}`}>
               <path d={getShapePath(s.source, px, py, NODE_R)} fill={bg} stroke={bd} strokeWidth="1.5" />
               <path d={getShapePath(s.source, px, py, 5)} fill={c} stroke="none" />
-              {/* Label — #292524 = 12.5:1 */}
+              {/* Label */}
               <text x={px} y={py + 34} textAnchor="middle"
-                style={{ fontFamily: DISPLAY, fontSize: 13, fontWeight: 600, fill: "#292524" }}>
+                style={{ fontFamily: DISPLAY, fontSize: 13, fontWeight: 600, fill: mainTextColor }}>
                 {s.label}
               </text>
             </g>
@@ -381,15 +434,15 @@ function DesktopSVG({ sc, visible }: { sc: Scenario; visible: boolean }) {
           return (
             <g>
               <line x1={MODEL_X1 + 4} y1={H / 2} x2={forkX} y2={H / 2}
-                stroke="#d6d3d1" strokeWidth="1" strokeDasharray="4,3" />
+                stroke={spineStroke} strokeWidth="1" strokeDasharray="4,3" />
               <rect x={forkX - 3} y={H / 2 - 3} width="6" height="6" rx="1"
-                fill="#e7e5e4" stroke="#d6d3d1" strokeWidth="0.7"
+                fill={forkDiamondFill} stroke={forkDiamondStroke} strokeWidth="0.7"
                 transform={`rotate(45,${forkX},${H / 2})`} />
 
               {sc.outputs.map((out, idx) => {
                 const by = branchYs[idx];
                 const isPrimary = !!out.primary;
-                const tc = OUTPUT_COLORS[out.type];
+                const tc = outputColors[out.type];
                 return (
                   <g key={`out-${idx}`}>
                     <path d={`M${forkX},${H / 2} C${forkX + 40},${H / 2} ${badgeX - 55},${by} ${badgeX - 16},${by}`}
@@ -408,11 +461,11 @@ function DesktopSVG({ sc, visible }: { sc: Scenario; visible: boolean }) {
                       style={{ fontFamily: MONO, fontSize: 9.5, fill: tc.accent, letterSpacing: "0.05em", textTransform: "uppercase" as any, fontWeight: 600 }}>
                       {out.type}
                     </text>
-                    {/* Output labels — primary uses accent (≥4.5:1), secondary #44403c (8.2:1) */}
+                    {/* Output labels — primary uses accent, secondary uses secondary text color */}
                     <text x={labelX} y={by + 1} textAnchor="start" dominantBaseline="middle"
                       style={{
                         fontFamily: MONO, fontSize: isPrimary ? 12 : 11,
-                        fill: isPrimary ? tc.accent : "#44403c",
+                        fill: isPrimary ? tc.accent : secondaryTextColor,
                         fontWeight: isPrimary ? 600 : 400,
                       }}>
                       {out.label}
@@ -429,89 +482,182 @@ function DesktopSVG({ sc, visible }: { sc: Scenario; visible: boolean }) {
 }
 
 /* ═══════════════════════════════════════════
-   MOBILE — Vertical card stack (light)
+   MOBILE — Vertical card stack
    ═══════════════════════════════════════════ */
-function MobileLayout({ sc }: { sc: Scenario }) {
+function MobileLayout({ sc, theme }: { sc: Scenario; theme: "light" | "dark" }) {
+  const colors = theme === "dark" ? SYS_COLORS_DARK : SYS_COLORS;
+  const bgColors = theme === "dark" ? SYS_BG_DARK : SYS_BG;
+  const borderColors = theme === "dark" ? SYS_BORDER_DARK : SYS_BORDER;
+  const outputColors = theme === "dark" ? OUTPUT_COLORS_DARK : OUTPUT_COLORS;
+  const ghostStroke = theme === "dark" ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)";
+  const labelColor = theme === "dark" ? "#a8a29e" : "#57534e";
+  const mainTextColor = theme === "dark" ? "#e5e5e5" : "#292524";
+  const secondaryTextColor = theme === "dark" ? "#b3b3b3" : "#44403c";
+  const spineStroke = theme === "dark" ? "rgba(255,255,255,0.12)" : "#d6d3d1";
+  const pillBg = theme === "dark" ? "#1a1a1a" : "white";
+  const pillBorder = theme === "dark" ? "rgba(255,255,255,0.1)" : "#e7e5e4";
+  const forkFill = theme === "dark" ? "rgba(255,255,255,0.1)" : "#e7e5e4";
+  const forkStroke = theme === "dark" ? "rgba(255,255,255,0.15)" : "#d6d3d1";
+  const arrowFill = theme === "dark" ? "rgba(255,255,255,0.25)" : "#a8a29e";
+
+  /* Layout constants for the mobile SVG graph */
+  const MW = 320, GRAPH_H = 200, SPINE_Y = GRAPH_H + 36, OUT_Y0 = SPINE_Y + 44;
+  const totalH = OUT_Y0 + 36;
+
+  /* Map 4 systems into a 2×2 node grid within the graph area */
+  const nodePositions = [
+    { x: 80,  y: 50  },
+    { x: 240, y: 50  },
+    { x: 80,  y: 150 },
+    { x: 240, y: 150 },
+  ];
+  const NR = 18; /* node radius */
+  const pillH = 18, pillR = 9;
+  const pillW = (v: string) => Math.max(v.length * 5.5 + 14, 44);
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, padding: "0 4px" }}>
+    <svg viewBox={`0 0 ${MW} ${totalH}`}
+      style={{ display: "block", width: "100%", maxWidth: 340, margin: "0 auto", height: "auto", overflow: "visible" }}
+      role="img" aria-label="Operational intelligence flow">
 
-      {/* Systems */}
-      <div>
-        <div style={{ fontFamily: MONO, fontSize: 10, color: "#57534e", textTransform: "uppercase" as const, letterSpacing: "0.12em", textAlign: "center", marginBottom: 12 }}>
-          Connect
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, maxWidth: 340, margin: "0 auto" }}>
-          {sc.systems.map((s, i) => {
-            const c = SYS_COLORS[s.source] || "#0d9488";
-            const bg = SYS_BG[s.source] || "#f0fdfa";
-            const bd = SYS_BORDER[s.source] || "#99f6e4";
-            return (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderRadius: 8, background: bg, border: `1.5px solid ${bd}` }}>
-                <div style={{ width: 12, height: 12, background: c, flexShrink: 0,
-                  borderRadius: s.source === "Spatial" ? "50%" : s.source === "Assets" ? 0 : 2,
-                  transform: s.source === "Assets" ? "rotate(45deg)" : undefined,
-                }} />
-                <span style={{ fontFamily: DISPLAY, fontSize: 14, fontWeight: 600, color: "#292524" }}>{s.label}</span>
-              </div>
-            );
-          })}
-        </div>
-        {/* Edge verbs */}
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 6, marginTop: 14 }}>
-          {sc.edges.map((e, i) => {
-            const c = SYS_COLORS[sc.systems[e.from].source] || "#0d9488";
-            const bg = SYS_BG[sc.systems[e.from].source] || "#f0fdfa";
-            const bd = SYS_BORDER[sc.systems[e.from].source] || "#99f6e4";
-            return (
-              <span key={i} style={{ fontFamily: MONO, fontSize: 11, color: c, padding: "4px 12px", borderRadius: 20, background: bg, border: `1px solid ${bd}`, opacity: e.cross ? 0.6 : 1, fontWeight: 500 }}>
-                {e.verb}
-              </span>
-            );
-          })}
-        </div>
-      </div>
+      {/* Ghost lattice — subtle background graph texture */}
+      <g>
+        {GHOST_NODES.slice(0, 8).map((n, i) => {
+          const gx = 20 + (n.cx / 100) * (MW - 40);
+          const gy = 10 + (n.cy / 100) * (GRAPH_H - 20);
+          return <rect key={`gn-${i}`} x={gx - 1.5} y={gy - 1.5} width="3" height="3"
+            fill={ghostStroke} rx="0.5" transform={`rotate(45,${gx},${gy})`} />;
+        })}
+        {GHOST_EDGES.slice(0, 8).map((e, i) => {
+          const n1 = GHOST_NODES[e.from], n2 = GHOST_NODES[e.to];
+          if (!n1 || !n2) return null;
+          const x1 = 20 + (n1.cx / 100) * (MW - 40), y1 = 10 + (n1.cy / 100) * (GRAPH_H - 20);
+          const x2 = 20 + (n2.cx / 100) * (MW - 40), y2 = 10 + (n2.cy / 100) * (GRAPH_H - 20);
+          return <line key={`ge-${i}`} x1={x1} y1={y1} x2={x2} y2={y2}
+            stroke={ghostStroke} strokeWidth="0.5" />;
+        })}
+      </g>
 
-      {/* Arrow */}
-      <div style={{ textAlign: "center" }}>
-        <svg width="24" height="28" viewBox="0 0 24 28" fill="none" style={{ display: "inline-block" }}>
-          <line x1="12" y1="0" x2="12" y2="22" stroke="#d6d3d1" strokeWidth="1.2" strokeDasharray="4,3" />
-          <polygon points="8,20 12,27 16,20" fill="#a8a29e" />
-        </svg>
-        <div style={{ fontFamily: MONO, fontSize: 10, color: "#57534e", textTransform: "uppercase" as const, letterSpacing: "0.12em", marginTop: 4 }}>Model</div>
-      </div>
+      {/* Zone label: Connect */}
+      <text x={MW / 2} y={14} textAnchor="middle"
+        style={{ fontFamily: MONO, fontSize: 9, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: labelColor }}>
+        Connect
+      </text>
 
-      {/* Outputs */}
-      <div>
-        <div style={{ fontFamily: MONO, fontSize: 10, color: "#57534e", textTransform: "uppercase" as const, letterSpacing: "0.12em", textAlign: "center", marginBottom: 12 }}>
-          Deliver
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          {sc.outputs.map((out, idx) => {
-            const tc = OUTPUT_COLORS[out.type];
-            const isPrimary = !!out.primary;
-            return (
-              <div key={idx} style={{
-                display: "flex", alignItems: "center", gap: 12,
-                padding: isPrimary ? "14px 16px" : "12px 16px", borderRadius: 8,
-                background: tc.bg, border: `1px solid ${tc.border}`, borderWidth: isPrimary ? 1.5 : 1,
-              }}>
-                <div style={{ color: tc.accent, flexShrink: 0, display: "flex", alignItems: "center" }}>
-                  <svg viewBox="0 0 22 22" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: tc.accent }}>
-                    {(OUTPUT_ICONS[out.type] as React.ReactElement<{ children?: React.ReactNode }>).props.children}
-                  </svg>
-                </div>
-                <span style={{ fontFamily: MONO, fontSize: 11, fontWeight: 600, color: tc.accent, textTransform: "uppercase" as const, letterSpacing: "0.05em", flexShrink: 0, minWidth: 80 }}>
-                  {out.type}
-                </span>
-                <span style={{ fontFamily: MONO, fontSize: isPrimary ? 14 : 13, fontWeight: isPrimary ? 600 : 400, color: isPrimary ? tc.accent : "#44403c" }}>
-                  {out.label}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
+      {/* Primary edges (non-cross) — lines between system nodes with verb pills */}
+      {sc.edges.filter(e => !e.cross).map((e, i) => {
+        const p1 = nodePositions[e.from], p2 = nodePositions[e.to];
+        const mx = (p1.x + p2.x) / 2, my = (p1.y + p2.y) / 2;
+        const c = colors[sc.systems[e.from].source] || "#0d9488";
+        const pw = pillW(e.verb);
+        return (
+          <g key={`pe-${i}`}>
+            <line x1={p1.x} y1={p1.y} x2={p2.x} y2={p2.y}
+              stroke={c} strokeWidth="1" strokeOpacity="0.25" />
+            <rect x={mx - pw / 2} y={my - pillH / 2 - 1} width={pw} height={pillH} rx={pillR}
+              fill={bgColors[sc.systems[e.from].source] || "#f0fdfa"}
+              stroke={borderColors[sc.systems[e.from].source] || "#99f6e4"} strokeWidth="0.7" />
+            <text x={mx} y={my - 1} textAnchor="middle" dominantBaseline="middle"
+              style={{ fontFamily: MONO, fontSize: 8, fill: c, fontWeight: 500 }}>{e.verb}</text>
+          </g>
+        );
+      })}
+
+      {/* Cross-edges — curved dashed lines */}
+      {sc.edges.filter(e => e.cross).map((e, i) => {
+        const p1 = nodePositions[e.from], p2 = nodePositions[e.to];
+        const mx = (p1.x + p2.x) / 2, my = (p1.y + p2.y) / 2;
+        const cpX = mx + (p1.y < p2.y ? -50 : 50);
+        const pw = pillW(e.verb);
+        return (
+          <g key={`cx-${i}`}>
+            <path d={`M${p1.x},${p1.y} Q${cpX},${my} ${p2.x},${p2.y}`}
+              fill="none" stroke={spineStroke} strokeWidth="0.7" strokeDasharray="3,4" />
+            <rect x={cpX > mx ? mx + 8 : mx - pw - 8} y={my - pillH / 2} width={pw} height={pillH} rx={pillR}
+              fill={pillBg} stroke={pillBorder} strokeWidth="0.7" />
+            <text x={cpX > mx ? mx + 8 + pw / 2 : mx - 8 - pw / 2} y={my} textAnchor="middle" dominantBaseline="middle"
+              style={{ fontFamily: MONO, fontSize: 8, fill: labelColor }}>{e.verb}</text>
+          </g>
+        );
+      })}
+
+      {/* System nodes — geometric shapes */}
+      {sc.systems.map((s, i) => {
+        const pos = nodePositions[i];
+        const c = colors[s.source] || "#0d9488";
+        const bg = bgColors[s.source] || "#f0fdfa";
+        const bd = borderColors[s.source] || "#99f6e4";
+        return (
+          <g key={`s-${i}`}>
+            <path d={getShapePath(s.source, pos.x, pos.y, NR)} fill={bg} stroke={bd} strokeWidth="1.2" />
+            <path d={getShapePath(s.source, pos.x, pos.y, 4)} fill={c} stroke="none" />
+            <text x={pos.x} y={pos.y + NR + 14} textAnchor="middle"
+              style={{ fontFamily: DISPLAY, fontSize: 11, fontWeight: 600, fill: mainTextColor }}>
+              {s.label}
+            </text>
+          </g>
+        );
+      })}
+
+      {/* Spine — dashed line from graph zone to output zone */}
+      <line x1={MW / 2} y1={GRAPH_H + 4} x2={MW / 2} y2={SPINE_Y - 4}
+        stroke={spineStroke} strokeWidth="1" strokeDasharray="4,3" />
+      <polygon points={`${MW / 2 - 3},${SPINE_Y - 8} ${MW / 2},${SPINE_Y - 2} ${MW / 2 + 3},${SPINE_Y - 8}`}
+        fill={arrowFill} />
+
+      {/* Zone label: Model */}
+      <text x={MW / 2} y={SPINE_Y + 3} textAnchor="middle" dominantBaseline="middle"
+        style={{ fontFamily: MONO, fontSize: 9, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: labelColor }}>
+        Model
+      </text>
+
+      {/* Fork diamond */}
+      <rect x={MW / 2 - 3} y={SPINE_Y + 14} width="6" height="6" rx="1"
+        fill={forkFill} stroke={forkStroke} strokeWidth="0.7"
+        transform={`rotate(45,${MW / 2},${SPINE_Y + 17})`} />
+
+      {/* Zone label: Deliver */}
+      <text x={MW / 2} y={OUT_Y0 - 12} textAnchor="middle"
+        style={{ fontFamily: MONO, fontSize: 9, textTransform: "uppercase" as any, letterSpacing: "0.12em", fill: labelColor }}>
+        Deliver
+      </text>
+
+      {/* Output badges — horizontal row, no description text */}
+      {(() => {
+        const badgeW = 68, badgeH = 24, badgeGap = 6;
+        const totalBadgeW = sc.outputs.length * badgeW + (sc.outputs.length - 1) * badgeGap;
+        const startX = (MW - totalBadgeW) / 2;
+        const by = OUT_Y0 + 4;
+
+        return sc.outputs.map((out, idx) => {
+          const tc = outputColors[out.type];
+          const bx = startX + idx * (badgeW + badgeGap);
+
+          return (
+            <g key={`out-${idx}`}>
+              {/* Branch line from fork to badge */}
+              <path d={`M${MW / 2},${SPINE_Y + 17} C${MW / 2},${SPINE_Y + 26} ${bx + badgeW / 2},${by - 10} ${bx + badgeW / 2},${by}`}
+                fill="none" stroke={tc.accent} strokeWidth="0.8"
+                strokeOpacity={out.primary ? 0.4 : 0.15} />
+              {/* Badge */}
+              <rect x={bx} y={by - badgeH / 2} width={badgeW} height={badgeH} rx="5"
+                fill={tc.bg} stroke={tc.border} strokeWidth={out.primary ? "1.2" : "0.7"} />
+              {/* Icon */}
+              <g transform={`translate(${bx + 6},${by - 8})`}>
+                <svg viewBox="0 0 22 22" width="16" height="16" fill="none" stroke={tc.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  {(OUTPUT_ICONS[out.type] as React.ReactElement<{ children?: React.ReactNode }>).props.children}
+                </svg>
+              </g>
+              {/* Type label */}
+              <text x={bx + 42} y={by + 1} textAnchor="middle" dominantBaseline="middle"
+                style={{ fontFamily: MONO, fontSize: 7.5, fill: tc.accent, letterSpacing: "0.04em", textTransform: "uppercase" as any, fontWeight: 600 }}>
+                {out.type}
+              </text>
+            </g>
+          );
+        });
+      })()}
+    </svg>
   );
 }
 
@@ -545,9 +691,10 @@ function matchScenario(industry?: string, title?: string): number | null {
    ═══════════════════════════════════════════ */
 interface FlowProps {
   defaultScenario?: number;
+  theme?: "light" | "dark";
 }
 
-export default function OperationalModelFlow({ defaultScenario }: FlowProps = {}) {
+export default function OperationalModelFlow({ defaultScenario, theme = "dark" }: FlowProps = {}) {
   const [active, setActive] = useState(defaultScenario ?? 0);
   const [visible, setVisible] = useState(true);
   const isMobile = useIsMobile();
@@ -590,14 +737,23 @@ export default function OperationalModelFlow({ defaultScenario }: FlowProps = {}
       <div style={{ display: "flex", justifyContent: "center", gap: 8, marginBottom: 16, flexWrap: "wrap" }}>
         {SCENARIOS.map((s, i) => {
           const isActive = i === active;
+          const tabBorder = theme === "dark"
+            ? (isActive ? "1.5px solid #115e59" : "1px solid rgba(255,255,255,0.12)")
+            : (isActive ? "1.5px solid #0f766e" : "1px solid #d6d3d1");
+          const tabBg = theme === "dark"
+            ? (isActive ? "rgba(45,212,191,0.1)" : "transparent")
+            : (isActive ? "#f0fdfa" : "white");
+          const tabColor = theme === "dark"
+            ? (isActive ? "#2dd4bf" : "#a8a29e")
+            : (isActive ? "#0f766e" : "#57534e");
           return (
             <button key={i} onClick={() => goTo(i)}
               style={{
                 fontFamily: MONO, fontSize: isMobile ? 12 : 11, letterSpacing: "0.04em",
                 padding: isMobile ? "8px 18px" : "7px 16px", borderRadius: 20,
-                border: isActive ? "1.5px solid #0f766e" : "1px solid #d6d3d1",
-                background: isActive ? "#f0fdfa" : "white",
-                color: isActive ? "#0f766e" : "#57534e",
+                border: tabBorder,
+                background: tabBg,
+                color: tabColor,
                 cursor: "pointer", transition: "all 0.25s ease",
                 fontWeight: isActive ? 600 : 400,
               }}
@@ -616,12 +772,11 @@ export default function OperationalModelFlow({ defaultScenario }: FlowProps = {}
         textAlign: "center",
         padding: isMobile ? "8px 8px 16px" : "4px 0 24px",
       }}>
-        {/* #292524 = 12.5:1 on #f5f5f4 */}
         <p style={{
           fontFamily: SANS,
           fontSize: isMobile ? 24 : 30,
           fontWeight: 300,
-          color: "#292524",
+          color: theme === "dark" ? "#e5e5e5" : "#292524",
           lineHeight: 1.3,
           margin: 0,
           maxWidth: 640,
@@ -635,8 +790,8 @@ export default function OperationalModelFlow({ defaultScenario }: FlowProps = {}
       {/* ── Layout ── */}
       <div style={{ opacity: visible ? 1 : 0, transition: `opacity ${FADE_MS}ms ease` }}>
         {isMobile
-          ? <MobileLayout sc={sc} />
-          : <DesktopSVG sc={sc} visible={true} />
+          ? <MobileLayout sc={sc} theme={theme} />
+          : <DesktopSVG sc={sc} visible={true} theme={theme} />
         }
       </div>
     </div>
