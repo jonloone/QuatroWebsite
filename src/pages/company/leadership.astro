@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import Hero from '@/components/marketing/Hero.astro'
+import Section from '@/components/marketing/Section.astro'
+
+const team = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order)
+---
+
+<MarketingLayout
+  title="Leadership — Meet Our Executive Team"
+  description="Meet the executive team leading Quatro's mission to deliver industrial intelligence."
+>
+  <Hero
+    eyebrow="Leadership"
+    title="Meet Our Executive Team"
+    description="Experienced leaders from industrial technology, enterprise software, and operations backgrounds."
+  />
+
+  <Section>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {team.map((member) => (
+        <div class="rounded-2xl border border-neutral-200 bg-white p-8 text-center">
+          <div class="mx-auto h-24 w-24 rounded-full bg-neutral-200" />
+          <h3 class="mt-6 font-display text-lg font-bold text-neutral-800">{member.data.name}</h3>
+          <p class="mt-1 text-sm font-medium text-brand-500">{member.data.title}</p>
+          {member.data.bio && (
+            <p class="mt-4 text-sm text-neutral-600">{member.data.bio}</p>
+          )}
+          {member.data.linkedin && (
+            <a
+              href={member.data.linkedin}
+              class="mt-4 inline-block text-sm text-neutral-500 hover:text-brand-500"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn &rarr;
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </Section>
+</MarketingLayout>
