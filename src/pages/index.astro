@@ -2,9 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
-import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
-import FloatingPaths from '@/components/ui/FloatingPaths'
-import OperationalModelFlow from '@/components/ui/OperationalModelFlow'
+import QuatroLogo from '@/components/QuatroLogo.astro'
 import { getCollection } from 'astro:content'
 const insights = (await getCollection('insights'))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
@@ -12,499 +10,1518 @@ const insights = (await getCollection('insights'))
 ---
 
 <BaseLayout
-  title="Quatro — The Operational Intelligence Utility"
-  description="Tell us the outcome that matters. We connect the systems that hold the answer. Your team gets workflows, agents, automations, and APIs — deployed your way, governed for trust."
+  title="Quatro — Operational Intelligence for Critical Infrastructure"
+  description="We integrate the hardware, software, and domain expertise that energy, defense, network, and infrastructure operators need — delivered as a utility, built so you own the intelligence from day one."
   lang="en"
 >
 
   <SiteHeader lang="en" />
 
   <!-- ═══════════════════════════════════════════════════════════════
-       1. HERO — Dithering Card (via HeroCanvas component)
+       1. HERO — Fixed message left + rotating engagement images right
        ═══════════════════════════════════════════════════════════════ -->
-  <HeroCanvas
-    badge="Quatro"
-    title='Systems That Think.<br/><span class="text-white/60">People Who Build.</span>'
-    body="Your operations generate data across dozens of systems — but that data doesn't talk to itself. Quatro is the operational intelligence utility. Tell us the outcome that matters, and we connect the systems that hold the answer. Your team gets back workflows, agents, automations, and APIs — built on the data that matters, not all the data."
-    ctaLabel="Schedule an Assessment"
-    ctaHref="/contact/demo"
-    imageSrc="/images/hero-bg.png"
-    pixelSize={3}
-    baseSpeed={0.1}
-    hoverSpeed={0.5}
-    greenBlend={0.75}
-    canvasOpacity={85}
-    minHeight="min-h-[480px] md:min-h-[560px]"
-  />
+  <section class="min-h-screen relative" id="hero-carousel">
+    <div class="grid grid-cols-1 lg:grid-cols-[42%_1fr] min-h-screen">
+
+      <!-- Left panel — fixed message, Quatro logo top-left -->
+      <div class="relative flex flex-col justify-between px-8 lg:px-12 xl:px-16 py-12 lg:py-16 order-2 lg:order-1 z-10 lg:mr-[-60px]" style="background: var(--color-neutral-50);">
+
+        <!-- Top: Quatro logo (mark + wordmark), aligned with nav bar -->
+        <div class="pt-2 lg:pt-3">
+          <a href="/">
+            <QuatroLogo class="h-8 lg:h-9 w-auto" />
+          </a>
+        </div>
+
+        <!-- Center: Fixed hero message — never changes -->
+        <div>
+          <p class="font-sans font-light text-2xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight" style="color: var(--color-neutral-800);">
+            Making critical infrastructure intelligent.
+          </p>
+          <p class="mt-6 font-sans text-sm lg:text-base leading-relaxed" style="color: var(--color-neutral-500);">
+            We integrate the hardware, software, and domain expertise that energy, defense, network, and infrastructure operators need — delivered as a utility, built so you own the intelligence from day one.
+          </p>
+          <a href="/contact/demo" class="mt-10 group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
+            Talk to Our Team
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Bottom spacer for layout balance -->
+        <div></div>
+      </div>
+
+      <!-- Right: Full-bleed rotating engagement images -->
+      <div class="relative min-h-[60vh] lg:min-h-screen order-1 lg:order-2 overflow-hidden" data-dither-section>
+
+        <!-- Bayer 4×4 image-dither canvas — reads and renders carousel images through Quatro's signature dither engine -->
+        <canvas id="hero-dither-canvas" class="absolute inset-0 w-full h-full z-[1]" style="background: #0f2e24;"></canvas>
+
+        <!-- Gradient — bottom focused for caption readability, forest green tint -->
+        <div class="absolute inset-0 pointer-events-none z-[3]" style="background: linear-gradient(to top, rgba(10,30,22,0.6) 0%, rgba(15,76,58,0.15) 30%, transparent 55%);"></div>
+
+        <!-- Caption + dots bar — inside image container, padding matches nav -->
+        <!-- Mobile: px-6 (matches nav px-6). Desktop: pl-[108px] = 60px overlap + 48px nav padding; pr-12 matches nav right -->
+        <div class="absolute bottom-0 left-0 right-0 z-10 px-6 lg:pl-[108px] lg:pr-12 pb-8 lg:pb-12">
+          <div class="flex items-end justify-between gap-8">
+            <!-- Left: Rotating engagement caption -->
+            <div class="relative flex-1 max-w-2xl" style="min-height: 110px;">
+              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out" data-slide="0">
+                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Community Vulnerability Analytics</p>
+                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Predictive Risk Intelligence</p>
+              </div>
+              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="1">
+                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Maritime &amp; Environmental Monitoring</p>
+                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Coastal Surveillance · EO Analytics</p>
+              </div>
+              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="2">
+                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Multi-Domain ISR Fusion</p>
+                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Sovereign Intelligence Operations</p>
+              </div>
+              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="3">
+                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Grid Intelligence &amp; Predictive Ops</p>
+                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Distributed Energy Infrastructure</p>
+              </div>
+              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="4">
+                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Pipeline &amp; Asset Integrity</p>
+                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Oil &amp; Gas · Predictive Maintenance</p>
+              </div>
+              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="5">
+                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Claims &amp; Compliance Automation</p>
+                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Enterprise Banking &amp; Insurance</p>
+              </div>
+            </div>
+
+            <!-- Right: Dots + counter -->
+            <div class="flex items-center gap-4 flex-shrink-0">
+              <div class="flex items-center gap-2">
+                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="0" style="background: rgba(255,255,255,0.9);" aria-label="Slide 1"></button>
+                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="1" style="background: rgba(255,255,255,0.3);" aria-label="Slide 2"></button>
+                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="2" style="background: rgba(255,255,255,0.3);" aria-label="Slide 3"></button>
+                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="3" style="background: rgba(255,255,255,0.3);" aria-label="Slide 4"></button>
+                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="4" style="background: rgba(255,255,255,0.3);" aria-label="Slide 5"></button>
+                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="5" style="background: rgba(255,255,255,0.3);" aria-label="Slide 6"></button>
+              </div>
+              <p class="font-mono text-sm text-white/40" id="hero-counter">01 / 06</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hero Carousel + Bayer 4×4 Image Dither (Quatro signature effect) -->
+  <script>
+    (function () {
+      const TOTAL = 6;
+      const INTERVAL = 6000;
+      let current = 0;
+      let timer: ReturnType<typeof setInterval>;
+
+      const captions = document.querySelectorAll('.hero-slide-caption');
+      const dots = document.querySelectorAll('.hero-dot');
+      const counter = document.getElementById('hero-counter');
+
+      // ─── Image sources for the carousel ───
+      const imageSources = [
+        '/images/mission-youth-risk-v3b.png',
+        '/images/mission-galapagos-v2.png',
+        '/images/hero-us-defense-intel.png',
+        '/images/hero-mena-energy-ops.png',
+        '/images/proof-energy.png',
+        '/images/proof-finance.png'
+      ];
+
+      // ─── Bayer 4×4 dither engine (from HeroCanvas.astro) ───
+      const bayer4x4 = [
+        [ 0/16,  8/16,  2/16, 10/16],
+        [12/16,  4/16, 14/16,  6/16],
+        [ 3/16, 11/16,  1/16,  9/16],
+        [15/16,  7/16, 13/16,  5/16]
+      ];
+
+      const canvas = document.getElementById('hero-dither-canvas') as HTMLCanvasElement | null;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const pixelSize = 2;
+      const greenBlend = 0.25;
+      let baseSpeed = 0.08;
+      let hoverSpeed = 0.4;
+      let isHovered = false;
+      let startTime = performance.now();
+      let animId: number;
+
+      // Preload all images
+      const images: HTMLImageElement[] = [];
+      const offscreen = document.createElement('canvas');
+      const offCtx = offscreen.getContext('2d')!;
+      let currentImgIndex = 0;
+      let nextImgIndex = -1;
+      let crossfade = 0; // 0 = showing currentImgIndex fully, 1 = fully transitioned to nextImgIndex
+      let crossfadeActive = false;
+      const CROSSFADE_DURATION = 1200; // ms
+      let crossfadeStart = 0;
+
+      // Offscreen canvases for crossfade blending
+      const offA = document.createElement('canvas');
+      const offACtx = offA.getContext('2d')!;
+      const offB = document.createElement('canvas');
+      const offBCtx = offB.getContext('2d')!;
+
+      imageSources.forEach((src) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.src = src;
+        images.push(img);
+      });
+
+      function resize() {
+        const rect = canvas!.getBoundingClientRect();
+        canvas!.width = rect.width;
+        canvas!.height = rect.height;
+        offscreen.width = rect.width;
+        offscreen.height = rect.height;
+        offA.width = rect.width;
+        offA.height = rect.height;
+        offB.width = rect.width;
+        offB.height = rect.height;
+      }
+
+      function getImagePixels(imgIndex: number, w: number, h: number): Uint8ClampedArray | null {
+        const img = images[imgIndex];
+        if (!img || !img.complete || img.naturalWidth === 0) return null;
+        offscreen.width = w;
+        offscreen.height = h;
+        // Cover-fit the image (same as object-cover)
+        const imgAspect = img.naturalWidth / img.naturalHeight;
+        const canvasAspect = w / h;
+        let sx = 0, sy = 0, sw = img.naturalWidth, sh = img.naturalHeight;
+        if (imgAspect > canvasAspect) {
+          sw = img.naturalHeight * canvasAspect;
+          sx = (img.naturalWidth - sw) / 2;
+        } else {
+          sh = img.naturalWidth / canvasAspect;
+          sy = (img.naturalHeight - sh) / 2;
+        }
+        offCtx.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
+        return offCtx.getImageData(0, 0, w, h).data;
+      }
+
+      function render(time: number) {
+        if (!ctx) return;
+        const w = canvas!.width;
+        const h = canvas!.height;
+        if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
+
+        const elapsed = (time - startTime) / 1000;
+        const speed = isHovered ? hoverSpeed : baseSpeed;
+        const t = elapsed * speed;
+
+        // Handle crossfade timing
+        if (crossfadeActive) {
+          crossfade = Math.min(1, (time - crossfadeStart) / CROSSFADE_DURATION);
+          if (crossfade >= 1) {
+            currentImgIndex = nextImgIndex;
+            crossfadeActive = false;
+            crossfade = 0;
+            nextImgIndex = -1;
+          }
+        }
+
+        // Get pixel data for current (and next if crossfading)
+        const srcA = getImagePixels(currentImgIndex, w, h);
+        const srcB = crossfadeActive && nextImgIndex >= 0 ? getImagePixels(nextImgIndex, w, h) : null;
+
+        const imageData = ctx.createImageData(w, h);
+        const data = imageData.data;
+        const cols = Math.ceil(w / pixelSize);
+        const rows = Math.ceil(h / pixelSize);
+
+        for (let row = 0; row < rows; row++) {
+          for (let col = 0; col < cols; col++) {
+            const centerX = col * pixelSize + (pixelSize >> 1);
+            const centerY = row * pixelSize + (pixelSize >> 1);
+
+            // Sample source pixel (blend A and B if crossfading)
+            let sR = 0, sG = 0, sB = 0;
+            let imgBrightness = 0.3;
+
+            if (centerX < w && centerY < h) {
+              const sIdx = (centerY * w + centerX) * 4;
+              if (srcA) {
+                const aR = srcA[sIdx], aG = srcA[sIdx+1], aB = srcA[sIdx+2];
+                if (srcB && crossfadeActive) {
+                  const bR = srcB[sIdx], bG = srcB[sIdx+1], bB = srcB[sIdx+2];
+                  sR = aR + (bR - aR) * crossfade;
+                  sG = aG + (bG - aG) * crossfade;
+                  sB = aB + (bB - aB) * crossfade;
+                } else {
+                  sR = aR; sG = aG; sB = aB;
+                }
+                imgBrightness = (sR * 0.299 + sG * 0.587 + sB * 0.114) / 255;
+              }
+            }
+
+            const cx = col / cols;
+            const cy = row / rows;
+
+            // Warp animation (from HeroCanvas engine)
+            const warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
+            const warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
+            const wx = cx + warpX;
+            const wy = cy + warpY;
+            const d1 = Math.sqrt((wx - 0.5) ** 2 + (wy - 0.5) ** 2);
+            const warpIntensity = 0.3 + 0.25 * Math.sin(d1 * 8.0 - t * 2.0) + 0.15 * Math.cos((wx + wy) * 6.0 + t);
+
+            let intensity = imgBrightness * 0.85 + warpIntensity * 0.35;
+            intensity = Math.max(0, Math.min(1, intensity));
+
+            // Bayer threshold
+            const threshold = bayer4x4[row % 4][col % 4];
+            const on = intensity > threshold;
+
+            let r: number, g: number, b: number, a: number;
+            if (on) {
+              // Bright, vivid dither dots on deep green canvas — image pops through
+              const blend = greenBlend + (1 - greenBlend) * 0.2 * warpIntensity;
+              r = Math.round(sR * (1 - blend) + 80  * blend);
+              g = Math.round(sG * (1 - blend) + 185 * blend);
+              b = Math.round(sB * (1 - blend) + 140 * blend);
+              a = Math.round(intensity * 160 + 95);
+            } else {
+              // Transparent — deep forest green canvas (#0f2e24) shows through
+              r = 0; g = 0; b = 0; a = 0;
+            }
+
+            // Fill pixel block
+            for (let py = 0; py < pixelSize; py++) {
+              for (let px = 0; px < pixelSize; px++) {
+                const x = col * pixelSize + px;
+                const y = row * pixelSize + py;
+                if (x >= w || y >= h) continue;
+                const idx = (y * w + x) * 4;
+                data[idx]     = r;
+                data[idx + 1] = g;
+                data[idx + 2] = b;
+                data[idx + 3] = a;
+              }
+            }
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        animId = requestAnimationFrame(render);
+      }
+
+      // ─── Carousel Controller (integrated with dither) ───
+      function goTo(index: number) {
+        // Update captions
+        captions.forEach((el) => {
+          (el as HTMLElement).style.opacity = '0';
+          (el as HTMLElement).style.transform = 'translateY(1rem)';
+        });
+        dots.forEach((el) => {
+          (el as HTMLElement).style.background = 'rgba(255,255,255,0.3)';
+        });
+
+        const activeCaption = document.querySelector(`.hero-slide-caption[data-slide="${index}"]`) as HTMLElement;
+        const activeDot = document.querySelector(`.hero-dot[data-slide="${index}"]`) as HTMLElement;
+
+        if (activeCaption) { activeCaption.style.opacity = '1'; activeCaption.style.transform = 'translateY(0)'; }
+        if (activeDot) { activeDot.style.background = 'rgba(255,255,255,0.9)'; }
+        if (counter) { counter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(TOTAL).padStart(2, '0')}`; }
+
+        // Trigger dither crossfade
+        if (index !== currentImgIndex) {
+          nextImgIndex = index;
+          crossfadeActive = true;
+          crossfadeStart = performance.now();
+        }
+
+        current = index;
+      }
+
+      function next() {
+        goTo((current + 1) % TOTAL);
+      }
+
+      function startAutoplay() {
+        timer = setInterval(next, INTERVAL);
+      }
+
+      function resetAutoplay() {
+        clearInterval(timer);
+        startAutoplay();
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = parseInt((dot as HTMLElement).dataset.slide || '0', 10);
+          goTo(idx);
+          resetAutoplay();
+        });
+      });
+
+      const heroSection = document.getElementById('hero-carousel');
+      if (heroSection) {
+        heroSection.addEventListener('mouseenter', () => { isHovered = true; clearInterval(timer); });
+        heroSection.addEventListener('mouseleave', () => { isHovered = false; startAutoplay(); });
+      }
+
+      // ─── Visibility gating ───
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            resize();
+            startTime = performance.now();
+            animId = requestAnimationFrame(render);
+          } else {
+            cancelAnimationFrame(animId);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      window.addEventListener('resize', resize);
+      observer.observe(canvas);
+
+      goTo(0);
+      startAutoplay();
+    })();
+  </script>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       2. INDUSTRIES — Palantir-style vertical list
+       2. INDUSTRIES — Palantir-style vertical list (giant typography, hover-to-green)
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <!-- Editorial intro — large type, frames the platform before listing industries -->
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.15] tracking-tight fade-up" style="color: var(--color-neutral-800);">
+  <section id="industries" style="border-top: 1px solid var(--color-structure);">
+    <div class="py-20 lg:py-28 px-6 lg:px-12">
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.15] tracking-tight fade-up max-w-5xl" style="color: var(--color-neutral-800);">
         Operational intelligence for the industries that keep communities<br /><span style="color: var(--color-forest);">connected, powered, and safe</span>.
       </h2>
+    </div>
 
-      <!-- Energy -->
-      <a href="/industries/energy" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up mt-16" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Connect pipeline, grid, and production operations. Predictive intelligence on legacy SCADA — intelligence flowing in weeks, not years.</p>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Energy</span>
-        </div>
-      </a>
+    <!-- Industry rows — full-bleed hover, padded content -->
+    <!-- Energy -->
+    <a href="/industries/energy" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
+      <div class="max-w-lg">
+        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Pipeline, grid, and production unified into one operational model. Predictive maintenance on legacy SCADA — visibility flowing before the first sprint ends.</p>
+      </div>
+      <div class="text-right">
+        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Energy</span>
+      </div>
+    </a>
 
-      <!-- National Security -->
-      <a href="/industries/national-security" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Multi-domain operational intelligence with sovereign deployment. Air-gapped capable. Governed and auditable.</p>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">National Security</span>
-        </div>
-      </a>
+    <!-- National Security -->
+    <a href="/industries/national-security" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
+      <div class="max-w-lg">
+        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Multi-domain operational intelligence. Air-gapped. Sovereign. Every action auditable.</p>
+      </div>
+      <div class="text-right">
+        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">National Security</span>
+      </div>
+    </a>
 
-      <!-- Networks -->
-      <a href="/industries/networks" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Operational intelligence from ground to orbit. Terrestrial, satellite, and hybrid connectivity — one view, one intelligence layer.</p>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Networks</span>
-        </div>
-      </a>
+    <!-- Networks -->
+    <a href="/industries/networks" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
+      <div class="max-w-lg">
+        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" /></svg>
+        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Ground to orbit, subscriber to service — unified in one operational view.</p>
+      </div>
+      <div class="text-right">
+        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Networks</span>
+      </div>
+    </a>
 
-      <!-- Critical Infrastructure -->
-      <a href="/industries/critical-infrastructure" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Intelligence for the systems cities depend on — water, transportation, municipal operations, and the built environment.</p>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Critical Infrastructure</span>
-        </div>
-      </a>
+    <!-- Critical Infrastructure -->
+    <a href="/industries/critical-infrastructure" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
+      <div class="max-w-lg">
+        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5z" /></svg>
+        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Water, waste, transport — connected into one operational model for the cities communities depend on.</p>
+      </div>
+      <div class="text-right">
+        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Critical Infrastructure</span>
+      </div>
+    </a>
 
-      <!-- Finance -->
-      <a href="/industries/finance" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center fade-up" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
+    <!-- Finance -->
+    <a href="/industries/finance" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
+      <div class="max-w-lg">
+        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Compliance risk eliminated at the seams between 15 to 30 operational systems.</p>
+      </div>
+      <div class="text-right">
+        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Finance</span>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       3. MONOTONE CALLOUT — Forest green tonal break (KT "Our Founder" style)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="min-h-[70vh] lg:min-h-[80vh]">
+    <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] lg:min-h-[80vh]">
+
+      <!-- Left: Tinted panel — structural problem + failure avoidance -->
+      <div class="relative flex flex-col justify-between p-10 lg:p-16 xl:p-20" style="background: #dce8e2;">
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">The Structural Problem</p>
+        <div class="my-12 lg:my-0">
+          <p class="font-sans font-light text-2xl lg:text-3xl xl:text-4xl leading-[1.25] tracking-tight" style="color: #0a0a0a;">
+            The data was always there. The integration wasn't.
+          </p>
+          <p class="font-sans text-base lg:text-lg leading-relaxed mt-6" style="color: rgba(10,10,10,0.6);">
+            Without it, operators toggle between fifteen screens and still miss the signal. Consultants run discovery for years and hand you a roadmap — not intelligence. SaaS platforms create dependency you never outgrow. Meanwhile, the next cascade failure is hiding in the gap between systems.
+          </p>
+          <p class="font-sans text-base lg:text-lg leading-relaxed mt-4" style="color: rgba(10,10,10,0.8);">
+            We connect the full stack — hardware, software, and the operational workflows your people depend on — so your team runs the intelligence, not us.
+          </p>
+        </div>
         <div>
-          <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Connect the 15–30 systems your institution already operates. Operational intelligence production-ready in weeks.</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: rgba(15,76,58,0.5);">
+            Hardware + Software + People&ensp;&middot;&ensp;Full-stack integration&ensp;&middot;&ensp;Your team owns the model
+          </p>
         </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Finance</span>
-        </div>
-      </a>
+      </div>
+
+      <!-- Right: Monotone image (desaturated, green-tinted) -->
+      <div class="relative min-h-[50vh] lg:min-h-full overflow-hidden">
+        <img alt="Operations center — engineers monitoring unified intelligence display" src="/images/proof-infrastructure-v2.png"
+          class="absolute inset-0 w-full h-full object-cover" loading="lazy"
+          style="filter: grayscale(100%) sepia(20%) hue-rotate(90deg) saturate(30%) brightness(0.85);" />
+      </div>
+
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       3. THE UTILITY — Intelligence pillars, how it works, proof stories
+       4. HOW WE'RE DIFFERENT — Three differentiator panels
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative py-24 lg:py-32 px-6 overflow-hidden" style="background: #0a0a0a;">
-    <!-- Animated background paths -->
-    <div class="absolute inset-0 opacity-60">
-      <FloatingPaths client:visible />
+  <section class="relative py-24 lg:py-32 px-6 lg:px-12 overflow-hidden" style="border-top: 1px solid rgba(255,255,255,0.06);">
+
+    <!-- bg555 background image -->
+    <div class="absolute inset-0 z-0">
+      <img src="/images/bg555.png" alt="" class="w-full h-full object-cover" loading="lazy" />
+      <div class="absolute inset-0" style="background: rgba(10,10,10,0.82);"></div>
     </div>
+
+    <!-- Subtle grain overlay -->
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27nd1%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23nd1)%27/%3E%3C/svg%3E');"></div>
+
     <div class="relative z-10 mx-auto max-w-6xl">
 
-      <!-- Editorial lead -->
-      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-8 fade-up" style="color: var(--color-forest);">The Intelligence Utility</p>
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.15] tracking-tight text-white fade-up">
-        Tell us the outcome.<br /><span class="text-white/40">We model the relationships that answer it.</span>
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">What Makes This Different</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white mb-16 lg:mb-20 fade-up">
+        Not a consultant. Not a platform.<br />An integrator that hands you the keys.
       </h2>
-      <p class="mt-6 font-sans text-lg lg:text-xl leading-relaxed max-w-3xl text-white/50 fade-up">
-        Tell us the question your team needs answered. We connect your systems, model the relationships between them — devices, services, customers, circuits, alarms — and build the operational model that governs how your operations run. The result: agents, workflows, automations, and APIs that all draw from the same intelligence — and compound with every use case.
-      </p>
 
-      <!-- How it works — visual flow diagram -->
-      <div class="mt-14 lg:mt-18 fade-up rounded-3xl px-6 py-10 lg:px-10 lg:py-14" style="background: #111111; border: 1px solid #1a1a1a;">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 
-        <!-- Operational model flow — concrete labeled examples -->
-        <div class="mb-10">
-          <OperationalModelFlow client:visible theme="dark" />
+        <!-- Panel 1: Full-Stack -->
+        <div class="fade-up rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white/[0.06]" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-4">01</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl text-white tracking-tight mb-4">Hardware, software, and people — integrated.</h3>
+          <p class="font-sans text-base leading-relaxed text-white/60">
+            We deploy edge hardware where your infrastructure has blind spots, connect every system your operation already runs, and deliver the operational model your team works from — one engagement, one partner.
+          </p>
         </div>
 
-        <!-- 3-column labels — reframed around ontology and relationships -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0">
-          <div class="sm:pr-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #2dd4bf;">Start with the question</p>
-            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #e5e5e5;">What does your team need to know?</p>
-            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #a8a29e;">You tell us the outcome. We work backward to the systems that hold the answer — and connect only what matters. Use case first. Always.</p>
-          </div>
-          <div class="sm:px-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #2dd4bf;">Model the relationships</p>
-            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #e5e5e5;">Process ontologies that think like your operations</p>
-            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #a8a29e;">Devices serve services. Alarms affect circuits. Circuits impact customers. The operational model maps every relationship — and defines the workflows, rules, and intelligence rails that govern what happens next.</p>
-          </div>
-          <div class="sm:pl-7">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] mb-2.5" style="color: #2dd4bf;">Operate from the model</p>
-            <p class="font-sans text-xl font-semibold tracking-tight mb-2" style="color: #e5e5e5;">Workflows, agents, and automations — shaped by your data</p>
-            <p class="font-sans text-sm leading-relaxed max-w-[320px]" style="color: #a8a29e;">The model doesn't produce reports — it generates the applications your team works from. Every use case feeds results back, making the model smarter and unlocking new automations over time.</p>
-          </div>
+        <!-- Panel 2: Ownership -->
+        <div class="fade-up rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white/[0.06]" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-4">02</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl text-white tracking-tight mb-4">You own the intelligence from day one.</h3>
+          <p class="font-sans text-base leading-relaxed text-white/60">
+            The operational model, the data, and the deployment belong to you — not us. Our engagement has a beginning and a handoff. Your team extends the model themselves. No perpetual dependency. No lock-in.
+          </p>
         </div>
+
+        <!-- Panel 3: Speed -->
+        <div class="fade-up rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white/[0.06]" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-4">03</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl text-white tracking-tight mb-4">Intelligence in weeks, not years.</h3>
+          <p class="font-sans text-base leading-relaxed text-white/60">
+            First use case in production within the first sprint. Each one makes the next smarter — the compounding starts immediately, not after a year of discovery.
+          </p>
+        </div>
+
       </div>
-
-
     </div>
   </section>
+  <style is:inline>
+    /* Industry row hover — subtle green-tinted background */
+    .industry-row:hover {
+      background: rgba(15, 76, 58, 0.04);
+    }
+  </style>
+
+  <!-- 4b. PROOF STRIP — Hidden for now -->
+  <!--
+  <section class="py-16 lg:py-20 px-6" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div class="fade-up">
+          <p class="font-sans font-light text-3xl lg:text-4xl tracking-tight" style="color: var(--color-neutral-800);">25,000+</p>
+          <p class="font-sans text-sm leading-relaxed mt-2" style="color: var(--color-neutral-500);">At-risk youth identified through cross-agency visibility no single entity had before.</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mt-3" style="color: var(--color-neutral-400);">18 agencies &middot; One risk model</p>
+        </div>
+        <div class="fade-up">
+          <p class="font-sans font-light text-3xl lg:text-4xl tracking-tight" style="color: var(--color-neutral-800);">20,000</p>
+          <p class="font-sans text-sm leading-relaxed mt-2" style="color: var(--color-neutral-500);">Fewer site visits per year after a national broadband operator moved from reactive to predictive.</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mt-3" style="color: var(--color-neutral-400);">Predictive maintenance</p>
+        </div>
+        <div class="fade-up">
+          <p class="font-sans font-light text-3xl lg:text-4xl tracking-tight" style="color: var(--color-neutral-800);">&lt;30s</p>
+          <p class="font-sans text-sm leading-relaxed mt-2" style="color: var(--color-neutral-500);">Detection to governed response for multi-source ISR fusion. Sovereign. Air-gapped. Every action auditable.</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mt-3" style="color: var(--color-neutral-400);">Defense operations</p>
+        </div>
+        <div class="fade-up">
+          <p class="font-sans font-light text-3xl lg:text-4xl tracking-tight" style="color: var(--color-neutral-800);">1,069 km</p>
+          <p class="font-sans text-sm leading-relaxed mt-2" style="color: var(--color-neutral-500);">Of pipeline unified into one operational model — edge sensors, satellite monitoring, and legacy SCADA connected in real time.</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mt-3" style="color: var(--color-neutral-400);">Energy infrastructure</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
 
   <!-- ═══════════════════════════════════════════════════════════════
-       4. PROOF STORIES — Light section with xOps callout + real outcomes
+       5. HOW WE WORK — Connect → Model → Act
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-24 px-6" style="background: var(--color-neutral-50);">
+  <section class="py-28 lg:py-36 px-6" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-6xl">
 
-      <!-- xOps callout card — light card on light background -->
-      <a href="/utility/xops" class="group block mb-16 lg:mb-20 fade-up rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.003]" style="background: #ffffff; box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);">
-        <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] items-center">
-          <!-- Left: Text -->
-          <div class="p-8 lg:p-10 xl:p-12">
-            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-4" style="color: var(--color-forest); opacity: 0.6;">xOps — Adaptive Operations</p>
-            <h3 class="font-sans font-light text-2xl sm:text-3xl tracking-tight leading-snug" style="color: #1c1917;">
-              Your operations shape the suite — <span style="color: var(--color-forest);">not the other way around</span>.
-            </h3>
-            <p class="mt-4 font-sans text-sm leading-relaxed max-w-md" style="color: #78716c;">
-              The operational model generates the applications your team works from. Asset management, monitoring, orchestration, service assurance — each one molds to your data. As the model deepens, new workflows and automations unlock automatically.
-            </p>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">MediaOps</span>
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">GridOps</span>
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">SatOps</span>
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">NetOps</span>
-              <span class="font-mono text-[9px] uppercase tracking-[0.08em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); opacity: 0.7; border: 1px solid rgba(0,209,178,0.25);">IoTOps</span>
-            </div>
-            <span class="inline-flex items-center mt-6 font-mono text-xs uppercase tracking-wider transition-colors duration-200 group-hover:opacity-80" style="color: var(--color-forest);">
-              Explore xOps <span class="ml-2 transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
-            </span>
-          </div>
-          <!-- Right: Video -->
-          <div class="relative" style="border-left: 1px solid rgba(0,0,0,0.06);">
-            <div class="flex items-center gap-1.5 px-4 py-2" style="background: rgba(0,0,0,0.02); border-bottom: 1px solid rgba(0,0,0,0.06);">
-              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(0,0,0,0.12);"></span>
-              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(0,0,0,0.12);"></span>
-              <span class="w-1.5 h-1.5 rounded-full" style="background: rgba(0,0,0,0.12);"></span>
-              <span class="ml-2 font-mono text-[8px] tracking-wider" style="color: rgba(0,0,0,0.25);">xOps Dashboard</span>
-            </div>
-            <video
-              autoplay
-              loop
-              muted
-              playsinline
-              class="w-full h-auto block"
-              poster="/images/platform-screenshot.png"
-            >
-              <source src="/videos/xops-demo.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      </a>
-
-      <!-- Intelligence pillars card — clustered under xOps -->
-      <div class="mb-16 lg:mb-20 fade-up rounded-2xl overflow-hidden" style="background: #ffffff; box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.04);">
-        <div class="p-8 lg:p-10 xl:p-12 grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-10 lg:gap-x-14">
-          <div>
-            <svg class="w-7 h-7 mb-4" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-            </svg>
-            <h3 class="font-sans font-semibold text-lg tracking-tight mb-2" style="color: #1c1917;">
-              Real-time visibility
-            </h3>
-            <p class="font-sans text-sm leading-relaxed" style="color: #78716c;">
-              8,000+ integrations across 1,000+ vendors. Every signal validated, enriched, and contextualized. One screen instead of fifteen. Real-time instead of yesterday's report.
-            </p>
-          </div>
-          <div>
-            <svg class="w-7 h-7 mb-4" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
-            </svg>
-            <h3 class="font-sans font-semibold text-lg tracking-tight mb-2" style="color: #1c1917;">
-              Predictive intelligence
-            </h3>
-            <p class="font-sans text-sm leading-relaxed" style="color: #78716c;">
-              Domain-trained intelligence models forecast failures before they happen. Automated root cause analysis. Intelligence grounded in your operational reality — not generic AI guesses.
-            </p>
-          </div>
-          <div>
-            <svg class="w-7 h-7 mb-4" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-            </svg>
-            <h3 class="font-sans font-semibold text-lg tracking-tight mb-2" style="color: #1c1917;">
-              Governed autonomous action
-            </h3>
-            <p class="font-sans text-sm leading-relaxed" style="color: #78716c;">
-              Cross the gap from copilot to autonomous operations. Every action bounded, auditable, and provably correct. Full accountability from data through reasoning through action.
-            </p>
-          </div>
-          <div>
-            <svg class="w-7 h-7 mb-4" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            </svg>
-            <h3 class="font-sans font-semibold text-lg tracking-tight mb-2" style="color: #1c1917;">
-              Intelligence compounds
-            </h3>
-            <p class="font-sans text-sm leading-relaxed" style="color: #78716c;">
-              Each new system you connect makes every other system smarter. Production-grade intelligence in weeks, not quarters. Deploy cloud, hybrid, or air-gapped.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-10 fade-up" style="color: var(--color-forest);">Results in Production</p>
-      <div class="space-y-0 fade-up">
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid var(--color-structure);">
-          <div class="flex items-center gap-3">
-            <svg class="w-5 h-5 shrink-0" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" />
-            </svg>
-            <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Communications Provider</p>
-          </div>
-          <p class="font-sans text-lg lg:text-xl leading-relaxed" style="color: var(--color-neutral-600);">
-            98% of infrastructure unified on one operational view. 5,000+ devices. Siloed tools and manual workflows replaced with real-time unified operations.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid var(--color-structure);">
-          <div class="flex items-center gap-3">
-            <svg class="w-5 h-5 shrink-0" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
-            </svg>
-            <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Infrastructure Operator</p>
-          </div>
-          <p class="font-sans text-lg lg:text-xl leading-relaxed" style="color: var(--color-neutral-600);">
-            14,000 elements. 7,000 services. Equipment provisioning reduced from months to weeks. Critical event procedures from months of development to hours.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 py-10 lg:py-12" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-          <div class="flex items-center gap-3">
-            <svg class="w-5 h-5 shrink-0" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
-            </svg>
-            <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">National Broadband Operator</p>
-          </div>
-          <p class="font-sans text-lg lg:text-xl leading-relaxed" style="color: var(--color-neutral-600);">
-            4 million devices monitored. Half a billion KPIs tracked continuously. 20,000 fewer customer site visits per year through proactive intelligence.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       5. DARK EDITORIAL BRIDGE — Human-first framing + empathy + failure avoidance
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative px-6 overflow-hidden" data-editorial style="border-top: 1px solid var(--color-structure); background: #0a0a0a;">
-    <!-- Canvas dithering overlay -->
-    <canvas id="editorial-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-70" data-dither-canvas data-image-src="/images/editorial-map-bg.png" data-pixel-size="3" data-base-speed="0.06" data-hover-speed="0.3" data-green-blend="0.5"></canvas>
-    <!-- Subtle vignette for text readability -->
-    <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.5) 0%, transparent 70%);"></div>
-    <!-- Film grain -->
-    <svg style="position:absolute;width:0;height:0;">
-      <filter id="editorial-grain-filter">
-        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" />
-        <feColorMatrix type="saturate" values="0" />
-      </filter>
-    </svg>
-    <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.06]" style="filter: url(#editorial-grain-filter);"></div>
-    <div class="relative z-10 mx-auto max-w-6xl py-20 lg:py-28">
-      <p class="font-mono text-xs uppercase tracking-[0.1em] text-white/40 mb-8 fade-up">Why Quatro</p>
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.2] tracking-tight text-white fade-up">
-        Three operators protect 133,000&nbsp;km² of marine reserve. A grid engineer sees a cascade failure forty minutes before four million people lose power.
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6 fade-up" style="color: var(--color-forest);">How We Work</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-20 lg:mb-28 fade-up" style="color: var(--color-neutral-800);">
+        Connect. Model. Act.
       </h2>
-      <p class="mt-8 font-sans text-lg leading-relaxed max-w-3xl text-white/50 fade-up">
-        Shift handoffs. Intermittent connectivity. Legacy equipment. Decisions that can't wait for a dashboard to load. The intelligence utility was designed for the conditions your teams actually operate in — not the conditions a demo assumes.
-      </p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+
+        <!-- Phase 1: Connect -->
+        <div class="fade-up">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Connect</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: var(--color-neutral-800);">We reach into everything you already run.</h3>
+          <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
+            8,000+ integrations across 1,000+ vendors — industrial control systems, satellite feeds, IoT, legacy databases. If your infrastructure has blind spots, we deploy edge hardware that creates the data foundation.
+          </p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
+            8,000+ integrations&ensp;&middot;&ensp;1,000+ vendors&ensp;&middot;&ensp;Edge hardware included
+          </p>
+        </div>
+
+        <!-- Phase 2: Model -->
+        <div class="fade-up">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Model</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: var(--color-neutral-800);">We create the governed operational model from your data.</h3>
+          <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
+            Context, lineage, quality guarantees, and a semantic layer that makes your data AI-ready. Domain-trained reasoning grounded in how your operations actually work — not generic models, not black boxes. Your data becomes a governed asset your team can trust and build on.
+          </p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
+            Your data becomes AI-ready&ensp;&middot;&ensp;Reasoning trained on your operations&ensp;&middot;&ensp;One trusted model
+          </p>
+        </div>
+
+        <!-- Phase 3: Act -->
+        <div class="fade-up">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Act</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: var(--color-neutral-800);">Your team works from the model — and extends it.</h3>
+          <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
+            Workflows, agents, automations, and APIs that feed operational insight back into the tools you already use. Every execution is bounded, auditable, and governed. Each new connection makes the entire model smarter.
+          </p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
+            Cloud&ensp;&middot;&ensp;Hybrid&ensp;&middot;&ensp;Air-gapped&ensp;&middot;&ensp;On-premise
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       6. INSIGHTS — Tailwind UI Bento Grid
+       5a. TECHNOLOGY PARTNERS — Logo strip with editorial label
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="flex items-end justify-between mb-3">
-        <p class="font-mono text-xs uppercase tracking-[0.1em]" style="color: var(--color-forest);">Insights</p>
-        <a
-          href="/insights"
-          class="hidden sm:inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] transition-colors duration-300 hover:text-[var(--color-forest)]"
-          style="color: var(--color-neutral-500);"
-        >
-          All articles
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+  <section class="relative py-20 lg:py-28 px-6 overflow-hidden" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
+
+    <!-- Subtle grain overlay -->
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27np1%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23np1)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 mx-auto max-w-6xl">
+
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">The Integration Ecosystem</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white mb-6 fade-up">
+        Proven technology at every layer.
+      </h2>
+      <p class="font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-3xl mb-16 lg:mb-20 fade-up">
+        We integrate proven technology partners across connectivity, intelligence, edge hardware, and cloud — so you get one engagement, not twelve vendor relationships.
+      </p>
+
+      <!-- Named partner grid with real logos and capability labels (Tier 1.5) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-10 fade-up">
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/dataminer.svg" alt="Skyline DataMiner" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Network management & orchestration</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/dataos.svg" alt="DataOS by Modern Data" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Governed intelligence layer</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/motorola.svg" alt="Motorola Solutions" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Mission-critical communications</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/ses.svg" alt="SES" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Satellite connectivity</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/networkoptix.svg" alt="Network Optix" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Video management platform</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/milesight.svg" alt="Milesight" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">IoT edge hardware</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/tait.svg" alt="Tait Communications" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Critical radio networks</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/aws.svg" alt="Amazon Web Services" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Cloud infrastructure</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/backblaze.svg" alt="Backblaze" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Cloud storage</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/ecr.svg" alt="ECR" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Predictive modeling</p>
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
+            <img src="/images/partners/novi.svg" alt="Novi" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
+          </div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Orbital AI</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       5b. THE INTEGRATION STACK — Simplified Tier 1.5 (3 layers, no deep architecture)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative py-20 lg:py-28 px-6 overflow-hidden" style="background: #f4f7f5;">
+
+    <div class="relative z-10 mx-auto max-w-6xl">
+
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6 fade-up" style="color: rgba(15,76,58,0.5);">Under the Hood</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-16 lg:mb-20 fade-up" style="color: #0a0a0a;">
+        Three integration dimensions.<br class="hidden lg:block" />
+        <span style="color: rgba(15,76,58,0.45);">One intelligence utility.</span>
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 fade-up">
+
+        <!-- Dimension 1: Hardware -->
+        <a href="/utility" class="group block p-8 rounded-xl transition-all duration-300 hover:shadow-lg" style="background: #ffffff; border: 1px solid rgba(15,76,58,0.08);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: rgba(15,76,58,0.45);">Hardware</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: #0a0a0a;">Edge sensors, gateways, and connectivity where your infrastructure has blind spots.</h3>
+          <p class="font-sans text-base leading-relaxed" style="color: rgba(10,10,10,0.5);">An IoT suite that connects the physical world — deployed where your data doesn't exist yet. 8,000+ integrations across 1,000+ vendors.</p>
+        </a>
+
+        <!-- Dimension 2: Software -->
+        <a href="/utility" class="group block p-8 rounded-xl transition-all duration-300 hover:shadow-lg" style="background: #ffffff; border: 1px solid rgba(15,76,58,0.08);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: rgba(15,76,58,0.45);">Software</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: #0a0a0a;">The intelligence utility — connecting your systems and making your data AI-ready.</h3>
+          <p class="font-sans text-base leading-relaxed" style="color: rgba(10,10,10,0.5);">A governed meaning layer that gives your data context, lineage, and trust. Domain-trained reasoning grounded in how your operations actually work.</p>
+        </a>
+
+        <!-- Dimension 3: People & Process -->
+        <a href="/utility" class="group block p-8 rounded-xl transition-all duration-300 hover:shadow-lg" style="background: #ffffff; border: 1px solid rgba(15,76,58,0.08);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: rgba(15,76,58,0.45);">People &amp; Process</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: #0a0a0a;">Workflows, agents, and governed automations your team runs from day one.</h3>
+          <p class="font-sans text-base leading-relaxed" style="color: rgba(10,10,10,0.5);">Operational intelligence that feeds back into the tools your team already uses. Every execution is bounded, auditable, and governed. Deploy cloud, hybrid, or air-gapped.</p>
+        </a>
+
+      </div>
+
+      <div class="mt-12 fade-up">
+        <a href="/utility" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] transition-colors duration-300" style="color: rgba(15,76,58,0.5);">
+          Explore how the utility works
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
       </div>
-      <p class="max-w-lg font-sans text-3xl lg:text-4xl font-light tracking-tight" style="color: var(--color-neutral-800);">
-        Latest from Quatro
-      </p>
 
-      <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2 fade-up">
+    </div>
+  </section>
 
-        {insights[0] && (
-          <div class="relative lg:col-span-3">
-            <div class="absolute inset-0 rounded-lg bg-white max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]"></div>
-            <a href={`/insights/${insights[0].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)] max-lg:rounded-t-[calc(2rem+1px)] lg:rounded-tl-[calc(2rem+1px)]">
-              {insights[0].data.heroImage && <img alt="" src={insights[0].data.heroImage} class="h-80 object-cover object-center transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
-              <div class="p-10 pt-4">
-                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[0].data.category.replace('-', ' ')}</span>
-                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
-                  {insights[0].data.title}
-                </h3>
-                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-                  {insights[0].data.excerpt.slice(0, 120)}...
-                </p>
-              </div>
-            </a>
-            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]" style="outline: 1px solid var(--color-structure);"></div>
+  <!-- ═══════════════════════════════════════════════════════════════
+       8. WHERE WE OPERATE — Rotating globe with dither overlay
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
+
+    <!-- Dotted wireframe globe background (D3 canvas) -->
+    <canvas id="globe-canvas" class="absolute inset-0 w-full h-full z-[1] pointer-events-none" style="opacity: 0.7;"></canvas>
+
+    <!-- Grain overlay -->
+    <div class="absolute inset-0 z-[3] opacity-[0.04] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27nm%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23nm)%27/%3E%3C/svg%3E');"></div>
+
+    <!-- Radial vignette for depth -->
+    <div class="absolute inset-0 z-[4] pointer-events-none" style="background: radial-gradient(ellipse at 60% 50%, transparent 30%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.8) 90%);"></div>
+
+    <!-- Content — centered over the globe -->
+    <div class="relative z-10 py-32 lg:py-44 px-6">
+      <div class="mx-auto max-w-6xl">
+
+        <div class="max-w-2xl">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">Where We Operate</p>
+          <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl leading-[1.1] tracking-tight text-white mb-6 fade-up">
+            Delivering across the markets where critical infrastructure is being modernized.
+          </h2>
+          <p class="font-sans text-base lg:text-lg leading-relaxed text-white/60 mb-10 fade-up">
+            Regional integration partners extend our reach across the Americas, MENA, Africa, and emerging markets — connecting operators to intelligence wherever they need it.
+          </p>
+          <a href="/partners" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] mb-16 fade-up" style="border: 1px solid rgba(255,255,255,0.25); color: white;">
+            Become a Partner
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Region markers — horizontal strip -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 fade-up">
+          <div>
+            <p class="font-sans font-light text-lg text-white tracking-tight">North America</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mt-1">Federal · Defense · Energy · Commercial</p>
           </div>
-        )}
-
-        {insights[1] && (
-          <div class="relative lg:col-span-3">
-            <div class="absolute inset-0 rounded-lg bg-white lg:rounded-tr-[2rem]"></div>
-            <a href={`/insights/${insights[1].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)] lg:rounded-tr-[calc(2rem+1px)]">
-              {insights[1].data.heroImage && <img alt="" src={insights[1].data.heroImage} class="h-80 object-cover object-left lg:object-right transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
-              <div class="p-10 pt-4">
-                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[1].data.category.replace('-', ' ')}</span>
-                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
-                  {insights[1].data.title}
-                </h3>
-                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-                  {insights[1].data.excerpt.slice(0, 120)}...
-                </p>
-              </div>
-            </a>
-            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm lg:rounded-tr-[2rem]" style="outline: 1px solid var(--color-structure);"></div>
+          <div>
+            <p class="font-sans font-light text-lg text-white tracking-tight">Latin America</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mt-1">Regional Partners · Municipal · IDB-Aligned</p>
           </div>
-        )}
-
-        {insights[2] && (
-          <div class="relative lg:col-span-2">
-            <div class="absolute inset-0 rounded-lg bg-white lg:rounded-bl-[2rem]"></div>
-            <a href={`/insights/${insights[2].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)] lg:rounded-bl-[calc(2rem+1px)]">
-              {insights[2].data.heroImage && <img alt="" src={insights[2].data.heroImage} class="h-80 object-cover object-center transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
-              <div class="p-10 pt-4">
-                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[2].data.category.replace('-', ' ')}</span>
-                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
-                  {insights[2].data.title}
-                </h3>
-                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-                  {insights[2].data.excerpt.slice(0, 100)}...
-                </p>
-              </div>
-            </a>
-            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm lg:rounded-bl-[2rem]" style="outline: 1px solid var(--color-structure);"></div>
+          <div>
+            <p class="font-sans font-light text-lg text-white tracking-tight">MENA &amp; Africa</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mt-1">Energy · Communications · Infrastructure</p>
           </div>
-        )}
-
-        {insights[3] && (
-          <div class="relative lg:col-span-2">
-            <div class="absolute inset-0 rounded-lg bg-white"></div>
-            <a href={`/insights/${insights[3].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)]">
-              {insights[3].data.heroImage && <img alt="" src={insights[3].data.heroImage} class="h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
-              <div class="p-10 pt-4">
-                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[3].data.category.replace('-', ' ')}</span>
-                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
-                  {insights[3].data.title}
-                </h3>
-                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-                  {insights[3].data.excerpt.slice(0, 100)}...
-                </p>
-              </div>
-            </a>
-            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm" style="outline: 1px solid var(--color-structure);"></div>
+          <div>
+            <p class="font-sans font-light text-lg text-white tracking-tight">Global</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mt-1">Satellite · Allied Defense · Emerging Markets</p>
           </div>
-        )}
-
-        {insights[4] && (
-          <div class="relative lg:col-span-2">
-            <div class="absolute inset-0 rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]"></div>
-            <a href={`/insights/${insights[4].id.replace(/\.md$/, '')}`} class="group relative flex h-full flex-col overflow-hidden rounded-[calc(0.5rem+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
-              {insights[4].data.heroImage && <img alt="" src={insights[4].data.heroImage} class="h-80 object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />}
-              <div class="p-10 pt-4">
-                <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">{insights[4].data.category.replace('-', ' ')}</span>
-                <h3 class="mt-2 font-display text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
-                  {insights[4].data.title}
-                </h3>
-                <p class="mt-2 max-w-lg font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-                  {insights[4].data.excerpt.slice(0, 100)}...
-                </p>
-              </div>
-            </a>
-            <div class="pointer-events-none absolute inset-0 rounded-lg shadow-sm max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" style="outline: 1px solid var(--color-structure);"></div>
-          </div>
-        )}
+        </div>
 
       </div>
     </div>
   </section>
 
+  <!-- Dotted Wireframe Globe (D3 orthographic projection, 21st.dev/shadway style) -->
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      var canvas = document.getElementById('globe-canvas');
+      if (!canvas || typeof d3 === 'undefined') return;
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // ─── Sizing ───
+      var section = canvas.parentElement;
+      var w, h, radius;
+
+      function resize() {
+        var rect = section.getBoundingClientRect();
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = rect.width;
+        h = rect.height;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        radius = Math.min(w, h) * 0.42;
+        projection.scale(radius).translate([w * 0.62, h * 0.48]);
+      }
+
+      // ─── D3 Projection ───
+      var projection = d3.geoOrthographic().clipAngle(90);
+      var path = d3.geoPath().projection(projection);
+      var rotation = [30, -15];
+      var rotationSpeed = 0.18;
+
+      // ─── Colors (forest green palette) ───
+      var dotColor = 'rgba(15, 76, 58, 0.7)';
+      var graticuleColor = 'rgba(15, 76, 58, 0.15)';
+      var outlineColor = 'rgba(15, 76, 58, 0.3)';
+      var sphereStroke = 'rgba(15, 76, 58, 0.2)';
+
+      // Operational presence markers
+      var regions = [
+        { coords: [-98.5, 39.8], size: 6 },   // US HQ
+        { coords: [-78.5, -1.8], size: 6 },   // Ecuador / LATAM
+        { coords: [45, 25], size: 5 },         // MENA
+        { coords: [-99.1, 19.4], size: 4 },   // Mexico
+        { coords: [36.8, -1.3], size: 4 },    // East Africa
+        { coords: [-47.9, -15.8], size: 3 },  // Brazil
+        { coords: [-0.1, 51.5], size: 3 },    // UK
+        { coords: [54.4, 24.5], size: 3 },    // UAE
+        { coords: [3.4, 6.5], size: 3 },      // West Africa
+      ];
+
+      // ─── Point-in-polygon ───
+      function pointInPolygon(pt, ring) {
+        var x = pt[0], y = pt[1], inside = false;
+        for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          var xi = ring[i][0], yi = ring[i][1];
+          var xj = ring[j][0], yj = ring[j][1];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) {
+            inside = !inside;
+          }
+        }
+        return inside;
+      }
+
+      function pointInFeature(pt, feature) {
+        var geom = feature.geometry;
+        if (geom.type === 'Polygon') {
+          if (!pointInPolygon(pt, geom.coordinates[0])) return false;
+          for (var i = 1; i < geom.coordinates.length; i++) {
+            if (pointInPolygon(pt, geom.coordinates[i])) return false;
+          }
+          return true;
+        } else if (geom.type === 'MultiPolygon') {
+          for (var p = 0; p < geom.coordinates.length; p++) {
+            var poly = geom.coordinates[p];
+            if (pointInPolygon(pt, poly[0])) {
+              var inHole = false;
+              for (var h = 1; h < poly.length; h++) {
+                if (pointInPolygon(pt, poly[h])) { inHole = true; break; }
+              }
+              if (!inHole) return true;
+            }
+          }
+        }
+        return false;
+      }
+
+      function generateDots(feature, step) {
+        var dots = [];
+        var bounds = d3.geoBounds(feature);
+        var stepSize = step * 0.08;
+        for (var lng = bounds[0][0]; lng <= bounds[1][0]; lng += stepSize) {
+          for (var lat = bounds[0][1]; lat <= bounds[1][1]; lat += stepSize) {
+            var pt = [lng, lat];
+            if (pointInFeature(pt, feature)) dots.push(pt);
+          }
+        }
+        return dots;
+      }
+
+      // ─── Render ───
+      var allDots = [];
+      var landFeatures = null;
+      var graticule = d3.geoGraticule();
+
+      function render() {
+        ctx.clearRect(0, 0, w, h);
+        path.context(ctx);
+
+        // Sphere outline
+        ctx.beginPath();
+        path({ type: 'Sphere' });
+        ctx.strokeStyle = sphereStroke;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // Graticule grid
+        ctx.beginPath();
+        path(graticule());
+        ctx.strokeStyle = graticuleColor;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+
+        if (landFeatures) {
+          // Land outlines
+          ctx.beginPath();
+          landFeatures.features.forEach(function (f) { path(f); });
+          ctx.strokeStyle = outlineColor;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+
+          // Halftone dots on land
+          allDots.forEach(function (dot) {
+            var projected = projection(dot);
+            if (projected) {
+              // Only draw if on visible hemisphere (check against clip)
+              var dist = d3.geoDistance(dot, projection.invert([w * 0.62, h * 0.48]));
+              if (dist < Math.PI / 2) {
+                ctx.beginPath();
+                ctx.arc(projected[0], projected[1], 1.0, 0, 2 * Math.PI);
+                ctx.fillStyle = dotColor;
+                ctx.fill();
+              }
+            }
+          });
+
+          // Operational presence markers (brighter, pulsing)
+          var t = Date.now() / 1000;
+          regions.forEach(function (r) {
+            var projected = projection(r.coords);
+            if (projected) {
+              var dist = d3.geoDistance(r.coords, projection.invert([w * 0.62, h * 0.48]));
+              if (dist < Math.PI / 2) {
+                // Pulse glow
+                var pulse = 0.4 + 0.3 * Math.sin(t * 2 + r.coords[0]);
+                ctx.beginPath();
+                ctx.arc(projected[0], projected[1], r.size * 2.5, 0, 2 * Math.PI);
+                ctx.fillStyle = 'rgba(15, 76, 58, ' + (pulse * 0.3) + ')';
+                ctx.fill();
+
+                // Core dot
+                ctx.beginPath();
+                ctx.arc(projected[0], projected[1], r.size, 0, 2 * Math.PI);
+                ctx.fillStyle = '#0f4c3a';
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          });
+        }
+      }
+
+      // ─── Animation ───
+      var animId;
+      function animate() {
+        rotation[0] += rotationSpeed;
+        projection.rotate(rotation);
+        render();
+        animId = requestAnimationFrame(animate);
+      }
+
+      // ─── Visibility gating ───
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            resize();
+            animId = requestAnimationFrame(animate);
+          } else {
+            cancelAnimationFrame(animId);
+          }
+        });
+      }, { threshold: 0.05 });
+
+      observer.observe(canvas);
+      window.addEventListener('resize', function () {
+        resize();
+        render();
+      });
+
+      // ─── Load land data ───
+      resize();
+      fetch('https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/110m/physical/ne_110m_land.json')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          landFeatures = data;
+          data.features.forEach(function (feature) {
+            var dots = generateDots(feature, 18);
+            dots.forEach(function (d) { allDots.push(d); });
+          });
+          render();
+        })
+        .catch(function () {
+          // Graceful fallback — render graticule only
+          render();
+        });
+    });
+  </script>
+
   <!-- ═══════════════════════════════════════════════════════════════
-       7. FINAL CTA — Dithering Card
+       9. HOW WE APPROACH IT — KT editorial scroll (use case + engagement story)
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-12 lg:py-20 px-4 md:px-6" style="border-top: 1px solid var(--color-structure);">
+  <section class="py-28 lg:py-36 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);" id="engagements-scroll">
+    <div class="mx-auto max-w-7xl">
+
+      <div class="mb-20 lg:mb-28 fade-up">
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">What This Looks Like</p>
+        <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight" style="color: var(--color-neutral-800);">
+          The future of operations isn't a dashboard.<br class="hidden sm:block" />
+          <span style="color: var(--color-neutral-400);">It's a system that thinks.</span>
+        </h2>
+      </div>
+
+      <!-- KT-style: sticky editorial label left, scrolling POV blocks right -->
+      <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-16">
+
+        <!-- Left: sticky editorial label (changes on scroll) -->
+        <div class="hidden lg:block">
+          <div class="lg:sticky lg:top-32">
+            <p class="engagement-label font-sans font-light text-2xl lg:text-3xl xl:text-4xl leading-[1.2] tracking-tight transition-all duration-500" style="color: var(--color-neutral-800);" data-default="When 18 agencies can finally see one picture">
+              When 18 agencies can finally see one picture
+            </p>
+            <div class="mt-6 w-12 h-px" style="background: var(--color-forest);"></div>
+            <p class="engagement-sublabel font-mono text-[10px] uppercase tracking-[0.1em] mt-4 transition-all duration-500" style="color: var(--color-neutral-400);">
+              Community Intelligence
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: scrolling editorial POV blocks -->
+        <div class="space-y-24 lg:space-y-32">
+
+          <!-- POV 1: Community Risk -->
+          <div class="engagement-block fade-up" data-label="When 18 agencies can finally see one picture" data-sublabel="Community Intelligence">
+            <p class="lg:hidden font-sans font-light text-2xl tracking-tight mb-6" style="color: var(--color-neutral-800);">When 18 agencies can finally see one picture</p>
+            <div class="relative h-[360px] lg:h-[480px] overflow-hidden mb-8">
+              <img alt="Community operators reviewing cross-agency risk model" src="/images/mission-youth-risk-v3b.png"
+                class="absolute inset-0 w-full h-full object-cover img-technical" loading="lazy" />
+            </div>
+            <div class="max-w-xl">
+              <p class="font-sans font-light text-xl lg:text-2xl leading-snug mb-5" style="color: var(--color-neutral-800);">
+                The problem was never the data. Every agency had it. The problem was that no one could see across the walls.
+              </p>
+              <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
+                Eighteen government agencies generating information in silos — education, health, justice, social services — each with a fragment of the risk picture and no way to composite it. One governed model changed that. 25,000+ at-risk youth identified through cross-agency visibility that didn't exist before.
+              </p>
+              <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
+                18 agencies&ensp;&middot;&ensp;One risk model&ensp;&middot;&ensp;National scale
+              </p>
+            </div>
+          </div>
+
+          <!-- POV 2: Predictive Maintenance -->
+          <div class="engagement-block fade-up" data-label="Predicting the failure before the customer calls" data-sublabel="Predictive Maintenance">
+            <p class="lg:hidden font-sans font-light text-2xl tracking-tight mb-6" style="color: var(--color-neutral-800);">Predicting the failure before the customer calls</p>
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_45%] gap-8 items-start">
+              <div>
+                <p class="font-sans font-light text-xl lg:text-2xl leading-snug mb-5" style="color: var(--color-neutral-800);">
+                  Reactive field dispatch is the most expensive problem no one talks about.
+                </p>
+                <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
+                  A national broadband operator dispatching trucks after the customer called. By the time the crew arrived, the trust was already gone. We connected their network telemetry into a single operational model. Now the system predicts the failure before anyone notices — and routes the crew before the phone rings. 20,000 fewer site visits per year.
+                </p>
+                <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
+                  20,000 fewer dispatches&ensp;&middot;&ensp;Predictive, not reactive
+                </p>
+              </div>
+              <div class="relative h-[300px] lg:h-[360px] overflow-hidden">
+                <img alt="Residential neighborhood — uninterrupted service" src="/images/proof-broadband-v2.png"
+                  class="absolute inset-0 w-full h-full object-cover img-technical" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- POV 3: Sovereign ISR -->
+          <div class="engagement-block fade-up" data-label="Thirty seconds from detection to governed response" data-sublabel="Sovereign Defense">
+            <p class="lg:hidden font-sans font-light text-2xl tracking-tight mb-6" style="color: var(--color-neutral-800);">Thirty seconds from detection to governed response</p>
+            <div class="relative h-[360px] lg:h-[480px] overflow-hidden mb-8">
+              <img alt="Secure operations center — unified displays, calm professionalism" src="/images/proof-defense-isr.png"
+                class="absolute inset-0 w-full h-full object-cover img-technical" loading="lazy" />
+            </div>
+            <div class="max-w-xl">
+              <p class="font-sans font-light text-xl lg:text-2xl leading-snug mb-5" style="color: var(--color-neutral-800);">
+                The sensor data existed. The fusion didn't. And in defense, ungoverned action is worse than no action.
+              </p>
+              <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
+                Multiple ISR feeds from different domains — satellite, signals, ground truth — each living in its own system. We fused them into one governed operational view. Sovereign, air-gapped, every action auditable. Detection to governed response in under thirty seconds.
+              </p>
+              <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
+                &lt;30s detection to response&ensp;&middot;&ensp;Sovereign deployment&ensp;&middot;&ensp;Full audit chain
+              </p>
+            </div>
+          </div>
+
+          <!-- POV 4: Pipeline Operations -->
+          <div class="engagement-block fade-up" data-label="A thousand kilometers of pipeline, finally connected" data-sublabel="Energy &amp; Asset Integrity">
+            <p class="lg:hidden font-sans font-light text-2xl tracking-tight mb-6" style="color: var(--color-neutral-800);">A thousand kilometers of pipeline, finally connected</p>
+            <div class="grid grid-cols-1 lg:grid-cols-[45%_1fr] gap-8 items-start">
+              <div class="relative h-[300px] lg:h-[360px] overflow-hidden">
+                <img alt="Pipeline infrastructure in mountainous terrain" src="/images/mission-pipeline-v2.png"
+                  class="absolute inset-0 w-full h-full object-cover img-technical" loading="lazy" />
+              </div>
+              <div>
+                <p class="font-sans font-light text-xl lg:text-2xl leading-snug mb-5" style="color: var(--color-neutral-800);">
+                  Edge sensors, satellite monitoring, and legacy SCADA — none of it talking to each other.
+                </p>
+                <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
+                  Over a thousand kilometers of pipeline with instrumentation from three different decades. We deployed IoT hardware where the infrastructure had blind spots and unified the full picture into one operational model. The team monitors it in real time. Corrosion, pressure anomalies, environmental risk — one view.
+                </p>
+                <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
+                  1,069 km of pipeline&ensp;&middot;&ensp;Edge-to-cloud&ensp;&middot;&ensp;Real-time visibility
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Insights link -->
+      <div class="mt-20 lg:mt-28 pt-8 fade-up" style="border-top: 1px solid var(--color-structure);">
+        <a href="/insights" class="inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.1em] transition-colors duration-300 hover:opacity-70" style="color: var(--color-forest);">
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+          Read more of our thinking
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Engagement scroll — updates sticky label on scroll -->
+  <script>
+    (function () {
+      var section = document.getElementById('engagements-scroll');
+      if (!section) return;
+      var blocks = section.querySelectorAll('.engagement-block');
+      var label = section.querySelector('.engagement-label');
+      var sublabel = section.querySelector('.engagement-sublabel');
+      if (!label || !sublabel || blocks.length === 0) return;
+
+      var currentLabel = label.getAttribute('data-default') || '';
+
+      function update() {
+        var closest = null;
+        var closestDist = Infinity;
+        var viewMid = window.innerHeight * 0.4;
+
+        blocks.forEach(function (block) {
+          var rect = block.getBoundingClientRect();
+          var blockMid = rect.top + rect.height * 0.3;
+          var dist = Math.abs(blockMid - viewMid);
+          if (rect.top < window.innerHeight * 0.7 && rect.bottom > 0 && dist < closestDist) {
+            closestDist = dist;
+            closest = block;
+          }
+        });
+
+        if (closest) {
+          var newLabel = closest.getAttribute('data-label') || '';
+          if (newLabel !== currentLabel) {
+            currentLabel = newLabel;
+            label.style.opacity = '0';
+            label.style.transform = 'translateY(8px)';
+            sublabel.style.opacity = '0';
+            setTimeout(function () {
+              label.textContent = newLabel;
+              sublabel.textContent = closest.getAttribute('data-sublabel') || '';
+              label.style.opacity = '1';
+              label.style.transform = 'translateY(0)';
+              sublabel.style.opacity = '1';
+            }, 250);
+          }
+        }
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       10. CTA — Dithering Canvas (kept from previous design)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-16 lg:py-24 px-4 md:px-6">
     <div class="w-full max-w-7xl mx-auto relative" data-cta-card>
       <div class="relative overflow-hidden rounded-[32px] lg:rounded-[48px] min-h-[550px] md:min-h-[600px] flex flex-col items-center justify-center" style="border: 1px solid rgba(15,76,58,0.4); background: #0a0a0a;">
 
-        <!-- Canvas dithering overlay -->
-        <canvas id="cta-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-60" data-dither-canvas data-image-src="/images/cta-connected-bg.png" data-pixel-size="3" data-base-speed="0.12" data-hover-speed="0.5" data-green-blend="0.5"></canvas>
+        <!-- Bayer 4×4 image dither (same engine as hero, using bg555.png) -->
+        <canvas id="cta-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-90"
+          data-dither-canvas
+          data-image-src="/images/bg555.png"
+          data-pixel-size="2"
+          data-base-speed="0.06"
+          data-hover-speed="0.35"
+          data-green-blend="0.25"></canvas>
 
-        <!-- Dark center vignette for text readability -->
-        <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 80%);"></div>
+        <!-- Radial vignette for text readability -->
+        <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 50%, transparent 75%);"></div>
 
-        <!-- Film grain -->
-        <svg style="position:absolute;width:0;height:0;">
-          <filter id="cta-grain-filter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" />
-            <feColorMatrix type="saturate" values="0" />
-          </filter>
-        </svg>
-        <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.08]" style="filter: url(#cta-grain-filter);"></div>
+        <!-- Grain -->
+        <div class="absolute inset-0 z-[3] opacity-[0.06] pointer-events-none"
+          style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27cg%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23cg)%27/%3E%3C/svg%3E');"></div>
 
-        <!-- Content -->
         <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 lg:py-24 max-w-3xl mx-auto fade-up">
-          <!-- Headline -->
           <h2 class="font-sans text-3xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight">
-            Start with what matters.<br/>
-            <span class="text-white/50">We connect the systems.</span>
+            If your infrastructure serves the communities we care about —<br/>
+            <span class="text-white/40">let's talk.</span>
           </h2>
-
-          <!-- Description -->
-          <p class="mt-6 font-sans text-base lg:text-lg text-white/50 leading-relaxed max-w-xl">
-            Tell us the decision your team needs to make. We work backward to the data that matters, connect the systems that hold the answer, and give your team workflows, agents, and automations that compound with every use case.
-          </p>
-
-          <!-- Single CTA -->
-          <div class="mt-10 flex flex-col items-center gap-3">
-            <a
-              href="/contact/demo"
-              class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105"
-              style="background-color: var(--color-forest); color: white;"
-            >
-              Schedule an Assessment
+          <!-- Two explicit paths -->
+          <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/contact/demo" class="group inline-flex items-center gap-3 font-mono text-sm uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
+              Talk to Our Team
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/35">Your team works from the model.</p>
+            <a href="/partners" class="group inline-flex items-center gap-3 font-mono text-sm uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03]" style="border: 1px solid rgba(255,255,255,0.25); color: white;">
+              Become a Partner
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Sovereignty signal -->
         <div class="relative z-10 w-full px-8 pb-8">
           <div class="pt-6 flex items-center justify-center" style="border-top: 1px solid rgba(255,255,255,0.08);">
-            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/30 text-center">Deployed on your infrastructure.&nbsp; Air-gapped capable.&nbsp; Your data never leaves your control.</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 text-center">US-headquartered&nbsp; ·&nbsp; Cloud, hybrid, or sovereign deployment&nbsp; ·&nbsp; Your data never leaves your control</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA Bayer dither engine (same as HeroCanvas, initializes data-dither-canvas on CTA) -->
+  <script is:inline>
+    (function () {
+      var bayer = [
+        [0/16, 8/16, 2/16, 10/16],
+        [12/16, 4/16, 14/16, 6/16],
+        [3/16, 11/16, 1/16, 9/16],
+        [15/16, 7/16, 13/16, 5/16]
+      ];
+
+      var canvas = document.getElementById('cta-dither-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      var imageSrc = canvas.getAttribute('data-image-src') || '/images/bg555.png';
+      var pixelSize = parseInt(canvas.getAttribute('data-pixel-size') || '3', 10);
+      var baseSpeed = parseFloat(canvas.getAttribute('data-base-speed') || '0.06');
+      var hoverSpeed = parseFloat(canvas.getAttribute('data-hover-speed') || '0.35');
+      var greenBlend = parseFloat(canvas.getAttribute('data-green-blend') || '0.5');
+
+      var card = canvas.closest('[data-cta-card]');
+      var isHovered = false;
+      var animId, startTime = performance.now();
+
+      var bgImg = new Image();
+      bgImg.crossOrigin = 'anonymous';
+      bgImg.src = imageSrc;
+      var offscreen = document.createElement('canvas');
+      var offCtx = offscreen.getContext('2d');
+      var imgLoaded = false;
+      bgImg.onload = function () { imgLoaded = true; };
+
+      function resize() {
+        var rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+      }
+
+      function render(time) {
+        var w = canvas.width, h = canvas.height;
+        if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
+
+        var elapsed = (time - startTime) / 1000;
+        var speed = isHovered ? hoverSpeed : baseSpeed;
+        var t = elapsed * speed;
+
+        var srcPixels = null;
+        if (imgLoaded) {
+          offscreen.width = w;
+          offscreen.height = h;
+          // Cover-fit
+          var imgAspect = bgImg.naturalWidth / bgImg.naturalHeight;
+          var canvasAspect = w / h;
+          var sx = 0, sy = 0, sw = bgImg.naturalWidth, sh = bgImg.naturalHeight;
+          if (imgAspect > canvasAspect) {
+            sw = bgImg.naturalHeight * canvasAspect;
+            sx = (bgImg.naturalWidth - sw) / 2;
+          } else {
+            sh = bgImg.naturalWidth / canvasAspect;
+            sy = (bgImg.naturalHeight - sh) / 2;
+          }
+          offCtx.drawImage(bgImg, sx, sy, sw, sh, 0, 0, w, h);
+          srcPixels = offCtx.getImageData(0, 0, w, h).data;
+        }
+
+        var imageData = ctx.createImageData(w, h);
+        var data = imageData.data;
+        var cols = Math.ceil(w / pixelSize);
+        var rows = Math.ceil(h / pixelSize);
+
+        for (var row = 0; row < rows; row++) {
+          for (var col = 0; col < cols; col++) {
+            var centerX = col * pixelSize + (pixelSize >> 1);
+            var centerY = row * pixelSize + (pixelSize >> 1);
+
+            var sR = 0, sG = 0, sB = 0, imgBrightness = 0.3;
+            if (srcPixels && centerX < w && centerY < h) {
+              var sIdx = (centerY * w + centerX) * 4;
+              sR = srcPixels[sIdx]; sG = srcPixels[sIdx+1]; sB = srcPixels[sIdx+2];
+              imgBrightness = (sR * 0.299 + sG * 0.587 + sB * 0.114) / 255;
+            }
+
+            var cx = col / cols, cy = row / rows;
+            var warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
+            var warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
+            var wx = cx + warpX, wy = cy + warpY;
+            var d1 = Math.sqrt((wx - 0.5) * (wx - 0.5) + (wy - 0.5) * (wy - 0.5));
+            var warpIntensity = 0.3 + 0.25 * Math.sin(d1 * 8.0 - t * 2.0) + 0.15 * Math.cos((wx + wy) * 6.0 + t);
+
+            var intensity = imgBrightness * 0.92 + warpIntensity * 0.2;
+            intensity = Math.max(0, Math.min(1, intensity));
+
+            var threshold = bayer[row % 4][col % 4];
+            var on = intensity > threshold;
+
+            var r, g, b, a;
+            if (on) {
+              var blend = greenBlend + (1 - greenBlend) * 0.3 * warpIntensity;
+              r = Math.round(sR * (1 - blend) + 15 * blend);
+              g = Math.round(sG * (1 - blend) + 76 * blend);
+              b = Math.round(sB * (1 - blend) + 58 * blend);
+              a = Math.round(intensity * 180 + 75);
+            } else {
+              r = 0; g = 0; b = 0; a = 0;
+            }
+
+            for (var py = 0; py < pixelSize; py++) {
+              for (var px = 0; px < pixelSize; px++) {
+                var x = col * pixelSize + px;
+                var y = row * pixelSize + py;
+                if (x >= w || y >= h) continue;
+                var idx = (y * w + x) * 4;
+                data[idx] = r; data[idx+1] = g; data[idx+2] = b; data[idx+3] = a;
+              }
+            }
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        animId = requestAnimationFrame(render);
+      }
+
+      if (card) {
+        card.addEventListener('mouseenter', function () { isHovered = true; });
+        card.addEventListener('mouseleave', function () { isHovered = false; });
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { resize(); startTime = performance.now(); animId = requestAnimationFrame(render); }
+          else { cancelAnimationFrame(animId); }
+        });
+      }, { threshold: 0.1 });
+
+      window.addEventListener('resize', resize);
+      observer.observe(canvas);
+    })();
+  </script>
+
   <!-- ═══════════════════════════════════════════════════════════════
-       FOOTER
+       11. FAQ — Simplified (KT clean typography)
        ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-32 lg:py-40 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-16">
+
+      <!-- Left label + heading -->
+      <div class="fade-up">
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">FAQ</p>
+        <h2 class="font-sans font-light text-3xl lg:text-4xl leading-[1.15] tracking-tight" style="color: var(--color-neutral-800);">
+          What you should know before we talk.
+        </h2>
+      </div>
+
+      <!-- Right: questions -->
+      <div class="fade-up">
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">How is Quatro different from a systems integrator like Accenture or Deloitte?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            They run long discovery phases with large teams and hand you a roadmap. We connect your systems, build the intelligence model, and hand your team the keys — in weeks, not years. Our engagement has a beginning and a handoff, not a perpetual dependency. You own the intelligence. You don't rent it.
+          </p>
+        </details>
+
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">What about vendor lock-in?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            The operational model, the data, and the deployment belong to you from day one. We deploy on your infrastructure — cloud, hybrid, or air-gapped — governed by your rules. Your team extends the model themselves. This is an architectural decision, not a sales promise.
+          </p>
+        </details>
+
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">What if our infrastructure doesn't generate usable data yet?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            We solve the cold-start problem. Through our edge hardware partnerships, we deploy sensors and gateways where you need them. The data foundation is part of the integration, not a prerequisite.
+          </p>
+        </details>
+
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">Can this deploy air-gapped or on sovereign infrastructure?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            Yes. Cloud, hybrid, on-premise, or fully air-gapped. Your data never leaves your control.
+          </p>
+        </details>
+
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">Do we need to replace our existing systems?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            No. Quatro connects to what you already run. We add the operational layer on top — your existing systems stay in place.
+          </p>
+        </details>
+
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">What does the engagement actually look like?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            We start with the outcome your team needs most. First use case scoped and connected in a single sprint. From there, each new connection compounds into the model. Your team operates from it and extends it themselves.
+          </p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
   <SiteFooter lang="en" />
 
 </BaseLayout>

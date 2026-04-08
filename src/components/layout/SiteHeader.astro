@@ -7,9 +7,11 @@ import NavDropdown from './NavDropdown.astro'
 
 interface Props {
   lang?: Locale
+  /** Force expanded nav with visible logo (use on internal pages without hero carousel) */
+  expanded?: boolean
 }
 
-const { lang = 'en' } = Astro.props
+const { lang = 'en', expanded = false } = Astro.props
 const navigation = getPrimaryNavigation(lang)
 const homeHref = lang === 'es' ? '/es/' : '/'
 const demoHref = localizeHref('/contact/demo', lang)
@@ -18,17 +20,35 @@ const switchLabel = t('lang.switch', lang)
 const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 transition-all duration-300">
-  <style>:root { --scroll-padding-top: 5rem }</style>
-  <nav id="nav-pill" class="mx-auto w-full max-w-6xl rounded-full px-5 py-2.5 transition-all duration-300" style="background-color: rgba(0,0,0,0.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 flex justify-end px-6 lg:px-12" style="padding-top: 3rem;" data-expanded={expanded ? 'true' : undefined}>
+  <style>
+    :root { --scroll-padding-top: 5rem }
+    #site-header {
+      transition: padding-top 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                  justify-content 0s;
+    }
+    #nav-pill {
+      transition: background-color 0.5s, border 0.5s, box-shadow 0.5s, border-radius 0.5s;
+    }
+    #nav-logo-link {
+      transition: max-width 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity 0.4s ease,
+                  margin 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @media (min-width: 1024px) {
+      header#site-header { padding-top: 4rem; }
+    }
+  </style>
+  <nav id="nav-pill" class="rounded-full px-5 py-2.5" style="background-color: rgba(0,0,0,0.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);">
     <div class="flex items-center gap-4">
-      <!-- Left: Logo -->
-      <a href={homeHref} class="flex items-center shrink-0" aria-label={t('nav.home', lang)}>
-        <QuatroLogo id="nav-logo" light class="h-7 w-auto" />
+
+      <!-- Logo — hidden in hero, appears when scrolled past -->
+      <a href={homeHref} id="nav-logo-link" class="flex items-center overflow-hidden max-w-0 opacity-0" style="white-space: nowrap; margin-right: 0;">
+        <QuatroLogo class="h-6 w-auto" id="nav-logo-svg" />
       </a>
 
-      <!-- Center: Nav links -->
-      <div class="flex flex-1 items-center justify-center gap-6 max-lg:hidden">
+      <!-- Nav links -->
+      <div class="flex items-center gap-6 max-lg:hidden">
         {navigation.map((item) => (
           <NavDropdown
             label={item.name}
@@ -53,7 +73,7 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
         <a
           href={demoHref}
           class="rounded-full font-mono text-xs uppercase tracking-widest px-6 py-2.5 text-white transition-all duration-200 hover:opacity-90"
-          style="background-color: #0ACF83;"
+          style="background-color: var(--color-forest);"
         >
           {ctaLabel}
         </a>
@@ -137,7 +157,7 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
         <a
           href={demoHref}
           class="rounded-full font-mono text-xs uppercase tracking-widest px-4 py-2.5 text-white text-center transition-all duration-200"
-          style="background-color: #0ACF83;"
+          style="background-color: var(--color-forest);"
         >
           {ctaLabel}
         </a>
@@ -166,12 +186,17 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
   })
 
   // Adaptive nav: switches dark/light based on section underneath
+  // Also expands with logo when scrolled past hero
+  const header = document.getElementById('site-header')
   const navPill = document.getElementById('nav-pill')
-  const logoSvg = document.getElementById('nav-logo')
-  const wordmarkPath = logoSvg?.querySelector('path:first-child') as SVGPathElement | null
+  const navLogoLink = document.getElementById('nav-logo-link')
+  const navLogoSvg = document.getElementById('nav-logo-svg')
   const navLinks = document.querySelectorAll('[data-nav-link]') as NodeListOf<HTMLElement>
   const hamburger = document.getElementById('mobile-menu-open')
   const langSwitch = document.querySelector('[data-lang-switch]') as HTMLElement | null
+  const heroSection = document.getElementById('hero-carousel')
+
+  let isPastHero = false
 
   function applyNavState(dark: boolean) {
     if (!navPill) return
@@ -182,10 +207,14 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
       ;(navPill.style as any).webkitBackdropFilter = 'blur(12px)'
       navPill.style.border = '1px solid rgba(226,232,240,0.6)'
       navPill.style.boxShadow = '0 4px 24px rgba(15,23,42,0.08)'
-      if (wordmarkPath) wordmarkPath.setAttribute('fill', '#00060C')
       navLinks.forEach(l => l.style.color = 'rgba(15,23,42,0.8)')
       if (hamburger) hamburger.style.color = '#0F172A'
       if (langSwitch) langSwitch.style.color = 'rgba(15,23,42,0.4)'
+      // Logo colors for light bg
+      if (navLogoSvg) {
+        const wordmark = navLogoSvg.querySelector('.quatro-wordmark')
+        if (wordmark) (wordmark as HTMLElement).style.fill = '#0a0a0a'
+      }
     } else {
       // Dark pill (over dark sections)
       navPill.style.backgroundColor = 'rgba(0,0,0,0.3)'
@@ -193,10 +222,37 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
       ;(navPill.style as any).webkitBackdropFilter = 'blur(12px)'
       navPill.style.border = '1px solid rgba(255,255,255,0.1)'
       navPill.style.boxShadow = ''
-      if (wordmarkPath) wordmarkPath.setAttribute('fill', '#ffffff')
       navLinks.forEach(l => l.style.color = 'rgba(255,255,255,0.8)')
       if (hamburger) hamburger.style.color = '#ffffff'
       if (langSwitch) langSwitch.style.color = 'rgba(255,255,255,0.5)'
+      // Logo colors for dark bg
+      if (navLogoSvg) {
+        const wordmark = navLogoSvg.querySelector('.quatro-wordmark')
+        if (wordmark) (wordmark as HTMLElement).style.fill = '#ffffff'
+      }
+    }
+  }
+
+  function applyHeroState(pastHero: boolean) {
+    if (isPastHero === pastHero) return
+    isPastHero = pastHero
+
+    if (!header || !navLogoLink || !navPill) return
+
+    if (pastHero) {
+      // Scrolled past hero: center nav, tighten padding, reveal logo
+      header.style.justifyContent = 'center'
+      header.style.paddingTop = '1rem'
+      navLogoLink.style.maxWidth = '160px'
+      navLogoLink.style.opacity = '1'
+      navLogoLink.style.marginRight = '1rem'
+    } else {
+      // In hero: right-align over image, deep padding, hide logo
+      header.style.justifyContent = 'flex-end'
+      header.style.paddingTop = ''
+      navLogoLink.style.maxWidth = '0'
+      navLogoLink.style.opacity = '0'
+      navLogoLink.style.marginRight = '0'
     }
   }
 
@@ -261,10 +317,33 @@ const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
 
   sections.forEach(s => observer.observe(s))
 
+  // Check if header is forced into expanded mode (internal pages)
+  const forceExpanded = header?.hasAttribute('data-expanded')
+
+  // Hero scroll observer — expand nav when hero scrolls out of view
+  if (heroSection && !forceExpanded) {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        applyHeroState(!entry.isIntersecting)
+      })
+    }, {
+      rootMargin: '-100px 0px 0px 0px', // Trigger slightly before hero fully exits
+      threshold: 0
+    })
+    heroObserver.observe(heroSection)
+  }
+
   // Initial state based on what's at the top right now
   const initSection = sections.find(s => {
     const rect = s.getBoundingClientRect()
     return rect.top <= 80 && rect.bottom > 0
   })
   applyNavState(initSection ? isDarkSection(initSection) : false)
+
+  if (forceExpanded || !heroSection) {
+    // Internal pages (no hero carousel): immediately show logo and center nav
+    applyHeroState(true)
+  } else {
+    applyHeroState(false) // Start in hero mode (homepage only)
+  }
 </script>

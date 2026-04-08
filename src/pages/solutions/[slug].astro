@@ -26,7 +26,7 @@ const featuredCapabilities = capabilities.filter((c: any) => c.featured)
 const hasFeatured = featuredCapabilities.length > 0
 
 // Default CTA values
-const ctaPrimary = cta?.primary || { label: 'Schedule an Assessment', href: '/contact/demo' }
+const ctaPrimary = cta?.primary || { label: 'Talk to Our Team', href: '/contact/demo' }
 const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/contact/sales' }
 ---
 
@@ -38,7 +38,7 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/c
     badge={hero.eyebrow}
     title={hero.title}
     body={hero.description}
-    ctaLabel={hero.primaryCta?.label || 'Schedule an Assessment'}
+    ctaLabel={hero.primaryCta?.label || 'Talk to Our Team'}
     ctaHref={hero.primaryCta?.href || '/contact/demo'}
     imageSrc={heroImage || '/images/hero-bg.png'}
   />

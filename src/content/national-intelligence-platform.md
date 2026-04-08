@@ -1,14 +1,14 @@
-# National Intelligence Platform
+# National Intelligence
 
-*Plataforma Nacional de Inteligencia*
+*Inteligencia Nacional*
 
 ---
 
-## One Platform. Every Domain. Total Protection.
+## One Operational Model. Every Domain. Total Protection.
 
-Quatro delivers a unified operational intelligence platform that transforms fragmented data across agencies and domains into real-time situational awareness, predictive threat intelligence, and coordinated multi-agency response — all from a single command environment.
+Quatro integrates the hardware, software, and domain expertise that national security agencies need — transforming fragmented data across agencies and domains into real-time situational awareness, predictive threat intelligence, and coordinated multi-agency response.
 
-Built on proven foundations trusted by NATO, major telecoms, critical infrastructure operators, and defense organizations worldwide. The platform processes millions of events per second with 99.99% uptime — proven in mission-critical environments where failure is not an option.
+Built on proven foundations trusted by NATO, major telecoms, critical infrastructure operators, and defense organizations worldwide. The intelligence model processes millions of events per second with 99.99% uptime — proven in mission-critical environments where failure is not an option.
 
 ---
 

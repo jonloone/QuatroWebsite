@@ -39,7 +39,7 @@ const {
   cta,
 } = useCase.data
 
-const ctaPrimary = cta?.primary || { label: 'Schedule an Assessment', href: '/contact/demo' }
+const ctaPrimary = cta?.primary || { label: 'Talk to Our Team', href: '/contact/demo' }
 const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/contact/sales' }
 
 // Get sibling use cases for the same industry
@@ -57,7 +57,7 @@ const siblings = allUseCases
     badge={hero.eyebrow}
     title={hero.title}
     body={hero.description}
-    ctaLabel={hero.primaryCta?.label || 'Schedule an Assessment'}
+    ctaLabel={hero.primaryCta?.label || 'Talk to Our Team'}
     ctaHref={hero.primaryCta?.href || '/contact/demo'}
   />
 

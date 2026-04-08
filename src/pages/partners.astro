@@ -1,0 +1,493 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SiteHeader from '@/components/layout/SiteHeader.astro'
+import SiteFooter from '@/components/layout/SiteFooter.astro'
+---
+
+<BaseLayout
+  title="Partner Program — Quatro"
+  description="Deliver operational intelligence in your market. Quatro's partnership program gives regional integrators the full intelligence stack — hardware, software, and domain models — so you can lead in your market."
+  lang="en"
+>
+
+  <SiteHeader lang="en" expanded />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       1. HERO — Photo top, clean text bottom (KT Practice style)
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- 1a. Photo band — full-bleed monotone image across top -->
+  <section class="relative overflow-hidden" style="height: clamp(320px, 45vh, 520px);" data-nav-light>
+    <img
+      src="/images/bg-partners-hero-v2.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="filter: grayscale(100%) contrast(0.7) brightness(1.1);"
+      loading="eager"
+      aria-hidden="true"
+    />
+    <!-- Sage-green monotone tint -->
+    <div class="absolute inset-0" style="background-color: rgba(180, 190, 170, 0.6); mix-blend-mode: multiply;"></div>
+    <div class="absolute inset-0" style="background-color: rgba(210, 215, 200, 0.35); mix-blend-mode: screen;"></div>
+    <!-- Bottom fade into the text section below -->
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 60%, rgba(206, 210, 198, 1) 100%);"></div>
+    <!-- Grain -->
+    <div class="absolute inset-0 opacity-[0.05] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+  </section>
+
+  <!-- 1b. Text band — solid sage background, no image competition -->
+  <section class="relative px-8 lg:px-12 pt-12 lg:pt-16 pb-24 lg:pb-32 overflow-hidden" style="background-color: rgb(206, 210, 198);">
+    <!-- Grain continuity -->
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 mx-auto max-w-5xl">
+
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-8 fade-up" style="color: rgba(26,26,26,0.5);">Partnership Program</p>
+
+      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight fade-up" style="color: #1a1a1a;">
+        Deliver intelligence<br />in your market.
+      </h1>
+
+      <div class="mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-[1fr_35%] gap-12 lg:gap-20">
+        <p class="font-sans text-lg lg:text-xl leading-relaxed fade-up" style="color: rgba(26,26,26,0.65);">
+          You know the regulations, the relationships, and the language. We provide the full operational intelligence stack — hardware, software, and domain models — so you can deliver what your clients need without building from scratch.
+        </p>
+        <div class="flex items-end">
+          <a href="/contact/partners" class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.1em] transition-colors duration-300 hover:text-[#1a1a1a] fade-up" style="color: rgba(26,26,26,0.55);">
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+            Apply to become a partner
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       2. THE MODEL — KT-style stacked editorial sections
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-24 lg:py-32 px-8 lg:px-12">
+    <div class="mx-auto max-w-5xl">
+
+      <!-- Section: The Partnership Model -->
+      <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-20 fade-up">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">The Model</p>
+        </div>
+        <div>
+          <h2 class="font-sans font-light text-2xl lg:text-3xl leading-[1.2] tracking-tight mb-6" style="color: var(--color-neutral-800);">
+            Your clients trust you. We give you the stack to deliver.
+          </h2>
+          <p class="font-sans text-base lg:text-lg leading-relaxed mb-6" style="color: var(--color-neutral-500);">
+            Quatro's partnership model is built for regional integrators who understand their market deeply and want to deliver operational intelligence without multi-year development cycles. You bring the client relationships and local expertise. We provide the complete integration layer — from edge IoT connectivity through the semantic intelligence model to governed execution.
+          </p>
+          <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">
+            The result: your clients get a full-stack intelligence capability delivered by a partner they already trust, on timelines that make commercial sense. You lead the engagement. We support the architecture.
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Full-width Stack Diagram ── -->
+      <div class="my-16 lg:my-24 fade-up">
+        <svg viewBox="0 0 800 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" style="max-width: 800px; margin: 0 auto; display: block;">
+
+          <!-- Left bracket: "QUATRO PROVIDES" -->
+          <line x1="24" y1="60" x2="24" y2="280" stroke="#0f4c3a" stroke-width="1.5" opacity="0.5" />
+          <line x1="24" y1="60" x2="32" y2="60" stroke="#0f4c3a" stroke-width="1.5" opacity="0.5" />
+          <line x1="24" y1="280" x2="32" y2="280" stroke="#0f4c3a" stroke-width="1.5" opacity="0.5" />
+          <text x="16" y="175" text-anchor="middle" font-family="ui-monospace, monospace" font-size="9" letter-spacing="0.12em" fill="#0f4c3a" opacity="0.85" transform="rotate(-90 16 175)">QUATRO PROVIDES</text>
+
+          <!-- Layer 5 (bottom): Hardware & Connectivity -->
+          <rect x="48" y="252" width="720" height="48" rx="6" fill="rgba(15,76,58,0.06)" stroke="#0f4c3a" stroke-width="1" opacity="0.8" />
+          <circle cx="76" cy="276" r="10" fill="rgba(15,76,58,0.10)" stroke="#0f4c3a" stroke-width="0.75" />
+          <path d="M72 279a4 4 0 0 1 8 0M70 276a6 6 0 0 1 12 0M68 273a8 8 0 0 1 16 0" stroke="#0f4c3a" stroke-width="1" fill="none" opacity="0.7" />
+          <text x="100" y="280" font-family="ui-monospace, monospace" font-size="10" letter-spacing="0.08em" fill="#0f4c3a" opacity="0.85">HARDWARE & CONNECTIVITY</text>
+          <text x="380" y="280" font-family="system-ui, sans-serif" font-size="10" fill="#0f4c3a" opacity="0.75">Sensors · Gateways · Protocol Adapters · Edge Compute</text>
+
+          <!-- Connector arrow -->
+          <line x1="408" y1="252" x2="408" y2="236" stroke="#0f4c3a" stroke-width="1" opacity="0.6" />
+          <polygon points="404,238 408,232 412,238" fill="#0f4c3a" opacity="0.6" />
+
+          <!-- Layer 4: Intelligence Platform -->
+          <rect x="48" y="196" width="720" height="48" rx="6" fill="rgba(15,76,58,0.08)" stroke="#0f4c3a" stroke-width="1" opacity="0.8" />
+          <circle cx="76" cy="220" r="10" fill="rgba(15,76,58,0.12)" stroke="#0f4c3a" stroke-width="0.75" />
+          <rect x="70" y="214" width="5" height="5" rx="1" fill="none" stroke="#0f4c3a" stroke-width="0.75" opacity="0.7" />
+          <rect x="77" y="214" width="5" height="5" rx="1" fill="none" stroke="#0f4c3a" stroke-width="0.75" opacity="0.7" />
+          <rect x="70" y="221" width="5" height="5" rx="1" fill="none" stroke="#0f4c3a" stroke-width="0.75" opacity="0.7" />
+          <rect x="77" y="221" width="5" height="5" rx="1" fill="none" stroke="#0f4c3a" stroke-width="0.75" opacity="0.7" />
+          <text x="100" y="224" font-family="ui-monospace, monospace" font-size="10" letter-spacing="0.08em" fill="#0f4c3a" opacity="0.85">INTELLIGENCE PLATFORM</text>
+          <text x="355" y="224" font-family="system-ui, sans-serif" font-size="10" fill="#0f4c3a" opacity="0.75">Semantic Model · Governed Execution · Autonomous Workflows</text>
+
+          <!-- Connector arrow -->
+          <line x1="408" y1="196" x2="408" y2="180" stroke="#0f4c3a" stroke-width="1" opacity="0.6" />
+          <polygon points="404,182 408,176 412,182" fill="#0f4c3a" opacity="0.6" />
+
+          <!-- Layer 3: Domain Models -->
+          <rect x="48" y="140" width="720" height="48" rx="6" fill="rgba(15,76,58,0.10)" stroke="#0f4c3a" stroke-width="1" opacity="0.85" />
+          <circle cx="76" cy="164" r="10" fill="rgba(15,76,58,0.14)" stroke="#0f4c3a" stroke-width="0.75" />
+          <path d="M76 156l8 4.5-8 4.5-8-4.5z M68 160.5l8 4.5 8-4.5 M68 164l8 4.5 8-4.5" stroke="#0f4c3a" stroke-width="0.75" fill="none" opacity="0.7" />
+          <text x="100" y="168" font-family="ui-monospace, monospace" font-size="10" letter-spacing="0.08em" fill="#0f4c3a" opacity="0.85">DOMAIN MODELS</text>
+          <text x="290" y="168" font-family="system-ui, sans-serif" font-size="10" fill="#0f4c3a" opacity="0.75">Energy · Defense · Networks · Cities · Finance · Maritime</text>
+
+          <!-- Connector arrow -->
+          <line x1="408" y1="140" x2="408" y2="124" stroke="#0f4c3a" stroke-width="1" opacity="0.6" />
+          <polygon points="404,126 408,120 412,126" fill="#0f4c3a" opacity="0.6" />
+
+          <!-- Layer 2: GTM + Enablement -->
+          <rect x="48" y="84" width="720" height="48" rx="6" fill="rgba(15,76,58,0.12)" stroke="#0f4c3a" stroke-width="1" opacity="0.9" />
+          <circle cx="76" cy="108" r="10" fill="rgba(15,76,58,0.16)" stroke="#0f4c3a" stroke-width="0.75" />
+          <path d="M73 112a3 3 0 0 1 6 0M70 109c3-4 9-4 12 0M76 99v7M74 102l2-2 2 2" stroke="#0f4c3a" stroke-width="0.75" fill="none" opacity="0.7" />
+          <text x="100" y="112" font-family="ui-monospace, monospace" font-size="10" letter-spacing="0.08em" fill="#0f4c3a" opacity="0.85">GO-TO-MARKET + ENABLEMENT</text>
+          <text x="390" y="112" font-family="system-ui, sans-serif" font-size="10" fill="#0f4c3a" opacity="0.75">Co-sell · Training · PoV Frameworks · Co-branded Materials</text>
+
+          <!-- Connector arrow (thicker, into partner zone) -->
+          <line x1="408" y1="84" x2="408" y2="56" stroke="#0f4c3a" stroke-width="1.5" opacity="0.6" />
+          <polygon points="403,60 408,50 413,60" fill="#0f4c3a" opacity="0.6" />
+
+          <!-- Layer 1 (top): YOUR DELIVERY — the partner's output -->
+          <rect x="48" y="12" width="720" height="48" rx="6" fill="rgba(15,76,58,0.18)" stroke="#0f4c3a" stroke-width="1.5" />
+          <text x="100" y="41" font-family="ui-monospace, monospace" font-size="11" letter-spacing="0.1em" fill="#0f4c3a" font-weight="600">YOUR DELIVERY</text>
+          <text x="310" y="41" font-family="system-ui, sans-serif" font-size="11" fill="#0f4c3a" opacity="0.85">Client engagement owned and led by your team</text>
+
+          <!-- Right label: "YOU LEAD" -->
+          <text x="784" y="40" text-anchor="end" font-family="ui-monospace, monospace" font-size="8" letter-spacing="0.1em" fill="#0f4c3a" opacity="0.85">YOU LEAD</text>
+
+        </svg>
+      </div>
+
+      <!-- Divider -->
+      <div class="my-16 lg:my-20" style="border-top: 1px solid var(--color-structure);"></div>
+
+      <!-- Section: What You Get -->
+      <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-20 fade-up">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">What You Get</p>
+        </div>
+        <div>
+          <h2 class="font-sans font-light text-2xl lg:text-3xl leading-[1.2] tracking-tight mb-10" style="color: var(--color-neutral-800);">
+            The full intelligence stack, ready for your market.
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+            <div>
+              <svg class="w-5 h-5 mb-3" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z" /></svg>
+              <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Hardware & Connectivity</h3>
+              <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">An IoT suite that connects the physical world — sensors, gateways, and protocol adapters that solve the cold-start problem for any infrastructure environment.</p>
+            </div>
+
+            <div>
+              <svg class="w-5 h-5 mb-3" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25a2.25 2.25 0 0 1-2.25-2.25v-2.25Z" /></svg>
+              <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Intelligence Platform</h3>
+              <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">The semantic intelligence layer that connects operational data into a unified model — domain-trained reasoning, governed execution, and autonomous workflows your clients own from day one.</p>
+            </div>
+
+            <div>
+              <svg class="w-5 h-5 mb-3" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+              <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Domain Models</h3>
+              <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Pre-built intelligence models for energy, networks, defense, smart cities, finance, and maritime — so you start with proven capability, not a blank canvas.</p>
+            </div>
+
+            <div>
+              <svg class="w-5 h-5 mb-3" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" /></svg>
+              <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Go-to-Market Support</h3>
+              <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Joint positioning, proof-of-value frameworks, technical pre-sales support, and co-branded materials — so your team can sell and deliver with confidence.</p>
+            </div>
+
+            <div>
+              <svg class="w-5 h-5 mb-3" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a23.838 23.838 0 0 0-1.012 5.434c-.085.524.296.975.824.975H5.25M4.26 10.147A23.733 23.733 0 0 1 12 7.443a23.733 23.733 0 0 1 7.74 2.704M12 2.25c-1.892 0-3.75.19-5.55.553m11.1 0A23.679 23.679 0 0 1 12 2.25" /></svg>
+              <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Training & Enablement</h3>
+              <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Technical certification, deployment playbooks, and hands-on engineering support during your first engagements — so your team builds real capability, not dependency.</p>
+            </div>
+
+            <div>
+              <svg class="w-5 h-5 mb-3" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" /></svg>
+              <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Commercial Framework</h3>
+              <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Transparent origination economics, deal registration, and a pricing model that rewards long-term partnership — not one-time transactions.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="my-16 lg:my-20" style="border-top: 1px solid var(--color-structure);"></div>
+
+      <!-- Section: How We Work Together -->
+      <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-20 fade-up">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How We Work Together</p>
+        </div>
+        <div>
+          <h2 class="font-sans font-light text-2xl lg:text-3xl leading-[1.2] tracking-tight mb-10" style="color: var(--color-neutral-800);">
+            You lead. We support. The client owns the intelligence.
+          </h2>
+
+          <div class="space-y-10">
+
+            <div class="grid grid-cols-1 sm:grid-cols-[40px_1fr] gap-4 items-start">
+              <p class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1" style="color: var(--color-forest);">01</p>
+              <div>
+                <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Qualify Together</h3>
+                <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">You identify the opportunity and the use case. We help you scope the technical architecture, validate feasibility, and build the proof-of-value proposal that wins the engagement.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-[40px_1fr] gap-4 items-start">
+              <p class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1" style="color: var(--color-forest);">02</p>
+              <div>
+                <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Deploy Together</h3>
+                <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Your team leads the client relationship. Our engineers work alongside yours to deploy the intelligence stack — connecting hardware, standing up the semantic model, and configuring governed workflows.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-[40px_1fr] gap-4 items-start">
+              <p class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1" style="color: var(--color-forest);">03</p>
+              <div>
+                <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Handoff & Grow</h3>
+                <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">The client's team owns and operates the intelligence model. You continue as their trusted integration partner — extending the model, adding new use cases, and growing the account over time.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       2b. FULL-BLEED MONOTONE PHOTO — KT "Our Place" style break
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden" style="height: clamp(500px, 65vh, 750px);" data-nav-light>
+    <!-- Background image — same sage-green monotone treatment as hero -->
+    <!-- Image should have clear/blank upper area for text, detail in lower half -->
+    <img
+      src="/images/bg-deployed-infrastructure-v2.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+      style="filter: grayscale(100%) contrast(0.7) brightness(1.15);"
+      loading="lazy"
+      aria-hidden="true"
+    />
+    <!-- Sage-green monotone tint (matching hero overlay treatment) -->
+    <div class="absolute inset-0" style="background-color: rgba(180, 190, 170, 0.65); mix-blend-mode: multiply;"></div>
+    <!-- Warm lighten to lift midtones — WCAG compliant for dark text -->
+    <div class="absolute inset-0" style="background-color: rgba(210, 215, 200, 0.45); mix-blend-mode: screen;"></div>
+    <!-- Top-to-bottom gradient: solid sage at top (text zone) fading to transparent (image zone) -->
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(195, 200, 185, 0.85) 0%, rgba(195, 200, 185, 0.6) 35%, rgba(195, 200, 185, 0.0) 70%);"></div>
+    <!-- Grain texture -->
+    <div class="absolute inset-0 opacity-[0.05] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+    <!-- Overlaid editorial text — top-aligned, dark text on sage-green monotone -->
+    <div class="relative z-10 h-full flex items-start px-8 lg:px-12 pt-16 lg:pt-20">
+      <div class="mx-auto max-w-5xl w-full grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-8 lg:gap-20">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: rgba(26,26,26,0.65);">Deployed Infrastructure</p>
+        </div>
+        <div>
+          <p class="font-sans font-light text-xl lg:text-2xl leading-relaxed" style="color: #1a1a1a; max-width: 520px;">
+            Our partners operate inside the same operational environments we build for — energy grids, defense networks, municipal systems, telecommunications infrastructure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       3. IDEAL PARTNER — Dark section
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative py-24 lg:py-32 px-8 lg:px-12" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
+
+    <!-- Grain -->
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 mx-auto max-w-5xl">
+
+      <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-20 fade-up">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40">Ideal Partners</p>
+        </div>
+        <div>
+          <h2 class="font-sans font-light text-2xl lg:text-3xl leading-[1.2] tracking-tight text-white mb-10">
+            Built for regional integrators who know their market.
+          </h2>
+
+          <div class="space-y-8">
+
+            <div class="py-6 flex gap-5" style="border-top: 1px solid rgba(255,255,255,0.08);">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008V10.5Zm0 3h.008v.008h-.008V13.5Zm0 3h.008v.008h-.008V16.5Z" /></svg>
+              <div>
+                <h3 class="font-sans text-base font-medium tracking-tight text-white mb-2">Systems Integrators & IT Services</h3>
+                <p class="font-sans text-sm leading-relaxed text-white/60">Companies delivering infrastructure projects in energy, telecommunications, defense, or municipal services — who want to add an intelligence layer to every engagement.</p>
+              </div>
+            </div>
+
+            <div class="py-6 flex gap-5" style="border-top: 1px solid rgba(255,255,255,0.08);">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" /></svg>
+              <div>
+                <h3 class="font-sans text-base font-medium tracking-tight text-white mb-2">Technology Distributors</h3>
+                <p class="font-sans text-sm leading-relaxed text-white/60">Regional technology distributors who want to move beyond hardware resale into integrated intelligence solutions — combining connectivity, software, and domain expertise.</p>
+              </div>
+            </div>
+
+            <div class="py-6 flex gap-5" style="border-top: 1px solid rgba(255,255,255,0.08);">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>
+              <div>
+                <h3 class="font-sans text-base font-medium tracking-tight text-white mb-2">Domain Consultancies</h3>
+                <p class="font-sans text-sm leading-relaxed text-white/60">Specialized advisory firms in energy, defense, or infrastructure who have deep client relationships and want to deliver operational intelligence — not just recommendations.</p>
+              </div>
+            </div>
+
+            <div class="py-6 flex gap-5" style="border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08);">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5a17.92 17.92 0 0 1-8.716-2.247m0 0A8.966 8.966 0 0 1 3 12c0-1.264.26-2.467.73-3.56" /></svg>
+              <div>
+                <h3 class="font-sans text-base font-medium tracking-tight text-white mb-2">Government & Development Partners</h3>
+                <p class="font-sans text-sm leading-relaxed text-white/60">Organizations aligned with IDB, World Bank, or national development programs who deliver infrastructure modernization at the municipal or national level.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       4a. GLOBE — KT "Planet" style, earth on dark background
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative py-16 lg:py-24 px-8 lg:px-12" style="background: var(--color-paper);">
+    <div class="mx-auto max-w-5xl">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start fade-up">
+        <!-- Globe image -->
+        <div class="overflow-hidden rounded-sm" style="background: #000;">
+          <img
+            src="/images/globe-partner-markets.png"
+            alt="Planet Earth showing Africa, the Middle East, and South America — the regions where Quatro partners deliver intelligence"
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+        <!-- Market context -->
+        <div class="lg:pt-8">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Active Markets</p>
+          <h2 class="font-sans font-light text-2xl lg:text-3xl leading-[1.2] tracking-tight mb-6" style="color: var(--color-neutral-800);">
+            Focused where infrastructure is being reimagined.
+          </h2>
+          <p class="font-sans text-base lg:text-lg leading-relaxed mb-10" style="color: var(--color-neutral-500);">
+            Our partners operate across emerging and developing markets where critical infrastructure is being modernized — energy grids, telecommunications networks, municipal systems, and defense programs. We're global in reach but local in delivery.
+          </p>
+
+          <div class="space-y-5">
+            <div class="flex items-baseline gap-3" style="border-top: 1px solid var(--color-structure); padding-top: 0.75rem;">
+              <h3 class="font-sans text-sm font-medium tracking-tight shrink-0" style="color: var(--color-neutral-800);">Mexico & Central America</h3>
+              <p class="font-sans text-xs leading-relaxed" style="color: var(--color-neutral-500);">Energy, telecom, municipal infrastructure</p>
+            </div>
+            <div class="flex items-baseline gap-3" style="border-top: 1px solid var(--color-structure); padding-top: 0.75rem;">
+              <h3 class="font-sans text-sm font-medium tracking-tight shrink-0" style="color: var(--color-neutral-800);">East & West Africa</h3>
+              <p class="font-sans text-xs leading-relaxed" style="color: var(--color-neutral-500);">Energy, water, communications</p>
+            </div>
+            <div class="flex items-baseline gap-3" style="border-top: 1px solid var(--color-structure); padding-top: 0.75rem;">
+              <h3 class="font-sans text-sm font-medium tracking-tight shrink-0" style="color: var(--color-neutral-800);">Middle East & North Africa</h3>
+              <p class="font-sans text-xs leading-relaxed" style="color: var(--color-neutral-500);">Grid ops, smart cities, telecom</p>
+            </div>
+            <div class="flex items-baseline gap-3" style="border-top: 1px solid var(--color-structure); padding-top: 0.75rem;">
+              <h3 class="font-sans text-sm font-medium tracking-tight shrink-0" style="color: var(--color-neutral-800);">South America</h3>
+              <p class="font-sans text-xs leading-relaxed" style="color: var(--color-neutral-500);">Pipeline, maritime, municipal intelligence</p>
+            </div>
+            <div class="flex items-baseline gap-3" style="border-top: 1px solid var(--color-structure); padding-top: 0.75rem;">
+              <h3 class="font-sans text-sm font-medium tracking-tight shrink-0" style="color: var(--color-neutral-800);">South & Southeast Asia</h3>
+              <p class="font-sans text-xs leading-relaxed" style="color: var(--color-neutral-500);">Energy, SATCOM, defense intelligence</p>
+            </div>
+            <div class="flex items-baseline gap-3" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure); padding-top: 0.75rem; padding-bottom: 0.75rem;">
+              <h3 class="font-sans text-sm font-medium tracking-tight shrink-0" style="color: var(--color-forest);">Your Market</h3>
+              <p class="font-sans text-xs leading-relaxed" style="color: var(--color-neutral-500);">Where infrastructure is being modernized</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       4b. SOVEREIGNTY — KT Philosophy style, dappled light photo texture
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative py-24 lg:py-36 px-8 lg:px-12 overflow-hidden">
+    <!-- Dappled light texture photo as background -->
+    <img
+      src="/images/texture-dappled-light.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+      style="filter: grayscale(80%) contrast(0.85) brightness(0.95);"
+      loading="lazy"
+      aria-hidden="true"
+    />
+    <!-- Sage-green monotone tint -->
+    <div class="absolute inset-0" style="background-color: rgba(185, 195, 175, 0.6); mix-blend-mode: multiply;"></div>
+    <div class="absolute inset-0" style="background-color: rgba(200, 205, 194, 0.15); mix-blend-mode: screen;"></div>
+    <!-- Grain -->
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+    <div class="relative z-10 mx-auto max-w-5xl">
+      <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-20 fade-up">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: rgba(26,26,26,0.65);">Sovereignty</p>
+        </div>
+        <div>
+          <p class="font-sans font-light text-xl lg:text-2xl leading-relaxed" style="color: #1a1a1a; max-width: 520px;">
+            Every partner engagement produces intelligence that the client owns from day one. No lock-in. No dependency. Sovereign data, sovereign operations, sovereign outcomes — delivered by a partner they trust in their own market.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       5. CTA — KT-style clean bottom section with subtle texture
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative py-32 lg:py-44 px-8 lg:px-12 overflow-hidden">
+    <!-- Very subtle warm texture -->
+    <div class="absolute inset-0 opacity-[0.025] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+    <div class="relative z-10 mx-auto max-w-5xl fade-up">
+
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl leading-[1.1] tracking-tight mb-8" style="color: var(--color-neutral-800);">
+        Ready to deliver intelligence<br />in your market?
+      </h2>
+
+      <p class="font-sans text-base lg:text-lg leading-relaxed max-w-2xl mb-10" style="color: var(--color-neutral-500);">
+        Tell us about your market, your clients, and the infrastructure challenges you're solving. We'll show you what the partnership looks like and how fast your first engagement can go live.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-start gap-4">
+        <a href="/contact/partners" class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105" style="background-color: var(--color-forest); color: white;">
+          Apply to Partner Program
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+        <a href="/contact/demo" class="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105" style="border: 1px solid var(--color-structure); color: var(--color-neutral-600);">
+          Talk to Our Team
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+
+      <!-- Sovereignty signal -->
+      <div class="mt-16 pt-6 flex items-start" style="border-top: 1px solid var(--color-structure);">
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">US-headquartered&nbsp;&nbsp;·&nbsp;&nbsp;Sovereign deployment capable&nbsp;&nbsp;·&nbsp;&nbsp;Your clients own the intelligence from day one</p>
+      </div>
+
+    </div>
+  </section>
+
+  <SiteFooter />
+
+</BaseLayout>

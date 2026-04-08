@@ -1,62 +1,8 @@
 [
   {
-    "filename": "industry-finance.png",
+    "filename": "mission-youth-risk-v3b.png",
     "status": "success",
     "model": "google/nano-banana-pro",
-    "url": "https://replicate.delivery/xezq/pz18KmkK8u5qCdVm1kJ2Pww6tVopqkhuYlfLGcaq4QXy7hLLA/tmpxtuso8ki.png"
-  },
-  {
-    "filename": "industry-networks.png",
-    "status": "success",
-    "model": "google/nano-banana-pro",
-    "url": "https://replicate.delivery/xezq/BxeTSu6OR6VXASRbzv2gGVB8FIlkaTeGu7RKKI5UeC85wHusA/tmp_dfjxeha.png"
-  },
-  {
-    "row": 7,
-    "pillar": "Environmental Compliance",
-    "filename": "solution-environmental-compliance.png",
-    "status": "succeeded",
-    "timestamp": 1775149772.7218006,
-    "size_mb": 6.74906063079834
-  },
-  {
-    "row": 8,
-    "pillar": "Fleet Health",
-    "filename": "solution-fleet-health.png",
-    "status": "succeeded",
-    "timestamp": 1775149816.3515015,
-    "size_mb": 6.543366432189941
-  },
-  {
-    "row": 9,
-    "pillar": "Fleet Logistics",
-    "filename": "solution-fleet-logistics.png",
-    "status": "succeeded",
-    "timestamp": 1775149859.4611714,
-    "size_mb": 7.042985916137695
-  },
-  {
-    "row": 10,
-    "pillar": "Grid Health",
-    "filename": "solution-grid-operations.png",
-    "status": "succeeded",
-    "timestamp": 1775149939.154413,
-    "size_mb": 6.362237930297852
-  },
-  {
-    "row": 11,
-    "pillar": "Network Operations",
-    "filename": "solution-network-operations.png",
-    "status": "succeeded",
-    "timestamp": 1775149982.7633722,
-    "size_mb": 5.923952102661133
-  },
-  {
-    "row": 12,
-    "pillar": "NPA Early Warning",
-    "filename": "solution-npa-early-warning.png",
-    "status": "succeeded",
-    "timestamp": 1775150062.3465767,
-    "size_mb": 6.015102386474609
+    "url": "https://replicate.delivery/xezq/jQbgQOx9zJ7ZMZedFEebzEEWaLjpXifWYv3wNXHkk9ncQQysA/tmpci03fbn4.png"
   }
 ]
