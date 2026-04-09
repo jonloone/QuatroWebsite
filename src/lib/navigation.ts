@@ -85,27 +85,6 @@ const footerNavigationData = {
         { name: 'Finance', href: '/industries/finance' },
       ],
     },
-    solutions: {
-      title: 'Solutions',
-      items: [
-        { name: 'Asset Health', href: '/solutions/asset-health' },
-        { name: 'Pipeline Integrity', href: '/solutions/pipeline-integrity' },
-        { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
-        { name: 'Physical Security', href: '/solutions/physical-security' },
-        { name: 'Fleet & Logistics', href: '/solutions/fleet-logistics' },
-        { name: 'Grid Health', href: '/solutions/grid-health' },
-        { name: 'Network Operations', href: '/solutions/network-operations' },
-        { name: 'Teleport Operations', href: '/solutions/teleport-operations' },
-        { name: 'Fleet Health', href: '/solutions/fleet-health' },
-        { name: 'Service Assurance', href: '/solutions/service-assurance' },
-        { name: 'Space Domain Awareness', href: '/solutions/space-domain-awareness' },
-        { name: 'Port Operations', href: '/solutions/port-operations' },
-        { name: 'Airport Operations', href: '/solutions/airport-operations' },
-        { name: 'Corridor Intelligence', href: '/solutions/corridor-intelligence' },
-        { name: 'Water Systems', href: '/solutions/water-systems' },
-        { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
-      ],
-    },
     resources: {
       title: 'Resources',
       items: [
@@ -120,19 +99,6 @@ const footerNavigationData = {
         { name: 'About', href: '/company/about' },
         { name: 'Careers', href: '/company/careers' },
         { name: 'News', href: '/company/news' },
-      ],
-    },
-    legal: {
-      title: 'Legal',
-      items: [
-        { name: 'Privacy Policy', href: '/legal/privacy' },
-        { name: 'Terms of Service', href: '/legal/terms' },
-        { name: 'Security', href: '/legal/security' },
-      ],
-    },
-    contact: {
-      title: 'Contact',
-      items: [
         { name: 'Request Demo', href: '/contact/demo' },
         { name: 'Sales', href: '/contact/sales' },
         { name: 'Support', href: '/contact/support' },
@@ -160,27 +126,6 @@ const footerNavigationData = {
         { name: 'Finanzas', href: '/industries/finance' },
       ],
     },
-    solutions: {
-      title: 'Soluciones',
-      items: [
-        { name: 'Salud de Activos', href: '/solutions/asset-health' },
-        { name: 'Integridad de Ductos', href: '/solutions/pipeline-integrity' },
-        { name: 'Inteligencia Operacional', href: '/solutions/operational-intelligence' },
-        { name: 'Seguridad Física', href: '/solutions/physical-security' },
-        { name: 'Flotas y Logística', href: '/solutions/fleet-logistics' },
-        { name: 'Salud de Red', href: '/solutions/grid-health' },
-        { name: 'Operaciones de Red', href: '/solutions/network-operations' },
-        { name: 'Operaciones Teleport', href: '/solutions/teleport-operations' },
-        { name: 'Salud de Flota', href: '/solutions/fleet-health' },
-        { name: 'Aseguramiento de Servicio', href: '/solutions/service-assurance' },
-        { name: 'Conciencia Espacial', href: '/solutions/space-domain-awareness' },
-        { name: 'Operaciones Portuarias', href: '/solutions/port-operations' },
-        { name: 'Operaciones Aeroportuarias', href: '/solutions/airport-operations' },
-        { name: 'Inteligencia de Corredor', href: '/solutions/corridor-intelligence' },
-        { name: 'Sistemas de Agua', href: '/solutions/water-systems' },
-        { name: 'Cumplimiento Ambiental', href: '/solutions/environmental-compliance' },
-      ],
-    },
     resources: {
       title: 'Recursos',
       items: [
@@ -195,19 +140,6 @@ const footerNavigationData = {
         { name: 'Nosotros', href: '/company/about' },
         { name: 'Carreras', href: '/company/careers' },
         { name: 'Noticias', href: '/company/news' },
-      ],
-    },
-    legal: {
-      title: 'Legal',
-      items: [
-        { name: 'Política de Privacidad', href: '/legal/privacy' },
-        { name: 'Términos de Servicio', href: '/legal/terms' },
-        { name: 'Seguridad', href: '/legal/security' },
-      ],
-    },
-    contact: {
-      title: 'Contacto',
-      items: [
         { name: 'Solicitar Demo', href: '/contact/demo' },
         { name: 'Ventas', href: '/contact/sales' },
         { name: 'Soporte', href: '/contact/support' },

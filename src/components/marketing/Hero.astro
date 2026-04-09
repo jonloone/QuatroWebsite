@@ -29,87 +29,88 @@ const isLight = variant === 'light'
 
 <section data-hero data-hero-section class:list={[className]}>
   {isLight ? (
-    <!-- Light variant: neutral background, monospaced eyebrow -->
+    <!-- Light variant: neutral background, centered editorial -->
     <div class="relative overflow-hidden bg-neutral-100 min-h-[600px] lg:min-h-[700px]">
-      <div class="relative -mx-2 sm:px-6 md:px-12 lg:px-0">
-        <Container>
-          <!-- Text Content -->
-          <div data-hero-text class="flex shrink-0 flex-col items-start gap-6 py-16 sm:py-24 lg:py-32 lg:max-w-xl xl:max-w-2xl">
+      <div class="relative px-8 lg:px-16">
+        <div class="mx-auto max-w-7xl">
+          <!-- Text Content — centered editorial layout -->
+          <div data-hero-text class="flex shrink-0 flex-col items-center text-center gap-6 pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
             {eyebrow && (
-              <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">
+              <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-400">
                 {eyebrow}
               </div>
             )}
-            <h1 class="max-w-5xl font-display text-4xl tracking-tight text-neutral-800 sm:text-5xl lg:text-6xl">
+            <h1 class="max-w-4xl font-sans font-light text-4xl tracking-tight text-neutral-800 sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05]">
               {title}
             </h1>
             {description && (
-              <div class="flex max-w-xl flex-col gap-4 text-lg/7 text-neutral-600">
+              <div class="max-w-2xl text-lg lg:text-xl leading-relaxed text-neutral-500">
                 {description}
               </div>
             )}
             {primaryCta && (
-              <div class="flex flex-col items-start gap-3">
+              <div class="flex flex-col items-center gap-3 mt-4">
                 <Button href={primaryCta.href} size="lg" color="dark">
                   {primaryCta.label}
                 </Button>
                 {microcopy && (
-                  <div class="text-sm text-neutral-500">{microcopy}</div>
+                  <div class="text-sm text-neutral-400">{microcopy}</div>
                 )}
               </div>
             )}
           </div>
 
-          <!-- Demo slot: positioned below CTA, centered -->
-          <div class="mx-auto max-w-4xl pb-8">
+          <!-- Demo slot -->
+          <div class="mx-auto max-w-5xl pb-8">
             <slot name="demo" />
           </div>
-        </Container>
+        </div>
       </div>
     </div>
   ) : (
-    <!-- Dark variant: dark background with image overlay -->
+    <!-- Dark variant: dark background with image overlay, centered editorial -->
     <div
       class="relative overflow-hidden bg-cover bg-center min-h-[600px] lg:min-h-[700px]"
       style={`background-image: url('${backgroundImage || '/images/bg555.png'}')`}
     >
-      <!-- Dark overlay for text legibility -->
-      <div class="absolute inset-0 bg-neutral-900/60"></div>
+      <!-- Vignette overlay -->
+      <div class="absolute inset-0" style="background: radial-gradient(ellipse 70% 60% at 50% 45%, transparent 0%, rgba(15,23,42,0.45) 60%, rgba(15,23,42,0.8) 100%);"></div>
+      <div class="absolute inset-0 bg-neutral-900/40"></div>
 
       <!-- Hero image - anchored to bottom right, sized to fill -->
       <div class="absolute bottom-0 right-0 w-[60%] max-w-5xl pointer-events-none hidden lg:block">
         <slot name="demo" />
       </div>
 
-      <div class="relative -mx-2 sm:px-6 md:px-12 lg:px-0">
-        <Container>
-          <!-- Text Content -->
-          <div data-hero-text class="flex shrink-0 flex-col items-start gap-6 py-16 sm:py-24 lg:py-32 lg:max-w-xl xl:max-w-2xl">
+      <div class="relative px-8 lg:px-16">
+        <div class="mx-auto max-w-7xl">
+          <!-- Text Content — centered editorial layout -->
+          <div data-hero-text class="flex shrink-0 flex-col items-center text-center gap-6 pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
             {eyebrow && (
-              <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/90">
+              <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40">
                 {eyebrow}
               </div>
             )}
-            <h1 class="max-w-5xl font-display text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 class="max-w-4xl font-sans font-light text-4xl tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05]">
               {title}
             </h1>
             {description && (
-              <div class="flex max-w-xl flex-col gap-4 text-lg/7 text-white/70">
+              <div class="max-w-2xl text-lg lg:text-xl leading-relaxed text-white/60">
                 {description}
               </div>
             )}
             {primaryCta && (
-              <div class="flex flex-col items-start gap-3">
+              <div class="flex flex-col items-center gap-3 mt-4">
                 <Button href={primaryCta.href} size="lg">
                   {primaryCta.label}
                 </Button>
                 {microcopy && (
-                  <div class="text-sm text-white/50">{microcopy}</div>
+                  <div class="text-sm text-white/40">{microcopy}</div>
                 )}
               </div>
             )}
           </div>
-        </Container>
+        </div>
       </div>
     </div>
   )}

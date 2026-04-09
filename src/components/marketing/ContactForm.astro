@@ -1,0 +1,106 @@
+---
+import type { Locale } from '@/lib/i18n'
+
+interface Props {
+  lang?: Locale
+  /** Subject line for the email */
+  subject?: string
+  /** URL to redirect to after submission */
+  redirectUrl?: string
+}
+
+const { lang = 'en', subject, redirectUrl } = Astro.props
+
+const isEs = lang === 'es'
+
+const labels = {
+  name: isEs ? 'Nombre' : 'Name',
+  namePlaceholder: isEs ? 'Su nombre' : 'Your name',
+  email: isEs ? 'Email' : 'Email',
+  emailPlaceholder: isEs ? 'su-email@empresa.com' : 'you@company.com',
+  message: isEs ? 'Mensaje' : 'Message',
+  messagePlaceholder: isEs
+    ? '¿Qué podemos ayudarle a resolver?'
+    : 'What can we help you with?',
+  submit: isEs ? 'Enviar' : 'Send Message',
+  privacy: isEs
+    ? 'Nunca compartiremos su información. Responderemos dentro de un día hábil.'
+    : "We never share your information. We'll respond within one business day.",
+}
+
+const defaultSubject = isEs ? 'Nuevo contacto — Quatro' : 'New contact — Quatro'
+const emailSubject = subject || defaultSubject
+const redirect = redirectUrl || (isEs ? 'https://quatro.lat/es/contact' : 'https://quatro.lat/contact')
+---
+
+<form
+  action="https://formsubmit.co/mcsalazar@latinmedia.com.ec"
+  method="POST"
+  class="flex flex-col gap-6"
+>
+  <!-- FormSubmit config -->
+  <input type="hidden" name="_subject" value={emailSubject} />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_next" value={redirect} />
+  <!-- Honeypot -->
+  <input type="text" name="_honey" style="display:none" />
+
+  <!-- Name -->
+  <div class="flex flex-col gap-2">
+    <label for="contact-name" class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">
+      {labels.name}
+    </label>
+    <input
+      type="text"
+      id="contact-name"
+      name="name"
+      placeholder={labels.namePlaceholder}
+      required
+      class="font-display text-sm px-5 py-4 text-neutral-800 bg-white border border-neutral-200 placeholder:text-neutral-400 focus:outline-none focus:border-[var(--color-forest)] focus:ring-1 focus:ring-[var(--color-forest)] transition-colors duration-150"
+    />
+  </div>
+
+  <!-- Email -->
+  <div class="flex flex-col gap-2">
+    <label for="contact-email" class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">
+      {labels.email}
+    </label>
+    <input
+      type="email"
+      id="contact-email"
+      name="email"
+      placeholder={labels.emailPlaceholder}
+      required
+      class="font-display text-sm px-5 py-4 text-neutral-800 bg-white border border-neutral-200 placeholder:text-neutral-400 focus:outline-none focus:border-[var(--color-forest)] focus:ring-1 focus:ring-[var(--color-forest)] transition-colors duration-150"
+    />
+  </div>
+
+  <!-- Message -->
+  <div class="flex flex-col gap-2">
+    <label for="contact-message" class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">
+      {labels.message}
+    </label>
+    <textarea
+      id="contact-message"
+      name="message"
+      placeholder={labels.messagePlaceholder}
+      rows="5"
+      required
+      class="font-display text-sm px-5 py-4 text-neutral-800 bg-white border border-neutral-200 placeholder:text-neutral-400 focus:outline-none focus:border-[var(--color-forest)] focus:ring-1 focus:ring-[var(--color-forest)] transition-colors duration-150 resize-y"
+    ></textarea>
+  </div>
+
+  <!-- Submit -->
+  <button
+    type="submit"
+    class="self-start font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-200 hover:opacity-90"
+    style="background-color: var(--color-forest);"
+  >
+    {labels.submit}
+  </button>
+
+  <!-- Privacy note -->
+  <p class="font-mono text-[10px] text-neutral-400 leading-relaxed">
+    {labels.privacy}
+  </p>
+</form>

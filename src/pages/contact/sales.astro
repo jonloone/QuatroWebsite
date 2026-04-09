@@ -1,23 +1,35 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
-import Section from '@/components/marketing/Section.astro'
-import Placeholder from '@/components/marketing/Placeholder.astro'
+import ContactForm from '@/components/marketing/ContactForm.astro'
 ---
 
 <MarketingLayout
-  title="Talk to Sales — Enterprise Pricing & Deployment"
-  description="Discuss pricing, deployment options, and enterprise requirements with our sales team."
+  title="Talk to an Engineer — Quatro"
+  description="Bring your architecture and constraints. We'll show how your systems connect into one operational model."
 >
-  <Hero
-    eyebrow="Sales"
-    title="Let's Discuss Your Requirements"
-    description="Our sales team can help with pricing, deployment options, and enterprise requirements."
-  />
-
-  <Section>
-    <div class="mx-auto max-w-2xl">
-      <Placeholder label="Sales Contact Form" class="min-h-[400px]" />
+  <!-- Dark hero with background image -->
+  <section class="relative overflow-hidden bg-neutral-900" data-nav-dark>
+    <div class="absolute inset-0">
+      <img src="/images/hero-contact.png" alt="" class="h-full w-full object-cover" />
+      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,17,40,0.5) 0%, rgba(10,17,40,0.7) 60%, rgba(10,17,40,0.9) 100%);"></div>
     </div>
-  </Section>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-8 lg:px-16 pt-32 sm:pt-40 pb-40 sm:pb-52 text-center">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6">Talk to an Engineer</p>
+      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-white max-w-4xl mx-auto">
+        Your Systems. Real Answers.
+      </h1>
+      <p class="mt-6 font-display text-lg lg:text-xl leading-relaxed text-white/60 max-w-2xl mx-auto">
+        Bring your architecture, your constraints, your timeline. We'll walk through how your existing systems connect into one operational model.
+      </p>
+    </div>
+  </section>
+
+  <div class="relative z-20 -mt-24 sm:-mt-32 pb-16 sm:pb-24">
+    <div class="mx-auto max-w-xl px-8 lg:px-16">
+      <div class="bg-white rounded-sm border border-neutral-200 shadow-xl p-8 sm:p-10">
+        <ContactForm subject="Sales Inquiry — Quatro" redirectUrl="https://quatro.lat/contact" />
+      </div>
+    </div>
+  </div>
 </MarketingLayout>

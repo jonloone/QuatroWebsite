@@ -18,96 +18,89 @@ const insights = (await getCollection('insights'))
   <SiteHeader lang="en" />
 
   <!-- ═══════════════════════════════════════════════════════════════
-       1. HERO — Fixed message left + rotating engagement images right
+       1. HERO — Full-width editorial canvas, centered statement
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="min-h-screen relative" id="hero-carousel">
-    <div class="grid grid-cols-1 lg:grid-cols-[42%_1fr] min-h-screen">
+  <section class="relative min-h-screen overflow-hidden" id="hero-carousel" data-dither-section data-nav-dark>
 
-      <!-- Left panel — fixed message, Quatro logo top-left -->
-      <div class="relative flex flex-col justify-between px-8 lg:px-12 xl:px-16 py-12 lg:py-16 order-2 lg:order-1 z-10 lg:mr-[-60px]" style="background: var(--color-neutral-50);">
+    <!-- Bayer 4×4 image-dither canvas — full bleed background -->
+    <canvas id="hero-dither-canvas" class="absolute inset-0 w-full h-full z-[1]" style="background: #0f2e24;"></canvas>
 
-        <!-- Top: Quatro logo (mark + wordmark), aligned with nav bar -->
-        <div class="pt-2 lg:pt-3">
-          <a href="/">
-            <QuatroLogo class="h-8 lg:h-9 w-auto" />
-          </a>
-        </div>
+    <!-- Full overlay — base darkening layer across entire canvas -->
+    <div class="absolute inset-0 pointer-events-none z-[2]" style="background: rgba(10,30,22,0.45);"></div>
+    <!-- Text backdrop — strong center darken for WCAG contrast on headline/subtitle -->
+    <div class="absolute inset-0 pointer-events-none z-[3]" style="background: radial-gradient(ellipse 80% 55% at 50% 42%, rgba(10,30,22,0.55) 0%, transparent 70%);"></div>
+    <!-- Bottom gradient for caption legibility -->
+    <div class="absolute inset-0 pointer-events-none z-[4]" style="background: linear-gradient(to top, rgba(10,30,22,0.8) 0%, rgba(10,30,22,0.3) 20%, transparent 40%);"></div>
 
-        <!-- Center: Fixed hero message — never changes -->
-        <div>
-          <p class="font-sans font-light text-2xl lg:text-4xl xl:text-5xl leading-[1.15] tracking-tight" style="color: var(--color-neutral-800);">
-            Making critical infrastructure intelligent.
-          </p>
-          <p class="mt-6 font-sans text-sm lg:text-base leading-relaxed" style="color: var(--color-neutral-500);">
-            We integrate the hardware, software, and domain expertise that energy, defense, network, and infrastructure operators need — delivered as a utility, built so you own the intelligence from day one.
-          </p>
-          <a href="/contact/demo" class="mt-10 group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
+    <!-- Hero text — centered editorial composition -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 lg:px-16 text-center">
+      <div class="max-w-4xl">
+        <!-- Eyebrow — frames the structural problem, not a category label -->
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-8">
+          Your systems generate the data. You should own the intelligence.
+        </p>
+        <!-- Headline — Reckless Light, editorial scale -->
+        <h1 class="font-sans font-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-white">
+          Making critical infrastructure intelligent.
+        </h1>
+        <!-- Subtitle — connects physical + data systems, outcome-first -->
+        <p class="mt-8 font-display text-lg lg:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto">
+          We connect your physical systems and your data systems into one operational model — so your team sees, decides, and acts from a single source of intelligence.
+        </p>
+        <!-- CTA -->
+        <div class="mt-12">
+          <a href="/contact/demo" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
             Talk to Our Team
             <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
-
-        <!-- Bottom spacer for layout balance -->
-        <div></div>
       </div>
+    </div>
 
-      <!-- Right: Full-bleed rotating engagement images -->
-      <div class="relative min-h-[60vh] lg:min-h-screen order-1 lg:order-2 overflow-hidden" data-dither-section>
-
-        <!-- Bayer 4×4 image-dither canvas — reads and renders carousel images through Quatro's signature dither engine -->
-        <canvas id="hero-dither-canvas" class="absolute inset-0 w-full h-full z-[1]" style="background: #0f2e24;"></canvas>
-
-        <!-- Gradient — bottom focused for caption readability, forest green tint -->
-        <div class="absolute inset-0 pointer-events-none z-[3]" style="background: linear-gradient(to top, rgba(10,30,22,0.6) 0%, rgba(15,76,58,0.15) 30%, transparent 55%);"></div>
-
-        <!-- Caption + dots bar — inside image container, padding matches nav -->
-        <!-- Mobile: px-6 (matches nav px-6). Desktop: pl-[108px] = 60px overlap + 48px nav padding; pr-12 matches nav right -->
-        <div class="absolute bottom-0 left-0 right-0 z-10 px-6 lg:pl-[108px] lg:pr-12 pb-8 lg:pb-12">
-          <div class="flex items-end justify-between gap-8">
-            <!-- Left: Rotating engagement caption -->
-            <div class="relative flex-1 max-w-2xl" style="min-height: 110px;">
-              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out" data-slide="0">
-                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Community Vulnerability Analytics</p>
-                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Predictive Risk Intelligence</p>
-              </div>
-              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="1">
-                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Maritime &amp; Environmental Monitoring</p>
-                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Coastal Surveillance · EO Analytics</p>
-              </div>
-              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="2">
-                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Multi-Domain ISR Fusion</p>
-                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Sovereign Intelligence Operations</p>
-              </div>
-              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="3">
-                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Grid Intelligence &amp; Predictive Ops</p>
-                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Distributed Energy Infrastructure</p>
-              </div>
-              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="4">
-                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Pipeline &amp; Asset Integrity</p>
-                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Oil &amp; Gas · Predictive Maintenance</p>
-              </div>
-              <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="5">
-                <p class="font-sans font-light text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-[1.15]">Claims &amp; Compliance Automation</p>
-                <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/40 mt-3">Enterprise Banking &amp; Insurance</p>
-              </div>
-            </div>
-
-            <!-- Right: Dots + counter -->
-            <div class="flex items-center gap-4 flex-shrink-0">
-              <div class="flex items-center gap-2">
-                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="0" style="background: rgba(255,255,255,0.9);" aria-label="Slide 1"></button>
-                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="1" style="background: rgba(255,255,255,0.3);" aria-label="Slide 2"></button>
-                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="2" style="background: rgba(255,255,255,0.3);" aria-label="Slide 3"></button>
-                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="3" style="background: rgba(255,255,255,0.3);" aria-label="Slide 4"></button>
-                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="4" style="background: rgba(255,255,255,0.3);" aria-label="Slide 5"></button>
-                <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="5" style="background: rgba(255,255,255,0.3);" aria-label="Slide 6"></button>
-              </div>
-              <p class="font-mono text-sm text-white/40" id="hero-counter">01 / 06</p>
-            </div>
+    <!-- Bottom bar: rotating caption left + dots right -->
+    <div class="absolute bottom-0 left-0 right-0 z-10 px-8 lg:px-16 xl:px-20 pb-8 lg:pb-12">
+      <div class="flex items-end justify-between gap-8">
+        <!-- Left: Rotating engagement caption -->
+        <div class="relative flex-1 max-w-xl" style="min-height: 72px;">
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out" data-slide="0">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Community Vulnerability Analytics</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Predictive Risk Intelligence</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="1">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Maritime &amp; Environmental Monitoring</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Coastal Surveillance · EO Analytics</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="2">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Multi-Domain ISR Fusion</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Sovereign Intelligence Operations</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="3">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Grid Intelligence &amp; Predictive Ops</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Distributed Energy Infrastructure</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="4">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Pipeline &amp; Asset Integrity</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Oil &amp; Gas · Predictive Maintenance</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="5">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Claims &amp; Compliance Automation</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Enterprise Banking &amp; Insurance</p>
           </div>
         </div>
-      </div>
 
+        <!-- Right: Dots + counter -->
+        <div class="flex items-center gap-4 flex-shrink-0">
+          <div class="flex items-center gap-2">
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="0" style="background: rgba(255,255,255,0.9);" aria-label="Slide 1"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="1" style="background: rgba(255,255,255,0.3);" aria-label="Slide 2"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="2" style="background: rgba(255,255,255,0.3);" aria-label="Slide 3"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="3" style="background: rgba(255,255,255,0.3);" aria-label="Slide 4"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="4" style="background: rgba(255,255,255,0.3);" aria-label="Slide 5"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="5" style="background: rgba(255,255,255,0.3);" aria-label="Slide 6"></button>
+          </div>
+          <p class="font-mono text-sm text-white/40" id="hero-counter">01 / 06</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -149,8 +142,6 @@ const insights = (await getCollection('insights'))
       const pixelSize = 2;
       const greenBlend = 0.25;
       let baseSpeed = 0.08;
-      let hoverSpeed = 0.4;
-      let isHovered = false;
       let startTime = performance.now();
       let animId: number;
 
@@ -217,8 +208,7 @@ const insights = (await getCollection('insights'))
         if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
 
         const elapsed = (time - startTime) / 1000;
-        const speed = isHovered ? hoverSpeed : baseSpeed;
-        const t = elapsed * speed;
+        const t = elapsed * baseSpeed;
 
         // Handle crossfade timing
         if (crossfadeActive) {
@@ -365,11 +355,7 @@ const insights = (await getCollection('insights'))
         });
       });
 
-      const heroSection = document.getElementById('hero-carousel');
-      if (heroSection) {
-        heroSection.addEventListener('mouseenter', () => { isHovered = true; clearInterval(timer); });
-        heroSection.addEventListener('mouseleave', () => { isHovered = false; startAutoplay(); });
-      }
+      // Carousel continues autoplaying — no hover pause
 
       // ─── Visibility gating ───
       const observer = new IntersectionObserver((entries) => {

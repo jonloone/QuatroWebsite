@@ -1,23 +1,38 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
-import Hero from '@/components/marketing/Hero.astro'
-import Section from '@/components/marketing/Section.astro'
-import Placeholder from '@/components/marketing/Placeholder.astro'
+import ContactForm from '@/components/marketing/ContactForm.astro'
 ---
 
 <MarketingLayout
-  title="Schedule a Demo — See Quatro in Action"
-  description="Schedule a personalized demo to see how Quatro can transform your operations."
+  title="Tell Us the Outcome — Quatro"
+  description="Name the operational challenge that matters most. We'll map the systems and show you how intelligence starts flowing."
 >
-  <Hero
-    eyebrow="Request Demo"
-    title="See Quatro in Action"
-    description="Get a personalized walkthrough of the platform tailored to your industry and use cases. No pressure, no generic demos."
-  />
-
-  <Section>
-    <div class="mx-auto max-w-2xl">
-      <Placeholder label="Demo Request Form" class="min-h-[400px]" />
+  <!-- Dark hero with background image -->
+  <section class="relative overflow-hidden bg-neutral-900" data-nav-dark>
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="/images/hero-contact.png" alt="" class="h-full w-full object-cover" />
+      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(10,17,40,0.5) 0%, rgba(10,17,40,0.7) 60%, rgba(10,17,40,0.9) 100%);"></div>
     </div>
-  </Section>
+
+    <!-- Hero text content -->
+    <div class="relative z-10 mx-auto max-w-7xl px-8 lg:px-16 pt-32 sm:pt-40 pb-40 sm:pb-52 text-center">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6">How It Starts</p>
+      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-white max-w-4xl mx-auto">
+        Tell Us the Outcome.
+      </h1>
+      <p class="mt-6 font-display text-lg lg:text-xl leading-relaxed text-white/60 max-w-2xl mx-auto">
+        Name the operational challenge that matters most. We'll map the systems involved and show you how intelligence starts flowing.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form overlapping upward into hero -->
+  <div class="relative z-20 -mt-24 sm:-mt-32 pb-16 sm:pb-24">
+    <div class="mx-auto max-w-xl px-8 lg:px-16">
+      <div class="bg-white rounded-sm border border-neutral-200 shadow-xl p-8 sm:p-10">
+        <ContactForm subject="Demo Request — Quatro" redirectUrl="https://quatro.lat/contact" />
+      </div>
+    </div>
+  </div>
 </MarketingLayout>
