@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to a Maritime Expert"
     href: "/contact/sales"
-  microcopy: "90-day proof of value. One berth corridor. Real-time coordination demonstrated on live port operations. Credited toward contract."
+  microcopy: "90-day proof of value. One berth corridor. Real-time coordination demonstrated on live port operations. Your team owns it from day one."
 ---

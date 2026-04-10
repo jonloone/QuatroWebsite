@@ -33,7 +33,7 @@ const insights = (await getCollection('insights'))
     <div class="absolute inset-0 pointer-events-none z-[4]" style="background: linear-gradient(to top, rgba(10,30,22,0.8) 0%, rgba(10,30,22,0.3) 20%, transparent 40%);"></div>
 
     <!-- Hero text — centered editorial composition -->
-    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-8 lg:px-16 text-center">
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen pt-20 px-8 lg:px-16 text-center">
       <div class="max-w-4xl">
         <!-- Eyebrow — frames the structural problem, not a category label -->
         <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-8">
@@ -63,28 +63,28 @@ const insights = (await getCollection('insights'))
         <!-- Left: Rotating engagement caption -->
         <div class="relative flex-1 max-w-xl" style="min-height: 72px;">
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out" data-slide="0">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Community Vulnerability Analytics</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Predictive Risk Intelligence</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">18 agencies seeing one risk picture for the first time</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Community Intelligence · National Scale</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="1">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Maritime &amp; Environmental Monitoring</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Coastal Surveillance · EO Analytics</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Coastal surveillance that connects satellite, sensor, and ground truth</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Maritime &amp; Environmental Operations</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="2">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Multi-Domain ISR Fusion</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Sovereign Intelligence Operations</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Detection to governed response in under thirty seconds</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Sovereign · Air-Gapped · Auditable</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="3">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Grid Intelligence &amp; Predictive Ops</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Distributed Energy Infrastructure</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Legacy grid and modern DER unified in one operational model</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Energy Infrastructure Intelligence</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="4">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Pipeline &amp; Asset Integrity</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Oil &amp; Gas · Predictive Maintenance</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">A thousand kilometers of pipeline, finally connected</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Edge-to-Cloud · Real-Time Visibility</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="5">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Claims &amp; Compliance Automation</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Enterprise Banking &amp; Insurance</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Connecting the 15-30 systems your bank already runs</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Financial Services Intelligence</p>
           </div>
         </div>
 
@@ -401,10 +401,10 @@ const insights = (await getCollection('insights'))
     </a>
 
     <!-- National Security -->
-    <a href="/industries/national-security" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
+    <a href="/industries/defense" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
       <div class="max-w-lg">
         <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Multi-domain operational intelligence. Air-gapped. Sovereign. Every action auditable.</p>
+        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Sovereign intelligence connecting community protection and territorial security — air-gapped, auditable, your team owns it from day one.</p>
       </div>
       <div class="text-right">
         <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">National Security</span>
@@ -422,25 +422,14 @@ const insights = (await getCollection('insights'))
       </div>
     </a>
 
-    <!-- Critical Infrastructure -->
-    <a href="/industries/critical-infrastructure" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
+    <!-- Cities -->
+    <a href="/industries/cities" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
       <div class="max-w-lg">
         <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5z" /></svg>
         <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Water, waste, transport — connected into one operational model for the cities communities depend on.</p>
       </div>
       <div class="text-right">
-        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Critical Infrastructure</span>
-      </div>
-    </a>
-
-    <!-- Finance -->
-    <a href="/industries/finance" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-      <div class="max-w-lg">
-        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
-        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Compliance risk eliminated at the seams between 15 to 30 operational systems.</p>
-      </div>
-      <div class="text-right">
-        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Finance</span>
+        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Cities</span>
       </div>
     </a>
 
@@ -643,87 +632,40 @@ const insights = (await getCollection('insights'))
         Proven technology at every layer.
       </h2>
       <p class="font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-3xl mb-16 lg:mb-20 fade-up">
-        We integrate proven technology partners across connectivity, intelligence, edge hardware, and cloud — so you get one engagement, not twelve vendor relationships.
+        We integrate best-of-breed technology at every layer of the stack — from edge hardware to governed execution. One engagement. One partner. Proven technology underneath.
       </p>
 
-      <!-- Named partner grid with real logos and capability labels (Tier 1.5) -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-10 fade-up">
+      <!-- Simplified named partner list -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 fade-up max-w-4xl">
 
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/dataminer.svg" alt="Skyline DataMiner" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Network management & orchestration</p>
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">Skyline DataMiner</p>
+          <p class="font-sans text-sm text-white/60">8,000+ integrations across operational technology, IT, and cloud</p>
         </div>
 
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/dataos.svg" alt="DataOS by Modern Data" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Governed intelligence layer</p>
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">DataOS</p>
+          <p class="font-sans text-sm text-white/60">The governed meaning layer that makes operational data AI-ready</p>
         </div>
 
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/motorola.svg" alt="Motorola Solutions" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Mission-critical communications</p>
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">Second Wind</p>
+          <p class="font-sans text-sm text-white/60">Governed autonomous execution with full audit trails</p>
         </div>
 
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/ses.svg" alt="SES" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Satellite connectivity</p>
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">SMARTS & TEKTELIC</p>
+          <p class="font-sans text-sm text-white/60">Edge IoT hardware — sensors, gateways, and connectivity</p>
         </div>
 
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/networkoptix.svg" alt="Network Optix" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Video management platform</p>
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">AWS · Azure · GCP</p>
+          <p class="font-sans text-sm text-white/60">Cloud infrastructure — deploy on your terms</p>
         </div>
 
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/milesight.svg" alt="Milesight" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">IoT edge hardware</p>
-        </div>
-
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/tait.svg" alt="Tait Communications" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Critical radio networks</p>
-        </div>
-
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/aws.svg" alt="Amazon Web Services" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Cloud infrastructure</p>
-        </div>
-
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/backblaze.svg" alt="Backblaze" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Cloud storage</p>
-        </div>
-
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/ecr.svg" alt="ECR" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Predictive modeling</p>
-        </div>
-
-        <div class="flex flex-col items-center text-center">
-          <div class="flex items-center justify-center h-14 lg:h-16 mb-3 opacity-60 hover:opacity-90 transition-opacity duration-300">
-            <img src="/images/partners/novi.svg" alt="Novi" class="max-h-full max-w-full object-contain" style="filter: grayscale(100%) brightness(1.8);" loading="lazy" />
-          </div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/30">Orbital AI</p>
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">SES · Intelsat · Telesat</p>
+          <p class="font-sans text-sm text-white/60">Satellite connectivity partners</p>
         </div>
 
       </div>
@@ -731,53 +673,6 @@ const insights = (await getCollection('insights'))
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       5b. THE INTEGRATION STACK — Simplified Tier 1.5 (3 layers, no deep architecture)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative py-20 lg:py-28 px-6 overflow-hidden" style="background: #f4f7f5;">
-
-    <div class="relative z-10 mx-auto max-w-6xl">
-
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6 fade-up" style="color: rgba(15,76,58,0.5);">Under the Hood</p>
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-16 lg:mb-20 fade-up" style="color: #0a0a0a;">
-        Three integration dimensions.<br class="hidden lg:block" />
-        <span style="color: rgba(15,76,58,0.45);">One intelligence utility.</span>
-      </h2>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 fade-up">
-
-        <!-- Dimension 1: Hardware -->
-        <a href="/utility" class="group block p-8 rounded-xl transition-all duration-300 hover:shadow-lg" style="background: #ffffff; border: 1px solid rgba(15,76,58,0.08);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: rgba(15,76,58,0.45);">Hardware</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: #0a0a0a;">Edge sensors, gateways, and connectivity where your infrastructure has blind spots.</h3>
-          <p class="font-sans text-base leading-relaxed" style="color: rgba(10,10,10,0.5);">An IoT suite that connects the physical world — deployed where your data doesn't exist yet. 8,000+ integrations across 1,000+ vendors.</p>
-        </a>
-
-        <!-- Dimension 2: Software -->
-        <a href="/utility" class="group block p-8 rounded-xl transition-all duration-300 hover:shadow-lg" style="background: #ffffff; border: 1px solid rgba(15,76,58,0.08);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: rgba(15,76,58,0.45);">Software</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: #0a0a0a;">The intelligence utility — connecting your systems and making your data AI-ready.</h3>
-          <p class="font-sans text-base leading-relaxed" style="color: rgba(10,10,10,0.5);">A governed meaning layer that gives your data context, lineage, and trust. Domain-trained reasoning grounded in how your operations actually work.</p>
-        </a>
-
-        <!-- Dimension 3: People & Process -->
-        <a href="/utility" class="group block p-8 rounded-xl transition-all duration-300 hover:shadow-lg" style="background: #ffffff; border: 1px solid rgba(15,76,58,0.08);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: rgba(15,76,58,0.45);">People &amp; Process</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: #0a0a0a;">Workflows, agents, and governed automations your team runs from day one.</h3>
-          <p class="font-sans text-base leading-relaxed" style="color: rgba(10,10,10,0.5);">Operational intelligence that feeds back into the tools your team already uses. Every execution is bounded, auditable, and governed. Deploy cloud, hybrid, or air-gapped.</p>
-        </a>
-
-      </div>
-
-      <div class="mt-12 fade-up">
-        <a href="/utility" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] transition-colors duration-300" style="color: rgba(15,76,58,0.5);">
-          Explore how the utility works
-          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
        8. WHERE WE OPERATE — Rotating globe with dither overlay

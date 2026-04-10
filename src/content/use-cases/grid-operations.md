@@ -92,5 +92,5 @@ cta:
   secondary:
     label: "Talk to an Energy Engineer"
     href: "/contact/energy-specialist"
-  microcopy: "4-week proof of value · Credited toward contract"
+  microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---

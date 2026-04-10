@@ -1,0 +1,117 @@
+---
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import Section from '@/components/marketing/Section.astro'
+import HubIconStrip from '@/components/marketing/HubIconStrip.astro'
+import IndustryHubCard from '@/components/marketing/IndustryHubCard.astro'
+import CapabilityIndex from '@/components/marketing/CapabilityIndex.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+// Pull defense industry from content
+const allIndustries = await getCollection('industries')
+const defense = allIndustries.find((i) => i.id === 'defense' || i.id === 'defense.md')
+
+// Featured capabilities from defense
+const defenseCapabilities = defense
+  ? defense.data.capabilities
+      .filter((c) => c.featured)
+      .map((c) => ({ ...c, industry: 'Defense' }))
+  : []
+
+// Fill with non-featured if needed
+const extraCaps = defense
+  ? defense.data.capabilities
+      .filter((c) => !c.featured)
+      .slice(0, 3)
+      .map((c) => ({ ...c, industry: 'Defense' }))
+  : []
+
+const allCapabilities = [...defenseCapabilities, ...extraCaps].slice(0, 6)
+
+const defenseStats = defense?.data.stats || []
+const defenseProof = defense?.data.proofPoint
+
+const domains = [
+  {
+    title: 'Defense',
+    description: 'Unified operational intelligence for military installations, forward operating bases, and defense logistics — SCADA, ISR, perimeter sensors, and C2 in a single operational picture.',
+    href: '/industries/defense',
+    heroImage: defense?.data.heroImage || '/images/industry-defense.png',
+    stats: defenseStats,
+    solutions: [
+      { name: 'Physical Security', href: '/solutions/physical-security' },
+      { name: 'Fleet & Logistics', href: '/solutions/fleet-logistics' },
+      { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
+    ],
+  },
+  {
+    title: 'National Intelligence',
+    description: 'Sovereign intelligence for counter-narcotics, youth vulnerability mapping, and natural resource protection. AI-powered pattern detection across multi-agency data.',
+    href: '/national-intelligence',
+    heroImage: '/images/industry-defense.png',
+    stats: [
+      { value: 'Sovereign', label: 'Deployment' },
+      { value: 'Multi-Agency', label: 'Data Fusion' },
+    ],
+    solutions: [
+      { name: 'Counter-Cartel Operations', href: '/national-intelligence/counter-cartel-operations' },
+      { name: 'Youth Vulnerability Index', href: '/national-intelligence/youth-vulnerability-index' },
+      { name: 'Resource Protection', href: '/national-intelligence/resource-protection' },
+    ],
+  },
+]
+---
+
+<MarketingLayout
+  title="National Security — Defense & Sovereign Intelligence"
+  description="Unified command across physical, cyber, and intelligence domains. Sovereign deployment, defense-grade compliance, and AI-powered operations in air-gapped environments."
+>
+  <HeroCanvas
+    badge="National Security"
+    title="Unified Command Across Every Security Domain"
+    body="From military installations to counter-narcotics operations — Quatro delivers sovereign operational intelligence with defense-grade compliance and air-gapped deployment."
+    ctaLabel="Talk to Our Team"
+    ctaHref="/contact/demo"
+    imageSrc="/images/industry-defense.png"
+  />
+
+  <!-- Hub breadth icons -->
+  <HubIconStrip items={[
+    { label: 'Defense', icon: 'M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z' },
+    { label: 'Intelligence', icon: 'M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z' },
+    { label: 'Air-Gapped', icon: 'M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z' },
+    { label: 'C2 & ISR', icon: 'M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.808 3.808 9.981 0 13.789M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z' },
+    { label: 'Sovereign Cloud', icon: 'M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z' },
+  ]} />
+
+  <!-- DOMAIN CARDS -->
+  <Section>
+    <div class="space-y-6">
+      {domains.map((domain, i) => (
+        <IndustryHubCard
+          title={domain.title}
+          description={domain.description}
+          href={domain.href}
+          heroImage={domain.heroImage}
+          solutions={domain.solutions}
+          reverse={i % 2 === 1}
+        />
+      ))}
+    </div>
+  </Section>
+
+  <!-- CAPABILITIES -->
+  <CapabilityIndex
+    title="Capabilities"
+    capabilities={allCapabilities}
+  />
+
+  <DualCta
+    title={`See what <span style="color: var(--color-forest);">sovereign intelligence</span> looks like for your security operations.`}
+    description="Sovereign deployment. Defense-grade compliance. Operational in weeks, not quarters."
+    primaryCta={{ label: 'Talk to Our Team', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    microcopy="Intelligence in weeks · Your team owns it from day one"
+  />
+</MarketingLayout>

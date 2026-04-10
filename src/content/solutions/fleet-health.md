@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to a Fleet Manager"
     href: "/contact/sales"
-  microcopy: "90-day proof of value. One constellation or orbit family. Predictive maintenance baseline and fleet health dashboard operational. Credited toward contract."
+  microcopy: "90-day proof of value. One constellation or orbit family. Predictive maintenance baseline and fleet health dashboard operational. Your team owns it from day one."
 ---

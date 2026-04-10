@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to a Water Expert"
     href: "/contact/sales"
-  microcopy: "90-day proof of value. Real-time leak detection and SENAGUA compliance on one distribution network. Credited toward contract."
+  microcopy: "90-day proof of value. Real-time leak detection and SENAGUA compliance on one distribution network. Your team owns it from day one."
 ---

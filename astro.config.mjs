@@ -21,6 +21,7 @@ export default defineConfig({
   },
   integrations: [sitemap(), react()],
   vite: {
+    cacheDir: '/tmp/vite-cache',
     css: {
       postcss: './postcss.config.mjs',
     },

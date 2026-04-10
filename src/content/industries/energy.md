@@ -9,20 +9,18 @@ hero:
   title: One Operational Model. Every Energy Decision.
   description: When SCADA, historians, and DER systems each describe the same grid differently, failure patterns cross system boundaries undetected. Connect them to Quatro and get unified operational intelligence — predictive analytics and governed autonomous action in weeks, without replacing critical infrastructure.
   primaryCta:
-    label: Schedule an Energy Assessment
+    label: Talk to Our Team
     href: /contact/demo
   secondaryCta:
-    label: Talk to an Energy Engineer
+    label: Talk to an Engineer
     href: /contact/sales
 stats:
-- value: 75%
-  label: Fewer False Alarms
-- value: 60%
-  label: Faster Restoration
 - value: 8,000+
   label: Integrations
-- value: Months
-  label: Not Years
+- value: Weeks
+  label: To First Intelligence
+- value: Cloud · Hybrid · Air-Gapped
+  label: Deployment Options
 challenges:
 - title: Legacy SCADA Limitations
   description: Control systems installed 15-25 years ago rely on serial protocols and proprietary data formats. They cannot scale for DER integration, advanced analytics, or modern cybersecurity.
@@ -46,7 +44,7 @@ capabilities:
   description: Multi-method leak detection with AI cross-correlation — RTTM, acoustic, satellite, and partner-delivered predictive analytics. 0.5% flow sensitivity with an integrated partner ecosystem no
     single vendor can match.
   featured: true
-  outcome: 75% fewer false alarms. 0.5% flow sensitivity.
+  outcome: Fewer false alarms. Sub-1% flow sensitivity.
   image: /images/cap-energy-pipeline.png
 - name: Operational Intelligence Across Domains
   description: Connect and correlate grid, pipeline, generation, and security data. Intelligence agents surface compound threats and opportunities that siloed tools cannot detect.
@@ -60,12 +58,12 @@ capabilities:
 - name: Governed Autonomous Storm Response
   description: Automated playbooks governed by policy pre-position crews, activate mutual aid, and prioritize restoration by customer impact and critical facility status.
   image: /images/cap-energy-storm-response.png
-  outcome: 60% faster restoration. Governance built in.
+  outcome: Faster restoration. Every action governed and auditable.
 - name: Compliance Automation
   description: Continuous NERC CIP, PHMSA, and EPA audit trails. Replace 40+ hours/month of manual documentation with real-time compliance reporting that scales from grid operations to enterprise energy
     intelligence.
   image: /images/cap-energy-compliance.png
-  outcome: 40+ hours/month of manual documentation eliminated.
+  outcome: Manual compliance documentation replaced with real-time reporting.
 - name: Contextual Operator Guidance
   description: Real-time contextual recommendations during complex situations — cascading outages, DER instability, simultaneous maintenance events. Step-by-step guidance based on historical patterns, current
     conditions, and grid relationships.
@@ -76,22 +74,22 @@ platformMapping:
   understand: Intelligence on predictive maintenance, multi-method leak detection, grid anomaly detection, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold alerts fire. Real-time operational models enable contingency analysis, DER hosting capacity studies, and cross-domain risk assessment.
   orchestrate: Governed autonomous action. Automated storm playbooks coordinate 200+ substations with human oversight. Dispatch assigns crews based on location, switching authority, and predicted trajectory. NERC CIP and PHMSA compliance automated.
 proofPoint:
-  industry: Energy — Integrated Utility
-  headline: Storm Response & Grid Modernization
+  industry: Energy — Grid & Pipeline Operations
+  headline: Unified Grid Intelligence
   metrics:
-  - value: 60%
-    label: Faster Restoration
-  - value: 2,000
-    label: Saved Truck Rolls/Year
-  - value: 9 Months
-    label: Deployment Time
-  narrative: A utility serving 2 million customers deployed Quatro across 200+ substations, connecting legacy ABB, GE, and Siemens SCADA and field operations. Operational intelligence from governed autonomous playbooks reduced average restoration time by 60%, and cross-domain insight saved 2,000 truck rolls per year — all delivered in 9 months without replacing infrastructure.
+  - value: "8,000+"
+    label: Integrations Connected
+  - value: Weeks
+    label: To First Intelligence
+  - value: Sovereign
+    label: Deployment
+  narrative: "Energy operators connecting legacy SCADA, historians, and DER systems into one operational intelligence model — unified visibility, predictive maintenance, and governed autonomous action without replacing critical infrastructure."
 cta:
   primary:
-    label: Schedule an Energy Assessment
+    label: Talk to Our Team
     href: /contact/demo
   secondary:
-    label: Talk to an Energy Engineer
+    label: Talk to an Engineer
     href: /contact/sales
-  microcopy: 'Typical assessment: 45-60 minutes. We''ll map your current SCADA systems and field operations — and show how connecting them to a single operational intelligence utility delivers unified visibility in months. 4-week proof of value · Credited toward contract'
+  microcopy: 'Intelligence in weeks · Your team owns it from day one'
 ---

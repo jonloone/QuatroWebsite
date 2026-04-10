@@ -63,7 +63,12 @@
       "Bash(sed -i '' '/^[[:space:]]*tier:/d' \"$BASE/$f\")",
       "Bash(done)",
       "Read(//opt/homebrew/Cellar/node/25.8.0/bin/**)",
-      "Bash(/opt/homebrew/bin/node --version)"
+      "Bash(/opt/homebrew/bin/node --version)",
+      "Bash(rm -f \"/Users/dataos/Library/Mobile Documents/com~apple~CloudDocs/LMIQuatro/QuatroWebsite/.git/HEAD.lock\")",
+      "Bash(rm -f \"/Users/dataos/Library/Mobile Documents/com~apple~CloudDocs/LMIQuatro/QuatroWebsite/.git/refs/heads/main.lock\")",
+      "Bash(echo $PATH)",
+      "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
+      "Bash(rm -rf node_modules package-lock.json)"
     ]
   }
 }

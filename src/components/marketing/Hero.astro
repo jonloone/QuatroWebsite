@@ -30,11 +30,11 @@ const isLight = variant === 'light'
 <section data-hero data-hero-section class:list={[className]}>
   {isLight ? (
     <!-- Light variant: neutral background, centered editorial -->
-    <div class="relative overflow-hidden bg-neutral-100 min-h-[600px] lg:min-h-[700px]">
-      <div class="relative px-8 lg:px-16">
-        <div class="mx-auto max-w-7xl">
+    <div class="relative overflow-hidden bg-neutral-100 min-h-screen">
+      <div class="relative px-8 lg:px-16 min-h-screen flex flex-col">
+        <div class="mx-auto max-w-7xl w-full flex-1 flex flex-col">
           <!-- Text Content — centered editorial layout -->
-          <div data-hero-text class="flex shrink-0 flex-col items-center text-center gap-6 pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
+          <div data-hero-text class="flex-1 flex shrink-0 flex-col items-center justify-center text-center gap-6 pt-[max(18vh,140px)] pb-16">
             {eyebrow && (
               <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-400">
                 {eyebrow}
@@ -70,7 +70,7 @@ const isLight = variant === 'light'
   ) : (
     <!-- Dark variant: dark background with image overlay, centered editorial -->
     <div
-      class="relative overflow-hidden bg-cover bg-center min-h-[600px] lg:min-h-[700px]"
+      class="relative overflow-hidden bg-cover bg-center min-h-screen"
       style={`background-image: url('${backgroundImage || '/images/bg555.png'}')`}
     >
       <!-- Vignette overlay -->
@@ -82,10 +82,10 @@ const isLight = variant === 'light'
         <slot name="demo" />
       </div>
 
-      <div class="relative px-8 lg:px-16">
-        <div class="mx-auto max-w-7xl">
+      <div class="relative px-8 lg:px-16 min-h-screen flex flex-col">
+        <div class="mx-auto max-w-7xl w-full flex-1 flex flex-col">
           <!-- Text Content — centered editorial layout -->
-          <div data-hero-text class="flex shrink-0 flex-col items-center text-center gap-6 pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32">
+          <div data-hero-text class="flex-1 flex shrink-0 flex-col items-center justify-center text-center gap-6 pt-[max(18vh,140px)] pb-16">
             {eyebrow && (
               <div class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40">
                 {eyebrow}

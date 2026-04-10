@@ -92,5 +92,5 @@ cta:
   secondary:
     label: "Talk to a Plant Engineer"
     href: "/contact/plant-engineer"
-  microcopy: "4-week proof of value · Credited toward contract"
+  microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---

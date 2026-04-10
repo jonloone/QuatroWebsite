@@ -1,8 +1,38 @@
 [
   {
-    "filename": "hero-contact.png",
+    "filename": "insight-grid-modernization.png",
     "status": "success",
     "model": "google/nano-banana-pro",
-    "url": "https://replicate.delivery/xezq/91V6cMe1COSPaalipH1ebCChv4Vz9yNEG9eDe4R8Xm9LwdlZB/tmpz4er0_x9.png"
+    "url": "https://replicate.delivery/xezq/1M3OchykQuoAH511FWoCBQEeMioX788pjdEKZ7lLeVL8usZWA/tmpt4wkljd_.png"
+  },
+  {
+    "filename": "insight-ground-to-orbit-noc.png",
+    "status": "success",
+    "model": "google/nano-banana-pro",
+    "url": "https://replicate.delivery/xezq/XM2z2h2YX0rwBB3fIOoxpPWtHI44PYAsM5QKs26Y8YcQY2MLA/tmp7xygj62t.png"
+  },
+  {
+    "filename": "insight-installation-security-blind-spot.png",
+    "status": "success",
+    "model": "google/nano-banana-pro",
+    "url": "https://replicate.delivery/xezq/gUMITafgRrVnEyp6ZPpkNXH2XSwEsz57fF7sefeqrGP5LmNzC/tmpp2tqqxp3.png"
+  },
+  {
+    "filename": "insight-multi-domain-seam.png",
+    "status": "success",
+    "model": "google/nano-banana-pro",
+    "url": "https://replicate.delivery/xezq/ym9alop0MwLVI9Oid5fRSx6sQy2CaxJGBZ3wLJ1lgP2cZ2MLA/tmpy6e126pd.png"
+  },
+  {
+    "filename": "insight-operational-visibility.png",
+    "status": "success",
+    "model": "google/nano-banana-pro",
+    "url": "https://replicate.delivery/xezq/qnzlKMxLbtJGDx0SfdNOfaCRA6XSN58IyJkNgK9kIsC8zsZWA/tmp8qanm0qi.png"
+  },
+  {
+    "filename": "insight-integrator-not-platform.png",
+    "status": "success",
+    "model": "google/nano-banana-pro",
+    "url": "https://replicate.delivery/xezq/TZZvp2ctxRa1OJAOFedhz2L6dmcfWmWQgha1wOlMIvfapZzsA/tmpxlksian8.png"
   }
 ]

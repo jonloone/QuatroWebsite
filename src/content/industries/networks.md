@@ -1,7 +1,7 @@
 ---
 title: "Networks"
 tagline: "Unified Terrestrial & Satellite Operations"
-heroImage: "/images/industry-networks.png"
+heroImage: "/images/cap-broadcast-distribution.png"
 description: "When terrestrial towers, satellite ground segments, and multi-orbit constellations each report through different management systems, service degradation crosses boundaries undetected. Quatro unifies operations from ground to orbit — 8,000+ integrations across every vendor, every orbit, every transport layer."
 order: 3
 hero:
@@ -9,20 +9,18 @@ hero:
   title: "One Operational View. Ground to Orbit."
   description: "When terrestrial, satellite, and hybrid networks each report through different management systems, service degradation crosses transport boundaries undetected. Quatro unifies 8,000+ integrations into a single operational view — the same intelligence utility that won Teleport Technology of the Year 2026."
   primaryCta:
-    label: "Schedule a Network Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
-    label: "Talk to a Network Engineer"
+    label: "Talk to an Engineer"
     href: "/contact/sales"
 stats:
   - value: "8,000+"
     label: "Integrations"
-  - value: "80%"
-    label: "Fewer False Alarms"
-  - value: "<60s"
-    label: "Anomaly Detection"
   - value: "GEO+LEO+MEO+Terrestrial"
     label: "Coverage"
+  - value: "Cloud · Hybrid · Air-Gapped"
+    label: "Deployment Options"
 challenges:
   - title: "Multi-Vendor NMS Fragmentation"
     description: "Telco runs Nokia NSP, Ericsson OSS, and Cisco Crosswork. Satellite runs iDirect, Newtec, and Comtech consoles. Nobody has a unified view. Operators toggle between 5-15 separate platforms to diagnose a single service degradation — and that's before they check which orbit the traffic was on."
@@ -58,7 +56,7 @@ capabilities:
   - name: "Governed Autonomous Remediation"
     description: "When issues are detected, the operational intelligence utility diagnoses root cause across domains, recommends remediation, and executes governed autonomous actions using proven playbooks. Institutional expertise embedded — new operators perform like 20-year veterans."
     image: "/images/cap-networks-fault-remediation.png"
-    outcome: "55% faster MTTR. Governed autonomous action. Expertise institutionalized."
+    outcome: "Faster MTTR. Governed autonomous action. Institutional expertise embedded."
   - name: "Multi-Orbit Capacity Intelligence"
     description: "Ephemeris-aware operational intelligence predicts LEO satellite availability 30 minutes ahead and enables dynamic traffic steering across GEO, MEO, LEO, and terrestrial based on real-time demand, weather, and orbital mechanics. Governed autonomous orchestration optimizes utilization and cost."
     image: "/images/cap-networks-multi-orbit.png"
@@ -66,7 +64,7 @@ capabilities:
   - name: "Ground Segment Intelligence & Command"
     description: "Real-time monitoring of antennas, RF chains, VSAT hubs, modems, and spectrum analyzers. Sub-minute anomaly detection with automated failover. The same operational intelligence utility trusted by satellite operators for mission-critical ground segment operations."
     image: "/images/cap-networks-teleport.png"
-    outcome: "<60s detection. 85% faster failover. Complete visibility across all equipment."
+    outcome: "Sub-minute detection. Faster failover. Complete ground segment visibility."
   - name: "Space Domain Intelligence Integration"
     description: "Multi-source ISR integration with operational impact correlation. Conjunction assessment tied to ground asset dependency and mission continuity. Predictive threat alerts 24-48 hours ahead — connected to your unified network operations intelligence."
     image: "/images/cap-networks-sda.png"
@@ -77,25 +75,25 @@ capabilities:
     outcome: "Complete sovereignty. Full data control. No external dependencies."
 platformMapping:
   see: "8,000+ integrations with protocol-native adapters — SNMP, NETCONF, TL1, gRPC, iDirect DVB-RCS, Newtec Dialog, satellite telemetry, GPS/telematics. Edge processing at tower sites, satellite gateways, and network nodes. Sub-minute data ingestion from every vendor across every domain."
-  understand: "Operational intelligence across cross-domain alarm correlation, root cause analysis spanning terrestrial and satellite, and operator guidance. Predictive failure models trained on operational telemetry across orbits and transport layers. Real-time fleet health scoring, transponder utilization, tower performance, SLA tracking, and breach prediction."
+  understand: "Operational intelligence across cross-domain alarm correlation, root cause analysis spanning terrestrial and satellite, and operator guidance. Reduces false alarm noise. Predictive failure models trained on operational telemetry across orbits and transport layers. Real-time fleet health scoring, transponder utilization, tower performance, SLA tracking, and breach prediction."
   orchestrate: "Governed autonomous orchestration for failover across ground stations and terrestrial infrastructure. Provisioning and service activation workflows. Revenue assurance correlation with billing systems. Coordinated response playbooks that span terrestrial NOC, satellite operations, and space domain awareness."
 proofPoint:
-  industry: "Networks — Telecom Tower Operator"
-  headline: "Multi-Site Tower Operations"
+  industry: "Networks — Ground to Orbit"
+  headline: "Unified Network Intelligence"
   metrics:
-    - value: "80%"
-      label: "Fewer False Alarms"
-    - value: "55%"
-      label: "MTTR Reduction"
-    - value: "40%"
-      label: "Fewer Truck Rolls"
-  narrative: "A telecom tower operator managing 900+ sites connected all five monitoring platforms into Quatro's unified operational intelligence utility. Intelligent alarm correlation reduced false alarms by 80% and MTTR by 55%. Remote diagnostics eliminated 40% of truck rolls. Separately, a global satellite operator deployed Quatro as their operational intelligence utility across multi-vendor ground segments managing GEO and NGSO constellations — replacing 7 separate tools, achieving sub-minute anomaly detection, and eliminating 80% of billing disputes within 90 days."
+    - value: "8,000+"
+      label: "Integrations"
+    - value: "GEO+LEO+MEO"
+      label: "Multi-Orbit Coverage"
+    - value: "Weeks"
+      label: "To First Intelligence"
+  narrative: "Network operators unifying terrestrial towers, satellite ground segments, and multi-orbit constellations into one operational view — cross-domain correlation, fleet health prediction, and governed autonomous remediation from a single intelligence utility."
 cta:
   primary:
-    label: "Schedule a Network Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondary:
-    label: "Talk to a Network Engineer"
+    label: "Talk to an Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your vendor tools across terrestrial and satellite domains — and show how operational intelligence utility delivers real-time visibility and governed autonomous action from ground to orbit. 90-day proof of value · Credited toward contract"
+  microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---

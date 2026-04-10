@@ -107,6 +107,5 @@ cta:
   secondary:
     label: Talk to a Logistics Expert
     href: /contact/sales
-  microcopy: 'Typical assessment: 45-60 minutes. We''ll map your current port, airport, or corridor operations and show how unified intelligence connects every node. 90-day proof of value · One port or
-    corridor · Credited toward contract'
+  microcopy: 'Typical assessment: 45-60 minutes. We''ll map your current port, airport, or corridor operations and show how unified intelligence connects every node. Intelligence in weeks · Your team owns it from day one'
 ---

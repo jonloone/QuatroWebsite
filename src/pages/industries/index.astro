@@ -14,34 +14,33 @@ const getIndustry = (slug: string) => allIndustries.find((i) => i.id === slug ||
 const pillars = [
   {
     name: 'Energy',
-    description: 'Overlay modernization for grid, pipeline, and industrial operations. Unified intelligence across SCADA, DER, and distributed energy assets.',
+    description: 'Unified intelligence for grid, pipeline, and production operations — connecting legacy SCADA with modern systems so your team sees, predicts, and acts from one model.',
     href: '/industries/energy',
     heroImage: getIndustry('energy')?.data.heroImage || '/images/industry-energy.png',
     stats: getIndustry('energy')?.data.stats?.slice(0, 3) || [],
     children: [
       { name: 'Grid Health', href: '/solutions/grid-health' },
       { name: 'Pipeline Integrity', href: '/solutions/pipeline-integrity' },
-      { name: 'Industrial & Manufacturing', href: '/industries/industrial' },
       { name: 'Asset Health', href: '/solutions/asset-health' },
     ],
     featured: true,
   },
   {
     name: 'National Security',
-    description: 'Unified command across physical, cyber, and intelligence domains — sovereign deployment, defense-grade compliance, and AI-powered operations in air-gapped environments.',
-    href: '/industries/national-security',
+    description: 'Sovereign operational intelligence connecting community protection and territorial security into one model. Air-gapped. Auditable. Your team owns the intelligence from day one.',
+    href: '/industries/defense',
     heroImage: getIndustry('defense')?.data.heroImage || '/images/industry-defense.png',
     stats: getIndustry('defense')?.data.stats?.slice(0, 3) || [],
     children: [
-      { name: 'Defense', href: '/industries/defense' },
-      { name: 'Physical Security', href: '/solutions/physical-security' },
-      { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
+      { name: 'Community Health Intelligence', href: '/industries/defense' },
+      { name: 'Geosecurity Intelligence', href: '/industries/defense' },
+      { name: 'Sovereign Infrastructure', href: '/industries/defense' },
     ],
     featured: true,
   },
   {
     name: 'Networks',
-    description: 'Unified operations from ground to orbit. Terrestrial towers, satellite ground segments, multi-orbit constellations, and hybrid connectivity — one operational picture.',
+    description: 'Ground to orbit, subscriber to service — unified in one operational view. Terrestrial, satellite, and hybrid networks connected into one intelligence picture.',
     href: '/industries/networks',
     heroImage: getIndustry('networks')?.data.heroImage || '/images/industry-networks.png',
     stats: getIndustry('networks')?.data.stats?.slice(0, 3) || [],
@@ -49,38 +48,18 @@ const pillars = [
       { name: 'Network Operations', href: '/solutions/network-operations' },
       { name: 'Fleet Health', href: '/solutions/fleet-health' },
       { name: 'Service Assurance', href: '/solutions/hybrid-service-assurance' },
-      { name: 'Space Domain Awareness', href: '/solutions/space-domain-awareness' },
     ],
     featured: false,
   },
   {
-    name: 'Critical Infrastructure',
-    description: 'Intelligence for the systems cities and nations depend on — water networks, transportation corridors, municipal operations, and the built environment.',
-    href: '/industries/critical-infrastructure',
+    name: 'Cities',
+    description: 'Intelligence for the systems cities depend on — water, waste, transportation, public safety — connected into one operational model with real citizen outcomes.',
+    href: '/industries/cities',
     heroImage: getIndustry('cities')?.data.heroImage || '/images/industry-cities.png',
-    stats: [
-      { value: '8,000+', label: 'Integrations' },
-      { value: '85%', label: 'Fewer False Alarms' },
-      { value: '35%', label: 'Water Loss Reduction' },
-    ],
+    stats: getIndustry('cities')?.data.stats?.slice(0, 3) || [],
     children: [
-      { name: 'Cities & Municipal', href: '/industries/cities' },
-      { name: 'Water & Environment', href: '/industries/water-environment' },
-      { name: 'Transportation', href: '/industries/transportation' },
-    ],
-    featured: false,
-  },
-  {
-    name: 'Finance',
-    description: 'Intelligence products that unify the 15-30 systems your bank already operates. Customer 360, credit risk, NPA early warning, and regulatory compliance — production-ready in weeks.',
-    href: '/industries/finance',
-    heroImage: getIndustry('finance')?.data.heroImage || '/images/industry-finance.png',
-    stats: getIndustry('finance')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Customer 360', href: '/solutions/customer-360' },
-      { name: 'Credit Risk', href: '/solutions/credit-risk' },
-      { name: 'NPA Early Warning', href: '/solutions/npa-early-warning' },
-      { name: 'Regulatory Compliance', href: '/solutions/regulatory-compliance' },
+      { name: 'Water Systems', href: '/industries/water-environment' },
+      { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
     ],
     featured: false,
   },
@@ -91,12 +70,12 @@ const pillars = [
 
 <MarketingLayout
   title="Industries — Operational Intelligence for Critical Operations"
-  description="Quatro delivers operational intelligence across energy, national security, networks, critical infrastructure, and finance — 8,000+ integrations, deployed your way."
+  description="Quatro delivers operational intelligence across energy, defense & national security, networks, and cities — 8,000+ integrations, deployed your way."
 >
   <HeroCanvas
     badge="Industries"
     title="Intelligence for the Operations That Matter Most"
-    body="Five domains. One intelligence utility. Quatro delivers unified operational intelligence tailored to your sector — from grid operations to banking compliance."
+    body="Quatro delivers operational intelligence for the industries where infrastructure matters most — energy grids, defense networks, communications systems, and the cities communities depend on."
     ctaLabel="Talk to Our Team"
     ctaHref="/contact/demo"
   />
@@ -153,9 +132,9 @@ const pillars = [
 
   <DualCta
     title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like for your industry.`}
-    description="Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
+    description="Tell us the outcome that matters. We connect the systems that hold the answer. Your team starts working from the model."
     primaryCta={{ label: 'Talk to Our Team', href: '/contact/demo' }}
     secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
-    microcopy="4-week proof of value · Credited toward annual contract"
+    microcopy="Intelligence in weeks · Your team owns it from day one"
   />
 </MarketingLayout>

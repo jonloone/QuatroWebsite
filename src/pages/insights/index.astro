@@ -3,19 +3,39 @@ import { getCollection } from 'astro:content'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+import { categoryMeta } from '@/lib/category-meta'
 
 const allInsights = (await getCollection('insights'))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
 
-const featured = allInsights.filter(i => i.data.featured)
-const latest = allInsights
+const featured = allInsights.find(i => i.data.featured) || allInsights[0]
+const rest = allInsights.filter(i => i !== featured)
+const recent = rest.slice(0, 4)
 
-const categories = [
-  { slug: 'all', label: 'All', href: '/insights' },
-  { slug: 'industry-trends', label: 'Industry Trends', href: '/insights/industry-trends' },
-  { slug: 'use-cases', label: 'Use Cases', href: '/insights/use-cases' },
-  { slug: 'platform', label: 'Platform', href: '/insights/platform' },
+// Category sections with alternating visual treatments
+const byCategory = Object.entries(categoryMeta).map(([slug, meta]) => ({
+  slug,
+  ...meta,
+  articles: allInsights
+    .filter(a => a.data.category === slug)
+    .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()),
+})).filter(c => c.articles.length > 0)
+
+// Section treatments: dark → sage → light (cycling)
+const sectionStyles = [
+  { bg: '#0a0a0a', text: 'white', muted: 'rgba(255,255,255,0.5)', accent: 'var(--color-forest)', label: 'rgba(255,255,255,0.4)', border: 'rgba(255,255,255,0.06)', navAttr: 'data-nav-dark' },
+  { bg: 'rgb(206,210,198)', text: '#1a1a1a', muted: 'rgba(26,26,26,0.55)', accent: 'var(--color-forest)', label: 'rgba(26,26,26,0.45)', border: 'rgba(26,26,26,0.1)', navAttr: 'data-nav-light' },
+  { bg: 'var(--color-paper)', text: 'var(--color-neutral-800)', muted: 'var(--color-neutral-500)', accent: 'var(--color-forest)', label: 'var(--color-neutral-400)', border: 'var(--color-structure)', navAttr: '' },
 ]
+
+const articleHref = (a: any) => `/insights/${a.id.replace(/\.md$/, '')}`
+
+const formatDate = (d: Date) => d.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
 ---
 
 <BaseLayout
@@ -25,221 +45,336 @@ const categories = [
 >
   <SiteHeader lang="en" />
 
-  <!-- Hero -->
-  <section class="pt-32 pb-8 lg:pt-40 lg:pb-10 px-6">
-    <div class="mx-auto max-w-6xl">
-      <p class="font-mono text-xs uppercase tracking-[0.1em] mb-4" style="color: var(--color-forest);">Insights</p>
-      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight" style="color: var(--color-neutral-800);">
-        Thinking about operational<br/>intelligence.
-      </h1>
-      <p class="mt-6 font-sans text-lg leading-relaxed max-w-2xl" style="color: var(--color-neutral-500);">
-        Industry analysis, deployment patterns, and perspectives from the teams building intelligence for critical infrastructure.
+  <!-- ═══ PAGE HEADER ═══ -->
+  <header class="pt-[max(14vh,160px)] pb-16 lg:pb-24 px-8 lg:px-16">
+    <div class="mx-auto max-w-[1400px]">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-6" style="color: var(--color-forest);">
+        Insights
       </p>
+      <h1 class="font-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight" style="font-family: var(--font-sans); color: var(--color-neutral-800);">
+        Thinking about<br/>operational intelligence.
+      </h1>
     </div>
-  </section>
+  </header>
 
-  <!-- Featured article — full-width image hero with dither -->
-  {featured.length > 0 && (
-    <section class="px-6 pb-10 lg:pb-12" style="border-bottom: 1px solid var(--color-structure);">
-      <div class="mx-auto max-w-6xl">
-        <a href={`/insights/${featured[0].id.replace(/\.md$/, '')}`} class="group block relative overflow-hidden rounded-xl" style="background: #0a0a0a;" data-dither-section>
-          {featured[0].data.heroImage && (
-            <div class="relative aspect-[16/9] lg:aspect-[21/9]">
-              <img
-                src={featured[0].data.heroImage}
-                alt=""
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                loading="eager"
-              />
-            </div>
-          )}
-          <!-- Dither canvas overlay — covers entire card -->
-          <canvas
-            class="absolute inset-0 w-full h-full z-[1] opacity-50"
-            data-dither-canvas
-            data-image-src={featured[0].data.heroImage}
-            data-pixel-size="3"
-            data-base-speed="0.06"
-            data-hover-speed="0.3"
-            data-green-blend="0.35"
-          ></canvas>
-          <!-- Bottom gradient for WCAG-compliant text readability -->
-          <div class="absolute inset-0 z-[2]" style="background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.2) 50%, transparent 70%);"></div>
-          <!-- Film grain texture -->
-          <svg style="position:absolute;width:0;height:0;">
-            <filter id="insight-grain">
-              <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
-              <feColorMatrix type="saturate" values="0" />
-            </filter>
-          </svg>
-          <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.04]" style="filter: url(#insight-grain);"></div>
-          <!-- Text overlay at bottom -->
-          <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-10 z-[4]">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); color: white; border: 1px solid rgba(255,255,255,0.1);">
-                {featured[0].data.category.replace('-', ' ')}
-              </span>
-              <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.7);">
-                {featured[0].data.readingTime}
-              </span>
-            </div>
-            <h2 class="font-sans text-2xl sm:text-3xl lg:text-4xl font-light leading-[1.15] tracking-tight text-white max-w-3xl">
-              {featured[0].data.title}
-            </h2>
-            <p class="mt-3 font-sans text-sm lg:text-base leading-relaxed max-w-2xl hidden sm:block" style="color: rgba(255,255,255,0.85);">
-              {featured[0].data.excerpt}
+  <!-- Category nav -->
+  <nav class="px-8 lg:px-16 mb-16 lg:mb-20">
+    <div class="mx-auto max-w-[1400px] flex items-center gap-8 lg:gap-12 pb-4 overflow-x-auto" style="border-bottom: 1px solid var(--color-structure);">
+      <span
+        class="font-mono text-[10px] uppercase tracking-[0.1em] pb-4 whitespace-nowrap"
+        style="color: var(--color-neutral-800); border-bottom: 2px solid var(--color-forest); margin-bottom: -1px;"
+      >
+        All
+      </span>
+      {Object.entries(categoryMeta).map(([slug, cat]) => (
+        <a
+          href={`/insights/${slug}`}
+          class="font-mono text-[10px] uppercase tracking-[0.1em] pb-4 whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-forest)]"
+          style="color: var(--color-neutral-400);"
+        >
+          {cat.title}
+        </a>
+      ))}
+    </div>
+  </nav>
+
+  <!-- ═══ FEATURED ARTICLE — Full-bleed with strong text backdrop ═══ -->
+  {featured && (
+    <section class="mb-0">
+      <a href={articleHref(featured)} class="group block relative overflow-hidden" style="background: #0a0a0a;" data-dither-section>
+        {featured.data.heroImage && (
+          <div class="relative w-full" style="aspect-ratio: 21/9; min-height: 480px;">
+            <img
+              src={featured.data.heroImage}
+              alt=""
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              loading="eager"
+            />
+          </div>
+        )}
+        <!-- Dither canvas -->
+        <canvas
+          class="absolute inset-0 w-full h-full z-[1] opacity-60"
+          data-dither-canvas
+          data-image-src={featured.data.heroImage}
+          data-pixel-size="3"
+          data-base-speed="0.06"
+          data-hover-speed="0.3"
+          data-green-blend="0.4"
+        ></canvas>
+        <!-- Heavy bottom gradient for text legibility -->
+        <div class="absolute inset-0 z-[2]" style="background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.85) 20%, rgba(10,10,10,0.6) 40%, rgba(10,10,10,0.2) 60%, transparent 80%);"></div>
+        <!-- Film grain -->
+        <svg style="position:absolute;width:0;height:0;">
+          <filter id="insight-grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+        </svg>
+        <div class="absolute inset-0 z-[3] pointer-events-none opacity-[0.05]" style="filter: url(#insight-grain);"></div>
+        <!-- Content overlay -->
+        <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-16 z-[4]">
+          <div class="mx-auto max-w-[1400px]">
+            <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-4" style="color: var(--color-forest);">
+              Featured
             </p>
-            <p class="mt-4 font-mono text-xs uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.7);">
-              Read article →
+            <div class="flex items-center gap-4 mb-5">
+              <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: rgba(255,255,255,0.6);">
+                {featured.data.category.replace(/-/g, ' ')}
+              </span>
+              {featured.data.industry && (
+                <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.4);">
+                  {featured.data.industry}
+                </span>
+              )}
+              <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.4);">
+                {featured.data.readingTime}
+              </span>
+            </div>
+            <h2 class="font-light text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.08] tracking-tight text-white max-w-4xl" style="font-family: var(--font-sans);">
+              {featured.data.title}
+            </h2>
+            <p class="mt-5 text-base lg:text-lg leading-relaxed max-w-2xl" style="font-family: var(--font-sans); color: rgba(255,255,255,0.65);">
+              {featured.data.excerpt}
+            </p>
+            <p class="mt-6 font-mono text-[10px] uppercase tracking-[0.08em] transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: rgba(255,255,255,0.5);">
+              → Read article
             </p>
           </div>
-        </a>
+        </div>
+      </a>
+    </section>
+  )}
+
+  <!-- ═══ RECENT — Light section, two-column grid ═══ -->
+  {recent.length > 0 && (
+    <section class="px-8 lg:px-16 py-24 lg:py-32">
+      <div class="mx-auto max-w-[1400px]">
+        <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-12 lg:mb-16" style="color: var(--color-forest);">
+          Latest
+        </p>
+        <div class="grid md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-16 lg:gap-y-20">
+          {recent.map((article, i) => (
+            <a href={articleHref(article)} class="group block">
+              <p class="font-mono text-[10px] uppercase tracking-[0.08em] mb-3" style="color: var(--color-neutral-400);">
+                {formatDate(article.data.publishDate)}
+              </p>
+              {article.data.heroImage && (
+                <div class="relative overflow-hidden mb-5" style={`aspect-ratio: ${i === 0 ? '3/2' : '4/3'}; background: var(--color-neutral-100);`}>
+                  <img
+                    src={article.data.heroImage}
+                    alt=""
+                    class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.03] img-technical"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <span class="font-mono text-[10px] uppercase tracking-[0.12em]" style="color: var(--color-forest);">
+                {article.data.category.replace(/-/g, ' ')}
+              </span>
+              <h3 class="mt-2 font-light text-xl lg:text-2xl leading-[1.2] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="font-family: var(--font-sans); color: var(--color-neutral-800);">
+                {article.data.title}
+              </h3>
+              <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);">
+                → View article
+              </p>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   )}
 
-  <!-- All articles grid -->
-  <section class="py-16 lg:py-20 px-6">
-    <div class="mx-auto max-w-5xl">
-      <!-- Search -->
-      <div class="mb-8">
-        <div class="relative max-w-md">
-          <svg class="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-          </svg>
-          <input
-            type="text"
-            placeholder="Search insights..."
-            data-search-input
-            class="w-full pl-7 pb-3 bg-transparent font-sans text-sm outline-none"
-            style="color: var(--color-neutral-800); border-bottom: 1px solid var(--color-structure);"
-          />
-        </div>
-      </div>
+  <!-- ═══ CATEGORY SECTIONS — Alternating dark / sage / light ═══ -->
+  {byCategory.map((cat, catIdx) => {
+    const style = sectionStyles[catIdx % sectionStyles.length]
+    const isDark = catIdx % 3 === 0
+    const isSage = catIdx % 3 === 1
 
-      <!-- Category filters -->
-      <div class="flex items-center gap-6 mb-12 overflow-x-auto pb-2" style="border-bottom: 1px solid var(--color-structure);">
-        {categories.map(cat => (
-          cat.slug === 'all' ? (
-            <button
-              class="font-mono text-[11px] uppercase tracking-[0.1em] pb-3 whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-forest)]"
-              style="color: var(--color-neutral-800); border-bottom: 2px solid var(--color-forest); margin-bottom: -1px;"
-              data-filter="all"
-            >
-              {cat.label}
-            </button>
-          ) : (
-            <a
-              href={cat.href}
-              class="font-mono text-[11px] uppercase tracking-[0.1em] pb-3 whitespace-nowrap transition-colors duration-200 hover:text-[var(--color-forest)]"
-              style="color: var(--color-neutral-400);"
-            >
-              {cat.label}
-            </a>
-          )
-        ))}
-      </div>
+    return (
+      <section
+        class="relative overflow-hidden"
+        style={`background: ${style.bg}; ${isDark || isSage ? '' : `border-top: 1px solid ${style.border};`}`}
+        {...(style.navAttr ? { [style.navAttr]: true } : {})}
+      >
+        {/* Grain overlay for dark and sage sections */}
+        {(isDark || isSage) && (
+          <>
+            <svg style="position:absolute;width:0;height:0;">
+              <filter id={`section-grain-${catIdx}`}>
+                <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+                <feColorMatrix type="saturate" values="0" />
+              </filter>
+            </svg>
+            <div class="absolute inset-0 pointer-events-none" style={`opacity: ${isDark ? '0.03' : '0.04'}; filter: url(#section-grain-${catIdx});`}></div>
+          </>
+        )}
 
-      <div class="grid gap-y-12 lg:gap-y-16">
-        <p id="no-results" class="font-sans text-base py-12 text-center" style="color: var(--color-neutral-400); display: none;">No insights match your search.</p>
-        {latest.map((article, i) => (
-          <a
-            href={`/insights/${article.id.replace(/\.md$/, '')}`}
-            class="group grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-12 items-start"
-            data-category={article.data.category}
-            data-tags={article.data.tags?.join(',') || ''}
-            style={i > 0 ? 'border-top: 1px solid var(--color-structure); padding-top: 3rem;' : ''}
-          >
-            {article.data.heroImage && (
-              <div class="relative overflow-hidden rounded-lg aspect-[4/3]" style="background: var(--color-neutral-50);">
-                <img src={article.data.heroImage} alt="" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 img-technical" loading="lazy" />
+        <div class="relative z-10 px-8 lg:px-16 py-24 lg:py-32">
+          <div class="mx-auto max-w-[1400px]">
+            {/* Section header */}
+            <div class="flex items-end justify-between mb-12 lg:mb-16">
+              <div>
+                <p class="font-mono text-[10px] uppercase tracking-[0.12em] mb-3" style={`color: ${style.accent};`}>
+                  {cat.title}
+                </p>
+                <h2 class="font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.08] tracking-tight whitespace-pre-line" style={`font-family: var(--font-sans); color: ${style.text};`}>
+                  {cat.headline}
+                </h2>
+              </div>
+              <a
+                href={`/insights/${cat.slug}`}
+                class="font-mono text-[10px] uppercase tracking-[0.08em] transition-opacity duration-300 hover:opacity-80 hidden sm:block pb-2"
+                style={`color: ${style.muted};`}
+              >
+                → View all {cat.title.toLowerCase()}
+              </a>
+            </div>
+
+            {/* Lead article — full-width with overlay (dark/sage) or below-image text (light) */}
+            {cat.articles[0] && (
+              isDark || isSage ? (
+                /* Dark/Sage: image with text overlay */
+                <a href={articleHref(cat.articles[0])} class="group block relative overflow-hidden mb-16 lg:mb-20" style={`aspect-ratio: 21/9; min-height: 360px; background: ${isDark ? '#111' : 'rgba(26,26,26,0.1)'};`}>
+                  {cat.articles[0].data.heroImage && (
+                    <img
+                      src={cat.articles[0].data.heroImage}
+                      alt=""
+                      class={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02] ${isSage ? 'grayscale contrast-[0.85] brightness-[1.1]' : 'img-technical'}`}
+                      loading="lazy"
+                    />
+                  )}
+                  {isSage && (
+                    <>
+                      <div class="absolute inset-0" style="background: rgba(180,190,170,0.55); mix-blend-mode: multiply;"></div>
+                      <div class="absolute inset-0" style="background: rgba(210,215,200,0.3); mix-blend-mode: screen;"></div>
+                    </>
+                  )}
+                  <div class="absolute inset-0" style={`background: linear-gradient(to top, ${isDark ? 'rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.6) 35%, transparent 65%' : 'rgba(26,26,26,0.7) 0%, rgba(26,26,26,0.35) 35%, transparent 60%'});`}></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-12 z-10">
+                    <div class="flex items-center gap-4 mb-3">
+                      {cat.articles[0].data.industry && (
+                        <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.5);">
+                          {cat.articles[0].data.industry}
+                        </span>
+                      )}
+                      <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.4);">
+                        {cat.articles[0].data.readingTime}
+                      </span>
+                    </div>
+                    <h3 class="font-light text-2xl lg:text-3xl xl:text-4xl leading-[1.12] tracking-tight text-white max-w-3xl" style="font-family: var(--font-sans);">
+                      {cat.articles[0].data.title}
+                    </h3>
+                    <p class="mt-3 text-base leading-relaxed max-w-2xl" style="font-family: var(--font-sans); color: rgba(255,255,255,0.55);">
+                      {cat.articles[0].data.excerpt}
+                    </p>
+                    <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.08em]" style="color: rgba(255,255,255,0.45);">
+                      → Read article
+                    </p>
+                  </div>
+                </a>
+              ) : (
+                /* Light: image above, text below */
+                <a href={articleHref(cat.articles[0])} class="group block mb-16 lg:mb-20">
+                  {cat.articles[0].data.heroImage && (
+                    <div class="relative overflow-hidden w-full mb-6" style="aspect-ratio: 21/9; background: var(--color-neutral-100);">
+                      <img
+                        src={cat.articles[0].data.heroImage}
+                        alt=""
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02] img-technical"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  <div class="flex items-center gap-4 mb-2">
+                    {cat.articles[0].data.industry && (
+                      <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style={`color: ${style.label};`}>
+                        {cat.articles[0].data.industry}
+                      </span>
+                    )}
+                    <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style={`color: ${style.label};`}>
+                      {cat.articles[0].data.readingTime}
+                    </span>
+                  </div>
+                  <h3 class="font-light text-2xl lg:text-3xl leading-[1.15] tracking-tight max-w-3xl transition-colors duration-300 group-hover:text-[var(--color-forest)]" style={`font-family: var(--font-sans); color: ${style.text};`}>
+                    {cat.articles[0].data.title}
+                  </h3>
+                  <p class="mt-3 text-base leading-relaxed max-w-2xl" style={`font-family: var(--font-sans); color: ${style.muted};`}>
+                    {cat.articles[0].data.excerpt}
+                  </p>
+                  <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.08em] transition-colors duration-300 group-hover:text-[var(--color-forest)]" style={`color: ${style.label};`}>
+                    → Read article
+                  </p>
+                </a>
+              )
+            )}
+
+            {/* Sub-articles in 2-col grid */}
+            {cat.articles.length > 1 && (
+              <div class="grid md:grid-cols-2 gap-x-8 lg:gap-x-12 gap-y-14 lg:gap-y-16">
+                {cat.articles.slice(1).map(article => (
+                  <a href={articleHref(article)} class="group block">
+                    <p class="font-mono text-[10px] uppercase tracking-[0.08em] mb-3" style={`color: ${style.label};`}>
+                      {formatDate(article.data.publishDate)}
+                    </p>
+                    {article.data.heroImage && (
+                      <div class="relative overflow-hidden mb-5" style={`aspect-ratio: 3/2; background: ${isDark ? '#111' : isSage ? 'rgba(26,26,26,0.08)' : 'var(--color-neutral-100)'};`}>
+                        <img
+                          src={article.data.heroImage}
+                          alt=""
+                          class={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03] ${isSage ? 'grayscale contrast-[0.85] brightness-[1.1]' : 'img-technical'}`}
+                          loading="lazy"
+                        />
+                        {isSage && (
+                          <>
+                            <div class="absolute inset-0" style="background: rgba(180,190,170,0.4); mix-blend-mode: multiply;"></div>
+                            <div class="absolute inset-0" style="background: rgba(210,215,200,0.2); mix-blend-mode: screen;"></div>
+                          </>
+                        )}
+                      </div>
+                    )}
+                    {article.data.industry && (
+                      <span class="font-mono text-[10px] uppercase tracking-[0.08em] mr-3" style={`color: ${style.label};`}>
+                        {article.data.industry}
+                      </span>
+                    )}
+                    <h3 class="mt-2 font-light text-lg lg:text-xl leading-[1.25] tracking-tight transition-opacity duration-300 group-hover:opacity-70" style={`font-family: var(--font-sans); color: ${style.text};`}>
+                      {article.data.title}
+                    </h3>
+                    <p class="mt-3 font-mono text-[10px] uppercase tracking-[0.08em] transition-opacity duration-300 group-hover:opacity-70" style={`color: ${style.muted};`}>
+                      → View article
+                    </p>
+                  </a>
+                ))}
               </div>
             )}
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <span class="font-mono text-[10px] uppercase tracking-[0.12em] px-2.5 py-1 rounded-full" style="color: var(--color-forest); background: rgba(15,76,58,0.06);">
-                  {article.data.category.replace('-', ' ')}
-                </span>
-                {article.data.industry && (
-                  <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
-                    {article.data.industry}
-                  </span>
-                )}
-              </div>
-              <h3 class="font-sans text-xl lg:text-2xl font-light leading-[1.25] tracking-tight transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">
-                {article.data.title}
-              </h3>
-              <p class="mt-3 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">
-                {article.data.excerpt}
-              </p>
-              <div class="mt-4 flex items-center gap-4">
-                <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
-                  {article.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-                </span>
-                <span class="font-mono text-[10px] uppercase tracking-[0.08em]" style="color: var(--color-neutral-400);">
-                  {article.data.readingTime}
-                </span>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+
+            {/* Mobile "View all" */}
+            <a
+              href={`/insights/${cat.slug}`}
+              class="mt-10 font-mono text-[10px] uppercase tracking-[0.08em] transition-opacity duration-300 hover:opacity-70 sm:hidden inline-block"
+              style={`color: ${style.muted};`}
+            >
+              → View all {cat.title.toLowerCase()}
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  })}
 
   <!-- CTA -->
-  <section class="py-16 lg:py-20 px-6" style="border-top: 1px solid var(--color-structure); background: var(--color-neutral-50, #f8fafc);">
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="font-sans text-2xl lg:text-3xl font-light tracking-tight" style="color: var(--color-neutral-800);">
-        See it on your infrastructure.
-      </h2>
-      <p class="mt-4 font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">
-        Start with the outcome that matters. We connect the systems. Your team works from the model.
-      </p>
-      <a
-        href="/contact/demo"
-        class="inline-flex items-center gap-2 mt-8 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-105"
-        style="background-color: var(--color-forest); color: white;"
-      >
-        Talk to Our Team
-        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-      </a>
-    </div>
-  </section>
+  <DualCta
+    title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like on your infrastructure.`}
+    description="Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
+    primaryCta={{ label: 'Schedule an Assessment', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    microcopy="4-week proof of value · Credited toward annual contract"
+  />
 
   <SiteFooter lang="en" />
 
-  <script>
-    const articles = document.querySelectorAll<HTMLElement>('[data-category]');
-    const searchInput = document.querySelector<HTMLInputElement>('[data-search-input]');
-    const noResults = document.getElementById('no-results');
-
-    function applySearch() {
-      const query = searchInput?.value.toLowerCase().trim() || '';
-      let visibleCount = 0;
-
-      articles.forEach((article) => {
-        const tags = article.getAttribute('data-tags') || '';
-        const title = article.querySelector('h3')?.textContent?.toLowerCase() || '';
-        const excerpt = article.querySelector('p')?.textContent?.toLowerCase() || '';
-
-        const visible = !query || title.includes(query) || excerpt.includes(query) || tags.includes(query);
-
-        article.style.display = visible ? '' : 'none';
-        if (visible) {
-          article.style.borderTop = visibleCount === 0 ? 'none' : '';
-          article.style.paddingTop = visibleCount === 0 ? '0' : '';
-          visibleCount++;
-        }
-      });
-
-      if (noResults) noResults.style.display = visibleCount === 0 ? '' : 'none';
-    }
-
-    searchInput?.addEventListener('input', () => applySearch());
-  </script>
-
-  <!-- Bayer 4×4 dither engine — matches HeroCanvas treatment -->
+  <!-- Bayer 4×4 dither engine -->
   <script>
     const bayer4x4 = [
       [ 0/16,  8/16,  2/16, 10/16],
@@ -315,7 +450,6 @@ const categories = [
 
             const cx = col / cols;
             const cy = row / rows;
-
             const warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
             const warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
 

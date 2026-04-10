@@ -97,6 +97,5 @@ cta:
   secondary:
     label: Talk to an Industrial Engineer
     href: /contact/sales
-  microcopy: 'Typical assessment: 45-60 minutes. We''ll map your current historian, MES, and ERP landscape and show how unified intelligence replaces fragmented vendor tools. 4-week proof of value · Credited
-    toward contract'
+  microcopy: 'Typical assessment: 45-60 minutes. We''ll map your current historian, MES, and ERP landscape and show how unified intelligence replaces fragmented vendor tools. Intelligence in weeks · Your team owns it from day one'
 ---

@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to an Aviation Expert"
     href: "/contact/sales"
-  microcopy: "90-day proof of value. One terminal or runway. Real-time coordination demonstrated on live airport operations. Credited toward contract."
+  microcopy: "90-day proof of value. One terminal or runway. Real-time coordination demonstrated on live airport operations. Your team owns it from day one."
 ---

@@ -1,55 +1,120 @@
 ---
-import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import Section from '@/components/marketing/Section.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
 
-const solutions = (await getCollection('solutions')).sort((a, b) => a.data.order - b.data.order)
+const capabilities = [
+  {
+    number: '01',
+    title: 'Operational Visibility',
+    problem: 'Your operation runs on dozens of systems that don\'t talk to each other. Operators toggle between screens and still miss the signal. We connect them into one operational model — so your team sees the full picture from a single view, across every domain.',
+    outputs: 'Unified operational dashboards, cross-system correlation, real-time status across every connected asset, role-based views for different operational teams',
+    industries: 'Energy, Defense, Networks, Cities'
+  },
+  {
+    number: '02',
+    title: 'Predictive Intelligence',
+    problem: 'By the time an alert fires, the damage is already compounding. We connect the signals your systems already generate into models that see degradation, failure patterns, and demand shifts before they become emergencies.',
+    outputs: 'Early warning on equipment health, demand forecasting, anomaly detection across connected systems, maintenance prioritization based on actual risk',
+    industries: 'Energy, Networks, Industrial, Cities'
+  },
+  {
+    number: '03',
+    title: 'Governed Autonomous Action',
+    problem: 'Intelligence without action is just a dashboard. We enable your team to define the boundaries — then the system acts within them. Every autonomous action is bounded, auditable, and governed by rules your team sets.',
+    outputs: 'Automated response playbooks, governed dispatch and remediation, execution contracts with full audit trails, human-in-the-loop escalation when boundaries are reached',
+    industries: 'Defense, Energy, Networks, Cities'
+  },
+  {
+    number: '04',
+    title: 'Cross-Agency Coordination',
+    problem: 'The data exists across every agency. The problem is no one can see across the walls. We connect agencies and departments that were never designed to share — creating one intelligence picture from fragments that were always there.',
+    outputs: 'Cross-agency operational views, coordinated multi-department response, shared intelligence without shared databases, sovereign data controls per agency',
+    industries: 'National Intelligence, Cities, Defense, Infrastructure'
+  },
+  {
+    number: '05',
+    title: 'Compliance & Risk Intelligence',
+    problem: 'Compliance shouldn\'t be a separate burden. When your operational model already knows what happened, who acted, and why — reporting becomes a byproduct, not a project.',
+    outputs: 'Automated regulatory reporting, continuous compliance monitoring, audit-ready evidence packages, risk detection across operational boundaries',
+    industries: 'Energy, Defense, Networks, Cities'
+  },
+  {
+    number: '06',
+    title: 'Customer & Revenue Intelligence',
+    problem: 'Your commercial systems define the same customer, the same exposure, and the same risk differently. We close the meaning gap — so your team works from one trusted record across every system.',
+    outputs: 'Unified customer records across systems, revenue leakage detection, cross-product exposure views, real-time decision support for frontline teams',
+    industries: 'Networks, Energy, Cities'
+  }
+]
 ---
 
 <MarketingLayout
-  title="Solutions — Operational Intelligence Use Cases"
-  description="Quatro delivers operational intelligence solutions for asset monitoring, pipeline security, fleet logistics, and more — 8,000+ integrations, deployed your way."
+  title="Capabilities — What Your Team Gets"
+  description="Quatro delivers unified operational visibility, prediction, governed action, and intelligence. See the six core capabilities that drive operational outcomes."
 >
   <HeroCanvas
-    badge="Solutions"
-    title="Operational Intelligence for Every Challenge"
-    body="From asset monitoring to fleet logistics, Quatro delivers unified operational visibility for your specific use case."
+    badge="Capabilities"
+    title="What Your Team Gets"
+    body="Quatro integrates across your systems and gives your team concrete operational capabilities — visibility, prediction, governed action, and intelligence that compounds with every connection."
     ctaLabel="Talk to Our Team"
     ctaHref="/contact/demo"
   />
 
-  <Section>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {solutions.map((solution) => (
-        <a
-          href={`/solutions/${solution.id.replace(/\.md$/, '')}`}
-          class="group flex flex-col rounded-xl border border-neutral-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-md"
-        >
-          <h3 class="font-display text-lg font-bold text-neutral-800 group-hover:text-brand-600">
-            {solution.data.title}
-          </h3>
-          <p class="mt-2 flex-1 text-sm text-neutral-600">{solution.data.description}</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            {solution.data.stats.slice(0, 2).map((stat) => (
-              <span class="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600">
-                {stat.value} {stat.label}
-              </span>
-            ))}
+  {capabilities.map((capability) => (
+    <Section>
+      <div class="space-y-8">
+        {/* Capability Header */}
+        <div class="space-y-4">
+          <div class="inline-flex items-baseline gap-6">
+            <span class="font-display text-5xl font-bold text-emerald-700">{capability.number}</span>
+            <h2 class="font-display text-3xl font-bold text-neutral-900">{capability.title}</h2>
           </div>
-          <span class="mt-4 inline-block font-display text-sm font-semibold text-brand-500 group-hover:underline">
-            Explore solution &rarr;
-          </span>
-        </a>
-      ))}
+        </div>
+
+        {/* Problem Statement */}
+        <div>
+          <p class="text-lg text-neutral-700 leading-relaxed">{capability.problem}</p>
+        </div>
+
+        {/* What Your Team Gets */}
+        <div class="border-l-4 border-emerald-700 pl-6 py-4">
+          <h3 class="font-display text-sm font-semibold text-neutral-600 uppercase tracking-wide mb-2">What your team gets</h3>
+          <p class="text-neutral-700">{capability.outputs}</p>
+        </div>
+
+        {/* Applied Across */}
+        <div>
+          <p class="text-sm text-neutral-600 font-medium">
+            <span class="font-semibold">Applied across:</span> {capability.industries}
+          </p>
+        </div>
+
+        {/* Divider */}
+        <div class="border-t border-neutral-200 pt-8" />
+      </div>
+    </Section>
+  ))}
+
+  {/* Flexibility Section */}
+  <Section>
+    <div class="space-y-6">
+      <div class="space-y-3">
+        <p class="font-display text-sm font-semibold text-emerald-700 uppercase tracking-wide">The Flexibility</p>
+        <h2 class="font-display text-3xl font-bold text-neutral-900">Same architecture. Your operational context.</h2>
+      </div>
+      <p class="text-lg text-neutral-700 leading-relaxed max-w-3xl">
+        Every capability runs on the same integration architecture — 8,000+ connections, governed by your rules, deployed on your infrastructure. The operational model adapts to your domain. Your team extends it from there.
+      </p>
     </div>
   </Section>
 
   <DualCta
-    title="See Operational Intelligence on Your Infrastructure"
-    description="Pick one challenge. We deploy on your systems in 4 weeks. You see the value before you commit."
+    title="See what operational intelligence looks like for your operation."
+    description="Tell us the outcome that matters. We connect the systems that hold the answer. Your team starts working from the model."
     primaryCta={{ label: 'Talk to Our Team', href: '/contact/demo' }}
-    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
+    secondaryCta={{ label: 'Become a Partner', href: '/partners' }}
+    microcopy="Intelligence in weeks · Your team owns it from day one"
   />
 </MarketingLayout>

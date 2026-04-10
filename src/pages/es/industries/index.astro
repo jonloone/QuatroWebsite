@@ -1,162 +1,131 @@
 ---
+import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import Section from '@/components/marketing/Section.astro'
+import IndustryHubCard from '@/components/marketing/IndustryHubCard.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
+
+const allIndustries = await getCollection('industries')
+const getIndustry = (slug: string) => allIndustries.find((i) => i.id === slug || i.id === `${slug}.md`)
 
 const pillars = [
   {
     name: 'Energía',
-    slug: 'energy',
-    description: 'Modernización para operaciones de red eléctrica, ductos e industriales. Inteligencia unificada a través de SCADA, DER y activos de energía distribuida.',
-    icon: 'bolt',
-    subVerticals: [
-      { name: 'Petróleo y Gas', href: '/es/industries/energy' },
-      { name: 'Operaciones de Red Eléctrica', href: '/es/solutions/grid-health' },
-      { name: 'Seguridad de Ductos', href: '/es/solutions/pipeline-integrity' },
-      { name: 'Industrial y Manufactura', href: '/es/industries/industrial' },
-      { name: 'Monitoreo de Activos', href: '/es/solutions/asset-health' },
-    ],
-    stat: { value: '75%', label: 'Menos Falsas Alarmas' },
+    description: 'Inteligencia unificada para operaciones de red eléctrica, ductos y producción — conectando SCADA heredado con sistemas modernos para que su equipo vea, prediga y actúe desde un solo modelo.',
     href: '/es/industries/energy',
+    heroImage: getIndustry('energy')?.data.heroImage || '/images/industry-energy.png',
+    stats: getIndustry('energy')?.data.stats?.slice(0, 3) || [],
+    children: [
+      { name: 'Salud de la Red', href: '/es/solutions' },
+      { name: 'Integridad de Ductos', href: '/es/solutions' },
+      { name: 'Salud de Activos', href: '/es/solutions' },
+    ],
   },
   {
     name: 'Seguridad Nacional',
-    slug: 'national-security',
-    description: 'Comando unificado en dominios físicos, cibernéticos y de inteligencia — despliegue soberano, cumplimiento de grado militar y operaciones impulsadas por IA en ambientes aislados.',
-    icon: 'shield',
-    subVerticals: [
-      { name: 'Defensa', href: '/es/industries/defense' },
-      { name: 'Inteligencia Nacional', href: '/national-intelligence' },
-      { name: 'Operaciones Contra-Cartel', href: '/national-intelligence/counter-cartel-operations' },
-      { name: 'Seguridad Física', href: '/es/solutions/physical-security' },
+    description: 'Inteligencia operacional soberana conectando protección comunitaria y seguridad territorial en un solo modelo. Aislada, auditable, su equipo controla la inteligencia desde el primer día.',
+    href: '/es/industries/defense',
+    heroImage: getIndustry('defense')?.data.heroImage || '/images/industry-defense.png',
+    stats: getIndustry('defense')?.data.stats?.slice(0, 3) || [],
+    children: [
+      { name: 'Inteligencia de Salud Comunitaria', href: '/es/industries/defense' },
+      { name: 'Inteligencia de Geoseguridad', href: '/es/industries/defense' },
+      { name: 'Infraestructura Soberana', href: '/es/industries/defense' },
     ],
-    stat: { value: '80%', label: 'Menos Falsas Alarmas' },
-    href: '/es/industries/national-security',
   },
   {
     name: 'Redes',
-    slug: 'networks',
-    description: 'Inteligencia operacional para la convergencia de infraestructura satelital, telecomunicaciones y broadcast. Salud de flota, cadena de señal y aseguramiento de ingresos a escala.',
-    icon: 'signal',
-    subVerticals: [
-      { name: 'Espacio y SATCOM', href: '/es/industries/space-satcom' },
-      { name: 'Broadcast y Medios', href: '/es/industries/broadcast-media' },
-      { name: 'Operaciones Teleport', href: '/es/solutions/teleport-operations' },
-      { name: 'Operaciones de Red', href: '/es/solutions/network-operations' },
-      { name: 'Salud de Flota', href: '/es/solutions/fleet-health' },
-    ],
-    stat: { value: '50+', label: 'Satélites Gestionados' },
+    description: 'Tierra a órbita, suscriptor a servicio — unificado en una vista operacional. Redes terrestres, satelitales e híbridas conectadas en un modelo de inteligencia.',
     href: '/es/industries/networks',
+    heroImage: getIndustry('networks')?.data.heroImage || '/images/industry-networks.png',
+    stats: getIndustry('networks')?.data.stats?.slice(0, 3) || [],
+    children: [
+      { name: 'Operaciones de Red', href: '/es/solutions' },
+      { name: 'Salud de Flota', href: '/es/solutions' },
+      { name: 'Aseguramiento de Servicio', href: '/es/solutions' },
+    ],
   },
   {
-    name: 'Infraestructura Crítica',
-    slug: 'critical-infrastructure',
-    description: 'Inteligencia para los sistemas de los que dependen ciudades y naciones — redes de agua, corredores de transporte, operaciones municipales y el entorno construido.',
-    icon: 'building',
-    subVerticals: [
-      { name: 'Ciudades y Municipal', href: '/es/industries/cities' },
-      { name: 'Agua y Ambiente', href: '/es/industries/water-environment' },
-      { name: 'Transporte', href: '/es/industries/transportation' },
-      { name: 'Infraestructura', href: '/es/industries/infrastructure' },
-      { name: 'Operaciones Portuarias', href: '/es/solutions/port-operations' },
+    name: 'Ciudades',
+    description: 'Inteligencia para los sistemas de los que dependen las ciudades — agua, residuos, transporte, seguridad pública — conectados en un modelo operacional con resultados reales para los ciudadanos.',
+    href: '/es/industries/cities',
+    heroImage: getIndustry('cities')?.data.heroImage || '/images/industry-cities.png',
+    stats: getIndustry('cities')?.data.stats?.slice(0, 3) || [],
+    children: [
+      { name: 'Sistemas de Agua', href: '/es/solutions' },
+      { name: 'Cumplimiento Ambiental', href: '/es/solutions' },
     ],
-    stat: { value: '8,000+', label: 'Integraciones' },
-    href: '/es/industries/critical-infrastructure',
-  },
-  {
-    name: 'Finanzas',
-    slug: 'finance',
-    description: 'Productos de inteligencia que unifican los 15–30 sistemas que su banco ya opera. Customer 360, riesgo crediticio, alerta temprana de NPA y cumplimiento regulatorio — en producción en semanas.',
-    icon: 'chart',
-    subVerticals: [
-      { name: 'Inteligencia Bancaria', href: '/es/industries/finance' },
-      { name: 'Customer 360', href: '/es/industries/finance' },
-      { name: 'Riesgo Crediticio', href: '/es/industries/finance' },
-      { name: 'Cumplimiento Regulatorio', href: '/es/industries/finance' },
-      { name: 'Seguros y Reclamaciones', href: '/es/industries/finance' },
-    ],
-    stat: { value: '4–6 Semanas', label: 'A Producción' },
-    href: '/es/industries/finance',
   },
 ]
-
-const iconMap: Record<string, string> = {
-  bolt: 'M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z',
-  shield: 'M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z',
-  signal: 'M9.348 14.652a3.75 3.75 0 010-5.304m5.304 0a3.75 3.75 0 010 5.304m-7.425 2.121a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z',
-  building: 'M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z',
-  chart: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z',
-}
 ---
 
 <MarketingLayout
   lang="es"
   title="Industrias — Inteligencia Operacional para Operaciones Críticas"
-  description="Quatro ofrece inteligencia operacional en energía, seguridad nacional, redes, infraestructura crítica y finanzas — 8,000+ integraciones, desplegado a su manera."
+  description="Quatro ofrece inteligencia operacional en energía, defensa, redes y ciudades — 8,000+ integraciones, desplegado a su manera."
 >
   <HeroCanvas
     badge="Industrias"
     title="Inteligencia para las Operaciones que Más Importan"
-    body="Cinco dominios. Una utilidad de inteligencia. Quatro ofrece inteligencia operacional unificada adaptada a su sector — desde operaciones de red eléctrica hasta cumplimiento bancario."
-    ctaLabel="Agende una Evaluación"
+    body="Quatro ofrece inteligencia operacional para las industrias donde la infraestructura importa más — redes de energía, redes de defensa, sistemas de comunicaciones y las ciudades de las que dependen las comunidades."
+    ctaLabel="Hablar con Nuestro Equipo"
     ctaHref="/es/contact/demo"
   />
 
   <Section>
-    <div class="space-y-12">
-      {pillars.map((pillar, index) => (
-        <div class={`flex flex-col lg:flex-row gap-8 items-start ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-          <div class="flex-1 rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-brand-50 text-brand-600">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d={iconMap[pillar.icon]} />
-                </svg>
-              </span>
-              <h2 class="font-display text-2xl font-bold text-neutral-800">{pillar.name}</h2>
-            </div>
-            <p class="text-neutral-600 mb-6">{pillar.description}</p>
-            <div class="flex items-center gap-2 mb-6">
-              <span class="text-2xl font-bold text-brand-600">{pillar.stat.value}</span>
-              <span class="text-sm text-neutral-500">{pillar.stat.label}</span>
-            </div>
-            <a
-              href={pillar.href}
-              class="inline-flex items-center font-display text-sm font-semibold text-brand-500 hover:underline"
-            >
-              Explorar {pillar.name} &rarr;
-            </a>
-          </div>
+    <div class="mb-10 fade-up">
+      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-neutral-400 mb-3">Industrias</p>
+      <h2 class="font-display text-2xl font-bold text-neutral-800 sm:text-3xl tracking-tight">
+        Elija Su Dominio
+      </h2>
+    </div>
 
-          <div class="lg:w-72 flex-shrink-0">
-            <h3 class="font-display text-sm font-semibold text-neutral-400 uppercase tracking-wider mb-3">
-              Soluciones
-            </h3>
-            <ul class="space-y-2">
-              {pillar.subVerticals.map((sub) => (
-                <li>
-                  <a
-                    href={sub.href}
-                    class="group flex items-center gap-2 text-sm text-neutral-700 hover:text-brand-600"
-                  >
-                    <span class="h-1.5 w-1.5 rounded-full bg-brand-400 group-hover:bg-brand-600" />
-                    {sub.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+    <div class="space-y-6">
+      {pillars.map((pillar, i) => (
+        <IndustryHubCard
+          title={pillar.name}
+          description={pillar.description}
+          href={pillar.href}
+          heroImage={pillar.heroImage}
+          solutions={pillar.children}
+          reverse={i % 2 === 1}
+        />
       ))}
     </div>
   </Section>
 
+  <Section divider dark>
+    <div class="mx-auto max-w-3xl text-center fade-up">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-4">Plataforma</p>
+      <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">
+        Una Arquitectura. Cada Vertical.
+      </h2>
+      <p class="mt-4 text-lg text-white/70 leading-relaxed">
+        8,000+ integraciones. Modelos de IA entrenados con datos operacionales. Despliegue on-premise, en la nube o aislado. Quatro adapta la misma arquitectura central a los sistemas y requisitos de cumplimiento específicos de su sector.
+      </p>
+      <div class="mt-10 grid grid-cols-3 gap-px max-w-xl mx-auto" style="background: rgba(255,255,255,0.08);">
+        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
+          <div class="text-2xl font-bold text-white">8,000+</div>
+          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">Integraciones</div>
+        </div>
+        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
+          <div class="text-2xl font-bold text-white">4 Semanas</div>
+          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">Al Primer Valor</div>
+        </div>
+        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
+          <div class="text-2xl font-bold text-white">Su Nube</div>
+          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">O On-Premise</div>
+        </div>
+      </div>
+    </div>
+  </Section>
+
   <DualCta
-    title={`Vea cómo la <span style="color: var(--color-forest);">inteligencia operacional</span> funciona en su operación.`}
-    description="Elija un desafío. Desplegamos en sus sistemas en 4 semanas. Vea el valor antes de comprometerse."
-    primaryCta={{ label: 'Solicitar Evaluación', href: '/es/contact/demo' }}
+    title={`Vea cómo la <span style="color: var(--color-forest);">inteligencia operacional</span> funciona en su industria.`}
+    description="Díganos el resultado que importa. Conectamos los sistemas que tienen la respuesta. Su equipo empieza a trabajar desde el modelo."
+    primaryCta={{ label: 'Hablar con Nuestro Equipo', href: '/es/contact/demo' }}
     secondaryCta={{ label: 'Hablar con un Ingeniero', href: '/es/contact/sales' }}
-    microcopy="Prueba de valor de 4 semanas · Acreditado en contrato anual"
+    microcopy="Inteligencia en semanas · Su equipo lo controla desde el primer día"
   />
 </MarketingLayout>

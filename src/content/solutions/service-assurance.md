@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to a Revenue Leader"
     href: "/contact/sales"
-  microcopy: "90-day revenue baseline assessment. Full cross-domain billing audit. Revenue leakage quantified on your actual data across terrestrial and satellite operations. Credited toward contract."
+  microcopy: "90-day revenue baseline assessment. Full cross-domain billing audit. Revenue leakage quantified on your actual data across terrestrial and satellite operations. Your team owns it from day one."
 ---

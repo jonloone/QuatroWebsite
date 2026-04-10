@@ -129,7 +129,15 @@ const industriesCollection = defineCollection({
         value: z.string(),
         label: z.string(),
       })
-    ),
+    ).optional(),
+    programs: z.array(
+      z.object({
+        name: z.string(),
+        description: z.string(),
+        domains: z.string().optional(),
+        image: z.string().optional(),
+      })
+    ).optional(),
     platformMapping: platformMappingSchema.optional(),
     proofPoint: proofPointSchema.optional(),
     cta: z.object({
@@ -178,7 +186,15 @@ const solutionsCollection = defineCollection({
         value: z.string(),
         label: z.string(),
       })
-    ),
+    ).optional(),
+    programs: z.array(
+      z.object({
+        name: z.string(),
+        description: z.string(),
+        domains: z.string().optional(),
+        image: z.string().optional(),
+      })
+    ).optional(),
     platformMapping: platformMappingSchema.optional(),
     proofPoint: proofPointSchema.optional(),
     cta: z.object({

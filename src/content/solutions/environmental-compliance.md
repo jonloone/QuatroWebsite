@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to a Compliance Expert"
     href: "/contact/sales"
-  microcopy: "90-day proof of value. Real-time MAE/MAATE compliance and violation detection automated on one facility. Credited toward contract."
+  microcopy: "90-day proof of value. Real-time MAE/MAATE compliance and violation detection automated on one facility. Your team owns it from day one."
 ---

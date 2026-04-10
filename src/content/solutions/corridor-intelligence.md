@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to a Logistics Expert"
     href: "/contact/sales"
-  microcopy: "90-day proof of value. One corridor segment. Real-time coordination demonstrated on live traffic operations. Credited toward contract."
+  microcopy: "90-day proof of value. One corridor segment. Real-time coordination demonstrated on live traffic operations. Your team owns it from day one."
 ---

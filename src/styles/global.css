@@ -335,13 +335,8 @@
   .img-technical {
     mix-blend-mode: normal;
     opacity: 1;
-    transition: all 0.3s ease-out;
   }
-  .img-technical:hover,
-  .group:hover .img-technical {
-    mix-blend-mode: luminosity;
-    opacity: 0.9;
-  }
+
   .dot-grid {
     background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
     background-size: 30px 30px;

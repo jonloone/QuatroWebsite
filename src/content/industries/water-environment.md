@@ -97,5 +97,5 @@ cta:
   secondary:
     label: "Talk to a Water Expert"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your current water system sensors and environmental monitoring — and show how unified intelligence detects leaks in minutes and automates compliance reporting. 90-day proof of value · Credited toward contract"
+  microcopy: "Typical assessment: 45-60 minutes. We'll map your current water system sensors and environmental monitoring — and show how unified intelligence detects leaks in minutes and automates compliance reporting. Intelligence in weeks · Your team owns it from day one"
 ---

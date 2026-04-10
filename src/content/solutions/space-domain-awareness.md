@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to a Defense Director"
     href: "/contact/sales"
-  microcopy: "90-day defense pilot. FIPS/NIST/FedRAMP compliant. Threat prediction operational at your classification level. Credited toward contract."
+  microcopy: "90-day defense pilot. FIPS/NIST/FedRAMP compliant. Threat prediction operational at your classification level. Your team owns it from day one."
 ---

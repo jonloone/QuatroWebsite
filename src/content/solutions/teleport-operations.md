@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to an Operator"
     href: "/contact/sales"
-  microcopy: "90-day proof of value. One teleport or ground station. Unified monitoring operational with sub-minute anomaly detection and SLA correlation. Credited toward contract."
+  microcopy: "90-day proof of value. One teleport or ground station. Unified monitoring operational with sub-minute anomaly detection and SLA correlation. Your team owns it from day one."
 ---

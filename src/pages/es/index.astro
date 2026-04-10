@@ -25,7 +25,7 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
     <!-- connect.png — bottom right graphic, overflows right edge -->
     <img src="/images/connect.png" alt="" class="absolute bottom-0 w-[90%] lg:w-[70%] object-contain pointer-events-none select-none" style="right: -20%;" />
 
-    <div class="relative z-10 mx-auto max-w-5xl w-full text-left pt-16">
+    <div class="relative z-10 mx-auto max-w-5xl w-full text-left pt-[max(15vh,120px)]">
       <!-- Status badge -->
       <div class="inline-flex items-center gap-2.5 px-4 py-2 mb-10" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);">
         <div class="w-2 h-2 rounded-full pulse-dot" style="background-color: var(--color-forest);"></div>
@@ -338,38 +338,28 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
         </div>
       </a>
 
-      <!-- Industrial -->
-      <a href="/es/industries/industrial" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
+      <!-- Redes -->
+      <a href="/es/industries/networks" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
         <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Minería, manufactura y calidad de procesos — visibilidad en tiempo real en los entornos más exigentes.</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Infraestructura satelital, telecomunicaciones y convergencia de redes — inteligencia operacional de punta a punta.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.3</span>
         </div>
         <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Industrial</span>
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Redes</span>
         </div>
       </a>
 
-      <!-- Infraestructura -->
-      <a href="/es/industries/infrastructure" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
+      <!-- Infraestructura Crítica -->
+      <a href="/es/industries/critical-infrastructure" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
         <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Flotas, NOC y gestión de instalaciones — operaciones optimizadas a través de activos distribuidos.</p>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Redes de agua, corredores de transporte y operaciones municipales — inteligencia para los sistemas de los que dependen ciudades y naciones.</p>
           <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.4</span>
         </div>
         <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Infraestructura</span>
+          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Infraestructura Crítica</span>
         </div>
       </a>
 
-      <!-- Ciudades Inteligentes -->
-      <a href="/es/industries/cities" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Conservación, seguridad pública e inteligencia cívica — gobernanza basada en datos para la ciudadanía.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.5</span>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Ciudades Inteligentes</span>
-        </div>
-      </a>
     </div>
   </section>
 

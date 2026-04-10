@@ -19,12 +19,10 @@ hero:
 stats:
 - value: 4–6 Weeks
   label: To Production
-- value: 15–30
-  label: Systems Unified
-- value: 30–60 Days
-  label: Earlier NPA Detection
-- value: '6'
-  label: Verified Bank Deployments
+- value: 1,000+
+  label: Vendors Connected
+- value: Full Stack
+  label: Data + Governance + Products
 challenges:
 - title: The Meaning Gap
   description: Every system describes the same reality in a different language. Core banking defines a customer as an account number. The loan system uses a borrower ID. The CRM uses a contact. Regulators
@@ -107,6 +105,5 @@ cta:
   secondary:
     label: Talk to a Financial Services Engineer
     href: /contact/sales
-  microcopy: 'Typical assessment: 60 minutes. We identify which intelligence product delivers the highest impact for your environment, map your source systems, and define success criteria. 4–6 week proof
-    of value · Credited toward contract'
+  microcopy: 'Typical assessment: 60 minutes. We identify which intelligence product delivers the highest impact for your environment, map your source systems, and define success criteria. Intelligence in weeks · Your team owns it from day one'
 ---

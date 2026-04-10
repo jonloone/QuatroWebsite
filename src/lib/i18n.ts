@@ -32,7 +32,7 @@ export function localizeHref(href: string, locale: Locale): string {
 /* ─── Shared UI strings ─── */
 const ui = {
   en: {
-    'nav.getQuote': 'Schedule Assessment',
+    'nav.getQuote': 'Talk to Our Team',
     'nav.openMenu': 'Open menu',
     'nav.closeMenu': 'Close menu',
     'nav.home': 'Quatro home',
@@ -45,7 +45,7 @@ const ui = {
     'lang.switchLabel': 'Ver en Español',
   },
   es: {
-    'nav.getQuote': 'Agendar Evaluación',
+    'nav.getQuote': 'Hablar con Nuestro Equipo',
     'nav.openMenu': 'Abrir menú',
     'nav.closeMenu': 'Cerrar menú',
     'nav.home': 'Inicio Quatro',

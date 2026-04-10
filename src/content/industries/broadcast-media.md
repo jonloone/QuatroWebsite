@@ -86,5 +86,5 @@ cta:
   secondary:
     label: "Talk to a Broadcast Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 30-45 minutes. We'll map your current signal management and vendor landscape — and show how unified orchestration delivers control across every technology in your broadcast operation. 30-day proof of value · One facility · Credited toward contract"
+  microcopy: "Typical assessment: 30-45 minutes. We'll map your current signal management and vendor landscape — and show how unified orchestration delivers control across every technology in your broadcast operation. Intelligence in weeks · Your team owns it from day one"
 ---

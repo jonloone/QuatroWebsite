@@ -87,7 +87,7 @@ cta:
   secondary:
     label: "Talk to an Infrastructure Engineer"
     href: "/contact/civic-assessment"
-  microcopy: "4-week proof of value · Credited toward contract"
+  microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---
 
 ## The Challenge
@@ -110,7 +110,7 @@ Quatro integrates AIS vessel feeds, satellite imagery, and coastal camera networ
 **Phase 2 (Weeks 5–8):** Anomaly detection tuning and alert protocols
 **Phase 3 (Weeks 9–12):** Enforcement pilot and compliance reporting
 
-The 4-week proof of value is credited toward the full contract, minimizing pilot risk.
+Your team owns the intelligence from day one, minimizing pilot risk.
 
 ## Why Cities Choose Quatro
 

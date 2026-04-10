@@ -87,7 +87,7 @@ cta:
   secondary:
     label: "Talk to an Infrastructure Engineer"
     href: "/contact"
-  microcopy: "4-week proof of value · Credited toward contract"
+  microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---
 
 ## The Challenge
@@ -111,7 +111,7 @@ Quatro integrates school records, health data, community violence reports, and j
 **Phase 3 (Weeks 13–52):** Full coordination across schools, health, community, and justice
 **Phases 4–36:** Scaling to additional cities and outcome measurement
 
-The 4-week proof of value is credited toward the full contract, de-risking the engagement.
+Your team owns the intelligence from day one, de-risking the engagement.
 
 ## Why Cities Choose Quatro
 
