@@ -78,7 +78,7 @@ capabilities:
 platformMapping:
   see: "8,000+ integrations across water sensors, environmental monitors, SCADA systems, meter networks, and regulatory databases. Pressure sensors, flow meters, quality probes, environmental IoT — all feeding into unified streams. Connect and get intelligence from what you have, no rip-and-replace."
   understand: "Real-time hydraulic correlation, time-series anomaly detection, and environmental pattern recognition. Leaks detected automatically, compliance status tracked in real-time, environmental trends analyzed continuously. Machine-learning models trained on historical pressure patterns for predictive localization."
-  orchestrate: "Leak localization recommendations and governed autonomous action workflows. Predictive failure scoring on pipe segments. Automated compliance reporting for SENAGUA, MAE/MAATE, and TULSMA. Enforcement packages with evidence trails. Governance-grade audit trails for every detection and regulatory handoff."
+  orchestrate: "Leak localization recommendations and governed autonomous action workflows. Predictive failure scoring on pipe segments. Automated compliance reporting for SENAGUA, MAE/MAATE, and TULSMA. Enforcement packages with evidence trails. Governance-grade audit trails for every detection and regulatory handoff. Cross-media environmental monitoring extends into [Environmental Governance](/solutions/environmental-governance) — connecting water quality, air quality, emissions, and ESG disclosure into one governed compliance model."
 proofPoint:
   industry: "Water & Environment — Municipal Utility"
   headline: "Water Loss Reduction and Compliance Automation"
