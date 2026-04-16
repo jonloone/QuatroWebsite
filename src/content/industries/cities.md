@@ -6,8 +6,8 @@ description: "When mobility, public safety, infrastructure, and environmental sy
 order: 5
 hero:
   eyebrow: "Smart Cities"
-  title: "One City. One Operational Picture."
-  description: "When traffic, public safety, utilities, and environmental monitoring each operate from separate consoles, the patterns that cross departments stay invisible. Connect them to Quatro and get one coordinated operational picture — unified intelligence deployed on your infrastructure with measurable citizen outcomes."
+  title: "Your City Runs on Fifteen Consoles. Your Citizens See One City."
+  description: "Traffic, public safety, utilities, and environmental monitoring each operate from separate consoles with separate budgets and separate command structures. The patterns that cross departments — a water main break that causes a traffic incident that delays emergency response — stay invisible. Quatro connects what your city already has into one coordinated operational picture with measurable citizen outcomes."
   primaryCta:
     label: "Talk to Our Team"
     href: "/contact/demo"

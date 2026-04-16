@@ -6,8 +6,8 @@ description: When SCADA, DCS, MES, and ERP systems each hold a different version
 order: 3
 hero:
   eyebrow: Industrial
-  title: One Intelligence Layer. Plant Floor to Enterprise.
-  description: When historians, MES, and maintenance systems each describe the plant differently, the correlations that predict failures stay invisible. Connect them to Quatro and get unified operational intelligence — insights that siloed tools structurally cannot surface, production-ready in weeks.
+  title: "Historian. MES. CMMS. Each Saw the Failure. None Saw It Together."
+  description: "Historians, MES, CMMS, and ERP each hold a different version of what's happening on the plant floor. The correlations that predict failures, explain quality drift, and optimize throughput cross system boundaries that siloed tools can't see across. Quatro connects them. Your team gets unified operational intelligence — 35% less emergency maintenance, 22% OEE improvement, production-ready in weeks."
   primaryCta:
     label: Schedule a Plant Assessment
     href: /contact/demo

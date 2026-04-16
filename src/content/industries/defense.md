@@ -6,8 +6,8 @@ description: "Quatro enables nations to see, understand, and act across the syst
 order: 2
 hero:
   eyebrow: "National Intelligence"
-  title: "Enabling Nations to Protect What Matters."
-  description: "The health of communities. The safety of citizens. The sustainability of sovereign territory. Every nation depends on systems that serve these missions — but those systems don't talk to each other. We connect them into one intelligence model so governments can see the full picture and act on it."
+  title: "Health. Safety. Sovereignty. Three Missions, Zero Shared Intelligence."
+  description: "The health of communities. The safety of citizens. The sustainability of sovereign territory. Every nation depends on systems that serve these missions — but those systems operate through separate agencies, separate budgets, and separate command structures. Quatro connects them into one sovereign intelligence model. Your government sees the full picture and acts on it — with data that never leaves sovereign hands."
   primaryCta:
     label: "Talk to Our Team"
     href: "/contact/demo"

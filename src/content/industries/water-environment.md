@@ -6,8 +6,8 @@ description: "When water sensors, environmental monitors, and regulatory systems
 order: 8
 hero:
   eyebrow: "Water & Environment"
-  title: "One Operational Model. Every Water System."
-  description: "When pressure sensors, flow meters, and quality probes each report through separate SCADA systems, leak patterns stay invisible until they become emergencies. Connect them to Quatro and get predictive system health, automated compliance reporting, and governed autonomous dispatch — intelligence that compounds across every connected system."
+  title: "Half Your Treated Water Disappears Before It Reaches a Tap."
+  description: "Water systems across Latin America lose 40–50% of treated water to undetected leaks. Environmental violations surface weeks after contamination begins. The data to prevent both already exists — in pressure sensors, flow meters, quality probes, and environmental monitors that don't correlate. Quatro connects them and gives your team leak detection in minutes, automated compliance reporting, and governed dispatch workflows."
   primaryCta:
     label: "Request a Demo"
     href: "/contact/demo"

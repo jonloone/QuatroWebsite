@@ -6,8 +6,8 @@ description: "When port systems, airport operations, and logistics corridors eac
 order: 7
 hero:
   eyebrow: Transportation & Logistics
-  title: One Operational Model. Every Logistics Node.
-  description: "When port management, airport operations, and corridor logistics each live in separate systems, delays cascade across the supply chain before anyone connects the cause. Connect them to Quatro and get unified situational awareness, predictive routing intelligence, and coordinated multi-node operations from a single command environment."
+  title: "Ships Wait. Flights Stack. Corridors Stall. The Cause Is Always Somewhere Else."
+  description: "Port operations, airport logistics, and corridor management live in separate systems. When a ship delay cascades into a freight backlog that delays a connecting flight, no system sees the chain. Quatro connects every logistics node into unified situational awareness — predictive routing, maritime awareness, and coordinated multi-modal operations from a single command environment."
   primaryCta:
     label: Request an Operations Briefing
     href: /contact/demo

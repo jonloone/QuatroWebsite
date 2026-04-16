@@ -6,8 +6,8 @@ description: When grid, pipeline, and production systems each describe the same 
 order: 1
 hero:
   eyebrow: Energy
-  title: One Operational Model. Grid, Pipeline, Production, and Environmental Governance.
-  description: Energy operators manage overlapping obligations — grid stability, pipeline safety, production efficiency, and environmental compliance — across systems that were never designed to share data. Quatro connects them into one operational intelligence utility. Predictive analytics, continuous emissions monitoring, and governed autonomous action in weeks — without replacing the infrastructure your team already trusts.
+  title: "Grid, Pipeline, Emissions — Same Data, Different Silos."
+  description: "Every energy operator manages grid reliability, pipeline integrity, production efficiency, and environmental compliance — across systems that were never designed to share data. Quatro connects them. Your team gets one intelligence model that serves all four, with audit trails from operational data to regulatory filing."
   primaryCta:
     label: Talk to Our Team
     href: /contact/demo

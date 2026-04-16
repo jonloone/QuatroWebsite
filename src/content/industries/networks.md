@@ -6,8 +6,8 @@ description: "When terrestrial towers, satellite ground segments, and multi-orbi
 order: 3
 hero:
   eyebrow: "Networks"
-  title: "One Operational View. Ground to Orbit."
-  description: "When terrestrial, satellite, and hybrid networks each report through different management systems, service degradation crosses transport boundaries undetected. Quatro unifies 8,000+ integrations into a single operational view — the same intelligence utility that won Teleport Technology of the Year 2026."
+  title: "Five Platforms. Three Orbits. One Customer Who Doesn't Care Which Failed."
+  description: "Terrestrial towers, satellite ground segments, and multi-orbit constellations each report through different management systems. When a customer loses service, was it the terrestrial link, the backhaul, the gateway, or an orbital anomaly? Your NOC toggles between 5–15 platforms to find out. Quatro unifies 8,000+ integrations into a single operational view — the same intelligence utility that won Teleport Technology of the Year 2026."
   primaryCta:
     label: "Talk to Our Team"
     href: "/contact/demo"

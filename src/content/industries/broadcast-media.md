@@ -6,8 +6,8 @@ description: "When SMPTE ST 2110, SRT, SDI, and satellite signals each flow thro
 order: 9
 hero:
   eyebrow: "Broadcast & Media"
-  title: "Every Signal. One Operational View."
-  description: "When live production, facility systems, and distribution networks each report through separate tools, signal failures cascade across the operation before anyone connects the cause. Connect them to Quatro and get real-time orchestration, predictive equipment health, and coordinated multi-site intelligence."
+  title: "Six Signal Technologies. Six Consoles. One Live Event That Can't Wait."
+  description: "Live production runs on SMPTE ST 2110, SRT, SDI, satellite, and IP — each managed through separate vendor consoles. When a signal fails during a live event, operators context-switch between systems while seconds tick. Quatro connects every signal technology into one operational view with predictive equipment health, real-time orchestration, and coordinated multi-site intelligence."
   primaryCta:
     label: "Request a Demo"
     href: "/contact/demo"
