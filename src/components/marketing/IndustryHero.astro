@@ -1,0 +1,54 @@
+---
+interface Props {
+  eyebrow: string
+  title: string
+  description: string
+  ctaLabel: string
+  ctaHref: string
+  imageSrc?: string
+}
+
+const { eyebrow, title, description, ctaLabel, ctaHref, imageSrc = '/images/hero-bg.png' } = Astro.props
+---
+
+<section class="relative overflow-hidden" style="height: clamp(520px, 75vh, 780px); background: #0f2e24;" data-dither-section data-nav-dark>
+
+  <!-- Bayer 4×4 dither canvas — full bleed background -->
+  <canvas
+    class="absolute inset-0 w-full h-full z-[1]"
+    data-dither-canvas
+    data-image-src={imageSrc}
+    data-pixel-size="1"
+    data-base-speed="0.06"
+    data-hover-speed="0.06"
+    data-green-blend="0.25"
+  ></canvas>
+
+  <!-- Full overlay — base darkening -->
+  <div class="absolute inset-0 pointer-events-none z-[2]" style="background: rgba(10,30,22,0.45);"></div>
+  <!-- Center radial for text contrast -->
+  <div class="absolute inset-0 pointer-events-none z-[3]" style="background: radial-gradient(ellipse 80% 55% at 50% 42%, rgba(10,30,22,0.55) 0%, transparent 70%);"></div>
+  <!-- Bottom gradient -->
+  <div class="absolute inset-0 pointer-events-none z-[4]" style="background: linear-gradient(to top, rgba(10,30,22,0.6) 0%, rgba(10,30,22,0.2) 20%, transparent 40%);"></div>
+
+  <!-- Centered content -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full pt-20 px-8 lg:px-16 text-center">
+    <div class="max-w-4xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-8">
+        {eyebrow}
+      </p>
+      <h1 class="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.08] tracking-tight text-white">
+        {title}
+      </h1>
+      <p class="mt-8 font-display text-lg lg:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto">
+        {description}
+      </p>
+      <div class="mt-10">
+        <a href={ctaHref} class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
+          {ctaLabel}
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
