@@ -5,3 +5,23 @@
 [build.environment]
   NODE_VERSION = "22"
   NPM_FLAGS = "--force"
+
+# Legacy /platform URLs → /utility (edge redirects)
+[[redirects]]
+  from = "/platform/*"
+  to = "/utility/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/platform/*"
+  to = "/es/"
+  status = 301
+  force = true
+
+# Legacy /solutions/:slug → /solutions (solution detail pages retired)
+[[redirects]]
+  from = "/solutions/*"
+  to = "/solutions/"
+  status = 301
+  force = false
