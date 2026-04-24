@@ -1,0 +1,416 @@
+---
+/**
+ * /dev/notation-surface — Sprint 1 demo.
+ *
+ * Renders every NotationSurface mode with a notation mark and caption so the
+ * component can be verified visually. Placeholder imagery is drawn from
+ * existing /public/images/ assets; once real sensor plates land in Sprint 2
+ * this page can be rebuilt to use them.
+ *
+ * Not linked from navigation. Not indexed. Internal dev-only route.
+ */
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import NotationSurface from "@/components/ui/NotationSurface.astro";
+import NotationMark from "@/components/ui/NotationMark.astro";
+import CaptionBlock from "@/components/ui/CaptionBlock.astro";
+
+// A few placeholder images we can reuse across modes. Broken paths still
+// render the component frame, but these all exist in /public/images/.
+const PLACEHOLDERS = {
+  photo: "/images/bento-network-intel.png",
+  dither: "/images/bento-platform-update.png",
+  artifact: "/images/bento-case-study.png",
+  sensor: "/images/bg-deployed-infrastructure-v2.png",
+  sensorAlt: "/images/bg-partners-hero-v2.png",
+};
+
+const MODES = [
+  // Editorial
+  { id: "photo", heading: "1 — photo", block: "charcoal" },
+  { id: "typographic", heading: "2 — typographic", block: "forest" },
+  { id: "schematic", heading: "3 — schematic", block: "paper" },
+  { id: "artifact", heading: "4 — artifact", block: "paper" },
+  { id: "dither", heading: "5 — dither", block: "charcoal" },
+  { id: "numerical", heading: "6 — numerical", block: "forest" },
+  // Sensor
+  { id: "lidar", heading: "7 — lidar", block: "charcoal" },
+  { id: "sar", heading: "8 — sar", block: "charcoal" },
+  { id: "rf-waterfall", heading: "9 — rf-waterfall", block: "charcoal" },
+  { id: "ml-latent", heading: "10 — ml-latent", block: "charcoal" },
+  { id: "earth-obs", heading: "11 — earth-obs", block: "charcoal" },
+  { id: "splat", heading: "12 — splat", block: "charcoal" },
+  // Pair
+  { id: "composite-split", heading: "13 — composite-split", block: "charcoal" },
+  { id: "biomimetic-pair", heading: "14 — biomimetic-pair", block: "paper" },
+  // Layout
+  { id: "earth-obs-timeseries", heading: "15 — earth-obs-timeseries", block: "charcoal" },
+  { id: "density-flow", heading: "16 — density-flow", block: "paper" },
+];
+---
+
+<BaseLayout title="NotationSurface — Dev" description="Sprint 1 demo of all 16 NotationSurface modes.">
+  <main class="bg-neutral-100 min-h-screen px-8 py-16 lg:px-16 font-sans">
+    <header class="mx-auto max-w-5xl mb-16">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500 mb-4">
+        DEV · QUATRO REHAUL SPRINT 1
+      </p>
+      <h1 class="font-serif text-4xl lg:text-6xl leading-[1.05] text-neutral-900 mb-6">
+        NotationSurface — every mode
+      </h1>
+      <p class="max-w-2xl text-lg text-neutral-600">
+        All 14 content modes and 2 layout modes render below with a notation
+        mark and two-line caption. Placeholder imagery is drawn from existing
+        assets and will be replaced with real sensor plates in Sprint 2.
+      </p>
+    </header>
+
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-12">
+      {MODES.map(({ id, heading, block }) => (
+        <section class="space-y-4">
+          <h2 class="font-mono text-xs uppercase tracking-[0.1em] text-neutral-500">
+            {heading}
+          </h2>
+
+          {id === "photo" && (
+            <NotationSurface
+              mode="photo"
+              src={PLACEHOLDERS.photo}
+              alt="Operator photo placeholder."
+              block={block as any}
+              notation="circle"
+              notationPosition="top-6 right-6"
+              caption={{
+                instrument: "OPERATOR PHOTOGRAPHY · GS04 · 2026-04-05",
+                operatorNote: "Operator flagged a run-to-failure bearing on the feed motor.",
+                notationTarget: "bearing",
+              }}
+            />
+          )}
+
+          {id === "typographic" && (
+            <NotationSurface
+              mode="typographic"
+              text="Intelligence rendered visible."
+              block={block as any}
+              notation="underline"
+              notationPosition="bottom-8 left-16 right-16"
+              caption={{
+                instrument: "TYPOGRAPHIC · RECKLESS · H1",
+                operatorNote: "Headline surfaces operate as notation anchors.",
+              }}
+            />
+          )}
+
+          {id === "schematic" && (
+            <NotationSurface
+              mode="schematic"
+              block={block as any}
+              notation="arrow"
+              notationPosition="top-4 right-8"
+              notationRotate="rotate-[18deg]"
+              caption={{
+                instrument: "SCHEMATIC · GS04 · CHAIN-OF-CUSTODY",
+                operatorNote: "Signal path from antenna to billing reconciler.",
+                notationTarget: "billing",
+              }}
+            >
+              <svg viewBox="0 0 400 160" class="block w-full h-auto font-mono">
+                <rect x="20" y="60" width="80" height="40" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <rect x="160" y="60" width="80" height="40" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <rect x="300" y="60" width="80" height="40" fill="none" stroke="currentColor" stroke-width="1.5" />
+                <line x1="100" y1="80" x2="160" y2="80" stroke="currentColor" stroke-width="1.5" />
+                <line x1="240" y1="80" x2="300" y2="80" stroke="currentColor" stroke-width="1.5" />
+                <text x="60" y="85" text-anchor="middle" font-size="9" fill="currentColor">ANTENNA</text>
+                <text x="200" y="85" text-anchor="middle" font-size="9" fill="currentColor">CORRELATOR</text>
+                <text x="340" y="85" text-anchor="middle" font-size="9" fill="currentColor">BILLING</text>
+              </svg>
+            </NotationSurface>
+          )}
+
+          {id === "artifact" && (
+            <NotationSurface
+              mode="artifact"
+              src={PLACEHOLDERS.artifact}
+              alt="Analog work-order placeholder."
+              block={block as any}
+              notation="circle"
+              notationPosition="top-10 left-8"
+              notationRotate="-rotate-6"
+              caption={{
+                instrument: "WORK ORDER · WO-20264021 · 2026-04-06",
+                operatorNote: "Field crew noted the corroded mount on line 3.",
+                notationTarget: "mount",
+              }}
+            />
+          )}
+
+          {id === "dither" && (
+            <NotationSurface
+              mode="dither"
+              src={PLACEHOLDERS.dither}
+              alt="Dither plate placeholder."
+              block={block as any}
+              notation="bracket"
+              notationPosition="top-8 right-4 bottom-8"
+              caption={{
+                instrument: "BAYER DITHER · 2X2 · PLATE-0412",
+                operatorNote: "Static plate carries the signal into the next section.",
+              }}
+            />
+          )}
+
+          {id === "numerical" && (
+            <NotationSurface
+              mode="numerical"
+              text="72%"
+              block={block as any}
+              notation="underline"
+              notationPosition="bottom-12 left-[15%] right-[15%]"
+              caption={{
+                instrument: "KPI · REVENUE-ASSURANCE · 2026-Q1",
+                operatorNote: "Operators recovered seventy-two percent of disputed minutes.",
+                notationTarget: "seventy-two",
+              }}
+            />
+          )}
+
+          {id === "lidar" && (
+            <NotationSurface
+              mode="lidar"
+              src={PLACEHOLDERS.sensor}
+              alt="LIDAR point cloud placeholder."
+              block={block as any}
+              notation="circle"
+              notationPosition="top-8 right-10"
+              caption={{
+                instrument: "USGS 3DEP · 0.7M GSD · 2024-09-15",
+                operatorNote: "Operator traced the conveyor alignment from the point cloud.",
+                notationTarget: "conveyor",
+              }}
+            />
+          )}
+
+          {id === "sar" && (
+            <NotationSurface
+              mode="sar"
+              src={PLACEHOLDERS.sensor}
+              alt="SAR grayscale placeholder."
+              block={block as any}
+              notation="x"
+              notationPosition="bottom-10 left-10"
+              caption={{
+                instrument: "SENTINEL-1 · IW · VV · 2026-03-12T18:42Z",
+                operatorNote: "Flood extent visible in the speckle signature.",
+                notationTarget: "speckle",
+              }}
+            />
+          )}
+
+          {id === "rf-waterfall" && (
+            <NotationSurface
+              mode="rf-waterfall"
+              src={PLACEHOLDERS.sensor}
+              alt="RF waterfall placeholder."
+              block={block as any}
+              notation="bracket"
+              notationPosition="top-8 left-4 bottom-8"
+              caption={{
+                instrument: "L-BAND · 1.575 GHZ · GS04 · 2026-04-02",
+                operatorNote: "Unintended carrier identified inside the GPS L1 band.",
+                notationTarget: "carrier",
+              }}
+            />
+          )}
+
+          {id === "ml-latent" && (
+            <NotationSurface
+              mode="ml-latent"
+              src={PLACEHOLDERS.sensor}
+              alt="ML latent scatter placeholder."
+              block={block as any}
+              notation="starburst"
+              notationPosition="top-12 right-12"
+              caption={{
+                instrument: "LATENT · TRANSFORMER · LAYER-18 · HEAD-04",
+                operatorNote: "Attention clustered on the new structure at the south end.",
+                notationTarget: "clustered",
+              }}
+            />
+          )}
+
+          {id === "earth-obs" && (
+            <NotationSurface
+              mode="earth-obs"
+              src={PLACEHOLDERS.sensor}
+              alt="Earth observation false-color placeholder."
+              block={block as any}
+              notation="circle"
+              notationPosition="bottom-12 right-14"
+              caption={{
+                instrument: "LANDSAT 9 · OLI · NIR 5-4-3 · 2025-11-04",
+                operatorNote: "Forest encroachment at the substation perimeter.",
+                notationTarget: "encroachment",
+              }}
+            />
+          )}
+
+          {id === "splat" && (
+            <NotationSurface
+              mode="splat"
+              src={PLACEHOLDERS.sensor}
+              alt="Gaussian splat still placeholder."
+              block={block as any}
+              notation="circle"
+              notationPosition="top-1/3 left-1/3"
+              caption={{
+                instrument: "LUMA SPLAT · GS04 · 2026-04-05",
+                operatorNote: "Antenna feed geometry captured in situ.",
+                notationTarget: "geometry",
+              }}
+            />
+          )}
+
+          {id === "composite-split" && (
+            <NotationSurface
+              mode="composite-split"
+              src={PLACEHOLDERS.sensor}
+              alt="Left sensor placeholder."
+              srcRight={PLACEHOLDERS.sensorAlt}
+              altRight="Right sensor placeholder."
+              block={block as any}
+              notation="arrow"
+              notationPosition="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              caption={{
+                instrument: "LIDAR · USGS 3DEP · 2024-09-15   /   SAR · SENTINEL-1 · 2026-03-12",
+                operatorNote: "Two instruments agree on the new structure at the south end.",
+                notationTarget: "structure",
+              }}
+            />
+          )}
+
+          {id === "biomimetic-pair" && (
+            <NotationSurface
+              mode="biomimetic-pair"
+              src={PLACEHOLDERS.artifact}
+              alt="Botanical illustration placeholder."
+              srcRight={PLACEHOLDERS.dither}
+              altRight="Technical schematic placeholder."
+              block={block as any}
+              notation="bracket"
+              notationPosition="top-1/4 right-1/2 bottom-1/4"
+              caption={{
+                instrument: "HAECKEL PLATE / NETWORK TOPOLOGY",
+                operatorNote: "Root network and mesh routing share the same branching logic.",
+                notationTarget: "branching",
+              }}
+            />
+          )}
+
+          {id === "earth-obs-timeseries" && (
+            <NotationSurface
+              mode="earth-obs-timeseries"
+              src={PLACEHOLDERS.sensor}
+              alt="1985 view placeholder."
+              srcRight={PLACEHOLDERS.sensorAlt}
+              altRight="2025 view placeholder."
+              dateLeft="LANDSAT 5 · 1985-07-22"
+              dateRight="LANDSAT 9 · 2025-07-19"
+              block={block as any}
+              notation="circle"
+              notationPosition="top-8 right-8"
+              caption={{
+                instrument: "LANDSAT 5 → 9 · FORTY-YEAR DELTA · 1985 / 2025",
+                operatorNote: "Forest loss tracked against mining concession expansion.",
+                notationTarget: "expansion",
+              }}
+            />
+          )}
+
+          {id === "density-flow" && (
+            <NotationSurface
+              mode="density-flow"
+              block={block as any}
+              notation="arrow"
+              notationPosition="top-8 right-8"
+              notationRotate="rotate-45"
+              caption={{
+                instrument: "AIS DENSITY · GALAPAGOS EEZ · 2025-Q4",
+                operatorNote: "Accumulated transits cluster on the no-take boundary.",
+                notationTarget: "boundary",
+              }}
+            >
+              <svg viewBox="0 0 400 160" class="block w-full h-full" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="density-grad" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0%" stop-color="var(--color-forest,#0f4c3a)" stop-opacity="0.15" />
+                    <stop offset="100%" stop-color="var(--color-forest,#0f4c3a)" stop-opacity="0.85" />
+                  </linearGradient>
+                </defs>
+                <rect width="400" height="160" fill="url(#density-grad)" />
+                {Array.from({ length: 30 }).map((_, i) => (
+                  <path
+                    d={`M 0 ${20 + i * 4} Q 100 ${10 + i * 5} 200 ${40 + i * 3} T 400 ${60 + i * 2}`}
+                    stroke="var(--color-forest,#0f4c3a)"
+                    stroke-opacity="0.4"
+                    fill="none"
+                    stroke-width="0.8"
+                  />
+                ))}
+              </svg>
+            </NotationSurface>
+          )}
+        </section>
+      ))}
+    </div>
+
+    <section class="mx-auto max-w-5xl mt-20 space-y-12">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500 mb-3">
+          DEV · NOTATIONMARK ISOLATES
+        </p>
+        <h2 class="font-serif text-2xl text-neutral-900 mb-6">Notation mark atlas</h2>
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-4 bg-[#0a0a0a] p-12">
+          {(["circle","arrow","x","underline","bracket","starburst"] as const).map((m) => (
+            <div class="relative aspect-square">
+              <NotationMark mark={m} color="white" weight="regular" position="inset-0 m-auto" />
+              <span class="absolute bottom-1 left-1/2 -translate-x-1/2 font-mono text-[10px] uppercase tracking-[0.1em] text-white/40">{m}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500 mb-3">
+          DEV · CAPTIONBLOCK ISOLATES
+        </p>
+        <h2 class="font-serif text-2xl text-neutral-900 mb-6">Caption block variants</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-[var(--color-forest,#0f4c3a)] p-6">
+            <CaptionBlock
+              instrument="FOREST BLOCK · RF · L1 · 2026-04-02"
+              operatorNote="Unintended carrier identified inside the GPS L1 band."
+              notationTarget="carrier"
+              block="forest"
+            />
+          </div>
+          <div class="bg-[#0a0a0a] p-6">
+            <CaptionBlock
+              instrument="CHARCOAL BLOCK · SAR · IW · 2026-03-12"
+              operatorNote="Flood extent visible in the speckle signature."
+              notationTarget="speckle"
+              block="charcoal"
+            />
+          </div>
+          <div class="bg-[#F7F5EF] p-6">
+            <CaptionBlock
+              instrument="PAPER BLOCK · LANDSAT · 2025-11-04"
+              operatorNote="Forest encroachment at the substation perimeter."
+              notationTarget="encroachment"
+              block="paper"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
