@@ -1,0 +1,282 @@
+---
+/**
+ * NotationSurface.astro — the canonical image host for Quatro.
+ *
+ * One component, 14 content modes, 2 layout modes. Every image-bearing
+ * surface on the site passes through this component. Stacks content + an
+ * optional NotationMark overlay + an optional two-line CaptionBlock.
+ *
+ * Content modes (6 editorial + 6 sensor + 2 pair):
+ *   photo            — operator photography. img-technical luminosity blend.
+ *   typographic      — Reckless headline on a flat block.
+ *   schematic        — SVG ops diagram (passed via default slot).
+ *   artifact         — analog document (work order, log, page scan).
+ *   dither           — static Bayer dither plate.
+ *   numerical        — oversized Reckless number on a flat block.
+ *   lidar            — point cloud render, forest-on-charcoal.
+ *   sar              — SAR grayscale with native speckle preserved.
+ *   rf-waterfall     — spectrum waterfall, forest-on-charcoal colormap.
+ *   ml-latent        — latent scatter or attention heatmap.
+ *   earth-obs        — multispectral / NIR false-color.
+ *   splat            — gaussian splat still (or <video> in slot).
+ *   composite-split  — two-sensor split with bridging notation. src + srcRight.
+ *   biomimetic-pair  — botanical illustration + technical schematic. src + srcRight.
+ *
+ * Layout modes (require two sources):
+ *   earth-obs-timeseries  — two-date comparison with dates at opposing corners.
+ *   density-flow          — density / flow map (default slot for SVG).
+ *
+ * Shared props:
+ *   mode              — required, one of the sixteen modes above
+ *   src               — primary image src (required for image-bearing modes)
+ *   alt               — required when src is present
+ *   srcRight          — second image (for composite-split / biomimetic-pair / earth-obs-timeseries)
+ *   altRight          — alt for srcRight
+ *   text              — for typographic | numerical
+ *   dateLeft/dateRight — for earth-obs-timeseries
+ *   block             — forest | charcoal | paper — background tone
+ *   notation          — circle | arrow | x | underline | bracket | starburst
+ *   notationPosition  — absolute positioning class (e.g. "top-4 right-6")
+ *   notationRotate    — Tailwind rotate class
+ *   caption           — { instrument, operatorNote, notationTarget }
+ *
+ * Every sensor mode should carry a caption. The skill enforces this via
+ * preflight, not the component. Missing captions are allowed at build time
+ * so components-in-progress compile, but the audit will flag them.
+ */
+
+import CaptionBlock from "./CaptionBlock.astro";
+import NotationMark from "./NotationMark.astro";
+
+type ContentMode =
+  | "photo"
+  | "typographic"
+  | "schematic"
+  | "artifact"
+  | "dither"
+  | "numerical"
+  | "lidar"
+  | "sar"
+  | "rf-waterfall"
+  | "ml-latent"
+  | "earth-obs"
+  | "splat"
+  | "composite-split"
+  | "biomimetic-pair"
+  | "earth-obs-timeseries"
+  | "density-flow";
+
+interface Props {
+  mode: ContentMode;
+  src?: string;
+  alt?: string;
+  srcRight?: string;
+  altRight?: string;
+  text?: string;
+  dateLeft?: string;
+  dateRight?: string;
+  block?: "forest" | "charcoal" | "paper";
+  notation?: "circle" | "arrow" | "x" | "underline" | "bracket" | "starburst";
+  notationPosition?: string;
+  notationRotate?: string;
+  caption?: {
+    instrument: string;
+    operatorNote: string;
+    notationTarget?: string;
+  };
+  class?: string;
+}
+
+const {
+  mode,
+  src,
+  alt = "",
+  srcRight,
+  altRight = "",
+  text,
+  dateLeft,
+  dateRight,
+  block = "charcoal",
+  notation,
+  notationPosition = "top-6 right-6",
+  notationRotate = "",
+  caption,
+  class: className = "",
+} = Astro.props;
+
+// Background tone for the whole surface.
+const blockBg: Record<string, string> = {
+  forest: "bg-[var(--color-forest,#0f4c3a)] text-white",
+  charcoal: "bg-[#0a0a0a] text-white",
+  paper: "bg-[#F7F5EF] text-neutral-900",
+};
+
+// Mark colour should contrast with the block.
+const markColour: "white" | "forest" | "charcoal" =
+  block === "paper" ? "charcoal" : "white";
+
+// Sensor-mode filter / class hints. Sensor imagery is typically already
+// processed upstream (see quatro-sensor-assets). These are light-touch
+// refinements, not colour transforms.
+const sensorFilter: Record<string, string> = {
+  lidar: "[filter:contrast(1.05)_saturate(0.9)]",
+  sar: "[filter:grayscale(1)_contrast(1.08)]",
+  "rf-waterfall": "[filter:contrast(1.1)]",
+  "ml-latent": "",
+  "earth-obs": "",
+  splat: "[mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]",
+  dither: "",
+  artifact: "[filter:sepia(0.05)_contrast(1.05)]",
+  photo: "",
+};
+
+// `img-technical` is the Quatro luminosity-blend treatment for operator
+// photography. The class is expected to exist in the global CSS; if it is
+// not present yet, the image still renders with neutral defaults.
+const photoImgClass = mode === "photo" ? "img-technical" : "";
+
+// Whether this mode uses the default slot for custom SVG / video content
+// instead of an <img>.
+const slotModes: ContentMode[] = ["schematic", "density-flow"];
+const usesSlot = slotModes.includes(mode);
+
+// Whether this mode needs two source images.
+const dualImageModes: ContentMode[] = [
+  "composite-split",
+  "biomimetic-pair",
+  "earth-obs-timeseries",
+];
+const isDual = dualImageModes.includes(mode);
+---
+
+<figure
+  class:list={[
+    "notation-surface group relative isolate overflow-hidden",
+    blockBg[block],
+    className,
+  ]}
+  data-mode={mode}
+  data-block={block}
+>
+  {/* ========== Content layer ========== */}
+  {mode === "typographic" || mode === "numerical" ? (
+    <div
+      class:list={[
+        "flex items-center justify-center",
+        mode === "numerical"
+          ? "font-serif text-[clamp(6rem,20vw,18rem)] leading-none tracking-tight"
+          : "font-serif text-[clamp(2rem,5vw,4.5rem)] leading-[1.05] text-center px-8 py-20",
+      ]}
+    >
+      <span class="relative">{text}</span>
+    </div>
+  ) : usesSlot ? (
+    <div class="relative w-full h-full">
+      <slot />
+    </div>
+  ) : isDual ? (
+    <div class="grid grid-cols-2 gap-px bg-black/40">
+      <div class="relative">
+        {src && (
+          <img
+            src={src}
+            alt={alt}
+            class:list={[
+              "block w-full h-full object-cover",
+              sensorFilter[mode] ?? "",
+            ]}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+        {dateLeft && (
+          <span class="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.1em] text-white/60">
+            {dateLeft}
+          </span>
+        )}
+      </div>
+      <div class="relative">
+        {srcRight && (
+          <img
+            src={srcRight}
+            alt={altRight}
+            class:list={[
+              "block w-full h-full object-cover",
+              sensorFilter[mode] ?? "",
+            ]}
+            loading="lazy"
+            decoding="async"
+          />
+        )}
+        {dateRight && (
+          <span class="absolute bottom-3 right-3 font-mono text-[10px] uppercase tracking-[0.1em] text-white/60">
+            {dateRight}
+          </span>
+        )}
+      </div>
+    </div>
+  ) : (
+    src && (
+      <img
+        src={src}
+        alt={alt}
+        class:list={[
+          "block w-full h-auto",
+          sensorFilter[mode] ?? "",
+          photoImgClass,
+        ]}
+        loading="lazy"
+        decoding="async"
+      />
+    )
+  )}
+
+  {/* ========== Notation overlay ========== */}
+  {notation && (
+    <NotationMark
+      mark={notation}
+      color={markColour}
+      position={`absolute ${notationPosition}`}
+      rotate={notationRotate}
+      animated
+    />
+  )}
+
+  {/* ========== Caption ========== */}
+  {caption && (
+    <CaptionBlock
+      instrument={caption.instrument}
+      operatorNote={caption.operatorNote}
+      notationTarget={caption.notationTarget}
+      block={block}
+      class="px-6 py-4"
+    />
+  )}
+</figure>
+
+<style>
+  /* Photo mode: luminosity blend, desaturated at rest, activates on hover.
+     The :global() selector reaches the <img> child rendered by Astro. */
+  .notation-surface[data-mode="photo"] :global(img.img-technical) {
+    filter: saturate(0.25) contrast(1.05);
+    mix-blend-mode: luminosity;
+    transition: filter 400ms ease-out, mix-blend-mode 400ms ease-out;
+  }
+  .notation-surface[data-mode="photo"]:hover :global(img.img-technical) {
+    filter: saturate(1) contrast(1);
+    mix-blend-mode: normal;
+  }
+
+  /* Ensure sensor imagery fills the surface. */
+  .notation-surface[data-mode="lidar"] :global(img),
+  .notation-surface[data-mode="sar"] :global(img),
+  .notation-surface[data-mode="rf-waterfall"] :global(img),
+  .notation-surface[data-mode="ml-latent"] :global(img),
+  .notation-surface[data-mode="earth-obs"] :global(img),
+  .notation-surface[data-mode="splat"] :global(img),
+  .notation-surface[data-mode="dither"] :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>

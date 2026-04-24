@@ -1,0 +1,112 @@
+---
+/**
+ * CaptionBlock.astro — two-line caption for sensor plates and editorial images.
+ *
+ * Structure (per quatro-sensor-assets/references/caption-template.md):
+ *   Line 1 — instrument metadata. Mono, uppercase, middle-dot separators.
+ *   Line 2 — operator note. Reckless (serif), sentence case, 6–12 words.
+ *   Optional: a single word in the operator note carries an underline mark.
+ *
+ * The caption is the humanist half of the composition. The image is the
+ * futurist half. Every sensor asset on the site carries one.
+ *
+ * Props:
+ *   instrument      — mono metadata line (e.g. "SENTINEL-1 · IW · VV · 2026-03-12T18:42Z")
+ *   operatorNote    — Reckless operator note, sentence case, 6–12 words
+ *   notationTarget  — optional: one word in operatorNote to receive an underline
+ *   block           — surface tone this caption sits on: forest | charcoal | paper
+ *   align           — left (default) | right | center
+ */
+
+import NotationMark from "./NotationMark.astro";
+
+interface Props {
+  instrument: string;
+  operatorNote: string;
+  notationTarget?: string;
+  block?: "forest" | "charcoal" | "paper";
+  align?: "left" | "right" | "center";
+  class?: string;
+}
+
+const {
+  instrument,
+  operatorNote,
+  notationTarget,
+  block = "charcoal",
+  align = "left",
+  class: className = "",
+} = Astro.props;
+
+// Split the operator note around the notation target so we can wrap that
+// single word in a <mark> span with an underline notation on top. Match is
+// case-insensitive and only the first occurrence is marked (captions are
+// short; one underline per caption is the rule).
+type Segment = { text: string; target: boolean };
+let segments: Segment[] = [{ text: operatorNote, target: false }];
+if (notationTarget) {
+  const idx = operatorNote.toLowerCase().indexOf(notationTarget.toLowerCase());
+  if (idx >= 0) {
+    segments = [
+      { text: operatorNote.slice(0, idx), target: false },
+      { text: operatorNote.slice(idx, idx + notationTarget.length), target: true },
+      { text: operatorNote.slice(idx + notationTarget.length), target: false },
+    ];
+  }
+}
+
+// Colour rules — forest and charcoal are dark surfaces; paper is light.
+const toneOnDark = {
+  meta: "font-mono text-[10px] uppercase tracking-[0.1em] text-white/40",
+  note: "font-serif text-sm text-white/70",
+  markColour: "white" as const,
+};
+const toneOnLight = {
+  meta: "font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500",
+  note: "font-serif text-sm text-neutral-700",
+  markColour: "charcoal" as const,
+};
+const tone = block === "paper" ? toneOnLight : toneOnDark;
+
+const alignClass =
+  align === "right" ? "text-right items-end"
+  : align === "center" ? "text-center items-center"
+  : "text-left items-start";
+---
+
+<figcaption
+  class:list={[
+    "caption-block flex flex-col gap-1",
+    alignClass,
+    className,
+  ]}
+  data-block={block}
+>
+  <span class={tone.meta}>{instrument}</span>
+  <span class={tone.note}>
+    {segments.map((seg) =>
+      seg.target ? (
+        <mark class="relative inline-block bg-transparent px-0 text-inherit">
+          {seg.text}
+          <NotationMark
+            mark="underline"
+            color={tone.markColour}
+            weight="thin"
+            position="left-0 right-0 -bottom-1"
+            class="!static !w-full !h-2 block"
+          />
+        </mark>
+      ) : (
+        <Fragment>{seg.text}</Fragment>
+      )
+    )}
+  </span>
+</figcaption>
+
+<style>
+  .caption-block mark {
+    /* Reset default browser mark styles; the underline comes from NotationMark. */
+    background: transparent;
+    color: inherit;
+  }
+</style>

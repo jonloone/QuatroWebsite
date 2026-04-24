@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <filter id="roughen-x" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" />
+      <feDisplacementMap in="SourceGraphic" scale="3" />
+    </filter>
+  </defs>
+  <!--
+    Two strokes crossing. Neither stroke is perfectly centered on the other.
+    The asymmetry is the point.
+  -->
+  <g stroke="currentColor" stroke-width="3" stroke-linecap="round" filter="url(#roughen-x)">
+    <path d="M 20,22 L 102,98" />
+    <path d="M 100,18 L 18,100" />
+  </g>
+</svg>
