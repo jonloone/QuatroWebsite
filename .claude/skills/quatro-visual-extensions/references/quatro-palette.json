@@ -1,0 +1,23 @@
+{
+  "_description": "Quatro brand palette tokens for technical diagrams. Paired with DataOS palette in the upstream technical-diagrams skill. Every Quatro diagram declares @brand: quatro at the top of its source file and renders with these tokens.",
+  "quatro": {
+    "paper": "#F9FAFB",
+    "charcoal": "#0a0a0a",
+    "forest": "#0f4c3a",
+    "structure": "#E2E8F0",
+    "ochre": "#A88B5C",
+    "internalFill": "#FFFFFF",
+    "internalFillDark": "rgba(255,255,255,0.08)",
+    "lineColor": "#475569",
+    "fontFamily": "Roobert, system-ui, sans-serif",
+    "labelFont": "JetBrains Mono Variable, monospace",
+    "emphasisColor": "forest",
+    "ecoAccentColor": "ochre"
+  },
+  "usage_rules": {
+    "single_emphasis": "Only one element per diagram gets forest fill. Two emphases equals emphasis lost.",
+    "ochre_scope": "Ochre appears only on eco-track diagrams. Never on defense, federal capture, SATCOM, or any DataOS crossover.",
+    "brand_declaration": "Every Quatro diagram source file must open with // @brand: quatro",
+    "font_stack": "Roobert for headers, JetBrains Mono for labels at 10px. Reckless is not used in diagrams."
+  }
+}

@@ -78,40 +78,55 @@ cat manifests/sensor-assets.json manifests/motion-assets.json 2>&1
 
 ## Phase: `apply-patches`
 
-Apply the three patches from `skills-package/updates-to-existing/` to the corresponding skills in `.claude/skills/`. Each patch doc has numbered patches (1, 2, 3, ...) that insert or modify specific sections.
+**Approach updated 2026-04-24.** The original plan was to edit the three target skills (`quatro-ui-system`, `image-generation`, `technical-diagrams`) in place. That turned out to be the wrong approach because those skills are served from an Anthropic-managed namespace rather than the user's local filesystem. Forking them to project-local copies would snapshot current content and permanently diverge from upstream updates.
+
+**New approach: install a single overlay skill, `quatro-visual-extensions`, that stacks with the upstream base skills.** The overlay adds all the Quatro 2026 expansion content without touching the upstream files.
 
 **Workflow:**
 
-1. Read the current state of all three target skills:
-   - `.claude/skills/quatro-ui-system/SKILL.md`
-   - `.claude/skills/image-generation/SKILL.md`
-   - `.claude/skills/technical-diagrams/SKILL.md`
+1. Copy the overlay skill into `.claude/skills/`:
 
-2. For each patch doc in `skills-package/updates-to-existing/`, read the patch instructions and apply each numbered patch to the target SKILL.md. Use the Edit tool with precise old/new strings derived from the patch doc.
-
-3. For patches that create new files (e.g., `references/STYLE-BRIEF-ECO.md`, new Quatro templates in `technical-diagrams/templates/`), use the Write tool.
-
-4. For patches that update JSON (`assets/brand-styles.json`), use Edit to insert the new key.
-
-5. After all three patches are applied, verify:
-   - Each target SKILL.md still has valid YAML frontmatter.
-   - New sections are present.
-   - No existing content was removed.
-   - The files parse cleanly.
-
-6. Git commit:
    ```bash
-   git add .claude/skills/quatro-ui-system .claude/skills/image-generation .claude/skills/technical-diagrams
-   git commit -m "Apply rehaul patches to quatro-ui-system, image-generation, technical-diagrams"
+   cp -r skills-package/quatro-visual-extensions .claude/skills/quatro-visual-extensions
    ```
 
-**Success criteria:**
-- All three patches applied in full.
-- Files parse with valid frontmatter.
-- Git checkpoint taken.
-- Report what was changed per file.
+2. Verify it loaded. Run:
 
-**If any patch is ambiguous** (e.g., the current SKILL.md doesn't have the exact section the patch expects), pause and ask Jonathan before making up an insertion point.
+   ```bash
+   ls .claude/skills/quatro-visual-extensions/
+   ```
+
+   Should show `SKILL.md` and `references/` directory with five files (style brief, palette JSON, Mermaid theme, two SVG templates).
+
+3. Smoke test. Open a test Claude Code session and ask a Quatro visual question ("describe the Quatro NotationSurface modes" or "what are the retro-futurist references permitted on Quatro"). Confirm the overlay content answers — not the base upstream content alone.
+
+4. Git checkpoint:
+
+   ```bash
+   git add .claude/skills/quatro-visual-extensions
+   git commit -m "Install quatro-visual-extensions overlay
+
+   Adds the Quatro 2026 design language expansion as an overlay that stacks
+   with upstream quatro-ui-system, image-generation, and technical-diagrams
+   without replacing them. Covers the 14 NotationSurface modes, 1964-1984
+   retro canon, humanist-futurist balance, peer-brand preflight, ochre
+   eco-track accent, v7e eco-futurist generation style, Quatro palette fork
+   for diagrams, BGP-topology and root-network diagram modes, Quatro Mermaid
+   theme, real-before-mimic preference rule."
+   ```
+
+5. The three patch docs in `skills-package/updates-to-existing/` are now reference material, not an action item. They document the same content that lives in the overlay skill. Keep them for archival clarity on what the expansion adds.
+
+**Success criteria:**
+- `quatro-visual-extensions` installed in `.claude/skills/`.
+- Smoke test confirms overlay triggers alongside base skills on Quatro work.
+- Git checkpoint taken.
+- `skills-package/updates-to-existing/` retained as reference, not as pending work.
+
+**Why overlay, not fork:**
+- Forks lose upstream updates. If Anthropic improves `image-generation` or `technical-diagrams`, a fork misses those improvements.
+- The overlay is one skill to maintain, not three.
+- The additions are additive by nature (no subtraction from upstream). Stacking cleanly expresses the additive relationship.
 
 ---
 

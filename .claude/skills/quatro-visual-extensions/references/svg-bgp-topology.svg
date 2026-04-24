@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" fill="none">
+  <!--
+    BGP-topology poster starter template.
+    The peer1-hosting-poster aesthetic. Central anchor node, radial peer nodes, dense labels.
+    Forest-on-paper by default (light). Invert to white-on-charcoal for dark pages.
+
+    Usage:
+      - Replace label placeholders with real node names.
+      - Add or remove peer nodes by duplicating the <g class="peer"> blocks.
+      - The one emphasized peer gets the "emphasis" class (forest fill).
+
+    Every label uses JetBrains Mono at 10px per Quatro conventions.
+  -->
+  <defs>
+    <style>
+      .bg { fill: #F9FAFB; }
+      .anchor { fill: #0a0a0a; stroke: none; }
+      .peer { fill: none; stroke: #0a0a0a; stroke-width: 1; }
+      .peer-node { fill: #F9FAFB; stroke: #0a0a0a; stroke-width: 1; }
+      .emphasis { fill: #0f4c3a; stroke: #0f4c3a; }
+      .label { font-family: "JetBrains Mono Variable", monospace; font-size: 10px; fill: #0a0a0a; text-transform: uppercase; letter-spacing: 0.1em; }
+      .title { font-family: "Roobert", system-ui, sans-serif; font-size: 32px; fill: #0a0a0a; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1600" height="900" />
+
+  <!-- Title -->
+  <text class="title" x="60" y="80">Topology of Autonomous Systems</text>
+  <text class="label" x="60" y="108">NETWORK · 2026-04-23</text>
+
+  <!-- Central anchor node -->
+  <g transform="translate(800, 460)">
+    <circle class="anchor" r="8" />
+    <text class="label" x="16" y="4">ANCHOR NODE</text>
+  </g>
+
+  <!-- Example peer nodes. Duplicate and rotate for a fuller graph. -->
+  <!-- Each peer is a line from anchor to node position plus a label. -->
+
+  <!-- Peer 1 (upper left) -->
+  <g class="peer" transform="translate(800, 460)">
+    <line x1="0" y1="0" x2="-320" y2="-240" />
+  </g>
+  <g transform="translate(480, 220)">
+    <circle class="peer-node" r="5" />
+    <text class="label" x="10" y="4">PEER-AS-001</text>
+  </g>
+
+  <!-- Peer 2 (upper) -->
+  <g class="peer" transform="translate(800, 460)">
+    <line x1="0" y1="0" x2="0" y2="-340" />
+  </g>
+  <g transform="translate(800, 120)">
+    <circle class="peer-node" r="5" />
+    <text class="label" x="10" y="4">PEER-AS-002</text>
+  </g>
+
+  <!-- Peer 3 (upper right) -->
+  <g class="peer" transform="translate(800, 460)">
+    <line x1="0" y1="0" x2="320" y2="-240" />
+  </g>
+  <g transform="translate(1120, 220)">
+    <circle class="peer-node" r="5" />
+    <text class="label" x="10" y="4">PEER-AS-003</text>
+  </g>
+
+  <!-- Peer 4 (right, emphasis — the one the diagram makes a point about) -->
+  <g class="peer" transform="translate(800, 460)">
+    <line x1="0" y1="0" x2="380" y2="0" />
+  </g>
+  <g transform="translate(1180, 460)">
+    <circle class="emphasis" r="8" />
+    <text class="label" x="16" y="4">PEER-AS-004 · MESH ENTRY</text>
+  </g>
+
+  <!-- Peer 5 (lower right) -->
+  <g class="peer" transform="translate(800, 460)">
+    <line x1="0" y1="0" x2="320" y2="240" />
+  </g>
+  <g transform="translate(1120, 700)">
+    <circle class="peer-node" r="5" />
+    <text class="label" x="10" y="4">PEER-AS-005</text>
+  </g>
+
+  <!-- Peer 6 (lower) -->
+  <g class="peer" transform="translate(800, 460)">
+    <line x1="0" y1="0" x2="0" y2="340" />
+  </g>
+  <g transform="translate(800, 800)">
+    <circle class="peer-node" r="5" />
+    <text class="label" x="10" y="4">PEER-AS-006</text>
+  </g>
+
+  <!-- Peer 7 (lower left) -->
+  <g class="peer" transform="translate(800, 460)">
+    <line x1="0" y1="0" x2="-320" y2="240" />
+  </g>
+  <g transform="translate(480, 700)">
+    <circle class="peer-node" r="5" />
+    <text class="label" x="10" y="4">PEER-AS-007</text>
+  </g>
+
+  <!-- Peer 8 (left) -->
+  <g class="peer" transform="translate(800, 460)">
+    <line x1="0" y1="0" x2="-380" y2="0" />
+  </g>
+  <g transform="translate(420, 460)">
+    <circle class="peer-node" r="5" />
+    <text class="label" x="10" y="4">PEER-AS-008</text>
+  </g>
+
+  <!-- Caption / footer -->
+  <text class="label" x="60" y="860">TOPOLOGY · OPERATIONAL INTELLIGENCE NETWORK · 08 PEERS</text>
+</svg>
