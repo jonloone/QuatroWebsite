@@ -1,0 +1,120 @@
+{
+  "_description": "Curated seed catalog of free public-domain assets for the Quatro site. Used by fetch-seed-assets.py. All entries are verifiably public domain or permissively licensed. Add entries as new sources are vetted.",
+  "_version": "1.0",
+  "_last_updated": "2026-04-24",
+
+  "haeckel_plates": {
+    "source": "wikimedia-commons",
+    "license": "public-domain",
+    "attribution": "Ernst Haeckel, Kunstformen der Natur (1899-1904). Via Wikimedia Commons.",
+    "target_manifest": "illustration-assets.json",
+    "target_dir": "public/images/illustration/haeckel",
+    "plates": [
+      "Haeckel_Radiolaria_4.jpg",
+      "Haeckel_Radiolaria_21.jpg",
+      "Haeckel_Diatomea_4.jpg",
+      "Haeckel_Discomedusae_8.jpg",
+      "Haeckel_Discomedusae_28.jpg",
+      "Haeckel_Siphonophorae_7.jpg",
+      "Haeckel_Actiniae.jpg",
+      "Haeckel_Stephoidea.jpg",
+      "Haeckel_Asteridea.jpg",
+      "Haeckel_Ascomycetes.jpg",
+      "Haeckel_Copepoda.jpg",
+      "Haeckel_Prosobranchia.jpg",
+      "Haeckel_Orchidae.jpg",
+      "Haeckel_Trochilidae.jpg",
+      "Haeckel_Anthomedusae.jpg"
+    ]
+  },
+
+  "whole_earth_catalog": {
+    "source": "internet-archive",
+    "license": "public-domain-scan",
+    "attribution": "Whole Earth Catalog (1968-1971). Scanned by Internet Archive.",
+    "target_manifest": "illustration-assets.json",
+    "target_dir": "public/images/illustration/archival",
+    "items": [
+      {
+        "item_id": "TheWholeEarthCatalogFall1968",
+        "files": [
+          "TheWholeEarthCatalogFall1968.pdf"
+        ],
+        "caption": "Whole Earth Catalog, Fall 1968 issue."
+      },
+      {
+        "item_id": "TheLastWholeEarthCatalog",
+        "files": [
+          "TheLastWholeEarthCatalog.pdf"
+        ],
+        "caption": "The Last Whole Earth Catalog, 1971."
+      }
+    ]
+  },
+
+  "nasa_archival": {
+    "source": "nasa-images-api",
+    "license": "public-domain",
+    "attribution": "NASA / public domain.",
+    "target_manifest": "illustration-assets.json",
+    "target_dir": "public/images/illustration/archival",
+    "queries": [
+      {
+        "query": "Apollo mission control 1969",
+        "max_results": 3,
+        "prefix": "nasa-apollo-mission-control"
+      },
+      {
+        "query": "Earth from space Apollo",
+        "max_results": 3,
+        "prefix": "nasa-earth-apollo"
+      },
+      {
+        "query": "ISS exterior",
+        "max_results": 2,
+        "prefix": "nasa-iss-exterior"
+      },
+      {
+        "query": "Saturn V assembly",
+        "max_results": 2,
+        "prefix": "nasa-saturn-v-assembly"
+      }
+    ]
+  },
+
+  "loc_fsa_owi": {
+    "source": "library-of-congress",
+    "license": "public-domain",
+    "attribution": "Library of Congress, FSA/OWI Collection. Public domain.",
+    "target_manifest": "illustration-assets.json",
+    "target_dir": "public/images/illustration/archival",
+    "queries": [
+      {
+        "query": "factory workers industrial",
+        "max_results": 3,
+        "prefix": "loc-fsa-industrial"
+      },
+      {
+        "query": "power plant electrical",
+        "max_results": 2,
+        "prefix": "loc-fsa-power"
+      },
+      {
+        "query": "railroad yard locomotive",
+        "max_results": 2,
+        "prefix": "loc-fsa-rail"
+      }
+    ]
+  },
+
+  "_notes": {
+    "authenticated_sources_skipped": [
+      "Copernicus Sentinel-1 SAR — requires Copernicus Data Space registration",
+      "USGS Landsat — requires Earthdata Login",
+      "Alaska Satellite Facility — requires Earthdata Login",
+      "USGS 3DEP LIDAR — public but very large tiles, skip by default",
+      "SAOCOM Argentina SAR — requires CONAE registration"
+    ],
+    "why_these_sources": "All four sources (Wikimedia, Internet Archive, NASA Images, Library of Congress) have stable HTTP APIs, no authentication requirement for public domain content, and provide high-resolution assets suitable for Quatro's editorial work. They cover the illustration and archival lanes in one fetch pass. Sensor-specific sources (LIDAR, SAR, earth observation) require authenticated fetchers that ship separately."
+  }
+}
