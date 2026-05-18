@@ -4,16 +4,16 @@ tagline: "Modernize Without Replacing"
 heroImage: "/images/solution-grid-operations.png"
 description: "Overlay modernization that adds operational intelligence, DER integration, and storm response to existing SCADA — delivering results in months, not years."
 order: 6
-hero:
   eyebrow: "Grid Health"
-  title: "Modern Grid Intelligence. Legacy SCADA Intact."
-  description: "Don't rip out your SCADA. Overlay it with intelligent operator guidance, predictive analytics, DER integration, and governed autonomous action for storm response that deploys in months, not years."
+  title: "See the Grid. Prevent the Outage."
+  description: "Grid operators are drowning in SCADA alarms but starving for context. Quatro integrates sensor data, weather, and maintenance history to predict grid failures and route work orders before the outage occurs."
   primaryCta:
-    label: "Schedule a Grid Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
-    label: "Talk to a Grid Engineer"
+    label: "Talk to a Grid Specialist"
     href: "/contact/sales"
+  microcopy: 'Intelligence in weeks · Your team owns it from day one'
 stats:
   - value: "200+"
     label: "Substations Orchestrated"
@@ -60,10 +60,12 @@ proofPoint:
   narrative: "A utility serving 2 million customers deployed Quatro across 200+ substations, overlaying legacy ABB, GE, and Siemens SCADA. Storm response playbooks reduced average restoration time by 60%, and cross-domain correlation saved 2,000 truck rolls per year."
 cta:
   primary:
-    label: "Schedule a Grid Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondary:
-    label: "Talk to a Grid Engineer"
+    label: "Talk to a Grid Specialist"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your SCADA infrastructure and show how overlay modernization delivers results in months, not years."
+  microcopy: "Typical discovery: 30-45 minutes. We'll map your grid operations and show you how to move from reactive alarms to proactive maintenance."
+
+
 ---

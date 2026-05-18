@@ -4,16 +4,16 @@ tagline: "Operational Fleet Intelligence"
 heroImage: "/images/solution-fleet-logistics.png"
 description: "Unified fleet management with AI-driven route optimization and predictive maintenance that reduces fuel costs by 14% and improves on-time delivery by 22%."
 order: 5
-hero:
   eyebrow: "Fleet & Logistics"
   title: "Optimize Every Mile. Track Every Asset."
-  description: "When GPS, maintenance logs, fuel systems, and dispatch tools each operate independently, route inefficiencies and breakdown risks cross fleet boundaries undetected. Quatro unifies them into one operational view — intelligent routing, predictive maintenance, and real-time dispatch."
+  description: "When GPS, maintenance logs, fuel systems, and dispatch tools each operate independently, route inefficiencies and breakdown risks cross fleet boundaries undetected. Quatro integrates data, reasoning, and workflows into one operational view."
   primaryCta:
-    label: "Schedule a Fleet Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Fleet Specialist"
     href: "/contact/sales"
+  microcopy: 'Intelligence in weeks · Your team owns it from day one'
 stats:
   - value: "14%"
     label: "Fuel Savings"
@@ -58,10 +58,12 @@ proofPoint:
   narrative: "A national logistics operator with 2,500+ vehicles replaced a patchwork of three telematics vendors and manual dispatch. AI-optimized routing reduced fuel costs by 14% (~$4.2M annually), and predictive maintenance cut unplanned vehicle downtime by 35%."
 cta:
   primary:
-    label: "Schedule a Fleet Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondary:
     label: "Talk to a Fleet Specialist"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 30-45 minutes. We'll map your current fleet tools and show where AI-powered intelligence replaces manual dispatch and static routing."
+  microcopy: "Typical discovery: 30-45 minutes. We'll map your current fleet tools and show where AI-powered intelligence replaces manual dispatch and static routing."
+
+
 ---

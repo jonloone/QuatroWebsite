@@ -4,16 +4,16 @@ tagline: "Unified Multi-Vendor NOC"
 heroImage: "/images/solution-network-operations.png"
 description: "Replace vendor silos with unified network intelligence across terrestrial and satellite domains. 80% fewer false alarms, 55% faster MTTR, and one network for any vendor's equipment — ground to orbit."
 order: 7
-hero:
   eyebrow: "Network Operations"
-  title: "One NOC. Any Vendor. Zero Silos."
-  description: "When 5–15 vendor tools each show a different slice of the network, service degradation crosses domain boundaries undetected. Quatro unifies terrestrial and satellite operations with intelligent correlation, governed autonomous remediation, and cross-domain SLA compliance — tower to ground station to orbit."
+  title: "Mission-Aware Service Assurance."
+  description: "When a network fault occurs, NOCs struggle to correlate the technical failure with the specific mission or customer impacted. Quatro integrates hybrid network telemetry to prioritize response based on operational impact."
   primaryCta:
-    label: "Schedule a NOC Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Network Engineer"
     href: "/contact/sales"
+  microcopy: 'Intelligence in weeks · Your team owns it from day one'
 stats:
   - value: "80%"
     label: "Fewer False Alarms"
@@ -60,10 +60,12 @@ proofPoint:
   narrative: "A regional tower operator managing 900+ sites unified fragmented vendor tools with Quatro. Operational intelligence through alarm correlation reduced false alarms by 80%, and enriched trouble tickets cut MTTR by 55%. Five separate monitoring systems unified into one."
 cta:
   primary:
-    label: "Schedule a NOC Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondary:
     label: "Talk to a Network Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 30-45 minutes. We'll map your vendor tools, quantify your alarm noise ratio, and show where cross-domain correlation eliminates the triage bottleneck."
+  microcopy: "Typical discovery: 30-45 minutes. We'll map your network operations and show you how to tie technical faults to mission impact."
+
+
 ---

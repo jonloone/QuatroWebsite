@@ -4,16 +4,16 @@ tagline: "Predict Failures Before They Happen"
 heroImage: "/images/solution-asset-monitoring.png"
 description: "Asset health monitoring that shifts operations from reactive to predictive, reducing unplanned downtime by up to 60% across your entire infrastructure."
 order: 1
-hero:
   eyebrow: "Asset Health"
   title: "Track Every Asset. Predict Every Failure."
-  description: "When asset data lives in separate maintenance, SCADA, and ERP systems, failure patterns stay invisible until something breaks. Quatro watches continuously and predicts failures before they happen."
+  description: "When asset data lives in separate maintenance, SCADA, and ERP systems, failure patterns stay invisible until something breaks. Quatro connects the intelligence stack to watch continuously and predict failures before they happen."
   primaryCta:
     label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
     label: "Talk to an Engineer"
     href: "/contact/sales"
+  microcopy: 'Intelligence in weeks · Your team owns it from day one'
 stats:
   - value: "60%"
     label: "Downtime Reduction"
@@ -58,10 +58,12 @@ proofPoint:
   narrative: "A mid-major E&P operator with 500+ well sites deployed Quatro to unified fragmented monitoring systems. Predictive maintenance for the ESP fleet delivered 45% reduction in unplanned downtime and 15% improvement in production uptime through early intervention."
 cta:
   primary:
-    label: "Schedule an Asset Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondary:
     label: "Talk to an Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 30-45 minutes. We'll map your current monitoring tools and show you where predictive intelligence replaces reactive maintenance."
+  microcopy: "Typical discovery: 30-45 minutes. We'll map your current monitoring tools and show you where predictive intelligence replaces reactive maintenance."
+
+
 ---

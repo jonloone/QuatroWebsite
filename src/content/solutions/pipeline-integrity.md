@@ -4,16 +4,16 @@ tagline: "Unified Integrity and Security"
 heroImage: "/images/solution-pipeline-security.png"
 description: "Multi-method leak detection with AI cross-correlation, partner-delivered predictive analytics and operational decisioning, and satellite corridor monitoring — reducing false alarms by 75% while improving detection sensitivity to 0.5% of nominal flow. An integrated partner ecosystem delivers capabilities no single vendor can match."
 order: 2
-hero:
   eyebrow: "Pipeline Integrity"
-  title: "Detect Leaks Faster. Respond Smarter."
-  description: "Converged integrity and security monitoring for pipeline corridors. Multi-method AI fusion, predictive decisioning from our partner ecosystem, and satellite corridor intelligence eliminate false alarms and close the gap between detection, prediction, and response."
+  title: "Continuous Monitoring. Verified Compliance."
+  description: "Pipeline integrity requires correlating pressure drops, flow rates, and environmental sensors in real-time. Quatro connects the operational data layer so your team can detect anomalies and automate compliance reporting."
   primaryCta:
-    label: "Schedule a Pipeline Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
-    label: "Talk to a Pipeline Engineer"
+    label: "Talk to a Pipeline Specialist"
     href: "/contact/sales"
+  microcopy: 'Intelligence in weeks · Your team owns it from day one'
 stats:
   - value: "75%"
     label: "Fewer False Alarms"
@@ -62,10 +62,12 @@ proofPoint:
   narrative: "A midstream operator with 3,500 km of pipelines unified legacy RTTM and separate physical security tools. Multi-method AI fusion with partner-delivered predictive analytics reduced false alarms from 200+/month to ~50, and governed autonomous action cut detection-to-dispatch from 22 minutes to under 3 minutes. Satellite corridor monitoring now covers the full pipeline network continuously."
 cta:
   primary:
-    label: "Schedule a Pipeline Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondary:
-    label: "Talk to a Pipeline Engineer"
+    label: "Talk to a Pipeline Specialist"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 30-45 minutes. We'll map your current leak detection and security systems and show where multi-method AI fusion eliminates false alarms."
+  microcopy: "Typical discovery: 30-45 minutes. We'll map your pipeline operations and show you how to automate environmental compliance."
+
+
 ---
