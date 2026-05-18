@@ -1,0 +1,98 @@
+{
+  "_schema_version": "1.0",
+  "_description": "Manifest schema for sensor assets. Each entry is a single asset. Copy this template and fill in the fields. Required fields are marked with // REQUIRED.",
+  "_example_entries": [
+    {
+      "id": "sit-gs04-20260405",
+      "path": "/images/sensor/lidar/sit-gs04-20260405.png",
+      "sensor": "lidar",
+      "instrument": "QUATRO CAPTURE · 0.5M GSD · 2026-04-05",
+      "subject": "ground-station-04",
+      "date": "2026-04-05",
+      "aspect": "16:9",
+      "dimensions": "2560x1440",
+      "file_size_kb": 1840,
+      "palette": "forest-on-charcoal",
+      "operator_note": "Operator traced the conveyor alignment from the point cloud.",
+      "notation": {
+        "mark": "circle",
+        "target_word": "conveyor",
+        "color": "white",
+        "position": "center-left"
+      },
+      "license": "quatro-customer-anonymous",
+      "attribution": "Quatro operational capture. Site anonymized.",
+      "real_or_mimic": "real",
+      "consent_reference": "MSA-ANON-2026-001 Section 7.3",
+      "used_on_pages": [
+        "/industries/critical-infrastructure",
+        "/solutions/site-intelligence"
+      ],
+      "created_at": "2026-04-05T14:22:00Z",
+      "status": "published",
+      "source": {
+        "type": "quatro-capture",
+        "tool": "DJI Matrice 350 + Zenmuse L2",
+        "captured_by": "Quatro field team",
+        "processing_script": "scripts/render-pointcloud.py"
+      }
+    },
+    {
+      "id": "s1-iw-vv-esmeraldas-coast-20260312",
+      "path": "/images/sensor/sar/s1-iw-vv-esmeraldas-coast-20260312.png",
+      "sensor": "sar",
+      "instrument": "SENTINEL-1 · IW · VV · 2026-03-12T18:42Z",
+      "subject": "esmeraldas-coast",
+      "date": "2026-03-12",
+      "aspect": "16:9",
+      "dimensions": "2560x1440",
+      "file_size_kb": 1620,
+      "palette": "native-grayscale",
+      "operator_note": "Flood extent visible in the speckle signature.",
+      "notation": {
+        "mark": "arrow",
+        "target_word": null,
+        "color": "white",
+        "position": "upper-right-to-center"
+      },
+      "license": "copernicus",
+      "attribution": "Contains modified Copernicus Sentinel data 2026.",
+      "real_or_mimic": "real",
+      "consent_reference": null,
+      "used_on_pages": [
+        "/industries/critical-infrastructure",
+        "/insights/flood-response-latam"
+      ],
+      "created_at": "2026-03-15T09:00:00Z",
+      "status": "published",
+      "source": {
+        "type": "copernicus-sentinel-hub",
+        "product_id": "S1A_IW_GRDH_1SDV_20260312T184200_20260312T184225_012345",
+        "acquired_via": "EO Browser",
+        "processing_script": "scripts/sar-posterize.py"
+      }
+    }
+  ],
+  "_schema_fields": {
+    "id": "REQUIRED — unique slug matching the filename without extension",
+    "path": "REQUIRED — absolute web path from public/ root",
+    "sensor": "REQUIRED — one of: lidar, sar, rf, eo, splat, multispectral, composite",
+    "instrument": "REQUIRED — instrument metadata line for the caption",
+    "subject": "REQUIRED — what the asset shows (slug form)",
+    "date": "REQUIRED — acquisition date YYYY-MM-DD",
+    "aspect": "REQUIRED — aspect ratio string",
+    "dimensions": "REQUIRED — pixel dimensions WxH",
+    "file_size_kb": "REQUIRED — file size in KB",
+    "palette": "REQUIRED — palette variant applied",
+    "operator_note": "REQUIRED — the Reckless caption line",
+    "notation": "OPTIONAL — notation mark details. Set to null if no notation applied.",
+    "license": "REQUIRED — from controlled vocabulary. Never null on published entries.",
+    "attribution": "REQUIRED if license requires it",
+    "real_or_mimic": "REQUIRED — real or mimic",
+    "consent_reference": "REQUIRED if license is quatro-customer-*",
+    "used_on_pages": "OPTIONAL — where the asset appears. Updated by the build.",
+    "created_at": "REQUIRED — ISO 8601 timestamp",
+    "status": "REQUIRED — one of: draft, review, published, retired",
+    "source": "REQUIRED — source metadata with type and origin"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "_description": "Quatro brand palette tokens v2 (May 2026 refinement). Paired with DataOS palette in the upstream technical-diagrams skill. Every Quatro diagram declares @brand: quatro at the top of its source file and renders with these tokens. Eco-track diagrams use the warm palette (paper, ink, bone, taupe). Defense and technical diagrams use the slate palette. See QUATRO-PALETTE-V2-PROPOSAL.md for full rationale.",
+  "quatro": {
+    "_spine": "Forest and charcoal are the spine of every Quatro surface.",
+    "forest": "#0F4C3A",
+    "charcoal": "#0a0a0a",
+
+    "_warm_spine": "Eco-track surfaces use warm paper and ink instead of cool slate. Inspired by Whole Earth Catalog, McLuhan Understanding Media, Global Interior LATAM.",
+    "paper": "#F2EBDA",
+    "newsprint": "#E5D9BC",
+    "ink": "#16161E",
+    "bone": "#CFCBBE",
+    "taupe": "#8D8071",
+
+    "_accents": "Ochre is the canonical eco-track second color. Indigo-ink is the editorial second accent. Terracotta is warnings only.",
+    "ochre": "#A88B5C",
+    "ochreDeep": "#9C6B4A",
+    "terracotta": "#8C4E33",
+    "indigoInk": "#243248",
+    "moss": "#6E8A6F",
+
+    "_defense_scope": "Slate-marine and horizon-tan are scoped to defense, federal capture, SATCOM hardware photography, and the homepage hero gradient. Never on eco-track surfaces.",
+    "slateMarine": "#4D6870",
+    "horizonTan": "#9A8A7A",
+
+    "_technical_surfaces": "Cool slate scale stays unchanged for dashboards, ops UI, schematic mode. Lives separately from the warm scale.",
+    "slate50": "#F9FAFB",
+    "slate200": "#E2E8F0",
+    "slate500": "#64748b",
+    "slate700": "#334155",
+    "slate900": "#020617",
+
+    "internalFill": "#FFFFFF",
+    "internalFillDark": "rgba(255,255,255,0.08)",
+    "lineColor": "#475569",
+    "fontFamily": "Roobert, system-ui, sans-serif",
+    "labelFont": "JetBrains Mono Variable, monospace",
+    "emphasisColor": "forest",
+    "ecoAccentColor": "ochre"
+  },
+  "usage_rules": {
+    "single_emphasis": "Only one element per diagram gets forest fill. Two emphases equals emphasis lost.",
+    "ochre_scope": "Ochre appears only on eco-track diagrams. Never on defense, federal capture, SATCOM, or any DataOS crossover.",
+    "warm_vs_slate": "Eco-track diagrams use paper (#F2EBDA) background and ink (#16161E) text. Defense and technical diagrams use slate50 (#F9FAFB) and slate900 (#020617).",
+    "slate_marine_scope": "Slate-marine (#4D6870) is only for hardware/product photography backdrops on defense surfaces. Never as a diagram background.",
+    "horizon_tan_scope": "Horizon-tan (#9A8A7A) is a gradient stop only. Never as a solid fill or diagram color.",
+    "brand_declaration": "Every Quatro diagram source file must open with // @brand: quatro",
+    "font_stack": "Roobert for headers, JetBrains Mono for labels at 10px. Reckless is not used in diagrams."
+  }
+}

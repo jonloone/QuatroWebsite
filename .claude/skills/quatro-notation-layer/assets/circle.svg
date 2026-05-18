@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <filter id="roughen" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1" />
+      <feDisplacementMap in="SourceGraphic" scale="3" />
+    </filter>
+  </defs>
+  <!--
+    A hand-drawn circle: starts at about 10 o'clock, sweeps clockwise, overshoots close.
+    Path is two bezier arcs for a naturally drawn feel.
+    Color is set via currentColor — parent sets color via `style="color: var(--color-forest)"` or similar.
+  -->
+  <path
+    d="M 45,75 C 65,30 135,30 160,80 C 175,130 140,175 90,170 C 40,165 25,115 50,72"
+    stroke="currentColor"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#roughen)"
+  />
+</svg>

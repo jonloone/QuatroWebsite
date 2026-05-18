@@ -1,0 +1,107 @@
+---
+/**
+ * LowercaseHero — v2 hero title pattern from QUATRO-DESIGN-LANGUAGE-V2.md §3.
+ *
+ * Adapted from Ark Robotics' "infrastructure layer *for mass robotics*" treatment.
+ * Lowercase Roobert for the regular phrase, lowercase Reckless italic for the
+ * emphasis phrase. Scope: homepage + defense pages only. Eco-track pages keep
+ * proper-case Reckless display.
+ *
+ * Two ways to pass the title:
+ *  1. `regular` + `emphasis` props for the common two-part form.
+ *  2. Default slot for full control (use <em> inside for the italic emphasis).
+ *
+ * The `register` prop drives text color and accent:
+ *   - 'defense' (default): paper text on gradient/charcoal
+ *   - 'editorial': ink text on warm paper (rare — homepage transition only)
+ *
+ * Layout-only; no background. Wrap in FieldHeroGradient or place on charcoal/paper.
+ */
+
+interface Props {
+  regular?: string;
+  emphasis?: string;
+  eyebrow?: string;
+  sub?: string;
+  register?: "defense" | "editorial";
+  align?: "left" | "center";
+  class?: string;
+}
+
+const {
+  regular,
+  emphasis,
+  eyebrow,
+  sub,
+  register = "defense",
+  align = "left",
+  class: className,
+} = Astro.props;
+
+const isDefense = register === "defense";
+const titleColor = isDefense ? "text-[var(--color-paper)]" : "text-[var(--color-ink)]";
+const subColor = isDefense ? "text-[var(--color-bone)]/80" : "text-[var(--color-taupe)]";
+const eyebrowColor = isDefense
+  ? "text-[var(--color-ochre)]"
+  : "text-[var(--color-ochre-deep)]";
+const alignClass = align === "center" ? "text-center items-center" : "text-left items-start";
+---
+
+<header
+  class:list={[
+    "lowercase-hero flex flex-col gap-6 max-w-[1400px] mx-auto px-8 lg:px-16",
+    alignClass,
+    className,
+  ]}
+  data-register={register}
+>
+  {eyebrow && (
+    <p class:list={["font-mono text-[11px] uppercase tracking-[0.18em]", eyebrowColor]}>
+      {eyebrow}
+    </p>
+  )}
+
+  <h1
+    class:list={[
+      "lowercase-hero__title font-display font-light lowercase",
+      "text-[clamp(48px,7vw,112px)] leading-[0.95] tracking-[-0.025em]",
+      titleColor,
+    ]}
+  >
+    {regular || emphasis ? (
+      <>
+        {regular}{regular && emphasis ? " " : null}
+        {emphasis && (
+          <em class="font-sans italic font-normal">{emphasis}</em>
+        )}
+      </>
+    ) : (
+      <slot />
+    )}
+  </h1>
+
+  {sub && (
+    <p
+      class:list={[
+        "max-w-[640px] font-sans text-[clamp(18px,2vw,22px)] leading-[1.55]",
+        subColor,
+        align === "center" ? "mx-auto" : "",
+      ]}
+    >
+      {sub}
+    </p>
+  )}
+
+  <slot name="actions" />
+</header>
+
+<style>
+  /* The em inside the headline picks up Reckless from font-sans, but we
+     enforce italic + same size + tight tracking so the contrast reads as
+     "emphasis," not "different typeface." */
+  .lowercase-hero__title em {
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+</style>

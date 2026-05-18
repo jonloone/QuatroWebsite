@@ -7,45 +7,73 @@ import DualCta from '@/components/marketing/DualCta.astro'
 const capabilities = [
   {
     number: '01',
-    title: 'Operational Model Visibility',
-    problem: 'Your operation runs on dozens of systems that don\'t talk to each other. Operators toggle between screens and still miss the signal. We connect them into one operational model — so your team sees the full picture from a single view, across every domain.',
-    outputs: 'Unified operational dashboards, cross-system correlation, real-time status across every connected asset, role-based views for different operational teams',
-    industries: 'Energy, Defense, Networks, Cities'
+    title: 'Asset & Infrastructure Intelligence',
+    problem: 'Physical assets degrade across complex environments. When SCADA, maintenance tickets, and inspections live in different systems, teams react to failures instead of preventing them.',
+    outputs: 'Grid health monitoring, pipeline integrity, predictive maintenance routing, and unified asset status.',
+    industries: 'Energy, Smart Cities, Critical Infrastructure',
+    links: [
+      { name: 'Grid Health', href: '/solutions/grid-health' },
+      { name: 'Pipeline Integrity', href: '/solutions/pipeline-integrity' },
+      { name: 'Asset Health', href: '/solutions/asset-health' }
+    ]
   },
   {
     number: '02',
-    title: 'Predictive Intelligence',
-    problem: 'By the time an alert fires, the damage is already compounding. We connect the signals your systems already generate into models that see degradation, failure patterns, and demand shifts before they become emergencies.',
-    outputs: 'Early warning on equipment health, demand forecasting, anomaly detection across connected systems, maintenance prioritization based on actual risk',
-    industries: 'Energy, Networks, Industrial, Cities'
+    title: 'Operator Guidance & Response',
+    problem: "During an incident, operators shouldn't be searching for manuals or cross-referencing systems. They need immediate, contextual guidance tied to the specific asset and failure mode.",
+    outputs: 'Incident triage, root-cause analysis support, automated playbook recommendations, and field dispatch coordination.',
+    industries: 'Energy, Networks, Maritime, Logistics',
+    links: [
+      { name: 'Operational Intelligence', href: '/solutions/operational-intelligence' },
+      { name: 'Network Operations', href: '/solutions/network-operations' }
+    ]
   },
   {
     number: '03',
-    title: 'Human-Approved Workflow Automation',
-    problem: 'Intelligence without action is just a dashboard. We enable your team to define the boundaries — then the system acts within them. Every autonomous action is bounded, auditable, and governed by rules your team sets.',
-    outputs: 'Automated response playbooks, governed dispatch and remediation, execution contracts with full audit trails, human-in-the-loop escalation when boundaries are reached',
-    industries: 'Defense, Energy, Networks, Cities'
+    title: 'Logistics Exception Management',
+    problem: "Supply chain visibility tools only show you a delay. They don't help you resolve it. Manual exception handling across carriers, warehouses, and customs slows down the entire network.",
+    outputs: 'Disruption triage, route impact analysis, automated customer communication drafts, and berth-to-gate coordination.',
+    industries: 'Logistics, Supply Chain, Maritime, Ports',
+    links: [
+      { name: 'Fleet Logistics', href: '/solutions/fleet-logistics' },
+      { name: 'Fleet Health', href: '/solutions/fleet-health' },
+      { name: 'Port Operations', href: '/solutions/port-operations' }
+    ]
   },
   {
     number: '04',
-    title: 'Cross-Team and Cross-Agency Workflows',
-    problem: 'The data exists across every agency. The problem is no one can see across the walls. We connect agencies and departments that were never designed to share — creating one intelligence picture from fragments that were always there.',
-    outputs: 'Cross-agency operational views, coordinated multi-department response, shared intelligence without shared databases, sovereign data controls per agency',
-    industries: 'National Intelligence, Cities, Defense, Infrastructure'
+    title: 'Compliance & Governance Workflows',
+    problem: "Regulatory reporting and compliance evidence are often assembled after the fact. Overlapping obligations across physical and cyber domains create massive audit risk.",
+    outputs: 'Automated regulatory reporting, continuous compliance monitoring, audit-ready evidence packages, and physical security tracking.',
+    industries: 'Energy, Defense, Smart Cities',
+    links: [
+      { name: 'Regulatory Compliance', href: '/solutions/regulatory-compliance' },
+      { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
+      { name: 'Physical Security', href: '/solutions/physical-security' }
+    ]
   },
   {
     number: '05',
-    title: 'Compliance & Risk Intelligence',
-    problem: 'Compliance shouldn\'t be a separate burden. When your operational model already knows what happened, who acted, and why — reporting becomes a byproduct, not a project.',
-    outputs: 'Automated regulatory reporting, continuous compliance monitoring, audit-ready evidence packages, risk detection across operational boundaries',
-    industries: 'Energy, Defense, Networks, Cities'
+    title: 'Service & Revenue Assurance',
+    problem: 'When a network fault occurs, NOCs struggle to correlate the technical failure with the specific mission, customer, or revenue stream impacted.',
+    outputs: 'SLA monitoring, hybrid network correlation, revenue leakage detection, and mission-aware service degradation triage.',
+    industries: 'Networks, SATCOM, Defense, Telecom',
+    links: [
+      { name: 'Service Assurance', href: '/solutions/service-assurance' },
+      { name: 'Revenue Assurance', href: '/solutions/revenue-assurance' },
+      { name: 'Teleport Operations', href: '/solutions/teleport-operations' }
+    ]
   },
   {
     number: '06',
-    title: 'Customer, Revenue, and Service Intelligence',
-    problem: 'Your commercial systems define the same customer, the same exposure, and the same risk differently. We close the meaning gap — so your team works from one trusted record across every system.',
-    outputs: 'Unified customer records across systems, revenue leakage detection, cross-product exposure views, real-time decision support for frontline teams',
-    industries: 'Networks, Energy, Cities'
+    title: 'Cross-Agency Domain Awareness',
+    problem: 'Intelligence and security teams cannot effectively correlate threats when data is siloed across different agencies, jurisdictions, and classification levels.',
+    outputs: 'Shared situational awareness, source-to-assessment traceability, analyst augmentation, and governed intelligence sharing.',
+    industries: 'Intelligence, Defense, Smart Cities',
+    links: [
+      { name: 'Space Domain Awareness', href: '/solutions/space-domain-awareness' },
+      { name: 'Corridor Intelligence', href: '/solutions/corridor-intelligence' }
+    ]
   }
 ]
 ---
@@ -56,8 +84,8 @@ const capabilities = [
 >
   <HeroCanvas
     badge="Capabilities"
-    title="Operational workflows, not feature checklists"
-    body="Quatro integrates across your systems and gives your team concrete operational capabilities — visibility, prediction, governed action, and intelligence that compounds with every connection."
+    title="Operational workflows that drive action"
+    body="We organize our solutions around the concrete operational problems your team needs to solve. Pick a workflow, connect the systems that matter, and start building your intelligence stack."
     ctaLabel="Talk to Our Team"
     ctaHref="/contact/demo"
   />

@@ -1,0 +1,216 @@
+---
+/**
+ * /dev/v2-heroes — v2 hero component review.
+ *
+ * Renders LowercaseHero and FieldHeroGradient in their canonical combinations
+ * so Jonathan can scan the new hero patterns before they land on the homepage.
+ *
+ * Not linked from navigation. Not indexed. Internal dev-only route.
+ *
+ * See QUATRO-DESIGN-LANGUAGE-V2.md §3 for component specs and
+ * QUATRO-VISUAL-FRAME.md for the underlying design rationale.
+ */
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import LowercaseHero from "@/components/marketing/LowercaseHero.astro";
+import FieldHeroGradient from "@/components/marketing/FieldHeroGradient.astro";
+---
+
+<BaseLayout
+  title="v2 Heroes — Dev"
+  description="LowercaseHero + FieldHeroGradient component review."
+>
+  <main class="font-sans">
+    <!-- Header: what is this page -->
+    <div class="bg-[var(--color-paper)] px-8 lg:px-16 py-16">
+      <div class="mx-auto max-w-5xl">
+        <p
+          class="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-taupe)] mb-4"
+        >
+          DEV · QUATRO V2 · HERO COMPONENTS
+        </p>
+        <h1
+          class="font-sans text-4xl lg:text-6xl leading-[1.05] text-[var(--color-ink)] mb-6"
+        >
+          v2 hero patterns
+        </h1>
+        <p class="text-lg lg:text-xl leading-relaxed text-[var(--color-warm-500)] max-w-2xl">
+          The Ark Robotics / HEDRON register, adapted for Quatro. Each
+          combination below is a candidate for the homepage hero or a defense
+          page landing.
+        </p>
+      </div>
+    </div>
+
+    <!-- ───── Variant 1 ─────
+         FieldHeroGradient + LowercaseHero (canonical homepage candidate) -->
+    <section class="border-y border-[var(--color-bone)]">
+      <div class="bg-[var(--color-paper)] px-8 lg:px-16 py-8">
+        <p
+          class="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-taupe)]"
+        >
+          Variant 1 — FieldHeroGradient + LowercaseHero (left-aligned)
+        </p>
+        <p class="font-sans text-base text-[var(--color-warm-500)] mt-2">
+          The canonical homepage hero. Orbit-to-jungle gradient, lowercase
+          Roobert + Reckless italic emphasis, left-aligned.
+        </p>
+      </div>
+      <FieldHeroGradient align="center" bleed={true}>
+        <LowercaseHero
+          eyebrow="Quatro"
+          regular="industrial AI integrator"
+          emphasis="for the americas"
+          sub="Connect, operate, command — across hardware, software, and human operators."
+          register="defense"
+          align="left"
+        />
+      </FieldHeroGradient>
+    </section>
+
+    <!-- ───── Variant 2 ─────
+         FieldHeroGradient + LowercaseHero (center-aligned) -->
+    <section class="border-b border-[var(--color-bone)]">
+      <div class="bg-[var(--color-paper)] px-8 lg:px-16 py-8">
+        <p
+          class="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-taupe)]"
+        >
+          Variant 2 — Same, center-aligned
+        </p>
+        <p class="font-sans text-base text-[var(--color-warm-500)] mt-2">
+          More Ark-style. Title centered, generous whitespace. For pages where
+          the gradient is the focal point.
+        </p>
+      </div>
+      <FieldHeroGradient align="center" bleed={false}>
+        <LowercaseHero
+          eyebrow="Quatro"
+          regular="the intelligence stack"
+          emphasis="built with operators"
+          sub="From sensor to decision — humans in the loop by design."
+          register="defense"
+          align="center"
+        />
+      </FieldHeroGradient>
+    </section>
+
+    <!-- ───── Variant 3 ─────
+         FieldHeroGradient (short) -->
+    <section class="border-b border-[var(--color-bone)]">
+      <div class="bg-[var(--color-paper)] px-8 lg:px-16 py-8">
+        <p
+          class="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-taupe)]"
+        >
+          Variant 3 — Short hero (66vh), top-aligned
+        </p>
+        <p class="font-sans text-base text-[var(--color-warm-500)] mt-2">
+          Used on internal landing pages where the hero needs to give way
+          quickly to the content beneath.
+        </p>
+      </div>
+      <FieldHeroGradient minHeight="66vh" align="top" bleed={true}>
+        <LowercaseHero
+          eyebrow="Defense"
+          regular="autonomous systems"
+          emphasis="for allied forces"
+          register="defense"
+          align="left"
+        />
+      </FieldHeroGradient>
+    </section>
+
+    <!-- ───── Variant 4 ─────
+         LowercaseHero on charcoal (no gradient) — defense whitepaper register -->
+    <section class="border-b border-[var(--color-bone)]">
+      <div class="bg-[var(--color-paper)] px-8 lg:px-16 py-8">
+        <p
+          class="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-taupe)]"
+        >
+          Variant 4 — LowercaseHero on charcoal (no gradient)
+        </p>
+        <p class="font-sans text-base text-[var(--color-warm-500)] mt-2">
+          Defense page hero without the gradient. For pages that don't earn
+          the homepage-level treatment but still belong to the defense
+          register.
+        </p>
+      </div>
+      <div class="bg-[var(--color-charcoal)] min-h-[66vh] flex items-center py-16">
+        <LowercaseHero
+          eyebrow="Federal capture"
+          regular="mission-grade autonomy"
+          emphasis="for distributed operations"
+          sub="Edge AI, secure mesh, and operator-readable command surfaces."
+          register="defense"
+          align="left"
+        />
+      </div>
+    </section>
+
+    <!-- ───── Variant 5 ─────
+         LowercaseHero on paper (editorial register, rare) -->
+    <section class="border-b border-[var(--color-bone)]">
+      <div class="bg-[var(--color-paper)] px-8 lg:px-16 py-8">
+        <p
+          class="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-taupe)]"
+        >
+          Variant 5 — LowercaseHero on paper (editorial, rare)
+        </p>
+        <p class="font-sans text-base text-[var(--color-warm-500)] mt-2">
+          The lowercase-italic pattern reads differently on warm paper. Use
+          sparingly — eco-track pages default to proper-case Reckless. This
+          variant exists for the rare homepage-transition section that
+          carries the lowercase voice into the editorial body.
+        </p>
+      </div>
+      <div class="bg-[var(--color-paper)] min-h-[66vh] flex items-center py-16">
+        <LowercaseHero
+          eyebrow="Manifesto"
+          regular="we connect operations"
+          emphasis="to intelligence"
+          sub="Quatro is the integrator between the hardware your team already runs and the intelligence you need it to produce."
+          register="editorial"
+          align="left"
+        />
+      </div>
+    </section>
+
+    <!-- Footer note -->
+    <div class="bg-[var(--color-paper)] px-8 lg:px-16 py-16">
+      <div class="mx-auto max-w-3xl">
+        <p
+          class="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-taupe)] mb-4"
+        >
+          NOTES
+        </p>
+        <ul class="font-sans text-base text-[var(--color-warm-500)] space-y-3 list-none">
+          <li>
+            The gradient stops live in <code class="font-mono text-[var(--color-forest)]"
+              >--gradient-field-hero</code
+            > in <code class="font-mono text-[var(--color-forest)]">src/styles/global.css</code>.
+            Tweaks happen there, not per-component.
+          </li>
+          <li>
+            The lowercase italic-emphasis pattern reads as confidence, not
+            informality. The italic em is set in Reckless (font-sans) inside a
+            Roobert (font-display) lowercase headline. Don't substitute the
+            typeface stack.
+          </li>
+          <li>
+            On the homepage, this hero is followed by a section in the
+            editorial-warm register (paper background, Reckless body type).
+            The <code class="font-mono text-[var(--color-forest)]">bleed</code> prop
+            on FieldHeroGradient softens the transition.
+          </li>
+          <li>
+            See <code class="font-mono text-[var(--color-forest)]"
+              >QUATRO-VISUAL-FRAME.md</code
+            >, <code class="font-mono text-[var(--color-forest)]"
+              >QUATRO-DESIGN-LANGUAGE-V2.md</code
+            >, and <code class="font-mono text-[var(--color-forest)]"
+              >QUATRO-PALETTE-V2-PROPOSAL.md</code
+            > for the rationale behind each choice.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

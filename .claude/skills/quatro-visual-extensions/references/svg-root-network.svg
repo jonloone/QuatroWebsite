@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" fill="none">
+  <!--
+    Root-network diagram starter template.
+
+    Intended to be generated procedurally by the space-colonization algorithm
+    (see quatro-motion-assets/scripts/render-root-grow.js). This static SVG
+    shows the expected composition — curved branching from a single root
+    point outward to terminal nodes, with labels on 3 to 5 key nodes.
+
+    Forest-on-paper by default (light). Invert to white-on-charcoal for dark.
+  -->
+  <defs>
+    <style>
+      .bg { fill: #F9FAFB; }
+      .branch { fill: none; stroke: #0f4c3a; stroke-width: 1.5; stroke-linecap: round; }
+      .branch-main { fill: none; stroke: #0a0a0a; stroke-width: 2; stroke-linecap: round; }
+      .terminal { fill: #0f4c3a; }
+      .label { font-family: "JetBrains Mono Variable", monospace; font-size: 10px; fill: #0a0a0a; text-transform: uppercase; letter-spacing: 0.1em; }
+      .title { font-family: "Roobert", system-ui, sans-serif; font-size: 24px; fill: #0a0a0a; font-weight: 700; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="800" />
+
+  <!-- Title -->
+  <text class="title" x="48" y="60">How Systems Grow</text>
+  <text class="label" x="48" y="82">ROOT-NETWORK · SPACE-COLONIZATION ALGORITHM</text>
+
+  <!-- Root point — the single origin of the network -->
+  <circle cx="600" cy="700" r="4" fill="#0a0a0a" />
+  <text class="label" x="610" y="705">ROOT</text>
+
+  <!-- Main trunk curving up from root -->
+  <path class="branch-main" d="M 600,700 C 580,550 620,450 600,350" />
+
+  <!-- First-order branches -->
+  <path class="branch" d="M 600,550 C 540,500 480,450 420,380" />
+  <path class="branch" d="M 600,550 C 660,500 720,450 780,380" />
+  <path class="branch" d="M 600,450 C 550,380 500,320 450,250" />
+  <path class="branch" d="M 600,450 C 650,380 700,320 750,250" />
+  <path class="branch" d="M 600,380 C 570,320 560,280 540,220" />
+  <path class="branch" d="M 600,380 C 630,320 640,280 660,220" />
+
+  <!-- Second-order branches off the left side -->
+  <path class="branch" d="M 480,450 C 440,430 400,410 360,380" />
+  <path class="branch" d="M 450,250 C 410,230 380,210 340,180" />
+  <path class="branch" d="M 540,220 C 510,190 490,160 460,130" />
+
+  <!-- Second-order branches off the right side -->
+  <path class="branch" d="M 720,450 C 760,430 800,410 840,380" />
+  <path class="branch" d="M 750,250 C 790,230 820,210 860,180" />
+  <path class="branch" d="M 660,220 C 690,190 710,160 740,130" />
+
+  <!-- Third-order branches -->
+  <path class="branch" d="M 360,380 C 330,360 310,340 290,320" />
+  <path class="branch" d="M 840,380 C 870,360 890,340 910,320" />
+  <path class="branch" d="M 340,180 C 320,160 310,140 300,120" />
+  <path class="branch" d="M 860,180 C 880,160 890,140 900,120" />
+
+  <!-- Terminal nodes (leaves of the network) — a few get labels -->
+  <circle class="terminal" cx="290" cy="320" r="4" />
+  <circle class="terminal" cx="300" cy="120" r="4" />
+  <circle class="terminal" cx="460" cy="130" r="4" />
+  <circle class="terminal" cx="420" cy="380" r="4" />
+
+  <circle class="terminal" cx="910" cy="320" r="4" />
+  <circle class="terminal" cx="900" cy="120" r="4" />
+  <circle class="terminal" cx="740" cy="130" r="4" />
+  <circle class="terminal" cx="780" cy="380" r="4" />
+
+  <!-- Labels on three key terminals (emphasis) -->
+  <text class="label" x="280" y="308">INTELLIGENCE PRODUCT A</text>
+  <text class="label" x="895" y="112" text-anchor="end">INTELLIGENCE PRODUCT B</text>
+  <text class="label" x="460" y="120">INTELLIGENCE PRODUCT C</text>
+
+  <!-- Caption -->
+  <text class="label" x="48" y="760">ONE ROOT · MANY INTELLIGENCE PRODUCTS · SINGLE OPERATIONAL NETWORK</text>
+</svg>

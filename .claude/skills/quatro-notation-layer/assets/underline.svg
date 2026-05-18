@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 20" width="200" height="20" fill="none" preserveAspectRatio="none">
+  <defs>
+    <filter id="roughen-underline" x="0%" y="-100%" width="100%" height="300%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="4" />
+      <feDisplacementMap in="SourceGraphic" scale="2" />
+    </filter>
+  </defs>
+  <!--
+    Wobbly underline. Length parametric via the SVG width when used inline.
+    Use preserveAspectRatio="none" so it stretches with the word it underlines.
+  -->
+  <path
+    d="M 4,12 C 40,6 80,16 120,10 C 160,6 184,14 196,10"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    filter="url(#roughen-underline)"
+  />
+</svg>

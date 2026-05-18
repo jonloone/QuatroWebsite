@@ -1,0 +1,107 @@
+---
+/**
+ * FieldHeroGradient — v2 homepage / defense hero pattern from
+ * QUATRO-DESIGN-LANGUAGE-V2.md §2 and §3.
+ *
+ * Full-bleed vertical linear gradient: charcoal → forest-700 → deep moss →
+ * taupe → ochre. Adapted from Ark Robotics' "orbit-to-desert" hero, pivoted
+ * to Quatro's "orbit-to-jungle" register (LATAM-rooted, not steppe).
+ *
+ * The gradient is the image. No background photo, no overlay. Sits as the
+ * first section on the homepage and on high-emphasis defense page heroes.
+ *
+ * Default slot accepts a <LowercaseHero> or any title block. Optional
+ * `bottomBleed` slot for content that should sit at the bottom of the
+ * gradient (e.g., a partner strip or scroll hint).
+ *
+ * Props:
+ *   - minHeight: '100vh' | '80vh' | '66vh' (default '100vh')
+ *   - align: 'top' | 'center' | 'bottom' — vertical placement of the title
+ *     block within the gradient (default 'center')
+ *   - bleed: bool — when true, the gradient continues into a soft
+ *     newsprint/paper fade at the very bottom so the next section
+ *     transitions visually rather than hard-edging (default false)
+ *   - class: string — additional wrapper classes
+ *
+ * Accessibility: the gradient is decorative; no aria-label needed. The
+ * title heading inside the default slot carries the semantic load.
+ */
+
+interface Props {
+  minHeight?: "100vh" | "80vh" | "66vh";
+  align?: "top" | "center" | "bottom";
+  bleed?: boolean;
+  class?: string;
+}
+
+const {
+  minHeight = "100vh",
+  align = "center",
+  bleed = false,
+  class: className,
+} = Astro.props;
+
+const minHeightClass = {
+  "100vh": "min-h-screen",
+  "80vh": "min-h-[80vh]",
+  "66vh": "min-h-[66vh]",
+}[minHeight];
+
+const alignClass = {
+  top: "justify-start pt-[max(18vh,140px)]",
+  center: "justify-center",
+  bottom: "justify-end pb-[max(12vh,100px)]",
+}[align];
+---
+
+<section
+  class:list={[
+    "field-hero relative w-full overflow-hidden flex flex-col",
+    minHeightClass,
+    alignClass,
+    className,
+  ]}
+  data-hero
+  data-hero-section
+  data-register="defense"
+>
+  <!-- Title / content block -->
+  <div class="relative z-10 w-full">
+    <slot />
+  </div>
+
+  <!-- Optional bottom-bleed content (partner strip, scroll hint, etc.) -->
+  <div class="relative z-10 w-full mt-auto">
+    <slot name="bottomBleed" />
+  </div>
+
+  <!-- Optional newsprint fade for visual transition into the next section -->
+  {bleed && (
+    <div
+      class="absolute inset-x-0 bottom-0 h-[180px] pointer-events-none"
+      style="background: linear-gradient(180deg, transparent 0%, var(--color-paper) 100%);"
+      aria-hidden="true"
+    />
+  )}
+</section>
+
+<style>
+  /* The gradient itself is set as a CSS background via the @theme token.
+     Defined here rather than via Tailwind so the gradient stays in one
+     place and matches QUATRO-PALETTE-V2-PROPOSAL.md exactly. */
+  .field-hero {
+    background: var(--gradient-field-hero);
+  }
+
+  /* Subtle grain to keep the gradient from reading flat. SVG noise filter,
+     no external asset needed. */
+  .field-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+</style>

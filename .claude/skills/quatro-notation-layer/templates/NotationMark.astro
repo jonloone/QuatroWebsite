@@ -1,0 +1,107 @@
+---
+/**
+ * NotationMark.astro — reference implementation of the Quatro notation layer.
+ *
+ * Use inside NotationSurface or anywhere a hand-drawn mark overlays an image,
+ * a word, or a composition.
+ *
+ * Location: src/components/ui/NotationMark.astro
+ *
+ * Props:
+ *   mark       — one of: circle, arrow, x, underline, bracket, starburst
+ *   color      — white (default), forest, charcoal
+ *   weight     — thin, regular (default), bold
+ *   position   — absolute positioning class (e.g. "top-4 right-6")
+ *   rotate     — optional Tailwind rotate class (e.g. "rotate-12")
+ *   scale      — Tailwind scale (default "scale-100")
+ *   animated   — if true, animates stroke-dashoffset on mount
+ */
+
+interface Props {
+  mark: "circle" | "arrow" | "x" | "underline" | "bracket" | "starburst";
+  color?: "white" | "forest" | "charcoal";
+  weight?: "thin" | "regular" | "bold";
+  position?: string;
+  rotate?: string;
+  scale?: string;
+  animated?: boolean;
+  class?: string;
+}
+
+const {
+  mark,
+  color = "white",
+  weight = "regular",
+  position = "",
+  rotate = "",
+  scale = "scale-100",
+  animated = false,
+  class: className = "",
+} = Astro.props;
+
+const colorMap: Record<string, string> = {
+  white: "text-white",
+  forest: "text-[var(--color-forest)]",
+  charcoal: "text-[#0a0a0a]",
+};
+
+const weightMap: Record<string, string> = {
+  thin: "[&_path]:[stroke-width:2]",
+  regular: "[&_path]:[stroke-width:3]",
+  bold: "[&_path]:[stroke-width:5]",
+};
+
+const defaultSize: Record<string, string> = {
+  circle: "w-24 h-24",
+  arrow: "w-32 h-14",
+  x: "w-16 h-16",
+  underline: "w-full h-4",
+  bracket: "w-5 h-48",
+  starburst: "w-16 h-16",
+};
+---
+
+<span
+  class:list={[
+    "notation-mark pointer-events-none inline-block",
+    "absolute",
+    position,
+    rotate,
+    scale,
+    colorMap[color],
+    weightMap[weight],
+    defaultSize[mark],
+    animated ? "notation-animated" : "",
+    className,
+  ]}
+  aria-hidden="true"
+>
+  <Fragment set:html={await import.meta.glob("../assets/*.svg", { eager: true, as: "raw" })[`../assets/${mark}.svg`]} />
+</span>
+
+<style>
+  .notation-mark :global(svg) {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .notation-animated :global(path) {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: notation-draw 800ms ease-out 200ms forwards;
+  }
+
+  @keyframes notation-draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Inherit NotationSurface hover: brighter on hover */
+  :global(.group:hover) .notation-mark {
+    opacity: 1;
+  }
+  .notation-mark {
+    opacity: 0.8;
+    transition: opacity 300ms ease-out;
+  }
+</style>
