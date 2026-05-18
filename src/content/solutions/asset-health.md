@@ -4,6 +4,7 @@ tagline: "Predict Failures Before They Happen"
 heroImage: "/images/solution-asset-monitoring.png"
 description: "Asset health monitoring that shifts operations from reactive to predictive, reducing unplanned downtime by up to 60% across your entire infrastructure."
 order: 1
+hero:
   eyebrow: "Asset Health"
   title: "Track Every Asset. Predict Every Failure."
   description: "When asset data lives in separate maintenance, SCADA, and ERP systems, failure patterns stay invisible until something breaks. Quatro connects the intelligence stack to watch continuously and predict failures before they happen."

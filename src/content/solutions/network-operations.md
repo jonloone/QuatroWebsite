@@ -4,6 +4,7 @@ tagline: "Unified Multi-Vendor NOC"
 heroImage: "/images/solution-network-operations.png"
 description: "Replace vendor silos with unified network intelligence across terrestrial and satellite domains. 80% fewer false alarms, 55% faster MTTR, and one network for any vendor's equipment — ground to orbit."
 order: 7
+hero:
   eyebrow: "Network Operations"
   title: "Mission-Aware Service Assurance."
   description: "When a network fault occurs, NOCs struggle to correlate the technical failure with the specific mission or customer impacted. Quatro integrates hybrid network telemetry to prioritize response based on operational impact."

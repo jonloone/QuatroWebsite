@@ -4,6 +4,7 @@ tagline: "Operational Fleet Intelligence"
 heroImage: "/images/solution-fleet-logistics.png"
 description: "Unified fleet management with AI-driven route optimization and predictive maintenance that reduces fuel costs by 14% and improves on-time delivery by 22%."
 order: 5
+hero:
   eyebrow: "Fleet & Logistics"
   title: "Optimize Every Mile. Track Every Asset."
   description: "When GPS, maintenance logs, fuel systems, and dispatch tools each operate independently, route inefficiencies and breakdown risks cross fleet boundaries undetected. Quatro integrates data, reasoning, and workflows into one operational view."

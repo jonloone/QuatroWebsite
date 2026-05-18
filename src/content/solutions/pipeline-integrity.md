@@ -4,6 +4,7 @@ tagline: "Unified Integrity and Security"
 heroImage: "/images/solution-pipeline-security.png"
 description: "Multi-method leak detection with AI cross-correlation, partner-delivered predictive analytics and operational decisioning, and satellite corridor monitoring — reducing false alarms by 75% while improving detection sensitivity to 0.5% of nominal flow. An integrated partner ecosystem delivers capabilities no single vendor can match."
 order: 2
+hero:
   eyebrow: "Pipeline Integrity"
   title: "Continuous Monitoring. Verified Compliance."
   description: "Pipeline integrity requires correlating pressure drops, flow rates, and environmental sensors in real-time. Quatro connects the operational data layer so your team can detect anomalies and automate compliance reporting."

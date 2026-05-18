@@ -4,6 +4,7 @@ tagline: "Modernize Without Replacing"
 heroImage: "/images/solution-grid-operations.png"
 description: "Overlay modernization that adds operational intelligence, DER integration, and storm response to existing SCADA — delivering results in months, not years."
 order: 6
+hero:
   eyebrow: "Grid Health"
   title: "See the Grid. Prevent the Outage."
   description: "Grid operators are drowning in SCADA alarms but starving for context. Quatro integrates sensor data, weather, and maintenance history to predict grid failures and route work orders before the outage occurs."
