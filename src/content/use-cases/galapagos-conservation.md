@@ -96,7 +96,7 @@ Marine protected areas face an impossible mandate: preserve critical ecosystems 
 
 ## The Operational Intelligence Solution
 
-Quatro integrates AIS vessel feeds, satellite imagery, and coastal camera networks into a unified operational intelligence utility, enabling governed autonomous action for real-time enforcement response. Automated detection flags suspicious vessels in real time, eliminating the detection lag that currently favors poachers.
+Quatro integrates AIS vessel feeds, satellite imagery, and coastal camera networks into a unified operational intelligence stack, enabling governed autonomous action for real-time enforcement response. Automated detection flags suspicious vessels in real time, eliminating the detection lag that currently favors poachers.
 
 **Key outcomes:**
 - Detection time reduced from 4–6 hours to <15 minutes

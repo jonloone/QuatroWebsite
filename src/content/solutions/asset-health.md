@@ -9,7 +9,7 @@ hero:
   title: "Track Every Asset. Predict Every Failure."
   description: "When asset data lives in separate maintenance, SCADA, and ERP systems, failure patterns stay invisible until something breaks. Quatro watches continuously and predicts failures before they happen."
   primaryCta:
-    label: "Schedule an Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
     label: "Talk to an Engineer"
@@ -36,7 +36,7 @@ capabilities:
   - name: "Real-Time Asset Visibility"
     description: "Continuous monitoring of asset health, location, and status across your entire infrastructure with sub-second latency dashboards."
   - name: "Predictive Maintenance"
-    description: "AI models forecast equipment failures 2-4 weeks in advance using vibration, thermal, and multi-sensor correlation. When issues are predicted, the intelligence utility provides contextual guidance on what to do — recommended maintenance actions, parts needed, and optimal scheduling windows."
+    description: "AI models forecast equipment failures 2-4 weeks in advance using vibration, thermal, and multi-sensor correlation. When issues are predicted, the intelligence stack provides contextual guidance on what to do — recommended maintenance actions, parts needed, and optimal scheduling windows."
   - name: "Asset Lifecycle Management"
     description: "End-to-end tracking from commissioning to decommissioning with a real-time operational model for data-driven replacement planning."
   - name: "Performance Optimization"

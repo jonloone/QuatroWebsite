@@ -6,9 +6,10 @@ interface Props {
   title: string
   description?: string
   lang?: Locale
+  noindex?: boolean
 }
 
-const { title, lang = 'en', description = 'Quatro integrates the hardware, software, and domain expertise that critical infrastructure operators need — delivered as a utility, built so they own the intelligence from day one.' } = Astro.props
+const { title, lang = 'en', description = 'Quatro integrates data, reasoning, agents, and workflows into customer-owned industrial AI systems for critical operations.', noindex = false } = Astro.props
 
 const fullTitle = title.includes('Quatro') ? title : `${title} | Quatro`
 
@@ -22,6 +23,7 @@ const esUrl = getAlternateUrl(Astro.url, 'es')
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="alternate" hreflang="en" href={`https://quatro.io${enUrl}`} />
     <link rel="alternate" hreflang="es" href={`https://quatro.io${esUrl}`} />

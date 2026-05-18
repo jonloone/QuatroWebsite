@@ -1,3 +1,8 @@
+---
+noindex: true
+legacy: true
+---
+
 # Counter-Cartel Operations
 
 *Operaciones Contra el Crimen Organizado Transnacional*
@@ -8,7 +13,7 @@
 
 Cross-domain intelligence that fuses maritime, border, financial, and human intelligence into a single operational picture — enabling coordinated multi-agency operations against transnational criminal organizations.
 
-When a dark vessel is detected off the coast, the platform automatically correlates it with known trafficking routes, recent financial activity in port cities, border crossing patterns, and network intelligence on the organization that operates the corridor. Five domains. One picture. One targeting decision.
+When a dark vessel is detected off the coast, the stack automatically correlates it with known trafficking routes, recent financial activity in port cities, border crossing patterns, and network intelligence on the organization that operates the corridor. Five domains. One picture. One targeting decision.
 
 ---
 
@@ -68,7 +73,7 @@ Recruitment detection connects street-level activity to the broader network oper
 
 The defining capability. Not five separate intelligence systems running in parallel — one intelligence system that operates across five domains simultaneously.
 
-When a dark vessel is detected off the coast, the platform does not generate a maritime alert and stop. It automatically queries the financial domain for recent transaction activity in the predicted landing area. It checks the border domain for crossing patterns consistent with pre-positioning of ground logistics. It correlates with network intelligence to identify which organization operates that maritime corridor. It checks the urban domain for territorial indicators consistent with an incoming shipment.
+When a dark vessel is detected off the coast, the stack does not generate a maritime alert and stop. It automatically queries the financial domain for recent transaction activity in the predicted landing area. It checks the border domain for crossing patterns consistent with pre-positioning of ground logistics. It correlates with network intelligence to identify which organization operates that maritime corridor. It checks the urban domain for territorial indicators consistent with an incoming shipment.
 
 The result is not five separate alerts to five separate agencies. It is one intelligence picture — a complete operational assessment of a single event viewed across all relevant domains — delivered to the coordinating authority with targeting recommendations and recommended agency assignments.
 
@@ -80,7 +85,7 @@ This is what coordinated counter-cartel operations require. Not information shar
 
 Role-based access across military, police, coast guard, customs, and financial regulators. Each agency sees the intelligence relevant to their mission and jurisdiction. Sensitive sources are compartmented. Operational details are shared on a need-to-know basis. The unified picture exists at the coordination level — individual agencies see their operational slice with enough context to coordinate effectively.
 
-Automated workflows route intelligence to the right agency for action. Maritime detections go to the navy. Financial patterns go to the UIF (Financial Intelligence Unit). Border alerts go to border police. Network targeting packages go to specialized enforcement. The platform handles the routing — agencies focus on execution.
+Automated workflows route intelligence to the right agency for action. Maritime detections go to the navy. Financial patterns go to the UIF (Financial Intelligence Unit). Border alerts go to border police. Network targeting packages go to specialized enforcement. The stack handles the routing — agencies focus on execution.
 
 Every action — every alert, every decision, every dispatch — is logged with timestamp and chain-of-command context. The audit trail is continuous, tamper-evident, and prosecution-ready.
 
@@ -92,13 +97,13 @@ Every action — every alert, every decision, every dispatch — is logged with 
 
 Coordinated security operations across partner nations require intelligence sharing. But intelligence sharing is politically sensitive — no sovereign nation will grant foreign partners direct access to domestic intelligence systems.
 
-Quatro solves this with a sovereignty-first model. The platform generates intelligence products — assessed, curated, releasable — that can be shared with coalition partners without ceding access to raw data, sources, or methods.
+Quatro solves this with a sovereignty-first model. The stack generates intelligence products — assessed, curated, releasable — that can be shared with coalition partners without ceding access to raw data, sources, or methods.
 
 **What partners see:** Assessed intelligence products. Threat assessments. Targeting recommendations. Pattern analysis. Situational awareness at the level of detail appropriate for coalition operations.
 
 **What partners do not see:** Raw intercepts. Source identities. Domestic surveillance data. Unprocessed agency feeds. Anything that hasn't been reviewed, assessed, and explicitly approved for release.
 
-**How it works:** Every intelligence product generated by the platform carries a releasability classification. Analysts control what is shared, with whom, and at what level of detail. Every disclosure decision is logged, auditable, and revocable. The platform enforces the sharing rules — not the other way around.
+**How it works:** Every intelligence product generated by the stack carries a releasability classification. Analysts control what is shared, with whom, and at what level of detail. Every disclosure decision is logged, auditable, and revocable. The stack enforces the sharing rules — not the other way around.
 
 This model enables full participation in multilateral security coalitions while keeping all data under sovereign national control. The coalition gets the intelligence it needs to coordinate. The participating nation retains absolute authority over its data.
 
@@ -124,7 +129,7 @@ The same tiered intelligence product framework that powers the YVI extends to co
 
 All data remains under national government control. End-to-end encryption. Air-gapped and classified network deployments supported. Self-managed infrastructure with zero dependency on external operators or foreign-owned cloud services.
 
-Coalition intelligence sharing operates through controlled disclosure — intelligence products, not raw data. Every disclosure decision is logged, auditable, and revocable. The platform enforces sovereignty by design, not by policy.
+Coalition intelligence sharing operates through controlled disclosure — intelligence products, not raw data. Every disclosure decision is logged, auditable, and revocable. The stack enforces sovereignty by design, not by policy.
 
 ---
 

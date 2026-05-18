@@ -1,15 +1,15 @@
 ---
 title: "Broadcast & Media"
-tagline: "Unified Intelligence for Broadcast Operations"
+tagline: "Supporting Page for Signal and Live Operations"
 heroImage: "/images/industry-broadcast-media.png"
-description: "When SMPTE ST 2110, SRT, SDI, and satellite signals each flow through separate management systems, signal failures cascade across production before anyone connects the cause. Quatro delivers unified operational intelligence for live production, facility management, and content distribution."
+description: "Quatro connects live-production, signal, facility, distribution, and network systems into governed operational workflows for teams that cannot afford blind spots during live events."
 order: 9
 hero:
   eyebrow: "Broadcast & Media"
-  title: "Six Signal Technologies. Six Consoles. One Live Event That Can't Wait."
-  description: "Live production runs on SMPTE ST 2110, SRT, SDI, satellite, and IP — each managed through separate vendor consoles. When a signal fails during a live event, operators context-switch between systems while seconds tick. Quatro connects every signal technology into one operational view with predictive equipment health, real-time orchestration, and coordinated multi-site intelligence."
+  title: "Industrial AI for signal-heavy live operations."
+  description: "Live production depends on many signal technologies and vendor consoles. Quatro connects the operational data, reasoning, agents, and workflows that help teams identify cause, consequence, and next action faster."
   primaryCta:
-    label: "Request a Demo"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Broadcast Engineer"
@@ -81,7 +81,7 @@ proofPoint:
   narrative: "A major broadcast operator deployed Quatro across multi-site production facilities managing live sports, news, and contribution feeds. Unified signal management replaced 5 separate vendor monitoring tools, consolidating SMPTE ST 2110, SRT, SDI, and satellite into a single operational view. Predictive equipment health alerts prevented on-air failures, and automated failover reduced live event incident resolution by 70%."
 cta:
   primary:
-    label: "Request a Demo"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondary:
     label: "Talk to a Broadcast Engineer"

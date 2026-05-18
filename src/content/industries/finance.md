@@ -1,15 +1,13 @@
 ---
-title: Finance
-tagline: Intelligence Products for Banking & Financial Services
+title: "Finance"
+tagline: "Future / Supporting Page for Financial Services Intelligence"
 heroImage: /images/industry-finance.png
-description: Named intelligence products that unify the 15–30 systems your bank already operates — Customer 360, credit risk, NPA early warning, and regulatory compliance. Production-ready in 4–6 weeks
-  with governance SLAs.
+description: "Finance is not a primary Quatro vertical in the current canon. Keep this page as a supporting or future-facing reference unless leadership approves financial services as an active GTM vertical."
 order: 10
 hero:
   eyebrow: Finance
-  title: Your Systems Already Have the Answers. They Just Don't Talk to Each Other.
-  description: A typical bank operates 15–30 core systems. Each defines 'customer,' 'exposure,' and 'risk' differently. Quatro delivers named intelligence products that close specific meaning gaps — production-ready
-    in 4–6 weeks. No rip-and-replace. No migration.
+  title: "Financial services intelligence, pending GTM approval."
+  description: "This page should remain outside the primary Industries dropdown until Finance is approved as a Quatro vertical. If retained, it should focus on customer-owned workflows for risk, compliance, claims, and customer intelligence."
   primaryCta:
     label: Schedule a Banking Assessment
     href: /contact/demo
@@ -84,7 +82,7 @@ platformMapping:
   see: Deploy on your existing systems — core banking, LOS, CRM, digital channels, card processors, wealth platforms, compliance tools. No rip-and-replace. 8,000+ integrations for any banking data source.
   understand: Operational intelligence from AI-powered reconciliation creates governed products — unified customer identity, cross-system exposure, and regulatory data foundations. Each product includes governance SLAs on
     data quality, freshness, and lineage.
-  orchestrate: Act on intelligence with governed autonomous action — NPA early warning triggers proactive collections, next best action resolves customer friction in real time, claims classification automates underwriter triage, and compliance
+  orchestrate: Act on intelligence with human-approved workflow automation — NPA early warning triggers proactive collections, next best action resolves customer friction in real time, claims classification automates underwriter triage, and compliance
     reporting runs continuously.
 proofPoint:
   industry: Finance — Global Banking Group
@@ -97,7 +95,7 @@ proofPoint:
   - value: 30–60 Days
     label: Earlier NPA Detection
   narrative: Quatro's banking intelligence products are deployed at enterprise scale — Lloyds Banking Group (UK) for next best action and claims classification, Mashreq Bank (UAE) for cross-system data
-    sharing, Indiabulls (India) for NPA early warning, and Bradesco (Brazil) for enterprise data products. The same intelligence utility, adapted for Latin American regulatory frameworks.
+    sharing, Indiabulls (India) for NPA early warning, and Bradesco (Brazil) for enterprise data products. The same intelligence stack, adapted for Latin American regulatory frameworks.
 cta:
   primary:
     label: Schedule a Banking Assessment

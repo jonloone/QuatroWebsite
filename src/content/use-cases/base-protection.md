@@ -7,7 +7,7 @@ order: 1
 hero:
   eyebrow: "Military Installation Security"
   title: "Base & Installation Protection"
-  description: "Detect unauthorized access and threats in under 30 seconds. When security systems don't share a common operational model, threat detection spreads across teams and response delays compound risk. Unify them into one intelligence utility."
+  description: "Detect unauthorized access and threats in under 30 seconds. When security systems don't share a common operational model, threat detection spreads across teams and response delays compound risk. Unify them into one intelligence stack."
   primaryCta:
     label: "Schedule a Defense Assessment"
     href: "/contact/defense-assessment"

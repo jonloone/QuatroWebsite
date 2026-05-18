@@ -1,13 +1,13 @@
 ---
-title: Industrial
-tagline: Cross-Domain Plant Intelligence
+title: "Industrial Operations"
+tagline: "Supporting Page for Manufacturing and Plant Operations"
 heroImage: /images/industry-industrial.png
-description: When SCADA, DCS, MES, and ERP systems each hold a different version of what's happening on the plant floor, quality issues and downtime patterns cross system boundaries undetected. Quatro connects them into one operational intelligence layer — predictive maintenance, quality correlation, and governed operator guidance.
+description: "Quatro integrates SCADA, DCS, MES, ERP, CMMS, quality, and field workflows into governed industrial AI systems for plant and asset-heavy operations."
 order: 3
 hero:
   eyebrow: Industrial
-  title: "Historian. MES. CMMS. Each Saw the Failure. None Saw It Together."
-  description: "Historians, MES, CMMS, and ERP each hold a different version of what's happening on the plant floor. The correlations that predict failures, explain quality drift, and optimize throughput cross system boundaries that siloed tools can't see across. Quatro connects them. Your team gets unified operational intelligence — 35% less emergency maintenance, 22% OEE improvement, production-ready in weeks."
+  title: "Industrial AI for plant and asset-heavy operations."
+  description: "Plant teams have historians, MES, CMMS, ERP, and quality systems that rarely share one operating model. Quatro connects them into governed workflows for maintenance, quality, throughput, and operator guidance."
   primaryCta:
     label: Schedule a Plant Assessment
     href: /contact/demo
@@ -75,9 +75,9 @@ capabilities:
   image: /images/cap-industrial-multi-plant.png
 platformMapping:
   see: 8,000+ integrations for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss.
-  understand: Operational intelligence utility for predictive maintenance, OEE tracking, quality prediction, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold
+  understand: Operational intelligence stack for predictive maintenance, OEE tracking, quality prediction, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold
     alerts fire. Real-time operational models enable simulation and scenario planning. 80% fewer false alarms through relationship-aware intelligence.
-  orchestrate: Multi-plant coordination and governed autonomous action. Resource dispatch based on real-time demand, location, and skill requirements.
+  orchestrate: Multi-plant coordination and human-approved workflow automation. Resource dispatch based on real-time demand, location, and skill requirements.
 proofPoint:
   industry: Industrial — Chemical Manufacturing
   headline: Multi-Plant Safety & Efficiency Transformation

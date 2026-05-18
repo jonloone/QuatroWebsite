@@ -1,4 +1,9 @@
-# National Intelligence Platform
+---
+noindex: true
+legacy: true
+---
+
+# Legacy National Intelligence Reference
 
 *Plataforma Nacional de Inteligencia*
 
@@ -6,9 +11,9 @@
 
 ## One Platform. Every Domain. Total Protection.
 
-Quatro delivers a unified operational intelligence platform that transforms fragmented data across agencies and domains into real-time situational awareness, predictive threat intelligence, and coordinated multi-agency response — all from a single command environment.
+Quatro delivers a unified operational intelligence stack that transforms fragmented data across agencies and domains into real-time situational awareness, predictive threat intelligence, and coordinated multi-agency response — all from a single command environment.
 
-Built on proven foundations trusted by NATO, major telecoms, critical infrastructure operators, and defense organizations worldwide. The platform processes millions of events per second with 99.99% uptime — proven in mission-critical environments where failure is not an option.
+Built on proven foundations trusted by NATO, major telecoms, critical infrastructure operators, and defense organizations worldwide. The stack processes millions of events per second with 99.99% uptime — proven in mission-critical environments where failure is not an option.
 
 ---
 
@@ -38,7 +43,7 @@ The Youth Vulnerability Index fuses data from police, education, health, and soc
 
 Cross-domain intelligence fusion for counter-narcotics, criminal network mapping, financial crimes, and coordinated multi-agency enforcement operations.
 
-Transnational criminal organizations operate across maritime routes, land borders, financial systems, digital communications, and urban territories as a single integrated operation. Counter-cartel intelligence fuses five operational domains — maritime, border, financial, network, and urban — into one targeting picture. When a dark vessel is detected off the coast, the platform automatically correlates it with known trafficking routes, recent financial activity in port cities, border crossing patterns, and network intelligence on the organization that operates the corridor.
+Transnational criminal organizations operate across maritime routes, land borders, financial systems, digital communications, and urban territories as a single integrated operation. Counter-cartel intelligence fuses five operational domains — maritime, border, financial, network, and urban — into one targeting picture. When a dark vessel is detected off the coast, the stack automatically correlates it with known trafficking routes, recent financial activity in port cities, border crossing patterns, and network intelligence on the organization that operates the corridor.
 
 ### Resource Protection
 
@@ -84,7 +89,7 @@ Vessel tracking and route prediction for illegal fishing enforcement. Satellite-
 
 ## Platform Architecture — Connect, Operate, Command
 
-The platform operates across three integrated layers, scaling from basic visibility through operational intelligence to full command coordination.
+The stack operates across three integrated layers, scaling from basic visibility through operational intelligence to full command coordination.
 
 ### Connect — Multi-Modal Sensing
 

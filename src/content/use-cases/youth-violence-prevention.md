@@ -96,7 +96,7 @@ Youth violence in Latin America's coastal cities claims hundreds of young lives 
 
 ## The Operational Intelligence Solution
 
-Quatro integrates school records, health data, community violence reports, and justice system feeds into a unified operational intelligence utility. The Youth Vulnerability Index — an AI-powered composite risk score — identifies at-risk youth before violence erupts. Early-warning alerts coordinate social workers, mentors, and community organizations around unified intervention strategies.
+Quatro integrates school records, health data, community violence reports, and justice system feeds into a unified operational intelligence stack. The Youth Vulnerability Index — an AI-powered composite risk score — identifies at-risk youth before violence erupts. Early-warning alerts coordinate social workers, mentors, and community organizations around unified intervention strategies.
 
 **Key outcomes:**
 - 1,200+ at-risk youth identified and enrolled in coordinated programs within Year 1

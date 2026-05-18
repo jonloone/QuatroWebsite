@@ -38,7 +38,7 @@ capabilities:
   - name: "Automated Violation Detection and Alert"
     description: "Any regulatory exceedance triggers immediate alerts with full context — measured values, regulatory thresholds, duration, remedial action checklists, and supporting data including production logs, weather conditions, and upstream operations."
   - name: "Operational Attribution"
-    description: "When a violation occurs, the operational intelligence utility correlates it with operational context. Root cause analysis that would take hours of manual data assembly is available immediately with the violation alert — pump status, process state, weather conditions."
+    description: "When a violation occurs, the operational intelligence stack correlates it with operational context. Root cause analysis that would take hours of manual data assembly is available immediately with the violation alert — pump status, process state, weather conditions."
   - name: "Compliance Reporting Automation"
     description: "Auto-generated reports formatted for MAE/MAATE, SENAGUA, TULSMA, and ARCONEL on configured schedules. Guaranteed on-time submission. No missed deadlines. No audit findings for incomplete documentation. Compliance officers review and authorize — assembly is automated."
   - name: "Enforcement-Ready Evidence Packages"

@@ -117,4 +117,4 @@ You don't need to merge your systems to merge your intelligence. And you don't n
 
 ---
 
-*Quatro's intelligence utility connects operational systems—billing, network management, service data, SLA tracking—into a unified view without requiring system replacement. Operators move from fragmented insight to unified operations in months instead of years.*
+*Quatro's intelligence stack connects operational systems—billing, network management, service data, SLA tracking—into a unified view without requiring system replacement. Operators move from fragmented insight to unified operations in months instead of years.*

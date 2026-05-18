@@ -7,7 +7,7 @@ order: 12
 hero:
   eyebrow: "Port Operations"
   title: "Optimize Berths. Coordinate Cargo. Accelerate Customs."
-  description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture. When a container ship approaches, the intelligence utility predicts arrival, reserves optimal berth, alerts cargo handlers, and pre-coordinates customs — one network, coordinated workflow."
+  description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture. When a container ship approaches, the intelligence stack predicts arrival, reserves optimal berth, alerts cargo handlers, and pre-coordinates customs — one network, coordinated workflow."
   primaryCta:
     label: "Request a Port Operations Briefing"
     href: "/contact/demo"
@@ -24,27 +24,23 @@ stats:
   - value: "Sovereign"
     label: "Data Control"
 challenges:
-  - title: "Berth-Cargo-Customs Disconnection"
-    description: "Berth assignment isn't coordinated with cargo staging. Ships wait at anchor while berths are assigned and cargo handlers aren't ready when ships dock. Customs clearance happens by phone and email, disconnected from berth operations."
-  - title: "No Cross-Stakeholder Visibility"
-    description: "The port authority knows berth status. Logistics coordinators know truck schedules. Customs knows documentation status. Warehouse operators know receiving capacity. Each sees their domain. None sees the coordinated chain."
-  - title: "Manual Coordination Across Agencies"
-    description: "Port operations, shipping lines, freight forwarders, customs, and trucking companies coordinate through phone calls, email, and spreadsheets. Each vessel arrival requires simultaneous multi-party coordination that breaks down under volume."
-  - title: "Maritime Security Blind Spots"
-    description: "Dark vessel activity, unusual discharge timing, and overnight operations go undetected until after the fact. Port sovereignty requires continuous vessel tracking from EEZ entry through departure with behavioral anomaly detection."
+- title: Multi-Actor Fragmentation
+  description: Ports are ecosystems. Vessels, terminals, trucking, customs, and security operate in separate systems with conflicting data.
+  image: /images/challenge-ports-fragmentation.png
+- title: Cascading Delays
+  description: A minor berth delay propagates through yard utilization and inland logistics, but no single system sees the entire chain.
+  image: /images/challenge-ports-delays.png
 capabilities:
-  - name: "Berth Management and Scheduling"
-    description: "Vessel arrival predictions accurate to the hour. Optimal berth assignment calculated 72 hours in advance considering water depth, cargo type, discharge time, and next vessel schedule. Ships never wait at anchor. Discharge starts within hours of arrival."
-  - name: "Cargo Handling and Logistics Coordination"
-    description: "Cargo staging readiness predicted with vessel arrival. Equipment health monitored continuously — crane failures detected before discharge window. Truck arrivals optimized to cargo discharge rhythm. Apron congestion eliminated."
-  - name: "Customs and Border Integration"
-    description: "Manifests pre-reviewed against risk databases before vessel arrival. High-risk cargo flagged for priority inspection. Low-risk cargo pre-cleared. Documentation reviewed before discharge begins. Cross-border intelligence triggers heightened vigilance."
-  - name: "Maritime Sovereignty Intelligence"
-    description: "Every vessel tracked from EEZ entry through port departure. Dark vessel activity detected immediately. Vessel trafficking patterns identified and correlated with known smuggling corridors. Anomalous discharge timing and overnight operations flagged in real-time."
-  - name: "Cross-Domain Port Coordination"
-    description: "A vessel detected 200 nautical miles offshore triggers simultaneous coordination — berth assignment, cargo staging, customs preparation, and security assessment delivered as one operational picture to the Operations Center."
-  - name: "Controlled Inter-Agency Sharing"
-    description: "Role-based access ensures customs sees risk-relevant data only. Commercial rates, customer names, and shipping company data stay within port operations. Every data access logged and auditable. Coordination is workflow-driven, not email-driven."
+- name: Berth to Gate Coordination
+  description: Shared situational awareness across terminal operators, rail, and trucking without forcing everyone into a monolithic system.
+  featured: true
+  outcome: Reduced dwell times and optimized yard utilization.
+  image: /images/cap-ports-coordination.png
+- name: Maritime Domain Awareness
+  description: Fuse AIS, radar, and terminal data to detect anomalies and support customs/security investigations.
+  featured: true
+  outcome: Improved security posture with human-reviewed anomaly escalation.
+  image: /images/cap-ports-mda.png
 proofPoint:
   industry: "Transportation — Maritime Port"
   headline: "Berth-to-Customs Coordination"

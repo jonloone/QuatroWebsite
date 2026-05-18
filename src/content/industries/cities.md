@@ -1,13 +1,13 @@
 ---
-title: "Smart Cities"
-tagline: "Cross-Domain Urban Intelligence"
+title: "Smart Cities & Utilities"
+tagline: "Industrial AI for City and Utility Operations"
 heroImage: "/images/industry-cities.png"
-description: "When mobility, public safety, infrastructure, and environmental systems each operate in isolation, coordination gaps become invisible to everyone except citizens. Quatro connects your city's existing systems into one operational intelligence utility — unified coordination with measurable citizen outcomes."
+description: "Quatro integrates city, utility, public works, GIS, 311, work-order, sensor, and emergency-response systems into customer-owned industrial AI workflows. Data, reasoning, agents, and approvals work together so teams can coordinate faster without replacing the systems they already run."
 order: 5
 hero:
   eyebrow: "Smart Cities"
-  title: "Your City Runs on Fifteen Consoles. Your Citizens See One City."
-  description: "Traffic, public safety, utilities, and environmental monitoring each operate from separate consoles with separate budgets and separate command structures. The patterns that cross departments — a water main break that causes a traffic incident that delays emergency response — stay invisible. Quatro connects what your city already has into one coordinated operational picture with measurable citizen outcomes."
+  title: "Industrial AI for the systems your city runs on."
+  description: "Cities and utilities already have the data: GIS, SCADA/AMI, 311, work orders, dispatch, sensors, billing, and emergency response. Quatro connects those systems into one governed operating model so public teams can move from signal to approved action."
   primaryCta:
     label: "Talk to Our Team"
     href: "/contact/demo"
@@ -22,54 +22,27 @@ stats:
   - value: "Cross-Domain"
     label: "Unified View"
 challenges:
-  - title: "Departmental Data Silos"
-    description: "Traffic, public safety, utilities, and environmental monitoring operate as independent fiefdoms with separate technology stacks. No system sees the full picture."
-    image: "/images/challenge-cities-silos.png"
-  - title: "Vendor Lock-In Across Systems"
-    description: "A mid-size city operates 15-30 separate platforms from different vendors with proprietary data formats. Integration projects are expensive and politically contentious."
-    image: "/images/challenge-cities-vendor-lock.png"
-  - title: "Reactive Operations"
-    description: "Infrastructure failures and incidents are discovered after they occur. The sensor data to predict and prevent them is trapped in disconnected systems with no analytics layer."
-    image: "/images/challenge-cities-reactive.png"
-  - title: "Multi-Agency Coordination Gaps"
-    description: "A water main break affects traffic, public safety, fleet dispatch, and environmental monitoring simultaneously — but no system coordinates the cross-agency response."
-    image: "/images/challenge-cities-coordination.png"
+- title: Siloed Department Data
+  description: Traffic, public safety, utilities, and environmental monitoring operate from separate consoles with separate budgets.
+  image: /images/challenge-cities-silos.png
+- title: Manual Cross-Agency Escalation
+  description: When a water main break causes a traffic incident, coordination relies on manual phone calls and disjointed ticketing systems.
+  image: /images/challenge-cities-escalation.png
 capabilities:
-  - name: "Unified City Operations Center"
-    description: "Single common operating picture across all city departments. Replace 5-10 separate consoles with role-based workspaces for every agency — from traffic to public safety to utilities."
-    featured: true
-    outcome: "5-10 consoles replaced. One operational picture."
-    image: "/images/cap-cities-operations-center.png"
-  - name: "Cross-Agency Emergency Response"
-    description: "When a water main breaks, it affects traffic, safety, fleet dispatch, and environmental monitoring. Governed autonomous action coordinates multi-department response automatically."
-    featured: true
-    outcome: "Faster cross-agency incident response."
-    image: "/images/cap-cities-cross-agency.png"
-  - name: "AI Urban Surveillance"
-    description: "Real-time behavioral analytics across city-wide camera networks. Multi-sensor fusion with gunshot detection, license plate recognition, and access control — fewer false alarms."
-    featured: true
-    outcome: "Fewer false alarms across city camera networks."
-    image: "/images/cap-cities-surveillance.png"
-  - name: "Smart Infrastructure Monitoring"
-    description: "Continuous condition monitoring for streetlights, traffic signals, water distribution, and distributed infrastructure with predictive maintenance. Cross-links to water system intelligence for treatment, leak detection, and compliance."
-    image: "/images/cap-cities-infra-monitoring.png"
-    outcome: "Predictive maintenance across all city infrastructure."
-  - name: "Municipal Fleet Optimization"
-    description: "Intelligent route optimization for waste collection, public works, and transit. Fill-level IoT sensors enable demand-driven scheduling. Dynamic routing based on actual conditions — not fixed schedules."
-    outcome: "Lower fleet costs through demand-driven routing."
-    image: "/images/cap-cities-waste-mgmt.png"
-  - name: "Environmental Intelligence"
-    description: "Air quality, weather, and energy data correlated with operational systems. Pollutant concentrations trigger traffic rerouting and public notifications automatically."
-    image: "/images/cap-cities-environmental.png"
-    outcome: "Automatic response to environmental threshold breaches."
-  - name: "Water Infrastructure Intelligence"
-    description: "Treatment plant monitoring, distribution network management, leak detection, and quality compliance. From reservoir to tap, unified intelligence connected to city-wide operations for coordinated incident response."
-    outcome: "Reservoir to tap. One unified water intelligence layer."
-    image: "/images/cap-cities-water-infra.png"
+- name: Public Works Coordination
+  description: Fuse sensor data, citizen reports, and GIS into a common operating picture for faster, coordinated response.
+  featured: true
+  outcome: Reduced time from complaint to verified response.
+  image: /images/cap-cities-coordination.png
+- name: Infrastructure Risk Prioritization
+  description: Combine inspections, work orders, weather, and failure history to prioritize capital planning.
+  featured: true
+  outcome: Data-driven capital investment and maintenance.
+  image: /images/cap-cities-risk.png
 platformMapping:
-  see: "8,000+ integrations for traffic controllers (NTCIP), cameras (ONVIF), building systems (BACnet, KNX), transit (GTFS, SIRI), and environmental sensors. Edge processing at intersections and vehicles."
-  understand: "AI video analytics with behavioral analysis and crowd dynamics. Traffic pattern prediction, predictive maintenance for infrastructure, and environmental correlation. Fewer false alarms."
-  orchestrate: "Governed autonomous action across city operations. Emergency response playbooks coordinate multi-department response automatically. Fleet dispatch for public works and waste collection."
+  see: Connect GIS, 311 systems, work orders, traffic sensors, weather data, and emergency dispatch without forcing centralized data lakes.
+  understand: Apply municipal rules, geographical constraints, and resource availability models to identify compounding risks across departments.
+  orchestrate: Deploy agents to draft incident summaries and coordinate multi-agency response, always requiring human sign-off before dispatch.
 proofPoint:
   industry: "Cities — Municipal Intelligence"
   headline: "Cross-Domain City Operations"

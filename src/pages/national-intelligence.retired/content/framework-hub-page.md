@@ -1,4 +1,9 @@
-# National Intelligence Platform — Hub Page
+---
+noindex: true
+legacy: true
+---
+
+# Legacy National Intelligence Reference — Hub Page
 ## Framework-Mapped Messaging Document
 
 ---
@@ -27,15 +32,15 @@ This is a **main vertical landing page** (discovery, wide funnel, breadth). The 
 *Framework note: 6 words. Passes the 8-word test. Outcome-focused. Cannot be mistaken for a generic data platform — "Every Domain" signals breadth, "Total Protection" signals national security.*
 
 **Subheadline (JTBD — names the jobs, buyer self-selects):**
-> Quatro delivers a unified operational intelligence platform that transforms fragmented data across agencies and domains into real-time situational awareness, predictive threat intelligence, and coordinated multi-agency response — all from a single command environment.
+> Quatro delivers a unified operational intelligence stack that transforms fragmented data across agencies and domains into real-time situational awareness, predictive threat intelligence, and coordinated multi-agency response — all from a single command environment.
 
 **Solution Menu (JTBD — visible above fold):**
-The three named intelligence programs serve as the "jobs" the buyer is hiring the platform to do:
+The three named intelligence programs serve as the "jobs" the buyer is hiring the stack to do:
 - Youth Vulnerability Index — Predict and prevent organized crime recruitment
 - Counter-Cartel Operations — Map networks, follow money, disrupt operations
 - Resource Protection — Detect extraction, enforce sovereignty
 
-*Framework note: Each program is a "job" the buyer hires the platform to do. The buyer scans and self-selects.*
+*Framework note: Each program is a "job" the buyer hires the stack to do. The buyer scans and self-selects.*
 
 **Primary CTA (verb-first, 5 words max):**
 `Request a Briefing`
@@ -140,7 +145,7 @@ Quatro eliminates the gap. One platform connects every sensor, every agency, and
 | 06 | Financial Crimes | Transaction pattern analysis, criminal network mapping, cross-domain correlation. |
 | 07 | Environmental Protection | IUU fishing enforcement, deforestation monitoring, marine reserve protection. |
 
-*Framework note: Card grid provides scanning breadth. Each domain is a capability the platform covers — reinforcing the "Every Domain" hero promise. Numbers signal completeness and rigor.*
+*Framework note: Card grid provides scanning breadth. Each domain is a capability the stack covers — reinforcing the "Every Domain" hero promise. Numbers signal completeness and rigor.*
 
 ---
 
@@ -159,7 +164,7 @@ Secure multi-source data ingestion, cross-agency data governance, real-time fusi
 ### Command — Operational Response
 Threat network intelligence, predictive assessments, network disruption recommendations. Multi-agency workflows with role-based access. Right decision-maker, right intelligence, right time. Full audit trail.
 
-*Framework note: Three-step delivery model mirrors "Connect → Build → Operate" from the landing-page framework. Named architecture layers give the buyer a mental model without requiring technical jargon. Dark section treatment signals "this is the platform depth" — visually separated from the outcome-focused content above.*
+*Framework note: Three-step delivery model mirrors "Connect → Build → Operate" from the landing-page framework. Named architecture layers give the buyer a mental model without requiring technical jargon. Dark section treatment signals "this is the stack depth" — visually separated from the outcome-focused content above.*
 
 ---
 

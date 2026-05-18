@@ -46,7 +46,7 @@ capabilities:
   - name: "Commercial Operations Intelligence"
     description: "Active SLA management with breach prediction, automated escalation, capacity planning, and cost tracking. Connect network performance to customer experience and commercial impact — turning NOC operations into revenue operations."
   - name: "Multi-Site NOC Operations"
-    description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support. AI-powered intelligence provides contextual guidance to operators regardless of experience level — institutional NOC expertise captured in the intelligence utility."
+    description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support. AI-powered intelligence provides contextual guidance to operators regardless of experience level — institutional NOC expertise captured in the intelligence stack."
 proofPoint:
   industry: "Infrastructure — Telecommunications"
   headline: "Multi-Site Tower Operations"

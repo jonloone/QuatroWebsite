@@ -1,7 +1,7 @@
 ---
 title: "Maritime Domain Awareness"
 tagline: "Track Every Vessel. Detect Dark Ships in Minutes."
-description: "Gain real-time operational intelligence utility across exclusive economic zones and naval operations. Detect vessels operating without transponders, enforce maritime borders, and reduce illegal fishing in minutes instead of days."
+description: "Gain real-time operational intelligence stack across exclusive economic zones and naval operations. Detect vessels operating without transponders, enforce maritime borders, and reduce illegal fishing in minutes instead of days."
 parentIndustry: "defense"
 order: 2
 hero:

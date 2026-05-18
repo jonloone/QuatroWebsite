@@ -99,4 +99,4 @@ They shift from counting the crises they manage to preventing the crises from ap
 
 ---
 
-*Quatro's intelligence utility helps cities and development organizations connect data across education, health, and social services—creating the operational picture that transforms intervention from reactive to predictive.*
+*Quatro's intelligence stack helps cities and development organizations connect data across education, health, and social services—creating the operational picture that transforms intervention from reactive to predictive.*

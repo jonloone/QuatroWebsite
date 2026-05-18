@@ -1,13 +1,13 @@
 ---
-title: "National Security"
-tagline: "National Intelligence for Health, Safety & Sustainability"
+title: "Intelligence"
+tagline: "Mission Intelligence with Human Review and Source Traceability"
 heroImage: "/images/industry-defense.png"
-description: "Quatro enables nations to see, understand, and act across the systems that protect their people and territory — community health, public safety, and environmental sustainability — connected into one sovereign intelligence model."
+description: "Quatro integrates source data, domain reasoning, analyst agents, and governed workflows for mission and intelligence teams. The result is source-to-assessment acceleration without removing human judgment, permissions, provenance, or customer control."
 order: 2
 hero:
   eyebrow: "National Intelligence"
-  title: "Health. Safety. Sovereignty. Three Missions, Zero Shared Intelligence."
-  description: "The health of communities. The safety of citizens. The sustainability of sovereign territory. Every nation depends on systems that serve these missions — but those systems operate through separate agencies, separate budgets, and separate command structures. Quatro connects them into one sovereign intelligence model. Your government sees the full picture and acts on it — with data that never leaves sovereign hands."
+  title: "Industrial AI for cross-source operational intelligence."
+  description: "Mission teams face too many sources, too little time, and strict trust constraints. Quatro connects source data, reasoning, agents, and review workflows so analysts can move from signal to sourced assessment to approved action."
   primaryCta:
     label: "Talk to Our Team"
     href: "/contact/demo"
@@ -15,12 +15,12 @@ hero:
     label: "Request a Brief"
     href: "/contact/sales"
 challenges:
-  - title: "Fragmented Intelligence Across Agencies"
-    description: "Health clinics treated the injuries. Social services flagged the family. Schools tracked the dropout. Police logged the arrest. Satellites detected the deforestation. But these agencies operate through separate systems, separate budgets, and separate command structures. The threats that cross jurisdictional lines — cartel recruitment, environmental crime, resource theft — go undetected because the intelligence picture is always incomplete."
-  - title: "No System of Record Across Domains"
-    description: "Each new security mission adds another screen, another database, another reporting chain. Maritime, land, health, and border operations all produce intelligence — but none of it connects. There is no shared operational model, only a growing stack of disconnected tools."
-  - title: "Sovereignty Requirements"
-    description: "National security environments require air-gapped deployment, zero external dependencies, and full audit trails. Intelligence must stay in sovereign hands from collection through action."
+- title: Source Overload
+  description: Analysts face too many sources, too little time, and insufficient workflow integration between collection and assessment.
+  image: /images/challenge-defense-silos.png
+- title: Fragile Provenance
+  description: When intelligence products are manually assembled, tracing a final assessment back to the raw source signal is difficult and error-prone.
+  image: /images/challenge-defense-multi-domain.png
 programs:
   - name: "Community Health"
     description: "Predictive intelligence that identifies which communities and individuals are most at risk — before intervention is too late. Multi-agency data fusion connects education, health, social services, and law enforcement into parish-level risk scoring and targeted intervention routing."
@@ -43,25 +43,20 @@ programs:
     domains: "Border Monitoring · Smuggling Networks · Crossing Patterns · Multi-Agency Response · Territorial Sovereignty"
     image: "/images/domain-border-security.png"
 capabilities:
-  - name: "Air-Gapped Operations"
-    description: "Full operational intelligence without cloud connectivity. Autonomous agents that detect, reason, and recommend — deployed on sovereign infrastructure with zero external dependencies."
-    outcome: "Full intelligence capability. Zero external dependencies."
-    image: "/images/cap-defense-air-gapped.png"
-  - name: "Federated Command"
-    description: "Single command interface spanning agency operations centers, field stations, and regional offices. Local autonomy with centralized oversight — no network consolidation required."
-    outcome: "Every location. One command interface."
-    image: "/images/cap-defense-federated-command.png"
-  - name: "Governed Autonomous Response"
-    description: "Pre-defined response playbooks triggered by detected events — escalating alerts, notifying responders, activating countermeasures — all within legal and policy frameworks."
-    outcome: "Governed escalation. Policy-compliant response."
-    image: "/images/cap-defense-force-protection.png"
-  - name: "Compliance & Audit Trails"
-    description: "Every detection, alert, decision, and action logged with timestamp and chain-of-command context. Multi-agency accountability from collection through enforcement."
-    outcome: "Complete chain-of-command audit trail."
+- name: Source-to-Assessment Traceability
+  description: Every generated claim or summary includes direct citations back to the original structured or unstructured source data.
+  featured: true
+  outcome: High-confidence intelligence products with full evidentiary audit trails.
+  image: /images/cap-defense-national-intel.png
+- name: Analyst Augmentation
+  description: Agents assist with rapid triage, translation, and initial synthesis, allowing human analysts to focus on high-level judgment.
+  featured: true
+  outcome: Accelerated intelligence production without removing human oversight.
+  image: /images/cap-defense-federated-command.png
 platformMapping:
-  see: "Multi-sensor ingestion across cameras, radar, satellite EO, AIS/VMS, SCADA, and IoT. 8,000+ ready-made integrations connect any sensor, any system, any agency data source. Edge processing for air-gapped environments."
-  understand: "Real-time operational model with multi-source data fusion, cross-agency governance, and domain-trained predictive algorithms. Autonomous agents deliver operational intelligence fully within sovereign infrastructure."
-  orchestrate: "Cross-domain orchestration spanning community protection, maritime enforcement, land conservation, and border security. Federated command across distributed locations. Governed response playbooks. Role-based workspaces for every level of command."
+  see: Connect structured, unstructured, geospatial, temporal, OSINT, and internal classified data streams into a unified intelligence graph.
+  understand: Preserve analytic tradecraft by applying spatial-temporal reasoning and domain-specific threat ontologies.
+  orchestrate: Analyst-in-the-loop workflows. Agents summarize, compare, and draft assessments, with every claim traceable back to source evidence.
 cta:
   primary:
     label: "Talk to Our Team"

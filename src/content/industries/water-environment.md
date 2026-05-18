@@ -1,15 +1,15 @@
 ---
 title: "Water & Environment"
-tagline: "Unified Intelligence for Water and Environmental Operations"
+tagline: "Smart Cities & Utilities Support Page"
 heroImage: "/images/industry-water-environment.png"
-description: "When water sensors, environmental monitors, and regulatory systems each operate in isolation, leaks go undetected and compliance gaps widen invisibly. Quatro connects them into one operational intelligence utility — predictive system health, automated compliance reporting, and coordinated environmental protection."
+description: "Quatro connects water sensors, environmental monitors, work orders, compliance systems, and field workflows into governed industrial AI systems for utility and public-sector teams."
 order: 8
 hero:
   eyebrow: "Water & Environment"
-  title: "Half Your Treated Water Disappears Before It Reaches a Tap."
-  description: "Water systems across Latin America lose 40–50% of treated water to undetected leaks. Environmental violations surface weeks after contamination begins. The data to prevent both already exists — in pressure sensors, flow meters, quality probes, and environmental monitors that don't correlate. Quatro connects them and gives your team leak detection in minutes, automated compliance reporting, and governed dispatch workflows."
+  title: "Industrial AI for water and environmental operations."
+  description: "Water and environmental teams already have pressure, flow, quality, field, and compliance data. Quatro connects those signals into one governed operating model for leak detection, dispatch, reporting, and human-approved action."
   primaryCta:
-    label: "Request a Demo"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Water Expert"
@@ -78,7 +78,7 @@ capabilities:
 platformMapping:
   see: "8,000+ integrations across water sensors, environmental monitors, SCADA systems, meter networks, and regulatory databases. Pressure sensors, flow meters, quality probes, environmental IoT — all feeding into unified streams. Connect and get intelligence from what you have, no rip-and-replace."
   understand: "Real-time hydraulic correlation, time-series anomaly detection, and environmental pattern recognition. Leaks detected automatically, compliance status tracked in real-time, environmental trends analyzed continuously. Machine-learning models trained on historical pressure patterns for predictive localization."
-  orchestrate: "Leak localization recommendations and governed autonomous action workflows. Predictive failure scoring on pipe segments. Automated compliance reporting for SENAGUA, MAE/MAATE, and TULSMA. Enforcement packages with evidence trails. Governance-grade audit trails for every detection and regulatory handoff. Cross-media environmental monitoring extends into [Environmental Governance](/solutions/environmental-governance) — connecting water quality, air quality, emissions, and ESG disclosure into one governed compliance model."
+  orchestrate: "Leak localization recommendations and human-approved workflow automation workflows. Predictive failure scoring on pipe segments. Automated compliance reporting for SENAGUA, MAE/MAATE, and TULSMA. Enforcement packages with evidence trails. Governance-grade audit trails for every detection and regulatory handoff. Cross-media environmental monitoring extends into [Environmental Governance](/solutions/environmental-governance) — connecting water quality, air quality, emissions, and ESG disclosure into one governed compliance model."
 proofPoint:
   industry: "Water & Environment — Municipal Utility"
   headline: "Water Loss Reduction and Compliance Automation"
@@ -92,7 +92,7 @@ proofPoint:
   narrative: "A municipal water utility serving 500,000 residents deployed Quatro across its distribution network. Real-time hydraulic correlation detected leaks within minutes — reducing average locate time from 10 days to 4 hours. Water loss dropped 35% in the first year. Automated SENAGUA compliance reporting eliminated 30+ hours per month of manual data assembly, with real-time quality monitoring preventing violations before they reached customers."
 cta:
   primary:
-    label: "Request a Demo"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondary:
     label: "Talk to a Water Expert"

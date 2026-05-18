@@ -7,7 +7,7 @@ order: 3
 hero:
   eyebrow: "Supply Chain & Deployment Readiness"
   title: "Mission Logistics & Force Readiness"
-  description: "Cut critical supply response from 13 hours to 6. Federate 12+ forward operating bases into a single logistics intelligence utility."
+  description: "Cut critical supply response from 13 hours to 6. Federate 12+ forward operating bases into a single logistics intelligence stack."
   primaryCta:
     label: "Schedule a Defense Assessment"
     href: "/contact/defense-assessment"

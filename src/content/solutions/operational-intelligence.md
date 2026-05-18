@@ -1,6 +1,6 @@
 ---
 title: "Operational Intelligence"
-tagline: "Operational Intelligence Utility"
+tagline: "Operational Intelligence Stack"
 heroImage: "/images/solution-operational-intelligence.png"
 description: "Intelligence that guides your team through complex operations — not just dashboards that display data. Contextual recommendations, intelligent agents that surface what matters, and the bridge from operational awareness to enterprise-wide decision-making."
 order: 3
@@ -9,7 +9,7 @@ hero:
   title: "Intelligence That Guides. Not Just Alerts."
   description: "Your operations generate more data than any team can monitor. Quatro's intelligence layer watches continuously, surfaces what matters, provides contextual guidance, and coordinates responses across domains — without waiting for someone to ask the right question."
   primaryCta:
-    label: "Schedule an Assessment"
+    label: "Talk to Our Team"
     href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Solutions Architect"
@@ -40,7 +40,7 @@ capabilities:
   - name: "Relationship-Aware Intelligence"
     description: "Quatro maintains a living model of how your assets, services, and operations relate. When something changes, the intelligence layer traces the impact chain automatically — from root cause to affected services to business exposure."
   - name: "Augmented Operations"
-    description: "Your team handles complex situations confidently because the intelligence utility validates procedures, ensures consistency, and provides contextual insights at every step. Faster decisions, fewer errors, safer operations."
+    description: "Your team handles complex situations confidently because the intelligence stack validates procedures, ensures consistency, and provides contextual insights at every step. Faster decisions, fewer errors, safer operations."
   - name: "Custom Intelligence Applications"
     description: "Build intelligence applications tailored to your operations with low-code/no-code tools. Shift dashboards, batch tracking, compliance workflows — without IT projects or vendor professional services."
   - name: "Enterprise Intelligence Bridge"

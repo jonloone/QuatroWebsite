@@ -66,23 +66,24 @@ export interface PrimaryNavItem {
 const footerNavigationData = {
   en: {
     products: {
-      title: 'How We Work',
+      title: 'How It Works',
       items: [
-        { name: 'The Intelligence Utility', href: '/utility' },
+        { name: 'The Intelligence Stack', href: '/utility' },
         { name: 'Capabilities', href: '/solutions' },
-        { name: 'xOps', href: '/utility/xops' },
-        { name: 'Technology', href: '/utility/technology' },
+        { name: 'Capa de implementación xOps', href: '/utility/xops' },
+        { name: 'Deployment model', href: '/utility/technology' },
       ],
     },
     industries: {
-      title: 'Industries',
-      items: [
-        { name: 'Energy', href: '/industries/energy' },
-        { name: 'National Security', href: '/industries/defense' },
-        { name: 'Networks', href: '/industries/networks' },
-        { name: 'Cities', href: '/industries/cities' },
-      ],
-    },
+        title: 'Industries',
+        items: [
+          { name: 'Smart Cities & Utilities', href: '/industries/cities' },
+          { name: 'Oil & Gas / Energy', href: '/industries/energy' },
+          { name: 'Maritime / Ports', href: '/solutions/port-operations' },
+          { name: 'Logistics / Supply Chain', href: '/industries/transportation' },
+          { name: 'Intelligence', href: '/industries/defense' },
+        ],
+      },
     resources: {
       title: 'Resources',
       items: [
@@ -103,21 +104,22 @@ const footerNavigationData = {
     products: {
       title: 'Cómo Trabajamos',
       items: [
-        { name: 'La Utilidad de Inteligencia', href: '/utility' },
+        { name: 'El stack de inteligencia', href: '/utility' },
         { name: 'Capacidades', href: '/solutions' },
-        { name: 'xOps', href: '/utility/xops' },
-        { name: 'Tecnología', href: '/utility/technology' },
+        { name: 'Capa de implementación xOps', href: '/utility/xops' },
+        { name: 'Modelo de despliegue', href: '/utility/technology' },
       ],
     },
     industries: {
-      title: 'Industrias',
-      items: [
-        { name: 'Energía', href: '/industries/energy' },
-        { name: 'Seguridad Nacional', href: '/industries/defense' },
-        { name: 'Redes', href: '/industries/networks' },
-        { name: 'Ciudades', href: '/industries/cities' },
-      ],
-    },
+        title: 'Industrias',
+        items: [
+          { name: 'Ciudades inteligentes y servicios públicos', href: '/es/industries/cities' },
+          { name: 'Petróleo, gas y energía', href: '/es/industries/energy' },
+          { name: 'Marítimo y puertos', href: '/es/solutions/port-operations' },
+          { name: 'Logística y cadena de suministro', href: '/es/industries/transportation' },
+          { name: 'Inteligencia', href: '/es/industries/defense' },
+        ],
+      },
     resources: {
       title: 'Recursos',
       items: [
@@ -130,7 +132,7 @@ const footerNavigationData = {
       items: [
         { name: 'Nosotros', href: '/company/about' },
         { name: 'Contacto', href: '/contact' },
-        { name: 'Hablar con Nuestro Equipo', href: '/contact/demo' },
+        { name: 'Hable con nuestro equipo', href: '/contact/demo' },
       ],
     },
   },
@@ -167,24 +169,25 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       href: '/industries',
       variant: 'stacked',
       items: [
-        { name: 'Energy', description: 'Grid, pipeline, and production intelligence', href: '/industries/energy', icon: BoltIcon },
-        { name: 'National Security', description: 'Sovereign intelligence across community and territorial domains', href: '/industries/defense', icon: ShieldIcon },
-        { name: 'Networks', description: 'Ground to orbit — unified connectivity operations', href: '/industries/networks', icon: SignalIcon },
-        { name: 'Cities', description: 'Water, waste, safety — one operational picture', href: '/industries/cities', icon: BuildingLibraryIcon },
-      ],
+          { name: 'Smart Cities & Utilities', description: 'City, utility, water, waste, and public infrastructure workflows', href: '/industries/cities', icon: BuildingLibraryIcon },
+          { name: 'Oil & Gas / Energy', description: 'Pipeline, grid, production, asset, and environmental operations', href: '/industries/energy', icon: BoltIcon },
+          { name: 'Maritime / Ports', description: 'Port operations, maritime awareness, cargo, gates, and customs workflows', href: '/solutions/port-operations', icon: GlobeAltIcon },
+          { name: 'Logistics / Supply Chain', description: 'Fleet, freight, cold-chain, exception, and corridor intelligence', href: '/industries/transportation', icon: TruckIcon },
+          { name: 'Intelligence', description: 'Source-to-assessment workflows for mission and cross-agency teams', href: '/industries/defense', icon: ShieldIcon }
+        ],
       cta: { name: 'All Industries', href: '/industries' },
     },
     {
-      name: 'How We Work',
+      name: 'How It Works',
       href: '/utility',
       variant: 'stacked',
       items: [
-        { name: 'The Intelligence Utility', description: 'One operational model from every system you run', href: '/utility', icon: LinkIcon },
-        { name: 'Capabilities', description: 'What your team gets — visibility, prediction, governed action', href: '/solutions', icon: WrenchScrewdriverIcon },
-        { name: 'Technology', description: 'Architecture deep-dive for technical teams', href: '/utility/technology', icon: CogIcon },
-        { name: 'xOps', description: 'Adaptive workflows, agents, automations, and APIs', href: '/utility/xops', icon: CommandLineIcon },
+        { name: 'The Intelligence Stack', description: 'Data, reasoning, agents, and workflows integrated for your operation', href: '/utility', icon: LinkIcon },
+        { name: 'Capabilities', description: 'Operational workflows, agents, governance, and proof points', href: '/solutions', icon: WrenchScrewdriverIcon },
+        { name: 'Deployment Model', description: 'Architecture, governance, and customer-owned deployment options', href: '/utility/technology', icon: CogIcon },
+        { name: 'xOps', description: 'Implementation layer for adaptive workflows and operations surfaces', href: '/utility/xops', icon: CommandLineIcon },
       ],
-      cta: { name: 'How We Work', href: '/utility' },
+      cta: { name: 'How It Works', href: '/utility' },
     },
     {
       name: 'Company',
@@ -204,11 +207,12 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       href: '/industries',
       variant: 'stacked',
       items: [
-        { name: 'Energía', description: 'Inteligencia para red eléctrica, oleoductos y producción', href: '/industries/energy', icon: BoltIcon },
-        { name: 'Seguridad Nacional', description: 'Inteligencia soberana para protección comunitaria y territorial', href: '/industries/defense', icon: ShieldIcon },
-        { name: 'Redes', description: 'Tierra a órbita — operaciones de conectividad unificadas', href: '/industries/networks', icon: SignalIcon },
-        { name: 'Ciudades', description: 'Agua, residuos, seguridad — un modelo operacional', href: '/industries/cities', icon: BuildingLibraryIcon },
-      ],
+          { name: 'Ciudades inteligentes y servicios públicos', description: 'Flujos para ciudad, agua, residuos, servicios e infraestructura pública', href: '/es/industries/cities', icon: BuildingLibraryIcon },
+          { name: 'Petróleo, gas y energía', description: 'Operaciones de oleoductos, red eléctrica, producción, activos y ambiente', href: '/es/industries/energy', icon: BoltIcon },
+          { name: 'Marítimo y puertos', description: 'Operaciones portuarias, conciencia marítima, carga, accesos y aduanas', href: '/es/solutions/port-operations', icon: GlobeAltIcon },
+          { name: 'Logística y cadena de suministro', description: 'Flota, carga, cadena de frío, excepciones y corredores logísticos', href: '/es/industries/transportation', icon: TruckIcon },
+          { name: 'Inteligencia', description: 'Flujos de fuente a evaluación para equipos de misión y coordinación', href: '/es/industries/defense', icon: ShieldIcon }
+        ],
       cta: { name: 'Todas las Industrias', href: '/industries' },
     },
     {
@@ -216,10 +220,10 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       href: '/utility',
       variant: 'stacked',
       items: [
-        { name: 'La Utilidad de Inteligencia', description: 'Un modelo operacional de todos sus sistemas', href: '/utility', icon: LinkIcon },
-        { name: 'Capacidades', description: 'Visibilidad, predicción, acción gobernada', href: '/solutions', icon: WrenchScrewdriverIcon },
-        { name: 'Tecnología', description: 'Arquitectura en detalle para equipos técnicos', href: '/utility/technology', icon: CogIcon },
-        { name: 'xOps', description: 'Flujos adaptativos, agentes, automatizaciones y APIs', href: '/utility/xops', icon: CommandLineIcon },
+        { name: 'El stack de inteligencia', description: 'Datos, razonamiento, agentes y flujos integrados para su operación', href: '/utility', icon: LinkIcon },
+        { name: 'Capacidades', description: 'Flujos operativos, agentes, gobernanza y resultados', href: '/solutions', icon: WrenchScrewdriverIcon },
+        { name: 'Modelo de despliegue', description: 'Arquitectura, gobernanza y opciones bajo control del cliente', href: '/utility/technology', icon: CogIcon },
+        { name: 'xOps', description: 'Capa de implementación para flujos y superficies operativas', href: '/utility/xops', icon: CommandLineIcon },
       ],
       cta: { name: 'Cómo Trabajamos', href: '/utility' },
     },

@@ -1,7 +1,7 @@
 ---
 title: Network Operations Center Optimization
 tagline: One NOC. Any Vendor. 80% Fewer False Alarms.
-description: Consolidate multi-vendor infrastructure monitoring into a single operational intelligence utility that reduces alert noise, accelerates response, and improves availability.
+description: Consolidate multi-vendor infrastructure monitoring into a single operational intelligence stack that reduces alert noise, accelerates response, and improves availability.
 parentIndustry: infrastructure
 order: 2
 hero:
@@ -67,7 +67,7 @@ objections:
   - concern: Alert correlation sounds good in theory, but won't it miss critical events by over-suppressing?
     response: Quatro's correlation engine is tunable. You set sensitivity thresholds and can override correlation rules. We also provide audit trails so you can see why an alert was suppressed and adjust logic if needed.
   - concern: Our NOC has specialized workflows for different types of incidents. Will Quatro's automation actually help or just be prescriptive?
-    response: Quatro supports custom runbooks and escalation logic. You define your workflows; the intelligence utility automates them. We don't impose one-size-fits-all playbooks.
+    response: Quatro supports custom runbooks and escalation logic. You define your workflows; the intelligence stack automates them. We don't impose one-size-fits-all playbooks.
 adjacentSolutions:
   - title: Fleet & Logistics Optimization
     description: Extend NOC-style monitoring to vehicle fleets and asset tracking.

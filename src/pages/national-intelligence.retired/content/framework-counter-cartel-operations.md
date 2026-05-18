@@ -1,3 +1,8 @@
+---
+noindex: true
+legacy: true
+---
+
 # Counter-Cartel Operations — Sub-Page
 ## Framework-Mapped Messaging Document
 
@@ -30,7 +35,7 @@ This is a **vertical-specific solution sub-page** (evaluation, narrow focus, dep
 > Cross-domain intelligence that fuses maritime, border, financial, and human intelligence into a single operational picture — enabling coordinated multi-agency operations against transnational criminal organizations.
 
 **Hook line (the "scene the buyer can picture"):**
-> When a dark vessel is detected off the coast, the platform automatically correlates it with known trafficking routes, recent financial activity in port cities, border crossing patterns, and network intelligence on the organization that operates the corridor. Five domains. One picture. One targeting decision.
+> When a dark vessel is detected off the coast, the stack automatically correlates it with known trafficking routes, recent financial activity in port cities, border crossing patterns, and network intelligence on the organization that operates the corridor. Five domains. One picture. One targeting decision.
 
 **Primary CTA:**
 `Request an Operations Briefing`
@@ -127,7 +132,7 @@ Not five separate intelligence systems running in parallel — one intelligence 
 
 **The Dark Vessel Scenario (primary proof of concept):**
 
-When a dark vessel is detected off the coast, the platform does not generate a maritime alert and stop. It automatically:
+When a dark vessel is detected off the coast, the stack does not generate a maritime alert and stop. It automatically:
 1. Queries the **financial domain** for recent transaction activity in the predicted landing area
 2. Checks the **border domain** for crossing patterns consistent with pre-positioning of ground logistics
 3. Correlates with **network intelligence** to identify which organization operates that maritime corridor
@@ -156,10 +161,10 @@ The result is not five separate alerts to five separate agencies. It is one inte
 > **Framework rule:** 2-3 objections woven as confident statements, not FAQ.
 
 **Objection 1: "Coalition intelligence sharing means losing control of our data"**
-> Sovereignty-first model. The platform generates assessed intelligence products for partner consumption. Partners see threat assessments and targeting recommendations. They do not see raw intercepts, source identities, domestic surveillance data, or unprocessed agency feeds. Every disclosure decision is logged, auditable, and revocable. The coalition gets the intelligence it needs to coordinate. You retain absolute authority over your data.
+> Sovereignty-first model. The stack generates assessed intelligence products for partner consumption. Partners see threat assessments and targeting recommendations. They do not see raw intercepts, source identities, domestic surveillance data, or unprocessed agency feeds. Every disclosure decision is logged, auditable, and revocable. The coalition gets the intelligence it needs to coordinate. You retain absolute authority over your data.
 
 **Objection 2: "Our agencies won't coordinate — we've tried"**
-> Role-based access across military, police, coast guard, customs, and financial regulators. Each agency sees the intelligence relevant to their mission. Automated workflows route intelligence to the right agency. The platform handles coordination — agencies focus on execution. Every action is logged with chain-of-command context.
+> Role-based access across military, police, coast guard, customs, and financial regulators. Each agency sees the intelligence relevant to their mission. Automated workflows route intelligence to the right agency. The stack handles coordination — agencies focus on execution. Every action is logged with chain-of-command context.
 
 **Objection 3: "We don't have the sensors/infrastructure for this"**
 > 8,000+ ready-made integrations. The utility connects to what you have today — AIS feeds, existing camera networks, financial reporting systems, police databases. Sensor gaps are identified during the pilot and filled incrementally. You start with what exists.
@@ -178,7 +183,7 @@ The result is not five separate alerts to five separate agencies. It is one inte
 
 **What partners do not see:** Raw intercepts. Source identities. Domestic surveillance data. Unprocessed agency feeds. Anything not reviewed, assessed, and explicitly approved for release.
 
-**How it works:** Every intelligence product carries a releasability classification. Analysts control what is shared, with whom, and at what level of detail. Every disclosure is logged, auditable, and revocable. The platform enforces the sharing rules.
+**How it works:** Every intelligence product carries a releasability classification. Analysts control what is shared, with whom, and at what level of detail. Every disclosure is logged, auditable, and revocable. The stack enforces the sharing rules.
 
 > Full participation in multilateral security coalitions. Absolute authority over national data. Both, simultaneously.
 

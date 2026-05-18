@@ -1,3 +1,8 @@
+---
+noindex: true
+legacy: true
+---
+
 # Resource Protection
 
 *Protección de Recursos Naturales*

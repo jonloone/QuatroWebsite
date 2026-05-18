@@ -10,72 +10,97 @@ import DualCta from '@/components/marketing/DualCta.astro'
 const allIndustries = await getCollection('industries')
 const getIndustry = (slug: string) => allIndustries.find((i) => i.id === slug || i.id === `${slug}.md`)
 
-// Define the 5 pillars with their child industries
+// Define the canonical verticals with overlays.
+// Routes are preserved for now; visible labels align to the locked Quatro canon.
 const pillars = [
   {
-    name: 'Energy',
-    description: 'Unified intelligence for grid, pipeline, and production operations — connecting legacy SCADA with modern systems so your team sees, predicts, and acts from one model.',
+    name: 'Smart Cities & Utilities',
+    description: 'Industrial AI for city, utility, water, waste, mobility, field-service, and public infrastructure workflows.',
+    href: '/industries/cities',
+    image: getIndustry('cities')?.data.heroImage || '/images/industry-cities.png',
+    children: [
+      { name: 'Water Systems', href: '/industries/water-environment' },
+      { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
+      { name: 'Public Works Coordination', href: '/industries/cities' },
+    ],
+  },
+  {
+    name: 'Oil & Gas / Energy',
+    description: 'Pipeline, grid, production, maintenance, safety, and environmental workflows connected into one governed operating model.',
     href: '/industries/energy',
-    heroImage: getIndustry('energy')?.data.heroImage || '/images/industry-energy.png',
-    stats: getIndustry('energy')?.data.stats?.slice(0, 3) || [],
+    image: getIndustry('energy')?.data.heroImage || '/images/industry-energy.png',
     children: [
       { name: 'Grid Health', href: '/solutions/grid-health' },
       { name: 'Pipeline Integrity', href: '/solutions/pipeline-integrity' },
       { name: 'Asset Health', href: '/solutions/asset-health' },
     ],
-    featured: true,
   },
   {
-    name: 'National Security',
-    description: 'Sovereign operational intelligence connecting community protection and territorial security into one model. Air-gapped. Auditable. Your team owns the intelligence from day one.',
-    href: '/industries/defense',
-    heroImage: getIndustry('defense')?.data.heroImage || '/images/industry-defense.png',
-    stats: getIndustry('defense')?.data.stats?.slice(0, 3) || [],
+    name: 'Maritime / Ports',
+    description: 'Port, terminal, vessel, cargo, customs, and maritime-domain workflows coordinated through human-approved intelligence.',
+    href: '/solutions/port-operations',
+    image: '/images/solution-port-operations.png',
     children: [
-      { name: 'Community Health Intelligence', href: '/industries/defense' },
-      { name: 'Geosecurity Intelligence', href: '/industries/defense' },
-      { name: 'Sovereign Infrastructure', href: '/industries/defense' },
+      { name: 'Port Operations', href: '/solutions/port-operations' },
+      { name: 'Maritime Awareness', href: '/industries/defense/maritime-awareness' },
+      { name: 'Corridor Intelligence', href: '/solutions/corridor-intelligence' },
     ],
-    featured: true,
   },
   {
-    name: 'Networks',
-    description: 'Ground to orbit, subscriber to service — unified in one operational view. Terrestrial, satellite, and hybrid networks connected into one intelligence picture.',
+    name: 'Logistics / Supply Chain',
+    description: 'Fleet, freight, exception, route, corridor, warehouse, and customer-impact workflows connected into governed action.',
+    href: '/industries/transportation',
+    image: getIndustry('transportation')?.data.heroImage || '/images/industry-transportation.png',
+    children: [
+      { name: 'Fleet Logistics', href: '/solutions/fleet-logistics' },
+      { name: 'Fleet Health', href: '/solutions/fleet-health' },
+      { name: 'Service Assurance', href: '/solutions/service-assurance' },
+    ],
+  },
+  {
+    name: 'Intelligence',
+    description: 'Source-to-assessment workflows for mission, analyst, cross-agency, infrastructure-risk, and operational-intelligence teams.',
+    href: '/industries/defense',
+    image: getIndustry('defense')?.data.heroImage || '/images/industry-defense.png',
+    children: [
+      { name: 'Physical Security', href: '/solutions/physical-security' },
+      { name: 'Space Domain Awareness', href: '/solutions/space-domain-awareness' },
+      { name: 'Mission Logistics', href: '/industries/defense/mission-logistics' },
+    ],
+  },
+  {
+    name: 'Defense overlay',
+    description: 'A cross-cutting overlay for missions that require human command authority, responsible AI posture, and audit-signed action.',
+    href: '/industries/defense',
+    image: getIndustry('defense')?.data.heroImage || '/images/industry-defense.png',
+    children: [
+      { name: 'Base Protection', href: '/industries/defense/base-protection' },
+      { name: 'Mission Logistics', href: '/industries/defense/mission-logistics' },
+      { name: 'Maritime Awareness', href: '/industries/defense/maritime-awareness' },
+    ],
+  },
+  {
+    name: 'Networks & SATCOM overlay',
+    description: 'A cross-cutting overlay for connectivity, service assurance, NOC, satellite, edge, and mission-aware network operations.',
     href: '/industries/networks',
-    heroImage: getIndustry('networks')?.data.heroImage || '/images/industry-networks.png',
-    stats: getIndustry('networks')?.data.stats?.slice(0, 3) || [],
+    image: getIndustry('networks')?.data.heroImage || '/images/industry-networks.png',
     children: [
       { name: 'Network Operations', href: '/solutions/network-operations' },
-      { name: 'Fleet Health', href: '/solutions/fleet-health' },
-      { name: 'Service Assurance', href: '/solutions/hybrid-service-assurance' },
+      { name: 'Teleport Operations', href: '/solutions/teleport-operations' },
+      { name: 'Revenue Assurance', href: '/solutions/revenue-assurance' },
     ],
-    featured: false,
-  },
-  {
-    name: 'Cities',
-    description: 'Intelligence for the systems cities depend on — water, waste, transportation, public safety — connected into one operational model with real citizen outcomes.',
-    href: '/industries/cities',
-    heroImage: getIndustry('cities')?.data.heroImage || '/images/industry-cities.png',
-    stats: getIndustry('cities')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Water Systems', href: '/industries/water-environment' },
-      { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
-    ],
-    featured: false,
   },
 ]
-
-// All pillars rendered in alternating horizontal layout
 ---
 
 <MarketingLayout
-  title="Industries — Operational Intelligence for Critical Operations"
-  description="Quatro delivers operational intelligence across energy, defense & national security, networks, and cities — 8,000+ integrations, deployed your way."
+  title="Industries — Industrial AI for Critical Operations"
+  description="Quatro integrates data, reasoning, agents, and workflows for smart cities, energy, ports, logistics, and intelligence teams — with defense and networks/SATCOM overlays."
 >
   <HeroCanvas
     badge="Industries"
-    title="Intelligence for the Operations That Matter Most"
-    body="Quatro delivers operational intelligence for the industries where infrastructure matters most — energy grids, defense networks, communications systems, and the cities communities depend on."
+    title="Industrial AI for the operations that keep society running"
+    body="Quatro adapts one customer-owned intelligence stack — data, reasoning, agents, and workflows — to the operating reality of each industry."
     ctaLabel="Talk to Our Team"
     ctaHref="/contact/demo"
   />
@@ -103,10 +128,10 @@ const pillars = [
     </div>
   </Section>
 
-  <!-- PLATFORM STRIP -->
+  <!-- STACK STRIP -->
   <Section divider dark>
     <div class="mx-auto max-w-3xl text-center fade-up">
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-4">Platform</p>
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-4">Stack</p>
       <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">
         One Architecture. Every Vertical.
       </h2>
@@ -131,8 +156,8 @@ const pillars = [
   </Section>
 
   <DualCta
-    title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like for your industry.`}
-    description="Tell us the outcome that matters. We connect the systems that hold the answer. Your team starts working from the model."
+    title={`See what <span style="color: var(--color-forest);">industrial AI integration</span> looks like for your industry.`}
+    description="Tell us the first workflow that matters. We connect the systems, add reasoning and agents, and route work through a governed model your team owns."
     primaryCta={{ label: 'Talk to Our Team', href: '/contact/demo' }}
     secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
     microcopy="Intelligence in weeks · Your team owns it from day one"

@@ -1,13 +1,13 @@
 ---
-title: "Networks"
-tagline: "Unified Terrestrial & Satellite Operations"
+title: "Networks & SATCOM Overlay"
+tagline: "Connectivity Intelligence for Terrestrial, Satellite, Edge, and NOC Operations"
 heroImage: "/images/cap-broadcast-distribution.png"
-description: "When terrestrial towers, satellite ground segments, and multi-orbit constellations each report through different management systems, service degradation crosses boundaries undetected. Quatro unifies operations from ground to orbit — 8,000+ integrations across every vendor, every orbit, every transport layer."
+description: "Quatro integrates network, SATCOM, edge, service, customer, and operational data so remote teams can understand how connectivity affects the mission and coordinate human-approved response workflows across providers, systems, and field operations."
 order: 3
 hero:
   eyebrow: "Networks"
-  title: "Five Platforms. Three Orbits. One Customer Who Doesn't Care Which Failed."
-  description: "Terrestrial towers, satellite ground segments, and multi-orbit constellations each report through different management systems. When a customer loses service, was it the terrestrial link, the backhaul, the gateway, or an orbital anomaly? Your NOC toggles between 5–15 platforms to find out. Quatro unifies 8,000+ integrations into a single operational view — the same intelligence utility that won Teleport Technology of the Year 2026."
+  title: "Industrial AI for mission-aware network operations."
+  description: "Remote operations depend on hybrid connectivity: fiber, LTE/5G, LEO/MEO/GEO satellite, private networks, and edge systems. Quatro maps network events to operational impact and routes response through governed workflows."
   primaryCta:
     label: "Talk to Our Team"
     href: "/contact/demo"
@@ -35,34 +35,34 @@ challenges:
     description: "Transponder utilization is tracked manually or lags 24+ hours in billing systems. Terrestrial SLA compliance is measured separately from satellite SLAs. E2E service assurance doesn't exist when operational and financial data live in different worlds."
     image: "/images/challenge-networks-revenue-leakage.png"
   - title: "Fragmented Operations Despite Standards"
-    description: "3GPP NTN standardizes the UE side. But the operations side — provisioning, monitoring, fault management, capacity planning — remains fragmented across terrestrial and satellite toolchains. Standards don't solve operations fragmentation. You need an operational intelligence utility that bridges the gap."
+    description: "3GPP NTN standardizes the UE side. But the operations side — provisioning, monitoring, fault management, capacity planning — remains fragmented across terrestrial and satellite toolchains. Standards don't solve operations fragmentation. You need an operational intelligence stack that bridges the gap."
     image: "/images/challenge-networks-convergence-gap.png"
 capabilities:
   - name: "Unified NOC Intelligence Across All Domains"
     description: "One command center across terrestrial towers, satellite ground segments, and multi-orbit constellations. 8,000+ pre-built integrations normalize data from Nokia, Ericsson, Cisco, iDirect, Newtec, Comtech, and every other vendor into a single operational view. Connect and get intelligence: cross-domain correlation, root cause diagnosis, and operator guidance — spanning your entire network infrastructure."
     featured: true
-    outcome: "5-15 vendor tools → Single unified intelligence utility. Every domain. Every orbit."
+    outcome: "5-15 vendor tools → Single unified intelligence stack. Every domain. Every orbit."
     image: "/images/cap-networks-unified-ops.png"
   - name: "SLA Tracking & Hybrid Service Assurance"
-    description: "End-to-end SLA management across terrestrial and satellite transport layers — your operational intelligence utility monitors every link, every orbit, every service. Real-time SLA breach prediction 24+ hours in advance. Automated billing correlation between transponder utilization and terrestrial capacity. When traffic shifts from terrestrial to satellite (or between orbits), SLA tracking follows automatically."
+    description: "End-to-end SLA management across terrestrial and satellite transport layers — your operational intelligence stack monitors every link, every orbit, every service. Real-time SLA breach prediction 24+ hours in advance. Automated billing correlation between transponder utilization and terrestrial capacity. When traffic shifts from terrestrial to satellite (or between orbits), SLA tracking follows automatically."
     featured: true
     outcome: "Unified SLA intelligence across terrestrial, satellite, and hybrid services."
     image: "/images/cap-networks-hybrid-sla.png"
   - name: "Fleet Intelligence & Predictive Health"
-    description: "Predictive failure detection 2-4 weeks in advance across both terrestrial equipment (towers, cabinets, power) and satellite assets (GEO, LEO, MEO fleet health). Your operational intelligence utility surfaces cross-domain cascade risks that siloed tools cannot detect — a terrestrial backhaul degradation that will trigger satellite capacity overload, identified and prevented in advance."
+    description: "Predictive failure detection 2-4 weeks in advance across both terrestrial equipment (towers, cabinets, power) and satellite assets (GEO, LEO, MEO fleet health). Your operational intelligence stack surfaces cross-domain cascade risks that siloed tools cannot detect — a terrestrial backhaul degradation that will trigger satellite capacity overload, identified and prevented in advance."
     featured: true
     outcome: "2-4 week advance warning. Autonomous cascade detection across domains."
     image: "/images/cap-networks-fleet-intel.png"
   - name: "Governed Autonomous Remediation"
-    description: "When issues are detected, the operational intelligence utility diagnoses root cause across domains, recommends remediation, and executes governed autonomous actions using proven playbooks. Institutional expertise embedded — new operators perform like 20-year veterans."
+    description: "When issues are detected, the operational intelligence stack diagnoses root cause across domains, recommends remediation, and executes human-approved workflow automations using proven playbooks. Institutional expertise embedded — new operators perform like 20-year veterans."
     image: "/images/cap-networks-fault-remediation.png"
-    outcome: "Faster MTTR. Governed autonomous action. Institutional expertise embedded."
+    outcome: "Faster MTTR. Human-approved workflow automation. Institutional expertise embedded."
   - name: "Multi-Orbit Capacity Intelligence"
     description: "Ephemeris-aware operational intelligence predicts LEO satellite availability 30 minutes ahead and enables dynamic traffic steering across GEO, MEO, LEO, and terrestrial based on real-time demand, weather, and orbital mechanics. Governed autonomous orchestration optimizes utilization and cost."
     image: "/images/cap-networks-multi-orbit.png"
     outcome: "Intelligent capacity planning across every orbit and transport layer."
   - name: "Ground Segment Intelligence & Command"
-    description: "Real-time monitoring of antennas, RF chains, VSAT hubs, modems, and spectrum analyzers. Sub-minute anomaly detection with automated failover. The same operational intelligence utility trusted by satellite operators for mission-critical ground segment operations."
+    description: "Real-time monitoring of antennas, RF chains, VSAT hubs, modems, and spectrum analyzers. Sub-minute anomaly detection with automated failover. The same operational intelligence stack trusted by satellite operators for mission-critical ground segment operations."
     image: "/images/cap-networks-teleport.png"
     outcome: "Sub-minute detection. Faster failover. Complete ground segment visibility."
   - name: "Space Domain Intelligence Integration"
@@ -70,7 +70,7 @@ capabilities:
     image: "/images/cap-networks-sda.png"
     outcome: "Threat-to-impact-to-response unified in one operational picture."
   - name: "Sovereign & Air-Gapped Deployment"
-    description: "Deploy your operational intelligence utility cloud, hybrid, self-managed, or fully air-gapped. All network data remains under your control with end-to-end encryption. FIPS and NIST compliance for defense and government operators."
+    description: "Deploy your operational intelligence stack cloud, hybrid, self-managed, or fully air-gapped. All network data remains under your control with end-to-end encryption. FIPS and NIST compliance for defense and government operators."
     image: "/images/cap-networks-sovereign.png"
     outcome: "Complete sovereignty. Full data control. No external dependencies."
 platformMapping:
@@ -87,7 +87,7 @@ proofPoint:
       label: "Multi-Orbit Coverage"
     - value: "Weeks"
       label: "To First Intelligence"
-  narrative: "Network operators unifying terrestrial towers, satellite ground segments, and multi-orbit constellations into one operational view — cross-domain correlation, fleet health prediction, and governed autonomous remediation from a single intelligence utility."
+  narrative: "Network operators unifying terrestrial towers, satellite ground segments, and multi-orbit constellations into one operational view — cross-domain correlation, fleet health prediction, and governed autonomous remediation from a single intelligence stack."
 cta:
   primary:
     label: "Talk to Our Team"

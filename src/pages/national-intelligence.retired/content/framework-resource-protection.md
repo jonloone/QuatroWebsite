@@ -1,3 +1,8 @@
+---
+noindex: true
+legacy: true
+---
+
 # Resource Protection — Sub-Page
 ## Framework-Mapped Messaging Document
 
@@ -129,7 +134,7 @@ Traditional enforcement is reactive. What's needed is persistent surveillance �
 
 ### Multi-Source Intelligence Fusion — Three Sensor Layers
 
-**Dark section treatment — the platform depth.**
+**Dark section treatment — the stack depth.**
 
 **Space Layer:**
 Daily revisit optical and SAR imagery. AI change detection for mining, deforestation, and construction. Multi-spectral analysis for soil disturbance, water quality, vegetation stress.
@@ -171,7 +176,7 @@ Every detection, every correlation, every alert, every enforcement action docume
 > Every event is logged with timestamp, sensor source, confidence level, analyst assessment, and action taken. Chain-of-custody documentation formatted for national regulatory and law enforcement requirements. Evidence packages are designed for prosecution from the first detection event.
 
 **Objection 3: "We can't afford a satellite surveillance program"**
-> The platform integrates existing sensor infrastructure — existing pipeline SCADA, existing vessel tracking feeds, existing camera networks. Satellite imagery is provided through the NOVI Space partnership. You don't build a space program. You subscribe to an intelligence capability.
+> The stack integrates existing sensor infrastructure — existing pipeline SCADA, existing vessel tracking feeds, existing camera networks. Satellite imagery is provided through the NOVI Space partnership. You don't build a space program. You subscribe to an intelligence capability.
 
 *Framework note: Three objections — detection speed, legal admissibility, cost — mapped to the resource protection buyer's most likely concerns. The third objection ("you subscribe, you don't build") is the most powerful reframe and mirrors the DataOS "intelligence products as a service" thesis adapted for this domain.*
 

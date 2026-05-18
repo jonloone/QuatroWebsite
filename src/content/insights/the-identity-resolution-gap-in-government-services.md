@@ -65,7 +65,7 @@ The technical challenge of cross-system identity resolution is well understood. 
 
 The harder challenge is institutional. Ministries that have operated independently for decades have legitimate concerns about data sharing. Privacy regulations govern what can be linked and by whom. Bureaucratic boundaries define accountability. Technical teams protect their systems from external dependencies.
 
-These concerns are valid. They are also solvable — not by overriding institutional boundaries, but by building a governed data layer that respects them. A well-designed operational intelligence platform doesn't copy data from ministry systems into a central warehouse. It connects to them through governed APIs, resolves identities through privacy-preserving matching, and returns query results that each ministry's access controls have authorized.
+These concerns are valid. They are also solvable — not by overriding institutional boundaries, but by building a governed data layer that respects them. A well-designed operational intelligence stack doesn't copy data from ministry systems into a central warehouse. It connects to them through governed APIs, resolves identities through privacy-preserving matching, and returns query results that each ministry's access controls have authorized.
 
 The ministry of health retains ownership of health data. The ministry of education retains ownership of education data. What changes is that an authorized query — "show me children tracked by health at age two who are not currently enrolled in any education program" — can traverse both systems and return an answer. The data doesn't move. The intelligence does.
 
