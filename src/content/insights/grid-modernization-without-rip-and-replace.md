@@ -7,7 +7,7 @@ publishDate: 2026-04-05
 featured: false
 tags: ["energy", "grid", "scada", "modernization", "integration", "operational-intelligence", "der"]
 readingTime: "7 min read"
-excerpt: "Legacy SCADA systems represent decades of institutional knowledge embedded in control logic. The modernization path that preserves that knowledge — while adding intelligence — looks very different from rip-and-replace."
+excerpt: "Legacy SCADA systems represent decades of institutional knowledge embedded in control logic. The modernization path that preserves that knowledge (while adding intelligence) looks very different from rip-and-replace."
 heroImage: "/images/insight-grid-modernization.png"
 ---
 
@@ -27,7 +27,7 @@ The time cost is brutal. The risk is immense. And you still don't solve the unde
 
 There's a different path. One that asks a harder question: what if you didn't replace the legacy system at all?
 
-An integration approach reads from your existing SCADA infrastructure — ABB, Siemens, GE, Schneider, or others — without modifying control paths. It speaks the protocols your grid already speaks. DNP3. IEC 61850. OPC-UA. MQTT. The legacy system continues to do exactly what it was designed to do. It keeps doing it well. It keeps doing it with all the institutional knowledge embedded in its logic.
+An integration approach reads from your existing SCADA infrastructure (ABB, Siemens, GE, Schneider, or others) without modifying control paths. It speaks the protocols your grid already speaks. DNP3. IEC 61850. OPC-UA. MQTT. The legacy system continues to do exactly what it was designed to do. It keeps doing it well. It keeps doing it with all the institutional knowledge embedded in its logic.
 
 The intelligence layer sits alongside it, not beneath it. It correlates signals across systems. It detects patterns that individual SCADA nodes were never designed to see. It feeds predictive maintenance alerts to operators before equipment fails. It can recommend or execute governed autonomous actions, with the human operator always in control. Most importantly, it does all of this without asking your legacy system to be something it was never built to be.
 
@@ -41,7 +41,7 @@ According to the IEEE, grid modernization projects that preserve existing infras
 
 The pressure point that makes this approach necessary is also the place where it proves its value: distributed energy resources.
 
-Every new solar installation, battery system, and EV charger integration adds endpoints. These endpoints speak protocols — SunSpec, OCPP, IEEE 2030.5 — that legacy SCADA systems predate. Your current infrastructure has no native way to understand them. So you build a parallel monitoring system. DER data flows into one universe. SCADA data flows into another. Operators have two dashboards. Two mental models. Two sources of truth.
+Every new solar installation, battery system, and EV charger integration adds endpoints. These endpoints speak protocols (SunSpec, OCPP, IEEE 2030.5) that legacy SCADA systems predate. Your current infrastructure has no native way to understand them. So you build a parallel monitoring system. DER data flows into one universe. SCADA data flows into another. Operators have two dashboards. Two mental models. Two sources of truth.
 
 The integration approach collapses that complexity. DER endpoints, legacy SCADA nodes, and modern networked devices all become visible through a unified operational model. One set of dashboards. One source of truth. You can onboard a new solar array or EV charger in weeks, not quarters, because you're not rebuilding your entire control architecture to accommodate it.
 

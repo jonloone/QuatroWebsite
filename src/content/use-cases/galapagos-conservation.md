@@ -10,12 +10,12 @@ hero:
   description: "When patrol capacity and ocean area don't align, illegal fishing accelerates in blind zones. Detect unauthorized vessels and prevent illegal operations across your full exclusive economic zone without the patrol footprint."
   primaryCta:
     label: "Schedule a Civic Assessment"
-    href: "/contact/civic-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to an Infrastructure Engineer"
-    href: "/contact/civic-assessment"
+    href: "/contact/sales"
 pain:
-  narrative: "The Galápagos marine reserve spans 133,000 km² — an area larger than many nations. Yet three operators, armed only with binoculars and radio, attempt to monitor fishing activity, detect poachers, and enforce conservation regulations. Each illegal fishing operation represents not just loss of revenue and marine life, but erosion of a UNESCO World Heritage Site. The current approach trades speed for scale: patrol vessels consume fuel budgets within weeks, leaving vast ocean areas dark and unmonitored. Illegal fishing operations operate with near-impunity, knowing detection probability drops sharply beyond coastal waters. The result: species depletion, lost tourism revenue, and sovereignty gaps."
+  narrative: "The Galápagos marine reserve spans 133,000 km², an area larger than many nations. Yet three operators, armed only with binoculars and radio, attempt to monitor fishing activity, detect poachers, and enforce conservation regulations. Each illegal fishing operation represents not just loss of revenue and marine life, but erosion of a UNESCO World Heritage Site. The current approach trades speed for scale: patrol vessels consume fuel budgets within weeks, leaving vast ocean areas dark and unmonitored. Illegal fishing operations operate with near-impunity, knowing detection probability drops sharply beyond coastal waters. The result: species depletion, lost tourism revenue, and sovereignty gaps."
   quantified:
     - metric: "Area monitored"
       before: "~5,000 km² per vessel patrol"
@@ -34,7 +34,7 @@ capabilities:
     description: "Multi-spectral satellite imagery via NOVI Space partners to detect dark vessels (fishing boats with AIS disabled) and confirm visual detections across the full reserve."
     icon: "satellite"
   - name: "Automated Camera Surveillance"
-    description: "Coastal and offshore camera networks with AI-powered motion detection and vessel classification to augment satellite coverage near high-risk zones."
+    description: "Coastal and offshore camera networks with AI-driven motion detection and vessel classification to augment satellite coverage near high-risk zones."
     icon: "camera"
   - name: "Compliance Audit Trails"
     description: "Immutable records of all detections, responses, and enforcement actions for accountability, donor reporting, and legal proceedings."
@@ -69,7 +69,7 @@ objections:
 adjacentSolutions:
   - title: "Youth Violence Prevention Intelligence"
     description: "Apply the same multi-source data integration and predictive alerting framework to social interventions in coastal cities."
-    href: "/use-cases/youth-violence-prevention"
+    href: "/industries/cities/youth-violence-prevention"
   - title: "Maritime Domain Awareness"
     description: "Extend vessel detection and AIS fusion capabilities to port security and naval operational theater monitoring."
     href: "/industries/defense/maritime-awareness"
@@ -83,10 +83,10 @@ crossVertical:
 cta:
   primary:
     label: "Schedule a Civic Assessment"
-    href: "/contact/civic-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to an Infrastructure Engineer"
-    href: "/contact/civic-assessment"
+    href: "/contact/sales"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---
 
@@ -96,7 +96,7 @@ Marine protected areas face an impossible mandate: preserve critical ecosystems 
 
 ## The Operational Intelligence Solution
 
-Quatro integrates AIS vessel feeds, satellite imagery, and coastal camera networks into a unified operational intelligence stack, enabling governed autonomous action for real-time enforcement response. Automated detection flags suspicious vessels in real time, eliminating the detection lag that currently favors poachers.
+Quatro integrates AIS vessel feeds, satellite imagery, and coastal camera networks into a unified operational intelligence stack, supporting governed autonomous action for real-time enforcement response. Automated detection flags suspicious vessels in real time, eliminating the detection lag that currently favors poachers.
 
 **Key outcomes:**
 - Detection time reduced from 4–6 hours to <15 minutes

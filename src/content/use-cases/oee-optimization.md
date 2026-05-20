@@ -10,10 +10,10 @@ hero:
   description: Most manufacturers leave 20–30% OEE on the table due to fragmented visibility and cross-shift blindspots. Quatro unifies your production network to find and recover that loss.
   primaryCta:
     label: Schedule an Industrial Assessment
-    href: /contact/industrial-assessment
+    href: /contact/demo
   secondaryCta:
     label: Talk to a Plant Engineer
-    href: /contact/plant-engineer
+    href: /contact/sales
 pain:
   narrative: "You have eight plants running around the clock, but your visibility stops at the plant boundary. Shift-to-shift handoffs lose critical context. One plant optimized for throughput while another struggled with the same bottleneck, but you didn't know it. When a line goes down, you don't have real-time data to diagnose root cause—you're left guessing. Your OEE sits at 55% when benchmarks say you should be at 75+%. The gap represents $125K/hour in missed opportunity. Your operations team is drowning in disconnected systems, each plant running its own playbook, and no unified way to compare performance or replicate wins across the network."
   quantified:
@@ -60,7 +60,7 @@ proofPoint:
       label: Plants unified
     - value: "$18M"
       label: Annual recovery from OEE gain
-  narrative: "A global chemical manufacturer operated eight plants with independent production control systems. Plant A's throughput leader was unknown to Plant E, where the same product line ran 15% slower. Quality issues detected at Plant C weren't shared with Plant D until after scrap accumulated. OEE ranged from 48% to 62% across plants. No unified view meant no leverage for optimization. Quatro's operational intelligence stack unified all eight plants in 120 days. Within six months, cross-plant benchmarking revealed that Plant A's changeover sequence reduced setup time by 40 minutes. Rolling that practice across the network saved 18% changeover time globally. Quality dashboards showed systematic seasoning issues in Plant B that, once fixed, reduced rework by 28%. The combined gains lifted network OEE from 55% to 77%—a $18M annual production value unlock."
+  narrative: "A global chemical manufacturer operated eight plants with independent production control systems. Plant A's throughput leader was unknown to Plant E, where the same product line ran 15% slower. Quality issues detected at Plant C weren't shared with Plant D until after scrap accumulated. OEE ranged from 48% to 62% across plants. No unified view meant no leverage for optimization. Quatro's operational intelligence stack unified all eight plants in 120 days. Within six months, cross-plant benchmarking revealed that Plant A's changeover sequence reduced setup time by 40 minutes. Rolling that practice across the network saved 18% changeover time globally. Quality dashboards showed systematic seasoning issues in Plant B that, once fixed, reduced rework by 28%. The combined gains lifted network OEE from 55% to 77%—a $18M annual production value capture."
 objections:
   - concern: Our plants run different products and have different constraints. How does cross-plant benchmarking apply?
     response: Quatro indexes performance by product family, equipment type, and process step. Comparisons are contextual—you see which plants excel at YOUR products and constraints, not misleading apples-to-oranges benchmarks.
@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: Mining & Remote Asset Operations
     description: Extend real-time operational intelligence to distributed assets and supply networks.
-    href: /use-cases/mining-operations
+    href: /industries/industrial/mining-operations
   - title: Process Quality & Compliance
     description: Add automated batch tracking and governed audit trails to your OEE optimization.
-    href: /use-cases/process-quality
+    href: /industries/industrial/process-quality
   - title: Network Operations Center Optimization
     description: Apply unified monitoring and alerting to your production network like a NOC manages IT infrastructure.
-    href: /use-cases/noc-operations
+    href: /industries/infrastructure/noc-operations
 crossVertical:
   - industry: Energy
     result: Generator and plant production optimization increases grid reliability and throughput
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: Schedule an Industrial Assessment
-    href: /contact/industrial-assessment
+    href: /contact/demo
   secondary:
     label: Talk to a Plant Engineer
-    href: /contact/plant-engineer
+    href: /contact/sales
   microcopy: Intelligence in weeks · Your team owns it from day one
 ---

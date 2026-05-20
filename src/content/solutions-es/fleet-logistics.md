@@ -1,17 +1,17 @@
 ---
 title: "Flotas y Logística"
-tagline: "Inteligencia de Flotas"
-description: "Gestión unificada de flotas con optimización de rutas con inteligencia predictiva y mantenimiento predictivo que reduce costos de combustible en un 14% y mejora las entregas a tiempo en un 22%."
+tagline: "Inteligencia operacional de flotas"
+description: "Gestión unificada de flotas con optimización de rutas impulsada por IA y mantenimiento predictivo que reduce costos de combustible en un 14% y mejora las entregas a tiempo en un 22%."
 order: 5
 hero:
   eyebrow: "Flotas y Logística"
-  title: "Optimice Cada Kilómetro. Rastree Cada Activo."
-  description: "Transforme herramientas de flotas fragmentadas en inteligencia operacional unificada. Ruteo con inteligencia predictiva, mantenimiento predictivo y despacho en tiempo real en una sola plataforma."
+  title: "Optimice cada kilómetro. Rastree cada activo."
+  description: "Cuando el GPS, los registros de mantenimiento, los sistemas de combustible y las herramientas de despacho operan de forma independiente, las ineficiencias de ruta y los riesgos de falla cruzan las fronteras de flota sin detectarse. Quatro integra datos, razonamiento y flujos de trabajo sobre un solo stack de inteligencia para que su equipo trabaje desde una vista operacional única."
   primaryCta:
-    label: "Solicite una Evaluación de Flotas"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Especialista en Flotas"
+    label: "Hable con un especialista en flotas"
     href: "/es/contact/sales"
 stats:
   - value: "14%"

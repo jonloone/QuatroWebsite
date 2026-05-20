@@ -1,18 +1,18 @@
 ---
-title: "Energía"
-tagline: "Modernización por Superposición para Redes y Ductos"
+title: "Petróleo, Gas y Energía"
+tagline: "De la anomalía a la acción aprobada, en un solo modelo gobernado."
 heroImage: "/images/industry-energy.png"
-description: "Inteligencia operacional unificada que superpone analítica con IA, integración de DER y correlación multidominio sobre el SCADA existente — entregando capacidades modernas en meses, no años."
+description: "Quatro integra SCADA, historiadores, ERP/EAM, GIS, CMMS, reportes de campo y datos ambientales en flujos de IA industrial que su organización controla. Sus equipos pasan de la anomalía a la acción recomendada con aprobación humana, trazabilidad y respeto a las restricciones de despliegue. Un solo stack de inteligencia sobre el cual sus operadores hacen funcionar la infraestructura crítica."
 order: 1
 hero:
   eyebrow: "Energía"
-  title: "Modernice Su SCADA. Mantenga Su Infraestructura."
-  description: "No reemplace sistemas de control de 15-25 años. Superpóngales analítica impulsada por IA, conectividad de DER y operaciones unificadas que se despliegan en meses — no los 3-5 años que demanda un reemplazo total."
+  title: "Encuentre la falla que importa en una sala de control llena de alarmas."
+  description: "Los operadores de energía gestionan la confiabilidad de la red, la integridad de los ductos, la eficiencia de producción y el cumplimiento ambiental sobre sistemas que nunca fueron diseñados para compartir contexto. Quatro conecta los datos, el razonamiento, los agentes y los flujos de trabajo sobre un solo stack de inteligencia, para que sus operadores actúen desde un modelo gobernado."
   primaryCta:
-    label: "Solicite una Evaluación Energética"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Ingeniero de Energía"
+    label: "Hable con un ingeniero de energía"
     href: "/es/contact/sales"
 stats:
   - value: "75%"
@@ -62,10 +62,10 @@ proofPoint:
   narrative: "Una empresa de servicios que atiende a 2 millones de clientes desplegó Quatro en más de 200 subestaciones, superponiendo SCADA legacy de ABB, GE y Siemens. Los playbooks de respuesta ante tormentas redujeron el tiempo promedio de restauración en un 60%, y la correlación multidominio ahorró 2,000 despachos de camión al año — todo entregado en 9 meses contra un plazo de reemplazo de 3-5 años."
 cta:
   primary:
-    label: "Solicite una Evaluación Energética"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondary:
-    label: "Hable con un Ingeniero de Energía"
+    label: "Hable con un ingeniero de energía"
     href: "/es/contact/sales"
-  microcopy: "Evaluación típica: 45-60 minutos. Mapearemos sus sistemas SCADA y herramientas de monitoreo actuales — y le mostraremos cómo la modernización por superposición entrega inteligencia unificada en meses, no años."
+  microcopy: "Conversación típica: 45-60 minutos. Mapeamos sus sistemas SCADA y herramientas actuales, y le mostramos cómo el stack de inteligencia entrega visibilidad operacional en semanas, no años."
 ---

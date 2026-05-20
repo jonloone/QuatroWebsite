@@ -2,12 +2,12 @@
 title: "Service Assurance"
 tagline: "End-to-End SLA Intelligence Across Every Transport Layer"
 heroImage: "/images/solution-hybrid-service-assurance.png"
-description: "Real-time SLA management across terrestrial and satellite transport layers. Breach prediction, automated billing correlation, and revenue optimization intelligence — whether traffic is on fiber, tower, GEO transponder, or LEO pass."
+description: "Real-time SLA management across terrestrial and satellite transport layers. Breach prediction, automated billing correlation, and revenue optimization intelligence, whether traffic is on fiber, tower, GEO transponder, or LEO pass."
 order: 10
 hero:
   eyebrow: "Service Assurance"
-  title: "One SLA View. Every Transport Layer."
-  description: "Terrestrial SLAs and satellite SLAs measured in different systems, reconciled in different spreadsheets, disputed in different meetings. Quatro's operational intelligence stack unifies service assurance across every transport layer — fiber, tower, GEO, LEO, MEO — with real-time breach prediction, automated billing correlation, and revenue optimization intelligence."
+  title: "See the SLA breach coming 24 hours before it lands."
+  description: "Terrestrial SLAs and satellite SLAs measured in different systems, reconciled in different spreadsheets, disputed in different meetings. Quatro's operational intelligence stack unifies service assurance across every transport layer: fiber, tower, GEO, LEO, MEO. Real-time breach prediction, automated billing correlation, and revenue optimization intelligence."
   primaryCta:
     label: "Request a Revenue Assessment"
     href: "/contact/demo"
@@ -25,11 +25,11 @@ stats:
     label: "Cross-Domain SLA Tracking"
 challenges:
   - title: "Separate SLA Worlds"
-    description: "Terrestrial SLA compliance is measured in one system with one set of KPIs. Satellite SLAs — transponder availability, link budget margins, rain fade compensation — are tracked in a completely different system. When customers buy hybrid connectivity, nobody owns the end-to-end SLA."
+    description: "Terrestrial SLA compliance is measured in one system with one set of KPIs. Satellite SLAs, transponder availability, link budget margins, rain fade compensation, are tracked in a completely different system. When customers buy hybrid connectivity, nobody owns the end-to-end SLA."
   - title: "Billing Data Latency"
     description: "Transponder utilization data reaches billing systems 12-48 hours after the event. Terrestrial capacity charges are calculated monthly. Real-time service quality has no real-time financial visibility."
   - title: "Revenue Leakage at Domain Boundaries"
-    description: "5-15% of transponder capacity sits idle while billed at full rate. Terrestrial over-provisioning costs accumulate silently. The boundary between satellite and terrestrial billing is where revenue leaks compound — because nobody correlates across both."
+    description: "5-15% of transponder capacity sits idle while billed at full rate. Terrestrial over-provisioning costs accumulate silently. The boundary between satellite and terrestrial billing is where revenue leaks compound, because nobody correlates across both."
   - title: "Manual Dispute Resolution"
     description: "SLA disputes take 2-4 weeks to resolve through manual correlation across 3+ systems. When traffic moves between satellite and terrestrial during a service event, determining SLA accountability becomes a multi-team forensic exercise."
 capabilities:
@@ -42,11 +42,11 @@ capabilities:
   - name: "Revenue Optimization Intelligence"
     description: "Recommendations for pricing optimization and capacity right-sizing based on real-time utilization patterns across terrestrial and satellite resources. Identifies idle capacity, over-provisioned links, and upsell opportunities."
   - name: "Dispute Prevention Workflows"
-    description: "When issues span domains, the operational intelligence stack provides a complete audit trail — which transport layer was affected, for how long, what the SLA impact was, and what credit is owed. Disputes resolve in days with shared data, not weeks of forensic reconciliation."
+    description: "When issues span domains, the operational intelligence stack provides a complete audit trail, which transport layer was affected, for how long, what the SLA impact was, and what credit is owed. Disputes resolve in days with shared data, not weeks of forensic reconciliation."
   - name: "Cross-Domain Revenue Intelligence"
     description: "Connect transponder events, terrestrial performance, and customer contract terms into a unified operational intelligence view. Revenue per service path, customer churn risk, and competitive pricing benchmarks across your hybrid service portfolio."
 proofPoint:
-  industry: "Networks — Commercial Satellite Operator"
+  industry: "Networks, Commercial Satellite Operator"
   headline: "Revenue Recovery and Billing Transformation"
   metrics:
     - value: "2.1%"

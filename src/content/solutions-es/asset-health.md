@@ -1,17 +1,17 @@
 ---
 title: "Salud de Activos"
-tagline: "Prediga Fallas Antes de Que Ocurran"
-description: "Monitoreo de salud de activos impulsado por IA que transforma las operaciones de reactivas a predictivas, reduciendo el tiempo inactivo no planificado hasta un 60% en toda su infraestructura."
+tagline: "Prediga las fallas antes de que ocurran"
+description: "Monitoreo de salud de activos que cambia las operaciones de reactivas a predictivas, reduciendo el tiempo inactivo no planificado hasta un 60% en toda su infraestructura."
 order: 1
 hero:
   eyebrow: "Salud de Activos"
-  title: "Controle Cada Activo. Prediga Cada Falla."
-  description: "Visibilidad en tiempo real y mantenimiento predictivo impulsado por IA en todo su portafolio de activos. Deje de reaccionar ante fallas y comience a prevenirlas."
+  title: "Controle cada activo. Prediga cada falla."
+  description: "Cuando los datos de activos viven en sistemas separados de mantenimiento, SCADA y ERP, los patrones de falla quedan invisibles hasta que algo se rompe. Quatro conecta el stack de inteligencia para vigilar de forma continua y predecir las fallas antes de que ocurran."
   primaryCta:
-    label: "Solicite una Evaluación"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Ingeniero"
+    label: "Hable con un ingeniero"
     href: "/es/contact/sales"
 stats:
   - value: "60%"

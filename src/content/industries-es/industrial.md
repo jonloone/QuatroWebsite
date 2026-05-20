@@ -1,18 +1,18 @@
 ---
-title: "Industrial"
-tagline: "Inteligencia de Planta Multidominio"
+title: "Operaciones Industriales"
+tagline: "Mantenimiento, calidad y rendimiento en un solo modelo operacional."
 heroImage: "/images/industry-industrial.png"
-description: "Inteligencia operacional unificada que correlaciona datos de producción, mantenimiento, calidad y seguridad — reduciendo el tiempo inactivo en un 35% y eliminando los silos que ciegan sus operaciones."
+description: "Quatro integra SCADA, DCS, MES, ERP, CMMS, calidad y flujos de campo en sistemas de IA industrial gobernados para operaciones de planta e intensivas en activos. Un solo stack de inteligencia sobre el cual sus operadores hacen funcionar la planta en cada turno."
 order: 3
 hero:
   eyebrow: "Industrial"
-  title: "Del Piso de Planta a la Empresa. Una Sola Capa de Inteligencia."
-  description: "Deje de alternar entre historiadores, MES y sistemas de mantenimiento. La inteligencia operacional unificada correlaciona todos los dominios — revelando insights que las herramientas aisladas estructuralmente no pueden detectar."
+  title: "Detecte la falla con semanas de anticipación y entréguele la solución a su operador."
+  description: "Los equipos de planta tienen historiadores, MES, CMMS, ERP y sistemas de calidad que pocas veces comparten un solo modelo operacional. Quatro los conecta sobre un stack de inteligencia gobernado para flujos de mantenimiento, calidad, rendimiento y guía al operador."
   primaryCta:
-    label: "Solicite una Evaluación de Planta"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Ingeniero Industrial"
+    label: "Hable con un ingeniero industrial"
     href: "/es/contact/sales"
 stats:
   - value: "35%"
@@ -62,10 +62,10 @@ proofPoint:
   narrative: "Un fabricante químico que opera 8 plantas bajo requisitos PSM/RMP desplegó Quatro en todas las instalaciones. La visibilidad multidominio redujo los eventos de mantenimiento de emergencia en un 35%, mejoró el OEE en un 22% y eliminó el 60% de las falsas alarmas en sistemas de monitoreo de seguridad y procesos."
 cta:
   primary:
-    label: "Solicite una Evaluación de Planta"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondary:
-    label: "Hable con un Ingeniero Industrial"
+    label: "Hable con un ingeniero industrial"
     href: "/es/contact/sales"
-  microcopy: "Evaluación típica: 45-60 minutos. Mapearemos su panorama actual de historiadores y MES y le mostraremos cómo la inteligencia unificada reemplaza las herramientas fragmentadas de proveedores."
+  microcopy: "Conversación típica: 45-60 minutos. Mapeamos su panorama de historiadores y MES y le mostramos cómo el stack de inteligencia reemplaza las herramientas fragmentadas de proveedores."
 ---

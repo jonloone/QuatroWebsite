@@ -6,7 +6,7 @@ description: "Quatro integrates city, utility, public works, GIS, 311, work-orde
 order: 5
 hero:
   eyebrow: "Smart Cities"
-  title: "Industrial AI for the systems your city runs on."
+  title: "Turn a 311 call into a dispatched fix, not a five-department relay."
   description: "Cities and utilities already have the data: GIS, SCADA/AMI, 311, work orders, dispatch, sensors, billing, and emergency response. Quatro connects those systems into one governed operating model so public teams can move from signal to approved action."
   primaryCta:
     label: "Talk to Our Team"
@@ -44,7 +44,7 @@ platformMapping:
   understand: Apply municipal rules, geographical constraints, and resource availability models to identify compounding risks across departments.
   orchestrate: Deploy agents to draft incident summaries and coordinate multi-agency response, always requiring human sign-off before dispatch.
 proofPoint:
-  industry: "Cities — Municipal Intelligence"
+  industry: "Cities, Municipal Intelligence"
   headline: "Cross-Domain City Operations"
   metrics:
     - value: "8,000+"
@@ -53,7 +53,7 @@ proofPoint:
       label: "Unified View"
     - value: "Weeks"
       label: "To First Intelligence"
-  narrative: "Municipal operators connecting water, waste, transportation, and public safety systems into one operational model — cross-agency coordination, predictive infrastructure maintenance, and real citizen outcomes."
+  narrative: "Municipal operators connecting water, waste, transportation, and public safety systems into one operational model, cross-agency coordination, predictive infrastructure maintenance, and real citizen outcomes."
 cta:
   primary:
     label: "Talk to Our Team"

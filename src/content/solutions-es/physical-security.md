@@ -1,17 +1,17 @@
 ---
 title: "Seguridad Física"
-tagline: "Detección de Amenazas Inteligente"
-description: "Seguridad física unificada con analítica de video inteligente y fusión multisensor que reduce falsas alarmas en un 80% y logra respuesta ante incidentes en menos de 30 segundos."
+tagline: "Detección inteligente de amenazas"
+description: "Seguridad física unificada con analítica de video inteligente y fusión multisensor que reduce las falsas alarmas en un 80% y entrega respuesta a incidentes en menos de 30 segundos."
 order: 4
 hero:
   eyebrow: "Seguridad Física"
-  title: "Detecte Amenazas. Responda al Instante."
-  description: "Transforme la videovigilancia pasiva en seguridad proactiva con inteligencia predictiva, fusión multisensor y orquestación de respuesta automatizada."
+  title: "Detecte amenazas. Responda al instante."
+  description: "Transforme la videovigilancia pasiva en seguridad proactiva con analítica inteligente, fusión multisensor y orquestación de respuesta autónoma gobernada, sobre el stack de inteligencia que su equipo de seguridad usa en cada turno."
   primaryCta:
-    label: "Solicite una Evaluación de Seguridad"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Solicite una Demostración"
+    label: "Hable con un especialista en seguridad"
     href: "/es/contact/sales"
 stats:
   - value: "80%"

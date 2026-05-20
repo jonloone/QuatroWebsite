@@ -7,7 +7,7 @@ publishDate: 2026-04-06
 featured: false
 tags: ["networks", "satcom", "noc", "terrestrial", "satellite", "multi-orbit", "operational-intelligence"]
 readingTime: "7 min read"
-excerpt: "3GPP NTN standardizes the subscriber side. But on the operations side — monitoring, fault management, capacity planning — terrestrial and satellite toolchains remain completely separate. Standards don't solve operations fragmentation."
+excerpt: "3GPP NTN standardizes the subscriber side. But on the operations side (monitoring, fault management, capacity planning) terrestrial and satellite toolchains remain completely separate. Standards don't solve operations fragmentation."
 heroImage: "/images/insight-ground-to-orbit-noc.png"
 ---
 
@@ -79,7 +79,7 @@ Predictability that compounds. Each month you run the network through this unifi
 
 ---
 
-The protocol convergence happened. 3GPP NTN ensured it. But the operations convergence—that still requires deliberate choice. It requires building a unified intelligence model that spans terrestrial and satellite domains, that sits above individual NMS tools, that makes the whole network visible as one operational system.
+The protocol convergence happened. 3GPP NTN ensured it. But the operations convergence still requires deliberate choice. It requires building a unified intelligence model that spans terrestrial and satellite domains, that sits above individual NMS tools, that makes the whole network visible as one operational system.
 
 Without it, your convergence is incomplete. Your team is slower. Your customers feel it.
 

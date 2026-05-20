@@ -61,7 +61,7 @@ The acquiring company spent billions to buy the target company. It captures a fr
 
 A growing number of operators are pursuing a different strategy.
 
-Instead of starting with system consolidation, they start with operational intelligence. The goal is not to replace the legacy systems. The goal is to connect them—to create a single operational view that spans both systems without replacing either.
+Instead of starting with system consolidation, they start with operational intelligence. The goal is not to replace the legacy systems. The goal is to connect them, to create a single operational view that spans both systems without replacing either.
 
 The timeline is fundamentally different. Instead of 24-36 months, intelligence integration takes 6 to 12 months.
 
@@ -117,4 +117,4 @@ You don't need to merge your systems to merge your intelligence. And you don't n
 
 ---
 
-*Quatro's intelligence stack connects operational systems—billing, network management, service data, SLA tracking—into a unified view without requiring system replacement. Operators move from fragmented insight to unified operations in months instead of years.*
+*Quatro's intelligence stack connects operational systems (billing, network management, service data, SLA tracking) into a unified view without requiring system replacement. Operators move from fragmented insight to unified operations in months instead of years.*

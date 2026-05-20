@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: Fleet & Logistics Optimization
     description: Extend NOC-style monitoring to vehicle fleets and asset tracking.
-    href: /use-cases/fleet-logistics
+    href: /industries/infrastructure/fleet-logistics
   - title: Smart Facilities & Venue Management
     description: Apply NOC monitoring patterns to facilities, power, and environmental systems.
-    href: /use-cases/smart-facilities
+    href: /industries/infrastructure/smart-facilities
   - title: Production Line OEE Optimization
     description: Use NOC techniques to monitor and optimize manufacturing networks.
-    href: /use-cases/oee-optimization
+    href: /industries/industrial/oee-optimization
 crossVertical:
   - industry: Energy
     result: Unified grid operations center improves reliability and reduces outage response time

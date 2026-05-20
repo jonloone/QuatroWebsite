@@ -2,12 +2,12 @@
 title: "Operational Intelligence"
 tagline: "Operational Intelligence Stack"
 heroImage: "/images/solution-operational-intelligence.png"
-description: "Intelligence that guides your team through complex operations — not just dashboards that display data. Contextual recommendations, intelligent agents that surface what matters, and the bridge from operational awareness to enterprise-wide decision-making."
+description: "Intelligence that guides your team through complex operations, not just dashboards that display data. Contextual recommendations, intelligent agents that surface what matters, and the bridge from operational awareness to enterprise-wide decision-making."
 order: 3
 hero:
   eyebrow: "Operational Intelligence"
-  title: "Intelligence That Guides. Not Just Alerts."
-  description: "Your operations generate more data than any team can monitor. Quatro's intelligence layer watches continuously, surfaces what matters, provides contextual guidance, and coordinates responses across domains — without waiting for someone to ask the right question."
+  title: "Get the next action, not just another alert."
+  description: "Your operations generate more data than any team can monitor. Quatro's intelligence layer watches continuously, surfaces what matters, provides contextual guidance, and coordinates responses across domains, without waiting for someone to ask the right question."
   primaryCta:
     label: "Talk to Our Team"
     href: "/contact/demo"
@@ -36,17 +36,17 @@ capabilities:
   - name: "Operator Guidance"
     description: "Real-time contextual recommendations for your operations team. When a complex situation develops, Quatro provides step-by-step guidance based on historical patterns, current conditions, and operational relationships. New operators perform like veterans."
   - name: "Intelligent Agents That Surface What Matters"
-    description: "Continuously monitoring agents watch your operations, detect anomalies, recognize patterns, and proactively highlight what needs attention — before alerts fire and before operators notice. They don't just detect problems; they explain why they matter."
+    description: "Continuously monitoring agents watch your operations, detect anomalies, recognize patterns, and proactively highlight what needs attention, before alerts fire and before operators notice. They don't just detect problems; they explain why they matter."
   - name: "Relationship-Aware Intelligence"
-    description: "Quatro maintains a living model of how your assets, services, and operations relate. When something changes, the intelligence layer traces the impact chain automatically — from root cause to affected services to business exposure."
+    description: "Quatro maintains a living model of how your assets, services, and operations relate. When something changes, the intelligence layer traces the impact chain automatically, from root cause to affected services to business exposure."
   - name: "Augmented Operations"
     description: "Your team handles complex situations confidently because the intelligence stack validates procedures, ensures consistency, and provides contextual insights at every step. Faster decisions, fewer errors, safer operations."
   - name: "Custom Intelligence Applications"
-    description: "Build intelligence applications tailored to your operations with low-code/no-code tools. Shift dashboards, batch tracking, compliance workflows — without IT projects or vendor professional services."
+    description: "Build intelligence applications tailored to your operations with low-code/no-code tools. Shift dashboards, batch tracking, compliance workflows, without IT projects or vendor professional services."
   - name: "Enterprise Intelligence Bridge"
-    description: "Operational intelligence answers 'what's happening and why.' When you need to understand what it means for the business — financial impact, customer experience, supply chain risk, regulatory compliance — Quatro scales from operational to enterprise intelligence."
+    description: "Operational intelligence answers 'what's happening and why.' When you need to understand what it means for the business, financial impact, customer experience, supply chain risk, regulatory compliance, Quatro scales from operational to enterprise intelligence."
 proofPoint:
-  industry: "Energy — Integrated Utility"
+  industry: "Energy, Integrated Utility"
   headline: "Unified Grid Operations"
   metrics:
     - value: "40%"
@@ -55,7 +55,7 @@ proofPoint:
       label: "Weekly Savings"
     - value: "6→1"
       label: "Dashboards Consolidated"
-  narrative: "A utility with 150+ substations deployed Quatro to unified fragmented SCADA historians and manual reporting. Guided operations reduced MTTR by 40%, and intelligent relationship mapping enabled renewable integration planning that cut curtailment by 18%."
+  narrative: "A utility with 150+ substations deployed Quatro to unified fragmented SCADA historians and manual reporting. Guided operations reduced MTTR by 40%, and intelligent relationship mapping drove renewable integration planning that cut curtailment by 18%."
 cta:
   primary:
     label: "Schedule an Intelligence Assessment"
@@ -63,5 +63,5 @@ cta:
   secondary:
     label: "Talk to a Solutions Architect"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 45-60 minutes. We'll map your data sources, quantify your alarm noise ratio, and demonstrate how AI-powered intelligence replaces reactive monitoring with guided operations."
+  microcopy: "Typical assessment: 45-60 minutes. We'll map your data sources, quantify your alarm noise ratio, and demonstrate how AI-driven intelligence replaces reactive monitoring with guided operations."
 ---

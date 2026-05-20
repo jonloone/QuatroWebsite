@@ -10,14 +10,14 @@ const solutions = (await getCollection('solutions-es')).sort((a, b) => a.data.or
 
 <MarketingLayout
   lang="es"
-  title="Soluciones — Casos de Uso de IA industrial"
-  description="Quatro ofrece soluciones para monitoreo de activos, seguridad de ductos, inteligencia operativa y más."
+  title="Soluciones — Stack de inteligencia para sus operaciones"
+  description="Quatro integra el stack de inteligencia para monitoreo de activos, integridad de ductos, operaciones de red, inteligencia operacional y más."
 >
   <HeroCanvas
     badge="Soluciones"
-    title="Soluciones para Cada Desafío Operativo"
-    body="Desde monitoreo de activos hasta logística de flotas, Quatro ofrece IA industrial para su caso de uso específico."
-    ctaLabel="Agende una Evaluación"
+    title="Soluciones para cada operación crítica."
+    body="Desde la salud de activos hasta las operaciones de red, Quatro integra el stack de inteligencia que sus operadores usan para hacer funcionar su infraestructura crítica en cada turno."
+    ctaLabel="Hable con nuestro equipo"
     ctaHref="/es/contact/demo"
   />
 
@@ -48,9 +48,10 @@ const solutions = (await getCollection('solutions-es')).sort((a, b) => a.data.or
   </Section>
 
   <DualCta
-    title="Vea la Solución en Sus Datos"
-    description="Descubra cómo Quatro responde a sus necesidades operativas específicas."
-    primaryCta={{ label: 'Agende una Evaluación', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Hable con un Ingeniero', href: '/es/contact/sales' }}
+    title={`Vea el <span style="color: var(--color-forest);">stack de inteligencia</span> sobre sus datos.`}
+    description="Cuéntenos el resultado que importa. Conectamos los sistemas que tienen la respuesta. Su equipo empieza a operar desde el modelo."
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hable con un ingeniero', href: '/es/contact/sales' }}
+    microcopy="Inteligencia en semanas · Su equipo es dueño desde el primer día"
   />
 </MarketingLayout>

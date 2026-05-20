@@ -60,7 +60,7 @@ proofPoint:
       label: Annual savings
     - value: "50+"
       label: Facilities unified
-  narrative: "A large real estate operator managed 50+ facilities—office towers, data centers, retail spaces, and warehouses—each with different BMS, security, and energy monitoring vendors. HVAC schedules were fixed regardless of occupancy. Lighting ran on timers rather than occupancy sensors. Energy waste was 35% above benchmark for comparable buildings. Maintenance was reactive—a chiller in the downtown tower failed with no warning, causing a three-hour downtime. The operator's three separate vendors couldn't coordinate during emergencies. Quatro's operational intelligence stack unified all 50 facilities' data in 90 days, enabling governed autonomous action across systems. Energy analysis revealed that two large office towers were over-cooling empty floors on weekends. The retail spaces were over-lit during low-traffic hours. Data center HVAC wasn't coordinating with seasonal load patterns. Occupancy-driven scheduling reduced HVAC energy by 22%. Lighting optimization reduced consumption by 18%. Predictive diagnostics caught early chiller degradation on four units, allowing planned maintenance instead of surprise failures. Emergency response coordination meant that when a backup generator failed at one facility, the system automatically alerted dispatch and triggered coordinated load-shedding across the portfolio. Energy consumption fell by 40%. Uptime improved to 99.2%. Maintenance costs fell by 30%. Annual savings: $1.2M."
+  narrative: "A large real estate operator managed 50+ facilities—office towers, data centers, retail spaces, and warehouses—each with different BMS, security, and energy monitoring vendors. HVAC schedules were fixed regardless of occupancy. Lighting ran on timers rather than occupancy sensors. Energy waste was 35% above benchmark for comparable buildings. Maintenance was reactive—a chiller in the downtown tower failed with no warning, causing a three-hour downtime. The operator's three separate vendors couldn't coordinate during emergencies. Quatro's operational intelligence stack unified all 50 facilities' data in 90 days, supporting governed autonomous action across systems. Energy analysis revealed that two large office towers were over-cooling empty floors on weekends. The retail spaces were over-lit during low-traffic hours. Data center HVAC wasn't coordinating with seasonal load patterns. Occupancy-driven scheduling reduced HVAC energy by 22%. Lighting optimization reduced consumption by 18%. Predictive diagnostics caught early chiller degradation on four units, allowing planned maintenance instead of surprise failures. Emergency response coordination meant that when a backup generator failed at one facility, the system automatically alerted dispatch and triggered coordinated load-shedding across the portfolio. Energy consumption fell by 40%. Uptime improved to 99.2%. Maintenance costs fell by 30%. Annual savings: $1.2M."
 objections:
   - concern: Our buildings were built 20+ years ago with legacy BMS. Will integration work?
     response: Quatro integrates with legacy BMS via BACnet, Modbus, OPC-UA, and direct API connections. We also support retrofit sensors for buildings without modern sensor networks.
@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: Fleet & Logistics Optimization
     description: Extend facilities optimization to fleet and mobile assets for total operational efficiency.
-    href: /use-cases/fleet-logistics
+    href: /industries/infrastructure/fleet-logistics
   - title: Network Operations Center Optimization
     description: Apply NOC-style monitoring and incident correlation to facilities operations.
-    href: /use-cases/noc-operations
+    href: /industries/infrastructure/noc-operations
   - title: Process Quality & Compliance
     description: Add compliance and environmental tracking to facilities management.
-    href: /use-cases/process-quality
+    href: /industries/industrial/process-quality
 crossVertical:
   - industry: Defense
     result: Military base operations and energy optimization across distributed installations

@@ -2,11 +2,11 @@
 title: "Pipeline Integrity"
 tagline: "Unified Integrity and Security"
 heroImage: "/images/solution-pipeline-security.png"
-description: "Multi-method leak detection with AI cross-correlation, partner-delivered predictive analytics and operational decisioning, and satellite corridor monitoring — reducing false alarms by 75% while improving detection sensitivity to 0.5% of nominal flow. An integrated partner ecosystem delivers capabilities no single vendor can match."
+description: "Multi-method leak detection with AI cross-correlation, partner-delivered predictive analytics and operational decisioning, and satellite corridor monitoring, reducing false alarms by 75% while improving detection sensitivity to 0.5% of nominal flow. An integrated partner ecosystem delivers capabilities no single vendor can match."
 order: 2
 hero:
   eyebrow: "Pipeline Integrity"
-  title: "Continuous Monitoring. Verified Compliance."
+  title: "Find the pipeline leak in minutes and dispatch the crew."
   description: "Pipeline integrity requires correlating pressure drops, flow rates, and environmental sensors in real-time. Quatro connects the operational data layer so your team can detect anomalies and automate compliance reporting."
   primaryCta:
     label: "Talk to Our Team"
@@ -35,23 +35,23 @@ challenges:
     description: "Detection triggers phone calls and ad-hoc coordination. No unified playbook ties detection to response to resolution."
 capabilities:
   - name: "Enhanced RTTM Modeling"
-    description: "AI-adaptive transient modeling that learns pipeline hydraulic behavior and eliminates manual calibration burden. Powered by domain-trained predictive analytics — delivering E-RTTM hydraulic detection, predictive analytics, and operational decisioning for pipeline integrity."
+    description: "AI-adaptive transient modeling that learns pipeline hydraulic behavior and eliminates manual calibration burden. Built on domain-trained predictive analytics, delivering E-RTTM hydraulic detection, predictive analytics, and operational decisioning for pipeline integrity."
   - name: "Multi-Method Leak Detection"
     description: "Fuses acoustic, pressure-wave, mass-balance, and statistical analysis for detection sensitivity down to 0.5% of nominal flow."
   - name: "Intrusion Detection & Response"
     description: "Perimeter and right-of-way monitoring with multi-sensor fusion that distinguishes wildlife from threats in seconds."
   - name: "Satellite Corridor Monitoring"
-    description: "Satellite imagery from NOVI Space detects encroachment, ground movement, and vegetation stress across thousands of kilometers. Continuous corridor intelligence at geographic scale — without patrol crews."
+    description: "Satellite imagery from NOVI Space detects encroachment, ground movement, and vegetation stress across thousands of kilometers. Continuous corridor intelligence at geographic scale, without patrol crews."
   - name: "Cross-Domain Correlation"
     description: "AI agents correlate operational data across detection domains in real time. A simultaneous pressure anomaly and perimeter breach instantly elevates to potential theft-tap scenario. Compound intelligence that single-method systems structurally cannot produce."
   - name: "Predictive Pipeline Intelligence"
-    description: "AI models forecast where integrity issues are likely to develop based on historical patterns, environmental conditions, operational stress, and maintenance history. Shift from detecting problems to preventing them — intervene before failures manifest."
+    description: "AI models forecast where integrity issues are likely to develop based on historical patterns, environmental conditions, operational stress, and maintenance history. Shift from detecting problems to preventing them, intervene before failures manifest."
   - name: "Enterprise Pipeline Intelligence"
-    description: "When a leak is detected, the operational response is one part of the picture. Quatro scales to enterprise intelligence — connecting pipeline events to revenue impact, regulatory notification requirements, insurance provisions, and environmental liability assessment. From detection to business decision in one network."
+    description: "When a leak is detected, the operational response is one part of the picture. Quatro scales to enterprise intelligence, connecting pipeline events to revenue impact, regulatory notification requirements, insurance provisions, and environmental liability assessment. From detection to business decision in one network."
   - name: "Compliance Audit Trails"
     description: "Complete chronological record for PHMSA, NEB, and API 1160 reporting with exportable audit packages."
 proofPoint:
-  industry: "Energy — Oil & Gas Midstream"
+  industry: "Energy, Oil & Gas Midstream"
   headline: "Transmission Pipeline Transformation"
   metrics:
     - value: "75%"

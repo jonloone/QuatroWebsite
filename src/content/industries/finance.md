@@ -24,7 +24,7 @@ stats:
 challenges:
 - title: The Meaning Gap
   description: Every system describes the same reality in a different language. Core banking defines a customer as an account number. The loan system uses a borrower ID. The CRM uses a contact. Regulators
-    ask one question — your answer requires four systems and three spreadsheets.
+    ask one question, your answer requires four systems and three spreadsheets.
   image: /images/challenge-finance-meaning-gap.png
 - title: Reactive Risk Detection
   description: Traditional NPA detection triggers at 90 days past due. By then, recovery options are limited, provisioning is expensive, and the balance sheet impact is locked in. Early warning signals
@@ -79,13 +79,13 @@ capabilities:
   outcome: Cloud migration timelines compress. Compliance risk eliminated.
   image: /images/cap-finance-fingerprinting.png
 platformMapping:
-  see: Deploy on your existing systems — core banking, LOS, CRM, digital channels, card processors, wealth platforms, compliance tools. No rip-and-replace. 8,000+ integrations for any banking data source.
-  understand: Operational intelligence from AI-powered reconciliation creates governed products — unified customer identity, cross-system exposure, and regulatory data foundations. Each product includes governance SLAs on
+  see: Deploy on your existing systems, core banking, LOS, CRM, digital channels, card processors, wealth platforms, compliance tools. No rip-and-replace. 8,000+ integrations for any banking data source.
+  understand: Operational intelligence from AI-driven reconciliation creates governed products, unified customer identity, cross-system exposure, and regulatory data foundations. Each product includes governance SLAs on
     data quality, freshness, and lineage.
-  orchestrate: Act on intelligence with human-approved workflow automation — NPA early warning triggers proactive collections, next best action resolves customer friction in real time, claims classification automates underwriter triage, and compliance
+  orchestrate: Act on intelligence with human-approved workflow automation, NPA early warning triggers proactive collections, next best action resolves customer friction in real time, claims classification automates underwriter triage, and compliance
     reporting runs continuously.
 proofPoint:
-  industry: Finance — Global Banking Group
+  industry: Finance, Global Banking Group
   headline: Enterprise Banking Intelligence at Scale
   metrics:
   - value: '6'
@@ -94,7 +94,7 @@ proofPoint:
     label: Per Intelligence Product
   - value: 30–60 Days
     label: Earlier NPA Detection
-  narrative: Quatro's banking intelligence products are deployed at enterprise scale — Lloyds Banking Group (UK) for next best action and claims classification, Mashreq Bank (UAE) for cross-system data
+  narrative: Quatro's banking intelligence products are deployed at enterprise scale, Lloyds Banking Group (UK) for next best action and claims classification, Mashreq Bank (UAE) for cross-system data
     sharing, Indiabulls (India) for NPA early warning, and Bradesco (Brazil) for enterprise data products. The same intelligence stack, adapted for Latin American regulatory frameworks.
 cta:
   primary:

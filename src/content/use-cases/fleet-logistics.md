@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: Network Operations Center Optimization
     description: Extend unified monitoring to all infrastructure assets beyond just fleet.
-    href: /use-cases/noc-operations
+    href: /industries/infrastructure/noc-operations
   - title: Smart Facilities & Venue Management
     description: Optimize facilities alongside fleet to reduce total operational cost.
-    href: /use-cases/smart-facilities
+    href: /industries/infrastructure/smart-facilities
   - title: Mining & Remote Asset Operations
     description: Apply fleet optimization techniques to mining equipment and remote asset management.
-    href: /use-cases/mining-operations
+    href: /industries/industrial/mining-operations
 crossVertical:
   - industry: Defense
     result: Mission logistics tracking and vehicle readiness improves deployment speed

@@ -1,17 +1,17 @@
 ---
 title: "Integridad de Ductos"
-tagline: "Integridad y Seguridad Unificadas"
-description: "Detección de fugas multimétodo con correlación cruzada inteligente que reduce falsas alarmas en un 75% mientras mejora la sensibilidad de detección al 0.5% del flujo nominal."
+tagline: "Integridad y seguridad unificadas"
+description: "Detección de fugas multimétodo con correlación cruzada por IA, analítica predictiva entregada con socios y monitoreo satelital de corredores. Reduce las falsas alarmas en un 75% mientras mejora la sensibilidad de detección al 0.5% del flujo nominal. Un ecosistema de socios integrado entrega capacidades que ningún proveedor solo puede igualar."
 order: 2
 hero:
   eyebrow: "Integridad de Ductos"
-  title: "Detecte Fugas Más Rápido. Responda con Inteligencia."
-  description: "Monitoreo convergente de integridad y seguridad para corredores de ductos. La fusión multimétodo inteligente elimina falsas alarmas y cierra la brecha entre detección y respuesta."
+  title: "Monitoreo continuo. Cumplimiento verificado."
+  description: "La integridad de ductos requiere correlacionar caídas de presión, tasas de flujo y sensores ambientales en tiempo real. Quatro conecta la capa de datos operacionales sobre el stack de inteligencia para que su equipo detecte anomalías y automatice los reportes de cumplimiento."
   primaryCta:
-    label: "Solicite una Evaluación de Ductos"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Ingeniero de Ductos"
+    label: "Hable con un especialista en ductos"
     href: "/es/contact/sales"
 stats:
   - value: "75%"

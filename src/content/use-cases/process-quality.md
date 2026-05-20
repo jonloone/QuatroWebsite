@@ -10,10 +10,10 @@ hero:
   description: Regulated manufacturers can't afford surprises. Quatro automates batch tracking, quality gates, and audit trails to ensure compliance while reducing rework and accelerating time-to-market.
   primaryCta:
     label: Schedule an Industrial Assessment
-    href: /contact/industrial-assessment
+    href: /contact/demo
   secondaryCta:
     label: Talk to a Plant Engineer
-    href: /contact/plant-engineer
+    href: /contact/sales
 pain:
   narrative: "You manufacture pharmaceuticals, food, or specialty chemicals where every batch must be tracked, every process parameter must be recorded, and every deviation must be documented for regulators. Currently, batch traceability is manual—spreadsheets, paper logs, and late data entry create gaps. When regulators ask for audit trail evidence, you spend weeks reconstructing timelines from disparate systems. One bad batch or missed parameter costs you not just rework—it's customer recalls, reputation damage, and regulatory fines. Your batch rework rate is 8–12% due to quality escapes that weren't caught in-process. FDA/GMP audit prep is a three-month effort. You're over-producing to buffer for scrap and rework, and you're storing excess inventory to hedge against batches failing in QC."
   quantified:
@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: Mining & Remote Asset Operations
     description: Track traceability and compliance across distributed mining operations.
-    href: /use-cases/mining-operations
+    href: /industries/industrial/mining-operations
   - title: Production Line OEE Optimization
     description: Combine quality tracking with OEE optimization for comprehensive production visibility.
-    href: /use-cases/oee-optimization
+    href: /industries/industrial/oee-optimization
   - title: Smart Facilities & Venue Management
     description: Extend compliance tracking to facility operations and environmental controls.
-    href: /use-cases/smart-facilities
+    href: /industries/infrastructure/smart-facilities
 crossVertical:
   - industry: Energy
     result: Emissions compliance tracking and reporting for generation and grid operations
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: Schedule an Industrial Assessment
-    href: /contact/industrial-assessment
+    href: /contact/demo
   secondary:
     label: Talk to a Plant Engineer
-    href: /contact/plant-engineer
+    href: /contact/sales
   microcopy: Intelligence in weeks · Your team owns it from day one
 ---

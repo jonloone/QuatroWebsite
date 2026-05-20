@@ -7,7 +7,7 @@ publishDate: 2026-04-07
 featured: false
 tags: ["defense", "physical-security", "cyber-security", "convergence", "perimeter-protection", "operational-intelligence"]
 readingTime: "7 min read"
-excerpt: "Physical security and cyber security report to different commands, run different tools, and generate different alert streams. The compound threat — the one that spans both — lives in the gap between them."
+excerpt: "Physical security and cyber security report to different commands, run different tools, and generate different alert streams. The compound threat (the one that spans both) lives in the gap between them."
 heroImage: "/images/insight-installation-security-blind-spot.png"
 ---
 

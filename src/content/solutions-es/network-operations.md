@@ -1,17 +1,17 @@
 ---
 title: "Operaciones de Red"
-tagline: "NOC Unificado Multi-Proveedor"
-description: "Reemplace los silos de proveedores con inteligencia operacional unificada. 80% menos falsas alarmas, 55% menor MTTR, y una sola plataforma para los equipos de cualquier proveedor."
+tagline: "NOC unificado multi-proveedor"
+description: "Reemplace los silos de proveedores con inteligencia de red unificada entre dominios terrestres y satelitales. 80% menos falsas alarmas, 55% menor MTTR, y una sola red para los equipos de cualquier proveedor, del suelo a la órbita."
 order: 7
 hero:
   eyebrow: "Operaciones de Red"
-  title: "Un Solo NOC. Cualquier Proveedor. Cero Silos."
-  description: "Deje de alternar entre 5-10 herramientas de proveedor. Inteligencia operacional unificada con correlación inteligente, remediación automatizada y cumplimiento de SLA en una sola plataforma."
+  title: "Aseguramiento de servicio consciente de la misión."
+  description: "Cuando ocurre una falla de red, los NOCs se esfuerzan por correlacionar la falla técnica con la misión o el cliente afectado. Quatro integra la telemetría de red híbrida sobre el stack de inteligencia para priorizar la respuesta según el impacto operacional."
   primaryCta:
-    label: "Solicite una Evaluación de NOC"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Ingeniero de Red"
+    label: "Hable con un ingeniero de red"
     href: "/es/contact/sales"
 stats:
   - value: "80%"

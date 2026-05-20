@@ -6,7 +6,7 @@ order: 20
 heroImage: "/images/solution-credit-risk.png"
 hero:
   eyebrow: "Credit Risk"
-  title: "No System Knows the Customer's Total Exposure. Until Now."
+  title: "See a borrower's true exposure across every product, in one view."
   description: "Your loan system knows installment loans. Your core knows credit lines. Your mortgage system knows real estate exposure. Quatro reconciles it all into one unified risk score reflecting true obligation."
   primaryCta:
     label: "Schedule a Risk Assessment"
@@ -31,7 +31,7 @@ challenges:
   - title: "Stress Testing Gaps"
     description: "Stress testing scenarios cannot capture customer interdependencies when exposure is scattered across systems."
   - title: "Collections Misallocation"
-    description: "Collections teams target accounts without understanding total relationship value — risking high-value relationships on low-value recovery actions."
+    description: "Collections teams target accounts without understanding total relationship value, risking high-value relationships on low-value recovery actions."
 capabilities:
   - name: "Cross-Product Exposure Reconciliation"
     description: "Reconcile exposure across loan origination systems, core systems, mortgages, card systems, and guarantees databases into one unified view."
@@ -56,7 +56,7 @@ capabilities:
     outcome: "Collections targets highest relationship value first."
     tier: "orchestrate"
 proofPoint:
-  industry: "Finance — Credit Risk"
+  industry: "Finance, Credit Risk"
   headline: "Unified Credit Exposure Intelligence"
   metrics:
     - value: "100%"
@@ -65,7 +65,7 @@ proofPoint:
       label: "To Production"
     - value: "Complete"
       label: "Guarantee Capture"
-  narrative: "Credit Risk connects to the Customer 360 unified record. When combined with NPA Early Warning, loan committees see not just current exposure but predicted trajectory — making credit decisions more accurate and collections more targeted."
+  narrative: "Credit Risk connects to the Customer 360 unified record. When combined with NPA Early Warning, loan committees see not just current exposure but predicted trajectory, making credit decisions more accurate and collections more targeted."
 cta:
   primary:
     label: "Schedule a Risk Assessment"

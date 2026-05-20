@@ -1,12 +1,12 @@
 ---
 title: "Fleet & Logistics"
-tagline: "Operational Fleet Intelligence"
+tagline: "Fleet and cargo intelligence in one operational view."
 heroImage: "/images/solution-fleet-logistics.png"
 description: "Unified fleet management with AI-driven route optimization and predictive maintenance that reduces fuel costs by 14% and improves on-time delivery by 22%."
 order: 5
 hero:
   eyebrow: "Fleet & Logistics"
-  title: "Optimize Every Mile. Track Every Asset."
+  title: "Cut fuel and downtime across every vehicle in the fleet."
   description: "When GPS, maintenance logs, fuel systems, and dispatch tools each operate independently, route inefficiencies and breakdown risks cross fleet boundaries undetected. Quatro integrates data, reasoning, and workflows into one operational view."
   primaryCta:
     label: "Talk to Our Team"
@@ -37,7 +37,7 @@ capabilities:
   - name: "Real-Time Vehicle Tracking"
     description: "GPS and telemetry for every vehicle on a unified operational map with sub-second position updates and status overlays."
   - name: "AI Route Optimization"
-    description: "Dynamic routing that factors in traffic, weather, vehicle capacity, and delivery windows — with in-flight re-routing when conditions change. Connected to broader logistics corridor intelligence for end-to-end supply chain visibility from port to warehouse to customer."
+    description: "Dynamic routing that factors in traffic, weather, vehicle capacity, and delivery windows, with in-flight re-routing when conditions change. Connected to broader logistics corridor intelligence for end-to-end supply chain visibility from port to warehouse to customer."
   - name: "Cargo Monitoring"
     description: "Continuous temperature, humidity, and shock monitoring with automated alerts and compliance-ready chain-of-custody documentation."
   - name: "Driver Safety & Compliance"
@@ -47,7 +47,7 @@ capabilities:
   - name: "Centralized Dispatch"
     description: "Intelligent dispatch console for managing fleet, crews, and deliveries with intelligent assignment and real-time tracking. Predictive demand modeling optimizes resource positioning. Connects to port operations, airport logistics, and corridor intelligence for full transportation ecosystem visibility."
 proofPoint:
-  industry: "Infrastructure — Logistics"
+  industry: "Infrastructure, Logistics"
   headline: "National Fleet Optimization"
   metrics:
     - value: "$4.2M"
@@ -64,7 +64,7 @@ cta:
   secondary:
     label: "Talk to a Fleet Specialist"
     href: "/contact/sales"
-  microcopy: "Typical discovery: 30-45 minutes. We'll map your current fleet tools and show where AI-powered intelligence replaces manual dispatch and static routing."
+  microcopy: "Typical working session: 30-45 minutes. We'll map your current fleet tools and show where AI-driven intelligence replaces manual dispatch and static routing."
 
 
 ---

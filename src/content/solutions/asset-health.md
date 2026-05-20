@@ -6,7 +6,7 @@ description: "Asset health monitoring that shifts operations from reactive to pr
 order: 1
 hero:
   eyebrow: "Asset Health"
-  title: "Track Every Asset. Predict Every Failure."
+  title: "See the asset failure coming weeks before it happens."
   description: "When asset data lives in separate maintenance, SCADA, and ERP systems, failure patterns stay invisible until something breaks. Quatro connects the intelligence stack to watch continuously and predict failures before they happen."
   primaryCta:
     label: "Talk to Our Team"
@@ -37,17 +37,17 @@ capabilities:
   - name: "Real-Time Asset Visibility"
     description: "Continuous monitoring of asset health, location, and status across your entire infrastructure with sub-second latency dashboards."
   - name: "Predictive Maintenance"
-    description: "AI models forecast equipment failures 2-4 weeks in advance using vibration, thermal, and multi-sensor correlation. When issues are predicted, the intelligence stack provides contextual guidance on what to do — recommended maintenance actions, parts needed, and optimal scheduling windows."
+    description: "AI models forecast equipment failures 2-4 weeks in advance using vibration, thermal, and multi-sensor correlation. When issues are predicted, the intelligence stack provides contextual guidance on what to do, recommended maintenance actions, parts needed, and optimal scheduling windows."
   - name: "Asset Lifecycle Management"
     description: "End-to-end tracking from commissioning to decommissioning with a real-time operational model for data-driven replacement planning."
   - name: "Performance Optimization"
     description: "Continuous OEE tracking and benchmarking across sites to identify best practices and underperformers."
   - name: "Anomaly Detection"
-    description: "Intelligent agents continuously learn operational baselines, detect behavioral shifts, and proactively surface what needs attention — before threshold alarms fire. They don't just detect anomalies; they explain why they matter and what's likely to happen next."
+    description: "Intelligent agents continuously learn operational baselines, detect behavioral shifts, and proactively surface what needs attention, before threshold alarms fire. They don't just detect anomalies; they explain why they matter and what's likely to happen next."
   - name: "Intelligent Alerting"
     description: "Context-aware alerts with predictive intelligence prioritization that reduce alarm fatigue by up to 80%."
 proofPoint:
-  industry: "Energy — Oil & Gas"
+  industry: "Energy, Oil & Gas"
   headline: "Upstream Production Optimization"
   metrics:
     - value: "45%"

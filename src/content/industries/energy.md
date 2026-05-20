@@ -6,7 +6,7 @@ description: "Quatro integrates SCADA, historians, ERP/EAM, GIS, CMMS, field rep
 order: 1
 hero:
   eyebrow: Energy
-  title: "Industrial AI for pipeline, grid, and production operations."
+  title: "Find the fault that matters in a control room full of alarms."
   description: "Energy operators manage grid reliability, pipeline integrity, production efficiency, and environmental compliance across systems that were never designed to share context. Quatro connects the data, reasoning, agents, and workflows so operators can act from one governed model."
   primaryCta:
     label: Talk to Our Team
@@ -49,10 +49,10 @@ capabilities:
   image: /images/cap-energy-cross-domain.png
 platformMapping:
   see: Connect SCADA, historians, GIS, CMMS, environmental sensors, and field reports without rip-and-replace. Native support for DNP3, IEC 61850, OPC-UA, MQTT, and SunSpec.
-  understand: Apply domain constraints, regulatory logic, and equipment thresholds. Pattern recognition surfaces emerging issues before threshold alerts fire. Real-time operational models enable contingency analysis and environmental compliance verification.
+  understand: Apply domain constraints, regulatory logic, and equipment thresholds. Pattern recognition surfaces emerging issues before threshold alerts fire. Real-time operational models support contingency analysis and environmental compliance verification.
   orchestrate: Deploy agents to draft reports and triage anomalies, routed through human-approved workflows. Automated playbooks coordinate substations with human oversight. Dispatch assigns crews based on location and authority.
 proofPoint:
-  industry: Energy — Grid, Pipeline & Environmental Operations
+  industry: Energy, Grid, Pipeline & Environmental Operations
   headline: Unified Energy Intelligence
   metrics:
   - value: "8,000+"
@@ -61,7 +61,7 @@ proofPoint:
     label: To First Intelligence
   - value: Sovereign
     label: Deployment
-  narrative: "Energy operators connecting legacy SCADA, historians, emissions sensors, and DER systems into one operational intelligence model — unified visibility, predictive maintenance, environmental governance, and human-approved workflow automation without replacing critical infrastructure."
+  narrative: "Energy operators connecting legacy SCADA, historians, emissions sensors, and DER systems into one operational intelligence model, unified visibility, predictive maintenance, environmental governance, and human-approved workflow automation without replacing critical infrastructure."
 cta:
   primary:
     label: Talk to Our Team

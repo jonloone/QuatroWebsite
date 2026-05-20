@@ -6,7 +6,7 @@ description: "Quatro connects live-production, signal, facility, distribution, a
 order: 9
 hero:
   eyebrow: "Broadcast & Media"
-  title: "Industrial AI for signal-heavy live operations."
+  title: "Keep the signal on air when the chain starts to fail."
   description: "Live production depends on many signal technologies and vendor consoles. Quatro connects the operational data, reasoning, agents, and workflows that help teams identify cause, consequence, and next action faster."
   primaryCta:
     label: "Talk to Our Team"
@@ -25,7 +25,7 @@ stats:
     label: "Time to First Live Event"
 challenges:
   - title: "Vendor-Fragmented Signal Management"
-    description: "Each equipment vendor provides its own monitoring tool. Operators context-switch between separate control systems for antennas, encoders, routers, and analyzers during live production — when seconds matter."
+    description: "Each equipment vendor provides its own monitoring tool. Operators context-switch between separate control systems for antennas, encoders, routers, and analyzers during live production, when seconds matter."
     image: "/images/challenge-broadcast-vendor-fragment.png"
   - title: "Hybrid Infrastructure Complexity"
     description: "Legacy SDI systems run alongside SMPTE ST 2110 IP networks. Some equipment speaks ST 2110, others SRT, ST 2022, or ASI. Managing this hybrid infrastructure through separate vendor consoles creates operational friction during every live event."
@@ -38,17 +38,17 @@ challenges:
     image: "/images/challenge-broadcast-opacity.png"
 capabilities:
   - name: "Multi-Technology Signal Unification"
-    description: "Real-time signal visibility across SMPTE ST 2110, ST 2022, SRT, SDI, DVB-ASI, and L-Band satellite — all from a single operational view. 8,000+ integrations across Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and more."
+    description: "Real-time signal visibility across SMPTE ST 2110, ST 2022, SRT, SDI, DVB-ASI, and L-Band satellite, all from a single operational view. 8,000+ integrations across Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, Phabrix, Bridge Technologies, and more."
     featured: true
     outcome: "6 signal technologies. Every vendor. One view."
     image: "/images/cap-broadcast-signal-unification.png"
   - name: "Live Production Orchestration"
-    description: "Real-time resource orchestration during live events — cameras, encoders, transmission equipment. Virtual Signal Groups configure logical signal sources and destinations from any vendor technology. Automated failover when equipment fails during live broadcast."
+    description: "Real-time resource orchestration during live events, cameras, encoders, transmission equipment. Virtual Signal Groups configure logical signal sources and destinations from any vendor technology. Automated failover when equipment fails during live broadcast."
     featured: true
     outcome: "Automated failover during live broadcast."
     image: "/images/cap-broadcast-live-production.png"
   - name: "Cross-Domain Compound Intelligence"
-    description: "A satellite transponder failure triggers not just an alert but a full assessment of affected programs, SLA impact, and recovery recommendations. Production, facility, and distribution intelligence connected — each domain enriching the others."
+    description: "A satellite transponder failure triggers not just an alert but a full assessment of affected programs, SLA impact, and recovery recommendations. Production, facility, and distribution intelligence connected, each domain enriching the others."
     featured: true
     outcome: "Full impact assessment in seconds, not hours."
     image: "/images/cap-broadcast-compound-intel.png"
@@ -57,7 +57,7 @@ capabilities:
     image: "/images/cap-broadcast-facility-health.png"
     outcome: "Predictive alerts before air-time impact."
   - name: "Content Distribution Intelligence"
-    description: "End-to-end distribution chain monitoring — contribution circuits, distribution uplinks, satellite transponder slots, and IP connectivity. QoS compliance tracking per SLA per circuit. Automated handoff between transmission modes."
+    description: "End-to-end distribution chain monitoring, contribution circuits, distribution uplinks, satellite transponder slots, and IP connectivity. QoS compliance tracking per SLA per circuit. Automated handoff between transmission modes."
     image: "/images/cap-broadcast-distribution.png"
     outcome: "QoS tracked per SLA per circuit."
   - name: "Predictive Equipment Health"
@@ -65,11 +65,11 @@ capabilities:
     image: "/images/cap-broadcast-predictive.png"
     outcome: "Equipment degradation caught before on-air failure."
 platformMapping:
-  see: "Real-time signal ingestion from 8,000+ broadcast and media equipment vendors. Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, and more. Six signal technologies unified — SMPTE ST 2110, ST 2022, SRT, SDI, ASI, and L-Band satellite. The broadcast operation becomes machine-readable in real time."
-  understand: "Multi-protocol signal correlation and orchestration. Event-driven resource allocation. Virtual Signal Groups map logical broadcast flows regardless of physical vendor boundaries. Role-based command control — directors issue orchestration commands with full audit trails."
-  orchestrate: "Equipment health prediction across multi-site operations. Resource optimization and utilization analytics. Compound intelligence across production, facility, and distribution — coordinated response recommendations that span the entire broadcast operation."
+  see: "Real-time signal ingestion from 8,000+ broadcast and media equipment vendors. Grass Valley, EVS, Sony, Rohde & Schwarz, Harmonic, and more. Six signal technologies unified, SMPTE ST 2110, ST 2022, SRT, SDI, ASI, and L-Band satellite. The broadcast operation becomes machine-readable in real time."
+  understand: "Multi-protocol signal correlation and orchestration. Event-driven resource allocation. Virtual Signal Groups map logical broadcast flows regardless of physical vendor boundaries. Role-based command control, directors issue orchestration commands with full audit trails."
+  orchestrate: "Equipment health prediction across multi-site operations. Resource optimization and utilization analytics. Compound intelligence across production, facility, and distribution, coordinated response recommendations that span the entire broadcast operation."
 proofPoint:
-  industry: "Broadcast & Media — Live Production"
+  industry: "Broadcast & Media, Live Production"
   headline: "Multi-Site Broadcast Transformation"
   metrics:
     - value: "6"
@@ -86,5 +86,5 @@ cta:
   secondary:
     label: "Talk to a Broadcast Engineer"
     href: "/contact/sales"
-  microcopy: "Typical assessment: 30-45 minutes. We'll map your current signal management and vendor landscape — and show how unified orchestration delivers control across every technology in your broadcast operation. Intelligence in weeks · Your team owns it from day one"
+  microcopy: "Typical assessment: 30-45 minutes. We'll map your current signal management and vendor landscape, and show how unified orchestration delivers control across every technology in your broadcast operation. Intelligence in weeks · Your team owns it from day one"
 ---

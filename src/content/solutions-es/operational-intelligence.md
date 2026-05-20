@@ -1,17 +1,17 @@
 ---
 title: "Inteligencia Operacional"
-tagline: "Insights Operacionales Multidominio"
-description: "Inteligencia operacional unificada que correlaciona datos entre dominios de sistemas operacionales e IoT — reduciendo el MTTR en un 35% y eliminando los silos que ciegan sus operaciones."
+tagline: "El stack de inteligencia operacional"
+description: "Inteligencia que guía a su equipo en operaciones complejas. No solo tableros que muestran datos: recomendaciones contextuales, agentes que destacan lo que importa y el puente entre la conciencia operacional y las decisiones de toda la empresa."
 order: 3
 hero:
   eyebrow: "Inteligencia Operacional"
-  title: "Visibilidad Total. Comprensión Total."
-  description: "Elimine los silos de datos con inteligencia operacional multidominio. Una plataforma que ingesta, correlaciona y actúa sobre los datos operacionales a la velocidad que su negocio exige."
+  title: "Inteligencia que guía a su equipo, no solo lo alerta."
+  description: "Sus operaciones generan más datos de los que cualquier equipo puede monitorear. La capa de inteligencia de Quatro vigila de forma continua, destaca lo que importa, ofrece guía contextual y coordina respuestas entre dominios, sobre el stack de inteligencia que sus operadores usan en cada turno."
   primaryCta:
-    label: "Solicite una Evaluación"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Arquitecto de Soluciones"
+    label: "Hable con un arquitecto de soluciones"
     href: "/es/contact/sales"
 stats:
   - value: "35%"

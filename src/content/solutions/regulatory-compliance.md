@@ -2,11 +2,11 @@
 title: "Regulatory Compliance"
 tagline: "Compliance as a Data Product, Not a Reporting Project"
 heroImage: "/images/solution-regulatory-compliance.png"
-description: "Unify the data foundation across AML/KYC, credit loss modeling, regulatory reporting, and stress testing — with full audit trail from every data point back to source."
+description: "Unify the data foundation across AML/KYC, credit loss modeling, regulatory reporting, and stress testing, with full audit trail from every data point back to source."
 order: 19
 hero:
   eyebrow: "Regulatory Compliance"
-  title: "Compliance That Runs Continuously — Not Once a Quarter."
+  title: "Stay audit-ready between examinations, not scrambling before them."
   description: "AML monitoring lives in one system. Credit loss modeling in another. Stress testing builds its own reconciliation. Quatro's operational intelligence stack unifies the data foundation across all regulatory requirements with full audit-trail lineage."
   primaryCta:
     label: "Schedule a Compliance Assessment"
@@ -29,12 +29,12 @@ challenges:
   - title: "Manual Reconciliation Cycles"
     description: "Every examination cycle requires weeks of manual data reconciliation across systems. The same data is re-derived differently for each regulatory requirement."
   - title: "Audit Trail Gaps"
-    description: "Regulators ask for lineage — where did this number come from? Tracing a data point across three systems back to its source takes days of analyst time."
+    description: "Regulators ask for lineage, where did this number come from? Tracing a data point across three systems back to its source takes days of analyst time."
   - title: "Multi-Jurisdiction Complexity"
-    description: "Latin American banks navigate Superintendencia de Bancos, SEPS, UAFE, CNBV, SFC, SBS, and FATF-GAFI frameworks — each with different data requirements from the same underlying systems."
+    description: "Latin American banks navigate Superintendencia de Bancos, SEPS, UAFE, CNBV, SFC, SBS, and FATF-GAFI frameworks, each with different data requirements from the same underlying systems."
 capabilities:
   - name: "Unified Compliance Data Foundation"
-    description: "Single governed data layer for all regulatory requirements — AML/KYC transaction feeds, aggregated loan exposure, reconciled deposit and lending data, and stress testing inputs."
+    description: "Single governed data layer for all regulatory requirements, AML/KYC transaction feeds, aggregated loan exposure, reconciled deposit and lending data, and stress testing inputs."
     featured: true
     outcome: "True cross-system compliance visibility."
     tier: "understand"
@@ -48,7 +48,7 @@ capabilities:
     outcome: "Accurate loss modeling with governed data inputs."
     tier: "understand"
   - name: "Continuous Regulatory Reporting"
-    description: "Reconciled deposit and lending data feeds regulatory reports continuously — not quarterly. Reports generate automatically with full source attribution."
+    description: "Reconciled deposit and lending data feeds regulatory reports continuously, not quarterly. Reports generate automatically with full source attribution."
     outcome: "Zero reconciliation delays. Examination cycles pass with confidence."
     tier: "orchestrate"
   - name: "Stress Testing Intelligence"
@@ -60,7 +60,7 @@ capabilities:
     outcome: "Multi-jurisdiction compliance from one data foundation."
     tier: "understand"
 proofPoint:
-  industry: "Finance — Regulatory Compliance"
+  industry: "Finance, Regulatory Compliance"
   headline: "Compliance Intelligence for LATAM Banking"
   metrics:
     - value: "100%"
@@ -69,7 +69,7 @@ proofPoint:
       label: "Reconciliation Delays"
     - value: "6+"
       label: "Regulatory Frameworks"
-  narrative: "Quatro delivers regulatory compliance intelligence with native fluency in Latin American regulatory frameworks — Superintendencia de Bancos, SEPS, UAFE, and FATF-GAFI. The same governed data foundation serves AML, credit loss modeling, and stress testing without manual reconciliation."
+  narrative: "Quatro delivers regulatory compliance intelligence with native fluency in Latin American regulatory frameworks, Superintendencia de Bancos, SEPS, UAFE, and FATF-GAFI. The same governed data foundation serves AML, credit loss modeling, and stress testing without manual reconciliation."
 cta:
   primary:
     label: "Schedule a Compliance Assessment"

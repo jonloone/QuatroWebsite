@@ -2,11 +2,11 @@
 title: "Network Operations"
 tagline: "Unified Multi-Vendor NOC"
 heroImage: "/images/solution-network-operations.png"
-description: "Replace vendor silos with unified network intelligence across terrestrial and satellite domains. 80% fewer false alarms, 55% faster MTTR, and one network for any vendor's equipment — ground to orbit."
+description: "Replace vendor silos with unified network intelligence across terrestrial and satellite domains. 80% fewer false alarms, 55% faster MTTR, and one network for any vendor's equipment, ground to orbit."
 order: 7
 hero:
   eyebrow: "Network Operations"
-  title: "Mission-Aware Service Assurance."
+  title: "Find the root cause across every vendor, in one NOC."
   description: "When a network fault occurs, NOCs struggle to correlate the technical failure with the specific mission or customer impacted. Quatro integrates hybrid network telemetry to prioritize response based on operational impact."
   primaryCta:
     label: "Talk to Our Team"
@@ -35,21 +35,21 @@ challenges:
     description: "Without predictive analytics and cross-domain correlation, fault management remains reactive. The same manual steps repeat for every incident."
 capabilities:
   - name: "Infrastructure Management"
-    description: "Comprehensive inventory and topology with real-time health monitoring — a live, vendor-neutral view of your entire network."
+    description: "Comprehensive inventory and topology with real-time health monitoring, a live, vendor-neutral view of your entire network."
   - name: "Service Assurance & SLA"
     description: "Proactive quality monitoring with SLA tracking, breach prediction, and automated compliance reporting."
   - name: "Provisioning & Orchestration"
     description: "Template-driven provisioning across multi-vendor, multi-domain networks with validation and automatic rollback."
   - name: "Fault Management"
-    description: "Intelligent alarm correlation and root-cause analysis that suppresses symptomatic noise and surfaces actionable events. Governed autonomous action recommends resolution steps and can execute proven playbooks autonomously — reducing dependency on senior engineers for routine issues."
+    description: "Intelligent alarm correlation and root-cause analysis that suppresses symptomatic noise and surfaces actionable events. Governed autonomous action recommends resolution steps and can execute proven playbooks autonomously, reducing dependency on senior engineers for routine issues."
   - name: "Predictive Maintenance"
     description: "Forecast equipment failures at tower sites and central offices by correlating environmental data with device health metrics."
   - name: "Commercial Operations Intelligence"
-    description: "Active SLA management with breach prediction, automated escalation, capacity planning, and cost tracking. Connect network performance to customer experience and commercial impact — turning NOC operations into revenue operations."
+    description: "Active SLA management with breach prediction, automated escalation, capacity planning, and cost tracking. Connect network performance to customer experience and commercial impact, turning NOC operations into revenue operations."
   - name: "Multi-Site NOC Operations"
-    description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support. AI-powered intelligence provides contextual guidance to operators regardless of experience level — institutional NOC expertise captured in the intelligence stack."
+    description: "Centralized or federated operations across multiple NOC locations with role-based access and follow-the-sun support. AI-driven intelligence provides contextual guidance to operators regardless of experience level, institutional NOC expertise captured in the intelligence stack."
 proofPoint:
-  industry: "Infrastructure — Telecommunications"
+  industry: "Infrastructure, Telecommunications"
   headline: "Multi-Site Tower Operations"
   metrics:
     - value: "80%"

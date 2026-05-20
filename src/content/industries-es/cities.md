@@ -1,18 +1,18 @@
 ---
-title: "Ciudades Inteligentes"
-tagline: "Inteligencia Urbana Multidominio"
+title: "Ciudades Inteligentes y Servicios Públicos"
+tagline: "De la señal del sensor a la cuadrilla despachada, en un solo modelo."
 heroImage: "/images/industry-cities.png"
-description: "Inteligencia operacional unificada que conecta movilidad, seguridad pública, infraestructura y dominios ambientales — transformando silos departamentales en operaciones urbanas coordinadas."
+description: "Quatro integra los sistemas de ciudad, servicios públicos, obras públicas, GIS, 311, órdenes de trabajo, sensores y respuesta a emergencias en flujos de IA industrial que su organización controla. Datos, razonamiento, agentes y aprobaciones trabajan juntos sobre un solo stack de inteligencia, sin reemplazar los sistemas con los que ya opera su equipo."
 order: 5
 hero:
   eyebrow: "Ciudades Inteligentes"
-  title: "Una Ciudad. Un Centro de Operaciones."
-  description: "Deje de alternar entre 5-10 consolas departamentales. La inteligencia operacional unificada conecta tránsito, seguridad pública, servicios públicos y sistemas ambientales en una imagen coordinada."
+  title: "Convierta una llamada al 311 en un arreglo despachado, no en una cadena de cinco departamentos."
+  description: "Las ciudades y servicios públicos ya tienen los datos: GIS, SCADA/AMI, 311, órdenes de trabajo, despacho, sensores, facturación y respuesta a emergencias. Quatro conecta esos sistemas en un solo modelo operacional gobernado, sobre el stack de inteligencia que sus equipos públicos usan para pasar de la señal a la acción aprobada."
   primaryCta:
-    label: "Solicite una Evaluación de Ciudad"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Solicite una Demostración"
+    label: "Hable con un ingeniero"
     href: "/es/contact/sales"
 stats:
   - value: "85%"
@@ -62,10 +62,10 @@ proofPoint:
   narrative: "Una ciudad mediana (400,000 habitantes) unificó más de 1,500 cámaras en tres plataformas VMS separadas con detección de disparos y lectores de placas. La fusión multisensor redujo falsas alarmas en un 85%, y la coordinación automatizada inter-agencia redujo el tiempo de respuesta ante incidentes en un 70%."
 cta:
   primary:
-    label: "Solicite una Evaluación de Ciudad"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondary:
-    label: "Solicite una Demostración"
+    label: "Hable con un ingeniero"
     href: "/es/contact/sales"
-  microcopy: "Evaluación típica: 45-60 minutos. Mapearemos sus sistemas actuales en todos los departamentos y demostraremos cómo la inteligencia unificada permite la coordinación multidominio."
+  microcopy: "Conversación típica: 45-60 minutos. Mapeamos sus sistemas actuales en todos los departamentos y le mostramos cómo el stack de inteligencia coordina la respuesta multidominio."
 ---

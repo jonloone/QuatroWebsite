@@ -36,13 +36,13 @@ const pillars = [
   },
   {
     name: 'Redes',
-    description: 'Tierra a órbita, suscriptor a servicio — unificado en una vista operacional. Redes terrestres, satelitales e híbridas conectadas en un modelo de inteligencia.',
-    href: '/es/industries/networks',
+    description: 'Tierra a órbita, suscriptor a servicio, unificado en una vista operacional. Redes terrestres, satelitales e híbridas conectadas sobre el stack de inteligencia.',
+    href: '/es/industries/infrastructure',
     heroImage: getIndustry('networks')?.data.heroImage || '/images/industry-networks.png',
     stats: getIndustry('networks')?.data.stats?.slice(0, 3) || [],
     children: [
-      { name: 'Operaciones de Red', href: '/es/solutions' },
-      { name: 'Salud de Flota', href: '/es/solutions' },
+      { name: 'Operaciones de Red', href: '/es/solutions/network-operations' },
+      { name: 'Salud de Flota', href: '/es/solutions/fleet-logistics' },
       { name: 'Aseguramiento de Servicio', href: '/es/solutions' },
     ],
   },
@@ -62,14 +62,14 @@ const pillars = [
 
 <MarketingLayout
   lang="es"
-  title="Industrias — IA industrial para Operaciones Críticas"
-  description="Quatro ofrece IA industrial en energía, defensa, redes y ciudades — 8,000+ integraciones, desplegado a su manera."
+  title="Industrias — IA industrial para las Américas"
+  description="Quatro es el integrador de IA industrial para las Américas. Integramos el stack de inteligencia para energía, defensa, redes y ciudades, con 8,000+ integraciones y despliegue bajo control de su organización."
 >
   <HeroCanvas
     badge="Industrias"
-    title="Inteligencia para las Operaciones que Más Importan"
-    body="Quatro ofrece IA industrial para las industrias donde la infraestructura importa más — redes de energía, redes de defensa, sistemas de comunicaciones y las ciudades de las que dependen las comunidades."
-    ctaLabel="Hablar con Nuestro Equipo"
+    title="IA industrial para las operaciones que más importan."
+    body="Quatro integra el stack de inteligencia para las industrias donde la infraestructura crítica no puede fallar: energía, defensa, redes y las ciudades de las que dependen las comunidades."
+    ctaLabel="Hable con nuestro equipo"
     ctaHref="/es/contact/demo"
   />
 
@@ -122,10 +122,10 @@ const pillars = [
   </Section>
 
   <DualCta
-    title={`Vea cómo la <span style="color: var(--color-forest);">IA industrial</span> funciona en su industria.`}
-    description="Díganos el resultado que importa. Conectamos los sistemas que tienen la respuesta. Su equipo empieza a trabajar desde el modelo."
-    primaryCta={{ label: 'Hablar con Nuestro Equipo', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Hablar con un Ingeniero', href: '/es/contact/sales' }}
-    microcopy="Inteligencia en semanas · Su equipo lo controla desde el primer día"
+    title={`Vea cómo las <span style="color: var(--color-forest);">operaciones inteligentes</span> funcionan en su industria.`}
+    description="Cuéntenos el resultado que importa. Conectamos los sistemas que tienen la respuesta. Su equipo empieza a operar desde el modelo."
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Hable con un ingeniero', href: '/es/contact/sales' }}
+    microcopy="Inteligencia en semanas · Su equipo es dueño desde el primer día"
   />
 </MarketingLayout>

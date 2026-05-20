@@ -10,10 +10,10 @@ hero:
   description: "When degradation signals scatter across remote sensors, failures cascade without warning. Detect degradation 7-14 days in advance, plan maintenance proactively, and keep your 500+ production assets running 24/7."
   primaryCta:
     label: "Schedule an Energy Assessment"
-    href: "/energy-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to an Energy Engineer"
-    href: "/contact/energy-specialist"
+    href: "/contact/sales"
 pain:
   narrative: "Your operation depends on hundreds of wells, pump stations, and compressors scattered across remote locations. Every unplanned equipment failure triggers a cascade: production shutdown, emergency dispatch of specialized crews (helicopter costs $10K+), expedited repair parts, and lost revenue at $125K+/hour for high-volume facilities. Your maintenance team operates reactively—a pump bearing fails at 2 AM on a Sunday, and suddenly you're managing a crisis instead of a planned intervention. Preventive maintenance programs help, but blindly replacing parts before failure wastes resources and creates its own downtime. Between unplanned outages, truck rolls to remote sites, and over-servicing equipment that still has useful life, you're hemorrhaging $2-5M annually. Your engineers are stretched thin, unable to predict which assets are at risk until they're already offline."
   quantified:
@@ -74,10 +74,10 @@ objections:
 adjacentSolutions:
   - title: "Pipeline Integrity & Leak Detection"
     description: "Apply the same predictive intelligence framework to pipeline corrosion and leak probability forecasting."
-    href: "/use-cases/pipeline-integrity"
+    href: "/industries/energy/pipeline-integrity"
   - title: "Grid Balancing & Renewable Integration"
     description: "Extend asset health insights to power generation and transmission equipment monitoring."
-    href: "/use-cases/grid-operations"
+    href: "/industries/energy/grid-operations"
 crossVertical:
   - industry: "Industrial Manufacturing"
     result: "OEE optimization uses identical degradation patterns to predict production line equipment failures and optimize overall equipment effectiveness"
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: "Schedule an Energy Assessment"
-    href: "/energy-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to an Energy Engineer"
-    href: "/contact/energy-specialist"
+    href: "/contact/sales"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---

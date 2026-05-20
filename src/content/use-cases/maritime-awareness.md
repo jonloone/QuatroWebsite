@@ -10,10 +10,10 @@ hero:
   description: "Monitor 1,000+ vessels in real-time. Detect dark ships and illegal activity within your exclusive economic zone in under 15 minutes."
   primaryCta:
     label: "Schedule a Defense Assessment"
-    href: "/contact/defense-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Defense Engineer"
-    href: "/contact/defense-engineer"
+    href: "/contact/sales"
 pain:
   narrative: "Your exclusive economic zone spans thousands of nautical miles. Illegal fishing fleets operate with transponders disabled, generating $800M+ in annual losses. Without real-time visibility, you can't distinguish commercial traffic from hostile actors or fishing pirates. Each day of delayed enforcement costs $2.1M in undetected illegal activity. Your current systems track only AIS-equipped vessels—leaving vast operational blind spots."
   quantified:
@@ -31,7 +31,7 @@ capabilities:
     description: "Integrate AIS, radar, SIGINT, satellite imagery, and vessel behavior data into a unified maritime picture."
     icon: "satellite"
   - name: "Dark Ship Detection"
-    description: "AI-powered anomaly detection identifies vessels operating without transponders in minutes."
+    description: "AI-driven anomaly detection identifies vessels operating without transponders in minutes."
     icon: "eye"
   - name: "3-5x Coverage Expansion"
     description: "See beyond AIS range using radar and SIGINT fusion to extend operational awareness across entire EEZ."
@@ -71,10 +71,10 @@ objections:
 adjacentSolutions:
   - title: "Base & Installation Protection"
     description: "Secure coastal installations and naval bases with the same operational intelligence layer."
-    href: "/use-cases/base-protection"
+    href: "/industries/defense/base-protection"
   - title: "Mission Logistics & Force Readiness"
     description: "Track supply ships and ensure fleet logistics operations stay on schedule."
-    href: "/use-cases/mission-logistics"
+    href: "/industries/defense/mission-logistics"
 crossVertical:
   - industry: "Energy"
     result: "Pipeline corridor monitoring and offshore platform security"
@@ -85,10 +85,10 @@ crossVertical:
 cta:
   primary:
     label: "Schedule a Defense Assessment"
-    href: "/contact/defense-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to a Defense Engineer"
-    href: "/contact/defense-engineer"
+    href: "/contact/sales"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---
 

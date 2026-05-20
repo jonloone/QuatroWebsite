@@ -2,11 +2,11 @@
 title: "Corridor Intelligence"
 tagline: "Traffic-to-Border Coordination Intelligence"
 heroImage: "/images/solution-corridor-intelligence.png"
-description: "Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border security across highway corridors — eliminating congestion, preventing accidents, and detecting contraband movement before crossing jurisdictional boundaries."
+description: "Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border security across highway corridors, eliminating congestion, preventing accidents, and detecting contraband movement before crossing jurisdictional boundaries."
 order: 14
 hero:
   eyebrow: "Corridor Intelligence"
-  title: "Optimize Flow. Detect Incidents. Secure Corridors."
+  title: "Spot the corridor incident and reroute before traffic backs up."
   description: "Real-time operational intelligence that coordinates traffic flow, incident detection, toll optimization, and border security across highway corridors. When an accident occurs 200 km from the border, the intelligence stack detects it sub-minute, optimizes alternate routes, and coordinates with border authorities on logistics impact."
   primaryCta:
     label: "Request a Corridor Briefing"
@@ -40,13 +40,13 @@ capabilities:
   - name: "Logistics and Supply Chain Visibility"
     description: "Shipment ETA calculated from real-time corridor conditions. Carrier delays visible with minute-level accuracy. Warehouse receiving coordinated with arrival timing. Predictive delivery failure alerts inform customer communication."
   - name: "Corridor Security and Contraband Detection"
-    description: "Suspicious vehicle movement patterns detected — dark vehicles, coordinated convoy timing, checkpoint bypass. Cargo characteristics flagged for inspection. Behavioral anomalies correlated with known smuggling patterns. Border intelligence feeds customs targeting."
+    description: "Suspicious vehicle movement patterns detected, dark vehicles, coordinated convoy timing, checkpoint bypass. Cargo characteristics flagged for inspection. Behavioral anomalies correlated with known smuggling patterns. Border intelligence feeds customs targeting."
   - name: "Cross-Domain Corridor Coordination"
-    description: "A traffic incident triggers simultaneous response — emergency dispatch, alternate routing for 500+ vehicles, border delay estimates, logistics notifications, and security posture assessment delivered as one operational picture."
+    description: "A traffic incident triggers simultaneous response, emergency dispatch, alternate routing for 500+ vehicles, border delay estimates, logistics notifications, and security posture assessment delivered as one operational picture."
   - name: "Sovereign Cross-Border Intelligence"
-    description: "Corridor monitoring data shared as intelligence products — assessed risk and behavioral anomalies, not raw vehicle data. Every cross-border disclosure pre-approved and revocable. Commercial confidentiality maintained while security agencies receive targeting intelligence."
+    description: "Corridor monitoring data shared as intelligence products, assessed risk and behavioral anomalies, not raw vehicle data. Every cross-border disclosure pre-approved and revocable. Commercial confidentiality maintained while security agencies receive targeting intelligence."
 proofPoint:
-  industry: "Transportation — Highway Corridor"
+  industry: "Transportation, Highway Corridor"
   headline: "Traffic-to-Border Corridor Transformation"
   metrics:
     - value: "<1 min"

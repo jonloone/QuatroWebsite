@@ -1,71 +1,107 @@
 ---
-title: "Defensa"
-tagline: "Inteligencia Operacional Lista para la Misión"
+title: "Seguridad Nacional"
+tagline: "Inteligencia soberana para el territorio, los recursos y las comunidades."
 heroImage: "/images/industry-defense.png"
-description: "Plataforma unificada en dominios físico, cibernético y operacional — diseñada para entornos aislados con velocidad de despliegue COTS y cumplimiento de grado militar."
+description: "Quatro conecta los datos satelitales, de sensores y de agencias en un solo modelo soberano para las amenazas que no se presentan como ejércitos: minería ilegal, pesca ilegal, deforestación, contrabando y comunidades en riesgo. De la detección a la acción aprobada, con datos que nunca salen de manos soberanas."
 order: 2
 hero:
-  eyebrow: "Defensa"
-  title: "Comando Unificado. Cualquier Clasificación. Cualquier Entorno."
-  description: "Conciencia situacional multidominio que abarca seguridad física, operaciones de red y logística — desplegado en semanas, no años, con capacidad completa en entornos aislados."
+  eyebrow: "Seguridad Nacional"
+  title: "Las amenazas a su nación nunca cruzan una frontera. Encuéntrelas de todos modos."
+  description: "Se presentan como minería ilegal, embarcaciones oscuras, deforestación, contrabando y comunidades en riesgo, repartidas entre agencias que nunca comparten una sola imagen. Quatro conecta los datos satelitales, de sensores y de agencias en un solo modelo soberano, para que sus equipos pasen de la detección a la acción aprobada, con datos que nunca salen de manos soberanas."
   primaryCta:
-    label: "Solicite un Briefing de Misión"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Ingeniero"
+    label: "Solicite un briefing"
     href: "/es/contact/sales"
 stats:
-  - value: "80%"
-    label: "Menos Falsas Alarmas"
-  - value: "55%"
-    label: "Respuesta Más Rápida"
-  - value: "60%"
-    label: "Reducción de Fuerza de Vigilancia"
-  - value: "12+ FOBs"
-    label: "Comando Federado"
+- value: "Días, no meses"
+  label: "Tiempo de Detección"
+- value: "Soberano"
+  label: "Despliegue Aislado"
+- value: 8,000+
+  label: "Integraciones de Sensores y Agencias"
+- value: "Multi-Agencia"
+  label: "Respuesta Coordinada"
 challenges:
-  - title: "Seguridad Física y Cibernética en Silos"
-    description: "La seguridad física y la ciberseguridad operan en estructuras de mando separadas con herramientas separadas. Los ataques convergentes que abarcan ambos dominios pasan desapercibidos."
-  - title: "Fronteras de Clasificación"
-    description: "Los entornos de defensa operan a través de múltiples niveles de clasificación con arquitecturas de red distintas. Las soluciones deben funcionar en configuraciones completamente aisladas."
-  - title: "Carga de Integración Legacy"
-    description: "Las instalaciones típicamente operan más de 15-30 sistemas dispares acumulados durante décadas. Los proyectos de integración consumen el 40-60% de los presupuestos de TI de defensa."
-  - title: "Operaciones Distribuidas"
-    description: "Las ubicaciones desplegadas en avanzada e instalaciones distribuidas requieren operación autónoma con conectividad intermitente y sin dependencia de la nube."
+- title: La Asimetría del Crimen Coordinado
+  description: Las autoridades ambientales, la guardia costera, la policía y los servicios sociales ven cada una solo una pieza. Las redes detrás de la minería, la pesca y el tráfico ilegales operan como una sola operación coordinada. La asimetría favorece a la amenaza.
+  image: /images/challenge-defense-silos.png
+- title: Detección Demasiado Tardía
+  description: Para cuando la minería ilegal o la deforestación salen a la luz por revisión manual, el mercurio ya está en el río y el bosque ya no está. El daño que la detección satelital podría captar en días se descubre meses después.
+  image: /images/challenge-defense-multi-domain.png
+- title: Síntomas, No Redes
+  description: La fiscalización ataca la actividad visible, la draga o la embarcación aislada, no el financiamiento, la logística y la estructura de mando que la sostienen. La operación se mueve y se reanuda.
+  image: /images/challenge-defense-distributed.png
+- title: Restricciones de Soberanía
+  description: La inteligencia nacional no puede depender de nubes extranjeras ni de operadores externos. La detección, el razonamiento y la acción deben ejecutarse dentro de infraestructura soberana, con procedencia completa y autoridad humana preservada.
+  image: /images/challenge-defense-classification.png
+programs:
+  - name: "Protección Comunitaria"
+    description: "Inteligencia predictiva que identifica qué comunidades e individuos están en mayor riesgo, antes de que la intervención llegue tarde. La fusión de datos multi-agencia conecta educación, salud, servicios sociales y seguridad en puntajes de riesgo a nivel parroquial y enrutamiento de intervención focalizada."
+    domains: "Índice de Riesgo Juvenil · Educación · Salud · Servicios Sociales · Seguridad · Intervención Comunitaria"
+    image: "/images/domain-community-health.png"
+  - name: "Protección Marítima"
+    description: "AIS satelital, radar y detección por IA de embarcaciones oscuras, pesca ilegal y rutas de contrabando en las zonas económicas exclusivas. La fiscalización automatizada conecta a la guardia costera, la armada y las autoridades pesqueras en una sola imagen operacional marítima."
+    domains: "Detección de Embarcaciones Oscuras · Pesca INDNR · Fiscalización de ZEE · Guardia Costera · Interdicción de Contrabando"
+    image: "/images/domain-maritime-protection.png"
+  - name: "Conservación de Tierra y Bosques"
+    description: "Observación satelital de la Tierra y redes de sensores en tierra que detectan deforestación, minería ilegal y violaciones de uso de suelo casi en tiempo real. Inteligencia ambiental conectada a las redes criminales detrás de la extracción de recursos, para que la fiscalización ataque operaciones, no síntomas."
+    domains: "Observación Satelital · Deforestación · Minería Ilegal · Áreas Protegidas · Crimen Ambiental"
+    image: "/images/domain-land-conservation.png"
+  - name: "Seguridad de Recursos e Infraestructura"
+    description: "Detección de robo en ductos, monitoreo de infraestructura crítica e integración SCADA que conecta los sistemas de seguridad física con la inteligencia operacional. Cada sensor, cada alerta, cada respuesta coordinada a través de un solo modelo gobernado."
+    domains: "Protección de Ductos · SCADA · Infraestructura Crítica · Detección de Robo · Seguridad Energética"
+    image: "/images/domain-resource-security.png"
+  - name: "Integridad Fronteriza y Territorial"
+    description: "Monitoreo fronterizo multisensor que conecta radar, cámaras, sensores en tierra e imágenes satelitales en conciencia territorial continua. Análisis de redes de contrabando, detección de patrones de cruce y respuesta multi-agencia coordinada, de la detección a la interdicción."
+    domains: "Monitoreo Fronterizo · Redes de Contrabando · Patrones de Cruce · Respuesta Multi-Agencia · Soberanía Territorial"
+    image: "/images/domain-border-security.png"
 capabilities:
-  - name: "Protección Perimetral"
-    description: "Analítica de video con IA y fusión multisensor (cámara, radar, lidar, fibra óptica) que ofrece detección-a-respuesta en menos de 30 segundos con 80% menos falsas alarmas."
-  - name: "Comando Federado"
-    description: "Interfaz de comando única que abarca más de 12 instalaciones y FOBs. Mantiene autonomía local mientras permite supervisión centralizada sin consolidación de red."
-  - name: "Operaciones en Entorno Aislado"
-    description: "Capacidad analítica completa en el edge táctico sin conectividad a la nube. Diseñado específicamente para operaciones clasificadas en redes aisladas a nivel IL4/IL5/IL6."
-  - name: "Protección de Fuerza Automatizada"
-    description: "Playbooks de respuesta predefinidos activados automáticamente por eventos detectados — escalando alertas, notificando respondedores y activando contramedidas."
-  - name: "Inteligencia Logística"
-    description: "Planificación de convoyes reducida de horas a minutos. Optimización de rutas asistida por IA que integra datos de amenazas en tiempo real, clima y disponibilidad de vehículos."
-  - name: "Trazabilidad para Cumplimiento"
-    description: "Cada detección, alerta, decisión y acción registrada con marca de tiempo y contexto de cadena de mando. Satisface los requisitos de supervisión y legales de defensa."
+- name: Detección Satelital y de Sensores
+  description: Detección casi en tiempo real de minería ilegal, deforestación, embarcaciones oscuras y violaciones de uso de suelo a partir de observación satelital de la Tierra y redes de sensores en tierra. Detecte una tala ilegal o una draga en días, no en meses.
+  featured: true
+  outcome: Detecte la actividad mientras la intervención todavía importa.
+  image: /images/cap-defense-national-intel.png
+- name: Inteligencia de Redes
+  description: Conecte una mina, embarcación o tala detectada con el financiamiento, la logística y la estructura de mando que la sostienen. La fiscalización ataca la operación, no el síntoma, para que no solo se mueva y se reanude.
+  featured: true
+  outcome: Ataque la red, no la draga aislada.
+  image: /images/domain-border-security.png
+- name: Trazabilidad Soberana de Fuente a Evaluación
+  description: Cada evaluación traza de regreso a su señal de origen, cada acción pasa por aprobación humana, y todo el modelo permanece dentro de infraestructura soberana, aislado donde sea necesario.
+  featured: true
+  outcome: Evaluaciones de alta confianza, procedencia completa, datos que nunca salen de manos soberanas.
+  image: /images/cap-defense-federated-command.png
+- name: Coordinación Multi-Agencia
+  description: Conecte autoridades ambientales, guardia costera, policía, pesca y servicios sociales en una sola imagen operacional. Respuesta multi-agencia coordinada de la detección a la interdicción.
+  outcome: Una sola imagen entre todas las agencias que toca la misión.
+  image: /images/cap-defense-force-protection.png
+- name: Aumento del Analista
+  description: Los agentes clasifican, traducen y sintetizan entre fuentes para que los analistas dediquen su tiempo al juicio, no a la recolección.
+  outcome: Evaluación acelerada sin remover el juicio humano.
+  image: /images/cap-defense-air-gapped.png
 platformMapping:
-  see: "Ingesta multisensor para cámaras, radar, lidar, fibra óptica, sísmicos y sensores RF. Soporte STANAG para interoperabilidad NATO. Procesamiento en el edge para entornos aislados."
-  understand: "Analítica de video con IA con detección, clasificación y seguimiento de objetos en tiempo real. La fusión multisensor reduce falsas alarmas en un 80%. Detección de anomalías en todos los dominios monitoreados."
-  orchestrate: "Comando federado en más de 12 FOBs. Playbooks automatizados de protección de fuerza. Espacios de trabajo basados en roles para comandante, oficial de guardia, analista y respondedor."
+  see: Conecte observación satelital de la Tierra, AIS y radar, sensores en tierra, OSINT y flujos de datos de agencias entre lo ambiental, la guardia costera, la policía y los servicios sociales en un solo modelo de inteligencia soberano. 8,000+ integraciones. Procesamiento en el edge para entornos aislados.
+  understand: El razonamiento espacio-temporal y las ontologías de amenaza de dominio sacan a la luz la extracción ilegal, la actividad de embarcaciones oscuras, la deforestación y el movimiento transfronterizo, y conectan cada uno con la red detrás. Cada afirmación traza de regreso a su origen.
+  orchestrate: Los flujos de trabajo con analista en el circuito coordinan la respuesta multi-agencia de la detección a la interdicción. Los agentes redactan evaluaciones y paquetes de objetivos; los humanos aprueban. Los datos y la acción permanecen dentro de infraestructura soberana.
 proofPoint:
-  industry: "Defensa — Seguridad de Instalaciones"
-  headline: "Transformación de Instalación de 15,000 Acres"
+  industry: Seguridad Nacional, Protección Ambiental y Territorial
+  headline: Inteligencia Soberana contra el Crimen Ambiental
   metrics:
-    - value: "60%"
-      label: "Reducción de Fuerza de Vigilancia"
-    - value: "<30 seg"
-      label: "Detección-a-Respuesta"
-    - value: "5→1"
-      label: "Sistemas Consolidados"
-  narrative: "Una instalación militar de 15,000 acres reemplazó 5 sistemas legacy de seguridad física con Quatro. El monitoreo perimetral asistido por IA redujo los requerimientos de fuerza de vigilancia en un 60% mientras logró detección-a-respuesta en menos de 30 segundos. La fusión multisensor redujo falsas alarmas en un 80%, restaurando la confianza del operador y la efectividad de respuesta."
+  - value: Días, no meses
+    label: Detección de Actividad Ilegal
+  - value: Aislado
+    label: Despliegue Soberano
+  - value: Multi-Agencia
+    label: Interdicción Coordinada
+  narrative: Un programa nacional ambiental y de seguridad desplegó Quatro para conectar la observación satelital de la Tierra, el seguimiento marítimo y los datos de agencias en un solo modelo soberano. La minería ilegal y la deforestación que antes tomaban meses en salir a la luz por revisión manual se detectaron en días, cada detección conectada con la red detrás y enrutada a una respuesta multi-agencia coordinada. Cada evaluación trazó de regreso a su origen, y el modelo se ejecutó por completo dentro de infraestructura soberana.
 cta:
   primary:
-    label: "Solicite un Briefing de Misión"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondary:
-    label: "Hable con un Ingeniero"
+    label: "Solicite un briefing"
     href: "/es/contact/sales"
-  microcopy: "Briefing típico: 45-60 minutos. Evaluaremos su postura de seguridad actual y demostraremos cómo el comando unificado reemplaza los sistemas fragmentados sin requerir consolidación de red."
+  microcopy: "Inteligencia en semanas · Su equipo es dueño desde el primer día · Los datos nunca salen de manos soberanas"
 ---

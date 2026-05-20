@@ -2,11 +2,11 @@
 title: "Grid Health"
 tagline: "Modernize Without Replacing"
 heroImage: "/images/solution-grid-operations.png"
-description: "Overlay modernization that adds operational intelligence, DER integration, and storm response to existing SCADA — delivering results in months, not years."
+description: "Overlay modernization that adds operational intelligence, DER integration, and storm response to existing SCADA, delivering results in months, not years."
 order: 6
 hero:
   eyebrow: "Grid Health"
-  title: "See the Grid. Prevent the Outage."
+  title: "Catch the grid fault before it becomes an outage."
   description: "Grid operators are drowning in SCADA alarms but starving for context. Quatro integrates sensor data, weather, and maintenance history to predict grid failures and route work orders before the outage occurs."
   primaryCta:
     label: "Talk to Our Team"
@@ -39,7 +39,7 @@ capabilities:
   - name: "Distribution Management"
     description: "End-to-end monitoring with automated fault isolation, load balancing, and outage management across the distribution network."
   - name: "DER Integration"
-    description: "Seamless onboarding of solar, wind, battery storage, and EV charging — normalized into your grid operational view."
+    description: "Seamless onboarding of solar, wind, battery storage, and EV charging, normalized into your grid operational view."
   - name: "SCADA Modernization"
     description: "Overlay existing SCADA with operational intelligence without touching the safety-critical control path. Operator guidance, pattern recognition, and predictive analytics layer on top of your existing infrastructure. Migrate at your own pace."
   - name: "Storm Response Automation"
@@ -47,9 +47,9 @@ capabilities:
   - name: "Real-Time Grid Simulation"
     description: "Operational models for contingency analysis, DER hosting capacity studies, and storm impact modeling before conditions materialize."
   - name: "Operational Intelligence for Grid Operators"
-    description: "Real-time contextual recommendations for grid operators. Pattern recognition identifies emerging issues — cascading outage conditions, DER instability, load imbalances — before threshold alerts fire. New operators perform like veterans with step-by-step guidance."
+    description: "Real-time contextual recommendations for grid operators. Pattern recognition identifies emerging issues, cascading outage conditions, DER instability, load imbalances, before threshold alerts fire. New operators perform like veterans with step-by-step guidance."
 proofPoint:
-  industry: "Energy — Integrated Utility"
+  industry: "Energy, Integrated Utility"
   headline: "Storm Response & Grid Modernization"
   metrics:
     - value: "60%"

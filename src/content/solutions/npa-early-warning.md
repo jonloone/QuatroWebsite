@@ -2,12 +2,12 @@
 title: "NPA Early Warning"
 tagline: "Predict Non-Performing Assets Before They Hit the Balance Sheet"
 heroImage: "/images/solution-npa-early-warning.png"
-description: "ML-powered early warning that identifies pre-NPA stress patterns 30–60 days before accounts cross the threshold — with production-ready pipelines for collections, restructuring, and proactive engagement."
+description: "ML-driven early warning that identifies pre-NPA stress patterns 30–60 days before accounts cross the threshold, with production-ready pipelines for collections, restructuring, and proactive engagement."
 order: 18
 hero:
   eyebrow: "NPA Early Warning"
-  title: "See the Risk Before It Becomes a Loss."
-  description: "Traditional NPA detection triggers at 90 days past due — too late for recovery. Quatro's NPA Early Warning identifies stress patterns 30–60 days earlier, routing high-risk accounts to collections or restructuring before provisioning costs lock in."
+  title: "See the bad loan 30 to 60 days before it defaults."
+  description: "Traditional NPA detection triggers at 90 days past due, too late for recovery. Quatro's NPA Early Warning identifies stress patterns 30–60 days earlier, routing high-risk accounts to collections or restructuring before provisioning costs lock in."
   primaryCta:
     label: "Schedule a Risk Assessment"
     href: "/contact/demo"
@@ -19,7 +19,7 @@ stats:
     label: "Earlier Detection"
   - value: "4–6 Weeks"
     label: "To Production"
-  - value: "ML-Powered"
+  - value: "ML-Driven"
     label: "Signal Detection"
   - value: "Production"
     label: "Ready Pipeline"
@@ -29,7 +29,7 @@ challenges:
   - title: "Siloed Risk Signals"
     description: "Payment behavior lives in one system, customer financial signals in another, economic indicators in a third. No platform correlates them into early warning patterns."
   - title: "Manual Collections Triage"
-    description: "Collections teams work from static reports with no predictive intelligence. High-risk accounts get the same treatment as low-risk — wasting resources and missing intervention windows."
+    description: "Collections teams work from static reports with no predictive intelligence. High-risk accounts get the same treatment as low-risk, wasting resources and missing intervention windows."
   - title: "Provisioning Lag"
     description: "Provisioning decisions are based on lagging indicators. By the time an account is classified as non-performing, the cost is already on the books."
 capabilities:
@@ -52,11 +52,11 @@ capabilities:
     outcome: "Provisioning costs decrease. Portfolio quality improves."
     tier: "orchestrate"
   - name: "Knowledge Graph Enrichment"
-    description: "When connected to Customer 360 and Credit Risk, early warning signals are enriched with true customer exposure, compliance status, and relationship value — making predictions more accurate."
+    description: "When connected to Customer 360 and Credit Risk, early warning signals are enriched with true customer exposure, compliance status, and relationship value, making predictions more accurate."
     outcome: "Each product makes the others more valuable."
     tier: "understand"
 proofPoint:
-  industry: "Finance — Lending Operations"
+  industry: "Finance, Lending Operations"
   headline: "Predictive NPA Intelligence in Production"
   metrics:
     - value: "30–60 Days"
@@ -65,7 +65,7 @@ proofPoint:
       label: "Ready ML Pipeline"
     - value: "Indiabulls"
       label: "Verified Deployment"
-  narrative: "NPA Early Warning is a fully built solution with production-ready data pipelines, ML-powered early warning signal detection, and pre-configured actions for collections, legal, and provisioning workflows. Deployed at Indiabulls (India) for lending operations."
+  narrative: "NPA Early Warning is a fully built solution with production-ready data pipelines, ML-driven early warning signal detection, and pre-configured actions for collections, legal, and provisioning workflows. Deployed at Indiabulls (India) for lending operations."
 cta:
   primary:
     label: "Schedule a Risk Assessment"

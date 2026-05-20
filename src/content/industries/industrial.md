@@ -6,7 +6,7 @@ description: "Quatro integrates SCADA, DCS, MES, ERP, CMMS, quality, and field w
 order: 3
 hero:
   eyebrow: Industrial
-  title: "Industrial AI for plant and asset-heavy operations."
+  title: "Catch the failure weeks early, and hand your operator the fix."
   description: "Plant teams have historians, MES, CMMS, ERP, and quality systems that rarely share one operating model. Quatro connects them into governed workflows for maintenance, quality, throughput, and operator guidance."
   primaryCta:
     label: Schedule a Plant Assessment
@@ -43,7 +43,7 @@ capabilities:
   outcome: 2-4 week advance warning. $125K/hr downtime avoided.
   image: /images/cap-industrial-predictive-maint.png
 - name: Governed Autonomous Action
-  description: Real-time contextual recommendations during complex situations — simultaneous equipment alerts, quality deviations, production constraints. Step-by-step guidance based on historical patterns
+  description: Real-time contextual recommendations during complex situations, simultaneous equipment alerts, quality deviations, production constraints. Step-by-step guidance based on historical patterns
     and process relationships.
   featured: true
   outcome: New operators perform like 20-year veterans.
@@ -66,7 +66,7 @@ capabilities:
   image: /images/cap-industrial-digital-twin.png
   outcome: 40% fewer trial batches through virtual optimization.
 - name: 'Legacy Coexistence: No Rip-and-Replace'
-  description: Layer alongside existing OSIsoft PI, AspenTech, or Honeywell historians without migration. No tag-based licensing at any scale — collect every data point without cost penalties.
+  description: Layer alongside existing OSIsoft PI, AspenTech, or Honeywell historians without migration. No tag-based licensing at any scale, collect every data point without cost penalties.
   image: /images/cap-industrial-legacy.png
   outcome: No tag-based licensing. No migration required.
 - name: Multi-Plant Coordination
@@ -76,10 +76,10 @@ capabilities:
 platformMapping:
   see: 8,000+ integrations for OPC-UA, Modbus, MQTT, BACnet, and enterprise systems. No tag-based licensing. Edge processing maintains local intelligence during connectivity loss.
   understand: Operational intelligence stack for predictive maintenance, OEE tracking, quality prediction, and operator guidance. Pattern recognition and behavioral analysis surface emerging issues before threshold
-    alerts fire. Real-time operational models enable simulation and scenario planning. 80% fewer false alarms through relationship-aware intelligence.
+    alerts fire. Real-time operational models support simulation and scenario planning. 80% fewer false alarms through relationship-aware intelligence.
   orchestrate: Multi-plant coordination and human-approved workflow automation. Resource dispatch based on real-time demand, location, and skill requirements.
 proofPoint:
-  industry: Industrial — Chemical Manufacturing
+  industry: Industrial, Chemical Manufacturing
   headline: Multi-Plant Safety & Efficiency Transformation
   metrics:
   - value: 35%

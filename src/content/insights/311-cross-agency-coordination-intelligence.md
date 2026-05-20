@@ -29,7 +29,7 @@ But 311 stops there. It's an intake tool, not an intelligence tool. It captures 
 
 Each agency that receives a 311 ticket has its own dispatch system, its own priority queue, its own situational awareness. When a pothole is reported, public works sees a road maintenance issue. They don't see what traffic management knows: that pothole is on a school route. They don't see what infrastructure planning knows: ground movement in that area has been trending upward for three months. They don't see what water utilities know: there's a water main three feet under that pothole.
 
-The coordination that needs to happen between these agencies happens on phone calls, not data. A supervisor has to manually connect dots. A manager has to remember to call the other agency. Institutional knowledge — who to call about what — becomes the substitute for actual intelligence.
+The coordination that needs to happen between these agencies happens on phone calls, not data. A supervisor has to manually connect dots. A manager has to remember to call the other agency. Institutional knowledge (who to call about what) becomes the substitute for actual intelligence.
 
 When the system has to rely on human memory and phone calls to be intelligent, it fails at scale. In a city with tens of thousands of 311 calls per year, critical correlations are invisible. Patterns that predict bigger problems go unnoticed. Opportunities to be proactive instead of reactive remain undiscovered.
 
@@ -57,7 +57,7 @@ The deeper issue: there's no mechanism for a citizen's report in one department'
 
 ## What's Changing
 
-Progressive cities are beginning to treat 311 data as a signal layer — not as a queue of individual tickets, but as a continuous stream of information about how the city is functioning. The shift is subtle but structural: from "311 is a complaint management system" to "311 is municipal perception data."
+Progressive cities are beginning to treat 311 data as a signal layer, not as a queue of individual tickets, but as a continuous stream of information about how the city is functioning. The shift is subtle but structural: from "311 is a complaint management system" to "311 is municipal perception data."
 
 When that happens, the intelligence implications cascade. A 311 report becomes a signal that flows to the system that can act on it immediately. A pothole report doesn't stay isolated in a road maintenance queue; it becomes a data point that triggers assessment in the water utility system. A noise complaint doesn't just generate a code enforcement ticket; it feeds a pattern recognition system that looks for violations and correlations.
 
@@ -81,8 +81,8 @@ In a siloed system, the information stays siloed. In an intelligent system, it f
 
 This shift doesn't require wholesale replacement of existing systems. It requires reimagining what 311 data means and building the connective tissue that lets that data inform every operational system that benefits from it.
 
-The cities that make this shift first will be those that treat their 311 data as an asset worth connecting — not because it creates better complaint management, but because it creates genuine cross-agency operational intelligence.
+The cities that make this shift first will be those that treat their 311 data as an asset worth connecting, not because it creates better complaint management, but because it creates genuine cross-agency operational intelligence.
 
-This is what operational intelligence utilities are designed for: taking existing data from every corner of your organization — citizen reports, infrastructure monitoring, safety incidents, operational logs — and making it flow freely to the point of decision, across agency boundaries, at the speed operations need. No new platform. No new intake tool. Just intelligence that moves.
+This is what operational intelligence utilities are designed for: taking existing data from every corner of your organization (citizen reports, infrastructure monitoring, safety incidents, operational logs) and making it flow freely to the point of decision, across agency boundaries, at the speed operations need. No new platform. No new intake tool. Just intelligence that moves.
 
 The 311 problem isn't that citizens don't report problems. It's that the system doesn't let those problems become intelligence that the whole city can act on.

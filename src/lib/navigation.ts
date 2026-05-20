@@ -81,7 +81,7 @@ const footerNavigationData = {
           { name: 'Oil & Gas / Energy', href: '/industries/energy' },
           { name: 'Maritime / Ports', href: '/solutions/port-operations' },
           { name: 'Logistics / Supply Chain', href: '/industries/transportation' },
-          { name: 'Intelligence', href: '/industries/defense' },
+          { name: 'National Security', href: '/industries/defense' },
         ],
       },
     resources: {
@@ -115,9 +115,9 @@ const footerNavigationData = {
         items: [
           { name: 'Ciudades inteligentes y servicios públicos', href: '/es/industries/cities' },
           { name: 'Petróleo, gas y energía', href: '/es/industries/energy' },
-          { name: 'Marítimo y puertos', href: '/es/solutions/port-operations' },
-          { name: 'Logística y cadena de suministro', href: '/es/industries/transportation' },
-          { name: 'Inteligencia', href: '/es/industries/defense' },
+          { name: 'Marítimo y puertos', href: '/solutions/port-operations' },
+          { name: 'Logística y cadena de suministro', href: '/industries/transportation' },
+          { name: 'Seguridad Nacional', href: '/es/industries/defense' },
         ],
       },
     resources: {
@@ -173,7 +173,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
           { name: 'Oil & Gas / Energy', description: 'Pipeline, grid, production, asset, and environmental operations', href: '/industries/energy', icon: BoltIcon },
           { name: 'Maritime / Ports', description: 'Port operations, maritime awareness, cargo, gates, and customs workflows', href: '/solutions/port-operations', icon: GlobeAltIcon },
           { name: 'Logistics / Supply Chain', description: 'Fleet, freight, cold-chain, exception, and corridor intelligence', href: '/industries/transportation', icon: TruckIcon },
-          { name: 'Intelligence', description: 'Source-to-assessment workflows for mission and cross-agency teams', href: '/industries/defense', icon: ShieldIcon }
+          { name: 'National Security', description: 'Sovereign intelligence for territory, resources, and communities, from detection to approved action', href: '/industries/defense', icon: ShieldIcon }
         ],
       cta: { name: 'All Industries', href: '/industries' },
     },
@@ -191,7 +191,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
     },
     {
       name: 'Company',
-      href: '/company',
+      href: '/company/about',
       variant: 'stacked',
       items: [
         { name: 'About', description: 'Our mission and the team behind Quatro', href: '/company/about', icon: BuildingLibraryIcon },
@@ -209,9 +209,9 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       items: [
           { name: 'Ciudades inteligentes y servicios públicos', description: 'Flujos para ciudad, agua, residuos, servicios e infraestructura pública', href: '/es/industries/cities', icon: BuildingLibraryIcon },
           { name: 'Petróleo, gas y energía', description: 'Operaciones de oleoductos, red eléctrica, producción, activos y ambiente', href: '/es/industries/energy', icon: BoltIcon },
-          { name: 'Marítimo y puertos', description: 'Operaciones portuarias, conciencia marítima, carga, accesos y aduanas', href: '/es/solutions/port-operations', icon: GlobeAltIcon },
-          { name: 'Logística y cadena de suministro', description: 'Flota, carga, cadena de frío, excepciones y corredores logísticos', href: '/es/industries/transportation', icon: TruckIcon },
-          { name: 'Inteligencia', description: 'Flujos de fuente a evaluación para equipos de misión y coordinación', href: '/es/industries/defense', icon: ShieldIcon }
+          { name: 'Marítimo y puertos', description: 'Operaciones portuarias, conciencia marítima, carga, accesos y aduanas', href: '/solutions/port-operations', icon: GlobeAltIcon },
+          { name: 'Logística y cadena de suministro', description: 'Flota, carga, cadena de frío, excepciones y corredores logísticos', href: '/industries/transportation', icon: TruckIcon },
+          { name: 'Seguridad Nacional', description: 'Inteligencia soberana para el territorio, los recursos y las comunidades, de la detección a la acción aprobada', href: '/es/industries/defense', icon: ShieldIcon }
         ],
       cta: { name: 'Todas las Industrias', href: '/industries' },
     },
@@ -229,7 +229,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
     },
     {
       name: 'Empresa',
-      href: '/company',
+      href: '/company/about',
       variant: 'stacked',
       items: [
         { name: 'Nosotros', description: 'Nuestra misión y el equipo detrás de Quatro', href: '/company/about', icon: BuildingLibraryIcon },

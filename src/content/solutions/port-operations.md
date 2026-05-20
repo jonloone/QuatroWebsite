@@ -2,12 +2,12 @@
 title: "Port Operations"
 tagline: "Berth-to-Customs Coordination Intelligence"
 heroImage: "/images/solution-port-operations.png"
-description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture — eliminating coordination delays and optimizing every movement across the maritime terminal."
+description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture, eliminating coordination delays and optimizing every movement across the maritime terminal."
 order: 12
 hero:
   eyebrow: "Port Operations"
-  title: "Optimize Berths. Coordinate Cargo. Accelerate Customs."
-  description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture. When a container ship approaches, the intelligence stack predicts arrival, reserves optimal berth, alerts cargo handlers, and pre-coordinates customs — one network, coordinated workflow."
+  title: "Assign berths 72 hours ahead and keep ships off the anchor."
+  description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture. When a container ship approaches, the intelligence stack predicts arrival, reserves optimal berth, alerts cargo handlers, and pre-coordinates customs. One network, one coordinated workflow."
   primaryCta:
     label: "Request a Port Operations Briefing"
     href: "/contact/demo"
@@ -42,7 +42,7 @@ capabilities:
   outcome: Improved security posture with human-reviewed anomaly escalation.
   image: /images/cap-ports-mda.png
 proofPoint:
-  industry: "Transportation — Maritime Port"
+  industry: "Transportation, Maritime Port"
   headline: "Berth-to-Customs Coordination"
   metrics:
     - value: "25%"

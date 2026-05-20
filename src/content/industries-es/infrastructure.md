@@ -1,18 +1,18 @@
 ---
-title: "Infraestructura"
-tagline: "Operaciones Unificadas Multi-Proveedor"
+title: "Redes e Infraestructura"
+tagline: "Un solo NOC para fibra, móvil, satélite y edge."
 heroImage: "/images/industry-infrastructure.png"
-description: "Reemplace más de 5 herramientas aisladas de proveedores con una sola plataforma unificada. 80% menos falsas alarmas, 55% menor MTTR e inteligencia operacional en telecomunicaciones, transporte, logística e instalaciones."
+description: "Quatro integra los datos de red, SATCOM, edge, servicio, cliente y operacionales para que los equipos remotos entiendan cómo la conectividad afecta la misión, y coordinen respuestas con aprobación humana entre proveedores, sistemas y operaciones de campo. Un solo stack de inteligencia para todo el panorama de infraestructura."
 order: 4
 hero:
-  eyebrow: "Infraestructura"
-  title: "Una Plataforma. Cualquier Proveedor. Cualquier Sitio."
-  description: "Deje de alternar entre herramientas NMS específicas de cada proveedor. La inteligencia operacional unificada normaliza datos de cada proveedor en una vista única con inteligencia predictiva."
+  eyebrow: "Redes"
+  title: "Vincule cada falla de red con la misión que afecta."
+  description: "Las operaciones remotas dependen de conectividad híbrida: fibra, LTE/5G, satélite LEO/MEO/GEO, redes privadas y sistemas edge. Quatro mapea los eventos de red al impacto operacional y enruta la respuesta a través de flujos de trabajo gobernados, sobre el stack de inteligencia que sus operadores usan en cada turno."
   primaryCta:
-    label: "Solicite una Evaluación de Infraestructura"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Ingeniero de Infraestructura"
+    label: "Hable con un ingeniero"
     href: "/es/contact/sales"
 stats:
   - value: "80%"
@@ -62,10 +62,10 @@ proofPoint:
   narrative: "Un operador de torres de telecomunicaciones que gestiona más de 900 sitios consolidó 5 plataformas de monitoreo en Quatro. La correlación de alarmas impulsada por IA redujo falsas alarmas en un 80% y el MTTR en un 55%. Los diagnósticos remotos eliminaron el 40% de los despachos de camión, ahorrando costos de envío de técnicos y mejorando los tiempos de respuesta."
 cta:
   primary:
-    label: "Solicite una Evaluación de Infraestructura"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondary:
-    label: "Hable con un Ingeniero de Infraestructura"
+    label: "Hable con un ingeniero"
     href: "/es/contact/sales"
-  microcopy: "Evaluación típica: 30-45 minutos. Mapearemos sus herramientas de proveedores y stack de monitoreo — y le mostraremos cómo la inteligencia unificada reemplaza las plataformas fragmentadas."
+  microcopy: "Conversación típica: 30-45 minutos. Mapeamos sus herramientas de proveedores y su stack de monitoreo, y le mostramos cómo el stack de inteligencia reemplaza las plataformas fragmentadas."
 ---

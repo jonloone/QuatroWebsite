@@ -1,12 +1,12 @@
 ---
 title: "Customer 360"
 tagline: "One Customer. All Systems. One Governed View."
-description: "Reconcile customer identity across every banking system — core, loans, CRM, digital channels, cards, and wealth management — into a single governed record that risk, compliance, and commercial teams can trust."
+description: "Reconcile customer identity across every banking system, core, loans, CRM, digital channels, cards, and wealth management, into a single governed record that risk, compliance, and commercial teams can trust."
 order: 17
 heroImage: "/images/solution-customer-360.png"
 hero:
   eyebrow: "Customer 360"
-  title: "One Customer. All Systems. One Governed View."
+  title: "See one customer across every system your bank runs."
   description: "Your core system defines a customer as an account number. Your loan system uses a borrower ID. Your CRM uses a contact. Quatro reconciles identity across every system and produces one governed customer record."
   primaryCta:
     label: "Schedule a Banking Assessment"
@@ -25,9 +25,9 @@ stats:
     label: "Audit Trail Coverage"
 challenges:
   - title: "Fragmented Customer Identity"
-    description: "Account numbers, borrower IDs, contact records, user IDs, cardholder IDs, and compliance entity IDs — six definitions of the same customer across six systems with no reconciliation."
+    description: "Account numbers, borrower IDs, contact records, user IDs, cardholder IDs, and compliance entity IDs, six definitions of the same customer across six systems with no reconciliation."
   - title: "Regulatory Exposure Questions"
-    description: "When examiners ask 'Who is this customer and what is their total exposure?' — the answer requires four systems, three spreadsheets, and a week of reconciliation."
+    description: "When examiners ask 'Who is this customer and what is their total exposure?', the answer requires four systems, three spreadsheets, and a week of reconciliation."
   - title: "M&A Customer Matching"
     description: "Merging entities means matching customers across different core systems, different ID schemes, and different data definitions. Manual matching takes months."
   - title: "Siloed Credit Decisions"
@@ -39,12 +39,12 @@ capabilities:
     outcome: "One customer record across all systems."
     tier: "see"
   - name: "Governed Customer Record"
-    description: "Single customer view with governance SLAs on data quality, freshness, and lineage. Every downstream process — risk, compliance, commercial — trusts the same record."
+    description: "Single customer view with governance SLAs on data quality, freshness, and lineage. Every downstream process, risk, compliance, commercial, trusts the same record."
     featured: true
     outcome: "Regulatory examiners get one answer, not four systems."
     tier: "understand"
   - name: "Total Exposure View"
-    description: "Aggregate exposure across all products — installment loans, credit lines, mortgages, cards, guarantees, and off-balance-sheet items — into a unified risk picture."
+    description: "Aggregate exposure across all products, installment loans, credit lines, mortgages, cards, guarantees, and off-balance-sheet items, into a unified risk picture."
     outcome: "Credit decisions based on true cross-system exposure."
     tier: "understand"
   - name: "M&A Entity Matching"
@@ -60,7 +60,7 @@ capabilities:
     outcome: "Compliance confidence in every customer data point."
     tier: "understand"
 proofPoint:
-  industry: "Finance — Banking"
+  industry: "Finance, Banking"
   headline: "Cross-System Customer Intelligence"
   metrics:
     - value: "6+"
@@ -69,7 +69,7 @@ proofPoint:
       label: "To Production"
     - value: "Weeks"
       label: "Not Months for M&A"
-  narrative: "Customer 360 is the foundation product in Quatro's banking offering. Each additional product — NPA Early Warning, Credit Risk, Regulatory Compliance — connects to the same governed customer record, creating compound value through operational intelligence."
+  narrative: "Customer 360 is the foundation product in Quatro's banking offering. Each additional product, NPA Early Warning, Credit Risk, Regulatory Compliance, connects to the same governed customer record, creating compound value through operational intelligence."
 cta:
   primary:
     label: "Schedule a Banking Assessment"

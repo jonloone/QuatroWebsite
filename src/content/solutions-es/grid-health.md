@@ -1,17 +1,17 @@
 ---
 title: "Salud de la Red Eléctrica"
-tagline: "Modernice Sin Reemplazar"
-description: "Modernización por superposición que agrega inteligencia predictiva, integración de DER y respuesta ante tormentas al SCADA existente — entregando resultados en meses, no años."
+tagline: "Modernice sin reemplazar"
+description: "Modernización por superposición que agrega inteligencia operacional, integración de DER y respuesta ante tormentas al SCADA existente. Resultados en meses, no años."
 order: 6
 hero:
   eyebrow: "Salud de la Red Eléctrica"
-  title: "Inteligencia de Red Moderna. SCADA Legacy Intacto."
-  description: "No reemplace su SCADA. Superpóngale inteligencia predictiva, integración de DER y respuesta automatizada ante tormentas que se despliega en meses, no años."
+  title: "Vea la red. Prevenga la interrupción."
+  description: "Los operadores de red se ahogan en alarmas de SCADA pero les falta contexto. Quatro integra datos de sensores, clima e historial de mantenimiento sobre el stack de inteligencia para predecir fallas de red y enrutar órdenes de trabajo antes de que ocurra la interrupción."
   primaryCta:
-    label: "Solicite una Evaluación de Red"
+    label: "Hable con nuestro equipo"
     href: "/es/contact/demo"
   secondaryCta:
-    label: "Hable con un Ingeniero de Red"
+    label: "Hable con un especialista en red eléctrica"
     href: "/es/contact/sales"
 stats:
   - value: "200+"
