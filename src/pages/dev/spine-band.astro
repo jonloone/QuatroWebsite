@@ -1,0 +1,33 @@
+---
+/**
+ * /dev/spine-band — SPINE-1 verification harness.
+ *
+ * Renders the SpineBand component so the three beats (Sense / Unify / Act) can
+ * be verified visually. Shown twice: once as the bare SPINE-1 deliverable
+ * (no demo slots), once with placeholder content injected per named slot to
+ * prove the slot wiring DEMO-1 / HOME-1 will use.
+ *
+ * Not linked from navigation. Not indexed. Internal dev-only route.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SpineBand from '@/components/marketing/SpineBand.astro'
+
+const slotClass =
+  'border border-dashed border-neutral-300 p-4 text-center font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-400'
+---
+
+<BaseLayout title="SpineBand — Dev" description="SPINE-1 verification harness for the Sense → Unify → Act band.">
+  <main class="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+    <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">/dev/spine-band</p>
+
+    <h2 class="mt-8 font-display text-lg text-neutral-800">Band — no demo slots (SPINE-1 deliverable)</h2>
+    <SpineBand />
+
+    <h2 class="mt-16 font-display text-lg text-neutral-800">Band — placeholder demo slots injected per beat</h2>
+    <SpineBand showPromise={false}>
+      <div slot="sense" class={slotClass}>demo slot — sense</div>
+      <div slot="unify" class={slotClass}>demo slot — unify</div>
+      <div slot="act" class={slotClass}>demo slot — act</div>
+    </SpineBand>
+  </main>
+</BaseLayout>
