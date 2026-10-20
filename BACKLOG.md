@@ -11,6 +11,9 @@ where types matter). No lint/test harness; visual/copy tickets name a manual che
 report "needs human eyes." **Any ticket that adds or changes customer-facing copy must
 also pass `docs/VOICE_GATE.md` and report "voice gate: pass" — this is part of done.**
 **Any ticket that touches a page must ship or open the matching `ES-*` ticket (§0.6).**
+**Type-check gate (standing rule, Jonathan 2026-10-20):** `astro check` passes when it adds
+zero errors vs the HEAD baseline (168 pre-existing errors as of `fd1fbb9`); diff the error
+lines, not the count. Clearing the baseline is its own ticket, not part of any other.
 
 ### Copy decks (paste finished copy from these; don't free-write)
 
@@ -37,7 +40,8 @@ also pass `docs/VOICE_GATE.md` and report "voice gate: pass" — this is part of
   > note: §13.2 still DECISION-NEEDED (see `docs/DECISION_AUTHORITIES.md` → Open escalations); figures stay unrendered until Jonathan answers. Build gate not run: iCloud checkout stalls (§15); docs-only change.
 - [x] `SCHEMA-1` (S) — Industries schema: add `status`, `proofBadge`, `authorityLine`, `proofCards[]`, rename `platformMapping` keys to `see/correlate/act` (keep old keys readable) — blockedBy: — — done: 7351d43 — spec: §7
   > note: build green (167 pages). `astro check` 168 errors, all pre-existing (identical on HEAD, none in config.ts); committed on Jonathan's call 2026-10-20.
-- [ ] `SCHEMA-2` (S) — Add `capabilities` content collection (six entries, `layer`, `substrate`, `proof`) and `status`/`capability`/`industry` fields on solutions — blockedBy: — — spec: §5, §8 — verify: `npx astro check` green + `npm run build` green
+- [x] `SCHEMA-2` (S) — Add `capabilities` content collection (six entries, `layer`, `substrate`, `proof`) and `status`/`capability`/`industry` fields on solutions — blockedBy: — — done: d42f4fc — spec: §5, §8
+  > note: build green (167 pages); `astro check` zero new errors vs baseline (standing rule).
 
 ## P1 — Sprint 0: Energy for the Ministerio de Ambiente y Energía
 
