@@ -35,7 +35,8 @@ also pass `docs/VOICE_GATE.md` and report "voice gate: pass" — this is part of
   > BLOCKED (2026-10-20): local half committed `fcac304` (not pushed; agent never auto-pushes). Local `main` is 10 ahead / 5 behind `origin/main` (merge-base `087323e`; origin tip `ba8db82` "site-wide cleanup") — needs a human-chosen merge/rebase from a GitHub clone (§15), then push + confirm domain and Netlify branch (§13.7).
 - [x] `DEC-2` (S) — Record decisions in `docs/DECISION_AUTHORITIES.md`: §1b RESOLVED 2026-10-20 ("Quatro Klarety" is the geospatial capability name); still open: §13.2 corridor figures on the web page, §13.3 price bands in `docs/DECISION_AUTHORITIES.md` as DECISION-NEEDED or resolved — done: 06c8609 — spec: §1, §13
   > note: §13.2 still DECISION-NEEDED (see `docs/DECISION_AUTHORITIES.md` → Open escalations); figures stay unrendered until Jonathan answers. Build gate not run: iCloud checkout stalls (§15); docs-only change.
-- [ ] `SCHEMA-1` (S) — Industries schema: add `status`, `proofBadge`, `authorityLine`, `proofCards[]`, rename `platformMapping` keys to `see/correlate/act` (keep old keys readable) — blockedBy: — — spec: §7 — verify: `npx astro check` green + `npm run build` green
+- [x] `SCHEMA-1` (S) — Industries schema: add `status`, `proofBadge`, `authorityLine`, `proofCards[]`, rename `platformMapping` keys to `see/correlate/act` (keep old keys readable) — blockedBy: — — done: 7351d43 — spec: §7
+  > note: build green (167 pages). `astro check` 168 errors, all pre-existing (identical on HEAD, none in config.ts); committed on Jonathan's call 2026-10-20.
 - [ ] `SCHEMA-2` (S) — Add `capabilities` content collection (six entries, `layer`, `substrate`, `proof`) and `status`/`capability`/`industry` fields on solutions — blockedBy: — — spec: §5, §8 — verify: `npx astro check` green + `npm run build` green
 
 ## P1 — Sprint 0: Energy for the Ministerio de Ambiente y Energía
