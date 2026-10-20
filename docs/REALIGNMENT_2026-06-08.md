@@ -1,3 +1,5 @@
+> **RETIRED 2026-10-20.** Superseded by `docs/REALIGNMENT_2026-10-20.md` (anchor changed from the Quatro Field demo app to the 2026 engagements). §14 of the new spec lists what carries forward. Kept for history.
+
 # Website Realignment Spec — 2026-06-08
 
 **Status:** active. This is the canonical, repo-local spec for the sitewide
@@ -114,51 +116,159 @@ existing routes working (redirect or alias rather than break links).
 How it works  (was /utility)
   ├─ The stack            (was /utility/technology — §5)
   ├─ Hardware & IoT       (NEW — §6, the Sense beat)
-  ├─ The platform (xOps)  (was /utility/xops — §7, the Unify beat)
+  ├─ The operational model (xOps)  (was /utility/xops — §7, the Unify beat; NOT "platform" per §0.2)
   ├─ Quatro Field         (NEW — §8, the Act beat)
   └─ How it starts        (was /utility/how-it-starts — unchanged)
 ```
 
 Update the top nav labels (Industries · Solutions · How it works · Resources ·
-Company · Contact). No nav item named "Services."
+Company · Contact). No nav item named "Services." The **Architecture** deep-dive page
+(§5A) is *not* in the top nav — it's linked from "The stack" and from technical/RFP
+contexts only.
 
 ---
 
 ## §5 "The stack" page (reframe `/utility/technology`)
 
-Reframe the existing technology page as the spine over the four-layer map. Lead with
-Sense → Unify → Act, then show Data / Reasoning / Agents / Workflows beneath as the
-architecture. Pull the hardware/Sense detail out into its own page (§6) and link to
-it. Keep substrate hints to Tier 1.5 depth.
+**Decision (2026-06-08): full reframe.** `technology.astro` today (856 lines) is the
+DataOS architecture story — a 6-layer stack with "semantic substrate," a labeled
+ontology network, Connect/Operational-Model/Govern bars, Second Wind. That is Tier-3
+depth and partly banned vocabulary (§0.2) on a Tier 1.5–2 surface, and it tells a
+data-product story, not Quatro's operating story. Reframe it; move the deep
+architecture to a new dedicated page (§5A) for technical evaluators.
+
+**Audience / tier:** the buyer who clicked "How it works." Tier 1.5–2. Name the four
+layers; one-line substrate hints allowed; no ontology diagram, no "semantic
+substrate," no skip-this-if-you-don't-care disclaimer.
+
+**Page structure (top → bottom):**
+
+1. **Hero** — eyebrow "How it works", H1 the spine in one line. Copy direction:
+   "Sense it. Unify it. Act on it. You own it." Sub: one sentence that the same stack
+   runs from the device in the field to the signed decision.
+2. **The spine band** — the §1 SpineBand component (Sense / Unify / Act), each panel
+   linking to its page (§6 / §7 / §8). This is the page's spine.
+3. **The four-layer map** — keep a *simplified* version of the existing layered
+   diagram, relabeled Data / Reasoning / Agents / Workflows with one-line substrate
+   hints (DataMiner xOps for data, the reasoning layer, governed agents, the Quatro
+   framework). No entity-level ontology. This replaces the 6-layer diagram inline.
+4. **Human-in-the-loop + ownership** — one short band: agents propose, humans decide,
+   every action is signed, you own the intelligence.
+5. **Deep-dive link** — a single quiet link: "For technical evaluators: the full
+   architecture →" pointing at §5A. This is where the demoted depth lives.
+6. **Sibling nav** — to Hardware / Platform / Quatro Field / How it starts.
+
+**Keep / cut / move:** keep the layered diagram concept (simplify to four layers);
+cut the "semantic substrate / ontology / governance-plane" labels and the disclaimer;
+move the rich ontology network + 6-layer detail + Second Wind naming to §5A.
+
+---
+
+## §5A "Architecture" deep-dive page (NEW — Tier 3, for technical evaluators)
+
+New page at `/utility/architecture` (or `/how-it-works/architecture`). Absorbs the
+Tier-3 content pulled out of §5: the full layered architecture, the ontology network,
+connect/operational-model/govern detail, governance and audit chain, substrate names
+(DataMiner xOps, the reasoning engine, governed agents, the Quatro framework).
+Linked from §5 and from solution/RFP contexts, never from the top nav. This is the
+honest home for the depth — it stays available, it just stops ambushing the buyer.
+Tier 3 vocabulary is allowed here (it's the technical surface), but still no
+exclamation points and no AI-writing tells (§0.2).
 
 ---
 
 ## §6 "Hardware & IoT" page (NEW — the Sense beat)
 
-New page under How-it-works. Tells the Sense beat: the IoT suite that connects the
-physical world (sites, vehicles, people → live signal). Embeds the Sense demo slot
-(§2). No hardware-vendor names at this tier. One line of domain authority allowed.
-Honest-by-default if device assets aren't supplied yet (§0.1).
+**Audience / tier:** the operator wondering "what actually captures the signal." Tier
+1.5. **No hardware-vendor names** (no SMARTS/TEKTELIC/IoT-Orbital at this tier — say
+"an IoT suite that connects the physical world").
+
+**Page structure:**
+
+1. **Hero** — H1 the Sense beat. Copy: "Your operation already throws off signal. We
+   connect the hardware that captures it." Sub: sites, vehicles, and people become
+   live signal — wearables, badges, telematics, sensors.
+2. **Sense demo slot** (§2) — a real device capturing live signal. Source honestly
+   from Field narratives: lone-worker fall alert, or telematics cold-chain breach
+   (Quito → Miami). If no asset yet, honest placeholder per §0.1 — never a fabricated
+   device shot.
+3. **What we connect** — three or four device classes in plain language (wearables for
+   people, telematics for vehicles, sensors for sites), each a line, no vendor names.
+4. **One authority line** — domain credibility (we've fielded this in energy and
+   logistics operations). One line, not a section.
+5. **Hand-off to Unify** — short transition: the signal is only useful once it's
+   unified → link to §7.
+6. **Sibling nav.**
 
 ---
 
-## §7 "The platform" page (sharpen `/utility/xops`)
+## §7 "The operational model — xOps" page (sharpen `/utility/xops`, the Unify beat)
 
-Sharpen the existing xOps page as the Unify beat. Foreground the scale numbers (§3
-proof strip), frame xOps as the proven operational substrate (connect/normalize/
-govern, unified digital twin, command center). Embed the Unify demo slot (§2). This is
-DataMiner's battle-tested turf — lean on it for credibility.
+> Drop-in section copy for this page: **`docs/COPY_UNIFY_XOPS_2026-06-08.md`**.
+> Note the label correction there — title/nav is "The operational model," never
+> "platform" (§0.2); replace "digital twin" with "real-time operational model."
+
+This is the **credibility engine of the whole spine** — give it the most care. The
+current `xops.astro` is already closest to right ("Your Systems → Live Operational
+Model → Adaptive Applications," 8,000+ integrations, five domains, Powered by
+DataMiner). Sharpen, don't rebuild.
+
+**Audience / tier:** the buyer asking "is this real, and at what scale." Tier 2.
+DataMiner can be named (it's a named partner already on the site); keep deep
+architecture on §5A.
+
+**Page structure:**
+
+1. **Hero** — H1 the Unify beat. Copy: "Fifteen vendors, one operational truth." Sub:
+   the proven platform that connects, normalizes, and governs any vendor's data into
+   one live operational model.
+2. **Scale proof band (foregrounded)** — pull the §3 numbers up high, not buried:
+   1,000+ operators · 10,000+ nodes · 125+ countries · 8,000+ integrations · 14+
+   technology awards. This band does the trust work the unsourced solution metrics
+   were straining to do (§11). Attribute honestly to DataMiner xOps.
+3. **Unify demo slot** (§2) — the xOps command center / digital twin correlating
+   multi-vendor systems into one map and one alarm picture. Real xOps surface, labeled
+   as the platform layer. Honest placeholder if no clean view supplied yet (§0.1).
+4. **Keep "Your Systems → Live Operational Model → Adaptive Applications" diagram** —
+   it's good; keep it, ensure labels stay Tier-2 (no "semantic substrate").
+5. **The anti-SaaS argument** — keep the existing light-editorial section (it's
+   on-message: a utility you own, not another SaaS dependency).
+6. **Five operational domains** — keep; this is xOps's breadth, which backs the
+   "Platform-proven" industries (§12).
+7. **Powered by DataMiner trust signal** — keep.
+8. **Hand-off to Act** — transition: a unified model is only worth it if your team can
+   act from it → link to §8 (Quatro Field).
+9. **Sibling nav.**
+
+**Keep / cut:** keep almost everything; relabel any "semantic substrate / ontology"
+strings to Tier-2 language; foreground the scale band; add the Unify demo slot and the
+hand-off to Act.
 
 ---
 
 ## §8 "Quatro Field" page (NEW — the Act beat)
 
-New page under How-it-works. **This names the Quatro Field app on the marketing site
-for the first time** (the app is currently invisible to buyers). Tells the Act beat:
-one governed operating picture, copilot proposes / human decides / every action
-signed. Embeds the Act demo slot (§2) showing the real Field surfaces: incident
-recompose, governed copilot, signed custody-of-evidence export. Human-in-the-loop and
-ownership are the close.
+**This names the Quatro Field app on the marketing site for the first time** — the app
+is currently invisible to buyers (closes audit Drift 2). Audience: the operator/buyer
+who will be shown the demo. Tier 1.5–2.
+
+**Page structure:**
+
+1. **Hero** — H1 names Quatro Field + the Act beat. Copy: "One governed picture your
+   operators act from." Sub: the copilot proposes, your team decides, every action is
+   signed.
+2. **Act demo slot** (§2) — the real Field surfaces: incident recompose per vertical,
+   governed copilot proposing the next action, signed custody-of-evidence export.
+   Honest placeholder if the chosen narratives' assets aren't supplied yet (§0.1).
+3. **The intelligence-work loop** — five short steps: one operating picture → copilot
+   proposes → human decides → action is signed → it compounds (briefing + after-action
+   review). Each step one line.
+4. **Human-in-the-loop + ownership** — the close: agents propose, humans sign, you own
+   the intelligence and the deployment from day one.
+5. **Which narratives lead** — show the one or two demo narratives chosen (recommend
+   cold chain + critical infrastructure for range). Pull content only from real Field
+   fixtures.
+6. **CTA** — "Talk to our team." Sibling nav.
 
 ---
 
@@ -184,14 +294,18 @@ grouped by tier, Live first. Do not delete SKU content; retag/relocate.
 
 ## §10 Fix the `fleet-health` collision
 
-`fleet-health` currently means two unrelated products. The site SKU is the *satellite*
-fleet ("See Every Orbit") — DataOS/SATCOM heritage. The app's Fleet Health is the
-*vehicle* fleet (Ecuador, Velax, 30 trucks). Resolve:
+The word "fleet" spans two unrelated products. The site's **`fleet-health`** SKU is the
+*satellite* fleet ("Constellation & Terrestrial," GEO/LEO/NGSO) — DataOS/SATCOM
+heritage. The *vehicle* fleet is the separate **`fleet-logistics`** ("Fleet &
+Logistics") SKU, and matches the app's Fleet Health capability (Ecuador, Velax, 30
+trucks). Resolve:
 
-- Rename the satellite SKU to **"Constellation Health"** and move it to the DataOS
+- Rename **`fleet-health`** to **"Constellation Health"** and move it to the DataOS
   tier (§9).
-- Promote the **vehicle** fleet story (Ecuador, Velax, AOI analysis) to the lead Field
+- Promote **`fleet-logistics`** ("Fleet & Logistics") as the lead vehicle-fleet
   solution under "Live in Quatro Field."
+- Final copy + an optional "rename fleet-logistics → Fleet Health to mirror the app"
+  note: `docs/COPY_SOLUTIONS_AND_EXPERTISE_2026-06-08.md`.
 
 ---
 
@@ -211,8 +325,10 @@ award claim that lacks a citation.
 Keep all nine. For each industry page:
 
 - **Proof badge** — one of: *Field-demonstrated* (Energy, Critical Infrastructure /
-  Defense, Transportation/Logistics), *Platform-proven* (Networks, Broadcast/Media,
-  Cities, Industrial, Water & Environment), *Roadmap* (Finance — weak at both layers).
+  Defense, Transportation/Logistics), *Proven at scale* (Networks, Broadcast/Media,
+  Cities, Industrial, Water & Environment — backed by the xOps operational model),
+  *Roadmap* (Finance — weak at both layers). Note: the visible badge is "Proven at
+  scale," not "Platform-proven" — "platform" is banned customer-facing vocab (§0.2).
 - **One authority line** — the domain we've operated in / regulators we know (e.g.
   NERC-CIP, ARCONEL, cold-chain customs, clearance routing). One line, not a section.
   Empathy before authority, then back to the demo.

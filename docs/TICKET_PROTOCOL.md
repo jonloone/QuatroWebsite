@@ -95,6 +95,11 @@ Manual / visual / WebGL acceptance can't run in CI — those tickets name the
 manual check as `verify` and the agent reports "needs human eyes: <check>",
 never silently auto-passes.
 
+**Copy gate.** Any ticket that adds or changes customer-facing copy must also pass
+`docs/VOICE_GATE.md` (hard-ban grep + jonathan-voice/StoryBrand read) and report
+"voice gate: pass". A red voice gate keeps the ticket `[~]`. Where a copy deck exists
+for the ticket (`BACKLOG.md` → Copy decks), paste from it rather than free-writing.
+
 ---
 
 ## 5. Conventions
