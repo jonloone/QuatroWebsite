@@ -11,6 +11,35 @@ const platformMappingSchema = z.object({
   orchestrate: z.string(),
 })
 
+// Industries map to see / correlate / act (REALIGNMENT_2026-10-20 §7). The legacy
+// understand / orchestrate keys still parse, and both spellings come out the other side.
+const industryLayerMappingSchema = z
+  .object({
+    see: z.string(),
+    correlate: z.string().optional(),
+    act: z.string().optional(),
+    understand: z.string().optional(),
+    orchestrate: z.string().optional(),
+  })
+  .refine((m) => (m.correlate ?? m.understand) && (m.act ?? m.orchestrate), {
+    message: 'platformMapping needs correlate (or understand) and act (or orchestrate)',
+  })
+  .transform((m) => {
+    const correlate = (m.correlate ?? m.understand) as string
+    const act = (m.act ?? m.orchestrate) as string
+    return { see: m.see, correlate, act, understand: correlate, orchestrate: act }
+  })
+
+// Abstracted reference work; asset null renders the honest placeholder (§0.1).
+const proofCardSchema = z.object({
+  title: z.string(),
+  saw: z.string(),
+  did: z.string(),
+  took: z.string(),
+  asset: z.string().nullable().optional(),
+  href: z.string().optional(),
+})
+
 const proofPointSchema = z.object({
   industry: z.string(),
   headline: z.string(),
@@ -138,7 +167,11 @@ const industriesCollection = defineCollection({
         image: z.string().optional(),
       })
     ).optional(),
-    platformMapping: platformMappingSchema.optional(),
+    platformMapping: industryLayerMappingSchema.optional(),
+    status: z.enum(['active', 'emerging', 'retired']).optional(),
+    proofBadge: z.string().optional(),
+    authorityLine: z.string().optional(),
+    proofCards: z.array(proofCardSchema).optional(),
     proofPoint: proofPointSchema.optional(),
     cta: z.object({
       primary: ctaSchema,
