@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content'
+import { defineCollection, reference, z } from 'astro:content'
 
 const ctaSchema = z.object({
   label: z.string(),
@@ -181,6 +181,21 @@ const industriesCollection = defineCollection({
   }),
 })
 
+// The six capability pages (REALIGNMENT_2026-10-20 §5), grouped by the three layers of §2.
+// proof null renders the honest placeholder until reference work is cleared (§0.1).
+const capabilitiesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    order: z.number(),
+    layer: z.enum(['territory', 'operation', 'quatro']),
+    substrate: z.enum(['klarety', 'dataminer-xops', 'quatro']),
+    proof: proofCardSchema.nullable(),
+  }),
+})
+
+const industrySlugs = ['energy', 'environment', 'mining', 'cities', 'security', 'agriculture'] as const
+
 const solutionsCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -230,6 +245,10 @@ const solutionsCollection = defineCollection({
     ).optional(),
     platformMapping: platformMappingSchema.optional(),
     proofPoint: proofPointSchema.optional(),
+    // §8: example cards under an industry, or moved to the DataOS site.
+    status: z.enum(['active', 'moved-to-dataos']).optional(),
+    capability: reference('capabilities').optional(),
+    industry: z.enum(industrySlugs).optional(),
     cta: z.object({
       primary: ctaSchema,
       secondary: ctaSchema.optional(),
@@ -367,6 +386,7 @@ const insightsCollection = defineCollection({
 export const collections = {
   products: productsCollection,
   industries: industriesCollection,
+  capabilities: capabilitiesCollection,
   solutions: solutionsCollection,
   testimonials: testimonialsCollection,
   'case-studies': caseStudiesCollection,
