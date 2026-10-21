@@ -1,99 +1,87 @@
 ---
-title: Energy
-tagline: Operational Intelligence for Grid, Pipeline, Production & Environmental Governance
-heroImage: /images/industry-energy.png
-description: When grid, pipeline, and production systems each describe the same reality differently, risks compound invisibly — operational, environmental, and regulatory. Quatro connects your existing SCADA, historians, monitoring systems, and environmental sensors into one operational intelligence utility. Real-time visibility, predictive analytics, environmental governance, and governed autonomous action — without replacing critical infrastructure.
+title: Energy and pipelines
+tagline: "One operational picture for electricity, hydrocarbons, mining and water."
+heroImage: /images/industry-energy-andes-hydro.png
+description: "The same ministry now answers for the dams, the grid, the pipelines, the concessions and the rivers between them. The agencies still report separately. Quatro connects what each of them already runs, from satellite to SCADA to the field, into one live picture your people decide from, hosted in your country and owned by you from day one."
 order: 1
+status: active
+proofBadge: Demonstrated on a corridor
+authorityLine: "We know the control room and the right of way: SCADA alarms, leak-detection systems, dispatch under a dry-season deficit, and the regulators who hold you to it (ARCERNNR, ARCOM, CENACE, SNGR, MAE)."
 hero:
-  eyebrow: Energy
-  title: "Grid, Pipeline, Emissions — Same Data, Different Silos."
-  description: "Every energy operator manages grid reliability, pipeline integrity, production efficiency, and environmental compliance — across systems that were never designed to share data. Quatro connects them. Your team gets one intelligence model that serves all four, with audit trails from operational data to regulatory filing."
+  eyebrow: Energy and pipelines
+  title: "One operational picture for electricity, hydrocarbons, mining and water."
+  description: "The same ministry now answers for the dams, the grid, the pipelines, the concessions and the rivers between them. The agencies still report separately. Quatro connects what each of them already runs, from satellite to SCADA to the field, into one live picture your people decide from, hosted in your country and owned by you from day one."
   primaryCta:
-    label: Talk to Our Team
+    label: Talk to our team
     href: /contact/demo
   secondaryCta:
-    label: Talk to an Engineer
-    href: /contact/sales
+    label: How an engagement runs
+    href: /how-it-works/engagement
 stats:
 - value: 8,000+
-  label: Integrations
-- value: Weeks
-  label: To First Intelligence
-- value: Cloud · Hybrid · Air-Gapped
-  label: Deployment Options
+  label: integrations in the operational model (DataMiner xOps)
+- value: 30 days
+  label: to a first operational picture, from the satellite baseline, no field hardware
+- value: In country
+  label: hosting, operation and support, in Spanish
 challenges:
-- title: Legacy SCADA Limitations
-  description: Control systems installed 15-25 years ago rely on serial protocols and proprietary data formats. They cannot scale for DER integration, advanced analytics, or modern cybersecurity.
-  image: /images/challenge-energy-scada.png
-- title: Vendor-Siloed Operations
-  description: Each equipment vendor provides its own management platform. Operators toggle between 5-7 separate tools to diagnose a single issue across generation, transmission, and distribution.
+- title: The dry season arrives before the data does.
+  description: "Reservoir levels, inflows, dispatch, imports and the forecast live in four institutions. By the time someone reconciles them, a basin is already at its limit and the decision is rationing."
+  image: /images/challenge-energy-dry-season.png
+- title: Illegal extraction moves faster than inspection.
+  description: "Hundreds of illegal mining points across a dozen provinces, inspected by drone and patrol. Sites reopen after an operation and nobody sees it until the river turns."
+  image: /images/challenge-energy-illegal-mining.png
+- title: A clandestine tap is found after the loss.
+  description: "Pressure drops, a field crew drives out, the barrels are gone. The precursors were visible from orbit days earlier; no one was looking at the right of way that way."
+  image: /images/challenge-energy-corridor-theft.png
+- title: Losses hide between the meter and the feeder.
+  description: "Non-technical losses show up as a national percentage. Recovering them needs the neighborhood, the feeder and the meter event on the same record, and a record that holds up in an investigation."
   image: /images/challenge-energy-vendor-silos.png
-- title: DER Integration Complexity
-  description: Every new solar array, battery, and EV charger adds endpoints with different protocols. Legacy SCADA has no native capability to handle DER telemetry.
-  image: /images/challenge-energy-der-complexity.png
-- title: Fragmented Operational Visibility
-  description: Security and operational monitoring operate as separate programs with separate tools. Compound threats spanning physical and cyber domains go unrecognized.
-  image: /images/challenge-energy-fragmented.png
-- title: Environmental & Regulatory Convergence
-  description: EPA methane rules, PHMSA leak detection mandates, and ESG disclosure requirements create overlapping compliance obligations served by separate tools and separate teams. Gaps between systems slow regulatory response and create audit risk.
-  image: /images/challenge-energy-regulatory.png
 capabilities:
-- name: Connect Legacy & Modern Systems
-  description: Connect existing ABB, Siemens, GE, and Schneider SCADA, historians, and modern DER platforms in real time. Surface contextual operator guidance and predictive intelligence without modifying control paths.
+- name: Dry-season operations, one picture across the basins
+  description: "Dispatch and reserve data, reservoir levels and inflows, the national and oceanographic forecasts, Colombian imports and transmission loading, fused into a daily dry-season brief shared by the Ministry, the system operator, civil protection and the hydro operators. Satellite observation of reservoir extent and coastal flooding confirms what the models say. Starts with data you already have; no field hardware. We do not forecast El Niño. The forecast belongs to the agencies that own it; the picture fuses it with your operational data so a decision can be taken on it."
   featured: true
-  outcome: Unified operational view across legacy and modern systems — deployed in months.
-  image: /images/cap-energy-scada-overlay.png
-- name: Pipeline Environmental Monitoring
-  description: Multi-method leak detection with AI cross-correlation — RTTM, acoustic, satellite, and partner-delivered predictive analytics. Continuous methane monitoring with automated PHMSA and EPA compliance reporting. 0.5% flow sensitivity with an integrated partner ecosystem no single vendor can match.
+  outcome: "Basins and substations approaching their limits, seen before they bind. First brief within 30 days."
+  image: /images/cap-energy-dry-season.png
+- name: "Quatro Klarety: watch the concessions and the basins around them, continuously"
+  description: "Continuous change detection over known illegal sites and the basins they drain into: vegetation loss, new pooling, turbidity, excavation, road cutting. Screened from open satellite data at near-zero cost, confirmed on demand with high-resolution imagery and all-weather radar through cloud. Legal concessions monitored against their license footprint. Every finding dated, geolocated and traceable to its source, in the form the regulator, the Armed Forces and the prosecutor can use."
   featured: true
-  outcome: Continuous environmental protection. Sub-1% flow sensitivity. Automated compliance.
-  image: /images/cap-energy-pipeline.png
-- name: Operational Intelligence Across Domains
-  description: Connect and correlate grid, pipeline, generation, environmental, and security data. Intelligence agents surface compound threats and opportunities that siloed tools cannot detect.
+  outcome: "What changed, where and when, with evidence. Baseline over priority zones in 30 days; sites that reopen after an operation are flagged on their own."
+  image: /images/cap-energy-mining-watch.png
+- name: Protect the corridor from orbit to the control room
+  description: "The SCADA systems, historians, GIS, leak-detection systems, field sensing and video you already operate, correlated into one picture of the pipeline. The right of way observed continuously from open satellite data; the precursors of a tap (clearing, pooling, vehicles in quiet segments, ground disturbance) confirmed with high-resolution imagery and radar, then correlated with line pressure and field events. Operational agents triage the event, assemble the evidence and propose the dispatch; your operators decide; every step is recorded with chain of custody. The intelligence layer places a confirmed site in the network behind it."
   featured: true
-  outcome: Threats and opportunities detected before siloed tools can see them.
-  image: /images/cap-energy-cross-domain.png
-- name: 'DER Integration: Every New Energy Source, One View'
-  description: Native connectivity for SunSpec, OCPP, and IEEE 2030.5. Onboard solar, wind, battery storage, and EV charging into your grid operational view without custom integration.
-  outcome: Solar, wind, battery, and EV — one operational view.
-  image: /images/cap-energy-der.png
-- name: Governed Autonomous Storm Response
-  description: Automated playbooks governed by policy pre-position crews, activate mutual aid, and prioritize restoration by customer impact and critical facility status.
-  image: /images/cap-energy-storm-response.png
-  outcome: Faster restoration. Every action governed and auditable.
-- name: Environmental & Regulatory Intelligence
-  description: Continuous compliance across NERC CIP, PHMSA, EPA methane rules, and ESG disclosure frameworks. One operational data layer feeds pipeline safety reporting, emissions monitoring, and sustainability disclosure — replacing manual documentation with real-time, auditable compliance streams.
-  image: /images/cap-energy-compliance.png
-  outcome: One data source. Multiple compliance outputs. Manual reporting replaced.
-- name: Emissions Monitoring & ESG Data Integration
-  description: Real-time Scope 1 and 2 emissions data sourced directly from operational systems — CEMS, leak detection sensors, production monitors. Automated mapping to CSRD, ESRS, and SEC disclosure formats. The same sensors that enable predictive maintenance also feed your sustainability reporting.
-  image: /images/cap-energy-emissions-esg.png
-  outcome: Operational data flows directly into ESG reporting. No manual reconciliation.
-- name: Contextual Operator Guidance
-  description: Real-time contextual recommendations during complex situations — cascading outages, DER instability, simultaneous maintenance events. Step-by-step guidance based on historical patterns, current conditions, and grid relationships.
-  image: /images/cap-energy-operator-guidance.png
-  outcome: New operators perform like 20-year veterans.
+  outcome: "Fewer false alarms in the control room, taps anticipated instead of confirmed afterward, and a record that holds up in prosecution."
+  image: /images/cap-energy-corridor.png
+- name: Find the losses by feeder, with a record that holds
+  description: "Metering and consumption data from the distributors, correlated with meter events and field reports, rank loss hotspots by feeder and neighborhood. Loading and asset health on the priority transmission nodes sit on the same picture, so a substation running near its limit is seen before it fails."
+  outcome: "Where the losses are, ranked, and a defensible record for recovery and for the investigations already underway. Scoped after the first 90 days, on the same picture."
+  image: /images/cap-energy-loss-recovery.png
+- name: Leave a live model behind
+  description: "When a distributed control system is assessed for replacement, the field survey usually ends in a document. Quatro captures the assessment into a connected operational model as it is built, so what was found in the field is visible online, queryable and ready to carry into the design phase. Existing control systems are integration targets, never replacement candidates for us."
+  outcome: An engineering assessment your team can keep working from.
+  image: /images/cap-energy-refinery-model.png
 platformMapping:
-  see: Connect grid, pipeline, production, and environmental monitoring systems. Native support for DNP3, IEC 61850, OPC-UA, MQTT, and SunSpec. Mirror data from SCADA, historians, emissions sensors, and field assets without licensing limits. 8,000+ integrations across your energy operations.
-  understand: Intelligence on predictive maintenance, multi-method leak detection, grid anomaly detection, emissions trends, and operator guidance. Pattern recognition surfaces emerging issues before threshold alerts fire. Real-time operational models enable contingency analysis, DER hosting capacity studies, cross-domain risk assessment, and environmental compliance verification.
-  orchestrate: Governed autonomous action. Automated storm playbooks coordinate 200+ substations with human oversight. Dispatch assigns crews based on location, switching authority, and predicted trajectory. NERC CIP, PHMSA, and EPA compliance automated. ESG data streams feed reporting frameworks continuously. See Environmental Governance for the full cross-industry compliance framework.
+  see: "The three SCADA systems, historians, GIS, leak-detection outputs, metering, dispatch and reserve data, the forecasts, field sensing and video, and the territory itself from satellite. Existing systems are integration targets. 8,000+ integrations in the operational model (DataMiner xOps)."
+  correlate: "More than eight variables (pressure, flow, temperature, operational status, acoustic, vibration, observation from orbit, field reports) correlated on one model, with plain-language questions answered in Spanish and every figure traced to its source. Observation from orbit is Quatro Klarety, our geospatial analysis capability, delivered with our earth-observation partner."
+  act: "Operational agents triage events, assemble evidence and propose dispatch. Your operators and your chain of command decide. Every detection, correlation and decision is recorded immutably, the condition for evidentiary use."
 proofPoint:
-  industry: Energy — Grid, Pipeline & Environmental Operations
-  headline: Unified Energy Intelligence
+  industry: Energy, hydrocarbons, mining and water, one ministry
+  headline: One picture, four initiatives, one record
   metrics:
   - value: "8,000+"
-    label: Integrations Connected
-  - value: Weeks
-    label: To First Intelligence
-  - value: Sovereign
-    label: Deployment
-  narrative: "Energy operators connecting legacy SCADA, historians, emissions sensors, and DER systems into one operational intelligence model — unified visibility, predictive maintenance, environmental governance, and governed autonomous action without replacing critical infrastructure."
+    label: integrations (DataMiner xOps)
+  - value: 30 days
+    label: to a first picture
+  - value: In country
+    label: hosted
+  narrative: "Each initiative adds data and rules to the same picture instead of standing up another system. Investors price operational risk; a verified, continuous record of asset performance, losses and incidents lowers that price and gives the State the same view its partners have."
 cta:
   primary:
-    label: Talk to Our Team
+    label: Talk to our team
     href: /contact/demo
   secondary:
-    label: Talk to an Engineer
-    href: /contact/sales
-  microcopy: 'Intelligence in weeks · Your team owns it from day one'
+    label: How an engagement runs
+    href: /how-it-works/engagement
+  microcopy: "Hosted in your country · Your team owns it from day one"
 ---

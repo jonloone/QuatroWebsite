@@ -112,7 +112,7 @@ investigations already underway. Scoped after the first 90 days, on the same pic
 **image:** /images/cap-energy-loss-recovery.png
 
 ### 4.5 Refinery and plant control modernization
-**name:** Leave a live model behind, not a report
+**name:** Leave a live model behind
 **description:** When a distributed control system is assessed for replacement, the field
 survey usually ends in a document. Quatro captures the assessment into a connected
 operational model as it is built, so what was found in the field is visible online, queryable
