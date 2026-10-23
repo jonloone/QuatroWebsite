@@ -5,6 +5,8 @@ import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
 import IndustryHero from '@/components/marketing/IndustryHero.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
+import SpineBand from '@/components/marketing/SpineBand.astro'
+import { layers, layerPromise, engagementLadder } from '@/lib/layers'
 
 export async function getStaticPaths() {
   const industries = await getCollection('industries')
@@ -16,7 +18,16 @@ export async function getStaticPaths() {
 
 const { industry } = Astro.props
 const { Content } = await industry.render()
-const { title, tagline, description, hero, heroImage, capabilities, stats, challenges, platformMapping, proofPoint, programs, cta } = industry.data as any
+const { title, tagline, description, hero, heroImage, capabilities, stats, challenges, platformMapping, proofPoint, programs, cta, proofBadge, authorityLine, proofCards, layerCaptions } = industry.data as any
+
+// Three-layer band (§2, §7): verbatim layer headlines, per-industry caption only where the copy deck supplies one
+const layerBeats = layers.map((layer) => ({
+  id: layer.id,
+  index: layer.index,
+  label: layer.label,
+  oneLiner: layer.headline,
+  caption: layerCaptions?.[layer.id],
+}))
 
 const ctaPrimary = cta?.primary || { label: 'Talk to Our Team', href: '/contact/demo' }
 const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/contact/sales' }
@@ -49,7 +60,11 @@ const relatedInsights = allInsights
     ctaLabel={hero.primaryCta?.label || ctaPrimary.label}
     ctaHref={hero.primaryCta?.href || ctaPrimary.href}
     imageSrc={heroImage || '/images/hero-bg.png'}
+    badge={proofBadge}
   />
+
+  <!-- 1b. THREE-LAYER BAND (REALIGNMENT_2026-10-20 §2, §7) -->
+  <SpineBand beats={layerBeats} promise={layerPromise} foundation={null} ariaLabel="Territory, operation, Quatro's layer" />
 
 
   <!-- ═══════════════════════════════════════════════════════════════
@@ -272,6 +287,18 @@ const relatedInsights = allInsights
   )}
 
 
+  <!-- 4b. AUTHORITY LINE (§4 item 5) -->
+  {authorityLine && (
+    <section class="py-16 lg:py-20 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+      <div class="mx-auto max-w-5xl fade-up">
+        <p class="font-sans font-light text-xl lg:text-2xl leading-relaxed tracking-tight max-w-4xl" style="color: var(--color-neutral-800);">
+          {authorityLine}
+        </p>
+      </div>
+    </section>
+  )}
+
+
   <!-- ═══════════════════════════════════════════════════════════════
        5. DITHER PHOTO BREAK — full-bleed dither canvas with text overlay
        ═══════════════════════════════════════════════════════════════ -->
@@ -320,14 +347,14 @@ const relatedInsights = allInsights
           </div>
           <div>
             <h2 class="font-sans font-light text-2xl lg:text-3xl leading-[1.2] tracking-tight mb-10" style="color: var(--color-neutral-800);">
-              Connect. Understand. Act.
+              See. Correlate. Act.
             </h2>
 
             <div class="space-y-10">
               <div class="grid grid-cols-1 sm:grid-cols-[40px_1fr] gap-4 items-start">
                 <p class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1" style="color: var(--color-forest);">01</p>
                 <div>
-                  <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Connect</h3>
+                  <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">See</h3>
                   <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{platformMapping.see}</p>
                 </div>
               </div>
@@ -335,8 +362,8 @@ const relatedInsights = allInsights
               <div class="grid grid-cols-1 sm:grid-cols-[40px_1fr] gap-4 items-start">
                 <p class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1" style="color: var(--color-forest);">02</p>
                 <div>
-                  <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Understand</h3>
-                  <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{platformMapping.understand}</p>
+                  <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Correlate</h3>
+                  <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{platformMapping.correlate}</p>
                 </div>
               </div>
 
@@ -344,7 +371,7 @@ const relatedInsights = allInsights
                 <p class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1" style="color: var(--color-forest);">03</p>
                 <div>
                   <h3 class="font-sans text-base font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">Act</h3>
-                  <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{platformMapping.orchestrate}</p>
+                  <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{platformMapping.act}</p>
                 </div>
               </div>
             </div>
@@ -353,6 +380,66 @@ const relatedInsights = allInsights
       </div>
     </section>
   )}
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       7. PROOF ROW (§4 item 7) — abstracted reference cards; no asset → honest placeholder
+       ═══════════════════════════════════════════════════════════════ -->
+  {proofCards?.length > 0 && (
+    <section class="py-24 lg:py-32 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+      <div class="mx-auto max-w-6xl">
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12 fade-up" style="color: var(--color-forest);">Proof</p>
+        <div class={`grid grid-cols-1 ${proofCards.length > 1 ? 'lg:grid-cols-2' : ''} gap-8`}>
+          {proofCards.map((card: any) => (
+            <article class="fade-up rounded-xl overflow-hidden" style="border: 1px solid var(--color-structure);">
+              {card.asset ? (
+                <div class="aspect-[16/9] overflow-hidden" style="background: #111;">
+                  <img src={card.asset} alt="" class="img-technical w-full h-full object-cover" loading="lazy" />
+                </div>
+              ) : (
+                <div class="aspect-[16/9] flex items-center justify-center" style="background: var(--color-neutral-100);">
+                  <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">Capture in preparation.</p>
+                </div>
+              )}
+              <div class="p-6 lg:p-8">
+                <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight leading-[1.2] mb-6" style="color: var(--color-neutral-800);">{card.title}</h3>
+                <dl class="space-y-4">
+                  <div>
+                    <dt class="font-mono text-[10px] uppercase tracking-[0.1em] mb-1" style="color: var(--color-forest);">What the operator saw</dt>
+                    <dd class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{card.saw}</dd>
+                  </div>
+                  <div>
+                    <dt class="font-mono text-[10px] uppercase tracking-[0.1em] mb-1" style="color: var(--color-forest);">What the team did</dt>
+                    <dd class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{card.did}</dd>
+                  </div>
+                  <div>
+                    <dt class="font-mono text-[10px] uppercase tracking-[0.1em] mb-1" style="color: var(--color-forest);">What it took</dt>
+                    <dd class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{card.took}</dd>
+                  </div>
+                </dl>
+                {card.href && (
+                  <a href={card.href} class="inline-block mt-6 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Read the reference</a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+
+  <!-- 7b. ENGAGEMENT LADDER (§2, §4 item 8) -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16 fade-up">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs</p>
+      </div>
+      <div>
+        <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{engagementLadder}</p>
+      </div>
+    </div>
+  </section>
 
 
   <!-- ═══════════════════════════════════════════════════════════════

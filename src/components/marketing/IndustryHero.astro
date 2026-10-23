@@ -6,9 +6,11 @@ interface Props {
   ctaLabel: string
   ctaHref: string
   imageSrc?: string
+  /** Proof badge, e.g. "Demonstrated on a corridor" (REALIGNMENT_2026-10-20 §7). */
+  badge?: string
 }
 
-const { eyebrow, title, description, ctaLabel, ctaHref, imageSrc = '/images/hero-bg.png' } = Astro.props
+const { eyebrow, title, description, ctaLabel, ctaHref, imageSrc = '/images/hero-bg.png', badge } = Astro.props
 ---
 
 <section class="relative overflow-hidden" style="min-height: clamp(620px, 85vh, 900px); background: #0f2e24;" data-dither-section data-nav-dark>
@@ -37,6 +39,11 @@ const { eyebrow, title, description, ctaLabel, ctaHref, imageSrc = '/images/hero
       <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-8">
         {eyebrow}
       </p>
+      {badge && (
+        <p class="inline-block font-mono text-[10px] uppercase tracking-[0.1em] text-white/80 mb-8 px-4 py-2 rounded-full" style="border: 1px solid rgba(255,255,255,0.25);">
+          {badge}
+        </p>
+      )}
       <h1 class="font-sans font-light text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.08] tracking-tight text-white">
         {title}
       </h1>

@@ -8,41 +8,69 @@
  * DemoSlot component existing — a beat with no slot content simply renders its
  * copy. Visual system per quatro-ui-system (forest tokens, Roobert display,
  * JetBrains Mono eyebrow labels, structure-grey borders).
+ *
+ * Pass `beats` / `promise` / `foundation` to carry other data, e.g. the
+ * three-layer band on industry pages (REALIGNMENT_2026-10-20 §2, §7).
  */
 import Container from '@/components/ui/Container.astro'
 import { spineBeats, spinePromise, spineFoundation } from '@/lib/spine'
+
+interface Beat {
+  id: string
+  index: string
+  label: string
+  oneLiner: string
+  proofSurface?: string
+  /** Optional caption under the one-liner (per-industry layer captions). */
+  caption?: string
+}
 
 interface Props {
   /** Extra classes on the section wrapper. */
   class?: string
   /** Show the promise line above the band. Default true. */
   showPromise?: boolean
+  /** Beats to render. Default: the spine beats. */
+  beats?: Beat[]
+  /** Promise line. Default: the spine promise. */
+  promise?: string
+  /** Line under the band; null hides it. Default: the spine foundation. */
+  foundation?: string | null
+  ariaLabel?: string
 }
 
-const { class: className, showPromise = true } = Astro.props
+const {
+  class: className,
+  showPromise = true,
+  beats = spineBeats as Beat[],
+  promise = spinePromise,
+  foundation = spineFoundation,
+  ariaLabel = 'Sense, Unify, Act',
+} = Astro.props
 ---
 
 <section
   class:list={['py-16 sm:py-24', className]}
   style="border-top: 1px solid var(--color-structure);"
-  aria-label="Sense, Unify, Act"
+  aria-label={ariaLabel}
 >
   <Container>
     {showPromise && (
       <p class="text-center font-display text-2xl tracking-tight text-neutral-800 sm:text-3xl">
-        {spinePromise}
+        {promise}
       </p>
     )}
 
     <div class:list={['grid gap-8 lg:grid-cols-3', showPromise && 'mt-12']}>
-      {spineBeats.map((beat) => (
+      {beats.map((beat) => (
         <div class="relative flex flex-col bg-neutral-50 p-8" style="border: 1px solid var(--color-structure);">
           <div class="mb-4 flex items-baseline gap-3">
             <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-brand-600">{beat.index}</span>
             <h3 class="font-display text-xl tracking-tight text-neutral-800">{beat.label}</h3>
           </div>
           <p class="text-sm leading-relaxed text-neutral-700">{beat.oneLiner}</p>
-          <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">{beat.proofSurface}</p>
+          {beat.caption && <p class="mt-4 text-sm leading-relaxed text-neutral-500">{beat.caption}</p>}
+          {beat.proofSurface && <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500">{beat.proofSurface}</p>}
           {beat.id === 'sense' && Astro.slots.has('sense') && <div class="mt-6"><slot name="sense" /></div>}
           {beat.id === 'unify' && Astro.slots.has('unify') && <div class="mt-6"><slot name="unify" /></div>}
           {beat.id === 'act' && Astro.slots.has('act') && <div class="mt-6"><slot name="act" /></div>}
@@ -50,6 +78,6 @@ const { class: className, showPromise = true } = Astro.props
       ))}
     </div>
 
-    <p class="mt-10 text-center text-sm text-neutral-500">{spineFoundation}</p>
+    {foundation && <p class="mt-10 text-center text-sm text-neutral-500">{foundation}</p>}
   </Container>
 </section>
