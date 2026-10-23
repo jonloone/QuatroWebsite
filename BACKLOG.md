@@ -88,7 +88,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
   > note: build green, `astro check` zero new (166), voice gate pass, no vendor or satellite-operator names. OT communications lines are new copy in the deck amendment (needs Jonathan's read). June §4 authority line held (no template field; unconfirmed per §0.1). One industry example (Energy).
 - [x] `CAP-4` (M) — Reasoning, agents and evidence page — blockedBy: CAP-0, SPEC-COPY-1 — spec: §5D — done: 70877de
   > note: build green, `astro check` zero new (166), voice gate pass, human-in-the-loop stated ("Agents propose. Your operators and your chain of command decide"). Deck's Architecture-page sentence held until /how-it-works/architecture exists (add it with that HIW ticket). Security example and risk-baseline hand-off unlinked until IND-4 / CAP-5.
-- [ ] `CAP-5` (S) — Intelligence and risk baseline page with Elementos CTA — blockedBy: CAP-0, SPEC-COPY-1 — spec: §5E — verify: `npm run build` green; voice gate pass
+- [!] `CAP-5` (S) — Intelligence and risk baseline page with Elementos CTA — blockedBy: CAP-0, SPEC-COPY-1 — spec: §5E — verify: `npm run build` green; voice gate pass
+  > BLOCKED (2026-10-22): page shipped in cbdabb2 (build green, `astro check` zero new, voice gate pass); the Elementos CTA is the remaining criterion and needs a real URL (sources only have `elementos.[domain]`). Add `affiliate.cta` to `src/content/capabilities/risk-baseline.md` once Jonathan supplies it, then flip to [x].
 - [ ] `CAP-6` (S) — Managed service and sovereign hosting page — blockedBy: CAP-0, SPEC-COPY-1 — spec: §5F — verify: `npm run build` green; voice gate pass
 - [ ] `ES-CAP-1` (L) — Spanish versions of the six capability pages and index — blockedBy: CAP-1, CAP-2, CAP-3, CAP-4, CAP-5, CAP-6 — spec: §0.6 — verify: `npm run build` green; voice gate pass
 
