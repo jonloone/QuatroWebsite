@@ -183,6 +183,85 @@
   status = 301
   force = true
 
+# NRG-5 sweep (2026-10-23): the last §3 source and the /es/ mirrors
+[[redirects]]
+  from = "/utility/what-you-get"
+  to = "/capabilities"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/utility"
+  to = "/es/how-it-works"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/utility/xops"
+  to = "/es/capabilities/operational-intelligence"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/utility/technology"
+  to = "/es/how-it-works"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/utility/how-it-starts"
+  to = "/es/how-it-works/engagement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/utility/what-you-get"
+  to = "/es/capabilities"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/finance"
+  to = "/es/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/broadcast-media"
+  to = "/es/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/networks"
+  to = "/es/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/transportation"
+  to = "/es/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/water-environment"
+  to = "/es/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/critical-infrastructure"
+  to = "/es/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/solutions"
+  to = "/es/capabilities"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/solutions/*"
   to = "/capabilities"
