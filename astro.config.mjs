@@ -9,8 +9,9 @@ export default defineConfig({
     '/industries/space-satcom': '/industries/networks',
     '/industries/infrastructure': '/industries/networks',
     '/solutions/satellite-revenue-assurance': '/solutions/hybrid-service-assurance',
-    '/network': '/utility',
-    '/platform': '/utility',
+    '/network': '/how-it-works',
+    '/platform': '/how-it-works',
+    '/utility': '/how-it-works',
     '/utility/xops': '/capabilities/operational-intelligence',
   },
   i18n: {

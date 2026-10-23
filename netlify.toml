@@ -19,6 +19,13 @@
   status = 301
   force = true
 
+# /utility (index) replaced by /how-it-works (HIW-1)
+[[redirects]]
+  from = "/utility"
+  to = "/how-it-works"
+  status = 301
+  force = true
+
 # /utility/xops moved to the capability page (CAP-2)
 [[redirects]]
   from = "/utility/xops"

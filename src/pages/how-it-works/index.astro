@@ -1,0 +1,77 @@
+---
+/**
+ * /how-it-works — the operational picture (REALIGNMENT_2026-10-20 §6A; COPY_HOW_IT_WORKS 6A).
+ * Replaces /utility/index. Links to Engagement and Architecture switch on when HIW-2 / HIW-4 land.
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import SpineBand from '@/components/marketing/SpineBand.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+import { layers, layerPromise, engagementLadder } from '@/lib/layers'
+
+const pages = import.meta.glob('./*.astro')
+const engagementHref = pages['./engagement.astro'] ? '/how-it-works/engagement' : '/utility/how-it-starts'
+const hasArchitecture = Boolean(pages['./architecture.astro'])
+
+const layerBeats = layers.map((layer) => ({
+  id: layer.id,
+  index: layer.index,
+  label: layer.label,
+  oneLiner: layer.headline,
+}))
+
+const sub =
+  'One operational picture of your territory and your operations, from satellite to SCADA to the field, run in your country and owned by you from day one.'
+---
+
+<MarketingLayout title="How it works | Quatro" description={sub}>
+  <HeroCanvas
+    badge="How it works"
+    title="One stack, from the sensor to the signed decision."
+    body={sub}
+    ctaLabel="Talk to our team"
+    ctaHref="/contact/demo"
+  />
+
+  <SpineBand beats={layerBeats} promise={layerPromise} foundation={null} ariaLabel="Territory, operation, Quatro's layer" />
+
+  <!-- Human-in-the-loop and ownership (§0.4) -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-sans font-light text-2xl lg:text-4xl leading-[1.25] tracking-tight max-w-4xl" style="color: var(--color-neutral-800);">
+        Agents propose. Your team decides. Every action is signed. You own the intelligence and the deployment from day one.
+      </p>
+      <p class="mt-8 font-sans text-base lg:text-lg leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+        Every action the system takes is logged and auditable, and your data stays under your control.
+      </p>
+    </div>
+  </section>
+
+  <!-- Engagement ladder (§2) -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs</p>
+      </div>
+      <div>
+        <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{engagementLadder}</p>
+        <a href={engagementHref} class="inline-block mt-8 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiet link to Architecture (Tier 3) -->
+  {hasArchitecture && (
+    <section class="py-12 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+      <div class="mx-auto max-w-5xl">
+        <a href="/how-it-works/architecture" class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-500);">The full picture, for the people who evaluate it &rarr;</a>
+      </div>
+    </section>
+  )}
+
+  <DualCta
+    primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
+    secondaryCta={{ label: 'How an engagement runs', href: engagementHref }}
+    microcopy="Hosted in your country · Your team owns it from day one"
+  />
+</MarketingLayout>
