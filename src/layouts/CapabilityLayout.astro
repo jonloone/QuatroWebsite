@@ -5,6 +5,7 @@
  * proof card or honest placeholder, hand-off to the next layer, engagement ladder, CTA.
  * Copy comes from the capabilities collection (docs/COPY_CAPABILITIES_2026-10.md).
  */
+import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import ProofCard from '@/components/marketing/ProofCard.astro'
@@ -17,6 +18,18 @@ interface Props {
 
 const { capability } = Astro.props
 const { title, hero, whatYouGet = [], showsUp = [], substrateLine, proof, handoff } = capability.data
+
+// Link only to pages that exist today; industry and capability links switch on as their tickets land
+const industryIds = new Set((await getCollection('industries')).map((e: any) => e.id.replace(/\.md$/, '')))
+const capabilityIds = new Set(
+  (await getCollection('capabilities')).filter((e: any) => e.data.hero).map((e: any) => e.id.replace(/\.md$/, ''))
+)
+const live = (href: string) => {
+  const [, section, slug] = href.split('/')
+  if (section === 'industries' && slug) return industryIds.has(slug)
+  if (section === 'capabilities' && slug) return capabilityIds.has(slug)
+  return true
+}
 ---
 
 <MarketingLayout title={`${title} | Capabilities`} description={hero.sub}>
@@ -53,12 +66,15 @@ const { title, hero, whatYouGet = [], showsUp = [], substrateLine, proof, handof
       <div class="mx-auto max-w-6xl">
         <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">How it shows up in your operation</p>
         <div class={`grid grid-cols-1 ${showsUp.length >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-6 lg:gap-8`}>
-          {showsUp.map((ex: any) => (
-            <a href={ex.href} class="block rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white" style="border: 1px solid var(--color-structure);">
-              <h3 class="font-sans text-lg font-medium tracking-tight mb-3" style="color: var(--color-neutral-800);">{ex.industry}</h3>
-              <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{ex.text}</p>
-            </a>
-          ))}
+          {showsUp.map((ex: any) => {
+            const Tag = live(ex.href) ? 'a' : 'div'
+            return (
+              <Tag href={live(ex.href) ? ex.href : undefined} class="block rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white" style="border: 1px solid var(--color-structure);">
+                <h3 class="font-sans text-lg font-medium tracking-tight mb-3" style="color: var(--color-neutral-800);">{ex.industry}</h3>
+                <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{ex.text}</p>
+              </Tag>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -84,9 +100,9 @@ const { title, hero, whatYouGet = [], showsUp = [], substrateLine, proof, handof
     <section class="py-16 lg:py-20 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
       <div class="mx-auto max-w-5xl">
         <p class="font-sans font-light text-xl lg:text-2xl leading-relaxed tracking-tight max-w-4xl" style="color: var(--color-neutral-800);">{handoff.text}</p>
-        {handoff.links.length > 0 && (
+        {handoff.links.some((link: any) => live(link.href)) && (
           <div class="mt-8 flex flex-wrap gap-6">
-            {handoff.links.map((link: any) => (
+            {handoff.links.filter((link: any) => live(link.href)).map((link: any) => (
               <a href={link.href} class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{link.label} &rarr;</a>
             ))}
           </div>
