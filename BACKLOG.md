@@ -76,7 +76,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
 
 ## P2 — Capabilities (the layer the buyer is buying)
 
-- [ ] `SPEC-COPY-1` (M) — Copy deck `docs/COPY_CAPABILITIES_2026-10.md` for CAP-1, CAP-4, CAP-5, CAP-6 (EN + ES) — blockedBy: DEC-2 — spec: §5 — verify: voice gate pass on the deck; needs human eyes: Jonathan approves substrate naming
+- [x] `SPEC-COPY-1` (M) — Copy deck `docs/COPY_CAPABILITIES_2026-10.md` for CAP-1, CAP-4, CAP-5, CAP-6 (EN + ES) — blockedBy: DEC-2 — spec: §5 — done: 3b2878e
+  > note: voice gate pass (A grep clean on copy; one tricolon fixed). Open for Jonathan: substrate naming on each page; Elementos URL (none in sources); 5F follows the annex's three hosting modalities (spec says "hybrid"); no corridor figures (§13.2). Industry examples link /industries/{mining,environment,security}, built in IND-1..4. Needs human eyes: Jonathan approves substrate naming.
 - [ ] `CAP-0` (M) — Build `CapabilityLayout` (hero, what you get, how it shows up, substrate line, proof card/placeholder, hand-off, engagement paragraph, CTA) + `/capabilities` index with the three-layer band — blockedBy: SCHEMA-2 — spec: §5 — verify: `npm run build` green; needs human eyes: index reads as three layers, six pages
 - [ ] `CAP-1` (M) — Quatro Klarety page (territorial monitoring from space) at `/capabilities/quatro-klarety` — blockedBy: CAP-0, SPEC-COPY-1 — spec: §5A, §1b — verify: `npm run build` green; voice gate pass; H1 reads "Quatro Klarety"
 - [ ] `CAP-2` (M) — Operational intelligence (xOps) page from the June deck; move `/utility/xops` with 301 — blockedBy: CAP-0 — spec: §5B — verify: `npm run build` green; voice gate pass; zero `platform`/`digital twin`
