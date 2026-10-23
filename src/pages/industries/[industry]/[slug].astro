@@ -61,7 +61,7 @@ const siblings = allUseCases
     ctaHref={hero.primaryCta?.href || '/contact/demo'}
   />
 
-  <StatStrip stats={stats} />
+  {stats?.length > 0 && <StatStrip stats={stats} />}
 
   <!-- Pain Section — PAS Narrative with Quantified Metrics -->
   <Section divider>

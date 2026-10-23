@@ -33,7 +33,7 @@ const solutions = (await getCollection('solutions-es')).sort((a, b) => a.data.or
           </h3>
           <p class="mt-2 flex-1 text-sm text-neutral-600">{solution.data.description}</p>
           <div class="mt-4 flex flex-wrap gap-2">
-            {solution.data.stats.slice(0, 2).map((stat) => (
+            {(solution.data.stats ?? []).slice(0, 2).map((stat) => (
               <span class="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-600">
                 {stat.value} {stat.label}
               </span>

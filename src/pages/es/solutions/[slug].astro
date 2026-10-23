@@ -44,7 +44,7 @@ const ctaSecondary = cta?.secondary || { label: 'Hable con un Ingeniero', href: 
     imageSrc={heroImage || '/images/hero-bg.png'}
   />
 
-  <StatStrip stats={stats} />
+  {stats?.length > 0 && <StatStrip stats={stats} />}
 
   <!-- Challenges Grid -->
   <Section divider>
