@@ -61,6 +61,10 @@ capabilities:
   description: "When a distributed control system is assessed for replacement, the field survey usually ends in a document. Quatro captures the assessment into a connected operational model as it is built, so what was found in the field is visible online, queryable and ready to carry into the design phase. Existing control systems are integration targets, never replacement candidates for us."
   outcome: An engineering assessment your team can keep working from.
   image: /images/cap-energy-refinery-model.png
+insightTags:
+- dry-season
+- corridor
+- losses
 proofCards:
 - title: A corridor screened from orbit, confirmed by radar.
   saw: "The whole right of way screened weekly from open satellite data, a handful of cells flagged, before-and-after imagery on each."

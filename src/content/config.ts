@@ -172,6 +172,7 @@ const industriesCollection = defineCollection({
     proofBadge: z.string().optional(),
     authorityLine: z.string().optional(),
     proofCards: z.array(proofCardSchema).optional(),
+    insightTags: z.array(z.string()).optional(),
     layerCaptions: z.object({
       territory: z.string().optional(),
       operation: z.string().optional(),

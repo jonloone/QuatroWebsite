@@ -5,7 +5,7 @@ industry: "energy"
 author: "Quatro Team"
 publishDate: 2026-09-21
 featured: true
-tags: ["leak-detection", "pipeline-integrity", "remote-actuation", "governed-autonomous-action", "operational-intelligence"]
+tags: ["leak-detection", "pipeline-integrity", "remote-actuation", "governed-autonomous-action", "operational-intelligence", "corridor"]
 readingTime: "6 min read"
 excerpt: "Leak detection has become fast. A modern system confirms a loss of containment in minutes and places it within a few hundred meters. Isolation has not kept pace: it still runs at the speed of a truck on a road to a manual valve. When the detection system and the authority to close a valve don't share a common model, the minutes the sensors saved are spent on the phone."
 heroImage: "/images/insight-between-alarm-and-valve.png"

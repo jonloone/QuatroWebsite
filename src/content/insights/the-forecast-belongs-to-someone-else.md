@@ -5,7 +5,7 @@ industry: "energy"
 author: "Quatro Team"
 publishDate: 2026-09-14
 featured: true
-tags: ["el-nino", "climate-resilience", "hydropower", "water-energy-nexus", "operational-intelligence"]
+tags: ["el-nino", "climate-resilience", "hydropower", "water-energy-nexus", "operational-intelligence", "dry-season"]
 readingTime: "6 min read"
 excerpt: "A seasonal climate event is forecast by institutions whose job is the forecast. It is felt by operators whose job is the reservoir, the grid, the fishery, the coast. Between the two sits a bulletin. When the forecast and the operation don't share a common model, the forecast arrives as news, and the decisions it should have shaped get made on last season's picture."
 heroImage: "/images/insight-forecast-belongs-elsewhere.png"

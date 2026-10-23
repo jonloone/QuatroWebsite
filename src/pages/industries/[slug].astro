@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
 const { industry } = Astro.props
 const { Content } = await industry.render()
-const { title, tagline, description, hero, heroImage, capabilities, stats, challenges, platformMapping, proofPoint, programs, cta, proofBadge, authorityLine, proofCards, layerCaptions } = industry.data as any
+const { title, tagline, description, hero, heroImage, capabilities, stats, challenges, platformMapping, proofPoint, programs, cta, proofBadge, authorityLine, proofCards, layerCaptions, insightTags } = industry.data as any
 
 // Three-layer band (§2, §7): verbatim layer headlines, per-industry caption only where the copy deck supplies one
 const layerBeats = layers.map((layer) => ({
@@ -36,13 +36,17 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/c
 const featuredCaps = capabilities.filter(c => c.featured).slice(0, 3)
 const remainingCaps = capabilities.filter(c => !c.featured)
 
-// Related insights — match by industry slug or tag
-const allInsights = await getCollection('insights')
-const slug = industry.id.replace(/\.md$/, '')
-const relatedInsights = allInsights
-  .filter(i => i.data.industry === slug || i.data.tags?.includes(slug))
+// Related insights — one pinned post per `insightTags` entry (§9C), then fill by industry slug or tag
+const allInsights = (await getCollection('insights'))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
-  .slice(0, 3)
+const slug = industry.id.replace(/\.md$/, '')
+const pinnedInsights = (insightTags ?? [])
+  .map((tag: string) => allInsights.find((i: any) => i.data.tags?.includes(tag)))
+  .filter((i: any, idx: number, arr: any[]) => i && arr.indexOf(i) === idx)
+const relatedInsights = [
+  ...pinnedInsights,
+  ...allInsights.filter((i: any) => !pinnedInsights.includes(i) && (i.data.industry === slug || i.data.tags?.includes(slug))),
+].slice(0, 3)
 ---
 
 <BaseLayout

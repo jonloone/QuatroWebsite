@@ -5,7 +5,7 @@ industry: "energy"
 author: "Quatro Team"
 publishDate: 2026-07-20
 featured: true
-tags: ["pipeline-security", "infrastructure-theft", "network-analysis", "operational-intelligence", "energy-security"]
+tags: ["pipeline-security", "infrastructure-theft", "network-analysis", "operational-intelligence", "energy-security", "losses"]
 readingTime: "6 min read"
 excerpt: "Leak detection systems were engineered for accidents — corrosion, fatigue, the random failure that doesn't care whether anyone is watching. Organized theft is different: it studies the monitoring, learns the patrol schedule, and adapts. When the systems that detect a tap and the understanding of who is tapping don't share a common model, operators win every incident and still lose every quarter."
 heroImage: "/images/insight-theft-network.png"
