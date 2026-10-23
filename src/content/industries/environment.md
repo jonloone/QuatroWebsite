@@ -1,7 +1,7 @@
 ---
 title: Environment and protected areas
 tagline: "One record of what moves through a protected area, on the water and on land."
-heroImage: /images/industry-water-environment.png
+heroImage: /images/industry-environment-reserve.png
 description: "Vessel tracking, permits, zoning and satellite imagery each sit in their own system, so a boat that switches off its transponder simply disappears. Quatro connects them into one picture your rangers decide from, in Spanish, hosted in your country."
 order: 2
 status: active
@@ -37,14 +37,17 @@ capabilities:
 - name: Find the vessels that go dark
   description: "Vessel tracking and monitoring records correlated with radar and optical imagery, day and night and through cloud. Cooperative vessels are separated from dark targets, fleets are classified, and fishing effort is estimated by vessel, zone and period."
   featured: true
+  image: /images/cap-environment-dark-vessels.png
   outcome: "Every dark target in the reserve on one map, with the evidence attached."
 - name: See land change before the next survey
   description: "Vegetation change over the zones your authority defines, ranked by the zoning rule each detection breaks. Higher-resolution imagery only on confirmed change."
   featured: true
+  image: /images/cap-environment-land-change.png
   outcome: "Encroachment and invasive spread flagged between field visits."
 - name: Alerts where your team already works
   description: "Configurable triggers delivered by webhook: a restricted-zone visit, a boundary crossing, a dark vessel in the reserve, fishing in a no-take zone, a tour boat off its itinerary, a transponder switched off."
   featured: true
+  image: /images/cap-environment-alerts.png
   outcome: "The alert reaches the ranger on duty, with the record behind it."
 - name: Ask in plain Spanish
   description: "Staff without GIS training ask a question and get a mappable, auditable answer with every source cited."
