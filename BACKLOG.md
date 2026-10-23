@@ -22,7 +22,7 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
 | NRG-1, NRG-2, NRG-3, ES-ENERGY-1 | `docs/COPY_ENERGY_2026-10-20.md` |
 | CAP-2 | `docs/COPY_UNIFY_XOPS_2026-06-08.md` (title "The operational model"; add §5B hand-offs) |
 | CAP-3 | `docs/COPY_HARDWARE_2026-06-08.md` (add OT communications per §5C) |
-| CAP-1, CAP-4, CAP-5, CAP-6, HIW-*, HOME-*, IND-*, PART-1 | copy deck to be written in `SPEC-COPY-*` tickets before the build ticket starts |
+| CAP-1, CAP-4, CAP-5, CAP-6, HIW-*, HOME-*, IND-*, PART-1, ABOUT-1 | copy deck to be written in `SPEC-COPY-*` tickets before the build ticket starts (PART-1/ABOUT-1 → SPEC-COPY-5) |
 
 ### Image prompt files
 
@@ -157,8 +157,9 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
   > note: voice gate pass (A grep clean; no §1c names; no competitor named). Open for Jonathan: the Spanish H1 (mission, §0.3) has no approved translation (the live ES H1 is old copy), deck proposes one [aprobar]; Agriculture row waits on IND-5; Africa/North America/SE Asia removed from where-we-operate per §1e.
 - [x] `HOME-1` (L) — Homepage rebuild per §10 — blockedBy: CAP-0, NAV-1, SPEC-COPY-4, PROOF-1 — spec: §10, §1c, §1e — done: d14e62f
   > note: build green, `astro check` 129 (19 fewer; removed sections carried errors), voice gate pass on rendered copy; grep zero for DataOS|Second Wind|SMARTS|TEKTELIC|Intelsat|Telesat|US-headquartered in index.astro; zero internal 404s. Industry rows read the collection (five until IND-5). Two kept FAQ answers edited for a "not X" and an em-dash. Hero images reuse existing files; the refinery slide uses an 800x600 capability visual (IND-IMG-style regeneration if it looks soft). Needs human eyes: the homepage end to end.
-- [ ] `PART-1` (M) — Partners rewrite — blockedBy: NAV-1, DEC-2 — spec: §11 — verify: `npm run build` green; voice gate pass; Africa/SE Asia removed from active markets
-- [ ] `ABOUT-1` (S) — About: Quito HQ + US entity, Elementos, ventures line — blockedBy: — — spec: §11, §1e — verify: `npm run build` green; voice gate pass
+- [ ] `SPEC-COPY-5` (S) — Copy deck `docs/COPY_PARTNERS_ABOUT_2026-10.md` for PART-1 and ABOUT-1 (EN + ES): three-tier channel, what Quatro brings, active markets per §1e, ideal partners; About per §11 — blockedBy: DEC-2 — spec: §11, §1e — verify: voice gate pass; needs human eyes: Jonathan approves the ventures line and partner terms
+- [ ] `PART-1` (M) — Partners rewrite — blockedBy: NAV-1, DEC-2, SPEC-COPY-5 — spec: §11 — verify: `npm run build` green; voice gate pass; Africa/SE Asia removed from active markets
+- [ ] `ABOUT-1` (S) — About: Quito HQ + US entity, Elementos, ventures line — blockedBy: SPEC-COPY-5 — spec: §11, §1e — verify: `npm run build` green; voice gate pass
 - [ ] `ES-HOME-1` (M) — Spanish homepage, partners, about — blockedBy: HOME-1, PART-1, ABOUT-1 — spec: §0.6 — verify: `npm run build` green; voice gate pass
 - [ ] `CLEAN-1` (S) — Delete `.retired` page files older than 90 days, drop `src/content/verticals/*`, `products*`, `national-intelligence.retired`; update `CLAUDE.md` authorities to point at this spec — blockedBy: IND-6, HIW-4 — spec: §15 — verify: `npm run build` green
 
