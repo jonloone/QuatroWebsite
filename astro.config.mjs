@@ -11,6 +11,7 @@ export default defineConfig({
     '/solutions/satellite-revenue-assurance': '/solutions/hybrid-service-assurance',
     '/network': '/utility',
     '/platform': '/utility',
+    '/utility/xops': '/capabilities/operational-intelligence',
   },
   i18n: {
     defaultLocale: 'en',

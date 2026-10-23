@@ -33,7 +33,7 @@ substrateLine: "Quatro Klarety is delivered with our earth-observation partner K
 handoff:
   text: "A confirmed change is useful once it meets the operation. The operational model correlates it with line pressure, alarms and field events, and the reasoning layer assembles the evidence."
   links:
-  - label: Operational intelligence
+  - label: The operational model
     href: /capabilities/operational-intelligence
   - label: Reasoning, agents and evidence
     href: /capabilities/reasoning-and-evidence

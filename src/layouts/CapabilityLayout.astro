@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { capability } = Astro.props
-const { title, hero, whatYouGet = [], showsUp = [], substrateLine, proof, handoff } = capability.data
+const { title, hero, scaleBand, whatYouGet = [], showsUp = [], substrateLine, proof, handoff } = capability.data
 
 // Link only to pages that exist today; industry and capability links switch on as their tickets land
 const industryIds = new Set((await getCollection('industries')).map((e: any) => e.id.replace(/\.md$/, '')))
@@ -40,6 +40,20 @@ const live = (href: string) => {
     ctaLabel="Talk to our team"
     ctaHref="/contact/demo"
   />
+
+  <!-- Scale band (§5B: attributed vendor scale, high on the page) -->
+  {scaleBand && (
+    <section class="py-14 lg:py-16 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+      <div class="mx-auto max-w-6xl">
+        <ul class="flex flex-wrap justify-between gap-6">
+          {scaleBand.stats.map((stat: string) => (
+            <li class="font-mono text-xs lg:text-sm uppercase tracking-[0.08em]" style="color: var(--color-neutral-800);">{stat}</li>
+          ))}
+        </ul>
+        <p class="mt-6 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">{scaleBand.caption}</p>
+      </div>
+    </section>
+  )}
 
   <!-- What you get -->
   {whatYouGet.length > 0 && (

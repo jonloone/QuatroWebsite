@@ -203,6 +203,10 @@ const capabilitiesCollection = defineCollection({
       title: z.string(),
       sub: z.string(),
     }).optional(),
+    scaleBand: z.object({
+      stats: z.array(z.string()),
+      caption: z.string(),
+    }).optional(),
     whatYouGet: z.array(z.string()).optional(),
     showsUp: z.array(z.object({
       industry: z.string(),

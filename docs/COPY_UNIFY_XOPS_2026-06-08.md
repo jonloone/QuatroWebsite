@@ -98,3 +98,17 @@ Hardware & IoT · Quatro Field · How it starts. Relabel the current "xOps" tile
 - Buyer is the hero: "your team works from," "you own the model." Quatro integrates and
   enables; it does not "build" or "deliver" for them.
 - Every number is real (xOps figures) and attributed. No invented metric (§0.1, §11).
+
+---
+
+## Amendment 2026-10-22 (CAP-2, REALIGNMENT_2026-10-20 §5B)
+
+Page moves to `/capabilities/operational-intelligence` (CapabilityLayout). Title "The operational
+model"; eyebrow is the layer, `Operation`. The §8 Quatro Field hand-off is retired (§1c: Quatro
+Field does not appear on marketing pages). §5 ownership cards are not part of the capability
+template (ownership lives on 5F).
+
+- **§6 Service assurance (voice fix):** `Watch the service your customers feel, down to the boxes underneath it.` (the June line was a "not X" antithesis)
+- **Scale band:** §2 stats and caption, no eyebrow (the June eyebrow was a "not X" antithesis).
+- **How it shows up:** Energy and pipelines (/industries/energy), pasted from `COPY_ENERGY` §6 "see".
+- **Hand-off (5A, 5D):** `The model gets sharper when the territory is in it. Quatro Klarety adds what changed on the ground, and the reasoning layer turns a correlated event into evidence and a proposed dispatch.` → /capabilities/quatro-klarety · /capabilities/reasoning-and-evidence

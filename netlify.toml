@@ -19,6 +19,13 @@
   status = 301
   force = true
 
+# /utility/xops moved to the capability page (CAP-2)
+[[redirects]]
+  from = "/utility/xops"
+  to = "/capabilities/operational-intelligence"
+  status = 301
+  force = true
+
 # Legacy /solutions/:slug → /solutions (solution detail pages retired)
 [[redirects]]
   from = "/solutions/*"
