@@ -88,6 +88,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
         { name: 'Mining and remediation', href: '/industries/mining' },
         { name: 'Security and critical infrastructure', href: '/industries/security' },
         { name: 'Cities and public services', href: '/industries/cities' },
+        { name: 'Agriculture and aquaculture', href: '/industries/agriculture' },
       ],
     },
     howItWorks: {
@@ -131,6 +132,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
         { name: 'Minería y remediación', href: '/industries/mining', localize: false },
         { name: 'Seguridad e infraestructura crítica', href: '/industries/security', localize: false },
         { name: 'Ciudades y servicios públicos', href: '/industries/cities' },
+        { name: 'Agricultura y acuicultura', href: '/industries/agriculture', localize: false },
       ],
     },
     howItWorks: {
@@ -208,6 +210,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
         { name: 'Mining and remediation', description: 'Every concession and the river below it, on one record', href: '/industries/mining', icon: BeakerIcon },
         { name: 'Security and critical infrastructure', description: 'Evidence that holds up after the incident', href: '/industries/security', icon: ShieldIcon },
         { name: 'Cities and public services', description: 'Disaster response, cadaster, waste and water on one picture', href: '/industries/cities', icon: BuildingLibraryIcon },
+        { name: 'Agriculture and aquaculture', description: 'Protect the harvest from the pond edge to the plant', href: '/industries/agriculture', icon: ShieldIcon },
       ],
       cta: { name: 'All industries', href: '/industries' },
     },
@@ -275,6 +278,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
         { name: 'Minería y remediación', description: 'Cada concesión y el río de abajo, en un solo registro', href: '/industries/mining', icon: BeakerIcon, localize: false },
         { name: 'Seguridad e infraestructura crítica', description: 'Evidencia que resiste después del incidente', href: '/industries/security', icon: ShieldIcon, localize: false },
         { name: 'Ciudades y servicios públicos', description: 'Respuesta a desastres, catastro, residuos y agua en un solo cuadro', href: '/industries/cities', icon: BuildingLibraryIcon },
+        { name: 'Agricultura y acuicultura', description: 'Proteja la cosecha, de la orilla de la piscina a la planta', href: '/industries/agriculture', icon: ShieldIcon, localize: false },
       ],
       cta: { name: 'Todas las industrias', href: '/industries' },
     },
