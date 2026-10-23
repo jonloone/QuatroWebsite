@@ -96,7 +96,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
 
 ## P3 — How it works, navigation
 
-- [ ] `SPEC-COPY-2` (M) — Copy deck `docs/COPY_HOW_IT_WORKS_2026-10.md` for HIW-1..4 (EN + ES) — blockedBy: DEC-2 — spec: §6 — verify: voice gate pass
+- [x] `SPEC-COPY-2` (M) — Copy deck `docs/COPY_HOW_IT_WORKS_2026-10.md` for HIW-1..4 (EN + ES) — blockedBy: DEC-2 — spec: §6 — done: 58f68c8
+  > note: voice gate pass (A grep clean; one tricolon fixed; no client, partner or §1c names; no prices). Open for Jonathan: "open-book" exists only as a partner cost rule in teaming docs, so it is off the public page; no source names "a validator" (deck uses the counterpart team that signs the gate); hosting follows the annex's three modalities, retiring the old five deployment modes.
 - [ ] `NAV-1` (S) — New top nav (Capabilities · Industries · How it works · Proof · Partners · Company) in `src/lib/navigation.ts` EN/ES; footer per §1e; `/utility/*` aliases — blockedBy: CAP-0 — spec: §3 — verify: `npm run build` green; needs human eyes: nav and footer, both locales
 - [ ] `HIW-1` (M) — `/how-it-works`: the operational picture (replaces `/utility/index` and the Tier 1.5 part of `technology.astro`) — blockedBy: NAV-1, SPEC-COPY-2 — spec: §6A — verify: `npm run build` green; voice gate pass; zero `semantic substrate|ontology|knowledge graph|governed data product`
 - [ ] `HIW-2` (M) — `/how-it-works/engagement`: the ladder with gates (replaces `/utility/how-it-starts`) — blockedBy: NAV-1, SPEC-COPY-2, DEC-2 — spec: §6B — verify: `npm run build` green; voice gate pass
