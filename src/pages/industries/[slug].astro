@@ -33,7 +33,7 @@ const ctaPrimary = cta?.primary || { label: 'Talk to Our Team', href: '/contact/
 const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/contact/sales' }
 
 // Split capabilities into featured (large editorial cards) and remaining (dark index)
-const featuredCaps = capabilities.filter(c => c.featured).slice(0, 3)
+const featuredCaps = capabilities.filter(c => c.featured)
 const remainingCaps = capabilities.filter(c => !c.featured)
 
 // Example cards (§8): active solutions tagged to this industry, each linked to the capability it runs on
@@ -150,6 +150,11 @@ const relatedInsights = [
       <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16 fade-up">
         <div>
           <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">The Structural Problem</p>
+          {challenges[0]?.image && (
+            <div class="mt-6 aspect-square max-w-[240px] overflow-hidden" style="background: var(--color-neutral-100);">
+              <img src={challenges[0].image} alt="" class="h-full w-full object-cover img-technical" loading="lazy" aria-hidden="true" />
+            </div>
+          )}
         </div>
         <div>
           <h2 class="font-sans font-light text-2xl lg:text-4xl leading-[1.2] tracking-tight mb-5" style="color: var(--color-neutral-800);">
@@ -171,7 +176,7 @@ const relatedInsights = [
         </div>
         <div class="space-y-8">
           {challenges.slice(1, 5).map((challenge, i) => (
-            <div class="grid grid-cols-1 sm:grid-cols-[40px_1fr] gap-4 items-start">
+            <div class={`grid grid-cols-1 gap-4 items-start ${challenge.image ? 'sm:grid-cols-[40px_1fr_96px]' : 'sm:grid-cols-[40px_1fr]'}`}>
               <p class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1" style="color: var(--color-forest);">
                 {String(i + 1).padStart(2, '0')}
               </p>
@@ -179,6 +184,11 @@ const relatedInsights = [
                 <h3 class="font-sans text-lg font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">{challenge.title}</h3>
                 <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{challenge.description}</p>
               </div>
+              {challenge.image && (
+                <div class="aspect-square w-24 overflow-hidden" style="background: var(--color-neutral-100);">
+                  <img src={challenge.image} alt="" class="h-full w-full object-cover img-technical" loading="lazy" aria-hidden="true" />
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -284,6 +294,18 @@ const relatedInsights = [
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {remainingCaps.map((cap, i) => (
             <div class="fade-up rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white/[0.06]" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+              {cap.image && (
+                <div class="relative aspect-[4/3] overflow-hidden rounded-lg mb-6" style="background: #111;">
+                  <canvas
+                    class="absolute inset-0 w-full h-full"
+                    data-img-dither
+                    data-image-src={cap.image}
+                    data-pixel-size="1"
+                    data-green-blend="0"
+                    data-base-speed="0.03"
+                  ></canvas>
+                </div>
+              )}
               <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-4">
                 {String(i + featuredCaps.length + 1).padStart(2, '0')}
               </p>
