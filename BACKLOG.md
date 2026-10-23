@@ -161,7 +161,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
   > note: voice gate pass (A grep clean; "platform partners" written as "technology partners"; one tricolon fixed). Open for Jonathan: the flat-fee line (no source gives its commercial meaning) and the ventures line, both [approve]; Elementos URL still missing; ES mission line rides with the homepage H1 approval. Needs human eyes: Jonathan approves the ventures line and partner terms.
 - [x] `PART-1` (M) — Partners rewrite — blockedBy: NAV-1, DEC-2, SPEC-COPY-5 — spec: §11 — done: 997bfde
   > note: build green, `astro check` zero new (129), voice gate pass, Africa/SE Asia removed from active markets; zero internal 404s. Flat-fee sentence held until Jonathan approves (deck [approve]). Hero image and sage band kept. ES partners page: none exists yet (ES-HOME-1 covers Spanish partners).
-- [ ] `ABOUT-1` (S) — About: Quito HQ + US entity, Elementos, ventures line — blockedBy: SPEC-COPY-5 — spec: §11, §1e — verify: `npm run build` green; voice gate pass
+- [x] `ABOUT-1` (S) — About: Quito HQ + US entity, Elementos, ventures line — blockedBy: SPEC-COPY-5 — spec: §11, §1e — done: df326e4
+  > note: build green, `astro check` zero new (129), voice gate pass, zero internal 404s. Ventures line shipped per §11 and the audit (deck asked for Jonathan's read); Elementos unlinked until the URL exists. ES about in ES-HOME-1.
 - [ ] `ES-HOME-1` (M) — Spanish homepage, partners, about — blockedBy: HOME-1, PART-1, ABOUT-1 — spec: §0.6 — verify: `npm run build` green; voice gate pass
 - [ ] `CLEAN-1` (S) — Delete `.retired` page files older than 90 days, drop `src/content/verticals/*`, `products*`, `national-intelligence.retired`; update `CLAUDE.md` authorities to point at this spec — blockedBy: IND-6, HIW-4 — spec: §15 — verify: `npm run build` green
 
