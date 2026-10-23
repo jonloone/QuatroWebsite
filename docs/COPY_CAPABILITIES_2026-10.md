@@ -177,12 +177,26 @@ Ecuador, with a US entity.
 > Nota de voz: evitar "plataforma" (usar "modelo operativo" o "cuadro operativo"), "gemelo
 > digital", "habilitar", "potenciar", signos de exclamación y rayas largas como nexo.
 
-**Común a las cuatro páginas**
+**Común a las seis páginas**
 - **Párrafo de compromiso:** el de `COPY_ENERGY` §8 (ES), textual.
 - **CTA:** primario "Hable con nuestro equipo" → /es/contact/demo · secundario "Cómo se ejecuta
   un compromiso" → /es/how-it-works/engagement · microcopy "Alojado en su país · Su equipo es
   dueño desde el primer día".
 - **Marcador de prueba:** "Captura en preparación."
+- **Etiquetas de la plantilla:** "Lo que obtiene" · "Cómo aparece en su operación" · "Prueba" ·
+  "Cómo se ejecuta un compromiso". Título de pestaña: "{H1} | Capacidades".
+
+## Índice `/es/capabilities` (ES-CAP-1; SPEC-COPY-ES-2, 2026-10-23)
+
+**Título de pestaña:** Capacidades | Quatro
+**eyebrow:** Capacidades
+**H1:** la línea de promesa, textual: Vea el territorio. Conduzca la operación. Sea dueño de la
+inteligencia.
+**sub (§2, textual del ES de la portada):** Un solo cuadro operativo de su territorio y de su
+operación, del satélite al SCADA y al campo, operado en su país y de su propiedad desde el primer día.
+**Banda de tres capas:** `layersEs` (§11 de `COPY_ENERGY`, ya publicada en /es/how-it-works).
+**Sección de compromiso:** etiqueta "Cómo se ejecuta un compromiso" y el párrafo de §8, textual.
+**CTA:** el común de arriba.
 
 ## 5A. Quatro Klarety
 
@@ -223,6 +237,86 @@ razonamiento.
 **Relevo:** Un cambio confirmado sirve cuando llega a la operación. El modelo operativo lo
 correlaciona con la presión de línea, las alarmas y los eventos de campo, y la capa de
 razonamiento arma la evidencia.
+
+## 5B. El modelo operativo (SPEC-COPY-ES-2, 2026-10-23)
+
+*Fuente EN: `src/content/capabilities/operational-intelligence.md` (`COPY_UNIFY_XOPS` y su enmienda
+2026-10-22).*
+
+**Título:** El modelo operativo
+**eyebrow:** Operación
+**H1:** Quince proveedores. Una sola verdad operativa.
+**sub:** Su operación corre sobre sistemas que nunca se diseñaron para hablar entre sí. Los reunimos
+en un solo modelo en vivo desde el que trabaja su equipo. Multiproveedor por diseño, probado a
+escala nacional.
+
+**Banda de escala**
+- Más de 1.000 operadores
+- Más de 10.000 nodos desplegados
+- Más de 125 países
+- Más de 8.000 integraciones
+- Más de 14 premios de tecnología
+- **Leyenda:** La capa del modelo operativo corre sobre DataMiner xOps, en producción con operadores
+  en todo el mundo. El catálogo de integraciones crece de forma continua.
+
+**Lo que obtiene**
+- Activos e inventario: cada activo, dispositivo y conexión como un recurso operativo que usted
+  puede ver y sobre el que puede actuar.
+- Monitoreo y observabilidad: estado en vivo de todos los sistemas, con correlación de alarmas
+  entre dominios que reduce el ruido.
+- Orquestación y control: flujos gobernados que llevan una decisión de la alerta a la acción.
+- Aseguramiento del servicio: vigile el servicio que perciben sus clientes, hasta los equipos que
+  lo sostienen.
+- Operaciones con IA: causa raíz y guía al operador apoyadas en el modelo en vivo, nunca en una
+  instrucción suelta.
+
+**Cómo aparece en su operación**
+- **Energía e hidrocarburos** (/es/industries/energy): los tres sistemas SCADA, los historiadores,
+  el GIS, las salidas de detección de fugas, la medición, el despacho y los datos de reserva, los
+  pronósticos, los sensores de campo y el video, y el propio territorio desde el satélite. Los
+  sistemas existentes son objetivos de integración.
+
+**Línea de sustrato:** La capa del modelo operativo es DataMiner xOps, desplegada por operadores en
+más de 125 países y reconocida con más de 14 premios de tecnología.
+
+**Prueba:** marcador honesto.
+
+**Relevo:** El modelo se afina cuando el territorio está dentro. Quatro Klarety aporta lo que
+cambió en el terreno, y la capa de razonamiento convierte un evento correlacionado en evidencia y
+en un despacho propuesto. → Quatro Klarety (/es/capabilities/quatro-klarety) · Razonamiento,
+agentes y evidencia (/es/capabilities/reasoning-and-evidence)
+
+## 5C. IoT, edge y comunicaciones OT (SPEC-COPY-ES-2, 2026-10-23)
+
+*Fuente EN: `src/content/capabilities/iot-edge.md` (`COPY_HARDWARE` y su enmienda 2026-10-22).*
+
+**Título:** IoT, edge y comunicaciones OT
+**eyebrow:** La capa de Quatro
+**H1:** Su operación ya emite señal.
+**sub:** Conectamos el hardware que la capta. Sitios, vehículos y personas se vuelven señal en vivo
+sobre la que el resto del sistema puede actuar.
+
+**Lo que obtiene**
+- Para las personas: dispositivos portátiles y credenciales que reportan ubicación, estado y
+  alerta de coacción.
+- Para los vehículos: telemetría que transmite posición, condición de la carga y alarmas.
+- Para los sitios: sensores que leen las condiciones de las que depende la operación.
+- Comunicaciones OT que mantienen reportando a un sitio remoto: satélite como enlace principal,
+  respaldo en banda L, respaldo celular y LoRaWAN para la capilaridad de campo.
+- Energía solar y gabinetes de campo para sitios fuera de la red eléctrica.
+- Hardware solo donde el riesgo confirmado lo justifica. Primero van la línea base satelital y la
+  línea base de riesgo.
+
+**Cómo aparece en su operación**
+- **Energía e hidrocarburos** (/es/industries/energy): la línea base de riesgo de la primera
+  compuerta decide qué tramos reciben sensores de campo, y el hardware va solo ahí.
+
+**Línea de sustrato:** El hardware es la Quatro IoT & Edge Suite, integrada y soportada por Quatro.
+
+**Prueba:** marcador honesto.
+
+**Relevo:** La señal por sí sola es ruido. Se vuelve útil en cuanto se unifica. → El modelo
+operativo (/es/capabilities/operational-intelligence)
 
 ## 5D. Razonamiento, agentes y evidencia
 
