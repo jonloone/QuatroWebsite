@@ -327,3 +327,21 @@ vista que tienen sus socios.
 ## 10. CTA
 **primario:** Hable con nuestro equipo · **secundario:** Cómo se ejecuta un compromiso ·
 **microcopy:** Alojado en su país · Su equipo es dueño desde el primer día
+
+## 11. Banda de tres capas y etiquetas de la plantilla (`ES-NRG-2`; borrador, Esteban aprueba)
+Espejo de §2 de la especificación y de `src/lib/layers.ts`. Escrito en español primero.
+
+**promesa:** Vea el territorio. Conduzca la operación. Sea dueño de la inteligencia.
+
+| capa | nombre | titular |
+|---|---|---|
+| territory | Territorio: Quatro Klarety | Vea qué cambió, dónde y cuándo. |
+| operation | Operación | Todos sus sistemas, en un solo modelo operativo en vivo. |
+| quatro | La capa de Quatro | Integrar, sensar, razonar, operar. |
+
+**etiquetas:**
+- marcador de tarjeta sin imagen: Captura en preparación.
+- encabezado de la fila de prueba: Prueba
+- enlace de tarjeta: Ver la referencia
+- encabezado del párrafo de compromiso: Cómo se ejecuta un compromiso
+- títulos de la sección ver / correlacionar / actuar: Ver. Correlacionar. Actuar.
