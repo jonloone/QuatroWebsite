@@ -1,92 +1,70 @@
 ---
-title: "Smart Cities"
-tagline: "Cross-Domain Urban Intelligence"
-heroImage: "/images/industry-cities.png"
-description: "When mobility, public safety, infrastructure, and environmental systems each operate in isolation, coordination gaps become invisible to everyone except citizens. Quatro connects your city's existing systems into one operational intelligence utility — unified coordination with measurable citizen outcomes."
-order: 5
+title: Cities and public services
+tagline: "After the earthquake, know which neighborhoods to reach first."
+heroImage: /images/industry-cities.png
+description: "A city answers for its streets, its buildings, its waste and its water from systems that were never built to share. Quatro connects what each department already runs, adds the view from orbit, and gives your command center one picture to coordinate from."
+order: 4
+status: active
+proofBadge: Proven at scale (DataMiner xOps)
+authorityLine: "We know the questions a city asks after an earthquake or a flood, and the institutions that coordinate the answer (SNGR and the municipal command centers)."
 hero:
-  eyebrow: "Smart Cities"
-  title: "Your City Runs on Fifteen Consoles. Your Citizens See One City."
-  description: "Traffic, public safety, utilities, and environmental monitoring each operate from separate consoles with separate budgets and separate command structures. The patterns that cross departments — a water main break that causes a traffic incident that delays emergency response — stay invisible. Quatro connects what your city already has into one coordinated operational picture with measurable citizen outcomes."
+  eyebrow: Cities and public services
+  title: "After the earthquake, know which neighborhoods to reach first."
+  description: "A city answers for its streets, its buildings, its waste and its water from systems that were never built to share. Quatro connects what each department already runs, adds the view from orbit, and gives your command center one picture to coordinate from."
   primaryCta:
-    label: "Talk to Our Team"
-    href: "/contact/demo"
+    label: Talk to our team
+    href: /contact/demo
   secondaryCta:
-    label: "Talk to an Engineer"
-    href: "/contact/sales"
+    label: How an engagement runs
+    href: /how-it-works/engagement
 stats:
-  - value: "8,000+"
-    label: "Integrations"
-  - value: "Weeks"
-    label: "To First Intelligence"
-  - value: "Cross-Domain"
-    label: "Unified View"
+- value: 8,000+
+  label: integrations in the operational model (DataMiner xOps)
+- value: 1,000+
+  label: operators running it in production (DataMiner xOps)
+- value: 30 days
+  label: to a first operational picture, from the satellite baseline, no field hardware
 challenges:
-  - title: "Departmental Data Silos"
-    description: "Traffic, public safety, utilities, and environmental monitoring operate as independent fiefdoms with separate technology stacks. No system sees the full picture."
-    image: "/images/challenge-cities-silos.png"
-  - title: "Vendor Lock-In Across Systems"
-    description: "A mid-size city operates 15-30 separate platforms from different vendors with proprietary data formats. Integration projects are expensive and politically contentious."
-    image: "/images/challenge-cities-vendor-lock.png"
-  - title: "Reactive Operations"
-    description: "Infrastructure failures and incidents are discovered after they occur. The sensor data to predict and prevent them is trapped in disconnected systems with no analytics layer."
-    image: "/images/challenge-cities-reactive.png"
-  - title: "Multi-Agency Coordination Gaps"
-    description: "A water main break affects traffic, public safety, fleet dispatch, and environmental monitoring simultaneously — but no system coordinates the cross-agency response."
-    image: "/images/challenge-cities-coordination.png"
+- title: After a disaster, the first question is where.
+  description: "Damage, debris and access are known street by street only after crews arrive."
+- title: The cadaster falls behind the city.
+  description: "Buildings change faster than surveys, and the tax roll follows years later."
+- title: Waste trucks run fixed routes.
+  description: Schedules ignore how full the containers are.
+- title: Water and power answer to the same dry season.
+  description: "Loss, demand and supply sit in separate operators' systems."
 capabilities:
-  - name: "Unified City Operations Center"
-    description: "Single common operating picture across all city departments. Replace 5-10 separate consoles with role-based workspaces for every agency — from traffic to public safety to utilities."
-    featured: true
-    outcome: "5-10 consoles replaced. One operational picture."
-    image: "/images/cap-cities-operations-center.png"
-  - name: "Cross-Agency Emergency Response"
-    description: "When a water main breaks, it affects traffic, safety, fleet dispatch, and environmental monitoring. Governed autonomous action coordinates multi-department response automatically."
-    featured: true
-    outcome: "Faster cross-agency incident response."
-    image: "/images/cap-cities-cross-agency.png"
-  - name: "AI Urban Surveillance"
-    description: "Real-time behavioral analytics across city-wide camera networks. Multi-sensor fusion with gunshot detection, license plate recognition, and access control — fewer false alarms."
-    featured: true
-    outcome: "Fewer false alarms across city camera networks."
-    image: "/images/cap-cities-surveillance.png"
-  - name: "Smart Infrastructure Monitoring"
-    description: "Continuous condition monitoring for streetlights, traffic signals, water distribution, and distributed infrastructure with predictive maintenance. Cross-links to water system intelligence for treatment, leak detection, and compliance."
-    image: "/images/cap-cities-infra-monitoring.png"
-    outcome: "Predictive maintenance across all city infrastructure."
-  - name: "Municipal Fleet Optimization"
-    description: "Intelligent route optimization for waste collection, public works, and transit. Fill-level IoT sensors enable demand-driven scheduling. Dynamic routing based on actual conditions — not fixed schedules."
-    outcome: "Lower fleet costs through demand-driven routing."
-    image: "/images/cap-cities-waste-mgmt.png"
-  - name: "Environmental Intelligence"
-    description: "Air quality, weather, and energy data correlated with operational systems. Pollutant concentrations trigger traffic rerouting and public notifications automatically."
-    image: "/images/cap-cities-environmental.png"
-    outcome: "Automatic response to environmental threshold breaches."
-  - name: "Water Infrastructure Intelligence"
-    description: "Treatment plant monitoring, distribution network management, leak detection, and quality compliance. From reservoir to tap, unified intelligence connected to city-wide operations for coordinated incident response."
-    outcome: "Reservoir to tap. One unified water intelligence layer."
-    image: "/images/cap-cities-water-infra.png"
+- name: Triage the worst-hit neighborhoods from orbit
+  description: "Satellite damage and debris assessment after an earthquake, flood-risk mapping for El Niño, and infrastructure risk on the same map."
+  featured: true
+  outcome: "The neighborhoods to reach first, ranked, with the evidence attached."
+  image: /images/cap-cities-infra-monitoring.png
+- name: Keep the cadaster current
+  description: "Building change detected from orbit with Quatro Klarety, confirmed in the field, with block surveys feeding the same cadaster record."
+  featured: true
+  outcome: Changes flagged for the tax roll between survey cycles.
+- name: Route waste by demand
+  description: "Fill-level and weight sensors on containers, and routes that follow demand instead of the calendar."
+  featured: true
+  outcome: Trucks go where the containers are full.
+  image: /images/cap-cities-waste-mgmt.png
+- name: One command center across departments
+  description: "Video, sensors, work orders and dispatch in one real-time operational model. Ports and fleets run on the same operational model in production (DataMiner xOps)."
+  image: /images/cap-cities-operations-center.png
 platformMapping:
-  see: "8,000+ integrations for traffic controllers (NTCIP), cameras (ONVIF), building systems (BACnet, KNX), transit (GTFS, SIRI), and environmental sensors. Edge processing at intersections and vehicles."
-  understand: "AI video analytics with behavioral analysis and crowd dynamics. Traffic pattern prediction, predictive maintenance for infrastructure, and environmental correlation. Fewer false alarms."
-  orchestrate: "Governed autonomous action across city operations. Emergency response playbooks coordinate multi-department response automatically. Fleet dispatch for public works and waste collection."
-proofPoint:
-  industry: "Cities — Municipal Intelligence"
-  headline: "Cross-Domain City Operations"
-  metrics:
-    - value: "8,000+"
-      label: "Integrations"
-    - value: "Cross-Domain"
-      label: "Unified View"
-    - value: "Weeks"
-      label: "To First Intelligence"
-  narrative: "Municipal operators connecting water, waste, transportation, and public safety systems into one operational model — cross-agency coordination, predictive infrastructure maintenance, and real citizen outcomes."
+  see: "The command center's video and sensors, work orders, dispatch, utility and waste systems, the cadaster, and the city itself from satellite. Existing systems are integration targets."
+  correlate: "Damage and building change from orbit against the cadaster and the street network; container levels against routes; every figure traced to its source."
+  act: "The command center coordinates from one picture. Your operators decide; every action is recorded."
+layerCaptions:
+  territory: "Damage, debris and building change, seen from orbit."
+  operation: "Command center, work orders and sensors in one model."
+  quatro: "Hosted in country, with an engineer on site."
 cta:
   primary:
-    label: "Talk to Our Team"
-    href: "/contact/demo"
+    label: Talk to our team
+    href: /contact/demo
   secondary:
-    label: "Talk to an Engineer"
-    href: "/contact/sales"
-  microcopy: "Intelligence in weeks · Your team owns it from day one"
+    label: How an engagement runs
+    href: /how-it-works/engagement
+  microcopy: "Hosted in your country · Your team owns it from day one"
 ---
