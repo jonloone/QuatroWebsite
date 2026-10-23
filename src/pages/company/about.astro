@@ -1,38 +1,49 @@
 ---
+/**
+ * /company/about (REALIGNMENT_2026-10-20 §11, §1e, §1d; COPY_PARTNERS_ABOUT_2026-10 ABOUT-1).
+ */
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
 import Section from '@/components/marketing/Section.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
-import Placeholder from '@/components/marketing/Placeholder.astro'
+
+const sub = 'One operational picture of your territory and your operations, from satellite to SCADA to the field, run in your country and owned by you from day one.'
+
+const facts = [
+  { label: 'Where we are', text: 'Headquartered in Quito, Ecuador, with a US entity.' },
+  { label: 'Where we work', text: 'Active in Ecuador, Colombia, Venezuela, Panama and Guyana, and in MENA through a channel partner.' },
+  { label: 'Elementos', text: 'Elementos is our affiliate for intelligence-led work: risk baselines and threat-network mapping.' },
+  { label: 'Ventures', text: 'The same team also builds Sphera and Occupy, each under its own brand.' },
+]
 ---
 
-<MarketingLayout
-  title="About — Making Critical Infrastructure Intelligent"
-  description="Quatro integrates the hardware, software, and domain expertise that nations and industries need — delivered as a utility they connect to, built so they own the intelligence from day one."
->
+<MarketingLayout title="About | Quatro" description={sub}>
   <Hero
     eyebrow="About Quatro"
-    title="Making Critical Infrastructure Intelligent."
-    description="We integrate the hardware, software, and domain expertise that nations and industries need — delivered as a utility they connect to, built so they own the intelligence from day one."
+    title="Making critical infrastructure intelligent."
+    description={sub}
   />
 
   <Section>
-    <div class="grid gap-12 lg:grid-cols-2">
+    <div class="grid gap-12 lg:grid-cols-[35%_1fr]">
       <div>
-        <h2 class="font-display text-2xl font-bold text-neutral-800">Our Mission</h2>
-        <p class="mt-4 text-lg text-neutral-600">
-          We exist to make critical infrastructure intelligent. We integrate across three dimensions — hardware at the edge, software that connects and governs, and the domain expertise that makes intelligence operational — so nations and industries own the intelligence from day one.
-        </p>
+        <h2 class="font-display text-2xl font-bold text-neutral-800">Our mission</h2>
       </div>
-      <Placeholder label="Company Image" class="min-h-[300px]" />
+      <p class="text-lg text-neutral-600">We exist to make critical infrastructure intelligent.</p>
+    </div>
+    <div class="mt-16 grid gap-10 sm:grid-cols-2">
+      {facts.map((fact) => (
+        <div class="pt-6" style="border-top: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">{fact.label}</p>
+          <p class="text-base leading-relaxed text-neutral-700">{fact.text}</p>
+        </div>
+      ))}
     </div>
   </Section>
 
   <DualCta
-    title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like for your operation.`}
-    description="Tell us the outcome that matters. We connect the systems that hold the answer. Your team starts working from the model."
-    primaryCta={{ label: 'Talk to Our Team', href: '/contact/demo' }}
-    secondaryCta={{ label: 'Explore Our Industries', href: '/industries' }}
-    microcopy="Intelligence in weeks · Your team owns it from day one"
+    primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
+    secondaryCta={{ label: 'Leadership', href: '/company/leadership' }}
+    microcopy="Hosted in your country · Your team owns it from day one"
   />
 </MarketingLayout>
