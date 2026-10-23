@@ -1,0 +1,62 @@
+---
+/**
+ * ProofCard — one abstracted reference card (REALIGNMENT_2026-10-20 §9A): what the
+ * operator saw, what the team did, what it took. With no card, or no asset, it shows
+ * the honest placeholder instead of a fabricated visual (§0.1). Labels from
+ * COPY_ENERGY §7 / §11.
+ */
+interface Card {
+  title: string
+  saw: string
+  did: string
+  took: string
+  asset?: string | null
+  href?: string
+}
+
+interface Props {
+  card?: Card | null
+  lang?: 'en' | 'es'
+}
+
+const { card, lang = 'en' } = Astro.props
+
+const labels = {
+  en: { saw: 'What the operator saw', did: 'What the team did', took: 'What it took', placeholder: 'Capture in preparation.', link: 'Read the reference' },
+  es: { saw: 'Lo que vio el operador', did: 'Lo que hizo el equipo', took: 'Lo que tomó', placeholder: 'Captura en preparación.', link: 'Ver la referencia' },
+}[lang]
+---
+
+<article class="rounded-xl overflow-hidden" style="border: 1px solid var(--color-structure);">
+  {card?.asset ? (
+    <div class="aspect-[16/9] overflow-hidden" style="background: #111;">
+      <img src={card.asset} alt="" class="img-technical w-full h-full object-cover" loading="lazy" />
+    </div>
+  ) : (
+    <div class="aspect-[16/9] flex items-center justify-center" style="background: var(--color-neutral-100);">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">{labels.placeholder}</p>
+    </div>
+  )}
+  {card && (
+    <div class="p-6 lg:p-8">
+      <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight leading-[1.2] mb-6" style="color: var(--color-neutral-800);">{card.title}</h3>
+      <dl class="space-y-4">
+        <div>
+          <dt class="font-mono text-[10px] uppercase tracking-[0.1em] mb-1" style="color: var(--color-forest);">{labels.saw}</dt>
+          <dd class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{card.saw}</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-[10px] uppercase tracking-[0.1em] mb-1" style="color: var(--color-forest);">{labels.did}</dt>
+          <dd class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{card.did}</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-[10px] uppercase tracking-[0.1em] mb-1" style="color: var(--color-forest);">{labels.took}</dt>
+          <dd class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{card.took}</dd>
+        </div>
+      </dl>
+      {card.href && (
+        <a href={card.href} class="inline-block mt-6 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{labels.link}</a>
+      )}
+    </div>
+  )}
+</article>

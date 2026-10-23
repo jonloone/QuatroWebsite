@@ -197,6 +197,23 @@ const capabilitiesCollection = defineCollection({
     layer: z.enum(['territory', 'operation', 'quatro']),
     substrate: z.enum(['klarety', 'dataminer-xops', 'quatro']),
     proof: proofCardSchema.nullable(),
+    // Page copy (CapabilityLayout, §5). A page builds only once `hero` is set by its CAP ticket.
+    hero: z.object({
+      eyebrow: z.string(),
+      title: z.string(),
+      sub: z.string(),
+    }).optional(),
+    whatYouGet: z.array(z.string()).optional(),
+    showsUp: z.array(z.object({
+      industry: z.string(),
+      href: z.string(),
+      text: z.string(),
+    })).optional(),
+    substrateLine: z.string().optional(),
+    handoff: z.object({
+      text: z.string(),
+      links: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
+    }).optional(),
   }),
 })
 

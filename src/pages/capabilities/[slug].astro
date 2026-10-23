@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content'
+import CapabilityLayout from '@/layouts/CapabilityLayout.astro'
+
+// A capability page builds only once its CAP ticket lands the copy (`hero` set); no empty pages (§0.1)
+export async function getStaticPaths() {
+  const capabilities = await getCollection('capabilities')
+  return capabilities
+    .filter((capability: any) => capability.data.hero)
+    .map((capability: any) => ({
+      params: { slug: capability.id.replace(/\.md$/, '') },
+      props: { capability },
+    }))
+}
+
+const { capability } = Astro.props
+---
+
+<CapabilityLayout capability={capability} />

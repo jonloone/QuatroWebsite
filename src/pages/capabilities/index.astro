@@ -1,0 +1,92 @@
+---
+/**
+ * /capabilities — the three layers and the six capability pages under them
+ * (REALIGNMENT_2026-10-20 §2, §3, §5). A capability links only once its page exists.
+ */
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import SpineBand from '@/components/marketing/SpineBand.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+import { layers, layerPromise, engagementLadder } from '@/lib/layers'
+
+const capabilities = (await getCollection('capabilities')).sort((a: any, b: any) => a.data.order - b.data.order)
+
+const layerBeats = layers.map((layer) => ({
+  id: layer.id,
+  index: layer.index,
+  label: layer.label,
+  oneLiner: layer.headline,
+}))
+
+const groups = layers.map((layer) => ({
+  layer,
+  items: capabilities
+    .filter((c: any) => c.data.layer === layer.id)
+    .map((c: any) => ({
+      title: c.data.title,
+      href: c.data.hero ? `/capabilities/${c.id.replace(/\.md$/, '')}` : null,
+      sub: c.data.hero?.sub,
+    })),
+}))
+
+// §2 sub, verbatim
+const description =
+  'One operational picture of your territory and your operations, from satellite to SCADA to the field, run in your country and owned by you from day one.'
+---
+
+<MarketingLayout title="Capabilities | Quatro" description={description}>
+  <HeroCanvas
+    badge="Capabilities"
+    title={layerPromise}
+    body={description}
+    ctaLabel="Talk to our team"
+    ctaHref="/contact/demo"
+  />
+
+  <SpineBand beats={layerBeats} promise={layerPromise} showPromise={false} foundation={null} ariaLabel="Territory, operation, Quatro's layer" />
+
+  <!-- Six capabilities, grouped by layer -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl space-y-16">
+      {groups.map(({ layer, items }) => (
+        <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-8 lg:gap-16">
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">{layer.index} · {layer.label}</p>
+            <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{layer.headline}</p>
+          </div>
+          <ul class="space-y-6">
+            {items.map((item: any) => (
+              <li class="pb-6" style="border-bottom: 1px solid var(--color-structure);">
+                {item.href ? (
+                  <a href={item.href} class="group block">
+                    <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">{item.title} <span class="transition-transform duration-300 inline-block group-hover:translate-x-1" style="color: var(--color-forest);">&rarr;</span></h2>
+                    {item.sub && <p class="mt-2 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{item.sub}</p>}
+                  </a>
+                ) : (
+                  <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">{item.title}</h2>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Engagement ladder (§2) -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs</p>
+      </div>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{engagementLadder}</p>
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
+    secondaryCta={{ label: 'How an engagement runs', href: '/how-it-works/engagement' }}
+    microcopy="Hosted in your country · Your team owns it from day one"
+  />
+</MarketingLayout>
