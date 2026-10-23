@@ -108,7 +108,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
   > note: build green, `astro check` zero new (166), voice gate pass, no legal text (grep for shall/hereby/article and standards names clean). In nav and footer (ES links EN until ES-HIW-1).
 - [x] `HIW-4` (L) — `/how-it-works/architecture` (Tier 3, not in nav): move honest depth out of `technology.astro`, strip DataOS/ECR/Second Wind; retire `technology.astro` with 301 — blockedBy: HIW-1 — spec: §6D, §1c — done: 3f3d7f5
   > note: build green, `astro check` zero new (166), voice gate pass. Name grep zero across built sources in src/pages and src/content, and zero §1c names in any built page; hits remain only in unbuilt `.retired` / `_`-prefixed files. Found and fixed a leak: `src/pages/national-intelligence.retired/` was still routed (12 pages, ECR named); renamed `_national-intelligence.retired`, so those URLs now 404 (no redirect; none linked). Homepage partner strip trimmed ahead of HOME-1 (DataOS, Second Wind, satellite operators out; SMARTS & TEKTELIC → the Quatro IoT & Edge Suite). /utility/technology → /how-it-works 301 per §3.
-- [ ] `ES-HIW-1` (M) — Spanish for HIW-1..3 — blockedBy: HIW-1, HIW-2, HIW-3 — spec: §0.6 — verify: `npm run build` green; voice gate pass
+- [x] `ES-HIW-1` (M) — Spanish for HIW-1..3 — blockedBy: HIW-1, HIW-2, HIW-3 — spec: §0.6 — done: 26a098e
+  > note: build green, `astro check` zero new (166), ES voice gate pass. ES nav/footer How it works links localized; the ES Energy CTA (/es/how-it-works/engagement) now resolves. Architecture has no ES page (Tier 3; ES 6D copy is in the deck if wanted). Needs human eyes: Esteban reads it.
 
 ## P4 — Industries (after Energy)
 
