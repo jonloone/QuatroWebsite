@@ -1,0 +1,60 @@
+---
+/**
+ * /proof — reference work (REALIGNMENT_2026-10-20 §9A). Four abstracted pieces: what the operator
+ * saw, what the team did, what it took. No client named (§0.5); honest placeholder where no capture
+ * is cleared (§0.1, §13.6). Copy: COPY_ENERGY §7 (cards A and B); C and D have no write-up yet.
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import ProofCard from '@/components/marketing/ProofCard.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const sub = 'Abstracted pieces of real work: what the operator saw, what the team did, and what it took, measured in days.'
+
+const pieces = [
+  {
+    card: {
+      title: 'A corridor screened from orbit, confirmed by radar.',
+      saw: 'The whole right of way screened weekly from open satellite data, a handful of cells flagged, before-and-after imagery on each.',
+      did: 'Tasked radar through cloud on the flagged cells, correlated with line pressure, handed a confirmed site to the intelligence layer.',
+      took: 'Days from first screen to confirmed cell.',
+      asset: '/images/proof-energy-corridor.png',
+    },
+  },
+  {
+    card: {
+      title: "A reserve's dry season, assessed from four systems.",
+      saw: 'Sea-surface temperature anomaly, rainfall, surface-water extent and vegetation greenness for one territory, compared to the prior year, answered in plain language with every number cited.',
+      did: 'Fused public ocean, weather and satellite records into one assessment and a watch that flags change.',
+      took: 'No field hardware; the first assessment inside a month.',
+      asset: null,
+    },
+  },
+  { pendingTitle: 'A mine-site landslide, before and after.' },
+  { pendingTitle: 'A grid operational picture.' },
+]
+---
+
+<MarketingLayout title="Reference work | Quatro" description={sub}>
+  <HeroCanvas
+    badge="Proof"
+    title="Reference work"
+    body={sub}
+    ctaLabel="Talk to our team"
+    ctaHref="/contact/demo"
+  />
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {pieces.map((piece: any) => (
+        <ProofCard card={piece.card ?? null} pendingTitle={piece.pendingTitle} />
+      ))}
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
+    secondaryCta={{ label: 'How an engagement runs', href: '/how-it-works/engagement' }}
+    microcopy="Hosted in your country · Your team owns it from day one"
+  />
+</MarketingLayout>

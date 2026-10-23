@@ -96,6 +96,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
         { name: 'The operational picture', href: '/how-it-works' },
         { name: 'How an engagement runs', href: '/how-it-works/engagement' },
         { name: 'Sovereignty, hosting and governance', href: '/how-it-works/sovereignty' },
+        { name: 'Reference work', href: '/proof' },
         { name: 'Insights', href: '/insights' },
       ],
     },
@@ -138,6 +139,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
         { name: 'El cuadro operativo', href: '/how-it-works' },
         { name: 'Cómo se ejecuta un compromiso', href: '/how-it-works/engagement' },
         { name: 'Soberanía, alojamiento y gobernanza', href: '/how-it-works/sovereignty' },
+        { name: 'Trabajo de referencia', href: '/proof', localize: false },
         { name: 'Artículos', href: '/es/resources/insights' },
       ],
     },
@@ -222,12 +224,13 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
     },
     {
       name: 'Proof',
-      href: '/insights',
+      href: '/proof',
       variant: 'stacked',
       items: [
+        { name: 'Reference work', description: 'What the operator saw, what the team did, what it took', href: '/proof', icon: ChartBarIcon },
         { name: 'Insights', description: 'Perspectives on operational intelligence', href: '/insights', icon: LightBulbIcon },
       ],
-      cta: { name: 'All insights', href: '/insights' },
+      cta: { name: 'Reference work', href: '/proof' },
     },
     {
       name: 'Partners',
@@ -292,6 +295,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       href: '/es/resources/insights',
       variant: 'stacked',
       items: [
+        { name: 'Trabajo de referencia', description: 'Lo que vio el operador, lo que hizo el equipo, lo que tomó', href: '/proof', icon: ChartBarIcon, localize: false },
         { name: 'Artículos', description: 'Perspectivas sobre inteligencia operativa', href: '/es/resources/insights', icon: LightBulbIcon },
       ],
       cta: { name: 'Todos los artículos', href: '/es/resources/insights' },

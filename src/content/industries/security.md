@@ -66,6 +66,7 @@ proofCards:
   did: "Tasked radar through cloud on the flagged cells, correlated with line pressure, handed a confirmed site to the intelligence layer."
   took: Days from first screen to confirmed cell.
   asset: /images/proof-energy-corridor.png
+  href: /proof
 cta:
   primary:
     label: Talk to our team

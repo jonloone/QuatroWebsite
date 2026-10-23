@@ -71,11 +71,13 @@ proofCards:
   did: "Tasked radar through cloud on the flagged cells, correlated with line pressure, handed a confirmed site to the intelligence layer."
   took: Days from first screen to confirmed cell.
   asset: /images/proof-energy-corridor.png
+  href: /proof
 - title: A reserve's dry season, assessed from four systems.
   saw: "Sea-surface temperature anomaly, rainfall, surface-water extent and vegetation greenness for one territory, compared to the prior year, answered in plain language with every number cited."
   did: "Fused public ocean, weather and satellite records into one assessment and a watch that flags change."
   took: "No field hardware; the first assessment inside a month."
   asset: null
+  href: /proof
 platformMapping:
   see: "The three SCADA systems, historians, GIS, leak-detection outputs, metering, dispatch and reserve data, the forecasts, field sensing and video, and the territory itself from satellite. Existing systems are integration targets. 8,000+ integrations in the operational model (DataMiner xOps)."
   correlate: "More than eight variables (pressure, flow, temperature, operational status, acoustic, vibration, observation from orbit, field reports) correlated on one model, with plain-language questions answered in Spanish and every figure traced to its source. Observation from orbit is Quatro Klarety, our geospatial analysis capability, delivered with our earth-observation partner."

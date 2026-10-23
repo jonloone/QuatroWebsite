@@ -66,6 +66,7 @@ proofCards:
   did: "Fused public ocean, weather and satellite records into one assessment and a watch that flags change."
   took: "No field hardware; the first assessment inside a month."
   asset: null
+  href: /proof
 cta:
   primary:
     label: Talk to our team
