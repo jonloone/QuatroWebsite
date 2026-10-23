@@ -15,6 +15,8 @@ export default defineConfig({
     '/utility/how-it-starts': '/how-it-works/engagement',
     '/utility/technology': '/how-it-works',
     '/utility/xops': '/capabilities/operational-intelligence',
+    '/industries/defense': '/industries/security',
+    '/industries/critical-infrastructure': '/industries/security',
   },
   i18n: {
     defaultLocale: 'en',

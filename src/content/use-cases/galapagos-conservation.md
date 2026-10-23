@@ -72,7 +72,7 @@ adjacentSolutions:
     href: "/use-cases/youth-violence-prevention"
   - title: "Maritime Domain Awareness"
     description: "Extend vessel detection and AIS fusion capabilities to port security and naval operational theater monitoring."
-    href: "/industries/defense/maritime-awareness"
+    href: "/industries/security"
 crossVertical:
   - industry: "Defense"
     result: "Maritime domain awareness and unauthorized vessel tracking extend to coastal security and naval operations."

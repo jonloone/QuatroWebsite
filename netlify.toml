@@ -40,6 +40,19 @@
   status = 301
   force = true
 
+# Defense and critical infrastructure merged into Security (IND-4)
+[[redirects]]
+  from = "/industries/defense"
+  to = "/industries/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/critical-infrastructure"
+  to = "/industries/security"
+  status = 301
+  force = true
+
 # /utility/xops moved to the capability page (CAP-2)
 [[redirects]]
   from = "/utility/xops"
