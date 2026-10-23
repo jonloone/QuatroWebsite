@@ -94,6 +94,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       items: [
         { name: 'The operational picture', href: '/how-it-works' },
         { name: 'How an engagement runs', href: '/how-it-works/engagement' },
+        { name: 'Sovereignty, hosting and governance', href: '/how-it-works/sovereignty' },
         { name: 'Insights', href: '/insights' },
       ],
     },
@@ -134,6 +135,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       items: [
         { name: 'El cuadro operativo', href: '/how-it-works', localize: false },
         { name: 'Cómo se ejecuta un compromiso', href: '/how-it-works/engagement', localize: false },
+        { name: 'Soberanía, alojamiento y gobernanza', href: '/how-it-works/sovereignty', localize: false },
         { name: 'Artículos', href: '/es/resources/insights' },
       ],
     },
@@ -211,6 +213,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       items: [
         { name: 'The operational picture', description: 'From satellite to SCADA to the field', href: '/how-it-works', icon: LinkIcon },
         { name: 'How an engagement runs', description: 'From a proof of value to an annual service', href: '/how-it-works/engagement', icon: WrenchScrewdriverIcon },
+        { name: 'Sovereignty, hosting and governance', description: 'What stays in your country and what the AI may do', href: '/how-it-works/sovereignty', icon: LockClosedIcon },
       ],
       cta: { name: 'How it works', href: '/how-it-works' },
     },
@@ -277,6 +280,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       items: [
         { name: 'El cuadro operativo', description: 'Del satélite al SCADA y al campo', href: '/how-it-works', icon: LinkIcon, localize: false },
         { name: 'Cómo se ejecuta un compromiso', description: 'De una prueba de valor a un servicio anual', href: '/how-it-works/engagement', icon: WrenchScrewdriverIcon, localize: false },
+        { name: 'Soberanía, alojamiento y gobernanza', description: 'Qué se queda en su país y qué puede hacer la IA', href: '/how-it-works/sovereignty', icon: LockClosedIcon, localize: false },
       ],
       cta: { name: 'Cómo funciona', href: '/how-it-works', localize: false },
     },
