@@ -3,15 +3,49 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
 import QuatroLogo from '@/components/QuatroLogo.astro'
+import SpineBand from '@/components/marketing/SpineBand.astro'
+import ProofCard from '@/components/marketing/ProofCard.astro'
 import { getCollection } from 'astro:content'
-const insights = (await getCollection('insights'))
-  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
-  .slice(0, 5)
+import { layers, layerPromise } from '@/lib/layers'
+
+// Copy: docs/COPY_HOMEPAGE_2026-10.md (REALIGNMENT_2026-10-20 §10)
+const sub = 'One operational picture of your territory and your operations, from satellite to SCADA to the field, run in your country and owned by you from day one.'
+const layerCaptions: Record<string, string> = {
+  territory: 'Corridors, reserves, mine sites and cities, watched from orbit.',
+  operation: 'SCADA, historians, GIS, video and sensors in one live model.',
+  quatro: 'Hosted and operated in your country, owned by you from day one.',
+}
+const layerBeats = layers.map((layer) => ({ id: layer.id, index: layer.index, label: layer.label, oneLiner: layer.headline, caption: layerCaptions[layer.id] }))
+
+// Industry rows: the active and emerging industries, in spec order
+const industryRows = (await getCollection('industries'))
+  .filter((i: any) => i.data.status === 'active' || i.data.status === 'emerging')
+  .sort((a: any, b: any) => a.data.order - b.data.order)
+  .map((i: any) => ({ title: i.data.title, line: i.data.hero?.title, href: `/industries/${i.id.replace(/\.md$/, '')}` }))
+
+const proofCards = [
+  {
+    title: 'A corridor screened from orbit, confirmed by radar.',
+    saw: 'The whole right of way screened weekly from open satellite data, a handful of cells flagged, before-and-after imagery on each.',
+    did: 'Tasked radar through cloud on the flagged cells, correlated with line pressure, handed a confirmed site to the intelligence layer.',
+    took: 'Days from first screen to confirmed cell.',
+    asset: '/images/proof-energy-corridor.png',
+    href: '/proof',
+  },
+  {
+    title: "A reserve's dry season, assessed from four systems.",
+    saw: 'Sea-surface temperature anomaly, rainfall, surface-water extent and vegetation greenness for one territory, compared to the prior year, answered in plain language with every number cited.',
+    did: 'Fused public ocean, weather and satellite records into one assessment and a watch that flags change.',
+    took: 'No field hardware; the first assessment inside a month.',
+    asset: null,
+    href: '/proof',
+  },
+]
 ---
 
 <BaseLayout
-  title="Quatro — Operational Intelligence for Critical Infrastructure"
-  description="We integrate the hardware, software, and domain expertise that energy, defense, network, and infrastructure operators need — delivered as a utility, built so you own the intelligence from day one."
+  title="Quatro | Making critical infrastructure intelligent"
+  description={sub}
   lang="en"
 >
 
@@ -45,8 +79,9 @@ const insights = (await getCollection('insights'))
         </h1>
         <!-- Subtitle — connects physical + data systems, outcome-first -->
         <p class="mt-8 font-display text-lg lg:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto">
-          We connect your physical systems and your data systems into one operational model — so your team sees, decides, and acts from a single source of intelligence.
+          {sub}
         </p>
+        <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">{layerPromise}</p>
         <!-- CTA -->
         <div class="mt-12">
           <a href="/contact/demo" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
@@ -63,28 +98,28 @@ const insights = (await getCollection('insights'))
         <!-- Left: Rotating engagement caption -->
         <div class="relative flex-1 max-w-xl" style="min-height: 72px;">
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out" data-slide="0">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">18 agencies seeing one risk picture for the first time</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Community Intelligence · National Scale</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">A corridor screened from orbit, confirmed by radar</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Energy and pipelines</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="1">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Coastal surveillance that connects satellite, sensor, and ground truth</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Maritime &amp; Environmental Operations</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">A reserve where the vessels that go dark stay on the map</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Environment and protected areas</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="2">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Detection to governed response in under thirty seconds</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Sovereign · Air-Gapped · Auditable</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">A mine site and the river below it, on one record</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Mining and remediation</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="3">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Legacy grid and modern DER unified in one operational model</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Energy Infrastructure Intelligence</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">After the earthquake, the neighborhoods to reach first</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Cities and public services</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="4">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">A thousand kilometers of pipeline, finally connected</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Edge-to-Cloud · Real-Time Visibility</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">One dry-season brief across the basins</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Energy and pipelines</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="5">
-            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Connecting the 15-30 systems your bank already runs</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Financial Services Intelligence</p>
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">A refinery assessment left behind as a live model</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Energy and pipelines</p>
           </div>
         </div>
 
@@ -118,12 +153,12 @@ const insights = (await getCollection('insights'))
 
       // ─── Image sources for the carousel ───
       const imageSources = [
-        '/images/mission-youth-risk-v3b.png',
-        '/images/mission-galapagos-v2.png',
-        '/images/hero-us-defense-intel.png',
-        '/images/hero-mena-energy-ops.png',
-        '/images/proof-energy.png',
-        '/images/proof-finance.png'
+        '/images/proof-energy-corridor.png',
+        '/images/industry-water-environment.png',
+        '/images/industry-mining.png',
+        '/images/industry-cities.png',
+        '/images/industry-energy-andes-hydro.png',
+        '/images/cap-energy-refinery-model.png'
       ];
 
       // ─── Bayer 4×4 dither engine (from HeroCanvas.astro) ───
@@ -378,243 +413,28 @@ const insights = (await getCollection('insights'))
     })();
   </script>
 
+  <!-- 1b. THREE-LAYER BAND (§2, §10) -->
+  <SpineBand beats={layerBeats} promise={layerPromise} showPromise={false} foundation={null} ariaLabel="Territory, operation, Quatro's layer" />
+
   <!-- ═══════════════════════════════════════════════════════════════
-       2. INDUSTRIES — Palantir-style vertical list (giant typography, hover-to-green)
+       2. INDUSTRIES — the active industries, from the collection
        ═══════════════════════════════════════════════════════════════ -->
   <section id="industries" style="border-top: 1px solid var(--color-structure);">
     <div class="py-20 lg:py-28 px-6 lg:px-12">
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl xl:text-7xl leading-[1.15] tracking-tight fade-up max-w-5xl" style="color: var(--color-neutral-800);">
-        Operational intelligence for the industries that keep communities<br /><span style="color: var(--color-forest);">connected, powered, and safe</span>.
-      </h2>
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Industries</p>
     </div>
-
-    <!-- Industry rows — full-bleed hover, padded content -->
-    <!-- Energy -->
-    <a href="/industries/energy" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
-      <div class="max-w-lg">
-        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
-        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Pipeline, grid, and production unified into one operational model. Predictive maintenance on legacy SCADA — visibility flowing before the first sprint ends.</p>
-      </div>
-      <div class="text-right">
-        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Energy</span>
-      </div>
-    </a>
-
-    <!-- National Security -->
-    <a href="/industries/security" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
-      <div class="max-w-lg">
-        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Sovereign intelligence connecting community protection and territorial security — air-gapped, auditable, your team owns it from day one.</p>
-      </div>
-      <div class="text-right">
-        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">National Security</span>
-      </div>
-    </a>
-
-    <!-- Networks -->
-    <a href="/industries/networks" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
-      <div class="max-w-lg">
-        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" /></svg>
-        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Ground to orbit, subscriber to service — unified in one operational view.</p>
-      </div>
-      <div class="text-right">
-        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Networks</span>
-      </div>
-    </a>
-
-    <!-- Cities -->
-    <a href="/industries/cities" class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-      <div class="max-w-lg">
-        <svg class="w-7 h-7 mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-400);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5z" /></svg>
-        <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">Water, waste, transport — connected into one operational model for the cities communities depend on.</p>
-      </div>
-      <div class="text-right">
-        <span class="font-display text-5xl lg:text-8xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Cities</span>
-      </div>
-    </a>
-
+    {industryRows.map((row: any) => (
+      <a href={row.href} class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
+        <div class="max-w-lg">
+          <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">{row.line}</p>
+        </div>
+        <div class="text-right">
+          <span class="font-display text-4xl lg:text-7xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">{row.title}</span>
+        </div>
+      </a>
+    ))}
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       3. MONOTONE CALLOUT — Forest green tonal break (KT "Our Founder" style)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="min-h-[70vh] lg:min-h-[80vh]">
-    <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh] lg:min-h-[80vh]">
-
-      <!-- Left: Tinted panel — structural problem + failure avoidance -->
-      <div class="relative flex flex-col justify-between p-10 lg:p-16 xl:p-20" style="background: #dce8e2;">
-        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">The Structural Problem</p>
-        <div class="my-12 lg:my-0">
-          <p class="font-sans font-light text-2xl lg:text-3xl xl:text-4xl leading-[1.25] tracking-tight" style="color: #0a0a0a;">
-            The data was always there. The integration wasn't.
-          </p>
-          <p class="font-sans text-base lg:text-lg leading-relaxed mt-6" style="color: rgba(10,10,10,0.6);">
-            Without it, operators toggle between fifteen screens and still miss the signal. Consultants run discovery for years and hand you a roadmap — not intelligence. SaaS platforms create dependency you never outgrow. Meanwhile, the next cascade failure is hiding in the gap between systems.
-          </p>
-          <p class="font-sans text-base lg:text-lg leading-relaxed mt-4" style="color: rgba(10,10,10,0.8);">
-            We connect the full stack — hardware, software, and the operational workflows your people depend on — so your team runs the intelligence, not us.
-          </p>
-        </div>
-        <div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: rgba(15,76,58,0.5);">
-            Hardware + Software + People&ensp;&middot;&ensp;Full-stack integration&ensp;&middot;&ensp;Your team owns the model
-          </p>
-        </div>
-      </div>
-
-      <!-- Right: Monotone image (desaturated, green-tinted) -->
-      <div class="relative min-h-[50vh] lg:min-h-full overflow-hidden">
-        <img alt="Operations center — engineers monitoring unified intelligence display" src="/images/proof-infrastructure-v2.png"
-          class="absolute inset-0 w-full h-full object-cover" loading="lazy"
-          style="filter: grayscale(100%) sepia(20%) hue-rotate(90deg) saturate(30%) brightness(0.85);" />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       4. HOW WE'RE DIFFERENT — Three differentiator panels
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative py-24 lg:py-32 px-6 lg:px-12 overflow-hidden" style="border-top: 1px solid rgba(255,255,255,0.06);">
-
-    <!-- bg555 background image -->
-    <div class="absolute inset-0 z-0">
-      <img src="/images/bg555.png" alt="" class="w-full h-full object-cover" loading="lazy" />
-      <div class="absolute inset-0" style="background: rgba(10,10,10,0.82);"></div>
-    </div>
-
-    <!-- Subtle grain overlay -->
-    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
-      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27nd1%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23nd1)%27/%3E%3C/svg%3E');"></div>
-
-    <div class="relative z-10 mx-auto max-w-6xl">
-
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">What Makes This Different</p>
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white mb-16 lg:mb-20 fade-up">
-        Not a consultant. Not a platform.<br />An integrator that hands you the keys.
-      </h2>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
-
-        <!-- Panel 1: Full-Stack -->
-        <div class="fade-up rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white/[0.06]" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-4">01</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl text-white tracking-tight mb-4">Hardware, software, and people — integrated.</h3>
-          <p class="font-sans text-base leading-relaxed text-white/60">
-            We deploy edge hardware where your infrastructure has blind spots, connect every system your operation already runs, and deliver the operational model your team works from — one engagement, one partner.
-          </p>
-        </div>
-
-        <!-- Panel 2: Ownership -->
-        <div class="fade-up rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white/[0.06]" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-4">02</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl text-white tracking-tight mb-4">You own the intelligence from day one.</h3>
-          <p class="font-sans text-base leading-relaxed text-white/60">
-            The operational model, the data, and the deployment belong to you — not us. Our engagement has a beginning and a handoff. Your team extends the model themselves. No perpetual dependency. No lock-in.
-          </p>
-        </div>
-
-        <!-- Panel 3: Speed -->
-        <div class="fade-up rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white/[0.06]" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-4">03</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl text-white tracking-tight mb-4">Intelligence in weeks, not years.</h3>
-          <p class="font-sans text-base leading-relaxed text-white/60">
-            First use case in production within the first sprint. Each one makes the next smarter — the compounding starts immediately, not after a year of discovery.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <style is:inline>
-    /* Industry row hover — subtle green-tinted background */
-    .industry-row:hover {
-      background: rgba(15, 76, 58, 0.04);
-    }
-  </style>
-
-  <!-- 4b. PROOF STRIP — Hidden for now -->
-  <!--
-  <section class="py-16 lg:py-20 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-        <div class="fade-up">
-          <p class="font-sans font-light text-3xl lg:text-4xl tracking-tight" style="color: var(--color-neutral-800);">25,000+</p>
-          <p class="font-sans text-sm leading-relaxed mt-2" style="color: var(--color-neutral-500);">At-risk youth identified through cross-agency visibility no single entity had before.</p>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mt-3" style="color: var(--color-neutral-400);">18 agencies &middot; One risk model</p>
-        </div>
-        <div class="fade-up">
-          <p class="font-sans font-light text-3xl lg:text-4xl tracking-tight" style="color: var(--color-neutral-800);">20,000</p>
-          <p class="font-sans text-sm leading-relaxed mt-2" style="color: var(--color-neutral-500);">Fewer site visits per year after a national broadband operator moved from reactive to predictive.</p>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mt-3" style="color: var(--color-neutral-400);">Predictive maintenance</p>
-        </div>
-        <div class="fade-up">
-          <p class="font-sans font-light text-3xl lg:text-4xl tracking-tight" style="color: var(--color-neutral-800);">&lt;30s</p>
-          <p class="font-sans text-sm leading-relaxed mt-2" style="color: var(--color-neutral-500);">Detection to governed response for multi-source ISR fusion. Sovereign. Air-gapped. Every action auditable.</p>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mt-3" style="color: var(--color-neutral-400);">Defense operations</p>
-        </div>
-        <div class="fade-up">
-          <p class="font-sans font-light text-3xl lg:text-4xl tracking-tight" style="color: var(--color-neutral-800);">1,069 km</p>
-          <p class="font-sans text-sm leading-relaxed mt-2" style="color: var(--color-neutral-500);">Of pipeline unified into one operational model — edge sensors, satellite monitoring, and legacy SCADA connected in real time.</p>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mt-3" style="color: var(--color-neutral-400);">Energy infrastructure</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  -->
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       5. HOW WE WORK — Connect → Model → Act
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-28 lg:py-36 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6 fade-up" style="color: var(--color-forest);">How We Work</p>
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-20 lg:mb-28 fade-up" style="color: var(--color-neutral-800);">
-        Connect. Model. Act.
-      </h2>
-
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-
-        <!-- Phase 1: Connect -->
-        <div class="fade-up">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Connect</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: var(--color-neutral-800);">We reach into everything you already run.</h3>
-          <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
-            8,000+ integrations across 1,000+ vendors — industrial control systems, satellite feeds, IoT, legacy databases. If your infrastructure has blind spots, we deploy edge hardware that creates the data foundation.
-          </p>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
-            8,000+ integrations&ensp;&middot;&ensp;1,000+ vendors&ensp;&middot;&ensp;Edge hardware included
-          </p>
-        </div>
-
-        <!-- Phase 2: Model -->
-        <div class="fade-up">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Model</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: var(--color-neutral-800);">We create the governed operational model from your data.</h3>
-          <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
-            Context, lineage, quality guarantees, and a semantic layer that makes your data AI-ready. Domain-trained reasoning grounded in how your operations actually work — not generic models, not black boxes. Your data becomes a governed asset your team can trust and build on.
-          </p>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
-            Your data becomes AI-ready&ensp;&middot;&ensp;Reasoning trained on your operations&ensp;&middot;&ensp;One trusted model
-          </p>
-        </div>
-
-        <!-- Phase 3: Act -->
-        <div class="fade-up">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Act</p>
-          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight mb-4" style="color: var(--color-neutral-800);">Your team works from the model — and extends it.</h3>
-          <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
-            Workflows, agents, automations, and APIs that feed operational insight back into the tools you already use. Every execution is bounded, auditable, and governed. Each new connection makes the entire model smarter.
-          </p>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
-            Cloud&ensp;&middot;&ensp;Hybrid&ensp;&middot;&ensp;Air-gapped&ensp;&middot;&ensp;On-premise
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
        5a. TECHNOLOGY PARTNERS — Logo strip with editorial label
@@ -627,34 +447,40 @@ const insights = (await getCollection('insights'))
 
     <div class="relative z-10 mx-auto max-w-6xl">
 
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">The Integration Ecosystem</p>
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white mb-6 fade-up">
-        Proven technology at every layer.
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">The ecosystem</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white mb-16 lg:mb-20 fade-up">
+        Proven technology at every layer, integrated and operated by Quatro.
       </h2>
-      <p class="font-sans text-base lg:text-lg leading-relaxed text-white/40 max-w-3xl mb-16 lg:mb-20 fade-up">
-        We integrate best-of-breed technology at every layer of the stack — from edge hardware to governed execution. One engagement. One partner. Proven technology underneath.
-      </p>
-
-      <!-- Simplified named partner list -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 fade-up max-w-4xl">
-
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 fade-up max-w-4xl">
         <div class="flex flex-col">
-          <p class="font-sans font-medium text-base text-white mb-1">Skyline DataMiner</p>
-          <p class="font-sans text-sm text-white/60">8,000+ integrations across operational technology, IT, and cloud</p>
+          <p class="font-sans font-medium text-base text-white mb-1">Quatro Klarety</p>
+          <p class="font-sans text-sm text-white/60">Territorial monitoring from space, delivered with our earth-observation partner Klarety.</p>
         </div>
-
         <div class="flex flex-col">
-          <p class="font-sans font-medium text-base text-white mb-1">The Quatro IoT & Edge Suite</p>
-          <p class="font-sans text-sm text-white/60">Sensors, gateways and OT communications in the field</p>
+          <p class="font-sans font-medium text-base text-white mb-1">DataMiner xOps</p>
+          <p class="font-sans text-sm text-white/60">The operational model: 8,000+ integrations, in production with operators worldwide.</p>
         </div>
-
         <div class="flex flex-col">
-          <p class="font-sans font-medium text-base text-white mb-1">AWS · Azure · GCP</p>
-          <p class="font-sans text-sm text-white/60">Cloud infrastructure — deploy on your terms</p>
+          <p class="font-sans font-medium text-base text-white mb-1">The Quatro IoT &amp; Edge Suite</p>
+          <p class="font-sans text-sm text-white/60">Sensors, gateways and OT communications in the field.</p>
         </div>
-
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">Elementos</p>
+          <p class="font-sans text-sm text-white/60">Our affiliate for intelligence-led work.</p>
+        </div>
       </div>
+    </div>
+  </section>
 
+
+  <!-- 7b. PROOF STORIES (§9A) -->
+  <section class="py-24 lg:py-32 px-6 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12 fade-up" style="color: var(--color-forest);">Reference work</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {proofCards.map((card) => <ProofCard card={card} />)}
+      </div>
+      <a href="/proof" class="inline-block mt-10 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Reference work &rarr;</a>
     </div>
   </section>
 
@@ -679,39 +505,25 @@ const insights = (await getCollection('insights'))
       <div class="mx-auto max-w-6xl">
 
         <div class="max-w-2xl">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">Where We Operate</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">Where we operate</p>
           <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl leading-[1.1] tracking-tight text-white mb-6 fade-up">
-            Delivering across the markets where critical infrastructure is being modernized.
+            Headquartered in Quito, Ecuador, with a US entity.
           </h2>
           <p class="font-sans text-base lg:text-lg leading-relaxed text-white/60 mb-10 fade-up">
-            Regional integration partners extend our reach across the Americas, MENA, Africa, and emerging markets — connecting operators to intelligence wherever they need it.
+            Active in Ecuador, Colombia, Venezuela, Panama and Guyana, and in MENA through a channel partner.
           </p>
           <a href="/partners" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] mb-16 fade-up" style="border: 1px solid rgba(255,255,255,0.25); color: white;">
-            Become a Partner
+            Become a partner
             <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
 
-        <!-- Region markers — horizontal strip -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 fade-up">
-          <div>
-            <p class="font-sans font-light text-lg text-white tracking-tight">North America</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mt-1">Federal · Defense · Energy · Commercial</p>
-          </div>
-          <div>
-            <p class="font-sans font-light text-lg text-white tracking-tight">Latin America</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mt-1">Regional Partners · Municipal · IDB-Aligned</p>
-          </div>
-          <div>
-            <p class="font-sans font-light text-lg text-white tracking-tight">MENA &amp; Africa</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mt-1">Energy · Communications · Infrastructure</p>
-          </div>
-          <div>
-            <p class="font-sans font-light text-lg text-white tracking-tight">Global</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mt-1">Satellite · Allied Defense · Emerging Markets</p>
-          </div>
+        <!-- Region markers (§1e) -->
+        <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 fade-up">
+          {['Ecuador', 'Colombia', 'Venezuela', 'Panama', 'Guyana', 'MENA (channel partner)'].map((m) => (
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/70">{m}</p>
+          ))}
         </div>
-
       </div>
     </div>
   </section>
@@ -938,187 +750,6 @@ const insights = (await getCollection('insights'))
   </script>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       9. HOW WE APPROACH IT — KT editorial scroll (use case + engagement story)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-28 lg:py-36 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);" id="engagements-scroll">
-    <div class="mx-auto max-w-7xl">
-
-      <div class="mb-20 lg:mb-28 fade-up">
-        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">What This Looks Like</p>
-        <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight" style="color: var(--color-neutral-800);">
-          The future of operations isn't a dashboard.<br class="hidden sm:block" />
-          <span style="color: var(--color-neutral-400);">It's a system that thinks.</span>
-        </h2>
-      </div>
-
-      <!-- KT-style: sticky editorial label left, scrolling POV blocks right -->
-      <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-16">
-
-        <!-- Left: sticky editorial label (changes on scroll) -->
-        <div class="hidden lg:block">
-          <div class="lg:sticky lg:top-32">
-            <p class="engagement-label font-sans font-light text-2xl lg:text-3xl xl:text-4xl leading-[1.2] tracking-tight transition-all duration-500" style="color: var(--color-neutral-800);" data-default="When 18 agencies can finally see one picture">
-              When 18 agencies can finally see one picture
-            </p>
-            <div class="mt-6 w-12 h-px" style="background: var(--color-forest);"></div>
-            <p class="engagement-sublabel font-mono text-[10px] uppercase tracking-[0.1em] mt-4 transition-all duration-500" style="color: var(--color-neutral-400);">
-              Community Intelligence
-            </p>
-          </div>
-        </div>
-
-        <!-- Right: scrolling editorial POV blocks -->
-        <div class="space-y-24 lg:space-y-32">
-
-          <!-- POV 1: Community Risk -->
-          <div class="engagement-block fade-up" data-label="When 18 agencies can finally see one picture" data-sublabel="Community Intelligence">
-            <p class="lg:hidden font-sans font-light text-2xl tracking-tight mb-6" style="color: var(--color-neutral-800);">When 18 agencies can finally see one picture</p>
-            <div class="relative h-[360px] lg:h-[480px] overflow-hidden mb-8">
-              <img alt="Community operators reviewing cross-agency risk model" src="/images/mission-youth-risk-v3b.png"
-                class="absolute inset-0 w-full h-full object-cover img-technical" loading="lazy" />
-            </div>
-            <div class="max-w-xl">
-              <p class="font-sans font-light text-xl lg:text-2xl leading-snug mb-5" style="color: var(--color-neutral-800);">
-                The problem was never the data. Every agency had it. The problem was that no one could see across the walls.
-              </p>
-              <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
-                Eighteen government agencies generating information in silos — education, health, justice, social services — each with a fragment of the risk picture and no way to composite it. One governed model changed that. 25,000+ at-risk youth identified through cross-agency visibility that didn't exist before.
-              </p>
-              <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
-                18 agencies&ensp;&middot;&ensp;One risk model&ensp;&middot;&ensp;National scale
-              </p>
-            </div>
-          </div>
-
-          <!-- POV 2: Predictive Maintenance -->
-          <div class="engagement-block fade-up" data-label="Predicting the failure before the customer calls" data-sublabel="Predictive Maintenance">
-            <p class="lg:hidden font-sans font-light text-2xl tracking-tight mb-6" style="color: var(--color-neutral-800);">Predicting the failure before the customer calls</p>
-            <div class="grid grid-cols-1 lg:grid-cols-[1fr_45%] gap-8 items-start">
-              <div>
-                <p class="font-sans font-light text-xl lg:text-2xl leading-snug mb-5" style="color: var(--color-neutral-800);">
-                  Reactive field dispatch is the most expensive problem no one talks about.
-                </p>
-                <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
-                  A national broadband operator dispatching trucks after the customer called. By the time the crew arrived, the trust was already gone. We connected their network telemetry into a single operational model. Now the system predicts the failure before anyone notices — and routes the crew before the phone rings. 20,000 fewer site visits per year.
-                </p>
-                <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
-                  20,000 fewer dispatches&ensp;&middot;&ensp;Predictive, not reactive
-                </p>
-              </div>
-              <div class="relative h-[300px] lg:h-[360px] overflow-hidden">
-                <img alt="Residential neighborhood — uninterrupted service" src="/images/proof-broadband-v2.png"
-                  class="absolute inset-0 w-full h-full object-cover img-technical" loading="lazy" />
-              </div>
-            </div>
-          </div>
-
-          <!-- POV 3: Sovereign ISR -->
-          <div class="engagement-block fade-up" data-label="Thirty seconds from detection to governed response" data-sublabel="Sovereign Defense">
-            <p class="lg:hidden font-sans font-light text-2xl tracking-tight mb-6" style="color: var(--color-neutral-800);">Thirty seconds from detection to governed response</p>
-            <div class="relative h-[360px] lg:h-[480px] overflow-hidden mb-8">
-              <img alt="Secure operations center — unified displays, calm professionalism" src="/images/proof-defense-isr.png"
-                class="absolute inset-0 w-full h-full object-cover img-technical" loading="lazy" />
-            </div>
-            <div class="max-w-xl">
-              <p class="font-sans font-light text-xl lg:text-2xl leading-snug mb-5" style="color: var(--color-neutral-800);">
-                The sensor data existed. The fusion didn't. And in defense, ungoverned action is worse than no action.
-              </p>
-              <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
-                Multiple ISR feeds from different domains — satellite, signals, ground truth — each living in its own system. We fused them into one governed operational view. Sovereign, air-gapped, every action auditable. Detection to governed response in under thirty seconds.
-              </p>
-              <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
-                &lt;30s detection to response&ensp;&middot;&ensp;Sovereign deployment&ensp;&middot;&ensp;Full audit chain
-              </p>
-            </div>
-          </div>
-
-          <!-- POV 4: Pipeline Operations -->
-          <div class="engagement-block fade-up" data-label="A thousand kilometers of pipeline, finally connected" data-sublabel="Energy &amp; Asset Integrity">
-            <p class="lg:hidden font-sans font-light text-2xl tracking-tight mb-6" style="color: var(--color-neutral-800);">A thousand kilometers of pipeline, finally connected</p>
-            <div class="grid grid-cols-1 lg:grid-cols-[45%_1fr] gap-8 items-start">
-              <div class="relative h-[300px] lg:h-[360px] overflow-hidden">
-                <img alt="Pipeline infrastructure in mountainous terrain" src="/images/mission-pipeline-v2.png"
-                  class="absolute inset-0 w-full h-full object-cover img-technical" loading="lazy" />
-              </div>
-              <div>
-                <p class="font-sans font-light text-xl lg:text-2xl leading-snug mb-5" style="color: var(--color-neutral-800);">
-                  Edge sensors, satellite monitoring, and legacy SCADA — none of it talking to each other.
-                </p>
-                <p class="font-sans text-base leading-relaxed mb-6" style="color: var(--color-neutral-500);">
-                  Over a thousand kilometers of pipeline with instrumentation from three different decades. We deployed IoT hardware where the infrastructure had blind spots and unified the full picture into one operational model. The team monitors it in real time. Corrosion, pressure anomalies, environmental risk — one view.
-                </p>
-                <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">
-                  1,069 km of pipeline&ensp;&middot;&ensp;Edge-to-cloud&ensp;&middot;&ensp;Real-time visibility
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Insights link -->
-      <div class="mt-20 lg:mt-28 pt-8 fade-up" style="border-top: 1px solid var(--color-structure);">
-        <a href="/insights" class="inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.1em] transition-colors duration-300 hover:opacity-70" style="color: var(--color-forest);">
-          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
-          Read more of our thinking
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Engagement scroll — updates sticky label on scroll -->
-  <script>
-    (function () {
-      var section = document.getElementById('engagements-scroll');
-      if (!section) return;
-      var blocks = section.querySelectorAll('.engagement-block');
-      var label = section.querySelector('.engagement-label');
-      var sublabel = section.querySelector('.engagement-sublabel');
-      if (!label || !sublabel || blocks.length === 0) return;
-
-      var currentLabel = label.getAttribute('data-default') || '';
-
-      function update() {
-        var closest = null;
-        var closestDist = Infinity;
-        var viewMid = window.innerHeight * 0.4;
-
-        blocks.forEach(function (block) {
-          var rect = block.getBoundingClientRect();
-          var blockMid = rect.top + rect.height * 0.3;
-          var dist = Math.abs(blockMid - viewMid);
-          if (rect.top < window.innerHeight * 0.7 && rect.bottom > 0 && dist < closestDist) {
-            closestDist = dist;
-            closest = block;
-          }
-        });
-
-        if (closest) {
-          var newLabel = closest.getAttribute('data-label') || '';
-          if (newLabel !== currentLabel) {
-            currentLabel = newLabel;
-            label.style.opacity = '0';
-            label.style.transform = 'translateY(8px)';
-            sublabel.style.opacity = '0';
-            setTimeout(function () {
-              label.textContent = newLabel;
-              sublabel.textContent = closest.getAttribute('data-sublabel') || '';
-              label.style.opacity = '1';
-              label.style.transform = 'translateY(0)';
-              sublabel.style.opacity = '1';
-            }, 250);
-          }
-        }
-      }
-
-      window.addEventListener('scroll', update, { passive: true });
-      update();
-    })();
-  </script>
-
-  <!-- ═══════════════════════════════════════════════════════════════
        10. CTA — Dithering Canvas (kept from previous design)
        ═══════════════════════════════════════════════════════════════ -->
   <section class="py-16 lg:py-24 px-4 md:px-6">
@@ -1143,17 +774,16 @@ const insights = (await getCollection('insights'))
 
         <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 lg:py-24 max-w-3xl mx-auto fade-up">
           <h2 class="font-sans text-3xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight">
-            If your infrastructure serves the communities we care about —<br/>
-            <span class="text-white/40">let's talk.</span>
+            See the territory. Run the operation. Own the intelligence.
           </h2>
           <!-- Two explicit paths -->
           <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="/contact/demo" class="group inline-flex items-center gap-3 font-mono text-sm uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
-              Talk to Our Team
+              Talk to our team
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
             <a href="/partners" class="group inline-flex items-center gap-3 font-mono text-sm uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03]" style="border: 1px solid rgba(255,255,255,0.25); color: white;">
-              Become a Partner
+              Become a partner
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
           </div>
@@ -1161,7 +791,7 @@ const insights = (await getCollection('insights'))
 
         <div class="relative z-10 w-full px-8 pb-8">
           <div class="pt-6 flex items-center justify-center" style="border-top: 1px solid rgba(255,255,255,0.08);">
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 text-center">US-headquartered&nbsp; ·&nbsp; Cloud, hybrid, or sovereign deployment&nbsp; ·&nbsp; Your data never leaves your control</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 text-center">Hosted in your country&nbsp; ·&nbsp; Your team owns it from day one</p>
           </div>
         </div>
       </div>
@@ -1326,65 +956,60 @@ const insights = (await getCollection('insights'))
       <div class="fade-up">
         <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
           <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
-            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">How is Quatro different from a systems integrator like Accenture or Deloitte?</h3>
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">How is Quatro different from a systems integrator?</h3>
             <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
           </summary>
           <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            They run long discovery phases with large teams and hand you a roadmap. We connect your systems, build the intelligence model, and hand your team the keys — in weeks, not years. Our engagement has a beginning and a handoff, not a perpetual dependency. You own the intelligence. You don't rent it.
+            A systems integrator runs a long discovery and hands you a roadmap. We start on your highest-risk area with a satellite baseline, connect the systems that hold the answer, and give your team a working operational picture in weeks. The engagement has a hand-off, and what it leaves behind is yours.
           </p>
         </details>
-
         <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
           <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
             <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">What about vendor lock-in?</h3>
             <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
           </summary>
           <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            The operational model, the data, and the deployment belong to you from day one. We deploy on your infrastructure — cloud, hybrid, or air-gapped — governed by your rules. Your team extends the model themselves. This is an architectural decision, not a sales promise.
+            The operational model, the data, the derived products and the keys are yours from day one. It runs in your country on infrastructure you choose, and you can move between hosting options. Rules and workflows come to you in open formats, and an exit includes a full export and certified deletion.
           </p>
         </details>
-
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">What does the engagement look like?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            A proof of value in 30 to 90 days on your highest-risk area, satellite baseline first, measured against indicators agreed in advance. Then an annual service your team runs, and for national programs a build in tranches through a local prime.
+          </p>
+          <a href="/how-it-works/engagement" class="inline-block mt-4 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs &rarr;</a>
+        </details>
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">Can this run in our country?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            Yes. Inference, data, backups, logs and keys stay in the country: in an in-country data center we manage, a government or private cloud in the country, or on your own premises. Quatro Ecuador operates it, with support in Spanish.
+          </p>
+        </details>
         <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
           <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
             <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">What if our infrastructure doesn't generate usable data yet?</h3>
             <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
           </summary>
           <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            We solve the cold-start problem. Through our edge hardware partnerships, we deploy sensors and gateways where you need them. The data foundation is part of the integration, not a prerequisite.
+            The satellite baseline needs no field hardware, so the first picture starts from what you already have. Where confirmed risk justifies it, the Quatro IoT &amp; Edge Suite puts sensors and gateways in the field as part of the integration.
           </p>
         </details>
-
-        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
-          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
-            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">Can this deploy air-gapped or on sovereign infrastructure?</h3>
-            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-          </summary>
-          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            Yes. Cloud, hybrid, on-premise, or fully air-gapped. Your data never leaves your control.
-          </p>
-        </details>
-
         <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
           <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
             <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">Do we need to replace our existing systems?</h3>
             <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
           </summary>
           <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            No. Quatro connects to what you already run. We add the operational layer on top — your existing systems stay in place.
-          </p>
-        </details>
-
-        <details class="group py-8" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
-            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">What does the engagement actually look like?</h3>
-            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-          </summary>
-          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            We start with the outcome your team needs most. First use case scoped and connected in a single sprint. From there, each new connection compounds into the model. Your team operates from it and extends it themselves.
+            No. Quatro connects to what you already run. We add the operational layer on top, and your existing systems stay in place.
           </p>
         </details>
       </div>
-
     </div>
   </section>
 
