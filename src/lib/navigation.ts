@@ -93,7 +93,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       title: 'How it works',
       items: [
         { name: 'The operational picture', href: '/how-it-works' },
-        { name: 'How an engagement runs', href: '/utility/how-it-starts' },
+        { name: 'How an engagement runs', href: '/how-it-works/engagement' },
         { name: 'Insights', href: '/insights' },
       ],
     },
@@ -133,7 +133,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       title: 'Cómo funciona',
       items: [
         { name: 'El cuadro operativo', href: '/how-it-works', localize: false },
-        { name: 'Cómo se ejecuta un compromiso', href: '/utility/how-it-starts', localize: false },
+        { name: 'Cómo se ejecuta un compromiso', href: '/how-it-works/engagement', localize: false },
         { name: 'Artículos', href: '/es/resources/insights' },
       ],
     },
@@ -175,7 +175,7 @@ export const footerNavigation = footerNavigationData.en
    ═══════════════════════════════════════════════════════════════ */
 
 const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
-  // REALIGNMENT_2026-10-20 §3. Engagement aliases /utility/how-it-starts until HIW-2 builds it;
+  // REALIGNMENT_2026-10-20 §3. Spanish How it works links stay EN until ES-HIW-1;
   // Proof points at Insights until PROOF-1 builds /proof; industries change as IND-* land.
   en: [
     {
@@ -210,7 +210,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       variant: 'stacked',
       items: [
         { name: 'The operational picture', description: 'From satellite to SCADA to the field', href: '/how-it-works', icon: LinkIcon },
-        { name: 'How an engagement runs', description: 'From a proof of value to an annual service', href: '/utility/how-it-starts', icon: WrenchScrewdriverIcon },
+        { name: 'How an engagement runs', description: 'From a proof of value to an annual service', href: '/how-it-works/engagement', icon: WrenchScrewdriverIcon },
       ],
       cta: { name: 'How it works', href: '/how-it-works' },
     },
@@ -276,7 +276,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       variant: 'stacked',
       items: [
         { name: 'El cuadro operativo', description: 'Del satélite al SCADA y al campo', href: '/how-it-works', icon: LinkIcon, localize: false },
-        { name: 'Cómo se ejecuta un compromiso', description: 'De una prueba de valor a un servicio anual', href: '/utility/how-it-starts', icon: WrenchScrewdriverIcon, localize: false },
+        { name: 'Cómo se ejecuta un compromiso', description: 'De una prueba de valor a un servicio anual', href: '/how-it-works/engagement', icon: WrenchScrewdriverIcon, localize: false },
       ],
       cta: { name: 'Cómo funciona', href: '/how-it-works', localize: false },
     },

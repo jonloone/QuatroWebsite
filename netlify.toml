@@ -26,6 +26,13 @@
   status = 301
   force = true
 
+# /utility/how-it-starts replaced by /how-it-works/engagement (HIW-2)
+[[redirects]]
+  from = "/utility/how-it-starts"
+  to = "/how-it-works/engagement"
+  status = 301
+  force = true
+
 # /utility/xops moved to the capability page (CAP-2)
 [[redirects]]
   from = "/utility/xops"

@@ -12,6 +12,7 @@ export default defineConfig({
     '/network': '/how-it-works',
     '/platform': '/how-it-works',
     '/utility': '/how-it-works',
+    '/utility/how-it-starts': '/how-it-works/engagement',
     '/utility/xops': '/capabilities/operational-intelligence',
   },
   i18n: {

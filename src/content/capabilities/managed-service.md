@@ -25,4 +25,7 @@ showsUp:
 substrateLine: "Operated by Quatro Ecuador, supported by Quatro US. Headquartered in Quito, Ecuador, with a US entity."
 handoff:
   text: "How an engagement runs, from a proof of value to an annual service your team runs."
+  links:
+  - label: How an engagement runs
+    href: /how-it-works/engagement
 ---

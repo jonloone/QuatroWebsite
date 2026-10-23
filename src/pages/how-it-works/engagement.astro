@@ -1,0 +1,96 @@
+---
+/**
+ * /how-it-works/engagement — how an engagement runs (REALIGNMENT_2026-10-20 §6B; COPY_HOW_IT_WORKS 6B).
+ * Replaces /utility/how-it-starts. Timeline and gates, no prices (§13.3).
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const sub =
+  'Start on your highest-risk area and decide on the results, measured against indicators you agree in advance.'
+
+const proofOfValue = [
+  'The satellite baseline starts first because it needs no field hardware, so results begin during the build.',
+  'A first operational picture of your highest-risk area in about 30 days.',
+  'Then a 90-day evaluation measured against indicators agreed in advance. On a corridor those are confirmed detections on the right of way, fewer false alarms and faster response.',
+  'You keep access for a full year. Renewal and expansion are decided on results.',
+]
+
+const youSupply = [
+  'Access to the systems that hold the data (SCADA, historians, GIS) within the first 60 days.',
+  'A counterpart team that reviews each deliverable within ten business days and signs the gate.',
+  'A hosting decision: which of the three hosting modalities the picture runs on, chosen while the statement of work is written.',
+]
+---
+
+<MarketingLayout title="How an engagement runs | Quatro" description={sub}>
+  <HeroCanvas
+    badge="How it works"
+    title="How an engagement runs"
+    body={sub}
+    ctaLabel="Talk to our team"
+    ctaHref="/contact/demo"
+  />
+
+  <!-- 1. Proof of value -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">01</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">Proof of value, 30 to 90 days</h2>
+      </div>
+      <div>
+        <ul class="space-y-5">
+          {proofOfValue.map((line) => (
+            <li class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">{line}</li>
+          ))}
+        </ul>
+
+        <div class="mt-12 rounded-xl p-6 lg:p-8" style="background: var(--color-paper); border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">The gate</p>
+          <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-700);">Before any field equipment is ordered, both sides approve the risk heat map, the areas of interest and the sensor placement plan.</p>
+        </div>
+
+        <p class="mt-12 font-mono text-[10px] uppercase tracking-[0.1em] mb-5" style="color: var(--color-forest);">What your institution supplies</p>
+        <ul class="space-y-4">
+          {youSupply.map((line) => (
+            <li class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{line}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Annual service -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">02</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">An annual service your team runs</h2>
+      </div>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">
+        Priced annually and renewed on results. Hosting in the country, support from 07:00 to 22:00 seven days a week, 90 days of hypercare after go-live, and a monthly service report to your steering committee.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Program -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">03</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">A program, in tranches</h2>
+      </div>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">
+        For national programs, the build runs in tranches through a consortium led by a local prime, your single contracting counterparty. Each tranche after the first has its own contract, so nothing beyond the first is committed until you sign it. A monthly steering committee chaired by the prime governs the program.
+      </p>
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
+    secondaryCta={{ label: 'How it works', href: '/how-it-works' }}
+    microcopy="Hosted in your country · Your team owns it from day one"
+  />
+</MarketingLayout>

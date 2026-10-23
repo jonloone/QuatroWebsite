@@ -1,7 +1,7 @@
 ---
 /**
  * /how-it-works — the operational picture (REALIGNMENT_2026-10-20 §6A; COPY_HOW_IT_WORKS 6A).
- * Replaces /utility/index. Links to Engagement and Architecture switch on when HIW-2 / HIW-4 land.
+ * Replaces /utility/index. The Architecture link switches on when HIW-4 lands.
  */
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
@@ -10,7 +10,7 @@ import DualCta from '@/components/marketing/DualCta.astro'
 import { layers, layerPromise, engagementLadder } from '@/lib/layers'
 
 const pages = import.meta.glob('./*.astro')
-const engagementHref = pages['./engagement.astro'] ? '/how-it-works/engagement' : '/utility/how-it-starts'
+const engagementHref = '/how-it-works/engagement'
 const hasArchitecture = Boolean(pages['./architecture.astro'])
 
 const layerBeats = layers.map((layer) => ({
