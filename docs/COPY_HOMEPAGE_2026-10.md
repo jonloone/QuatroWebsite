@@ -62,7 +62,7 @@ Title and one line each, linking the industry page. Lines are the industry hero 
   - **Quatro Klarety** · Territorial monitoring from space, delivered with our earth-observation partner Klarety.
   - **DataMiner xOps** · The operational model: 8,000+ integrations, in production with operators worldwide.
   - **The Quatro IoT & Edge Suite** · Sensors, gateways and OT communications in the field.
-  - **Elementos** · Our affiliate for intelligence-led work.
+  *(Amended 2026-10-23, Jonathan: Elementos is not named on the site.)*
 - Removed (§1c): DataOS, Second Wind, SMARTS, TEKTELIC, SES, Intelsat, Telesat, IoT Orbital, cloud vendor logos.
 
 ## 6. Proof stories (§9A)
@@ -147,7 +147,7 @@ Energy cards A and B (`COPY_ENERGY` §7, no figures), each linking /proof. Secti
 - **Quatro Klarety** · Monitoreo territorial desde el espacio, entregado con nuestro socio de observación de la Tierra, Klarety.
 - **DataMiner xOps** · El modelo operativo: más de 8.000 integraciones, en producción con operadores en todo el mundo.
 - **La Quatro IoT & Edge Suite** · Sensores, gateways y comunicaciones OT en campo.
-- **Elementos** · Nuestra afiliada para el trabajo guiado por inteligencia.
+*(Enmienda 2026-10-23, Jonathan: Elementos no se nombra en el sitio.)*
 
 ## 6. Historias de prueba
 Tarjetas A y B de Energía (`COPY_ENERGY` §7 ES), con enlace a /es/proof.

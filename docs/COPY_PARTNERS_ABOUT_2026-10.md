@@ -67,8 +67,7 @@ Every engagement leaves the client owning the data, the derived products and the
 published mission paragraph only if it passes the voice gate; else end the paragraph here)*
 **Identity (§1e):** Headquartered in Quito, Ecuador, with a US entity.
 **Markets:** Active in Ecuador, Colombia, Venezuela, Panama and Guyana, and in MENA through a channel partner.
-**Elementos (§1d):** Elementos is our affiliate for intelligence-led work: risk baselines and threat-network
-mapping. → [Elementos URL: Jonathan]
+**Elementos:** removed. *(Amended 2026-10-23, Jonathan: Elementos is not named on the site.)*
 **Ventures `[approve]`:** The same team also builds Sphera and Occupy, each under its own brand.
 **Leadership:** unchanged (§11).
 
@@ -124,7 +123,6 @@ Cada compromiso deja al cliente como dueño de los datos, los productos derivado
 **Misión (§0.3):** Existimos para hacer inteligente la infraestructura crítica. `[aprobar con el H1 de la portada]`
 **Identidad:** Sede en Quito, Ecuador, con una entidad en Estados Unidos.
 **Mercados:** Activos en Ecuador, Colombia, Venezuela, Panamá y Guyana, y en MENA a través de un socio de canal.
-**Elementos:** Elementos es nuestra afiliada para el trabajo guiado por inteligencia: líneas base de riesgo y
-mapeo de redes de amenaza.
+**Elementos:** eliminado. *(Enmienda 2026-10-23, Jonathan: Elementos no se nombra en el sitio.)*
 **Emprendimientos `[aprobar]`:** El mismo equipo también construye Sphera y Occupy, cada uno con su propia marca.
 **Liderazgo:** sin cambios.

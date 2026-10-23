@@ -18,7 +18,7 @@ capabilities (`featured` = first three), see / correlate / act, layerCaptions, p
 > - **Proof cards** only where a reference exists (Energy cards A and B, no figures). Mining's landslide
 >   piece (§9A) and partner-delivered city references (§9B, need Skyline's written OK) wait for PROOF-1.
 > - **Security tone:** no community or youth surveillance, no "counter-cartel" framing, no attack
->   predictions. Elementos appears once, as the affiliate.
+>   predictions. Elementos is not named (amended 2026-10-23); threat-network mapping is Quatro scope.
 
 **Shared on all five:** engagement paragraph = §2 (`src/lib/layers.ts`). CTA primary "Talk to our team"
 → /contact/demo · secondary "How an engagement runs" → /how-it-works/engagement · microcopy "Hosted
@@ -261,8 +261,7 @@ forces and prosecutors who act on it (the Armed Forces, the Fiscalía).
   event becomes a case file.
 - **Watch the water approach** — Radar and thermal sensing on coastlines and estuaries, where small
   boats carry no transponder.
-- **Map the network behind the losses** — For who is behind the losses and how the network is
-  financed, Quatro routes threat-network mapping to Elementos, our affiliate for intelligence-led work.
+- **Map the network behind the losses** — Threat-network mapping, part of the Quatro risk baseline: who is behind the losses and how the network is financed. *(Amended 2026-10-23, Jonathan: Elementos is not named on the site.)*
 
 **see / correlate / act**
 - **see:** Video, field sensors, detection systems, SCADA and line pressure, patrol and field reports,
@@ -569,9 +568,7 @@ incidente, para las fuerzas y fiscales que actúan sobre ella (las Fuerzas Armad
   *Resultado:* un evento confirmado se convierte en expediente.
 - **Vigilar el acceso por agua** — Radar y sensores térmicos en costas y estuarios, donde las lanchas no
   llevan transpondedor.
-- **Mapear la red detrás de las pérdidas** — Para saber quién está detrás de las pérdidas y cómo se
-  financia la red, Quatro deriva el mapeo de redes de amenaza a Elementos, nuestra afiliada para el
-  trabajo guiado por inteligencia.
+- **Mapear la red detrás de las pérdidas** — El mapeo de redes de amenaza, parte de la línea base de riesgo de Quatro: quién está detrás de las pérdidas y cómo se financia la red. *(Enmienda 2026-10-23, Jonathan: Elementos no se nombra en el sitio.)*
 
 **see / correlate / act**
 - **ver:** Video, sensores de campo, sistemas de detección, SCADA y presión de línea, informes de

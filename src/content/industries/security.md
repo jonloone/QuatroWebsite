@@ -51,7 +51,7 @@ capabilities:
 - name: Watch the water approach
   description: "Radar and thermal sensing on coastlines and estuaries, where small boats carry no transponder."
 - name: Map the network behind the losses
-  description: "For who is behind the losses and how the network is financed, Quatro routes threat-network mapping to Elementos, our affiliate for intelligence-led work."
+  description: "Threat-network mapping, part of the Quatro risk baseline: who is behind the losses and how the network is financed."
 platformMapping:
   see: "Video, field sensors, detection systems, SCADA and line pressure, patrol and field reports, and the territory and coast from satellite. Existing systems are integration targets."
   correlate: "Every source on one event, with false alarms filtered by correlation and every figure traced to its source."
