@@ -12,6 +12,7 @@ whatYouGet:
 - Historical incident analysis across the network.
 - Threat mapping from open-source intelligence.
 - Terrain and population overlaid on every asset.
+- "Threat-network mapping: who is behind the losses and how the network is financed."
 - An empirical risk heat map, refreshed quarterly.
 - "A sensor placement plan: hardware only where confirmed risk justifies it."
 - Delivered at the first gate, before field capital is committed.
@@ -22,9 +23,7 @@ showsUp:
 - industry: Security and critical infrastructure
   href: /industries/security
   text: The heat map ranks segments for patrol.
-substrateLine: Baseline built by Quatro; threat-network mapping by Elementos.
-affiliate:
-  text: "To learn who is behind the losses and how the network is financed, Quatro routes threat-network mapping to Elementos, our affiliate for intelligence-led work."
+substrateLine: Baseline and threat-network mapping built by Quatro.
 handoff:
   text: Once the baseline sets the priority zones, Quatro Klarety watches them.
   links:

@@ -9,7 +9,7 @@ hero, what you get, how it shows up, substrate line, proof, hand-off, engagement
 > **Confirm before publish.**
 > - Substrate naming on every page needs Jonathan's approval (SPEC-COPY-1 verify).
 > - Corridor figures (cells, dB) are not used anywhere; §13.2 is still open.
-> - The Elementos CTA has no URL yet (`[Elementos URL: Jonathan]`).
+> - ~~The Elementos CTA has no URL yet.~~ Superseded 2026-10-23: Elementos is not named on the site (5E amended).
 > - 5F follows the deployment annex (three hosting modalities with migration between them); the spec's word "hybrid" does not appear in the annex. Jonathan to confirm.
 > - No client, reserve, corridor or operator is named. Satellite missions and vendors are not named (§1c).
 
@@ -113,6 +113,7 @@ incident history, terrain and population, delivered as a heat map and a sensor p
 - Historical incident analysis across the network.
 - Threat mapping from open-source intelligence.
 - Terrain and population overlaid on every asset.
+- Threat-network mapping: who is behind the losses and how the network is financed.
 - An empirical risk heat map, refreshed quarterly.
 - A sensor placement plan: hardware only where confirmed risk justifies it.
 - Delivered at the first gate, before field capital is committed.
@@ -123,11 +124,10 @@ incident history, terrain and population, delivered as a heat map and a sensor p
 - **Security and critical infrastructure** (/industries/security): the heat map ranks segments
   for patrol.
 
-**Elementos (§1d):** To learn who is behind the losses and how the network is financed, Quatro
-routes threat-network mapping to Elementos, our affiliate for intelligence-led work.
-**Elementos CTA:** Talk to Elementos → `[Elementos URL: Jonathan]`
+*(Amended 2026-10-23, Jonathan: Elementos is not named on the site; threat-network mapping is
+Quatro scope. No affiliate block or CTA. See `docs/DECISION_AUTHORITIES.md`.)*
 
-**Substrate line:** Baseline built by Quatro; threat-network mapping by Elementos.
+**Substrate line:** Baseline and threat-network mapping built by Quatro.
 
 **Proof:** honest placeholder.
 
@@ -273,6 +273,7 @@ calor y plan de ubicación de sensores.
 - Análisis histórico de incidentes en toda la red.
 - Mapeo de amenazas a partir de inteligencia de fuentes abiertas.
 - Terreno y población superpuestos sobre cada activo.
+- Mapeo de redes de amenaza: quién está detrás de las pérdidas y cómo se financia la red.
 - Un mapa de calor de riesgo empírico, actualizado cada trimestre.
 - Un plan de ubicación de sensores: hardware solo donde el riesgo confirmado lo justifica.
 - Entregado en la primera compuerta, antes de comprometer capital en campo.
@@ -283,13 +284,10 @@ calor y plan de ubicación de sensores.
 - **Seguridad e infraestructura crítica** (/es/industries/security): el mapa de calor ordena
   los tramos para el patrullaje.
 
-**Elementos (§1d):** Para saber quién está detrás de las pérdidas y cómo se financia la red,
-Quatro deriva el mapeo de redes de amenaza a Elementos, nuestra afiliada para el trabajo
-guiado por inteligencia.
-**CTA de Elementos:** Hable con Elementos → `[URL de Elementos: Jonathan]`
+*(Enmienda 2026-10-23, Jonathan: Elementos no se nombra en el sitio; el mapeo de redes de
+amenaza es alcance de Quatro. Sin bloque de afiliada ni CTA.)*
 
-**Línea de sustrato:** Línea base construida por Quatro; mapeo de redes de amenaza por
-Elementos.
+**Línea de sustrato:** Línea base y mapeo de redes de amenaza construidos por Quatro.
 
 **Prueba:** marcador honesto.
 
