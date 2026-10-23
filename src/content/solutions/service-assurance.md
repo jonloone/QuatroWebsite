@@ -4,6 +4,9 @@ tagline: "End-to-End SLA Intelligence Across Every Transport Layer"
 heroImage: "/images/solution-hybrid-service-assurance.png"
 description: "Real-time SLA management across terrestrial and satellite transport layers. Breach prediction, automated billing correlation, and revenue optimization intelligence — whether traffic is on fiber, tower, GEO transponder, or LEO pass."
 order: 10
+status: active
+industry: cities
+capability: operational-intelligence
 hero:
   eyebrow: "Service Assurance"
   title: "One SLA View. Every Transport Layer."

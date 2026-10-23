@@ -4,6 +4,9 @@ tagline: "Berth-to-Customs Coordination Intelligence"
 heroImage: "/images/solution-port-operations.png"
 description: "Real-time operational intelligence that coordinates berth scheduling, cargo handling, vessel tracking, and customs clearance into a single port operations picture — eliminating coordination delays and optimizing every movement across the maritime terminal."
 order: 12
+status: active
+industry: cities
+capability: operational-intelligence
 hero:
   eyebrow: "Port Operations"
   title: "Optimize Berths. Coordinate Cargo. Accelerate Customs."

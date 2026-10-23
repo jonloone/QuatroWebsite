@@ -4,6 +4,9 @@ tagline: "Real-Time Network Visibility and Leak Intelligence"
 heroImage: "/images/solution-water-systems.png"
 description: "Real-time hydraulic intelligence that detects leaks within minutes, localizes them to specific segments, predicts aging and failure risk, and automates SENAGUA compliance across your entire distribution network."
 order: 15
+status: active
+industry: cities
+capability: operational-intelligence
 hero:
   eyebrow: "Water Systems"
   title: "See Every Pipe. Detect Every Leak. Prevent Every Loss."

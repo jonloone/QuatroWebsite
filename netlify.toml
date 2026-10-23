@@ -97,9 +97,15 @@
   status = 301
   force = true
 
-# Legacy /solutions/:slug → /solutions (solution detail pages retired)
+# /solutions retired as a surface; solutions render as examples under industries (SOLN-1, §8)
+[[redirects]]
+  from = "/solutions"
+  to = "/capabilities"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/solutions/*"
-  to = "/solutions/"
+  to = "/capabilities"
   status = 301
-  force = false
+  force = true

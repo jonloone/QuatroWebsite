@@ -4,6 +4,9 @@ tagline: "Operational Intelligence Utility"
 heroImage: "/images/solution-operational-intelligence.png"
 description: "Intelligence that guides your team through complex operations — not just dashboards that display data. Contextual recommendations, intelligent agents that surface what matters, and the bridge from operational awareness to enterprise-wide decision-making."
 order: 3
+status: active
+industry: energy
+capability: operational-intelligence
 hero:
   eyebrow: "Operational Intelligence"
   title: "Intelligence That Guides. Not Just Alerts."

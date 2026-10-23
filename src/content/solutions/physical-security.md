@@ -4,6 +4,9 @@ tagline: "Intelligent Threat Detection"
 heroImage: "/images/solution-physical-security.png"
 description: "Unified physical security with intelligent video analytics and multi-sensor fusion that reduces false alarms by 80% and delivers sub-30-second incident response."
 order: 4
+status: active
+industry: security
+capability: iot-edge
 hero:
   eyebrow: "Physical Security"
   title: "Detect Threats. Respond Instantly."

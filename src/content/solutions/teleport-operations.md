@@ -4,6 +4,7 @@ tagline: "Unified Ground Segment Intelligence"
 heroImage: "/images/solution-teleport-operations.png"
 description: "Replace fragmented M&C and OSS/BSS tools with a single real-time command environment — eliminating tool-switching, data delays, and coordination gaps that slow response to ground segment anomalies."
 order: 8
+status: moved-to-dataos
 hero:
   eyebrow: "Teleport Operations"
   title: "Replace M&C Silos With Unified Command"

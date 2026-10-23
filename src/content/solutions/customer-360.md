@@ -3,6 +3,7 @@ title: "Customer 360"
 tagline: "One Customer. All Systems. One Governed View."
 description: "Reconcile customer identity across every banking system — core, loans, CRM, digital channels, cards, and wealth management — into a single governed record that risk, compliance, and commercial teams can trust."
 order: 17
+status: moved-to-dataos
 heroImage: "/images/solution-customer-360.png"
 hero:
   eyebrow: "Customer 360"

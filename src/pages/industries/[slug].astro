@@ -36,6 +36,16 @@ const ctaSecondary = cta?.secondary || { label: 'Talk to an Engineer', href: '/c
 const featuredCaps = capabilities.filter(c => c.featured).slice(0, 3)
 const remainingCaps = capabilities.filter(c => !c.featured)
 
+// Example cards (§8): active solutions tagged to this industry, each linked to the capability it runs on
+const capabilityEntries = await getCollection('capabilities')
+const exampleCards = (await getCollection('solutions'))
+  .filter((s: any) => s.data.status === 'active' && s.data.industry === (industry as any).id.replace(/\.md$/, ''))
+  .sort((a: any, b: any) => a.data.order - b.data.order)
+  .map((s: any) => {
+    const cap: any = capabilityEntries.find((c: any) => c.id.replace(/\.md$/, '') === s.data.capability?.id)
+    return { title: s.data.title, capTitle: cap?.data.title, capHref: cap?.data.hero ? `/capabilities/${cap.id.replace(/\.md$/, '')}` : null }
+  })
+
 // Related insights — one pinned post per `insightTags` entry (§9C), then fill by industry slug or tag
 const allInsights = (await getCollection('insights'))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
@@ -426,6 +436,28 @@ const relatedInsights = [
                 )}
               </div>
             </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+
+  <!-- 7a. EXAMPLES (§8) — solutions tagged to this industry, linked to their capability -->
+  {exampleCards.length > 0 && (
+    <section class="py-20 lg:py-24 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+      <div class="mx-auto max-w-6xl">
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-10" style="color: var(--color-forest);">Examples</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {exampleCards.map((card: any) => (
+            <div class="rounded-xl p-6" style="border: 1px solid var(--color-structure);">
+              <h3 class="font-sans text-lg font-medium tracking-tight mb-3" style="color: var(--color-neutral-800);">{card.title}</h3>
+              {card.capTitle && (card.capHref ? (
+                <a href={card.capHref} class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{card.capTitle} &rarr;</a>
+              ) : (
+                <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">{card.capTitle}</p>
+              ))}
+            </div>
           ))}
         </div>
       </div>

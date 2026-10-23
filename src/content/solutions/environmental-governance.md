@@ -4,6 +4,9 @@ tagline: "Operational Data. Regulatory Proof. One Governed Model."
 heroImage: "/images/solution-environmental-governance.png"
 description: "Emissions, water quality, air quality, and environmental compliance obligations served from one operational data layer. Continuous monitoring, automated regulatory reporting, ESG data integration, and enforcement-ready evidence trails — governed, auditable, and owned by your team."
 order: 3
+status: active
+industry: environment
+capability: reasoning-and-evidence
 hero:
   eyebrow: "Environmental Governance"
   title: "Monitor. Attribute. Prove."

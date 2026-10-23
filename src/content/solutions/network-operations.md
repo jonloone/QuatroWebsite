@@ -4,6 +4,9 @@ tagline: "Unified Multi-Vendor NOC"
 heroImage: "/images/solution-network-operations.png"
 description: "Replace vendor silos with unified network intelligence across terrestrial and satellite domains. 80% fewer false alarms, 55% faster MTTR, and one network for any vendor's equipment — ground to orbit."
 order: 7
+status: active
+industry: cities
+capability: operational-intelligence
 hero:
   eyebrow: "Network Operations"
   title: "One NOC. Any Vendor. Zero Silos."

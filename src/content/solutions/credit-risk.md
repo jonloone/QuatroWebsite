@@ -3,6 +3,7 @@ title: "Credit Risk"
 tagline: "True Exposure Across Every Product and Guarantee"
 description: "Reconcile credit exposure across loan origination, core systems, mortgages, cards, and guarantees into a unified risk view for loan committees, stress testing, and collections."
 order: 20
+status: moved-to-dataos
 heroImage: "/images/solution-credit-risk.png"
 hero:
   eyebrow: "Credit Risk"

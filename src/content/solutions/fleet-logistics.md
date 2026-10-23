@@ -4,6 +4,9 @@ tagline: "Operational Fleet Intelligence"
 heroImage: "/images/solution-fleet-logistics.png"
 description: "Unified fleet management with AI-driven route optimization and predictive maintenance that reduces fuel costs by 14% and improves on-time delivery by 22%."
 order: 5
+status: active
+industry: cities
+capability: iot-edge
 hero:
   eyebrow: "Fleet & Logistics"
   title: "Optimize Every Mile. Track Every Asset."

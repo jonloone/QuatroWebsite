@@ -4,6 +4,9 @@ tagline: "Modernize Without Replacing"
 heroImage: "/images/solution-grid-operations.png"
 description: "Overlay modernization that adds operational intelligence, DER integration, and storm response to existing SCADA — delivering results in months, not years."
 order: 6
+status: active
+industry: energy
+capability: operational-intelligence
 hero:
   eyebrow: "Grid Health"
   title: "Modern Grid Intelligence. Legacy SCADA Intact."

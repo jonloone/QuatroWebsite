@@ -4,6 +4,7 @@ tagline: "Reduce Underwriter Load. Accelerate Processing."
 heroImage: "/images/solution-claims-classification.png"
 description: "When every claim routes through the same manual underwriting queue regardless of complexity, straightforward decisions consume the same time and cost as genuine edge cases. Quatro's Claims Classification scores confidence automatically — routing high-confidence claims past underwriter review entirely."
 order: 21
+status: moved-to-dataos
 hero:
   eyebrow: "Claims Classification"
   title: "High-Confidence Claims Don't Need an Underwriter."

@@ -4,6 +4,7 @@ tagline: "Constellation & Terrestrial Predictive Intelligence"
 heroImage: "/images/solution-fleet-health.png"
 description: "Unified fleet monitoring across GEO, LEO, and NGSO constellations plus terrestrial equipment health (towers, cabinets, power systems) with predictive failure detection 2-4 weeks in advance, cross-domain capacity optimization, and coordinated maintenance scheduling at scale."
 order: 9
+status: moved-to-dataos
 hero:
   eyebrow: "Fleet Health"
   title: "See Every Orbit. Predict Every Failure."

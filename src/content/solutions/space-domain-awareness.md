@@ -4,6 +4,7 @@ tagline: "Multi-Domain Defense Intelligence"
 heroImage: "/images/solution-space-domain.png"
 description: "Integrated multi-source orbital tracking, conjunction assessment, and satellite telemetry correlated with ground infrastructure and mission data — transforming separate space situational awareness into coordinated threat-to-impact-to-response intelligence for defense operations."
 order: 11
+status: moved-to-dataos
 hero:
   eyebrow: "Space Domain Awareness"
   title: "See Every Threat. Understand Every Impact."
