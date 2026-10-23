@@ -6,8 +6,14 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: 'https://quatro.io',
   redirects: {
-    '/industries/space-satcom': '/industries/networks',
-    '/industries/infrastructure': '/industries/networks',
+    '/industries/space-satcom': '/industries',
+    '/industries/infrastructure': '/industries',
+    '/industries/finance': '/industries',
+    '/industries/broadcast-media': '/industries',
+    '/industries/networks': '/industries',
+    '/industries/industrial': '/industries/energy',
+    '/industries/transportation': '/industries/cities',
+    '/industries/water-environment': '/industries/environment',
     '/solutions/satellite-revenue-assurance': '/solutions/hybrid-service-assurance',
     '/network': '/how-it-works',
     '/platform': '/how-it-works',

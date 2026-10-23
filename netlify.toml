@@ -40,6 +40,43 @@
   status = 301
   force = true
 
+# Retired and folded industries (IND-6, §7)
+[[redirects]]
+  from = "/industries/finance"
+  to = "/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/broadcast-media"
+  to = "/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/networks"
+  to = "/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/industrial"
+  to = "/industries/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/transportation"
+  to = "/industries/cities"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/water-environment"
+  to = "/industries/environment"
+  status = 301
+  force = true
+
 # Defense and critical infrastructure merged into Security (IND-4)
 [[redirects]]
   from = "/industries/defense"

@@ -1,4 +1,8 @@
 ---
+/**
+ * /industries — the active industries from the collection, in spec order (REALIGNMENT_2026-10-20 §7).
+ * Retired and folded industries live as `.retired` files and 301 elsewhere (IND-6).
+ */
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
@@ -6,135 +10,52 @@ import Section from '@/components/marketing/Section.astro'
 import IndustryHubCard from '@/components/marketing/IndustryHubCard.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
 
-// Pull all industries from content
-const allIndustries = await getCollection('industries')
-const getIndustry = (slug: string) => allIndustries.find((i) => i.id === slug || i.id === `${slug}.md`)
+const industries = (await getCollection('industries'))
+  .filter((i: any) => i.data.status === 'active' || i.data.status === 'emerging')
+  .sort((a: any, b: any) => a.data.order - b.data.order)
+  .map((i: any) => {
+    const href = `/industries/${i.id.replace(/\.md$/, '')}`
+    return {
+      title: i.data.title,
+      description: i.data.hero?.title || i.data.tagline,
+      href,
+      heroImage: i.data.heroImage,
+      solutions: i.data.capabilities.filter((c: any) => c.featured).slice(0, 3).map((c: any) => ({ name: c.name, href })),
+    }
+  })
 
-// Define the 5 pillars with their child industries
-const pillars = [
-  {
-    name: 'Energy',
-    description: 'Unified intelligence for grid, pipeline, and production operations — connecting legacy SCADA with modern systems so your team sees, predicts, and acts from one model.',
-    href: '/industries/energy',
-    heroImage: getIndustry('energy')?.data.heroImage || '/images/industry-energy.png',
-    stats: getIndustry('energy')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Grid Health', href: '/solutions/grid-health' },
-      { name: 'Pipeline Integrity', href: '/solutions/pipeline-integrity' },
-      { name: 'Asset Health', href: '/solutions/asset-health' },
-    ],
-    featured: true,
-  },
-  {
-    name: 'Security and critical infrastructure',
-    description: getIndustry('security')?.data.description || '',
-    href: '/industries/security',
-    heroImage: getIndustry('security')?.data.heroImage || '/images/industry-defense.png',
-    stats: getIndustry('security')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Watch the right of way from orbit', href: '/industries/security' },
-      { name: 'Fuse every sensor into one event', href: '/industries/security' },
-      { name: 'A chain of custody that holds up', href: '/industries/security' },
-    ],
-    featured: true,
-  },
-  {
-    name: 'Networks',
-    description: 'Ground to orbit, subscriber to service — unified in one operational view. Terrestrial, satellite, and hybrid networks connected into one intelligence picture.',
-    href: '/industries/networks',
-    heroImage: getIndustry('networks')?.data.heroImage || '/images/industry-networks.png',
-    stats: getIndustry('networks')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Network Operations', href: '/solutions/network-operations' },
-      { name: 'Fleet Health', href: '/solutions/fleet-health' },
-      { name: 'Service Assurance', href: '/solutions/hybrid-service-assurance' },
-    ],
-    featured: false,
-  },
-  {
-    name: 'Cities',
-    description: 'Intelligence for the systems cities depend on — water, waste, transportation, public safety — connected into one operational model with real citizen outcomes.',
-    href: '/industries/cities',
-    heroImage: getIndustry('cities')?.data.heroImage || '/images/industry-cities.png',
-    stats: getIndustry('cities')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Water Systems', href: '/industries/water-environment' },
-      { name: 'Environmental Compliance', href: '/solutions/environmental-compliance' },
-    ],
-    featured: false,
-  },
-]
-
-// All pillars rendered in alternating horizontal layout
+// §2 sub, verbatim
+const sub =
+  'One operational picture of your territory and your operations, from satellite to SCADA to the field, run in your country and owned by you from day one.'
 ---
 
-<MarketingLayout
-  title="Industries — Operational Intelligence for Critical Operations"
-  description="Quatro delivers operational intelligence across energy, defense & national security, networks, and cities — 8,000+ integrations, deployed your way."
->
+<MarketingLayout title="Industries | Quatro" description={sub}>
   <HeroCanvas
     badge="Industries"
-    title="Intelligence for the Operations That Matter Most"
-    body="Quatro delivers operational intelligence for the industries where infrastructure matters most — energy grids, defense networks, communications systems, and the cities communities depend on."
-    ctaLabel="Talk to Our Team"
+    title="Making critical infrastructure intelligent."
+    body={sub}
+    ctaLabel="Talk to our team"
     ctaHref="/contact/demo"
   />
 
-  <!-- TOP TWO PILLARS — Full-width landscape cards -->
   <Section>
-    <div class="mb-10 fade-up">
-      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-neutral-400 mb-3">Industries</p>
-      <h2 class="font-display text-2xl font-bold text-neutral-800 sm:text-3xl tracking-tight">
-        Choose Your Domain
-      </h2>
-    </div>
-
     <div class="space-y-6">
-      {pillars.map((pillar, i) => (
+      {industries.map((industry: any, i: number) => (
         <IndustryHubCard
-          title={pillar.name}
-          description={pillar.description}
-          href={pillar.href}
-          heroImage={pillar.heroImage}
-          solutions={pillar.children}
+          title={industry.title}
+          description={industry.description}
+          href={industry.href}
+          heroImage={industry.heroImage}
+          solutions={industry.solutions}
           reverse={i % 2 === 1}
         />
       ))}
     </div>
   </Section>
 
-  <!-- PLATFORM STRIP -->
-  <Section divider dark>
-    <div class="mx-auto max-w-3xl text-center fade-up">
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-4">Platform</p>
-      <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">
-        One Architecture. Every Vertical.
-      </h2>
-      <p class="mt-4 text-lg text-white/70 leading-relaxed">
-        8,000+ integrations. AI models trained on operational data. On-premise, cloud, or air-gapped deployment. Quatro adapts the same core architecture to your sector's specific systems and compliance requirements.
-      </p>
-      <div class="mt-10 grid grid-cols-3 gap-px max-w-xl mx-auto" style="background: rgba(255,255,255,0.08);">
-        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
-          <div class="text-2xl font-bold text-white">8,000+</div>
-          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">Integrations</div>
-        </div>
-        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
-          <div class="text-2xl font-bold text-white">4 Weeks</div>
-          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">To First Value</div>
-        </div>
-        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
-          <div class="text-2xl font-bold text-white">Your Cloud</div>
-          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">Or On-Premise</div>
-        </div>
-      </div>
-    </div>
-  </Section>
-
   <DualCta
-    title={`See what <span style="color: var(--color-forest);">operational intelligence</span> looks like for your industry.`}
-    description="Tell us the outcome that matters. We connect the systems that hold the answer. Your team starts working from the model."
-    primaryCta={{ label: 'Talk to Our Team', href: '/contact/demo' }}
-    secondaryCta={{ label: 'Talk to an Engineer', href: '/contact/sales' }}
-    microcopy="Intelligence in weeks · Your team owns it from day one"
+    primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
+    secondaryCta={{ label: 'How an engagement runs', href: '/how-it-works/engagement' }}
+    microcopy="Hosted in your country · Your team owns it from day one"
   />
 </MarketingLayout>
