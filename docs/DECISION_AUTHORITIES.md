@@ -47,6 +47,13 @@ this walk.
 
 | Date | Decision | Where it applies |
 |---|---|---|
+| 2026-10-23 | §13.5 resolved, option A: Agriculture and aquaculture publish now as `status: emerging`, with no proof claims (deck IND-5 as written). | §13.5, IND-5, IND-6, HOME-1 rows |
+| 2026-10-23 | Spanish mission line: **"Hacemos inteligente la infraestructura crítica."** (the homepage-deck wording) everywhere the mission renders in Spanish, the ES homepage H1 and ES About included. The About deck's "Existimos para…" variant is retired. | §0.3, §0.6, ES-HOME-1 |
+| 2026-10-23 | Elementos is not named on the website. Risk baselines and threat-network mapping are Quatro capabilities, folded into the intelligence and risk baseline page; no affiliate block, link or CTA. Supersedes §1d and §5E's Elementos CTA for the site only. | §1d, §5E, CAP-5, ELEM-1 (About, Security, homepage) |
+| 2026-10-23 | NRG-5 option A: owners ship their own 301s; NRG-5 is the final redirect sweep (chains, sitemap, `curl -I` on all of §3). | §3, NRG-5 |
+| 2026-10-23 | §13.7: the live domain is **withquatro.com**; Netlify deploys from GitHub `main`. Email addresses are unchanged. | §13.7, DEC-1 |
+| 2026-10-23 | Paid generation approved for the Environment and Mining images; results are shown to Jonathan before they ship. The industry template change that renders challenge images and every featured capability image is approved as its own ticket. | §12, IND-IMG-1, IND-IMG-2, NRG-2b, NRG-IMG-1 |
+| 2026-10-23 | The blog-cadence category map (scheduled task outside the repo) may be updated to the six new industries. | §9C, NRG-4b |
 | 2026-10-20 | Engagement page shows timeline and gates, no price bands (default per §6B and audit §10.5; reopen only if Jonathan chooses). | §6B, §13.3, HIW-2, SPEC-COPY-2 |
 | 2026-10-20 | The geospatial analysis capability is named **"Quatro Klarety"** on every tier (as hardware is "the Quatro IoT & Edge Suite"). One plain-language line below Tier 1 may say it is delivered with our earth-observation partner Klarety. | REALIGNMENT_2026-10-20 §1b, §5A, §13.1 (resolved); `COPY_ENERGY_2026-10-20.md` |
 | 2026-10-20 | DataMiner xOps is named from How-it-works down; DataOS, ECR, Second Wind, SES/Intelsat/Telesat, SMARTS, TEKTELIC, IoT Orbital are never named on Quatro pages. | §1c |
@@ -54,9 +61,7 @@ this walk.
 | 2026-10-20 | The 2026-06-08 spec (Sense → Unify → Act, Quatro Field page) is retired; §14 of the new spec lists what carries forward. | all |
 | DECISION-NEEDED | Corridor demonstration figures (14 cells, 7 dB) on the public Energy page, or deck only. Escalation below; until answered the figures do not render (§0.1). | §13.2, `COPY_ENERGY` `[approve]` lines, NRG-1, NRG-3, ES-ENERGY-1 |
 | OPEN | Where DataOS-native solution SKUs 301 to. | §13.4, SOLN-1 |
-| OPEN | Agriculture and aquaculture published as "emerging" now, or held. | §13.5, IND-5 |
-| OPEN | Partner consent for white-labeled Klarety / Skyline captures. | §13.6, PROOF-1 |
-| OPEN | Live domain and Netlify source branch. | §13.7, DEC-1 |
+| OPEN | Partner consent for white-labeled Klarety / Skyline captures; Skyline's written OK for DataMiner references (Jonathan obtaining). | §13.6, §9B, PROOF-1, PROOF-2 |
 
 ## Open escalations
 
