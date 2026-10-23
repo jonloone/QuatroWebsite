@@ -66,11 +66,13 @@ proofCards:
   did: "Programó radar a través de nubes sobre las celdas marcadas, correlacionó con la presión de línea y entregó un sitio confirmado a la capa de inteligencia."
   took: Días, del primer tamizado a la celda confirmada.
   asset: /images/proof-energy-corridor.png
+  href: /es/proof
 - title: El estiaje de una reserva, evaluado desde cuatro sistemas.
   saw: "Anomalía de temperatura superficial del mar, lluvia, extensión de agua superficial y verdor de la vegetación para un territorio, comparados con el año anterior, respondidos en lenguaje corriente con cada cifra citada."
   did: "Fusionó registros públicos oceánicos, meteorológicos y satelitales en una evaluación y una vigilancia que marca el cambio."
   took: "Sin hardware de campo; la primera evaluación dentro de un mes."
   asset: null
+  href: /es/proof
 platformMapping:
   see: "Los tres SCADA, historiadores, GIS, salidas de detección de fugas, medición, despacho y reserva, los pronósticos, sensores y video de campo, y el territorio mismo desde satélite. Los sistemas existentes son objetivos de integración. 8.000+ integraciones en el modelo operativo (DataMiner xOps)."
   correlate: "Más de ocho variables (presión, caudal, temperatura, estado operativo, acústica, vibración, observación desde órbita, reportes de campo) correlacionadas en un mismo modelo, con preguntas en lenguaje corriente respondidas en español y cada cifra trazada a su origen. La observación desde órbita es Quatro Klarety, nuestra capacidad de análisis geoespacial, entregada con nuestro socio de observación de la Tierra."

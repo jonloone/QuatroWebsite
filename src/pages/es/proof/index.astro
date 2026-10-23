@@ -1,0 +1,59 @@
+---
+/**
+ * /es/proof — trabajo de referencia (REALIGNMENT_2026-10-20 §9A, §0.6). Tarjetas A y B de
+ * COPY_ENERGY §7 ES; C y D sin texto todavía, solo título y marcador honesto.
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import ProofCard from '@/components/marketing/ProofCard.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const sub = 'Piezas abstraídas de trabajo real: lo que vio el operador, lo que hizo el equipo y lo que tomó, medido en días.'
+
+const pieces = [
+  {
+    card: {
+      title: 'Un corredor tamizado desde órbita, confirmado por radar.',
+      saw: 'Todo el derecho de vía tamizado cada semana con datos satelitales abiertos, un puñado de celdas marcadas, imagen de antes y después en cada una.',
+      did: 'Programó radar a través de nubes sobre las celdas marcadas, correlacionó con la presión de línea y entregó un sitio confirmado a la capa de inteligencia.',
+      took: 'Días, del primer tamizado a la celda confirmada.',
+      asset: '/images/proof-energy-corridor.png',
+    },
+  },
+  {
+    card: {
+      title: 'El estiaje de una reserva, evaluado desde cuatro sistemas.',
+      saw: 'Anomalía de temperatura superficial del mar, lluvia, extensión de agua superficial y verdor de la vegetación para un territorio, comparados con el año anterior, respondidos en lenguaje corriente con cada cifra citada.',
+      did: 'Fusionó registros públicos oceánicos, meteorológicos y satelitales en una evaluación y una vigilancia que marca el cambio.',
+      took: 'Sin hardware de campo; la primera evaluación dentro de un mes.',
+      asset: null,
+    },
+  },
+  { pendingTitle: 'Un deslizamiento en un sitio minero, antes y después.' },
+  { pendingTitle: 'El cuadro operativo de una red eléctrica.' },
+]
+---
+
+<MarketingLayout lang="es" title="Trabajo de referencia | Quatro" description={sub}>
+  <HeroCanvas
+    badge="Prueba"
+    title="Trabajo de referencia"
+    body={sub}
+    ctaLabel="Hable con nuestro equipo"
+    ctaHref="/es/contact/demo"
+  />
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {pieces.map((piece: any) => (
+        <ProofCard card={piece.card ?? null} pendingTitle={piece.pendingTitle} lang="es" />
+      ))}
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Cómo se ejecuta un compromiso', href: '/es/how-it-works/engagement' }}
+    microcopy="Alojado en su país · Su equipo es dueño desde el primer día"
+  />
+</MarketingLayout>

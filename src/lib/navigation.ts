@@ -139,7 +139,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
         { name: 'El cuadro operativo', href: '/how-it-works' },
         { name: 'Cómo se ejecuta un compromiso', href: '/how-it-works/engagement' },
         { name: 'Soberanía, alojamiento y gobernanza', href: '/how-it-works/sovereignty' },
-        { name: 'Trabajo de referencia', href: '/proof', localize: false },
+        { name: 'Trabajo de referencia', href: '/proof' },
         { name: 'Artículos', href: '/es/resources/insights' },
       ],
     },
@@ -292,13 +292,13 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
     },
     {
       name: 'Prueba',
-      href: '/es/resources/insights',
+      href: '/proof',
       variant: 'stacked',
       items: [
-        { name: 'Trabajo de referencia', description: 'Lo que vio el operador, lo que hizo el equipo, lo que tomó', href: '/proof', icon: ChartBarIcon, localize: false },
+        { name: 'Trabajo de referencia', description: 'Lo que vio el operador, lo que hizo el equipo, lo que tomó', href: '/proof', icon: ChartBarIcon },
         { name: 'Artículos', description: 'Perspectivas sobre inteligencia operativa', href: '/es/resources/insights', icon: LightBulbIcon },
       ],
-      cta: { name: 'Todos los artículos', href: '/es/resources/insights' },
+      cta: { name: 'Trabajo de referencia', href: '/proof' },
     },
     {
       name: 'Socios',
