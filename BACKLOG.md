@@ -113,7 +113,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
 
 ## P4 — Industries (after Energy)
 
-- [ ] `SPEC-COPY-3` (L) — Copy deck `docs/COPY_INDUSTRIES_2026-10.md` for IND-1..5 (EN + ES) — blockedBy: DEC-2 — spec: §7 — verify: voice gate pass; needs human eyes: no named early engagement
+- [x] `SPEC-COPY-3` (L) — Copy deck `docs/COPY_INDUSTRIES_2026-10.md` for IND-1..5 (EN + ES) — blockedBy: DEC-2 — spec: §7 — done: 96a08bc
+  > note: voice gate pass (A grep clean; one tricolon fixed); name grep clean (no client, place, partner, vendor, mission, figure or price). Open for Jonathan: Mining badge "Demonstrated on a site" and Cities "+ demonstrated" have no delivered result behind them ([approve], fallbacks given); Mining stats are dated public figures (ARCOM via Expreso, Army via El Universo); Security drops Elementos from the corridor program (affiliate mention only) and cuts youth/counter-cartel framing; Agriculture covers aquaculture only (cacao/forestry named as next). Layer captions written for all five (Energy still has none). Needs human eyes: no named early engagement.
 - [ ] `IND-1` (M) — Environment and protected areas (new) + images — blockedBy: NRG-2, SPEC-COPY-3 — spec: §7 — verify: `npm run build` green; voice gate pass
 - [ ] `IND-2` (M) — Mining and remediation (new) + images — blockedBy: NRG-2, SPEC-COPY-3 — spec: §7 — verify: `npm run build` green; voice gate pass
 - [ ] `IND-3` (M) — Cities and public services rewrite (disaster response, cadaster, waste, water; ports and fleet folded with an xOps-proven note) — blockedBy: NRG-2, SPEC-COPY-3 — spec: §7 — verify: `npm run build` green; voice gate pass
