@@ -149,7 +149,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
 
 - [x] `PROOF-1` (M) — `/proof` reference work: four abstracted pieces with white-labeled captures or honest placeholders — blockedBy: DEC-2, NRG-3 — spec: §9A, §13.6 — done: 27edb9b
   > note: build green, `astro check` zero new (148), voice gate pass, zero internal 404s. No partner capture is used (card A's image is the generated v7.1 asset; B, C, D show the placeholder), so no consent is needed yet; §13.6 consent gates any white-labeled capture added later. C and D have no write-up in any source; titles only until one exists. Needs human eyes: partner consent recorded before any capture replaces a placeholder.
-- [ ] `ES-PROOF-1` (S) — Spanish `/es/proof` from COPY_ENERGY §7 ES (cards A and B) with the two pending pieces titled in Spanish (§0.6) — blockedBy: PROOF-1 — spec: §0.6, §9A — verify: `npm run build` green; voice gate pass (ES)
+- [x] `ES-PROOF-1` (S) — Spanish `/es/proof` from COPY_ENERGY §7 ES (cards A and B) with the two pending pieces titled in Spanish (§0.6) — blockedBy: PROOF-1 — spec: §0.6, §9A — done: 02f6d6c
+  > note: build green, `astro check` zero new (148), ES voice gate pass, zero internal 404s; language switch /proof ↔ /es/proof works. The two pending titles are new Spanish (Esteban's read).
 - [ ] `PROOF-2` (S) — Reference programs (partner-delivered, labeled) — blockedBy: PROOF-1 — spec: §9B — verify: `npm run build` green; needs human eyes: Skyline written OK on file
 - [ ] `SPEC-COPY-4` (M) — Copy deck `docs/COPY_HOMEPAGE_2026-10.md` (captions, sub, promise line, band, FAQ, ecosystem, where-we-operate) EN + ES — blockedBy: DEC-2 — spec: §10 — verify: voice gate pass
 - [ ] `HOME-1` (L) — Homepage rebuild per §10 — blockedBy: CAP-0, NAV-1, SPEC-COPY-4, PROOF-1 — spec: §10, §1c, §1e — verify: `npm run build` green; voice gate pass; grep zero for `DataOS|Second Wind|SMARTS|TEKTELIC|Intelsat|Telesat|US-headquartered`
