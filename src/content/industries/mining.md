@@ -1,7 +1,7 @@
 ---
 title: Mining and remediation
 tagline: "See every concession and the river below it, from one record."
-heroImage: /images/industry-mining.png
+heroImage: /images/industry-mining-remediation.png
 description: "Inspection runs on drones and patrols, sites reopen after an operation, and a remediation project can start with no sensors at all. Quatro gives your team a satellite baseline in weeks and one record the regulator and the prosecutor can use."
 order: 3
 status: active
@@ -42,10 +42,12 @@ capabilities:
 - name: Hold each concession to its license
   description: "Legal concessions monitored against their license footprint, with a compliance record the operator and the regulator share."
   featured: true
+  image: /images/cap-mining-concession.png
   outcome: "A dated, geolocated record of what changed inside and outside the footprint."
 - name: Know where to sample
   description: "Contamination screening from imagery ranks the most likely locations, so field sampling goes where it confirms the most."
   featured: true
+  image: /images/cap-mining-sampling.png
   outcome: "Fewer samples, placed where they count. Field sampling still confirms."
 - name: Read vegetation and watershed impact
   description: "Vegetation and water change around the site, asked in plain language and answered with every figure cited."
