@@ -1,0 +1,52 @@
+---
+/**
+ * /es/how-it-works/sovereignty — soberanía, alojamiento y gobernanza (§6C, §0.6; COPY_HOW_IT_WORKS 6C ES).
+ * Lenguaje corriente, sin texto legal.
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const sub =
+  'En lenguaje corriente, qué se queda en su país y qué puede hacer la IA. El anexo del contrato contiene el texto vinculante.'
+
+const blocks = [
+  { title: 'Información de vigilancia', text: 'Llega solo a los roles que usted autoriza. Queda fuera de los tickets de soporte y de las herramientas en el exterior, y una orden de imágenes nunca lo nombra a usted ni su propósito.' },
+  { title: 'Datos personales', text: 'Bajo la Ley Orgánica de Protección de Datos Personales (LOPDP), Quatro actúa como encargado del tratamiento según sus instrucciones, recoge solo lo que el trabajo necesita y seudonimiza donde puede.' },
+  { title: 'Lo que es suyo', text: 'Sus datos y cada producto derivado son suyos desde que existen. Las reglas, umbrales y flujos construidos para usted también lo son, entregados en formatos abiertos que puede llevar a otro proveedor.' },
+  { title: 'Configuración y credenciales', text: 'La configuración, la arquitectura y las credenciales del sistema son confidenciales. Las llaves quedan bajo su custodia, y la administración remota pasa por autenticación multifactor con cada sesión grabada.' },
+  { title: 'Dónde corre', text: 'Los datos, los respaldos, los registros y las llaves se quedan en el país. Usted elige un centro de datos en el país gestionado por nosotros, una nube de gobierno o privada en el país, o sus propias instalaciones, y puede migrar entre ellas. Un sitio remoto sigue funcionando cuando cae el enlace.' },
+  { title: 'Lo que puede hacer la IA', text: 'La inferencia corre en el país, y ningún modelo de terceros se entrena con sus datos. Cada modelo queda registrado, y usted conoce un cambio antes de que llegue a producción. Los modelos son reemplazables, incluidos los de pesos abiertos. Las reglas son explícitas y versionadas, y cada resultado lleva su traza. La IA aconseja, un funcionario decide y firma, y usted puede apagar cualquier función de IA.' },
+  { title: 'Cuando termina', text: 'Una exportación completa en 30 días, 90 días de apoyo a la transición y eliminación certificada.' },
+]
+---
+
+<MarketingLayout lang="es" title="Soberanía, alojamiento y gobernanza | Quatro" description={sub}>
+  <HeroCanvas
+    badge="Cómo funciona"
+    title="Soberanía, alojamiento y gobernanza"
+    body={sub}
+    ctaLabel="Hable con nuestro equipo"
+    ctaHref="/es/contact/demo"
+  />
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl space-y-12 lg:space-y-16">
+      {blocks.map((block, i) => (
+        <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-4 lg:gap-16 pb-12 lg:pb-16" style={i < blocks.length - 1 ? 'border-bottom: 1px solid var(--color-structure);' : ''}>
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">{String(i + 1).padStart(2, '0')}</p>
+            <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">{block.title}</h2>
+          </div>
+          <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">{block.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Cómo se ejecuta un compromiso', href: '/es/how-it-works/engagement' }}
+    microcopy="Alojado en su país · Su equipo es dueño desde el primer día"
+  />
+</MarketingLayout>

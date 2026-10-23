@@ -133,9 +133,9 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
     howItWorks: {
       title: 'Cómo funciona',
       items: [
-        { name: 'El cuadro operativo', href: '/how-it-works', localize: false },
-        { name: 'Cómo se ejecuta un compromiso', href: '/how-it-works/engagement', localize: false },
-        { name: 'Soberanía, alojamiento y gobernanza', href: '/how-it-works/sovereignty', localize: false },
+        { name: 'El cuadro operativo', href: '/how-it-works' },
+        { name: 'Cómo se ejecuta un compromiso', href: '/how-it-works/engagement' },
+        { name: 'Soberanía, alojamiento y gobernanza', href: '/how-it-works/sovereignty' },
         { name: 'Artículos', href: '/es/resources/insights' },
       ],
     },
@@ -177,7 +177,7 @@ export const footerNavigation = footerNavigationData.en
    ═══════════════════════════════════════════════════════════════ */
 
 const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
-  // REALIGNMENT_2026-10-20 §3. Spanish How it works links stay EN until ES-HIW-1;
+  // REALIGNMENT_2026-10-20 §3.
   // Proof points at Insights until PROOF-1 builds /proof; industries change as IND-* land.
   en: [
     {
@@ -275,14 +275,13 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
     {
       name: 'Cómo funciona',
       href: '/how-it-works',
-      localize: false,
       variant: 'stacked',
       items: [
-        { name: 'El cuadro operativo', description: 'Del satélite al SCADA y al campo', href: '/how-it-works', icon: LinkIcon, localize: false },
-        { name: 'Cómo se ejecuta un compromiso', description: 'De una prueba de valor a un servicio anual', href: '/how-it-works/engagement', icon: WrenchScrewdriverIcon, localize: false },
-        { name: 'Soberanía, alojamiento y gobernanza', description: 'Qué se queda en su país y qué puede hacer la IA', href: '/how-it-works/sovereignty', icon: LockClosedIcon, localize: false },
+        { name: 'El cuadro operativo', description: 'Del satélite al SCADA y al campo', href: '/how-it-works', icon: LinkIcon },
+        { name: 'Cómo se ejecuta un compromiso', description: 'De una prueba de valor a un servicio anual', href: '/how-it-works/engagement', icon: WrenchScrewdriverIcon },
+        { name: 'Soberanía, alojamiento y gobernanza', description: 'Qué se queda en su país y qué puede hacer la IA', href: '/how-it-works/sovereignty', icon: LockClosedIcon },
       ],
-      cta: { name: 'Cómo funciona', href: '/how-it-works', localize: false },
+      cta: { name: 'Cómo funciona', href: '/how-it-works' },
     },
     {
       name: 'Prueba',

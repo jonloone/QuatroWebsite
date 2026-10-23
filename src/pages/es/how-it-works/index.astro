@@ -1,0 +1,70 @@
+---
+/**
+ * /es/how-it-works — el cuadro operativo (REALIGNMENT_2026-10-20 §6A, §0.6; COPY_HOW_IT_WORKS 6A ES).
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import SpineBand from '@/components/marketing/SpineBand.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+import { layersEs, layerPromiseEs, engagementLadderEs } from '@/lib/layers'
+
+const layerBeats = layersEs.map((layer) => ({
+  id: layer.id,
+  index: layer.index,
+  label: layer.label,
+  oneLiner: layer.headline,
+}))
+
+const sub =
+  'Un solo cuadro operativo de su territorio y de su operación, del satélite al SCADA y al campo, operado en su país y de su propiedad desde el primer día.'
+---
+
+<MarketingLayout lang="es" title="Cómo funciona | Quatro" description={sub}>
+  <HeroCanvas
+    badge="Cómo funciona"
+    title="Un solo sistema, del sensor a la decisión firmada."
+    body={sub}
+    ctaLabel="Hable con nuestro equipo"
+    ctaHref="/es/contact/demo"
+  />
+
+  <SpineBand beats={layerBeats} promise={layerPromiseEs} foundation={null} ariaLabel="Territorio, operación, la capa de Quatro" />
+
+  <!-- El humano decide, usted es dueño (§0.4) -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-sans font-light text-2xl lg:text-4xl leading-[1.25] tracking-tight max-w-4xl" style="color: var(--color-neutral-800);">
+        Los agentes proponen. Su equipo decide. Cada acción queda firmada. La inteligencia y el despliegue son suyos desde el primer día.
+      </p>
+      <p class="mt-8 font-sans text-base lg:text-lg leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+        Cada acción del sistema queda registrada y es auditable, y sus datos siguen bajo su control.
+      </p>
+    </div>
+  </section>
+
+  <!-- Párrafo de compromiso (§2) -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Cómo se ejecuta un compromiso</p>
+      </div>
+      <div>
+        <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{engagementLadderEs}</p>
+        <a href="/es/how-it-works/engagement" class="inline-block mt-8 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Cómo se ejecuta un compromiso &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enlace a Arquitectura (nivel 3; página en inglés) -->
+  <section class="py-12 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <a href="/how-it-works/architecture" class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-500);">El cuadro completo, para quienes lo evalúan &rarr;</a>
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Cómo se ejecuta un compromiso', href: '/es/how-it-works/engagement' }}
+    microcopy="Alojado en su país · Su equipo es dueño desde el primer día"
+  />
+</MarketingLayout>

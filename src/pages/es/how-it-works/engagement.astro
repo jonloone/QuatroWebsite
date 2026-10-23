@@ -1,0 +1,91 @@
+---
+/**
+ * /es/how-it-works/engagement — cómo se ejecuta un compromiso (§6B, §0.6; COPY_HOW_IT_WORKS 6B ES).
+ * Cronograma y compuertas, sin precios (§13.3).
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const sub =
+  'Empiece por su área de mayor riesgo y decida con los resultados, medidos contra indicadores acordados de antemano.'
+
+const proofOfValue = [
+  'La línea base satelital arranca primero porque no requiere hardware de campo, así que los resultados empiezan durante la construcción.',
+  'Un primer cuadro operativo de su área de mayor riesgo en unos 30 días.',
+  'Luego una evaluación de 90 días medida contra indicadores acordados de antemano. En un corredor son las detecciones confirmadas en el derecho de vía, menos falsas alarmas y una respuesta más rápida.',
+  'Conserva el acceso durante un año completo. La renovación y la ampliación se deciden con resultados.',
+]
+
+const youSupply = [
+  'Acceso a los sistemas que tienen los datos (SCADA, historiadores, GIS) en los primeros 60 días.',
+  'Un equipo contraparte que revisa cada entregable en diez días hábiles y firma la compuerta.',
+  'Una decisión de alojamiento: en cuál de las tres modalidades corre el cuadro, elegida mientras se redacta el alcance de trabajo.',
+]
+---
+
+<MarketingLayout lang="es" title="Cómo se ejecuta un compromiso | Quatro" description={sub}>
+  <HeroCanvas
+    badge="Cómo funciona"
+    title="Cómo se ejecuta un compromiso"
+    body={sub}
+    ctaLabel="Hable con nuestro equipo"
+    ctaHref="/es/contact/demo"
+  />
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">01</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">Prueba de valor, de 30 a 90 días</h2>
+      </div>
+      <div>
+        <ul class="space-y-5">
+          {proofOfValue.map((line) => (
+            <li class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">{line}</li>
+          ))}
+        </ul>
+        <div class="mt-12 rounded-xl p-6 lg:p-8" style="background: var(--color-paper); border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">La compuerta</p>
+          <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-700);">Antes de pedir cualquier equipo de campo, ambas partes aprueban el mapa de calor de riesgo, las áreas de interés y el plan de ubicación de sensores.</p>
+        </div>
+        <p class="mt-12 font-mono text-[10px] uppercase tracking-[0.1em] mb-5" style="color: var(--color-forest);">Lo que aporta su institución</p>
+        <ul class="space-y-4">
+          {youSupply.map((line) => (
+            <li class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{line}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">02</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">Un servicio anual que opera su equipo</h2>
+      </div>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">
+        Con precio anual y renovado con resultados. Alojamiento en el país, soporte de 07:00 a 22:00 los siete días de la semana, 90 días de acompañamiento intensivo después de la puesta en marcha y un informe mensual de servicio a su comité directivo.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">03</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">Un programa, por tramos</h2>
+      </div>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">
+        Para programas nacionales, la construcción avanza por tramos a través de un consorcio liderado por un integrador local, su única contraparte contractual. Cada tramo después del primero tiene su propio contrato, así que nada más allá del primero queda comprometido hasta que usted lo firma. Un comité directivo mensual, presidido por el integrador local, gobierna el programa.
+      </p>
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Cómo funciona', href: '/es/how-it-works' }}
+    microcopy="Alojado en su país · Su equipo es dueño desde el primer día"
+  />
+</MarketingLayout>
