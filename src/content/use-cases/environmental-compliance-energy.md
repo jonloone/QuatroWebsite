@@ -1,64 +1,40 @@
 ---
-title: Environmental Compliance & Emissions Intelligence
-tagline: Three Compliance Streams. One Operational Data Layer.
-description: Pipeline safety, emissions monitoring, and ESG disclosure — three regulatory obligations that share the same underlying operational data. Quatro connects them into one governed intelligence model, replacing manual report assembly with continuous, auditable compliance.
+title: "Environmental compliance for energy"
+tagline: "One record for the energy incident and the environmental event."
+description: "Every incident on the energy side is now an environmental event the same office answers for. One record has to serve both."
 parentIndustry: energy
 order: 3
 hero:
-  eyebrow: Energy — Environmental Compliance
-  title: Environmental Compliance & Emissions Intelligence
-  description: PHMSA pipeline safety. EPA methane monitoring. CSRD and SEC ESG disclosure. Three compliance obligations, three separate data pipelines, three audit trails — all drawing from the same operational systems. Quatro connects the underlying data once and routes it to every compliance destination automatically. Your team reviews and authorizes. Assembly is governed.
+  eyebrow: Energy and pipelines
+  title: "Environmental compliance for energy"
+  description: "Every incident on the energy side is now an environmental event the same office answers for. One record has to serve both."
   primaryCta:
-    label: Talk to Our Team
+    label: Talk to our team
     href: /contact/demo
   secondaryCta:
-    label: Talk to an Engineer
-    href: /contact/sales
+    label: How an engagement runs
+    href: /how-it-works/engagement
 pain:
-  narrative: Energy operators face a regulatory convergence problem. Pipeline safety mandates require real-time leak detection data and integrity reporting. EPA methane rules require continuous emissions monitoring with equipment-level attribution. CSRD and SEC ESG disclosure require Scope 1 and 2 emissions data formatted for investor reporting. Each obligation draws from the same SCADA systems, sensors, and production data — but each is served by a separate compliance workflow with separate manual assembly. Compliance officers spend more time reconciling data between systems than analyzing what the data means.
+  narrative: "The same ministry answers for the dams, the grid, the pipelines, the concessions and the rivers between them, while the agencies still report separately."
   quantified: []
 capabilities:
-  - name: Multi-Method Leak Detection
-    description: Continuous methane monitoring with automated PHMSA and EPA compliance reporting from the same sensor data.
-    icon: pipeline
-  - name: Emissions Attribution
-    description: Real-time Scope 1 and 2 emissions data attributed to specific equipment, processes, and time periods. When emissions spike, the operational context — which equipment, what conditions, what changed — is immediate.
-    icon: emissions
-  - name: Multi-Framework Compliance Automation
-    description: One data layer feeding PHMSA integrity reports, EPA emissions filings, and CSRD/SEC ESG disclosures. Each formatted for its destination. Each with audit trails from formatted report to original sensor reading.
-    icon: compliance
-  - name: ESG Data Integration
-    description: Operational emissions, water consumption, and energy use data mapped automatically to CSRD, ESRS, IFRS S1/S2, and SEC disclosure formats. The same sensors that enable predictive maintenance feed sustainability reporting.
-    icon: esg
-  - name: Enforcement-Ready Evidence Packages
-    description: Every violation event documented with detection timestamp, measured values, regulatory thresholds, operational context, response actions, and recovery confirmation. Formatted for regulatory submission or audit defense.
-    icon: evidence
+  - name: "Hold each concession to its license"
+    description: "Legal concessions monitored against their license footprint, with a compliance record the operator and the regulator share."
+  - name: "Watch the basins below the operation"
+    description: "Continuous change detection over the basins an operation drains into: vegetation loss, new pooling, turbidity, excavation, road cutting."
+  - name: "Every finding on the record"
+    description: "Every finding dated, georeferenced and traceable to its source, in the form the regulator, the Armed Forces and the prosecutor can use."
 stats: []
 platformMapping:
-  see: Connect pipeline SCADA, emissions monitors (CEMS, leak detection, fugitive monitoring), production systems, and environmental sensors. DNP3, OPC-UA, MQTT, Modbus — 8,000+ integrations across the energy operations stack.
-  understand: Emissions attribution at the equipment level. Leak detection with AI cross-correlation across methods. Compliance posture tracked in real time against PHMSA, EPA, and ESG frameworks simultaneously. Predictive models flag when current trajectories approach regulatory thresholds.
-  orchestrate: Governed autonomous compliance reporting across all frameworks. Automated violation response workflows. ESG data pipelines feeding investor reporting continuously. As carbon market participation grows, the same operational data layer extends to digital MRV — measurement, reporting, and verification for carbon credit qualification.
-objections:
-  - concern: We already have separate compliance tools for each regulatory framework
-    response: That's the problem this solves. Each tool draws from the same underlying operational data but maintains its own data pipeline, its own reconciliation process, and its own audit trail. Quatro connects the data once at the source and routes it to every compliance destination. Your existing tools can remain in place — Quatro feeds them verified, attributed data instead of manual exports.
-  - concern: ESG reporting is handled by our sustainability team, not operations
-    response: That's common — and it's why ESG data is typically estimated from facility-level averages instead of measured at the equipment level. Quatro bridges the gap by structuring operational emissions data for sustainability reporting formats. Your sustainability team gets sensor-sourced data they can defend to auditors. Your operations team gets the same data informing maintenance decisions. One source, two audiences.
-adjacentSolutions:
-  - title: Environmental Governance
-    description: The full cross-industry environmental governance framework — emissions, water quality, air quality, and carbon monitoring in one governed model.
-    href: /industries/environment
-  - title: Pipeline Integrity & Leak Detection
-    description: Multi-modal anomaly detection and predictive integrity intelligence for midstream pipeline networks.
-    href: /industries/energy/pipeline-integrity
-  - title: Grid Operations & Renewable Integration
-    description: Operational intelligence for transmission, distribution, and DER integration.
-    href: /industries/energy/grid-operations
+  see: "Operational systems, concession and license footprints, field reports, and the territory itself from satellite."
+  understand: "Operational incidents against environmental change on the same record, every figure traced to its source."
+  orchestrate: "Findings are packaged as evidence for the regulator. Your team decides; every step is recorded."
 cta:
   primary:
-    label: Talk to Our Team
+    label: Talk to our team
     href: /contact/demo
   secondary:
-    label: Talk to an Engineer
-    href: /contact/sales
-  microcopy: Intelligence in weeks · Your team owns the compliance model from day one
+    label: How an engagement runs
+    href: /how-it-works/engagement
+  microcopy: "Hosted in your country · Your team owns it from day one"
 ---

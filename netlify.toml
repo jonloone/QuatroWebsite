@@ -77,6 +77,85 @@
   status = 301
   force = true
 
+# Use cases: six kept and rewritten, the rest retired (UC-1, §8)
+[[redirects]]
+  from = "/industries/cities/galapagos-conservation"
+  to = "/industries/environment/marine-reserve-vigilance"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/industrial/mining-operations"
+  to = "/industries/mining/mining-remediation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/energy/grid-operations"
+  to = "/industries/energy/dry-season-operations"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/defense/maritime-awareness"
+  to = "/industries/security/maritime-awareness"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/defense/base-protection"
+  to = "/industries/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/defense/mission-logistics"
+  to = "/industries/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/industrial/oee-optimization"
+  to = "/industries/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/industrial/process-quality"
+  to = "/industries/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/infrastructure/fleet-logistics"
+  to = "/industries/cities"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/infrastructure/noc-operations"
+  to = "/industries/cities"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/infrastructure/smart-facilities"
+  to = "/industries/cities"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/energy/predictive-maintenance"
+  to = "/industries/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/cities/youth-violence-prevention"
+  to = "/industries/cities"
+  status = 301
+  force = true
+
 # Defense and critical infrastructure merged into Security (IND-4)
 [[redirects]]
   from = "/industries/defense"
