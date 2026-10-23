@@ -3,42 +3,48 @@
  * CapabilityLayout — one template for the six capability pages (REALIGNMENT_2026-10-20 §5):
  * hero (eyebrow = layer), what you get, how it shows up in your operation, substrate line,
  * proof card or honest placeholder, hand-off to the next layer, engagement ladder, CTA.
- * Copy comes from the capabilities collection (docs/COPY_CAPABILITIES_2026-10.md).
+ * Copy comes from the capabilities collection (docs/COPY_CAPABILITIES_2026-10.md); `lang="es"` reads
+ * capabilities-es and the deck's Spanish template labels (ES-CAP-1).
  */
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import ProofCard from '@/components/marketing/ProofCard.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
-import { engagementLadder } from '@/lib/layers'
+import { engagementLadder, engagementLadderEs } from '@/lib/layers'
 
 interface Props {
   capability: any
+  lang?: 'en' | 'es'
 }
 
-const { capability } = Astro.props
+const { capability, lang = 'en' } = Astro.props
+const es = lang === 'es'
+const t = es
+  ? { suffix: 'Capacidades', talk: 'Hable con nuestro equipo', contact: '/es/contact/demo', get: 'Lo que obtiene', shows: 'Cómo aparece en su operación', proof: 'Prueba', engagement: 'Cómo se ejecuta un compromiso', engagementHref: '/es/how-it-works/engagement', ladder: engagementLadderEs, micro: 'Alojado en su país · Su equipo es dueño desde el primer día' }
+  : { suffix: 'Capabilities', talk: 'Talk to our team', contact: '/contact/demo', get: 'What you get', shows: 'How it shows up in your operation', proof: 'Proof', engagement: 'How an engagement runs', engagementHref: '/how-it-works/engagement', ladder: engagementLadder, micro: 'Hosted in your country · Your team owns it from day one' }
 const { title, hero, scaleBand, whatYouGet = [], showsUp = [], substrateLine, affiliate, proof, handoff } = capability.data
 
 // Link only to pages that exist today; industry and capability links switch on as their tickets land
-const industryIds = new Set((await getCollection('industries')).map((e: any) => e.id.replace(/\.md$/, '')))
+const industryIds = new Set((await getCollection(es ? 'industries-es' : 'industries')).map((e: any) => e.id.replace(/\.md$/, '')))
 const capabilityIds = new Set(
-  (await getCollection('capabilities')).filter((e: any) => e.data.hero).map((e: any) => e.id.replace(/\.md$/, ''))
+  (await getCollection(es ? 'capabilities-es' : 'capabilities')).filter((e: any) => e.data.hero).map((e: any) => e.id.replace(/\.md$/, ''))
 )
 const live = (href: string) => {
-  const [, section, slug] = href.split('/')
+  const [, section, slug] = href.replace(/^\/es(?=\/)/, '').split('/')
   if (section === 'industries' && slug) return industryIds.has(slug)
   if (section === 'capabilities' && slug) return capabilityIds.has(slug)
   return true
 }
 ---
 
-<MarketingLayout title={`${title} | Capabilities`} description={hero.sub}>
+<MarketingLayout lang={lang} title={`${title} | ${t.suffix}`} description={hero.sub}>
   <HeroCanvas
     badge={hero.eyebrow}
     title={hero.title}
     body={hero.sub}
-    ctaLabel="Talk to our team"
-    ctaHref="/contact/demo"
+    ctaLabel={t.talk}
+    ctaHref={t.contact}
   />
 
   <!-- Scale band (§5B: attributed vendor scale, high on the page) -->
@@ -60,7 +66,7 @@ const live = (href: string) => {
     <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
       <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
         <div>
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">What you get</p>
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{t.get}</p>
         </div>
         <ul class="space-y-6">
           {whatYouGet.map((line: string, i: number) => (
@@ -78,7 +84,7 @@ const live = (href: string) => {
   {showsUp.length > 0 && (
     <section class="py-20 lg:py-28 px-8 lg:px-12" style="background: var(--color-paper); border-top: 1px solid var(--color-structure);">
       <div class="mx-auto max-w-6xl">
-        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">How it shows up in your operation</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">{t.shows}</p>
         <div class={`grid grid-cols-1 ${showsUp.length >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-6 lg:gap-8`}>
           {showsUp.map((ex: any) => {
             const Tag = live(ex.href) ? 'a' : 'div'
@@ -116,8 +122,8 @@ const live = (href: string) => {
   <!-- Proof card or honest placeholder (§0.1) -->
   <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-3xl">
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">Proof</p>
-      <ProofCard card={proof} />
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">{t.proof}</p>
+      <ProofCard card={proof} lang={lang} />
     </div>
   </section>
 
@@ -141,15 +147,15 @@ const live = (href: string) => {
   <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
       <div>
-        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{t.engagement}</p>
       </div>
-      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{engagementLadder}</p>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{t.ladder}</p>
     </div>
   </section>
 
   <DualCta
-    primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
-    secondaryCta={{ label: 'How an engagement runs', href: '/how-it-works/engagement' }}
-    microcopy="Hosted in your country · Your team owns it from day one"
+    primaryCta={{ label: t.talk, href: t.contact }}
+    secondaryCta={{ label: t.engagement, href: t.engagementHref }}
+    microcopy={t.micro}
   />
 </MarketingLayout>

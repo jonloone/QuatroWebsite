@@ -20,6 +20,7 @@ async function build(): Promise<Set<string>> {
   for (const e of await getCollection('industries')) routes.add(`/industries/${strip(e.id)}`)
   for (const e of await getCollection('industries-es')) routes.add(`/es/industries/${strip(e.id)}`)
   for (const e of await getCollection('capabilities')) if ((e.data as any).hero) routes.add(`/capabilities/${strip(e.id)}`)
+  for (const e of await getCollection('capabilities-es')) if ((e.data as any).hero) routes.add(`/es/capabilities/${strip(e.id)}`)
   for (const e of await getCollection('use-cases')) routes.add(`/industries/${(e.data as any).parentIndustry}/${strip(e.id)}`)
   for (const e of await getCollection('insights')) routes.add(`/insights/${strip(e.id)}`)
   for (const e of await getCollection('solutions-es')) routes.add(`/es/solutions/${strip(e.id)}`)

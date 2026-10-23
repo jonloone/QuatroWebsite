@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content'
+import CapabilityLayout from '@/layouts/CapabilityLayout.astro'
+
+// ES mirror of /capabilities/[slug] (ES-CAP-1); a page builds only once its copy sets `hero` (§0.1)
+export async function getStaticPaths() {
+  const capabilities = await getCollection('capabilities-es')
+  return capabilities
+    .filter((capability: any) => capability.data.hero)
+    .map((capability: any) => ({
+      params: { slug: capability.id.replace(/\.md$/, '') },
+      props: { capability },
+    }))
+}
+
+const { capability } = Astro.props
+---
+
+<CapabilityLayout capability={capability} lang="es" />

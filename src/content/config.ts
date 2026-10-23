@@ -429,5 +429,6 @@ export const collections = {
   'products-es': productsCollection,
   'solutions-es': solutionsCollection,
   'industries-es': industriesCollection,
+  'capabilities-es': capabilitiesCollection,
   'case-studies-es': caseStudiesCollection,
 }

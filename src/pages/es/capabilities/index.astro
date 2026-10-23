@@ -1,0 +1,92 @@
+---
+/**
+ * /es/capabilities — Spanish mirror of /capabilities (ES-CAP-1); copy from the ES half of
+ * docs/COPY_CAPABILITIES_2026-10.md (index block). A capability links only once its page exists.
+ */
+import { getCollection } from 'astro:content'
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import SpineBand from '@/components/marketing/SpineBand.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+import { layersEs, layerPromiseEs, engagementLadderEs } from '@/lib/layers'
+
+const capabilities = (await getCollection('capabilities-es')).sort((a: any, b: any) => a.data.order - b.data.order)
+
+const layerBeats = layersEs.map((layer) => ({
+  id: layer.id,
+  index: layer.index,
+  label: layer.label,
+  oneLiner: layer.headline,
+}))
+
+const groups = layersEs.map((layer) => ({
+  layer,
+  items: capabilities
+    .filter((c: any) => c.data.layer === layer.id)
+    .map((c: any) => ({
+      title: c.data.title,
+      href: c.data.hero ? `/es/capabilities/${c.id.replace(/\.md$/, '')}` : null,
+      sub: c.data.hero?.sub,
+    })),
+}))
+
+// §2 sub, verbatim from the ES homepage deck
+const description =
+  'Un solo cuadro operativo de su territorio y de su operación, del satélite al SCADA y al campo, operado en su país y de su propiedad desde el primer día.'
+---
+
+<MarketingLayout lang="es" title="Capacidades | Quatro" description={description}>
+  <HeroCanvas
+    badge="Capacidades"
+    title={layerPromiseEs}
+    body={description}
+    ctaLabel="Hable con nuestro equipo"
+    ctaHref="/es/contact/demo"
+  />
+
+  <SpineBand beats={layerBeats} promise={layerPromiseEs} showPromise={false} foundation={null} ariaLabel="Territorio, operación, la capa de Quatro" />
+
+  <!-- Six capabilities, grouped by layer -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl space-y-16">
+      {groups.map(({ layer, items }) => (
+        <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-8 lg:gap-16">
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">{layer.index} · {layer.label}</p>
+            <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{layer.headline}</p>
+          </div>
+          <ul class="space-y-6">
+            {items.map((item: any) => (
+              <li class="pb-6" style="border-bottom: 1px solid var(--color-structure);">
+                {item.href ? (
+                  <a href={item.href} class="group block">
+                    <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">{item.title} <span class="transition-transform duration-300 inline-block group-hover:translate-x-1" style="color: var(--color-forest);">&rarr;</span></h2>
+                    {item.sub && <p class="mt-2 font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{item.sub}</p>}
+                  </a>
+                ) : (
+                  <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">{item.title}</h2>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Engagement ladder (§2) -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Cómo se ejecuta un compromiso</p>
+      </div>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{engagementLadderEs}</p>
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Cómo se ejecuta un compromiso', href: '/es/how-it-works/engagement' }}
+    microcopy="Alojado en su país · Su equipo es dueño desde el primer día"
+  />
+</MarketingLayout>

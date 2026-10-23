@@ -115,12 +115,12 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
     capabilities: {
       title: 'Capacidades',
       items: [
-        { name: 'Quatro Klarety', href: '/capabilities/quatro-klarety', localize: false },
-        { name: 'El modelo operativo', href: '/capabilities/operational-intelligence', localize: false },
-        { name: 'IoT, borde y comunicaciones OT', href: '/capabilities/iot-edge', localize: false },
-        { name: 'Razonamiento, agentes y evidencia', href: '/capabilities/reasoning-and-evidence', localize: false },
-        { name: 'Inteligencia y línea base de riesgo', href: '/capabilities/risk-baseline', localize: false },
-        { name: 'Servicio gestionado y alojamiento soberano', href: '/capabilities/managed-service', localize: false },
+        { name: 'Quatro Klarety', href: '/capabilities/quatro-klarety' },
+        { name: 'El modelo operativo', href: '/capabilities/operational-intelligence' },
+        { name: 'IoT, edge y comunicaciones OT', href: '/capabilities/iot-edge' },
+        { name: 'Razonamiento, agentes y evidencia', href: '/capabilities/reasoning-and-evidence' },
+        { name: 'Inteligencia y línea base de riesgo', href: '/capabilities/risk-baseline' },
+        { name: 'Servicio gestionado y alojamiento soberano', href: '/capabilities/managed-service' },
       ],
     },
     industries: {
@@ -254,17 +254,16 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
     {
       name: 'Capacidades',
       href: '/capabilities',
-      localize: false,
       variant: 'stacked',
       items: [
-        { name: 'Quatro Klarety', description: 'Monitoreo territorial desde el espacio', href: '/capabilities/quatro-klarety', icon: GlobeAltIcon, localize: false },
-        { name: 'El modelo operativo', description: 'Todos sus sistemas, en un solo modelo operativo en vivo', href: '/capabilities/operational-intelligence', icon: LinkIcon, localize: false },
-        { name: 'IoT, borde y comunicaciones OT', description: 'Hardware y comunicaciones OT en campo', href: '/capabilities/iot-edge', icon: SignalIcon, localize: false },
-        { name: 'Razonamiento, agentes y evidencia', description: 'Los agentes proponen; sus operadores deciden', href: '/capabilities/reasoning-and-evidence', icon: CommandLineIcon, localize: false },
-        { name: 'Inteligencia y línea base de riesgo', description: 'Sepa dónde está el riesgo antes de comprometer capital en campo', href: '/capabilities/risk-baseline', icon: ShieldCheckIcon, localize: false },
-        { name: 'Servicio gestionado y alojamiento soberano', description: 'Operado en su país, de su propiedad', href: '/capabilities/managed-service', icon: LockClosedIcon, localize: false },
+        { name: 'Quatro Klarety', description: 'Monitoreo territorial desde el espacio', href: '/capabilities/quatro-klarety', icon: GlobeAltIcon },
+        { name: 'El modelo operativo', description: 'Todos sus sistemas, en un solo modelo operativo en vivo', href: '/capabilities/operational-intelligence', icon: LinkIcon },
+        { name: 'IoT, edge y comunicaciones OT', description: 'Hardware y comunicaciones OT en campo', href: '/capabilities/iot-edge', icon: SignalIcon },
+        { name: 'Razonamiento, agentes y evidencia', description: 'Los agentes proponen; sus operadores deciden', href: '/capabilities/reasoning-and-evidence', icon: CommandLineIcon },
+        { name: 'Inteligencia y línea base de riesgo', description: 'Sepa dónde está el riesgo antes de comprometer capital en campo', href: '/capabilities/risk-baseline', icon: ShieldCheckIcon },
+        { name: 'Servicio gestionado y alojamiento soberano', description: 'Operado en su país, de su propiedad', href: '/capabilities/managed-service', icon: LockClosedIcon },
       ],
-      cta: { name: 'Todas las capacidades', href: '/capabilities', localize: false },
+      cta: { name: 'Todas las capacidades', href: '/capabilities' },
     },
     {
       name: 'Industrias',
