@@ -1,4 +1,8 @@
 ---
+/**
+ * /es/industries — Spanish mirror of /industries (ES-IND-1): the active and emerging industries from
+ * industries-es, in spec order (§7). Retired and folded ES industries 301 elsewhere.
+ */
 import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
@@ -6,126 +10,53 @@ import Section from '@/components/marketing/Section.astro'
 import IndustryHubCard from '@/components/marketing/IndustryHubCard.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
 
-const allIndustries = await getCollection('industries')
-const getIndustry = (slug: string) => allIndustries.find((i) => i.id === slug || i.id === `${slug}.md`)
+const industries = (await getCollection('industries-es'))
+  .filter((i: any) => i.data.status === 'active' || i.data.status === 'emerging')
+  .sort((a: any, b: any) => a.data.order - b.data.order)
+  .map((i: any) => {
+    const href = `/es/industries/${i.id.replace(/\.md$/, '')}`
+    return {
+      title: i.data.title,
+      description: i.data.hero?.title || i.data.tagline,
+      href,
+      heroImage: i.data.heroImage,
+      solutions: i.data.capabilities.filter((c: any) => c.featured).slice(0, 3).map((c: any) => ({ name: c.name, href })),
+    }
+  })
 
-const pillars = [
-  {
-    name: 'Energía',
-    description: 'Inteligencia unificada para operaciones de red eléctrica, ductos y producción — conectando SCADA heredado con sistemas modernos para que su equipo vea, prediga y actúe desde un solo modelo.',
-    href: '/es/industries/energy',
-    heroImage: getIndustry('energy')?.data.heroImage || '/images/industry-energy.png',
-    stats: getIndustry('energy')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Salud de la Red', href: '/es/solutions' },
-      { name: 'Integridad de Ductos', href: '/es/solutions' },
-      { name: 'Salud de Activos', href: '/es/solutions' },
-    ],
-  },
-  {
-    name: 'Seguridad Nacional',
-    description: 'Inteligencia operacional soberana conectando protección comunitaria y seguridad territorial en un solo modelo. Aislada, auditable, su equipo controla la inteligencia desde el primer día.',
-    href: '/es/industries/defense',
-    heroImage: getIndustry('defense')?.data.heroImage || '/images/industry-defense.png',
-    stats: getIndustry('defense')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Inteligencia de Salud Comunitaria', href: '/es/industries/defense' },
-      { name: 'Inteligencia de Geoseguridad', href: '/es/industries/defense' },
-      { name: 'Infraestructura Soberana', href: '/es/industries/defense' },
-    ],
-  },
-  {
-    name: 'Redes',
-    description: 'Tierra a órbita, suscriptor a servicio — unificado en una vista operacional. Redes terrestres, satelitales e híbridas conectadas en un modelo de inteligencia.',
-    href: '/es/industries',
-    heroImage: getIndustry('networks')?.data.heroImage || '/images/industry-networks.png',
-    stats: getIndustry('networks')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Operaciones de Red', href: '/es/solutions' },
-      { name: 'Salud de Flota', href: '/es/solutions' },
-      { name: 'Aseguramiento de Servicio', href: '/es/solutions' },
-    ],
-  },
-  {
-    name: 'Ciudades',
-    description: 'Inteligencia para los sistemas de los que dependen las ciudades — agua, residuos, transporte, seguridad pública — conectados en un modelo operacional con resultados reales para los ciudadanos.',
-    href: '/es/industries/cities',
-    heroImage: getIndustry('cities')?.data.heroImage || '/images/industry-cities.png',
-    stats: getIndustry('cities')?.data.stats?.slice(0, 3) || [],
-    children: [
-      { name: 'Sistemas de Agua', href: '/es/solutions' },
-      { name: 'Cumplimiento Ambiental', href: '/es/solutions' },
-    ],
-  },
-]
+// §2 sub, verbatim from the ES homepage deck
+const sub =
+  'Un solo cuadro operativo de su territorio y de su operación, del satélite al SCADA y al campo, operado en su país y de su propiedad desde el primer día.'
 ---
 
-<MarketingLayout
-  lang="es"
-  title="Industrias — Inteligencia Operacional para Operaciones Críticas"
-  description="Quatro ofrece inteligencia operacional en energía, defensa, redes y ciudades — 8,000+ integraciones, desplegado a su manera."
->
+<MarketingLayout lang="es" title="Industrias | Quatro" description={sub}>
   <HeroCanvas
     badge="Industrias"
-    title="Inteligencia para las Operaciones que Más Importan"
-    body="Quatro ofrece inteligencia operacional para las industrias donde la infraestructura importa más — redes de energía, redes de defensa, sistemas de comunicaciones y las ciudades de las que dependen las comunidades."
-    ctaLabel="Hablar con Nuestro Equipo"
+    title="Hacemos inteligente la infraestructura crítica."
+    body={sub}
+    ctaLabel="Hable con nuestro equipo"
     ctaHref="/es/contact/demo"
   />
 
   <Section>
-    <div class="mb-10 fade-up">
-      <p class="font-mono text-[10px] uppercase tracking-[0.12em] text-neutral-400 mb-3">Industrias</p>
-      <h2 class="font-display text-2xl font-bold text-neutral-800 sm:text-3xl tracking-tight">
-        Elija Su Dominio
-      </h2>
-    </div>
-
     <div class="space-y-6">
-      {pillars.map((pillar, i) => (
+      {industries.map((industry: any, i: number) => (
         <IndustryHubCard
-          title={pillar.name}
-          description={pillar.description}
-          href={pillar.href}
-          heroImage={pillar.heroImage}
-          solutions={pillar.children}
+          title={industry.title}
+          description={industry.description}
+          href={industry.href}
+          heroImage={industry.heroImage}
+          solutions={industry.solutions}
           reverse={i % 2 === 1}
+          lang="es"
         />
       ))}
     </div>
   </Section>
 
-  <Section divider dark>
-    <div class="mx-auto max-w-3xl text-center fade-up">
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-4">Plataforma</p>
-      <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">
-        Una Arquitectura. Cada Vertical.
-      </h2>
-      <p class="mt-4 text-lg text-white/70 leading-relaxed">
-        8,000+ integraciones. Modelos de IA entrenados con datos operacionales. Despliegue on-premise, en la nube o aislado. Quatro adapta la misma arquitectura central a los sistemas y requisitos de cumplimiento específicos de su sector.
-      </p>
-      <div class="mt-10 grid grid-cols-3 gap-px max-w-xl mx-auto" style="background: rgba(255,255,255,0.08);">
-        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
-          <div class="text-2xl font-bold text-white">8,000+</div>
-          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">Integraciones</div>
-        </div>
-        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
-          <div class="text-2xl font-bold text-white">4 Semanas</div>
-          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">Al Primer Valor</div>
-        </div>
-        <div class="py-6 text-center" style="background: var(--color-neutral-800);">
-          <div class="text-2xl font-bold text-white">Su Nube</div>
-          <div class="mt-1 text-[10px] uppercase tracking-wider text-white/40">O On-Premise</div>
-        </div>
-      </div>
-    </div>
-  </Section>
-
   <DualCta
-    title={`Vea cómo la <span style="color: var(--color-forest);">inteligencia operacional</span> funciona en su industria.`}
-    description="Díganos el resultado que importa. Conectamos los sistemas que tienen la respuesta. Su equipo empieza a trabajar desde el modelo."
-    primaryCta={{ label: 'Hablar con Nuestro Equipo', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Hablar con un Ingeniero', href: '/es/contact/sales' }}
-    microcopy="Inteligencia en semanas · Su equipo lo controla desde el primer día"
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Cómo se ejecuta un compromiso', href: '/es/how-it-works/engagement' }}
+    microcopy="Alojado en su país · Su equipo es dueño desde el primer día"
   />
 </MarketingLayout>

@@ -240,25 +240,50 @@
 
 [[redirects]]
   from = "/es/industries/transportation"
-  to = "/es/industries"
+  to = "/es/industries/cities"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/industries/water-environment"
-  to = "/es/industries"
+  to = "/es/industries/environment"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/industries/critical-infrastructure"
-  to = "/es/industries"
+  to = "/es/industries/security"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/solutions"
   to = "/es/capabilities"
+  status = 301
+  force = true
+
+# ES-IND-1 (2026-10-23): ES mirrors of the IND-4/IND-6 merges and folds
+[[redirects]]
+  from = "/es/industries/defense"
+  to = "/es/industries/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/industrial"
+  to = "/es/industries/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/infrastructure"
+  to = "/es/industries"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/space-satcom"
+  to = "/es/industries"
   status = 301
   force = true
 

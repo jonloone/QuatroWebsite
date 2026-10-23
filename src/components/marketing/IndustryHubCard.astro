@@ -28,6 +28,7 @@ interface Props {
   /** @deprecated — ignored, kept for backward compatibility */
   layout?: 'landscape' | 'portrait'
   class?: string
+  lang?: 'en' | 'es'
 }
 
 const {
@@ -39,7 +40,9 @@ const {
   solutions = [],
   reverse = false,
   class: className,
+  lang = 'en',
 } = Astro.props
+const labels = lang === 'es' ? { caps: 'Capacidades', explore: 'Ver' } : { caps: 'Capabilities', explore: 'Explore' }
 
 const uid = `hub-${Math.random().toString(36).slice(2, 8)}`
 const canvasId = `${uid}-canvas`
@@ -107,7 +110,7 @@ const canvasId = `${uid}-canvas`
       {solutions.length > 0 && (
         <div class="mt-8 space-y-4">
           <span class="font-mono text-[10px] uppercase tracking-[0.12em] text-neutral-400">
-            Capabilities
+            {labels.caps}
           </span>
           <ul class="space-y-3">
             {solutions.map((sol) => (
@@ -125,7 +128,7 @@ const canvasId = `${uid}-canvas`
 
       <div class="mt-10 inline-flex items-center gap-2 font-mono text-sm uppercase tracking-[0.08em] transition-colors duration-300"
            style="color: var(--color-forest);">
-        Explore {title}
+        {labels.explore} {title}
         <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
         </svg>

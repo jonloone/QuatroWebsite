@@ -416,7 +416,7 @@ responden por ello (MAE, INOCAR, INAMHI, SNGR).
 **hero.description:** La inspección depende de drones y patrullas, los sitios reabren después de un
 operativo y un proyecto de remediación puede arrancar sin un solo sensor. Quatro le da a su equipo una
 línea base satelital en semanas y un registro que el regulador y la Fiscalía pueden usar.
-**proofBadge:** Demostrado en un sitio `[aprobar]`
+**proofBadge:** Demostrado en un sitio `[aprobar]` · respaldo mientras tanto (igual que el inglés): "Prueba de valor en curso"
 **authorityLine:** Conocemos la concesión y el río que está debajo: inspección con dron y patrulla,
 sitios que reabren tras un operativo, y las autoridades que necesitan la evidencia (ARCOM, MAE, las
 Fuerzas Armadas, la Fiscalía).

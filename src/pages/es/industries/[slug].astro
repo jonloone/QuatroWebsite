@@ -64,7 +64,7 @@ const ctaSecondary = cta?.secondary || { label: 'Hable con un Ingeniero', href: 
   <!-- Banda de tres capas (REALIGNMENT_2026-10-20 §2, §7) -->
   <SpineBand beats={layerBeats} promise={layerPromiseEs} foundation={null} ariaLabel="Territorio, operación, la capa de Quatro" />
 
-  <StatStrip stats={stats} />
+  {stats?.length > 0 && <StatStrip stats={stats} />}
 
   <!-- Industry Challenges Grid -->
   <Section divider>
