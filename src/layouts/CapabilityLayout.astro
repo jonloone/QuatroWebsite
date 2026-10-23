@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { capability } = Astro.props
-const { title, hero, scaleBand, whatYouGet = [], showsUp = [], substrateLine, proof, handoff } = capability.data
+const { title, hero, scaleBand, whatYouGet = [], showsUp = [], substrateLine, affiliate, proof, handoff } = capability.data
 
 // Link only to pages that exist today; industry and capability links switch on as their tickets land
 const industryIds = new Set((await getCollection('industries')).map((e: any) => e.id.replace(/\.md$/, '')))
@@ -98,6 +98,18 @@ const live = (href: string) => {
   {substrateLine && (
     <section class="py-12 lg:py-16 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
       <p class="mx-auto max-w-5xl font-mono text-xs leading-relaxed tracking-[0.02em]" style="color: var(--color-neutral-500);">{substrateLine}</p>
+    </section>
+  )}
+
+  <!-- Affiliate routing (§1d) -->
+  {affiliate && (
+    <section class="py-16 lg:py-20 px-8 lg:px-12" style="background: var(--color-paper); border-top: 1px solid var(--color-structure);">
+      <div class="mx-auto max-w-5xl">
+        <p class="font-sans text-lg lg:text-xl leading-relaxed max-w-4xl" style="color: var(--color-neutral-700);">{affiliate.text}</p>
+        {affiliate.cta && (
+          <a href={affiliate.cta.href} class="inline-block mt-8 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{affiliate.cta.label} &rarr;</a>
+        )}
+      </div>
     </section>
   )}
 

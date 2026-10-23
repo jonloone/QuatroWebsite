@@ -214,6 +214,11 @@ const capabilitiesCollection = defineCollection({
       text: z.string(),
     })).optional(),
     substrateLine: z.string().optional(),
+    // Affiliate routing (§1d: Elementos for intelligence-led scope); CTA renders only with a real URL
+    affiliate: z.object({
+      text: z.string(),
+      cta: z.object({ label: z.string(), href: z.string() }).optional(),
+    }).optional(),
     handoff: z.object({
       text: z.string(),
       links: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
