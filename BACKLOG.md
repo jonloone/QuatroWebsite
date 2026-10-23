@@ -163,7 +163,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
   > note: build green, `astro check` zero new (129), voice gate pass, Africa/SE Asia removed from active markets; zero internal 404s. Flat-fee sentence held until Jonathan approves (deck [approve]). Hero image and sage band kept. ES partners page: none exists yet (ES-HOME-1 covers Spanish partners).
 - [x] `ABOUT-1` (S) — About: Quito HQ + US entity, Elementos, ventures line — blockedBy: SPEC-COPY-5 — spec: §11, §1e — done: df326e4
   > note: build green, `astro check` zero new (129), voice gate pass, zero internal 404s. Ventures line shipped per §11 and the audit (deck asked for Jonathan's read); Elementos unlinked until the URL exists. ES about in ES-HOME-1.
-- [ ] `ES-HOME-1` (M) — Spanish homepage, partners, about — blockedBy: HOME-1, PART-1, ABOUT-1 — spec: §0.6 — verify: `npm run build` green; voice gate pass
+- [!] `ES-HOME-1` (M) — Spanish homepage, partners, about — blockedBy: HOME-1, PART-1, ABOUT-1 — spec: §0.6 — verify: `npm run build` green; voice gate pass
+  > BLOCKED (2026-10-23): the Spanish homepage H1 and the About mission are the mission line (§0.3, verbatim). No approved Spanish translation exists; decks COPY_HOMEPAGE_2026-10 and COPY_PARTNERS_ABOUT_2026-10 propose "Hacemos inteligente la infraestructura crítica." / "Existimos para hacer inteligente la infraestructura crítica." [aprobar]. Jonathan and Esteban approve, then this builds from both decks' ES halves.
 - [ ] `CLEAN-1` (S) — Delete `.retired` page files older than 90 days, drop `src/content/verticals/*`, `products*`, `national-intelligence.retired`; update `CLAUDE.md` authorities to point at this spec — blockedBy: IND-6, HIW-4 — spec: §15 — verify: `npm run build` green
 
 ---
