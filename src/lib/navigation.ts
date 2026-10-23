@@ -85,6 +85,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       items: [
         { name: 'Energy and pipelines', href: '/industries/energy' },
         { name: 'Environment and protected areas', href: '/industries/environment' },
+        { name: 'Mining and remediation', href: '/industries/mining' },
         { name: 'National Security', href: '/industries/defense' },
         { name: 'Networks', href: '/industries/networks' },
         { name: 'Cities', href: '/industries/cities' },
@@ -127,6 +128,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       items: [
         { name: 'Energía e hidrocarburos', href: '/industries/energy' },
         { name: 'Ambiente y áreas protegidas', href: '/industries/environment', localize: false },
+        { name: 'Minería y remediación', href: '/industries/mining', localize: false },
         { name: 'Seguridad Nacional', href: '/industries/defense' },
         { name: 'Redes', href: '/industries/networks', localize: false },
         { name: 'Ciudades', href: '/industries/cities' },
@@ -203,6 +205,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       items: [
         { name: 'Energy and pipelines', description: 'Electricity, hydrocarbons, mining and water in one picture', href: '/industries/energy', icon: BoltIcon },
         { name: 'Environment and protected areas', description: 'What moves through a protected area, on the water and on land', href: '/industries/environment', icon: GlobeAltIcon },
+        { name: 'Mining and remediation', description: 'Every concession and the river below it, on one record', href: '/industries/mining', icon: BeakerIcon },
         { name: 'National Security', description: 'Sovereign intelligence across community and territorial domains', href: '/industries/defense', icon: ShieldIcon },
         { name: 'Networks', description: 'Ground to orbit, one view of connectivity operations', href: '/industries/networks', icon: SignalIcon },
         { name: 'Cities', description: 'Water, waste and safety in one operational picture', href: '/industries/cities', icon: BuildingLibraryIcon },
@@ -270,6 +273,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       items: [
         { name: 'Energía e hidrocarburos', description: 'Electricidad, hidrocarburos, minería y agua en un solo cuadro', href: '/industries/energy', icon: BoltIcon },
         { name: 'Ambiente y áreas protegidas', description: 'Lo que se mueve en un área protegida, en el agua y en tierra', href: '/industries/environment', icon: GlobeAltIcon, localize: false },
+        { name: 'Minería y remediación', description: 'Cada concesión y el río de abajo, en un solo registro', href: '/industries/mining', icon: BeakerIcon, localize: false },
         { name: 'Seguridad Nacional', description: 'Inteligencia soberana para protección comunitaria y territorial', href: '/industries/defense', icon: ShieldIcon },
         { name: 'Redes', description: 'De tierra a órbita, una sola vista de las operaciones de conectividad', href: '/industries/networks', icon: SignalIcon, localize: false },
         { name: 'Ciudades', description: 'Agua, residuos y seguridad en un solo cuadro operativo', href: '/industries/cities', icon: BuildingLibraryIcon },
