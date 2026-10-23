@@ -171,7 +171,7 @@ Quatro Fleet Health is delivered as three service tiers:
 - All of Tier 2, plus:
 - Advanced failure prediction (machine learning models tuned to your constellation)
 - Space domain awareness integration (conjunctions, orbital debris, maneuver planning)
-- Agentic operations (DataMiner + DataOS agents for autonomous maintenance scheduling, service mission coordination, customer communication)
+- Agentic operations (DataMiner agents for autonomous maintenance scheduling, service mission coordination, customer communication)
 - Inter-constellation optimization (if you operate multiple fleets or partner constellations)
 - M&A integration intelligence (if you acquire or integrate another constellation)
 - Typical deployment: large operators, 300+ satellites, multi-mission, global operations

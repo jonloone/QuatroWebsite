@@ -177,7 +177,7 @@ Quatro Teleport & Ground Segment Operations is delivered as three service tiers:
 - Fleet-wide capacity optimization
 - Space domain awareness integration (if applicable)
 - Cross-teleport capacity pooling and demand forecasting
-- Agentic operations (DataMiner + DataOS agents for cross-domain orchestration)
+- Agentic operations (DataMiner agents for cross-domain orchestration)
 - Typical deployment: enterprise satellite operators, multi-continent operations, 300+ devices
 
 *Framework note: Named tiers with pricing ranges, target deployments, and consumer profiles constitute deep proof. The buyer can point to a specific tier and say "this is what we need." Pricing transparency builds trust and reduces perceived risk.*

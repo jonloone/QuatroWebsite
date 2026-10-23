@@ -46,7 +46,7 @@ Evidence-grade detection means every event is logged with timestamp, location es
 
 Fiber optic intrusion detection along pipeline corridors provides perimeter awareness — detecting physical access to pipeline infrastructure before tapping occurs. Combined with hydraulic analysis, the system identifies both the attempt and the extraction.
 
-**Partner:** ECR Platform X — E-RTTM hydraulic leak and theft detection for pipeline infrastructure.
+**Partner:** E-RTTM hydraulic leak and theft detection for pipeline infrastructure.
 
 ### 03 — Environmental Monitoring
 
@@ -90,7 +90,7 @@ Daily revisit optical and SAR satellite imagery. AI change detection trained on 
 
 ### Ground Layer
 
-Pipeline SCADA systems. Vibration and pressure sensors. Flow rate monitors. Environmental IoT sensors for water and air quality. Fiber optic intrusion detection along pipeline corridors. ECR Platform X provides the E-RTTM hydraulic detection capability. TDengine manages the high-volume time-series data under IDMP-compliant governance.
+Pipeline SCADA systems. Vibration and pressure sensors. Flow rate monitors. Environmental IoT sensors for water and air quality. Fiber optic intrusion detection along pipeline corridors. E-RTTM provides the hydraulic detection capability. TDengine manages the high-volume time-series data under IDMP-compliant governance.
 
 ### Maritime Layer
 
@@ -148,7 +148,7 @@ Every intelligence product compounds the value of every other. Satellite detecti
 | Pipeline Response | Sub-30-second anomaly detection |
 | Evidence Standard | Prosecution-ready, regulatory-compliant |
 | Deployment | Sovereign, air-gapped capable |
-| Partner Ecosystem | NOVI Space, ECR Platform X, TDengine |
+| Partner Ecosystem | E-RTTM hydraulic detection, TDengine |
 
 ---
 

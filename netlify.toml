@@ -33,6 +33,13 @@
   status = 301
   force = true
 
+# /utility/technology retired; depth moved to /how-it-works/architecture (HIW-4, §3 target)
+[[redirects]]
+  from = "/utility/technology"
+  to = "/how-it-works"
+  status = 301
+  force = true
+
 # /utility/xops moved to the capability page (CAP-2)
 [[redirects]]
   from = "/utility/xops"

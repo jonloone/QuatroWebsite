@@ -13,7 +13,7 @@ heroImage: "/images/insight-post-consolidation-telco.png"
 
 ## The Consolidation Reality
 
-The SATCOM and telecommunications industry has consolidated dramatically over the past five years. SES acquired Intelsat. Regional operators across Latin America, Africa, and Southeast Asia have merged. The scale of consolidation is historic.
+The SATCOM and telecommunications industry has consolidated dramatically over the past five years. The largest satellite operators have merged. Regional operators across Latin America, Africa, and Southeast Asia have merged. The scale of consolidation is historic.
 
 But here is what happens on day one post-merger.
 

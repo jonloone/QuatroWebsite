@@ -277,7 +277,7 @@ const solutionsCollection = defineCollection({
     ).optional(),
     platformMapping: platformMappingSchema.optional(),
     proofPoint: proofPointSchema.optional(),
-    // §8: example cards under an industry, or moved to the DataOS site.
+    // §8: example cards under an industry, or moved off this site.
     status: z.enum(['active', 'moved-to-dataos']).optional(),
     capability: reference('capabilities').optional(),
     industry: z.enum(industrySlugs).optional(),

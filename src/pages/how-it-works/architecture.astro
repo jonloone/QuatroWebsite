@@ -1,0 +1,91 @@
+---
+/**
+ * /how-it-works/architecture — Tier 3, not in nav (REALIGNMENT_2026-10-20 §6D; COPY_HOW_IT_WORKS 6D).
+ * The honest depth from the retired technology.astro, without the partner names §1c removes.
+ * Substrates are named here per §1.
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro'
+import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+const sub =
+  'The layers behind the operational picture, the governance and audit chain, and where it runs. Substrates are named on this page.'
+
+const layers = [
+  { name: 'Your systems', text: 'SCADA, historians, GIS, detection systems, video, field sensors and the territory from satellite. Existing systems are integration targets.' },
+  { name: 'Connect', text: '8,000+ protocol connectors in DataMiner xOps bring every system in. Quatro Klarety brings the territory in from open satellite data, delivered with our earth-observation partner Klarety.' },
+  { name: 'The operational model', text: 'Every system normalizes into one real-time operational model.' },
+  { name: 'Reason', text: 'Your rules run as policy on that model, with full lineage from reading to action. The reasoning layer is being extended on a governed, bitemporal fact ledger.' },
+  { name: 'Govern and act', text: 'Governed agents read the model and propose actions your team signs: bounded execution, signed contracts, an immutable audit trail, sovereign deployment.' },
+  { name: 'Your operations', text: 'The control room, the field crew and the case file.' },
+]
+
+const governance = [
+  'Every model is pinned and registered, and passes behavioral regression tests before it changes.',
+  'Agents act under execution contracts that are signed, scoped and time-bounded.',
+  'Every run leaves a manifest, and every output carries a trace in chain-of-custody format.',
+]
+---
+
+<MarketingLayout title="Architecture | Quatro" description={sub}>
+  <HeroCanvas
+    badge="Architecture"
+    title="The full picture, for the people who evaluate it."
+    body={sub}
+    ctaLabel="Talk to our team"
+    ctaHref="/contact/demo"
+  />
+
+  <!-- The layers -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">The layers</p>
+      <ol class="space-y-0">
+        {layers.map((layer, i) => (
+          <li class="grid grid-cols-1 sm:grid-cols-[60px_30%_1fr] gap-4 sm:gap-8 py-8" style="border-top: 1px solid var(--color-structure);">
+            <span class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1.5" style="color: var(--color-forest);">{String(i + 1).padStart(2, '0')}</span>
+            <h2 class="font-sans text-lg lg:text-xl font-medium tracking-tight" style="color: var(--color-neutral-800);">{layer.name}</h2>
+            <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{layer.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Governance and audit chain -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="background: var(--color-paper); border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Governance and audit chain</p>
+      </div>
+      <ul class="space-y-5">
+        {governance.map((line) => (
+          <li class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">{line}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Compute and deployment -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: var(--color-forest);">Compute</p>
+        <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-700);">Built on open components: Spark, Kafka, Iceberg and Trino.</p>
+      </div>
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: var(--color-forest);">Deployment model</p>
+        <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-700);">
+          Three modalities: an in-country data center we manage, a government or private cloud in the country, or your premises. Keys in your custody; a remote node keeps working offline.
+        </p>
+        <a href="/how-it-works/sovereignty" class="inline-block mt-6 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Sovereignty, hosting and governance &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <DualCta
+    primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
+    secondaryCta={{ label: 'How it works', href: '/how-it-works' }}
+    microcopy="Hosted in your country · Your team owns it from day one"
+  />
+</MarketingLayout>
