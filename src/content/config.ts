@@ -47,79 +47,6 @@ const proofPointSchema = z.object({
   narrative: z.string(),
 })
 
-const productsCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    tagline: z.string(),
-    description: z.string(),
-    order: z.number(),
-    heroImage: z.string().optional(),
-    hero: z.object({
-      eyebrow: z.string(),
-      title: z.string(),
-      description: z.string(),
-      primaryCta: ctaSchema,
-      secondaryCta: ctaSchema.optional(),
-    }),
-    problems: z.array(
-      z.object({
-        title: z.string(),
-        description: z.string(),
-      })
-    ),
-    solutions: z.array(
-      z.object({
-        title: z.string(),
-        description: z.string(),
-      })
-    ),
-    stats: z.array(
-      z.object({
-        value: z.string(),
-        label: z.string(),
-      })
-    ),
-    capabilities: z.array(
-      z.object({
-        name: z.string(),
-        description: z.string(),
-        icon: z.string(),
-      })
-    ),
-    protocolShowcase: z.object({
-      title: z.string(),
-      subtitle: z.string(),
-      categories: z.array(z.object({
-        name: z.string(),
-        icon: z.string(),
-        items: z.array(z.string()),
-      })),
-      footnote: z.string().optional(),
-    }).optional(),
-    deploymentOptions: z.object({
-      title: z.string(),
-      subtitle: z.string(),
-      options: z.array(z.object({
-        name: z.string(),
-        description: z.string(),
-        bestFor: z.string(),
-        icon: z.string(),
-      })),
-    }).optional(),
-    proofPoint: proofPointSchema.optional(),
-    deepDive: z.object({
-      title: z.string(),
-      subtitle: z.string(),
-      sections: z.array(z.object({
-        title: z.string(),
-        description: z.string(),
-        icon: z.string().optional(),
-      })),
-    }).optional(),
-  }),
-})
-
 const industriesCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -416,7 +343,6 @@ const insightsCollection = defineCollection({
 })
 
 export const collections = {
-  products: productsCollection,
   industries: industriesCollection,
   capabilities: capabilitiesCollection,
   solutions: solutionsCollection,
@@ -426,7 +352,6 @@ export const collections = {
   'use-cases': useCasesCollection,
   insights: insightsCollection,
   // Spanish collections use the same schemas as their English counterparts
-  'products-es': productsCollection,
   'solutions-es': solutionsCollection,
   'industries-es': industriesCollection,
   'capabilities-es': capabilitiesCollection,
