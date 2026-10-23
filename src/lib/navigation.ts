@@ -150,7 +150,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       items: [
         { name: 'Nosotros', href: '/company/about' },
         { name: 'Liderazgo', href: '/company/leadership' },
-        { name: 'Socios', href: '/partners', localize: false },
+        { name: 'Socios', href: '/partners' },
         { name: 'Contacto', href: '/contact' },
         { name: 'Hable con nuestro equipo', href: '/contact/demo' },
       ],
@@ -306,9 +306,8 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
     {
       name: 'Socios',
       href: '/partners',
-      localize: false,
       items: [],
-      cta: { name: 'Socios', href: '/partners', localize: false },
+      cta: { name: 'Socios', href: '/partners' },
     },
     {
       name: 'Empresa',

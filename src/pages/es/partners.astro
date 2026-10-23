@@ -1,0 +1,177 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import SiteHeader from '@/components/layout/SiteHeader.astro'
+import SiteFooter from '@/components/layout/SiteFooter.astro'
+import DualCta from '@/components/marketing/DualCta.astro'
+
+// Copy: docs/COPY_PARTNERS_ABOUT_2026-10.md, Spanish half (ES-HOME-1; REALIGNMENT_2026-10-20 §11, §1e, §0.6)
+const sub = 'Usted tiene la relación con el cliente y conoce el mercado. Quatro integra y opera el cuadro operativo detrás de usted, en su país, y el cliente es dueño desde el primer día.'
+
+const tiers = [
+  { name: 'El socio local', text: 'Lidera la relación con el cliente y la propuesta, y es la única contraparte contractual del programa.' },
+  { name: 'Quatro', text: 'Integra los sistemas, los sensores y la vista satelital, y opera el resultado en el país junto al equipo del cliente.' },
+  { name: 'Socios tecnológicos', text: 'La tecnología de base: DataMiner xOps para el modelo operativo y Klarety para la observación de la Tierra.' },
+]
+
+const brings = [
+  { name: 'Sensores', text: 'La Quatro IoT & Edge Suite y las comunicaciones OT, solo donde el riesgo confirmado lo justifica.' },
+  { name: 'Seguridad y evidencia', text: 'Registros con cadena de custodia y los agentes operativos que los arman.' },
+  { name: 'Integración de datos', text: 'Los sistemas que el cliente ya opera, reunidos en un solo modelo operativo.' },
+  { name: 'Operación en el país', text: 'Alojamiento, soporte en español, acompañamiento intensivo y un ingeniero en sitio.' },
+  { name: 'Apoyo en propuestas', text: 'Alcance, plan de prueba de valor y las secciones técnicas de la propuesta.' },
+]
+
+const markets = ['Ecuador', 'Colombia', 'Venezuela', 'Panamá', 'Guyana', 'MENA (a través de un socio de canal)']
+
+const ideal = [
+  { name: 'Integradores locales con trayectoria', text: 'En programas de energía, ambiente, minería, servicios públicos o seguridad.' },
+  { name: 'Firmas geoespaciales y de ingeniería', text: 'Que ya trabajan el territorio y la planta.' },
+  { name: 'Programas alineados con la banca de desarrollo', text: 'Donde un consorcio liderado por un integrador local entrega por tramos.' },
+]
+---
+
+<BaseLayout
+  title="Socios | Quatro"
+  description={sub}
+  lang="es"
+>
+
+  <SiteHeader lang="es" />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       1. HERO — Photo top, clean text bottom (KT Practice style)
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <!-- 1a. Photo band — full-bleed monotone image across top -->
+  <section class="relative overflow-hidden" style="height: clamp(320px, 45vh, 520px);" data-nav-light>
+    <img
+      src="/images/bg-partners-hero-v2.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover object-center"
+      style="filter: grayscale(100%) contrast(0.7) brightness(1.1);"
+      loading="eager"
+      aria-hidden="true"
+    />
+    <!-- Sage-green monotone tint -->
+    <div class="absolute inset-0" style="background-color: rgba(180, 190, 170, 0.6); mix-blend-mode: multiply;"></div>
+    <div class="absolute inset-0" style="background-color: rgba(210, 215, 200, 0.35); mix-blend-mode: screen;"></div>
+    <!-- Bottom fade into the text section below -->
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, transparent 60%, rgba(206, 210, 198, 1) 100%);"></div>
+    <!-- Grain -->
+    <div class="absolute inset-0 opacity-[0.05] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+  </section>
+
+  <!-- 1b. Text band — solid sage background, no image competition -->
+  <section class="relative px-8 lg:px-12 pt-12 lg:pt-16 pb-24 lg:pb-32 overflow-hidden" style="background-color: rgb(206, 210, 198);">
+    <!-- Grain continuity -->
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27noise%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23noise)%27/%3E%3C/svg%3E');"></div>
+
+    <div class="relative z-10 mx-auto max-w-5xl">
+
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-8 fade-up" style="color: rgba(26,26,26,0.5);">Socios</p>
+
+      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight fade-up" style="color: #1a1a1a;">
+        Lleve el cuadro operativo<br />a su mercado.
+      </h1>
+
+      <div class="mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-[1fr_35%] gap-12 lg:gap-20">
+        <p class="font-sans text-lg lg:text-xl leading-relaxed fade-up" style="color: rgba(26,26,26,0.65);">
+          {sub}
+        </p>
+        <div class="flex items-end">
+          <a href="/es/contact/demo" class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.1em] transition-colors duration-300 hover:text-[#1a1a1a] fade-up" style="color: rgba(26,26,26,0.55);">
+            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+            Hable con nuestro equipo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- 2. THE CHANNEL (three tiers) -->
+  <section class="py-24 lg:py-32 px-8 lg:px-12">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">El canal</p>
+      </div>
+      <ol class="space-y-10">
+        {tiers.map((tier, i) => (
+          <li class="grid grid-cols-[40px_1fr] gap-4 items-start">
+            <span class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1.5" style="color: var(--color-forest);">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h2 class="font-sans text-lg lg:text-xl font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">{tier.name}</h2>
+              <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{tier.text}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 3. WHAT QUATRO BRINGS A PARTNER -->
+  <section class="py-24 lg:py-32 px-8 lg:px-12" style="background: var(--color-paper); border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">Lo que Quatro aporta a un socio</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {brings.map((item) => (
+          <div class="rounded-xl p-6 lg:p-8" style="border: 1px solid var(--color-structure);">
+            <h3 class="font-sans text-lg font-medium tracking-tight mb-3" style="color: var(--color-neutral-800);">{item.name}</h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ACTIVE MARKETS (§1e) -->
+  <section class="py-20 lg:py-24 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Mercados activos</p>
+      </div>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+        {markets.map((m) => (
+          <li class="font-sans text-base" style="color: var(--color-neutral-800);">{m}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. IDEAL PARTNERS -->
+  <section class="py-24 lg:py-32 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Socios ideales</p>
+      </div>
+      <ul class="space-y-8">
+        {ideal.map((item) => (
+          <li>
+            <h3 class="font-sans text-lg font-medium tracking-tight mb-2" style="color: var(--color-neutral-800);">{item.name}</h3>
+            <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{item.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. OWNERSHIP LINE -->
+  <section class="py-16 lg:py-20 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <p class="mx-auto max-w-5xl font-sans font-light text-xl lg:text-2xl leading-relaxed tracking-tight" style="color: var(--color-neutral-800);">
+      Cada compromiso deja al cliente como dueño de los datos, los productos derivados y el modelo operativo.
+    </p>
+  </section>
+
+  <DualCta
+    title="Cuéntenos de su mercado y del programa que está persiguiendo."
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Cómo se ejecuta un compromiso', href: '/es/how-it-works/engagement' }}
+    microcopy="Alojado en su país · Su cliente es dueño desde el primer día"
+  />
+
+  <SiteFooter lang="es" />
+
+</BaseLayout>

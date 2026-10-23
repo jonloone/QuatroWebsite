@@ -1,39 +1,48 @@
 ---
+/**
+ * /es/company/about (ES-HOME-1; COPY_PARTNERS_ABOUT_2026-10 ES half; mission line per DECISION_AUTHORITIES 2026-10-23).
+ */
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import Hero from '@/components/marketing/Hero.astro'
 import Section from '@/components/marketing/Section.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
-import Placeholder from '@/components/marketing/Placeholder.astro'
+
+const sub = 'Un solo cuadro operativo de su territorio y de su operación, del satélite al SCADA y al campo, operado en su país y de su propiedad desde el primer día.'
+
+const facts = [
+  { label: 'Identidad', text: 'Sede en Quito, Ecuador, con una entidad en Estados Unidos.' },
+  { label: 'Mercados', text: 'Activos en Ecuador, Colombia, Venezuela, Panamá y Guyana, y en MENA a través de un socio de canal.' },
+  { label: 'Emprendimientos', text: 'El mismo equipo también construye Sphera y Occupy, cada uno con su propia marca.' },
+]
 ---
 
-<MarketingLayout
-  lang="es"
-  title="Nosotros — Nuestra Misión, Visión y Valores"
-  description="Conozca la misión de Quatro: ofrecer inteligencia operacional a la velocidad de las operaciones."
->
+<MarketingLayout lang="es" title="Nosotros | Quatro" description={sub}>
   <Hero
     eyebrow="Sobre Quatro"
-    title="Inteligencia Operacional a la Velocidad de las Operaciones"
-    description="Estamos construyendo la utilidad de inteligencia operacional que permite a las organizaciones conectar, operar y comandar sus operaciones más críticas."
+    title="Hacemos inteligente la infraestructura crítica."
+    description={sub}
   />
 
   <Section>
-    <div class="grid gap-12 lg:grid-cols-2">
+    <div class="grid gap-12 lg:grid-cols-[35%_1fr]">
       <div>
-        <h2 class="font-display text-2xl font-bold text-neutral-800">Nuestra Misión</h2>
-        <p class="mt-4 text-lg text-neutral-600">
-          Ofrecer inteligencia operacional que permita a las organizaciones ver todo, actuar más rápido y comandar con confianza.
-        </p>
+        <h2 class="font-display text-2xl font-bold text-neutral-800">Nuestra misión</h2>
       </div>
-      <Placeholder label="Company Image" class="min-h-[300px]" />
+      <p class="text-lg text-neutral-600">Hacemos inteligente la infraestructura crítica.</p>
+    </div>
+    <div class="mt-16 grid gap-10 sm:grid-cols-2">
+      {facts.map((fact) => (
+        <div class="pt-6" style="border-top: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">{fact.label}</p>
+          <p class="text-base leading-relaxed text-neutral-700">{fact.text}</p>
+        </div>
+      ))}
     </div>
   </Section>
 
   <DualCta
-    title={`Vea cómo la <span style="color: var(--color-forest);">inteligencia operacional</span> funciona en su operación.`}
-    description="Elija un desafío. Desplegamos en sus sistemas en 4 semanas. Vea el valor antes de comprometerse."
-    primaryCta={{ label: 'Solicitar Evaluación', href: '/es/contact/demo' }}
-    secondaryCta={{ label: 'Hablar con un Ingeniero', href: '/es/contact/sales' }}
-    microcopy="Prueba de valor de 4 semanas · Acreditado en contrato anual"
+    primaryCta={{ label: 'Hable con nuestro equipo', href: '/es/contact/demo' }}
+    secondaryCta={{ label: 'Liderazgo', href: '/es/company/leadership' }}
+    microcopy="Alojado en su país · Su equipo es dueño desde el primer día"
   />
 </MarketingLayout>

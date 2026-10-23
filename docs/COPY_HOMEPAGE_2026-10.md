@@ -108,7 +108,7 @@ Energy cards A and B (`COPY_ENERGY` §7, no figures), each linking /proof. Secti
 
 ## 1. Hero
 - **eyebrow:** Sus sistemas generan los datos. La inteligencia debería ser suya.
-- **H1 `[aprobar]`:** Hacemos inteligente la infraestructura crítica.
+- **H1 (aprobado 2026-10-23, Jonathan):** Hacemos inteligente la infraestructura crítica.
 - **sub:** Un solo cuadro operativo de su territorio y de su operación, del satélite al SCADA y al campo,
   operado en su país y de su propiedad desde el primer día.
 - **promesa:** Vea el territorio. Conduzca la operación. Sea dueño de la inteligencia.
@@ -160,6 +160,7 @@ Tarjetas A y B de Energía (`COPY_ENERGY` §7 ES), con enlace a /es/proof.
 - **enlace:** Hágase socio → /partners
 
 ## 8. Preguntas frecuentes
+*(ES-HOME-1, 2026-10-23: etiqueta "Preguntas frecuentes"; encabezado "Lo que conviene saber antes de hablar." Etiqueta de filas: "Industrias". Solo las cuatro preguntas de abajo; las dos "keep" del inglés no tienen fuente en español. Lectura de Esteban.)*
 1. **¿En qué se diferencia Quatro de un integrador de sistemas?**
    Un integrador de sistemas hace un largo descubrimiento y le entrega una hoja de ruta. Nosotros empezamos por
    su área de mayor riesgo con una línea base satelital, conectamos los sistemas que tienen la respuesta y le

@@ -120,7 +120,7 @@ Cada compromiso deja al cliente como dueño de los datos, los productos derivado
 - **microcopy:** Alojado en su país · Su cliente es dueño desde el primer día
 
 ## ABOUT-1. Nosotros
-**Misión (§0.3):** Existimos para hacer inteligente la infraestructura crítica. `[aprobar con el H1 de la portada]`
+**Misión (§0.3):** Hacemos inteligente la infraestructura crítica. *(Aprobado 2026-10-23, Jonathan: la versión de la portada; "Existimos para…" queda retirada.)*
 **Identidad:** Sede en Quito, Ecuador, con una entidad en Estados Unidos.
 **Mercados:** Activos en Ecuador, Colombia, Venezuela, Panamá y Guyana, y en MENA a través de un socio de canal.
 **Elementos:** eliminado. *(Enmienda 2026-10-23, Jonathan: Elementos no se nombra en el sitio.)*

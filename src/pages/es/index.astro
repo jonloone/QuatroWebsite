@@ -2,421 +2,995 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import SiteHeader from '@/components/layout/SiteHeader.astro'
 import SiteFooter from '@/components/layout/SiteFooter.astro'
+import QuatroLogo from '@/components/QuatroLogo.astro'
+import SpineBand from '@/components/marketing/SpineBand.astro'
+import ProofCard from '@/components/marketing/ProofCard.astro'
+import { getCollection } from 'astro:content'
+import { layersEs, layerPromiseEs } from '@/lib/layers'
+
+// Copy: docs/COPY_HOMEPAGE_2026-10.md, Spanish half (ES-HOME-1; REALIGNMENT_2026-10-20 §10, §0.6)
+const sub = 'Un solo cuadro operativo de su territorio y de su operación, del satélite al SCADA y al campo, operado en su país y de su propiedad desde el primer día.'
+const layerCaptions: Record<string, string> = {
+  territory: 'Corredores, reservas, sitios mineros y ciudades, vigilados desde órbita.',
+  operation: 'SCADA, historiadores, GIS, video y sensores en un solo modelo vivo.',
+  quatro: 'Alojado y operado en su país, de su propiedad desde el primer día.',
+}
+const layerBeats = layersEs.map((layer) => ({ id: layer.id, index: layer.index, label: layer.label, oneLiner: layer.headline, caption: layerCaptions[layer.id] }))
+
+// Industry rows: the active and emerging industries, in spec order
+const industryRows = (await getCollection('industries-es'))
+  .filter((i: any) => i.data.status === 'active' || i.data.status === 'emerging')
+  .sort((a: any, b: any) => a.data.order - b.data.order)
+  .map((i: any) => ({ title: i.data.title, line: i.data.hero?.title, href: `/es/industries/${i.id.replace(/\.md$/, '')}` }))
+
+const proofCards = [
+  {
+    title: 'Un corredor tamizado desde órbita, confirmado por radar.',
+    saw: 'Todo el derecho de vía tamizado cada semana con datos satelitales abiertos, un puñado de celdas marcadas, imagen de antes y después en cada una.',
+    did: 'Programó radar a través de nubes sobre las celdas marcadas, correlacionó con la presión de línea y entregó un sitio confirmado a la capa de inteligencia.',
+    took: 'Días, del primer tamizado a la celda confirmada.',
+    asset: '/images/proof-energy-corridor.png',
+    href: '/es/proof',
+  },
+  {
+    title: 'El estiaje de una reserva, evaluado desde cuatro sistemas.',
+    saw: 'Anomalía de temperatura superficial del mar, lluvia, extensión de agua superficial y verdor de la vegetación para un territorio, comparados con el año anterior, respondidos en lenguaje corriente con cada cifra citada.',
+    did: 'Fusionó registros públicos oceánicos, meteorológicos y satelitales en una evaluación y una vigilancia que marca el cambio.',
+    took: 'Sin hardware de campo; la primera evaluación dentro de un mes.',
+    asset: null,
+    href: '/es/proof',
+  },
+]
 ---
 
 <BaseLayout
-  title="Quatro — Inteligencia Operacional para Infraestructura Crítica"
-  description="Quatro conecta más de 8,000 sistemas en una utilidad de inteligencia operacional — desplegable en semanas, no años. Diseñada para la infraestructura y la realidad operativa de América Latina."
+  title="Quatro | Hacemos inteligente la infraestructura crítica"
+  description={sub}
   lang="es"
 >
 
   <SiteHeader lang="es" />
 
   <!-- ═══════════════════════════════════════════════════════════════
-       1. HERO — Full-screen background image
+       1. HERO — Full-width editorial canvas, centered statement
        ═══════════════════════════════════════════════════════════════ -->
-  <section data-hero class="relative min-h-[85vh] lg:min-h-[90vh] flex items-end overflow-hidden px-6 pb-20 lg:pb-28">
-    <!-- Background image -->
-    <div class="absolute inset-0">
-      <img src="/images/hero-bg.png" alt="" class="h-full w-full object-cover" />
-      <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);"></div>
-    </div>
+  <section class="relative min-h-screen overflow-hidden" id="hero-carousel" data-dither-section data-nav-dark>
 
-    <!-- connect.png — bottom right graphic, overflows right edge -->
-    <img src="/images/connect.png" alt="" class="absolute bottom-0 w-[90%] lg:w-[70%] object-contain pointer-events-none select-none" style="right: -20%;" />
+    <!-- Bayer 4×4 image-dither canvas — full bleed background -->
+    <canvas id="hero-dither-canvas" class="absolute inset-0 w-full h-full z-[1]" style="background: #0f2e24;"></canvas>
 
-    <div class="relative z-10 mx-auto max-w-5xl w-full text-left pt-[max(15vh,120px)]">
-      <!-- Status badge -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-2 mb-10" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);">
-        <div class="w-2 h-2 rounded-full pulse-dot" style="background-color: var(--color-forest);"></div>
-        <span class="font-mono text-xs uppercase tracking-[0.05em] text-white/80">
-          Plataforma v4.2 — Operacional
-        </span>
-      </div>
+    <!-- Full overlay — base darkening layer across entire canvas -->
+    <div class="absolute inset-0 pointer-events-none z-[2]" style="background: rgba(10,30,22,0.45);"></div>
+    <!-- Text backdrop — strong center darken for WCAG contrast on headline/subtitle -->
+    <div class="absolute inset-0 pointer-events-none z-[3]" style="background: radial-gradient(ellipse 80% 55% at 50% 42%, rgba(10,30,22,0.55) 0%, transparent 70%);"></div>
+    <!-- Bottom gradient for caption legibility -->
+    <div class="absolute inset-0 pointer-events-none z-[4]" style="background: linear-gradient(to top, rgba(10,30,22,0.8) 0%, rgba(10,30,22,0.3) 20%, transparent 40%);"></div>
 
-      <!-- Eyebrow -->
-      <p class="font-mono text-xs uppercase tracking-[0.05em] text-white/60 mb-8">
-        Para equipos de operaciones en infraestructura crítica
-      </p>
-
-      <!-- H1 — Reckless Light -->
-      <h1 class="font-sans font-light text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-white">
-        Vea Todo.<br />
-        Entienda Por Qué.<br />
-        Actúe Antes de que Importe.
-      </h1>
-
-      <!-- Subhead -->
-      <p class="mt-8 font-sans text-base lg:text-lg text-white/60 max-w-xl leading-relaxed">
-        Quatro conecta más de 8,000 sistemas en una utilidad de inteligencia operacional — desplegable en semanas, no años. Diseñada para América Latina.
-      </p>
-
-      <!-- CTAs -->
-      <div class="mt-10 flex flex-wrap items-center gap-4">
-        <a
-          href="/es/contact/demo"
-          class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear"
-          style="background-color: var(--color-forest);"
-        >
-          Agende una Evaluación
-        </a>
-        <a
-          href="/es/how-it-works"
-          class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 text-white transition-colors duration-300 ease-linear hover:bg-white/10"
-          style="border: 1px solid rgba(255,255,255,0.2);"
-        >
-          Conozca la utilidad &rarr;
-        </a>
-      </div>
-
-      <!-- Microcopy -->
-      <p class="mt-4 font-mono text-xs text-white/40">
-        Prueba de valor en 4 semanas · Acreditada al contrato
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       2. REGIONAL COMMITMENT — Pattern A (Grid Section)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: var(--color-structure);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Presencia</span>
+    <!-- Hero text — centered editorial composition -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen pt-20 px-8 lg:px-16 text-center">
+      <div class="max-w-4xl">
+        <!-- Eyebrow — frames the structural problem, not a category label -->
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/60 mb-8">
+          Sus sistemas generan los datos. La inteligencia debería ser suya.
+        </p>
+        <!-- Headline — Reckless Light, editorial scale -->
+        <h1 class="font-sans font-light text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight text-white">
+          Hacemos inteligente la infraestructura crítica.
+        </h1>
+        <!-- Subtitle — connects physical + data systems, outcome-first -->
+        <p class="mt-8 font-display text-lg lg:text-xl leading-relaxed text-white/90 max-w-2xl mx-auto">
+          {sub}
+        </p>
+        <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">{layerPromiseEs}</p>
+        <!-- CTA -->
+        <div class="mt-12">
+          <a href="/es/contact/demo" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
+            Hable con nuestro equipo
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
         </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
-            Presencia<br />Compromiso<br />Regional
-          </h2>
-          <!-- Card grid -->
-          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid var(--color-structure); border-left: 1px solid var(--color-structure);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Equipos en América Latina</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Ingenieros y consultores que conocen su industria y hablan su idioma.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Sus datos en su país</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Arquitectura edge-first con soberanía de datos regional garantizada.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Soporte en su idioma</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Documentación, capacitación y soporte técnico en español y portugués.</p>
-            </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar: rotating caption left + dots right -->
+    <div class="absolute bottom-0 left-0 right-0 z-10 px-8 lg:px-16 xl:px-20 pb-8 lg:pb-12">
+      <div class="flex items-end justify-between gap-8">
+        <!-- Left: Rotating engagement caption -->
+        <div class="relative flex-1 max-w-xl" style="min-height: 72px;">
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out" data-slide="0">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Un corredor tamizado desde órbita, confirmado por radar</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Energía e hidrocarburos</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="1">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Una reserva donde las embarcaciones que se apagan siguen en el mapa</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Ambiente y áreas protegidas</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="2">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Un sitio minero y el río de abajo, en un solo registro</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Minería y remediación</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="3">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Después del terremoto, los barrios a los que llegar primero</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Ciudades y servicios públicos</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="4">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Un solo informe de estiaje para todas las cuencas</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Energía e hidrocarburos</p>
+          </div>
+          <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="5">
+            <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Una evaluación de refinería que queda como modelo vivo</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Energía e hidrocarburos</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       3. PROBLEM STATEMENT — Pattern A (Grid Section)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: var(--color-structure);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Desafío</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
-            Desafío<br />Operativo<br />Real
-          </h2>
-          <p class="mt-8 font-sans text-base leading-relaxed max-w-2xl" style="color: var(--color-neutral-500);">
-            Su operación merece tecnología diseñada para su infraestructura. Los sistemas heredados de proveedores extranjeros no fueron pensados para las distancias, la conectividad ni la realidad regulatoria de América Latina.
-          </p>
-          <!-- Card grid -->
-          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid var(--color-structure); border-left: 1px solid var(--color-structure);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Dependencia de proveedores extranjeros</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Licencias en dólares, soporte en otro huso horario y actualizaciones que no consideran su contexto operativo.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Operaciones remotas sin visibilidad</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Activos distribuidos en miles de kilómetros con conectividad intermitente. Los datos llegan tarde — o no llegan.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">El conocimiento se está yendo</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Los operadores con décadas de experiencia se están retirando. Su conocimiento vive en sus cabezas, no en sus sistemas.</p>
-            </div>
+        <!-- Right: Dots + counter -->
+        <div class="flex items-center gap-4 flex-shrink-0">
+          <div class="flex items-center gap-2">
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="0" style="background: rgba(255,255,255,0.9);" aria-label="Diapositiva 1"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="1" style="background: rgba(255,255,255,0.3);" aria-label="Diapositiva 2"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="2" style="background: rgba(255,255,255,0.3);" aria-label="Diapositiva 3"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="3" style="background: rgba(255,255,255,0.3);" aria-label="Diapositiva 4"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="4" style="background: rgba(255,255,255,0.3);" aria-label="Diapositiva 5"></button>
+            <button class="hero-dot w-2 h-2 rounded-full transition-all duration-500 cursor-pointer" data-slide="5" style="background: rgba(255,255,255,0.3);" aria-label="Diapositiva 6"></button>
           </div>
+          <p class="font-mono text-sm text-white/40" id="hero-counter">01 / 06</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Hero Carousel + Bayer 4×4 Image Dither (Quatro signature effect) -->
+  <script>
+    (function () {
+      const TOTAL = 6;
+      const INTERVAL = 6000;
+      let current = 0;
+      let timer: ReturnType<typeof setInterval>;
+
+      const captions = document.querySelectorAll('.hero-slide-caption');
+      const dots = document.querySelectorAll('.hero-dot');
+      const counter = document.getElementById('hero-counter');
+
+      // ─── Image sources for the carousel ───
+      const imageSources = [
+        '/images/proof-energy-corridor.png',
+        '/images/industry-water-environment.png',
+        '/images/industry-mining.png',
+        '/images/industry-cities.png',
+        '/images/industry-energy-andes-hydro.png',
+        '/images/cap-energy-refinery-model.png'
+      ];
+
+      // ─── Bayer 4×4 dither engine (from HeroCanvas.astro) ───
+      const bayer4x4 = [
+        [ 0/16,  8/16,  2/16, 10/16],
+        [12/16,  4/16, 14/16,  6/16],
+        [ 3/16, 11/16,  1/16,  9/16],
+        [15/16,  7/16, 13/16,  5/16]
+      ];
+
+      const canvas = document.getElementById('hero-dither-canvas') as HTMLCanvasElement | null;
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const pixelSize = 2;
+      const greenBlend = 0.25;
+      let baseSpeed = 0.08;
+      let startTime = performance.now();
+      let animId: number;
+
+      // Preload all images
+      const images: HTMLImageElement[] = [];
+      const offscreen = document.createElement('canvas');
+      const offCtx = offscreen.getContext('2d')!;
+      let currentImgIndex = 0;
+      let nextImgIndex = -1;
+      let crossfade = 0; // 0 = showing currentImgIndex fully, 1 = fully transitioned to nextImgIndex
+      let crossfadeActive = false;
+      const CROSSFADE_DURATION = 1200; // ms
+      let crossfadeStart = 0;
+
+      // Offscreen canvases for crossfade blending
+      const offA = document.createElement('canvas');
+      const offACtx = offA.getContext('2d')!;
+      const offB = document.createElement('canvas');
+      const offBCtx = offB.getContext('2d')!;
+
+      imageSources.forEach((src) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.src = src;
+        images.push(img);
+      });
+
+      function resize() {
+        const rect = canvas!.getBoundingClientRect();
+        canvas!.width = rect.width;
+        canvas!.height = rect.height;
+        offscreen.width = rect.width;
+        offscreen.height = rect.height;
+        offA.width = rect.width;
+        offA.height = rect.height;
+        offB.width = rect.width;
+        offB.height = rect.height;
+      }
+
+      function getImagePixels(imgIndex: number, w: number, h: number): Uint8ClampedArray | null {
+        const img = images[imgIndex];
+        if (!img || !img.complete || img.naturalWidth === 0) return null;
+        offscreen.width = w;
+        offscreen.height = h;
+        // Cover-fit the image (same as object-cover)
+        const imgAspect = img.naturalWidth / img.naturalHeight;
+        const canvasAspect = w / h;
+        let sx = 0, sy = 0, sw = img.naturalWidth, sh = img.naturalHeight;
+        if (imgAspect > canvasAspect) {
+          sw = img.naturalHeight * canvasAspect;
+          sx = (img.naturalWidth - sw) / 2;
+        } else {
+          sh = img.naturalWidth / canvasAspect;
+          sy = (img.naturalHeight - sh) / 2;
+        }
+        offCtx.drawImage(img, sx, sy, sw, sh, 0, 0, w, h);
+        return offCtx.getImageData(0, 0, w, h).data;
+      }
+
+      function render(time: number) {
+        if (!ctx) return;
+        const w = canvas!.width;
+        const h = canvas!.height;
+        if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
+
+        const elapsed = (time - startTime) / 1000;
+        const t = elapsed * baseSpeed;
+
+        // Handle crossfade timing
+        if (crossfadeActive) {
+          crossfade = Math.min(1, (time - crossfadeStart) / CROSSFADE_DURATION);
+          if (crossfade >= 1) {
+            currentImgIndex = nextImgIndex;
+            crossfadeActive = false;
+            crossfade = 0;
+            nextImgIndex = -1;
+          }
+        }
+
+        // Get pixel data for current (and next if crossfading)
+        const srcA = getImagePixels(currentImgIndex, w, h);
+        const srcB = crossfadeActive && nextImgIndex >= 0 ? getImagePixels(nextImgIndex, w, h) : null;
+
+        const imageData = ctx.createImageData(w, h);
+        const data = imageData.data;
+        const cols = Math.ceil(w / pixelSize);
+        const rows = Math.ceil(h / pixelSize);
+
+        for (let row = 0; row < rows; row++) {
+          for (let col = 0; col < cols; col++) {
+            const centerX = col * pixelSize + (pixelSize >> 1);
+            const centerY = row * pixelSize + (pixelSize >> 1);
+
+            // Sample source pixel (blend A and B if crossfading)
+            let sR = 0, sG = 0, sB = 0;
+            let imgBrightness = 0.3;
+
+            if (centerX < w && centerY < h) {
+              const sIdx = (centerY * w + centerX) * 4;
+              if (srcA) {
+                const aR = srcA[sIdx], aG = srcA[sIdx+1], aB = srcA[sIdx+2];
+                if (srcB && crossfadeActive) {
+                  const bR = srcB[sIdx], bG = srcB[sIdx+1], bB = srcB[sIdx+2];
+                  sR = aR + (bR - aR) * crossfade;
+                  sG = aG + (bG - aG) * crossfade;
+                  sB = aB + (bB - aB) * crossfade;
+                } else {
+                  sR = aR; sG = aG; sB = aB;
+                }
+                imgBrightness = (sR * 0.299 + sG * 0.587 + sB * 0.114) / 255;
+              }
+            }
+
+            const cx = col / cols;
+            const cy = row / rows;
+
+            // Warp animation (from HeroCanvas engine)
+            const warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
+            const warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
+            const wx = cx + warpX;
+            const wy = cy + warpY;
+            const d1 = Math.sqrt((wx - 0.5) ** 2 + (wy - 0.5) ** 2);
+            const warpIntensity = 0.3 + 0.25 * Math.sin(d1 * 8.0 - t * 2.0) + 0.15 * Math.cos((wx + wy) * 6.0 + t);
+
+            let intensity = imgBrightness * 0.85 + warpIntensity * 0.35;
+            intensity = Math.max(0, Math.min(1, intensity));
+
+            // Bayer threshold
+            const threshold = bayer4x4[row % 4][col % 4];
+            const on = intensity > threshold;
+
+            let r: number, g: number, b: number, a: number;
+            if (on) {
+              // Bright, vivid dither dots on deep green canvas — image pops through
+              const blend = greenBlend + (1 - greenBlend) * 0.2 * warpIntensity;
+              r = Math.round(sR * (1 - blend) + 80  * blend);
+              g = Math.round(sG * (1 - blend) + 185 * blend);
+              b = Math.round(sB * (1 - blend) + 140 * blend);
+              a = Math.round(intensity * 160 + 95);
+            } else {
+              // Transparent — deep forest green canvas (#0f2e24) shows through
+              r = 0; g = 0; b = 0; a = 0;
+            }
+
+            // Fill pixel block
+            for (let py = 0; py < pixelSize; py++) {
+              for (let px = 0; px < pixelSize; px++) {
+                const x = col * pixelSize + px;
+                const y = row * pixelSize + py;
+                if (x >= w || y >= h) continue;
+                const idx = (y * w + x) * 4;
+                data[idx]     = r;
+                data[idx + 1] = g;
+                data[idx + 2] = b;
+                data[idx + 3] = a;
+              }
+            }
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        animId = requestAnimationFrame(render);
+      }
+
+      // ─── Carousel Controller (integrated with dither) ───
+      function goTo(index: number) {
+        // Update captions
+        captions.forEach((el) => {
+          (el as HTMLElement).style.opacity = '0';
+          (el as HTMLElement).style.transform = 'translateY(1rem)';
+        });
+        dots.forEach((el) => {
+          (el as HTMLElement).style.background = 'rgba(255,255,255,0.3)';
+        });
+
+        const activeCaption = document.querySelector(`.hero-slide-caption[data-slide="${index}"]`) as HTMLElement;
+        const activeDot = document.querySelector(`.hero-dot[data-slide="${index}"]`) as HTMLElement;
+
+        if (activeCaption) { activeCaption.style.opacity = '1'; activeCaption.style.transform = 'translateY(0)'; }
+        if (activeDot) { activeDot.style.background = 'rgba(255,255,255,0.9)'; }
+        if (counter) { counter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(TOTAL).padStart(2, '0')}`; }
+
+        // Trigger dither crossfade
+        if (index !== currentImgIndex) {
+          nextImgIndex = index;
+          crossfadeActive = true;
+          crossfadeStart = performance.now();
+        }
+
+        current = index;
+      }
+
+      function next() {
+        goTo((current + 1) % TOTAL);
+      }
+
+      function startAutoplay() {
+        timer = setInterval(next, INTERVAL);
+      }
+
+      function resetAutoplay() {
+        clearInterval(timer);
+        startAutoplay();
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const idx = parseInt((dot as HTMLElement).dataset.slide || '0', 10);
+          goTo(idx);
+          resetAutoplay();
+        });
+      });
+
+      // Carousel continues autoplaying — no hover pause
+
+      // ─── Visibility gating ───
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            resize();
+            startTime = performance.now();
+            animId = requestAnimationFrame(render);
+          } else {
+            cancelAnimationFrame(animId);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      window.addEventListener('resize', resize);
+      observer.observe(canvas);
+
+      goTo(0);
+      startAutoplay();
+    })();
+  </script>
+
+  <!-- 1b. THREE-LAYER BAND (§2, §10) -->
+  <SpineBand beats={layerBeats} promise={layerPromiseEs} showPromise={false} foundation={null} ariaLabel="Territorio, operación, la capa de Quatro" />
+
   <!-- ═══════════════════════════════════════════════════════════════
-       4. DATA SOVEREIGNTY — Pattern A (Grid Section)
+       2. INDUSTRIES — the active industries, from the collection
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: var(--color-structure);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Soberanía</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95]" style="color: var(--color-forest);">
-            Sus<br />Datos<br />Su Control
-          </h2>
-          <!-- Card grid -->
-          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid var(--color-structure); border-left: 1px solid var(--color-structure);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">01</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Arquitectura Edge-First</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">Procesamiento local en cada sitio. Los datos se analizan donde se generan — con o sin conexión a la nube.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">02</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Despliegue Flexible</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">On-premise, nube privada, híbrido o air-gapped. Se adapta a sus requisitos de seguridad y regulación.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-[rgba(15,76,58,0.04)]" style="border-right: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-              <span class="font-mono text-xs" style="color: var(--color-forest);">03</span>
-              <h3 class="font-display text-lg font-bold mt-2" style="color: var(--color-neutral-800);">Formatos Abiertos</h3>
-              <p class="mt-2 font-sans text-sm" style="color: var(--color-neutral-500);">APIs abiertas y formatos estándar. Sus datos son suyos — siempre exportables, siempre accesibles.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section id="industries" style="border-top: 1px solid var(--color-structure);">
+    <div class="py-20 lg:py-28 px-6 lg:px-12">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Industrias</p>
     </div>
+    {industryRows.map((row: any) => (
+      <a href={row.href} class="industry-row group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 px-6 lg:px-12 items-center fade-up block transition-all duration-300" style="border-top: 1px solid var(--color-structure);">
+        <div class="max-w-lg">
+          <p class="font-sans text-sm leading-relaxed transition-colors duration-300 group-hover:text-[var(--color-neutral-700)]" style="color: var(--color-neutral-500);">{row.line}</p>
+        </div>
+        <div class="text-right">
+          <span class="font-display text-4xl lg:text-7xl font-light transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">{row.title}</span>
+        </div>
+      </a>
+    ))}
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       5. THE PLATFORM — Pattern B (Palantir Vertical List)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <!-- Editorial intro -->
-      <p class="font-sans text-2xl lg:text-4xl font-light leading-snug max-w-4xl" style="color: var(--color-neutral-800);">
-        Nuestra utilidad de inteligencia conecta más de 8,000 fuentes de datos en un modelo operacional unificado — visibilidad, operaciones e inteligencia en capas <span style="color: var(--color-forest);">progresivas</span>.
-      </p>
-
-      <!-- Sub-heading -->
-      <h2 class="font-display text-xl font-bold mt-16 mb-8" style="color: var(--color-forest);">
-        Nuestra Plataforma
-      </h2>
-
-      <!-- Connect -->
-      <a href="/es/how-it-works" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Visibilidad — Integren sus datos. Más de 8,000 conectores industriales. Conectividad universal para toda su infraestructura.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.1</span>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Connect</span>
-        </div>
-      </a>
-
-      <!-- Operate -->
-      <a href="/es/how-it-works" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Operaciones — Operen con inteligencia. Detección de anomalías, mantenimiento predictivo y automatización de procesos.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.2</span>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Operate</span>
-        </div>
-      </a>
-
-      <!-- Command -->
-      <a href="/es/how-it-works" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure); border-bottom: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Inteligencia — Orquesten a escala. Centro de comando unificado para operaciones distribuidas.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.3</span>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Command</span>
-        </div>
-      </a>
-    </div>
-  </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       6. WHY QUATRO — Pattern A (Grid Section, Dark)
+       5a. TECHNOLOGY PARTNERS — Logo strip with editorial label
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative px-6 overflow-hidden" style="border-top: 1px solid var(--color-structure);">
-    <!-- Background image -->
-    <div class="absolute inset-0">
-      <img src="/images/bg.png" alt="" class="h-full w-full object-cover" />
-      <div class="absolute inset-0" style="background: rgba(0,0,0,0.8);"></div>
-    </div>
+  <section class="relative py-20 lg:py-28 px-6 overflow-hidden" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
+
+    <!-- Subtle grain overlay -->
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27np1%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23np1)%27/%3E%3C/svg%3E');"></div>
+
     <div class="relative z-10 mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-0">
-        <!-- Sidebar label -->
-        <div class="pt-20 lg:pt-28 lg:pb-28 lg:col-span-3 lg:border-r lg:pr-8" style="border-color: rgba(255,255,255,0.1);">
-          <span class="lg:sticky lg:top-32 inline-block font-mono text-[12px] font-bold uppercase tracking-[0.2em]" style="color: var(--color-neutral-500);">Por Qué</span>
-        </div>
-        <!-- Main content -->
-        <div class="pb-20 lg:py-28 lg:col-span-9 lg:pl-8">
-          <h2 class="font-display text-5xl lg:text-7xl font-bold leading-[0.95] text-white">
-            Regional<br />Diseñado<br />Suyo
-          </h2>
-          <!-- Card grid — 2 rows of 3 -->
-          <div class="mt-12 grid md:grid-cols-3" style="border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.1);">
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">01</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Presencia Regional</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Equipos de ingeniería y soporte en la región. Implementación con contexto local.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">02</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Soberanía de Datos</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Sus datos operativos se quedan en su país. Cumplimiento con regulaciones locales.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">03</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Inversión Flexible</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">CAPEX, OPEX o modelos híbridos. Facturación en moneda local cuando es posible.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">04</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Diseñado para Su Infraestructura</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Funciona con conectividad intermitente, equipos legacy y condiciones reales.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">05</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Integración con Sistemas Existentes</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">No reemplacen su SCADA. Quatro se integra sobre lo que ya tienen.</p>
-            </div>
-            <div class="p-6 transition-colors duration-300 ease-linear hover:bg-white/20" style="background: rgba(255,255,255,0.05); border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1);">
-              <span class="font-mono text-xs text-white/60">06</span>
-              <h3 class="font-display text-lg font-bold mt-2 text-white">Soporte en Su Idioma</h3>
-              <p class="mt-2 font-sans text-sm text-white/50">Documentación, UI, capacitación y soporte técnico en español y portugués.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       7. INDUSTRIES — Pattern B (Palantir Vertical List)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-20 lg:py-28 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-6xl">
-      <!-- Editorial intro -->
-      <p class="font-sans text-2xl lg:text-4xl font-light leading-snug max-w-4xl" style="color: var(--color-neutral-800);">
-        Construida para las industrias que mueven <span style="color: var(--color-forest);">América Latina</span> — desde el subsuelo hasta la última milla.
-      </p>
-
-      <!-- Sub-heading -->
-      <h2 class="font-display text-xl font-bold mt-16 mb-8" style="color: var(--color-forest);">
-        Nuestras Industrias
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">El ecosistema</p>
+      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white mb-16 lg:mb-20 fade-up">
+        Tecnología probada en cada capa, integrada y operada por Quatro.
       </h2>
-
-      <!-- Energía -->
-      <a href="/es/industries/energy" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Monitoreo de ductos, modernización SCADA y respuesta ante tormentas — sin reemplazar infraestructura de control.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.1</span>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-10 fade-up max-w-4xl">
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">Quatro Klarety</p>
+          <p class="font-sans text-sm text-white/60">Monitoreo territorial desde el espacio, entregado con nuestro socio de observación de la Tierra, Klarety.</p>
         </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Energía</span>
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">DataMiner xOps</p>
+          <p class="font-sans text-sm text-white/60">El modelo operativo: más de 8.000 integraciones, en producción con operadores en todo el mundo.</p>
         </div>
-      </a>
-
-      <!-- Defensa -->
-      <a href="/es/industries/defense" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Protección de bases, conciencia marítima y logística de misión — inteligencia operacional para seguridad nacional.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.2</span>
+        <div class="flex flex-col">
+          <p class="font-sans font-medium text-base text-white mb-1">La Quatro IoT &amp; Edge Suite</p>
+          <p class="font-sans text-sm text-white/60">Sensores, gateways y comunicaciones OT en campo.</p>
         </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Defensa</span>
-        </div>
-      </a>
-
-      <!-- Redes -->
-      <a href="/es/industries" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Infraestructura satelital, telecomunicaciones y convergencia de redes — inteligencia operacional de punta a punta.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.3</span>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Redes</span>
-        </div>
-      </a>
-
-      <!-- Infraestructura Crítica -->
-      <a href="/es/industries/defense" class="group grid lg:grid-cols-[1fr_2fr] gap-8 py-10 lg:py-14 items-center" style="border-top: 1px solid var(--color-structure);">
-        <div>
-          <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">Redes de agua, corredores de transporte y operaciones municipales — inteligencia para los sistemas de los que dependen ciudades y naciones.</p>
-          <span class="font-mono text-xs mt-3 inline-block" style="color: var(--color-forest);">/0.4</span>
-        </div>
-        <div class="text-right lg:text-right">
-          <span class="font-display text-5xl lg:text-8xl font-bold transition-colors duration-300 ease-linear group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">Infraestructura Crítica</span>
-        </div>
-      </a>
-
+      </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       8. FINAL CTA — Forest with dot grid
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-12 lg:py-20 px-6" style="border-top: 1px solid var(--color-structure);">
-    <div class="relative mx-auto max-w-6xl py-16 lg:py-24 px-8 lg:px-16 overflow-hidden" style="background-color: var(--color-forest);">
-      <!-- Background image -->
-      <div class="absolute inset-0">
-        <img src="/images/cta.png" alt="" class="h-full w-full object-cover" />
-        <div class="absolute inset-0" style="background: rgba(0,0,0,0.75);"></div>
-      </div>
-      <div class="relative z-10">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2 class="font-sans text-3xl lg:text-5xl font-light text-white leading-tight">
-            Su operación merece inteligencia construida para su realidad.
-          </h2>
-          <p class="mt-6 font-sans text-lg text-white/70 leading-relaxed">
-            Agende una evaluación de nuestros ingenieros sobre sus desafíos operativos. Evaluamos su infraestructura y entregamos un plan de implementación en menos de dos semanas.
-          </p>
 
-          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="/es/contact/demo"
-              class="font-mono text-xs uppercase tracking-[0.05em] px-8 py-4 transition-colors duration-300 ease-linear"
-              style="background-color: white; color: var(--color-forest);"
-            >
-              Agende una Evaluación
+  <!-- 7b. PROOF STORIES (§9A) -->
+  <section class="py-24 lg:py-32 px-6 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12 fade-up" style="color: var(--color-forest);">Trabajo de referencia</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {proofCards.map((card) => <ProofCard card={card} lang="es" />)}
+      </div>
+      <a href="/es/proof" class="inline-block mt-10 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Trabajo de referencia &rarr;</a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       8. WHERE WE OPERATE — Rotating globe with dither overlay
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative overflow-hidden" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
+
+    <!-- Dotted wireframe globe background (D3 canvas) -->
+    <canvas id="globe-canvas" class="absolute inset-0 w-full h-full z-[1] pointer-events-none" style="opacity: 0.7;"></canvas>
+
+    <!-- Grain overlay -->
+    <div class="absolute inset-0 z-[3] opacity-[0.04] pointer-events-none"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27nm%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23nm)%27/%3E%3C/svg%3E');"></div>
+
+    <!-- Radial vignette for depth -->
+    <div class="absolute inset-0 z-[4] pointer-events-none" style="background: radial-gradient(ellipse at 60% 50%, transparent 30%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.8) 90%);"></div>
+
+    <!-- Content — centered over the globe -->
+    <div class="relative z-10 py-32 lg:py-44 px-6">
+      <div class="mx-auto max-w-6xl">
+
+        <div class="max-w-2xl">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">Dónde operamos</p>
+          <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl leading-[1.1] tracking-tight text-white mb-6 fade-up">
+            Sede en Quito, Ecuador, con una entidad en Estados Unidos.
+          </h2>
+          <p class="font-sans text-base lg:text-lg leading-relaxed text-white/60 mb-10 fade-up">
+            Activos en Ecuador, Colombia, Venezuela, Panamá y Guyana, y en MENA a través de un socio de canal.
+          </p>
+          <a href="/es/partners" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] mb-16 fade-up" style="border: 1px solid rgba(255,255,255,0.25); color: white;">
+            Hágase socio
+            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Region markers (§1e) -->
+        <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 fade-up">
+          {['Ecuador', 'Colombia', 'Venezuela', 'Panamá', 'Guyana', 'MENA (socio de canal)'].map((m) => (
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/70">{m}</p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dotted Wireframe Globe (D3 orthographic projection, 21st.dev/shadway style) -->
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', function () {
+      var canvas = document.getElementById('globe-canvas');
+      if (!canvas || typeof d3 === 'undefined') return;
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // ─── Sizing ───
+      var section = canvas.parentElement;
+      var w, h, radius;
+
+      function resize() {
+        var rect = section.getBoundingClientRect();
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = rect.width;
+        h = rect.height;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        radius = Math.min(w, h) * 0.42;
+        projection.scale(radius).translate([w * 0.62, h * 0.48]);
+      }
+
+      // ─── D3 Projection ───
+      var projection = d3.geoOrthographic().clipAngle(90);
+      var path = d3.geoPath().projection(projection);
+      var rotation = [30, -15];
+      var rotationSpeed = 0.18;
+
+      // ─── Colors (forest green palette) ───
+      var dotColor = 'rgba(15, 76, 58, 0.7)';
+      var graticuleColor = 'rgba(15, 76, 58, 0.15)';
+      var outlineColor = 'rgba(15, 76, 58, 0.3)';
+      var sphereStroke = 'rgba(15, 76, 58, 0.2)';
+
+      // Operational presence markers
+      var regions = [
+        { coords: [-98.5, 39.8], size: 6 },   // US HQ
+        { coords: [-78.5, -1.8], size: 6 },   // Ecuador / LATAM
+        { coords: [45, 25], size: 5 },         // MENA
+        { coords: [-99.1, 19.4], size: 4 },   // Mexico
+        { coords: [36.8, -1.3], size: 4 },    // East Africa
+        { coords: [-47.9, -15.8], size: 3 },  // Brazil
+        { coords: [-0.1, 51.5], size: 3 },    // UK
+        { coords: [54.4, 24.5], size: 3 },    // UAE
+        { coords: [3.4, 6.5], size: 3 },      // West Africa
+      ];
+
+      // ─── Point-in-polygon ───
+      function pointInPolygon(pt, ring) {
+        var x = pt[0], y = pt[1], inside = false;
+        for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          var xi = ring[i][0], yi = ring[i][1];
+          var xj = ring[j][0], yj = ring[j][1];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) {
+            inside = !inside;
+          }
+        }
+        return inside;
+      }
+
+      function pointInFeature(pt, feature) {
+        var geom = feature.geometry;
+        if (geom.type === 'Polygon') {
+          if (!pointInPolygon(pt, geom.coordinates[0])) return false;
+          for (var i = 1; i < geom.coordinates.length; i++) {
+            if (pointInPolygon(pt, geom.coordinates[i])) return false;
+          }
+          return true;
+        } else if (geom.type === 'MultiPolygon') {
+          for (var p = 0; p < geom.coordinates.length; p++) {
+            var poly = geom.coordinates[p];
+            if (pointInPolygon(pt, poly[0])) {
+              var inHole = false;
+              for (var h = 1; h < poly.length; h++) {
+                if (pointInPolygon(pt, poly[h])) { inHole = true; break; }
+              }
+              if (!inHole) return true;
+            }
+          }
+        }
+        return false;
+      }
+
+      function generateDots(feature, step) {
+        var dots = [];
+        var bounds = d3.geoBounds(feature);
+        var stepSize = step * 0.08;
+        for (var lng = bounds[0][0]; lng <= bounds[1][0]; lng += stepSize) {
+          for (var lat = bounds[0][1]; lat <= bounds[1][1]; lat += stepSize) {
+            var pt = [lng, lat];
+            if (pointInFeature(pt, feature)) dots.push(pt);
+          }
+        }
+        return dots;
+      }
+
+      // ─── Render ───
+      var allDots = [];
+      var landFeatures = null;
+      var graticule = d3.geoGraticule();
+
+      function render() {
+        ctx.clearRect(0, 0, w, h);
+        path.context(ctx);
+
+        // Sphere outline
+        ctx.beginPath();
+        path({ type: 'Sphere' });
+        ctx.strokeStyle = sphereStroke;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+
+        // Graticule grid
+        ctx.beginPath();
+        path(graticule());
+        ctx.strokeStyle = graticuleColor;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+
+        if (landFeatures) {
+          // Land outlines
+          ctx.beginPath();
+          landFeatures.features.forEach(function (f) { path(f); });
+          ctx.strokeStyle = outlineColor;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+
+          // Halftone dots on land
+          allDots.forEach(function (dot) {
+            var projected = projection(dot);
+            if (projected) {
+              // Only draw if on visible hemisphere (check against clip)
+              var dist = d3.geoDistance(dot, projection.invert([w * 0.62, h * 0.48]));
+              if (dist < Math.PI / 2) {
+                ctx.beginPath();
+                ctx.arc(projected[0], projected[1], 1.0, 0, 2 * Math.PI);
+                ctx.fillStyle = dotColor;
+                ctx.fill();
+              }
+            }
+          });
+
+          // Operational presence markers (brighter, pulsing)
+          var t = Date.now() / 1000;
+          regions.forEach(function (r) {
+            var projected = projection(r.coords);
+            if (projected) {
+              var dist = d3.geoDistance(r.coords, projection.invert([w * 0.62, h * 0.48]));
+              if (dist < Math.PI / 2) {
+                // Pulse glow
+                var pulse = 0.4 + 0.3 * Math.sin(t * 2 + r.coords[0]);
+                ctx.beginPath();
+                ctx.arc(projected[0], projected[1], r.size * 2.5, 0, 2 * Math.PI);
+                ctx.fillStyle = 'rgba(15, 76, 58, ' + (pulse * 0.3) + ')';
+                ctx.fill();
+
+                // Core dot
+                ctx.beginPath();
+                ctx.arc(projected[0], projected[1], r.size, 0, 2 * Math.PI);
+                ctx.fillStyle = '#0f4c3a';
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+              }
+            }
+          });
+        }
+      }
+
+      // ─── Animation ───
+      var animId;
+      function animate() {
+        rotation[0] += rotationSpeed;
+        projection.rotate(rotation);
+        render();
+        animId = requestAnimationFrame(animate);
+      }
+
+      // ─── Visibility gating ───
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            resize();
+            animId = requestAnimationFrame(animate);
+          } else {
+            cancelAnimationFrame(animId);
+          }
+        });
+      }, { threshold: 0.05 });
+
+      observer.observe(canvas);
+      window.addEventListener('resize', function () {
+        resize();
+        render();
+      });
+
+      // ─── Load land data ───
+      resize();
+      fetch('https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/110m/physical/ne_110m_land.json')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          landFeatures = data;
+          data.features.forEach(function (feature) {
+            var dots = generateDots(feature, 18);
+            dots.forEach(function (d) { allDots.push(d); });
+          });
+          render();
+        })
+        .catch(function () {
+          // Graceful fallback — render graticule only
+          render();
+        });
+    });
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       10. CTA — Dithering Canvas (kept from previous design)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-16 lg:py-24 px-4 md:px-6">
+    <div class="w-full max-w-7xl mx-auto relative" data-cta-card>
+      <div class="relative overflow-hidden rounded-[32px] lg:rounded-[48px] min-h-[550px] md:min-h-[600px] flex flex-col items-center justify-center" style="border: 1px solid rgba(15,76,58,0.4); background: #0a0a0a;">
+
+        <!-- Bayer 4×4 image dither (same engine as hero, using bg555.png) -->
+        <canvas id="cta-dither-canvas" class="absolute inset-0 w-full h-full z-[1] opacity-90"
+          data-dither-canvas
+          data-image-src="/images/bg555.png"
+          data-pixel-size="2"
+          data-base-speed="0.06"
+          data-hover-speed="0.35"
+          data-green-blend="0.25"></canvas>
+
+        <!-- Radial vignette for text readability -->
+        <div class="absolute inset-0 z-[2] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 50%, transparent 75%);"></div>
+
+        <!-- Grain -->
+        <div class="absolute inset-0 z-[3] opacity-[0.06] pointer-events-none"
+          style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27cg%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23cg)%27/%3E%3C/svg%3E');"></div>
+
+        <div class="relative z-10 flex flex-col items-center justify-center text-center px-6 py-16 lg:py-24 max-w-3xl mx-auto fade-up">
+          <h2 class="font-sans text-3xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight">
+            {layerPromiseEs}
+          </h2>
+          <!-- Two explicit paths -->
+          <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="/es/contact/demo" class="group inline-flex items-center gap-3 font-mono text-sm uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg" style="background-color: var(--color-forest); color: white;">
+              Hable con nuestro equipo
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+            <a href="/es/partners" class="group inline-flex items-center gap-3 font-mono text-sm uppercase tracking-[0.08em] px-8 py-4 rounded-full transition-all duration-300 ease-out hover:scale-[1.03]" style="border: 1px solid rgba(255,255,255,0.25); color: white;">
+              Hágase socio
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
           </div>
-
-          <!-- Contact placeholders -->
-          <div class="mt-6 flex flex-wrap items-center justify-center gap-6">
-            <span class="font-mono text-xs text-white/50">WhatsApp: [+número]</span>
-            <span class="font-mono text-xs text-white/50">[email]</span>
-          </div>
-
-          <!-- Microcopy -->
-          <p class="mt-4 font-mono text-xs text-white/40">
-            Prueba de valor en 4 semanas · Acreditada al contrato · Equipos en América Latina
-          </p>
         </div>
 
-        <!-- Trust bar -->
-        <div class="mt-14 pt-8 flex flex-wrap items-center justify-center gap-8" style="border-top: 1px solid rgba(255,255,255,0.15);">
-          <a href="/es/resources/documentation" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Documentación</a>
-          <a href="/es/how-it-works" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">API</a>
-          <a href="/es/legal/security" class="font-mono text-xs uppercase tracking-wider text-white/50 hover:text-white/80 transition-colors duration-300 ease-linear">Seguridad</a>
+        <div class="relative z-10 w-full px-8 pb-8">
+          <div class="pt-6 flex items-center justify-center" style="border-top: 1px solid rgba(255,255,255,0.08);">
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 text-center">Alojado en su país&nbsp; ·&nbsp; Su equipo es dueño desde el primer día</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA Bayer dither engine (same as HeroCanvas, initializes data-dither-canvas on CTA) -->
+  <script is:inline>
+    (function () {
+      var bayer = [
+        [0/16, 8/16, 2/16, 10/16],
+        [12/16, 4/16, 14/16, 6/16],
+        [3/16, 11/16, 1/16, 9/16],
+        [15/16, 7/16, 13/16, 5/16]
+      ];
+
+      var canvas = document.getElementById('cta-dither-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      var imageSrc = canvas.getAttribute('data-image-src') || '/images/bg555.png';
+      var pixelSize = parseInt(canvas.getAttribute('data-pixel-size') || '3', 10);
+      var baseSpeed = parseFloat(canvas.getAttribute('data-base-speed') || '0.06');
+      var hoverSpeed = parseFloat(canvas.getAttribute('data-hover-speed') || '0.35');
+      var greenBlend = parseFloat(canvas.getAttribute('data-green-blend') || '0.5');
+
+      var card = canvas.closest('[data-cta-card]');
+      var isHovered = false;
+      var animId, startTime = performance.now();
+
+      var bgImg = new Image();
+      bgImg.crossOrigin = 'anonymous';
+      bgImg.src = imageSrc;
+      var offscreen = document.createElement('canvas');
+      var offCtx = offscreen.getContext('2d');
+      var imgLoaded = false;
+      bgImg.onload = function () { imgLoaded = true; };
+
+      function resize() {
+        var rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+      }
+
+      function render(time) {
+        var w = canvas.width, h = canvas.height;
+        if (w === 0 || h === 0) { animId = requestAnimationFrame(render); return; }
+
+        var elapsed = (time - startTime) / 1000;
+        var speed = isHovered ? hoverSpeed : baseSpeed;
+        var t = elapsed * speed;
+
+        var srcPixels = null;
+        if (imgLoaded) {
+          offscreen.width = w;
+          offscreen.height = h;
+          // Cover-fit
+          var imgAspect = bgImg.naturalWidth / bgImg.naturalHeight;
+          var canvasAspect = w / h;
+          var sx = 0, sy = 0, sw = bgImg.naturalWidth, sh = bgImg.naturalHeight;
+          if (imgAspect > canvasAspect) {
+            sw = bgImg.naturalHeight * canvasAspect;
+            sx = (bgImg.naturalWidth - sw) / 2;
+          } else {
+            sh = bgImg.naturalWidth / canvasAspect;
+            sy = (bgImg.naturalHeight - sh) / 2;
+          }
+          offCtx.drawImage(bgImg, sx, sy, sw, sh, 0, 0, w, h);
+          srcPixels = offCtx.getImageData(0, 0, w, h).data;
+        }
+
+        var imageData = ctx.createImageData(w, h);
+        var data = imageData.data;
+        var cols = Math.ceil(w / pixelSize);
+        var rows = Math.ceil(h / pixelSize);
+
+        for (var row = 0; row < rows; row++) {
+          for (var col = 0; col < cols; col++) {
+            var centerX = col * pixelSize + (pixelSize >> 1);
+            var centerY = row * pixelSize + (pixelSize >> 1);
+
+            var sR = 0, sG = 0, sB = 0, imgBrightness = 0.3;
+            if (srcPixels && centerX < w && centerY < h) {
+              var sIdx = (centerY * w + centerX) * 4;
+              sR = srcPixels[sIdx]; sG = srcPixels[sIdx+1]; sB = srcPixels[sIdx+2];
+              imgBrightness = (sR * 0.299 + sG * 0.587 + sB * 0.114) / 255;
+            }
+
+            var cx = col / cols, cy = row / rows;
+            var warpX = 0.12 * Math.sin(cy * 5.0 + t * 1.3) + 0.08 * Math.cos(cx * 4.0 + t * 0.9);
+            var warpY = 0.12 * Math.cos(cx * 5.0 + t * 1.1) + 0.08 * Math.sin(cy * 4.0 + t * 1.5);
+            var wx = cx + warpX, wy = cy + warpY;
+            var d1 = Math.sqrt((wx - 0.5) * (wx - 0.5) + (wy - 0.5) * (wy - 0.5));
+            var warpIntensity = 0.3 + 0.25 * Math.sin(d1 * 8.0 - t * 2.0) + 0.15 * Math.cos((wx + wy) * 6.0 + t);
+
+            var intensity = imgBrightness * 0.92 + warpIntensity * 0.2;
+            intensity = Math.max(0, Math.min(1, intensity));
+
+            var threshold = bayer[row % 4][col % 4];
+            var on = intensity > threshold;
+
+            var r, g, b, a;
+            if (on) {
+              var blend = greenBlend + (1 - greenBlend) * 0.3 * warpIntensity;
+              r = Math.round(sR * (1 - blend) + 15 * blend);
+              g = Math.round(sG * (1 - blend) + 76 * blend);
+              b = Math.round(sB * (1 - blend) + 58 * blend);
+              a = Math.round(intensity * 180 + 75);
+            } else {
+              r = 0; g = 0; b = 0; a = 0;
+            }
+
+            for (var py = 0; py < pixelSize; py++) {
+              for (var px = 0; px < pixelSize; px++) {
+                var x = col * pixelSize + px;
+                var y = row * pixelSize + py;
+                if (x >= w || y >= h) continue;
+                var idx = (y * w + x) * 4;
+                data[idx] = r; data[idx+1] = g; data[idx+2] = b; data[idx+3] = a;
+              }
+            }
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        animId = requestAnimationFrame(render);
+      }
+
+      if (card) {
+        card.addEventListener('mouseenter', function () { isHovered = true; });
+        card.addEventListener('mouseleave', function () { isHovered = false; });
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { resize(); startTime = performance.now(); animId = requestAnimationFrame(render); }
+          else { cancelAnimationFrame(animId); }
+        });
+      }, { threshold: 0.1 });
+
+      window.addEventListener('resize', resize);
+      observer.observe(canvas);
+    })();
+  </script>
+
   <!-- ═══════════════════════════════════════════════════════════════
-       FOOTER
+       11. FAQ — Simplified (KT clean typography)
        ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-32 lg:py-40 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-16">
+
+      <!-- Left label + heading -->
+      <div class="fade-up">
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Preguntas frecuentes</p>
+        <h2 class="font-sans font-light text-3xl lg:text-4xl leading-[1.15] tracking-tight" style="color: var(--color-neutral-800);">
+          Lo que conviene saber antes de hablar.
+        </h2>
+      </div>
+
+      <!-- Right: questions -->
+      <div class="fade-up">
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">¿En qué se diferencia Quatro de un integrador de sistemas?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            Un integrador de sistemas hace un largo descubrimiento y le entrega una hoja de ruta. Nosotros empezamos por su área de mayor riesgo con una línea base satelital, conectamos los sistemas que tienen la respuesta y le damos a su equipo un cuadro operativo funcionando en semanas. El compromiso tiene una entrega, y lo que deja es suyo.
+          </p>
+        </details>
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">¿Y la dependencia del proveedor?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            El modelo operativo, los datos, los productos derivados y las llaves son suyos desde el primer día. Corre en su país, sobre la infraestructura que usted elige, y puede migrar entre opciones de alojamiento. Las reglas y los flujos le llegan en formatos abiertos, y una salida incluye una exportación completa y eliminación certificada.
+          </p>
+        </details>
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">¿Cómo es el compromiso?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            Una prueba de valor de 30 a 90 días sobre su área de mayor riesgo, primero la línea base satelital, medida contra indicadores acordados de antemano. Luego un servicio anual que opera su equipo y, para programas nacionales, una construcción por tramos a través de un integrador local.
+          </p>
+          <a href="/es/how-it-works/engagement" class="inline-block mt-4 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Cómo se ejecuta un compromiso &rarr;</a>
+        </details>
+        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
+          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">¿Puede correr en nuestro país?</h3>
+            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+          </summary>
+          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
+            Sí. La inferencia, los datos, los respaldos, los registros y las llaves se quedan en el país: en un centro de datos en el país gestionado por nosotros, en una nube de gobierno o privada en el país, o en sus propias instalaciones. Lo opera Quatro Ecuador, con soporte en español.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <SiteFooter lang="es" />
 
 </BaseLayout>
