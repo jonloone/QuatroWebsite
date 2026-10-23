@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '@/lib/i18n'
+import { routeExists } from '@/lib/routes'
 import { t, localizeHref, getAlternateUrl } from '@/lib/i18n'
 import QuatroLogo from '@/components/QuatroLogo.astro'
 import { getPrimaryNavigation } from '@/lib/navigation'
@@ -15,7 +16,13 @@ const homeHref = lang === 'es' ? '/es/' : '/'
 const demoHref = localizeHref('/contact/demo', lang)
 const ctaLabel = t('nav.getQuote', lang)
 const switchLabel = t('lang.switch', lang)
-const switchHref = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
+// Language switch: the counterpart page if it exists, else the closest equivalent (LINK-1)
+const alternate = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
+const insightsFallback = lang === 'en' ? '/es/resources/insights' : '/insights'
+const onInsights = lang === 'en' ? Astro.url.pathname.startsWith('/insights') : Astro.url.pathname.startsWith('/es/resources/insights')
+const switchHref = (await routeExists(alternate))
+  ? alternate
+  : onInsights ? insightsFallback : (lang === 'en' ? '/es/' : '/')
 ---
 
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 transition-all duration-300">

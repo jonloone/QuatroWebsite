@@ -10,10 +10,10 @@ hero:
   description: Large facilities waste energy and suffer preventable downtime because HVAC, security, lighting, and power systems operate in silos. Quatro unifies them for 40% energy savings and 99.2% uptime.
   primaryCta:
     label: Schedule an Infrastructure Assessment
-    href: /contact/infrastructure-assessment
+    href: /contact/demo
   secondaryCta:
     label: Talk to an Infrastructure Engineer
-    href: /contact/infrastructure-engineer
+    href: /contact/demo
 pain:
   narrative: "You manage 50+ facilities—office buildings, data centers, manufacturing plants, warehouses. Each has its own building management system (BMS), security system, and energy monitoring. They don't talk to each other. Your HVAC system doesn't know when an event crowd density spikes, so it can't adjust. Your lighting is on fixed schedules, wasting energy in unoccupied zones. Your backup generators don't coordinate with peak load forecasting, so you maintain expensive spinning reserve. Energy waste is 30-40% above benchmark. Maintenance is reactive—a chiller fails with no warning because you weren't tracking efficiency degradation. Uptime suffers because facilities teams can't see problems until they're critical. You have three separate vendors for BMS, security, and energy monitoring, but no unified operational intelligence to optimize across all three. A 15% energy reduction would save $1.2M annually, but you can't identify where the waste is concentrated because the data is fragmented."
   quantified:
@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: Fleet & Logistics Optimization
     description: Extend facilities optimization to fleet and mobile assets for total operational efficiency.
-    href: /use-cases/fleet-logistics
+    href: /industries/infrastructure/fleet-logistics
   - title: Network Operations Center Optimization
     description: Apply NOC-style monitoring and incident correlation to facilities operations.
-    href: /use-cases/noc-operations
+    href: /industries/infrastructure/noc-operations
   - title: Process Quality & Compliance
     description: Add compliance and environmental tracking to facilities management.
-    href: /use-cases/process-quality
+    href: /industries/industrial/process-quality
 crossVertical:
   - industry: Defense
     result: Military base operations and energy optimization across distributed installations
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: Schedule an Infrastructure Assessment
-    href: /contact/infrastructure-assessment
+    href: /contact/demo
   secondary:
     label: Talk to an Infrastructure Engineer
-    href: /contact/infrastructure-engineer
+    href: /contact/demo
   microcopy: Intelligence in weeks · Your team owns it from day one
 ---

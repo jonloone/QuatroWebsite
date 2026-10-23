@@ -10,10 +10,10 @@ hero:
   description: "Real-time visibility transforms how you manage equipment in the harshest environments—remote sites, intermittent connectivity, extreme conditions."
   primaryCta:
     label: "Schedule an Industrial Assessment"
-    href: "/contact/industrial-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Plant Engineer"
-    href: "/contact/plant-engineer"
+    href: "/contact/demo"
 pain:
   narrative: "You have haul trucks, loaders, and drilling equipment scattered across remote mining sites. Connectivity is sporadic. When equipment fails, you don't know until production stops. Downtime costs exceed $50K per hour per haul truck. Your current systems can't unify data from old equipment and new systems. You're making reactive maintenance decisions based on incomplete information. Every lost opportunity to catch a failure before it happens burns cash and delays extraction schedules."
   quantified:
@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: "Production Line OEE Optimization"
     description: "Apply the same operational intelligence framework to processing plants and beneficiation circuits."
-    href: "/use-cases/oee-optimization"
+    href: "/industries/industrial/oee-optimization"
   - title: "Process Quality & Compliance"
     description: "Track batch traceability and regulatory compliance across mining operations."
-    href: "/use-cases/process-quality"
+    href: "/industries/industrial/process-quality"
   - title: "Fleet & Logistics Optimization"
     description: "Extend visibility from mining equipment to support vehicles and supply chains."
-    href: "/use-cases/fleet-logistics"
+    href: "/industries/infrastructure/fleet-logistics"
 crossVertical:
   - industry: "Energy"
     result: "Remote well monitoring and predictive maintenance reduces unplanned shutdowns"
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: "Schedule an Industrial Assessment"
-    href: "/contact/industrial-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to a Plant Engineer"
-    href: "/contact/plant-engineer"
+    href: "/contact/demo"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---

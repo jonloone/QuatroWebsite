@@ -10,10 +10,10 @@ hero:
   description: "When patrol capacity and ocean area don't align, illegal fishing accelerates in blind zones. Detect unauthorized vessels and prevent illegal operations across your full exclusive economic zone without the patrol footprint."
   primaryCta:
     label: "Schedule a Civic Assessment"
-    href: "/contact/civic-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to an Infrastructure Engineer"
-    href: "/contact/civic-assessment"
+    href: "/contact/demo"
 pain:
   narrative: "The Galápagos marine reserve spans 133,000 km² — an area larger than many nations. Yet three operators, armed only with binoculars and radio, attempt to monitor fishing activity, detect poachers, and enforce conservation regulations. Each illegal fishing operation represents not just loss of revenue and marine life, but erosion of a UNESCO World Heritage Site. The current approach trades speed for scale: patrol vessels consume fuel budgets within weeks, leaving vast ocean areas dark and unmonitored. Illegal fishing operations operate with near-impunity, knowing detection probability drops sharply beyond coastal waters. The result: species depletion, lost tourism revenue, and sovereignty gaps."
   quantified:
@@ -69,7 +69,7 @@ objections:
 adjacentSolutions:
   - title: "Youth Violence Prevention Intelligence"
     description: "Apply the same multi-source data integration and predictive alerting framework to social interventions in coastal cities."
-    href: "/use-cases/youth-violence-prevention"
+    href: "/industries/cities/youth-violence-prevention"
   - title: "Maritime Domain Awareness"
     description: "Extend vessel detection and AIS fusion capabilities to port security and naval operational theater monitoring."
     href: "/industries/security"
@@ -83,10 +83,10 @@ crossVertical:
 cta:
   primary:
     label: "Schedule a Civic Assessment"
-    href: "/contact/civic-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to an Infrastructure Engineer"
-    href: "/contact/civic-assessment"
+    href: "/contact/demo"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---
 

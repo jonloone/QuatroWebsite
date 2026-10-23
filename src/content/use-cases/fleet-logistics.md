@@ -10,10 +10,10 @@ hero:
   description: Every percent of fuel efficiency and every hour of unplanned downtime costs you thousands. Quatro unifies your entire fleet to find savings you can't see in isolated vehicle dashboards.
   primaryCta:
     label: Schedule an Infrastructure Assessment
-    href: /contact/infrastructure-assessment
+    href: /contact/demo
   secondaryCta:
     label: Talk to an Infrastructure Engineer
-    href: /contact/infrastructure-engineer
+    href: /contact/demo
 pain:
   narrative: "You manage 2,500+ vehicles—trucks, vans, specialized equipment—spread across multiple depots and regions. Fuel is your largest variable cost. You don't have visibility into consumption patterns by driver, route, or vehicle type. Some routes waste 18% extra fuel due to inefficient driving or poor route planning, but you can't identify which ones. Maintenance is reactive—you don't know a transmission is failing until the truck breaks down on a delivery, missing your SLA and costing you a penalty. Your analytics are fragmented—GPS data lives in one system, fuel data in another, maintenance in a third. You can't correlate a driver's speeding habit with fuel waste, or match vehicle age against failure rates. You're losing $150K/month to fuel waste, unplanned downtime, and missed deliveries, but you can't pinpoint where because the data is fragmented."
   quantified:
@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: Network Operations Center Optimization
     description: Extend unified monitoring to all infrastructure assets beyond just fleet.
-    href: /use-cases/noc-operations
+    href: /industries/infrastructure/noc-operations
   - title: Smart Facilities & Venue Management
     description: Optimize facilities alongside fleet to reduce total operational cost.
-    href: /use-cases/smart-facilities
+    href: /industries/infrastructure/smart-facilities
   - title: Mining & Remote Asset Operations
     description: Apply fleet optimization techniques to mining equipment and remote asset management.
-    href: /use-cases/mining-operations
+    href: /industries/industrial/mining-operations
 crossVertical:
   - industry: Defense
     result: Mission logistics tracking and vehicle readiness improves deployment speed
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: Schedule an Infrastructure Assessment
-    href: /contact/infrastructure-assessment
+    href: /contact/demo
   secondary:
     label: Talk to an Infrastructure Engineer
-    href: /contact/infrastructure-engineer
+    href: /contact/demo
   microcopy: Intelligence in weeks · Your team owns it from day one
 ---

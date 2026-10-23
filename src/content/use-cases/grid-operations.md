@@ -10,10 +10,10 @@ hero:
   description: "When SCADA refresh cycles lag behind renewable integration speed, grid instability accelerates and curtailment compounds losses. Restore outages 60% faster, reduce renewable curtailment by 25%, and maintain stability across 200+ substations without rip-and-replace upgrades."
   primaryCta:
     label: "Schedule an Energy Assessment"
-    href: "/energy-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to an Energy Engineer"
-    href: "/contact/energy-specialist"
+    href: "/contact/demo"
 pain:
   narrative: "Your utility manages 200+ substations and 2M+ customers across diverse terrain, balancing legacy coal and natural gas plants with unpredictable solar and wind resources. SCADA operators work with 15-minute refresh rates and manual intervention protocols designed for a world that no longer exists. When wind output drops suddenly, there's no automated response—grid instability cascades, voltage sags ripple across districts, and you're left scrambling to shed load and prevent rolling blackouts. Meanwhile, you're curtailing (paying to throw away) perfectly good renewable generation because your system can't balance it in real-time. Every outage costs your utility $1-5M in penalties and reputational damage, and every curtailment hour represents $10K-50K in wasted renewable value. Your engineers are burned out managing a system that wasn't built for this complexity."
   quantified:
@@ -74,10 +74,10 @@ objections:
 adjacentSolutions:
   - title: "Pipeline Integrity & Leak Detection"
     description: "Apply real-time operational intelligence to midstream networks and distribution pipelines."
-    href: "/use-cases/pipeline-integrity"
+    href: "/industries/energy/pipeline-integrity"
   - title: "Predictive Maintenance for Production Assets"
     description: "Extend grid insights to transmission and distribution asset health monitoring."
-    href: "/use-cases/predictive-maintenance"
+    href: "/industries/energy/predictive-maintenance"
 crossVertical:
   - industry: "Infrastructure"
     result: "Network Operations Centers apply identical real-time coordination patterns to water, wastewater, and telecommunications networks"
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: "Schedule an Energy Assessment"
-    href: "/energy-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to an Energy Engineer"
-    href: "/contact/energy-specialist"
+    href: "/contact/demo"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---

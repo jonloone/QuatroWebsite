@@ -10,10 +10,10 @@ hero:
   description: "When SCADA systems and field data don't correlate in real-time, leaks go undetected for hours and false alarms overwhelm teams. Detect leaks in minutes, reduce false alarms by 45%, and compress compliance reporting cycles by 60%."
   primaryCta:
     label: "Schedule an Energy Assessment"
-    href: "/energy-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to an Energy Engineer"
-    href: "/contact/energy-specialist"
+    href: "/contact/demo"
 pain:
   narrative: "Legacy SCADA systems generate thousands of alerts daily—most are false positives that distract your teams from genuine threats. Meanwhile, real leaks can persist for hours or days undetected, costing operators $50,000 to $500,000+ per minute in product loss, plus exposure to catastrophic environmental fines and regulatory sanctions. Your monitoring staff is overwhelmed, compliance audits are labor-intensive, and every minute of uncertainty compounds your liability."
   quantified:
@@ -74,10 +74,10 @@ objections:
 adjacentSolutions:
   - title: "Grid Operations & Renewable Integration"
     description: "Apply the same real-time operational intelligence framework to transmission and distribution networks."
-    href: "/use-cases/grid-operations"
+    href: "/industries/energy/grid-operations"
   - title: "Predictive Maintenance for Production Assets"
     description: "Extend leak detection insights to pump, compressor, and processing equipment health monitoring."
-    href: "/use-cases/predictive-maintenance"
+    href: "/industries/energy/predictive-maintenance"
 crossVertical:
   - industry: "Defense"
     result: "Maritime asset surveillance uses identical sensor fusion logic to detect unauthorized vessel activity in strategic shipping lanes"
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: "Schedule an Energy Assessment"
-    href: "/energy-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to an Energy Engineer"
-    href: "/contact/energy-specialist"
+    href: "/contact/demo"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---

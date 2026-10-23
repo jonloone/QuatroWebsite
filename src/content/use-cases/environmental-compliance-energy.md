@@ -72,13 +72,13 @@ objections:
 adjacentSolutions:
   - title: "Environmental Governance"
     description: "The full cross-industry environmental governance framework — emissions, water quality, air quality, and carbon monitoring in one governed model."
-    href: "/solutions/environmental-governance"
+    href: "/industries/environment"
   - title: "Pipeline Integrity & Leak Detection"
     description: "Multi-modal anomaly detection and predictive integrity intelligence for midstream pipeline networks."
-    href: "/use-cases/pipeline-integrity"
+    href: "/industries/energy/pipeline-integrity"
   - title: "Grid Operations & Renewable Integration"
     description: "Operational intelligence for transmission, distribution, and DER integration."
-    href: "/use-cases/grid-operations"
+    href: "/industries/energy/grid-operations"
 cta:
   primary:
     label: "Talk to Our Team"

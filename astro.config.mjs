@@ -14,7 +14,7 @@ export default defineConfig({
     '/industries/industrial': '/industries/energy',
     '/industries/transportation': '/industries/cities',
     '/industries/water-environment': '/industries/environment',
-    '/solutions/satellite-revenue-assurance': '/solutions/hybrid-service-assurance',
+    '/solutions/satellite-revenue-assurance': '/solutions',
     '/network': '/how-it-works',
     '/platform': '/how-it-works',
     '/utility': '/how-it-works',

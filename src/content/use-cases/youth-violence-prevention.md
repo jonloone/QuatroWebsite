@@ -72,7 +72,7 @@ objections:
 adjacentSolutions:
   - title: "Galápagos Conservation Intelligence"
     description: "Apply the same multi-source data fusion and automated detection framework to environmental monitoring and resource protection."
-    href: "/use-cases/galapagos-conservation"
+    href: "/industries/cities/galapagos-conservation"
 crossVertical:
   - industry: "Defense"
     result: "Threat assessment and early warning methodologies extend to counterterrorism and security intelligence operations."

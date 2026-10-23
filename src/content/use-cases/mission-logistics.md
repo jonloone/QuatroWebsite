@@ -10,10 +10,10 @@ hero:
   description: "Cut critical supply response from 13 hours to 6. Federate 12+ forward operating bases into a single logistics intelligence utility."
   primaryCta:
     label: "Schedule a Defense Assessment"
-    href: "/contact/defense-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Defense Engineer"
-    href: "/contact/defense-engineer"
+    href: "/contact/demo"
 pain:
   narrative: "Your forces operate across 12+ forward operating bases in contested environments. When a critical part fails or supplies run low, it takes 13 hours to get visibility into stock levels, another 6 hours to coordinate transport, and unpredictable delays in transit. Each day of logistics delay costs $1.8M in reduced operational capability and increased risk to personnel. Fragmented systems—legacy ERP, manual spreadsheets, disconnected inventory systems—mean no one has a unified view of your supply chain. Decision-makers can't prioritize; resources get misallocated; missions get delayed."
   quantified:
@@ -71,10 +71,10 @@ objections:
 adjacentSolutions:
   - title: "Base & Installation Protection"
     description: "Secure supply facilities and logistics hubs from theft and unauthorized access."
-    href: "/use-cases/base-protection"
+    href: "/industries/defense/base-protection"
   - title: "Maritime Domain Awareness"
     description: "Track supply ships and ensure sea-based logistics routes stay open and secure."
-    href: "/use-cases/maritime-awareness"
+    href: "/industries/defense/maritime-awareness"
 crossVertical:
   - industry: "Industrial"
     result: "Global supply chain visibility and predictive logistics across manufacturing and distribution networks"
@@ -85,10 +85,10 @@ crossVertical:
 cta:
   primary:
     label: "Schedule a Defense Assessment"
-    href: "/contact/defense-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to a Defense Engineer"
-    href: "/contact/defense-engineer"
+    href: "/contact/demo"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---
 

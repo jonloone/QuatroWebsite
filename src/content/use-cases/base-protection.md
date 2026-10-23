@@ -10,10 +10,10 @@ hero:
   description: "Detect unauthorized access and threats in under 30 seconds. When security systems don't share a common operational model, threat detection spreads across teams and response delays compound risk. Unify them into one intelligence utility."
   primaryCta:
     label: "Schedule a Defense Assessment"
-    href: "/contact/defense-assessment"
+    href: "/contact/demo"
   secondaryCta:
     label: "Talk to a Defense Engineer"
-    href: "/contact/defense-engineer"
+    href: "/contact/demo"
 pain:
   narrative: "Your base faces constant threats—from perimeter breaches to insider risks. Yet your security teams are drowning in alerts from disconnected systems. A single intrusion can cost $4.2M in response, investigation, and facility downtime. False alarms waste 600+ hours annually per installation. You need unified visibility, not more noise."
   quantified:
@@ -71,10 +71,10 @@ objections:
 adjacentSolutions:
   - title: "Maritime Domain Awareness"
     description: "Extend operational intelligence from fixed installations to naval operations and EEZ monitoring."
-    href: "/use-cases/maritime-awareness"
+    href: "/industries/defense/maritime-awareness"
   - title: "Mission Logistics & Force Readiness"
     description: "Ensure supply chains and personnel deployments reach bases on time and in full."
-    href: "/use-cases/mission-logistics"
+    href: "/industries/defense/mission-logistics"
 crossVertical:
   - industry: "Energy"
     result: "Critical infrastructure protection for pipeline corridors and power substations"
@@ -85,10 +85,10 @@ crossVertical:
 cta:
   primary:
     label: "Schedule a Defense Assessment"
-    href: "/contact/defense-assessment"
+    href: "/contact/demo"
   secondary:
     label: "Talk to a Defense Engineer"
-    href: "/contact/defense-engineer"
+    href: "/contact/demo"
   microcopy: "Intelligence in weeks · Your team owns it from day one"
 ---
 

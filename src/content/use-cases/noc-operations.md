@@ -10,10 +10,10 @@ hero:
   description: Your NOC is drowning in alerts from five different monitoring tools. Most are noise. The critical ones are buried. Quatro consolidates any vendor's data into one source of operational truth.
   primaryCta:
     label: Schedule an Infrastructure Assessment
-    href: /contact/infrastructure-assessment
+    href: /contact/demo
   secondaryCta:
     label: Talk to an Infrastructure Engineer
-    href: /contact/infrastructure-engineer
+    href: /contact/demo
 pain:
   narrative: "You operate a telecom network with 900+ tower sites. Your NOC team uses five different monitoring tools—one for radio equipment, one for power, one for backhaul, one for billing, one for environmental sensors. Each tool generates its own alerts. When a site loses power, all five tools scream—but you only need one clear signal. Instead, the NOC gets flooded with 500+ alerts per day, 80% of which are correlated noise or minor threshold violations. Your on-call engineers can't find the signal in the noise. When a real issue occurs, it's buried in alert spam. MTTR (mean time to resolution) averages 45 minutes when it should be 15. You're missing SLA windows because alerts arrive too late or aren't clear enough to prompt fast action. One alert storm can paralyze the whole team while they manually correlate data from five systems. You need operational intelligence—not more alerts."
   quantified:
@@ -71,13 +71,13 @@ objections:
 adjacentSolutions:
   - title: Fleet & Logistics Optimization
     description: Extend NOC-style monitoring to vehicle fleets and asset tracking.
-    href: /use-cases/fleet-logistics
+    href: /industries/infrastructure/fleet-logistics
   - title: Smart Facilities & Venue Management
     description: Apply NOC monitoring patterns to facilities, power, and environmental systems.
-    href: /use-cases/smart-facilities
+    href: /industries/infrastructure/smart-facilities
   - title: Production Line OEE Optimization
     description: Use NOC techniques to monitor and optimize manufacturing networks.
-    href: /use-cases/oee-optimization
+    href: /industries/industrial/oee-optimization
 crossVertical:
   - industry: Energy
     result: Unified grid operations center improves reliability and reduces outage response time
@@ -88,9 +88,9 @@ crossVertical:
 cta:
   primary:
     label: Schedule an Infrastructure Assessment
-    href: /contact/infrastructure-assessment
+    href: /contact/demo
   secondary:
     label: Talk to an Infrastructure Engineer
-    href: /contact/infrastructure-engineer
+    href: /contact/demo
   microcopy: Intelligence in weeks · Your team owns it from day one
 ---
