@@ -4,7 +4,7 @@ import { defineConfig } from 'astro/config'
 import react from '@astrojs/react';
 
 export default defineConfig({
-  site: 'https://quatro.io',
+  site: 'https://withquatro.com',
   redirects: {
     '/industries/space-satcom': '/industries',
     '/industries/infrastructure': '/industries',
