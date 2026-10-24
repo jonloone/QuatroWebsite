@@ -47,6 +47,8 @@ this walk.
 
 | Date | Decision | Where it applies |
 |---|---|---|
+| 2026-10-24 | DEC-1: GitHub `main` is replaced by the local realignment history. The previous remote tip (5 commits, 2026-05-18..20) is kept on branch `archive/2026-05-remote`. | §13.7, §15, DEC-1 |
+| 2026-10-24 | Skyline's written OK for DataMiner public references is confirmed (Jonathan). Reference programs may render on /proof, labeled "partner-delivered reference programs", never "our past performance". | §9B, PROOF-2 |
 | 2026-10-23 | §13.5 resolved, option A: Agriculture and aquaculture publish now as `status: emerging`, with no proof claims (deck IND-5 as written). | §13.5, IND-5, IND-6, HOME-1 rows |
 | 2026-10-23 | Spanish mission line: **"Hacemos inteligente la infraestructura crítica."** (the homepage-deck wording) everywhere the mission renders in Spanish, the ES homepage H1 and ES About included. The About deck's "Existimos para…" variant is retired. | §0.3, §0.6, ES-HOME-1 |
 | 2026-10-23 | Elementos is not named on the website. Risk baselines and threat-network mapping are Quatro capabilities, folded into the intelligence and risk baseline page; no affiliate block, link or CTA. Supersedes §1d and §5E's Elementos CTA for the site only. | §1d, §5E, CAP-5, ELEM-1 (About, Security, homepage) |
@@ -61,7 +63,7 @@ this walk.
 | 2026-10-20 | The 2026-06-08 spec (Sense → Unify → Act, Quatro Field page) is retired; §14 of the new spec lists what carries forward. | all |
 | DECISION-NEEDED | Corridor demonstration figures (14 cells, 7 dB) on the public Energy page, or deck only. Escalation below; until answered the figures do not render (§0.1). | §13.2, `COPY_ENERGY` `[approve]` lines, NRG-1, NRG-3, ES-ENERGY-1 |
 | OPEN | Where DataOS-native solution SKUs 301 to. | §13.4, SOLN-1 |
-| OPEN | Partner consent for white-labeled Klarety / Skyline captures; Skyline's written OK for DataMiner references (Jonathan obtaining). | §13.6, §9B, PROOF-1, PROOF-2 |
+| OPEN | Partner consent for white-labeled Klarety captures on /proof. | §13.6, PROOF-1 |
 
 ## Open escalations
 
