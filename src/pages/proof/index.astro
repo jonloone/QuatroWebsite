@@ -33,6 +33,24 @@ const pieces = [
   { pendingTitle: 'A mine-site landslide, before and after.' },
   { pendingTitle: 'A grid operational picture.' },
 ]
+
+// Partner-delivered reference programs (§9B, PROOF-2). Copy: docs/COPY_PROOF_2026-10.md
+const programs = [
+  {
+    name: 'Kordia',
+    place: 'New Zealand',
+    who: 'State-owned operator of national broadcast and emergency communications networks.',
+    body: 'Kordia\'s 24/7 network operations center ran on separate tools from many vendors. DataMiner replaced them with one layer for monitoring, control and automation across more than 5,000 devices, and 98% of Kordia\'s infrastructure is now provisioned on it.',
+    href: 'https://skyline.be/skyline/user/kordia',
+  },
+  {
+    name: 'TDF',
+    place: 'France',
+    who: 'Broadcast and telecom infrastructure operator with 8,600 commercialized sites.',
+    body: 'TDF consolidated a fragmented set of network operations tools into one system, phased network by network; digital terrestrial television alone runs to 14,000 elements. New equipment is now monitored in weeks instead of months.',
+    href: 'https://skyline.be/skyline/user/tdf',
+  },
+]
 ---
 
 <MarketingLayout title="Reference work | Quatro" description={sub}>
@@ -49,6 +67,26 @@ const pieces = [
       {pieces.map((piece: any) => (
         <ProofCard card={piece.card ?? null} pendingTitle={piece.pendingTitle} />
       ))}
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: var(--color-forest);">Partner-delivered reference programs</p>
+      <h2 class="font-sans font-light text-3xl lg:text-4xl tracking-tight leading-[1.15] max-w-3xl mb-6" style="color: var(--color-neutral-800);">The operational model, in production with critical-infrastructure operators.</h2>
+      <p class="font-sans text-base leading-relaxed max-w-3xl mb-12" style="color: var(--color-neutral-500);">These programs were delivered by Skyline Communications, the company that builds DataMiner, for its own customers. We cite them with Skyline's permission to show the operational model at national scale.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {programs.map((p) => (
+          <article class="rounded-xl p-6 lg:p-8" style="border: 1px solid var(--color-structure);">
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-neutral-400);">{p.place}</p>
+            <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight leading-[1.2] mb-2" style="color: var(--color-neutral-800);">{p.name}</h3>
+            <p class="font-sans text-sm leading-relaxed mb-4" style="color: var(--color-neutral-600);">{p.who}</p>
+            <p class="font-sans text-sm leading-relaxed mb-6" style="color: var(--color-neutral-500);">{p.body}</p>
+            <a href={p.href} target="_blank" rel="noopener" class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Read the story on skyline.be &rarr;</a>
+          </article>
+        ))}
+      </div>
+      <p class="font-sans text-xs mt-8" style="color: var(--color-neutral-400);">Figures as published by Skyline Communications.</p>
     </div>
   </section>
 

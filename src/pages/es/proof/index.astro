@@ -32,6 +32,24 @@ const pieces = [
   { pendingTitle: 'Un deslizamiento en un sitio minero, antes y después.' },
   { pendingTitle: 'El cuadro operativo de una red eléctrica.' },
 ]
+
+// Partner-delivered reference programs (§9B, PROOF-2). Copy: docs/COPY_PROOF_2026-10.md
+const programs = [
+  {
+    name: 'Kordia',
+    place: 'Nueva Zelanda',
+    who: 'Operador estatal de las redes nacionales de radiodifusión y de comunicaciones de emergencia.',
+    body: 'El centro de operaciones de red de Kordia, activo las 24 horas, funcionaba con herramientas separadas de muchos proveedores. DataMiner las reemplazó con una sola capa de monitoreo, control y automatización sobre más de 5.000 dispositivos, y hoy el 98% de la infraestructura de Kordia se aprovisiona en ella.',
+    href: 'https://skyline.be/skyline/user/kordia',
+  },
+  {
+    name: 'TDF',
+    place: 'Francia',
+    who: 'Operador de infraestructura de radiodifusión y telecomunicaciones con 8.600 sitios comercializados.',
+    body: 'TDF consolidó un conjunto fragmentado de herramientas de operación de red en un solo sistema, red por red; solo la televisión digital terrestre suma 14.000 elementos. Los equipos nuevos quedan monitoreados en semanas en lugar de meses.',
+    href: 'https://skyline.be/skyline/user/tdf',
+  },
+]
 ---
 
 <MarketingLayout lang="es" title="Trabajo de referencia | Quatro" description={sub}>
@@ -48,6 +66,26 @@ const pieces = [
       {pieces.map((piece: any) => (
         <ProofCard card={piece.card ?? null} pendingTitle={piece.pendingTitle} lang="es" />
       ))}
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-4" style="color: var(--color-forest);">Programas de referencia entregados por un socio</p>
+      <h2 class="font-sans font-light text-3xl lg:text-4xl tracking-tight leading-[1.15] max-w-3xl mb-6" style="color: var(--color-neutral-800);">El modelo operativo, en producción con operadores de infraestructura crítica.</h2>
+      <p class="font-sans text-base leading-relaxed max-w-3xl mb-12" style="color: var(--color-neutral-500);">Estos programas los entregó Skyline Communications, la empresa que desarrolla DataMiner, para sus propios clientes. Los citamos con permiso de Skyline para mostrar el modelo operativo a escala nacional.</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {programs.map((p) => (
+          <article class="rounded-xl p-6 lg:p-8" style="border: 1px solid var(--color-structure);">
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-neutral-400);">{p.place}</p>
+            <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight leading-[1.2] mb-2" style="color: var(--color-neutral-800);">{p.name}</h3>
+            <p class="font-sans text-sm leading-relaxed mb-4" style="color: var(--color-neutral-600);">{p.who}</p>
+            <p class="font-sans text-sm leading-relaxed mb-6" style="color: var(--color-neutral-500);">{p.body}</p>
+            <a href={p.href} target="_blank" rel="noopener" class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Leer el caso en skyline.be &rarr;</a>
+          </article>
+        ))}
+      </div>
+      <p class="font-sans text-xs mt-8" style="color: var(--color-neutral-400);">Cifras publicadas por Skyline Communications.</p>
     </div>
   </section>
 
