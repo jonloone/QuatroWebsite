@@ -183,7 +183,8 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
 - [x] `SPEC-COPY-6` (S) — Copy deck section for §9B partner-delivered reference programs (EN + ES), from the references Skyline's OK covers — blockedBy: PROOF-1 — spec: §9B — done: 32a48f2
   > BLOCKED (2026-10-24): which programs Skyline's OK covers, and whether operators may be named, is not on file. The only source is COPY_INDUSTRIES IND-3 ("a water utility's smart metering, an operator's consolidated operations center"). Jonathan confirms scope before copy is written (§0 never render invented state).
   > UNBLOCKED (2026-10-29, Jonathan): cite Skyline's website and its published case studies. Deck uses Skyline's public Kordia and TDF stories, customers named as Skyline names them; no public water-utility story exists, so that reference does not render.
-- [~] `PROOF-2` (S) — Reference programs (partner-delivered, labeled) — blockedBy: PROOF-1, SPEC-COPY-6 — spec: §9B — verify: `npm run build` green; needs human eyes: Skyline written OK on file
+- [x] `PROOF-2` (S) — Reference programs (partner-delivered, labeled) — blockedBy: PROOF-1, SPEC-COPY-6 — spec: §9B — done: bc71111
+  > note: build green (160 pages), `astro check` zero new (124), voice gate pass, zero internal 404s. Kordia and TDF from Skyline's published stories, linked out. Needs human eyes: the block on /proof and /es/proof; Esteban reads the Spanish.
   > BLOCKED (2026-10-22): §9B allows DataMiner public references only with Skyline's written OK; none is on file. Jonathan to obtain it (with §13.6 partner consent), then this builds as a "partner-delivered reference programs" block on /proof.
   > (2026-10-23, Jonathan): Jonathan is obtaining Skyline's OK; stays blocked until it is on file.
   > UNBLOCKED (2026-10-24, Jonathan): Skyline's written OK confirmed. No deck copy exists for the block yet; waits on SPEC-COPY-6.
