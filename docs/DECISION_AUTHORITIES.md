@@ -47,6 +47,7 @@ this walk.
 
 | Date | Decision | Where it applies |
 |---|---|---|
+| 2026-10-29 | §9B references come from Skyline's published user stories (skyline.be), cited with a link to each; customers are named as Skyline names them, figures as Skyline publishes them. Satellite operators on Skyline's list are not used (§1c). | §9B, SPEC-COPY-6, PROOF-2 |
 | 2026-10-24 | DEC-1: GitHub `main` is replaced by the local realignment history. The previous remote tip (5 commits, 2026-05-18..20) is kept on branch `archive/2026-05-remote`. | §13.7, §15, DEC-1 |
 | 2026-10-24 | Skyline's written OK for DataMiner public references is confirmed (Jonathan). Reference programs may render on /proof, labeled "partner-delivered reference programs", never "our past performance". | §9B, PROOF-2 |
 | 2026-10-23 | §13.5 resolved, option A: Agriculture and aquaculture publish now as `status: emerging`, with no proof claims (deck IND-5 as written). | §13.5, IND-5, IND-6, HOME-1 rows |
