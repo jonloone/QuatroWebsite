@@ -4,6 +4,7 @@
  * saw, what the team did, what it took. No client named (§0.5); honest placeholder where no capture
  * is cleared (§0.1, §13.6). Copy: COPY_ENERGY §7 (cards A and B); C and D have no write-up yet.
  */
+import { getCollection } from 'astro:content'
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import ProofCard from '@/components/marketing/ProofCard.astro'
@@ -33,6 +34,19 @@ const pieces = [
   { pendingTitle: 'A mine-site landslide, before and after.' },
   { pendingTitle: 'A grid operational picture.' },
 ]
+
+// Production hardware (ENERGY_BLOCKS §2, §4, §5; NRG-BLK-4). Copy: COPY_ENERGY_BLOCKS §1 proofCard.
+// Supplier-stated and labeled; supplier strips in a band, never full-bleed; supplier not named.
+const hardware = {
+  title: 'Production hardware',
+  text: 'Storage blocks are in production and a grid-tied site has been energized in the United States (supplier-stated). A Quatro-delivered site will appear here when it is commissioned.',
+  strips: [
+    '/images/proof-energy-blocks-asbuilt-racks.jpg',
+    '/images/proof-energy-blocks-asbuilt-aisle.jpg',
+    '/images/proof-energy-blocks-asbuilt-transport.jpg',
+  ],
+}
+const energyBlocks = (await getCollection('capabilities')).find((c: any) => c.id.replace(/\.md$/, '') === 'energy-blocks' && c.data.hero)
 
 // Partner-delivered reference programs (§9B, PROOF-2). Copy: docs/COPY_PROOF_2026-10.md
 const programs = [
@@ -67,6 +81,24 @@ const programs = [
       {pieces.map((piece: any) => (
         <ProofCard card={piece.card ?? null} pendingTitle={piece.pendingTitle} />
       ))}
+      <article class="lg:col-span-2 rounded-xl overflow-hidden" style="border: 1px solid var(--color-structure);">
+        <div class="p-6 lg:p-8">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-neutral-400);">Supplier-stated</p>
+          <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight leading-[1.2] mb-4" style="color: var(--color-neutral-800);">{hardware.title}</h3>
+          <p class="font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">{hardware.text}</p>
+          <div class="mt-8 grid grid-cols-1 gap-4 max-w-4xl">
+            {hardware.strips.map((src) => (
+              <figure>
+                <img src={src} alt="" class="img-technical w-full h-auto rounded-lg" loading="lazy" />
+                <figcaption class="mt-2 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">Supplier photograph</figcaption>
+              </figure>
+            ))}
+          </div>
+          {energyBlocks && (
+            <a href="/capabilities/energy-blocks" class="inline-block mt-8 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{energyBlocks.data.title} &rarr;</a>
+          )}
+        </div>
+      </article>
     </div>
   </section>
 
