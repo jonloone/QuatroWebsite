@@ -47,6 +47,7 @@ this walk.
 
 | Date | Decision | Where it applies |
 |---|---|---|
+| 2026-11-02 | DEC-3: energy blocks ship as a plain capability (Option B, the spec default; Jonathan may reopen for A). No "Quatro Energy" sub-brand on the site: page title "Firm power: energy blocks", eyebrow "Quatro's layer" / "La capa de Quatro", H1 as written in COPY_ENERGY_BLOCKS §1 (it carries no practice name). Energy page service-lines paragraph uses the Option B opening "Energy blocks serve four needs:". No `/energy` alias, so NRG-BLK-5 closes as not needed. "Quatro Energy" stays a deck-only label. | ENERGY_BLOCKS §1, NRG-BLK-1, NRG-BLK-2, NRG-BLK-5 |
 | 2026-10-29 | §9B references come from Skyline's published user stories (skyline.be), cited with a link to each; customers are named as Skyline names them, figures as Skyline publishes them. Satellite operators on Skyline's list are not used (§1c). | §9B, SPEC-COPY-6, PROOF-2 |
 | 2026-10-24 | DEC-1: GitHub `main` is replaced by the local realignment history. The previous remote tip (5 commits, 2026-05-18..20) is kept on branch `archive/2026-05-remote`. | §13.7, §15, DEC-1 |
 | 2026-10-24 | Skyline's written OK for DataMiner public references is confirmed (Jonathan). Reference programs may render on /proof, labeled "partner-delivered reference programs", never "our past performance". | §9B, PROOF-2 |
