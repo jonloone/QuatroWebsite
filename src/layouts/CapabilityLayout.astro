@@ -1,6 +1,6 @@
 ---
 /**
- * CapabilityLayout — one template for the six capability pages (REALIGNMENT_2026-10-20 §5):
+ * CapabilityLayout — one template for the capability pages (REALIGNMENT_2026-10-20 §5):
  * hero (eyebrow = layer), what you get, how it shows up in your operation, substrate line,
  * proof card or honest placeholder, hand-off to the next layer, engagement ladder, CTA.
  * Copy comes from the capabilities collection (docs/COPY_CAPABILITIES_2026-10.md); `lang="es"` reads
@@ -23,7 +23,8 @@ const es = lang === 'es'
 const t = es
   ? { suffix: 'Capacidades', talk: 'Hable con nuestro equipo', contact: '/es/contact/demo', get: 'Lo que obtiene', shows: 'Cómo aparece en su operación', proof: 'Prueba', engagement: 'Cómo se ejecuta un compromiso', engagementHref: '/es/how-it-works/engagement', ladder: engagementLadderEs, micro: 'Alojado en su país · Su equipo es dueño desde el primer día' }
   : { suffix: 'Capabilities', talk: 'Talk to our team', contact: '/contact/demo', get: 'What you get', shows: 'How it shows up in your operation', proof: 'Proof', engagement: 'How an engagement runs', engagementHref: '/how-it-works/engagement', ladder: engagementLadder, micro: 'Hosted in your country · Your team owns it from day one' }
-const { title, hero, scaleBand, whatYouGet = [], showsUp = [], substrateLine, affiliate, proof, handoff } = capability.data
+const { title, hero, scaleBand, whatYouGet = [], showsUp = [], substrateLine, affiliate, proof, handoff, heroImage, statusLabels = [], proofCard, engagement, cta } = capability.data
+const primary = cta ?? { label: t.talk, href: t.contact }
 
 // Link only to pages that exist today; industry and capability links switch on as their tickets land
 const industryIds = new Set((await getCollection(es ? 'industries-es' : 'industries')).map((e: any) => e.id.replace(/\.md$/, '')))
@@ -43,8 +44,9 @@ const live = (href: string) => {
     badge={hero.eyebrow}
     title={hero.title}
     body={hero.sub}
-    ctaLabel={t.talk}
-    ctaHref={t.contact}
+    ctaLabel={primary.label}
+    ctaHref={primary.href}
+    imageSrc={heroImage}
   />
 
   <!-- Scale band (§5B: attributed vendor scale, high on the page) -->
@@ -75,6 +77,13 @@ const live = (href: string) => {
               <span class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">{line}</span>
             </li>
           ))}
+          {statusLabels.length > 0 && (
+            <li class="pt-6 space-y-2" style="border-top: 1px solid var(--color-structure);">
+              {statusLabels.map((label: string) => (
+                <p class="font-mono text-xs leading-relaxed tracking-[0.02em]" style="color: var(--color-neutral-500);">{label}</p>
+              ))}
+            </li>
+          )}
         </ul>
       </div>
     </section>
@@ -123,7 +132,25 @@ const live = (href: string) => {
   <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-3xl">
       <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">{t.proof}</p>
-      <ProofCard card={proof} lang={lang} />
+      {proofCard ? (
+        <article class="rounded-xl overflow-hidden" style="border: 1px solid var(--color-structure);">
+          {proofCard.asset ? (
+            <div class="aspect-[16/9] overflow-hidden" style="background: #111;">
+              <img src={proofCard.asset} alt="" class="img-technical w-full h-full object-cover" loading="lazy" />
+            </div>
+          ) : (
+            <div class="aspect-[16/9] flex items-center justify-center" style="background: var(--color-neutral-100);">
+              <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-400);">{es ? 'Captura en preparación.' : 'Capture in preparation.'}</p>
+            </div>
+          )}
+          <div class="p-6 lg:p-8">
+            <h3 class="font-sans font-light text-xl lg:text-2xl tracking-tight leading-[1.2] mb-4" style="color: var(--color-neutral-800);">{proofCard.title}</h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{proofCard.text}</p>
+          </div>
+        </article>
+      ) : (
+        <ProofCard card={proof} lang={lang} />
+      )}
     </div>
   </section>
 
@@ -149,12 +176,12 @@ const live = (href: string) => {
       <div>
         <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{t.engagement}</p>
       </div>
-      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{t.ladder}</p>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{engagement ?? t.ladder}</p>
     </div>
   </section>
 
   <DualCta
-    primaryCta={{ label: t.talk, href: t.contact }}
+    primaryCta={primary}
     secondaryCta={{ label: t.engagement, href: t.engagementHref }}
     microcopy={t.micro}
   />

@@ -150,6 +150,17 @@ const capabilitiesCollection = defineCollection({
       text: z.string(),
       links: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
     }).optional(),
+    // Energy blocks (ENERGY_BLOCKS §2, §4): hero image, mandatory status labels, a labeled
+    // supplier-stated proof line, and a page-specific engagement paragraph and CTA
+    heroImage: z.string().optional(),
+    statusLabels: z.array(z.string()).optional(),
+    proofCard: z.object({
+      title: z.string(),
+      text: z.string(),
+      asset: z.string().nullable().optional(),
+    }).optional(),
+    engagement: z.string().optional(),
+    cta: z.object({ label: z.string(), href: z.string() }).optional(),
   }),
 })
 
