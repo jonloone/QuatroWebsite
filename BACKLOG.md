@@ -24,6 +24,7 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
 | CAP-3 | `docs/COPY_HARDWARE_2026-06-08.md` (add OT communications per §5C) |
 | SPEC-COPY-6, PROOF-2 | `docs/COPY_PROOF_2026-10.md` |
 | SPEC-COPY-9, NRG-BLK-6 | `docs/COPY_INSIGHT_ENERGY_BLOCKS_2026-11.md` |
+| SPEC-COPY-8, CULL-1, CULL-2, CULL-3, NAV-2, HOME-2, COMP-1 | `docs/COPY_CULL_2026-11.md` |
 | CAP-1, CAP-4, CAP-5, CAP-6, HIW-*, HOME-*, IND-*, PART-1, ABOUT-1 | copy deck to be written in `SPEC-COPY-*` tickets before the build ticket starts (PART-1/ABOUT-1 → SPEC-COPY-5) |
 
 ### Image prompt files
@@ -241,7 +242,7 @@ Spec for every P7 ticket: `docs/REALIGNMENT_2026-11-02_CULL.md`. Copy deck to be
 
 - [x] `DEC-4` (S) — Record in `docs/DECISION_AUTHORITIES.md`: June 2026 DataOS exclusion superseded (DataOS = ontology and agents capability); four capabilities, four industries, single How-it-works page; Cities and Agriculture retired — blockedBy: — — spec: CULL §A, §B, §H — done: 1286cab
   > note: two decision-log rows dated 2026-11-02; the 2026-10-20 §1c row (DataOS clause) and the 2026-10-23 §13.5 row are marked superseded. The CULL header keeps §1 naming rules while §C/§H name DataOS at Tier 1.5; logged as the one exception. CLAUDE.md still lists DataOS as never named until CLEAN-2.
-- [ ] `SPEC-COPY-8` (L) — Copy deck `docs/COPY_CULL_2026-11.md` (EN + ES): C1 xOps page additions, C3 DataOS page, Environment rename and forestry card, Security disaster-response card, Environment aquaculture card, How-it-works merged page (three anchors), About with leadership section, homepage four-plus-four cards — blockedBy: DEC-4 — spec: CULL §C–§G — verify: deck complete; VOICE_GATE A grep zero
+- [~] `SPEC-COPY-8` (L) — Copy deck `docs/COPY_CULL_2026-11.md` (EN + ES): C1 xOps page additions, C3 DataOS page, Environment rename and forestry card, Security disaster-response card, Environment aquaculture card, How-it-works merged page (three anchors), About with leadership section, homepage four-plus-four cards — blockedBy: DEC-4 — spec: CULL §C–§G — verify: deck complete; VOICE_GATE A grep zero
 - [ ] `CULL-1` (M) — Capabilities: write `dataos-ontology-agents.md` (EN/ES) from the deck; extend `operational-intelligence.md` with the two absorbed paragraphs; `.retired` iot-edge, reasoning-and-evidence, risk-baseline, managed-service (EN/ES); index shows four — blockedBy: SPEC-COPY-8 — spec: CULL §C — verify: build green; `/capabilities` lists four EN/ES; voice gate: pass
 - [ ] `CULL-2` (M) — Industries: rename Environment (title, hero, nav label) and add the forestry card; move disaster response to Security and aquaculture to Environment as one card each; `.retired` cities and agriculture (EN/ES); cap cards at five and challenges at three on every kept page; index shows four — blockedBy: SPEC-COPY-8 — spec: CULL §D — verify: build green; `/industries` lists four EN/ES; voice gate: pass
 - [ ] `CULL-3` (M) — How it works: merge index, engagement and sovereignty into one page with anchors; fold managed-service content under `#sovereignty`; retire `architecture.astro` (EN/ES) — blockedBy: SPEC-COPY-8 — spec: CULL §E — verify: build green; three anchors resolve; voice gate: pass
