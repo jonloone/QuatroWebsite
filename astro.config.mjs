@@ -56,6 +56,15 @@ export default defineConfig({
     '/industries/energy/predictive-maintenance': '/industries/energy',
     '/industries/cities/youth-violence-prevention': '/industries/cities',
     '/industries/critical-infrastructure': '/industries/security',
+    // CULL-1 (CULL §C): retired capability pages
+    '/capabilities/iot-edge': '/capabilities/operational-intelligence',
+    '/es/capabilities/iot-edge': '/es/capabilities/operational-intelligence',
+    '/capabilities/reasoning-and-evidence': '/capabilities/dataos-ontology-agents',
+    '/es/capabilities/reasoning-and-evidence': '/es/capabilities/dataos-ontology-agents',
+    '/capabilities/risk-baseline': '/how-it-works#engagement',
+    '/es/capabilities/risk-baseline': '/es/how-it-works#engagement',
+    '/capabilities/managed-service': '/how-it-works#sovereignty',
+    '/es/capabilities/managed-service': '/es/how-it-works#sovereignty',
   },
   i18n: {
     defaultLocale: 'en',

@@ -292,3 +292,52 @@
   to = "/capabilities"
   status = 301
   force = true
+
+# CULL-1 (CULL §C): retired capability pages
+[[redirects]]
+  from = "/capabilities/iot-edge"
+  to = "/capabilities/operational-intelligence"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/capabilities/iot-edge"
+  to = "/es/capabilities/operational-intelligence"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/capabilities/reasoning-and-evidence"
+  to = "/capabilities/dataos-ontology-agents"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/capabilities/reasoning-and-evidence"
+  to = "/es/capabilities/dataos-ontology-agents"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/capabilities/risk-baseline"
+  to = "/how-it-works#engagement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/capabilities/risk-baseline"
+  to = "/es/how-it-works#engagement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/capabilities/managed-service"
+  to = "/how-it-works#sovereignty"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/capabilities/managed-service"
+  to = "/es/how-it-works#sovereignty"
+  status = 301
+  force = true
