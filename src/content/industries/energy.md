@@ -53,6 +53,12 @@ capabilities:
   featured: true
   outcome: "Fewer false alarms in the control room, taps anticipated instead of confirmed afterward, and a record that holds up in prosecution."
   image: /images/cap-energy-corridor.png
+- name: Firm capacity in 90 to 120 days
+  description: "Grid-forming storage blocks, 4 MW / 4 MWh each, at the substations where the grid is constrained and for the evening peak of the dry season. Dispatched from your control room."
+  featured: true
+  outcome: Firm capacity within a quarter
+  image: /images/cap-energy-blocks-substation.jpg
+  tier: orchestrate
 - name: Find the losses by feeder, with a record that holds
   description: "Metering and consumption data from the distributors, correlated with meter events and field reports, rank loss hotspots by feeder and neighborhood. Loading and asset health on the priority transmission nodes sit on the same picture, so a substation running near its limit is seen before it fails."
   outcome: "Where the losses are, ranked, and a defensible record for recovery and for the investigations already underway. Scoped after the first 90 days, on the same picture."
@@ -61,6 +67,9 @@ capabilities:
   description: "When a distributed control system is assessed for replacement, the field survey usually ends in a document. Quatro captures the assessment into a connected operational model as it is built, so what was found in the field is visible online, queryable and ready to carry into the design phase. Existing control systems are integration targets, never replacement candidates for us."
   outcome: An engineering assessment your team can keep working from.
   image: /images/cap-energy-refinery-model.png
+serviceLines:
+  text: "Energy blocks serve four needs: capacity for the grid, industrial and remote power, resilience of critical services, and sovereign compute and water. Each is delivered in the same 4 MW block."
+  href: /capabilities/energy-blocks
 insightTags:
 - dry-season
 - corridor

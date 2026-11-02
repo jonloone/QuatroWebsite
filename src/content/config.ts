@@ -98,6 +98,8 @@ const industriesCollection = defineCollection({
     status: z.enum(['active', 'emerging', 'retired']).optional(),
     proofBadge: z.string().optional(),
     authorityLine: z.string().optional(),
+    // Energy blocks service-lines paragraph (ENERGY_BLOCKS §3), linked to its capability page
+    serviceLines: z.object({ text: z.string(), href: z.string() }).optional(),
     proofCards: z.array(proofCardSchema).optional(),
     insightTags: z.array(z.string()).optional(),
     layerCaptions: z.object({

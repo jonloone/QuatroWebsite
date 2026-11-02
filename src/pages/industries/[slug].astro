@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
 const { industry } = Astro.props
 const { Content } = await industry.render()
-const { title, tagline, description, hero, heroImage, capabilities, stats, challenges, platformMapping, proofPoint, programs, cta, proofBadge, authorityLine, proofCards, layerCaptions, insightTags } = industry.data as any
+const { title, tagline, description, hero, heroImage, capabilities, stats, challenges, platformMapping, proofPoint, programs, cta, proofBadge, authorityLine, proofCards, layerCaptions, insightTags, serviceLines } = industry.data as any
 
 // Three-layer band (§2, §7): verbatim layer headlines, per-industry caption only where the copy deck supplies one
 const layerBeats = layers.map((layer) => ({
@@ -322,6 +322,22 @@ const relatedInsights = [
     </section>
   )}
 
+
+  <!-- 4a. SERVICE LINES (ENERGY_BLOCKS §3) — links the capability page by its own title -->
+  {serviceLines && (() => {
+    const slug = serviceLines.href.split('/').pop()
+    const target = capabilityEntries.find((c: any) => c.id.replace(/\.md$/, '') === slug && c.data.hero)
+    return (
+      <section class="py-16 lg:py-20 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+        <div class="mx-auto max-w-5xl fade-up">
+          <p class="font-sans text-lg lg:text-xl leading-relaxed max-w-4xl" style="color: var(--color-neutral-700);">{serviceLines.text}</p>
+          {target && (
+            <a href={serviceLines.href} class="inline-block mt-6 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{target.data.title} &rarr;</a>
+          )}
+        </div>
+      </section>
+    )
+  })()}
 
   <!-- 4b. AUTHORITY LINE (§4 item 5) -->
   {authorityLine && (
