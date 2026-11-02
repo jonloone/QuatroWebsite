@@ -78,6 +78,9 @@ const industriesCollection = defineCollection({
         image: z.string().optional(),
         outcome: z.string().optional(),
         tier: z.enum(['see', 'understand', 'orchestrate']).optional(),
+        // Link to a capability page, and an optional extra line under the card (ENERGY_BLOCKS §3)
+        href: z.string().optional(),
+        addendum: z.object({ text: z.string(), href: z.string() }).optional(),
       })
     ),
     stats: z.array(

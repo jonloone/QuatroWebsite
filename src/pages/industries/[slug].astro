@@ -38,6 +38,12 @@ const remainingCaps = capabilities.filter(c => !c.featured)
 
 // Example cards (§8): active solutions tagged to this industry, each linked to the capability it runs on
 const capabilityEntries = await getCollection('capabilities')
+// A capability-page link renders only once that page exists, labeled with the page's own title
+const capLink = (href?: string) => {
+  if (!href) return null
+  const target = capabilityEntries.find((c: any) => `/capabilities/${c.id.replace(/\.md$/, '')}` === href && c.data.hero)
+  return target ? { href, title: target.data.title } : null
+}
 const exampleCards = (await getCollection('solutions'))
   .filter((s: any) => s.data.status === 'active' && s.data.industry === (industry as any).id.replace(/\.md$/, ''))
   .sort((a: any, b: any) => a.data.order - b.data.order)
@@ -113,6 +119,17 @@ const relatedInsights = [
                 <p class="font-display text-sm font-semibold" style="color: var(--color-forest);">
                   {cap.outcome}
                 </p>
+              )}
+              {capLink(cap.href) && (
+                <a href={cap.href} class="inline-block mt-6 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{capLink(cap.href)!.title} &rarr;</a>
+              )}
+              {cap.addendum && (
+                <div class="mt-6 pt-6" style="border-top: 1px solid var(--color-structure);">
+                  <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{cap.addendum.text}</p>
+                  {capLink(cap.addendum.href) && (
+                    <a href={cap.addendum.href} class="inline-block mt-3 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">{capLink(cap.addendum.href)!.title} &rarr;</a>
+                  )}
+                </div>
               )}
             </div>
 
@@ -315,6 +332,9 @@ const relatedInsights = [
               <p class="font-sans text-sm leading-relaxed text-white/60">
                 {cap.outcome || cap.description}
               </p>
+              {capLink(cap.href) && (
+                <a href={cap.href} class="inline-block mt-6 font-mono text-[10px] uppercase tracking-[0.1em] text-white/80">{capLink(cap.href)!.title} &rarr;</a>
+              )}
             </div>
           ))}
         </div>

@@ -52,6 +52,9 @@ capabilities:
   description: "Radar and thermal sensing on coastlines and estuaries, where small boats carry no transponder."
 - name: Map the network behind the losses
   description: "Threat-network mapping, part of the Quatro risk baseline: who is behind the losses and how the network is financed."
+- name: Power for the services a country cannot allow to fail
+  description: "Grid-forming blocks at hospitals, telecom sites and forward bases keep essential services energized through a system event; with a water block they restore two services after a disaster."
+  href: /capabilities/energy-blocks
 platformMapping:
   see: "Video, field sensors, detection systems, SCADA and line pressure, patrol and field reports, and the territory and coast from satellite. Existing systems are integration targets."
   correlate: "Every source on one event, with false alarms filtered by correlation and every figure traced to its source."

@@ -39,6 +39,9 @@ capabilities:
   featured: true
   outcome: "The neighborhoods to reach first, ranked, with the evidence attached."
   image: /images/cap-cities-infra-monitoring.png
+  addendum:
+    text: "A storage block and a water block delivered together restore power and potable water to shelters and clinics within days of arrival."
+    href: /capabilities/energy-blocks
 - name: Keep the cadaster current
   description: "Building change detected from orbit with Quatro Klarety, confirmed in the field, with block surveys feeding the same cadaster record."
   featured: true

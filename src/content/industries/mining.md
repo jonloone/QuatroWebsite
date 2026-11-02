@@ -54,6 +54,9 @@ capabilities:
 - name: Remediation on one site record
   description: "The site's existing data audited and brought into one record, role dashboards with threshold alerts, a roadmap for the field gaps, and an engineer on site."
   outcome: "First results in the second week and a review against agreed criteria in the fourth."
+- name: Off-grid power for camps and plants
+  description: "Passively cooled storage rated to 3,000 m, stacked two-high; eight blocks supply 32 MW on four container footprints, with solar on the same rail."
+  href: /capabilities/energy-blocks
 platformMapping:
   see: "Concession and license footprints, inspection and field reports, the site's existing GIS, shapefiles and schedules, and the territory itself from satellite."
   correlate: "Change from orbit against the license footprint and the basin below it; contamination screening against the sampling plan; every figure traced to its source."
