@@ -23,6 +23,7 @@ lines, not the count. Clearing the baseline is its own ticket, not part of any o
 | CAP-2 | `docs/COPY_UNIFY_XOPS_2026-06-08.md` (title "The operational model"; add §5B hand-offs) |
 | CAP-3 | `docs/COPY_HARDWARE_2026-06-08.md` (add OT communications per §5C) |
 | SPEC-COPY-6, PROOF-2 | `docs/COPY_PROOF_2026-10.md` |
+| SPEC-COPY-9, NRG-BLK-6 | `docs/COPY_INSIGHT_ENERGY_BLOCKS_2026-11.md` |
 | CAP-1, CAP-4, CAP-5, CAP-6, HIW-*, HOME-*, IND-*, PART-1, ABOUT-1 | copy deck to be written in `SPEC-COPY-*` tickets before the build ticket starts (PART-1/ABOUT-1 → SPEC-COPY-5) |
 
 ### Image prompt files
@@ -228,7 +229,7 @@ Spec for every P6 ticket: `docs/REALIGNMENT_2026-11-02_ENERGY_BLOCKS.md`. Copy d
 - [ ] `ES-NRG-BLK-1` (M) — Spanish capability page `capabilities-es/energy-blocks.md` and the ES industry cards (energy, mining, security, cities) from copy deck §2–§3 — blockedBy: NRG-BLK-1, NRG-BLK-2, NRG-BLK-3, SPEC-COPY-ES-3 — spec: ENERGY_BLOCKS §6 — verify: build green; `/es/capabilities/energy-blocks` and the four ES industry pages render; ES ban grep clean; voice gate: pass
 - [x] `NRG-BLK-5` (S) — Redirect `/energy` → `/capabilities/energy-blocks` (EN/ES) only if DEC-3 picks Option A; otherwise close as not needed — blockedBy: DEC-3, NRG-BLK-1 — spec: ENERGY_BLOCKS §1 — done: 7eb196b
   > note: closed as not needed. DEC-3 recorded Option B (plain capability, no practice alias), so no `/energy` redirect ships; none exists in astro.config.mjs or netlify.toml, and no /energy page exists. Reopen with DEC-3 if Jonathan picks Option A.
-- [ ] `SPEC-COPY-9` (S) — Copy deck `docs/COPY_INSIGHT_ENERGY_BLOCKS_2026-11.md`: one Insights post (EN) on firm capacity for the dry season from storage blocks, built only from ENERGY_BLOCKS §2 figures (labeled "supplier specification, indicative") and the deck §1/§3 lines; supplier unnamed, no client or site, status labels where a block is named; frontmatter tagged `dry-season` for the Energy page — blockedBy: NRG-BLK-2 — spec: ENERGY_BLOCKS §2, §5; REALIGNMENT_2026-10-20 §9C — verify: voice gate pass; needs human eyes: Jonathan approves the post before it is built
+- [~] `SPEC-COPY-9` (S) — Copy deck `docs/COPY_INSIGHT_ENERGY_BLOCKS_2026-11.md`: one Insights post (EN) on firm capacity for the dry season from storage blocks, built only from ENERGY_BLOCKS §2 figures (labeled "supplier specification, indicative") and the deck §1/§3 lines; supplier unnamed, no client or site, status labels where a block is named; frontmatter tagged `dry-season` for the Energy page — blockedBy: NRG-BLK-2 — spec: ENERGY_BLOCKS §2, §5; REALIGNMENT_2026-10-20 §9C — verify: voice gate pass; needs human eyes: Jonathan approves the post before it is built
 - [!] `NRG-BLK-6` (S) — Insights: one post on firm capacity for the dry season from storage blocks (pinned to Energy by the dry-season tag); no supplier name, figures labeled indicative — blockedBy: NRG-BLK-2, SPEC-COPY-9 — spec: ENERGY_BLOCKS §2, §5; REALIGNMENT_2026-10-20 §9C — verify: post builds and shows on `/industries/energy`; voice gate: pass
   > BLOCKED (2026-11-02): no copy exists for the post in any deck, the spec or the source folder; the copy rule forbids free-writing at build time. SPEC-COPY-9 writes it for Jonathan's approval.
 
