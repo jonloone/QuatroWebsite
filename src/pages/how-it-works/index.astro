@@ -1,17 +1,14 @@
 ---
 /**
- * /how-it-works — the operational picture (REALIGNMENT_2026-10-20 §6A; COPY_HOW_IT_WORKS 6A).
- * Replaces /utility/index. The Architecture link switches on when HIW-4 lands.
+ * /how-it-works — one page (CULL-3; REALIGNMENT_2026-11-02_CULL §E; COPY_CULL §4).
+ * Merges the former index, engagement and sovereignty pages verbatim under #picture, #engagement and
+ * #sovereignty, with the managed-service table under #sovereignty. Architecture is retired (301 to #picture).
  */
 import MarketingLayout from '@/layouts/MarketingLayout.astro'
 import HeroCanvas from '@/components/marketing/HeroCanvas.astro'
 import SpineBand from '@/components/marketing/SpineBand.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
-import { layers, layerPromise, engagementLadder } from '@/lib/layers'
-
-const pages = import.meta.glob('./*.astro')
-const engagementHref = '/how-it-works/engagement'
-const hasArchitecture = Boolean(pages['./architecture.astro'])
+import { layers, layerPromise } from '@/lib/layers'
 
 const layerBeats = layers.map((layer) => ({
   id: layer.id,
@@ -22,6 +19,65 @@ const layerBeats = layers.map((layer) => ({
 
 const sub =
   'One operational picture of your territory and your operations, from satellite to SCADA to the field, run in your country and owned by you from day one.'
+
+const engagementSub =
+  'Start on your highest-risk area and decide on the results, measured against indicators you agree in advance.'
+
+const proofOfValue = [
+  'The satellite baseline starts first because it needs no field hardware, so results begin during the build.',
+  'A first operational picture of your highest-risk area in about 30 days.',
+  'Then a 90-day evaluation measured against indicators agreed in advance. On a corridor those are confirmed detections on the right of way, fewer false alarms and faster response.',
+  'You keep access for a full year. Renewal and expansion are decided on results.',
+]
+
+const youSupply = [
+  'Access to the systems that hold the data (SCADA, historians, GIS) within the first 60 days.',
+  'A counterpart team that reviews each deliverable within ten business days and signs the gate.',
+  'A hosting decision: which of the three hosting modalities the picture runs on, chosen while the statement of work is written.',
+]
+
+const sovereigntySub =
+  'In plain language, what stays in your country and what the AI is allowed to do. The contract annex carries the binding text.'
+
+const blocks = [
+  {
+    title: 'Surveillance information',
+    text: 'It reaches only the roles you authorize. It stays out of support tickets and offshore tools, and an imagery order never names you or its purpose.',
+  },
+  {
+    title: 'Personal data',
+    text: 'Under the personal data protection law (LOPDP), Quatro acts as processor on your instructions, collects only what the work needs and pseudonymizes where it can.',
+  },
+  {
+    title: 'What you own',
+    text: 'Your data and every derived product are yours from the moment they exist. The rules, thresholds and workflows built for you are yours too, delivered in open formats you can carry to another provider.',
+  },
+  {
+    title: 'Configuration and credentials',
+    text: 'System configuration, architecture and credentials are confidential. The keys stay in your custody, and remote administration runs through multi-factor sign-in with every session recorded.',
+  },
+  {
+    title: 'Where it runs',
+    text: 'Data, backups, logs and keys stay in the country. You choose an in-country data center we manage, a government or private cloud in the country, or your own premises, and you can move between them. A remote site keeps working when the link drops.',
+  },
+  {
+    title: 'What the AI may do',
+    text: 'Inference runs in the country, and no third-party model is trained on your data. Every model is registered, and you hear about a change before it reaches production. Models are replaceable, open-weight ones included. Rules are explicit and versioned, and every output carries a trace. The AI advises, an official decides and signs, and you can switch any AI function off.',
+  },
+  {
+    title: 'When it ends',
+    text: 'A full export within 30 days, 90 days of transition support, and certified deletion.',
+  },
+]
+
+const managedService = [
+  { label: 'Operation', line: 'In country by Quatro Ecuador, with support from 07:00 to 22:00, seven days a week.' },
+  { label: 'Hypercare', line: '90 days after each go-live.' },
+  { label: 'Service levels', line: 'Reported monthly to your steering committee.' },
+  { label: 'Hosting', line: 'An in-country data center we manage, a government or private cloud with every region in country, or your own premises. You can move between them.' },
+  { label: 'AI annex', line: 'Inference stays on sovereign infrastructure, no third-party model is trained on your data, models are replaceable and the keys stay in your custody.' },
+  { label: 'On site', line: 'A forward-deployed engineer, and training in Spanish for operators, analysts and maintenance staff.' },
+]
 ---
 
 <MarketingLayout title="How it works | Quatro" description={sub}>
@@ -33,6 +89,11 @@ const sub =
     ctaHref="/contact/demo"
   />
 
+  <section id="picture" class="scroll-mt-24 pt-20 lg:pt-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">The operational picture</p>
+    </div>
+  </section>
   <SpineBand beats={layerBeats} promise={layerPromise} foundation={null} ariaLabel="Territory, operation, Quatro's layer" />
 
   <!-- Human-in-the-loop and ownership (§0.4) -->
@@ -47,31 +108,103 @@ const sub =
     </div>
   </section>
 
-  <!-- Engagement ladder (§2) -->
+  <section id="engagement" class="scroll-mt-24 pt-20 lg:pt-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs</p>
+      <p class="mt-6 font-sans text-lg lg:text-xl leading-relaxed max-w-3xl" style="color: var(--color-neutral-700);">{engagementSub}</p>
+    </div>
+  </section>
   <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
       <div>
-        <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs</p>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">01</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">Proof of value, 30 to 90 days</h2>
       </div>
       <div>
-        <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-500);">{engagementLadder}</p>
-        <a href={engagementHref} class="inline-block mt-8 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">How an engagement runs &rarr;</a>
+        <ul class="space-y-5">
+          {proofOfValue.map((line) => (
+            <li class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">{line}</li>
+          ))}
+        </ul>
+
+        <div class="mt-12 rounded-xl p-6 lg:p-8" style="background: var(--color-paper); border: 1px solid var(--color-structure);">
+          <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">The gate</p>
+          <p class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-700);">Before any field equipment is ordered, both sides approve the risk heat map, the areas of interest and the sensor placement plan.</p>
+        </div>
+
+        <p class="mt-12 font-mono text-[10px] uppercase tracking-[0.1em] mb-5" style="color: var(--color-forest);">What your institution supplies</p>
+        <ul class="space-y-4">
+          {youSupply.map((line) => (
+            <li class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-500);">{line}</li>
+          ))}
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Quiet link to Architecture (Tier 3) -->
-  {hasArchitecture && (
-    <section class="py-12 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
-      <div class="mx-auto max-w-5xl">
-        <a href="/how-it-works/architecture" class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-neutral-500);">The full picture, for the people who evaluate it &rarr;</a>
+  <!-- 2. Annual service -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">02</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">An annual service your team runs</h2>
       </div>
-    </section>
-  )}
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">
+        Priced annually and renewed on results. Hosting in the country, support from 07:00 to 22:00 seven days a week, 90 days of hypercare after go-live, and a monthly service report to your steering committee.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Program -->
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-10 lg:gap-16">
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">03</p>
+        <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">A program, in tranches</h2>
+      </div>
+      <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">
+        For national programs, the build runs in tranches through a consortium led by a local prime, your single contracting counterparty. Each tranche after the first has its own contract, so nothing beyond the first is committed until you sign it. A monthly steering committee chaired by the prime governs the program.
+      </p>
+    </div>
+  </section>
+
+  <section id="sovereignty" class="scroll-mt-24 pt-20 lg:pt-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Sovereignty, hosting and managed service</p>
+      <p class="mt-6 font-sans text-lg lg:text-xl leading-relaxed max-w-3xl" style="color: var(--color-neutral-700);">{sovereigntySub}</p>
+    </div>
+  </section>
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl space-y-12 lg:space-y-16">
+      {blocks.map((block, i) => (
+        <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-4 lg:gap-16 pb-12 lg:pb-16" style={i < blocks.length - 1 ? 'border-bottom: 1px solid var(--color-structure);' : ''}>
+          <div>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-3" style="color: var(--color-forest);">{String(i + 1).padStart(2, '0')}</p>
+            <h2 class="font-sans font-light text-2xl lg:text-3xl tracking-tight" style="color: var(--color-neutral-800);">{block.title}</h2>
+          </div>
+          <p class="font-sans text-base lg:text-lg leading-relaxed" style="color: var(--color-neutral-700);">{block.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+
+  <section class="py-20 lg:py-28 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-5xl">
+      <dl>
+        {managedService.map((row) => (
+          <div class="grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-2 lg:gap-16 py-5" style="border-top: 1px solid var(--color-structure);">
+            <dt class="font-mono text-[10px] uppercase tracking-[0.1em] pt-1" style="color: var(--color-forest);">{row.label}</dt>
+            <dd class="font-sans text-base leading-relaxed" style="color: var(--color-neutral-700);">{row.line}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
 
   <DualCta
     primaryCta={{ label: 'Talk to our team', href: '/contact/demo' }}
-    secondaryCta={{ label: 'How an engagement runs', href: engagementHref }}
+    secondaryCta={{ label: 'Reference work', href: '/proof' }}
     microcopy="Hosted in your country · Your team owns it from day one"
   />
 </MarketingLayout>

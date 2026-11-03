@@ -29,7 +29,7 @@
 # /utility/how-it-starts replaced by /how-it-works/engagement (HIW-2)
 [[redirects]]
   from = "/utility/how-it-starts"
-  to = "/how-it-works/engagement"
+  to = "/how-it-works#engagement"
   status = 301
   force = true
 
@@ -210,7 +210,7 @@
 
 [[redirects]]
   from = "/es/utility/how-it-starts"
-  to = "/es/how-it-works/engagement"
+  to = "/es/how-it-works#engagement"
   status = 301
   force = true
 
@@ -339,5 +339,36 @@
 [[redirects]]
   from = "/es/capabilities/managed-service"
   to = "/es/how-it-works#sovereignty"
+  status = 301
+  force = true
+
+# CULL-3 (CULL §E): How it works is one page
+[[redirects]]
+  from = "/how-it-works/engagement"
+  to = "/how-it-works#engagement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/how-it-works/engagement"
+  to = "/es/how-it-works#engagement"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-it-works/sovereignty"
+  to = "/how-it-works#sovereignty"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/how-it-works/sovereignty"
+  to = "/es/how-it-works#sovereignty"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-it-works/architecture"
+  to = "/how-it-works#picture"
   status = 301
   force = true
