@@ -8,19 +8,15 @@ function LinkIcon() {}
 function CogIcon() {}
 function CommandLineIcon() {}
 function ChartBarIcon() {}
-function ShieldCheckIcon() {}
 function LightBulbIcon() {}
-function LockClosedIcon() {}
 function TruckIcon() {}
 function BoltIcon() {}
 function GlobeAltIcon() {}
 function ShieldIcon() {}
-function WrenchScrewdriverIcon() {}
 function BuildingLibraryIcon() {}
 function BuildingOffice2Icon() {}
 function BriefcaseIcon() {}
 function NewspaperIcon() {}
-function SignalIcon() {}
 function BeakerIcon() {}
 
 export interface NavItem {
@@ -68,35 +64,30 @@ export interface PrimaryNavItem {
    ═══════════════════════════════════════════════════════════════ */
 
 const footerNavigationData: Record<Locale, Record<string, { title: string; items: { name: string; href: string; localize?: boolean }[] }>> = {
+  // REALIGNMENT_2026-11-02_CULL §B: the footer mirrors the nav (NAV-2)
   en: {
     capabilities: {
       title: 'Capabilities',
       items: [
+        { name: 'DataMiner xOps', href: '/capabilities/operational-intelligence' },
         { name: 'Quatro Klarety', href: '/capabilities/quatro-klarety' },
-        { name: 'The operational model', href: '/capabilities/operational-intelligence' },
-        { name: 'IoT, edge and OT communications', href: '/capabilities/iot-edge' },
-        { name: 'Reasoning, agents and evidence', href: '/capabilities/reasoning-and-evidence' },
-        { name: 'Intelligence and risk baseline', href: '/capabilities/risk-baseline' },
-        { name: 'Managed service and sovereign hosting', href: '/capabilities/managed-service' },
+        { name: 'DataOS', href: '/capabilities/dataos-ontology-agents' },
+        { name: 'Energy blocks', href: '/capabilities/energy-blocks' },
       ],
     },
     industries: {
       title: 'Industries',
       items: [
         { name: 'Energy and hydrocarbons', href: '/industries/energy' },
-        { name: 'Environment, forestry and protected areas', href: '/industries/environment' },
         { name: 'Mining and remediation', href: '/industries/mining' },
+        { name: 'Environment, forestry and protected areas', href: '/industries/environment' },
         { name: 'Security and critical infrastructure', href: '/industries/security' },
-        { name: 'Cities and public services', href: '/industries/cities' },
-        { name: 'Agriculture and aquaculture', href: '/industries/agriculture' },
       ],
     },
     howItWorks: {
       title: 'How it works',
       items: [
-        { name: 'The operational picture', href: '/how-it-works' },
-        { name: 'How an engagement runs', href: '/how-it-works/engagement' },
-        { name: 'Sovereignty, hosting and governance', href: '/how-it-works/sovereignty' },
+        { name: 'How it works', href: '/how-it-works' },
         { name: 'Reference work', href: '/proof' },
         { name: 'Insights', href: '/insights' },
       ],
@@ -105,7 +96,6 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       title: 'Company',
       items: [
         { name: 'About', href: '/company/about' },
-        { name: 'Leadership', href: '/company/leadership' },
         { name: 'Partners', href: '/partners' },
         { name: 'Contact', href: '/contact' },
         { name: 'Talk to our team', href: '/contact/demo' },
@@ -116,40 +106,34 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
     capabilities: {
       title: 'Capacidades',
       items: [
+        { name: 'DataMiner xOps', href: '/capabilities/operational-intelligence' },
         { name: 'Quatro Klarety', href: '/capabilities/quatro-klarety' },
-        { name: 'El modelo operativo', href: '/capabilities/operational-intelligence' },
-        { name: 'IoT, edge y comunicaciones OT', href: '/capabilities/iot-edge' },
-        { name: 'Razonamiento, agentes y evidencia', href: '/capabilities/reasoning-and-evidence' },
-        { name: 'Inteligencia y línea base de riesgo', href: '/capabilities/risk-baseline' },
-        { name: 'Servicio gestionado y alojamiento soberano', href: '/capabilities/managed-service' },
+        { name: 'DataOS', href: '/capabilities/dataos-ontology-agents' },
+        // No Spanish energy-blocks page until ES-NRG-BLK-1
+        { name: 'Bloques de energía', href: '/capabilities/energy-blocks', localize: false },
       ],
     },
     industries: {
       title: 'Industrias',
       items: [
         { name: 'Energía e hidrocarburos', href: '/industries/energy' },
-        { name: 'Ambiente, bosques y áreas protegidas', href: '/industries/environment' },
         { name: 'Minería y remediación', href: '/industries/mining' },
+        { name: 'Ambiente, bosques y áreas protegidas', href: '/industries/environment' },
         { name: 'Seguridad e infraestructura crítica', href: '/industries/security' },
-        { name: 'Ciudades y servicios públicos', href: '/industries/cities' },
-        { name: 'Agricultura y acuicultura', href: '/industries/agriculture' },
       ],
     },
     howItWorks: {
       title: 'Cómo funciona',
       items: [
-        { name: 'El cuadro operativo', href: '/how-it-works' },
-        { name: 'Cómo se ejecuta un compromiso', href: '/how-it-works/engagement' },
-        { name: 'Soberanía, alojamiento y gobernanza', href: '/how-it-works/sovereignty' },
+        { name: 'Cómo funciona', href: '/how-it-works' },
         { name: 'Trabajo de referencia', href: '/proof' },
-        { name: 'Artículos', href: '/es/resources/insights' },
+        { name: 'Artículos', href: '/es/resources/insights', localize: false },
       ],
     },
     company: {
       title: 'Empresa',
       items: [
         { name: 'Nosotros', href: '/company/about' },
-        { name: 'Liderazgo', href: '/company/leadership' },
         { name: 'Socios', href: '/partners' },
         { name: 'Contacto', href: '/contact' },
         { name: 'Hable con nuestro equipo', href: '/contact/demo' },
@@ -183,20 +167,18 @@ export const footerNavigation = footerNavigationData.en
    ═══════════════════════════════════════════════════════════════ */
 
 const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
-  // REALIGNMENT_2026-10-20 §3.
-  // Proof points at Insights until PROOF-1 builds /proof; industries change as IND-* land.
+  // REALIGNMENT_2026-11-02_CULL §B and COPY_CULL §7 (NAV-2): four capabilities, four industries,
+  // How it works as one link, Proof, and Company (About · Partners · Contact).
   en: [
     {
       name: 'Capabilities',
       href: '/capabilities',
       variant: 'stacked',
       items: [
+        { name: 'DataMiner xOps', description: 'Every system you run, in one live model', href: '/capabilities/operational-intelligence', icon: LinkIcon },
         { name: 'Quatro Klarety', description: 'Territorial monitoring from space', href: '/capabilities/quatro-klarety', icon: GlobeAltIcon },
-        { name: 'The operational model', description: 'Every system you run, in one live model', href: '/capabilities/operational-intelligence', icon: LinkIcon },
-        { name: 'IoT, edge and OT communications', description: 'Hardware and OT communications in the field', href: '/capabilities/iot-edge', icon: SignalIcon },
-        { name: 'Reasoning, agents and evidence', description: 'Agents propose; your operators decide', href: '/capabilities/reasoning-and-evidence', icon: CommandLineIcon },
-        { name: 'Intelligence and risk baseline', description: 'Know where the risk sits before field capital is committed', href: '/capabilities/risk-baseline', icon: ShieldCheckIcon },
-        { name: 'Managed service and sovereign hosting', description: 'Operated in your country, owned by you', href: '/capabilities/managed-service', icon: LockClosedIcon },
+        { name: 'DataOS', description: 'Ontology and agents', href: '/capabilities/dataos-ontology-agents', icon: CommandLineIcon },
+        { name: 'Energy blocks', description: 'Firm power in 90 to 120 days', href: '/capabilities/energy-blocks', icon: BoltIcon },
       ],
       cta: { name: 'All capabilities', href: '/capabilities' },
     },
@@ -206,23 +188,16 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       variant: 'stacked',
       items: [
         { name: 'Energy and hydrocarbons', description: 'Electricity, hydrocarbons, mining and water in one picture', href: '/industries/energy', icon: BoltIcon },
-        { name: 'Environment, forestry and protected areas', description: 'What moves through a protected area, on the water and on land', href: '/industries/environment', icon: GlobeAltIcon },
         { name: 'Mining and remediation', description: 'Every concession and the river below it, on one record', href: '/industries/mining', icon: BeakerIcon },
+        { name: 'Environment, forestry and protected areas', description: 'What moves through a protected area, on the water and on land', href: '/industries/environment', icon: GlobeAltIcon },
         { name: 'Security and critical infrastructure', description: 'Evidence that holds up after the incident', href: '/industries/security', icon: ShieldIcon },
-        { name: 'Cities and public services', description: 'Disaster response, cadaster, waste and water on one picture', href: '/industries/cities', icon: BuildingLibraryIcon },
-        { name: 'Agriculture and aquaculture', description: 'Protect the harvest from the pond edge to the plant', href: '/industries/agriculture', icon: ShieldIcon },
       ],
       cta: { name: 'All industries', href: '/industries' },
     },
     {
       name: 'How it works',
       href: '/how-it-works',
-      variant: 'stacked',
-      items: [
-        { name: 'The operational picture', description: 'From satellite to SCADA to the field', href: '/how-it-works', icon: LinkIcon },
-        { name: 'How an engagement runs', description: 'From a proof of value to an annual service', href: '/how-it-works/engagement', icon: WrenchScrewdriverIcon },
-        { name: 'Sovereignty, hosting and governance', description: 'What stays in your country and what the AI may do', href: '/how-it-works/sovereignty', icon: LockClosedIcon },
-      ],
+      items: [],
       cta: { name: 'How it works', href: '/how-it-works' },
     },
     {
@@ -236,18 +211,12 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       cta: { name: 'Reference work', href: '/proof' },
     },
     {
-      name: 'Partners',
-      href: '/partners',
-      items: [],
-      cta: { name: 'Partners', href: '/partners' },
-    },
-    {
       name: 'Company',
       href: '/company/about',
       variant: 'stacked',
       items: [
         { name: 'About', description: 'Our mission and the team behind Quatro', href: '/company/about', icon: BuildingLibraryIcon },
-        { name: 'Leadership', description: 'The people who run Quatro', href: '/company/leadership', icon: BriefcaseIcon },
+        { name: 'Partners', description: 'You hold the client relationship and know the market.', href: '/partners', icon: BriefcaseIcon },
         { name: 'Contact', description: 'Talk to our team', href: '/contact', icon: NewspaperIcon },
       ],
       cta: { name: 'About Quatro', href: '/company/about' },
@@ -259,12 +228,11 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       href: '/capabilities',
       variant: 'stacked',
       items: [
+        { name: 'DataMiner xOps', description: 'Todos sus sistemas en un solo modelo en vivo', href: '/capabilities/operational-intelligence', icon: LinkIcon },
         { name: 'Quatro Klarety', description: 'Monitoreo territorial desde el espacio', href: '/capabilities/quatro-klarety', icon: GlobeAltIcon },
-        { name: 'El modelo operativo', description: 'Todos sus sistemas, en un solo modelo operativo en vivo', href: '/capabilities/operational-intelligence', icon: LinkIcon },
-        { name: 'IoT, edge y comunicaciones OT', description: 'Hardware y comunicaciones OT en campo', href: '/capabilities/iot-edge', icon: SignalIcon },
-        { name: 'Razonamiento, agentes y evidencia', description: 'Los agentes proponen; sus operadores deciden', href: '/capabilities/reasoning-and-evidence', icon: CommandLineIcon },
-        { name: 'Inteligencia y línea base de riesgo', description: 'Sepa dónde está el riesgo antes de comprometer capital en campo', href: '/capabilities/risk-baseline', icon: ShieldCheckIcon },
-        { name: 'Servicio gestionado y alojamiento soberano', description: 'Operado en su país, de su propiedad', href: '/capabilities/managed-service', icon: LockClosedIcon },
+        { name: 'DataOS', description: 'Ontología y agentes', href: '/capabilities/dataos-ontology-agents', icon: CommandLineIcon },
+        // No Spanish energy-blocks page until ES-NRG-BLK-1
+        { name: 'Bloques de energía', description: 'Potencia firme en 90 a 120 días', href: '/capabilities/energy-blocks', icon: BoltIcon, localize: false },
       ],
       cta: { name: 'Todas las capacidades', href: '/capabilities' },
     },
@@ -274,23 +242,16 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       variant: 'stacked',
       items: [
         { name: 'Energía e hidrocarburos', description: 'Electricidad, hidrocarburos, minería y agua en un solo cuadro', href: '/industries/energy', icon: BoltIcon },
-        { name: 'Ambiente, bosques y áreas protegidas', description: 'Lo que se mueve en un área protegida, en el agua y en tierra', href: '/industries/environment', icon: GlobeAltIcon },
         { name: 'Minería y remediación', description: 'Cada concesión y el río de abajo, en un solo registro', href: '/industries/mining', icon: BeakerIcon },
+        { name: 'Ambiente, bosques y áreas protegidas', description: 'Lo que se mueve en un área protegida, en el agua y en tierra', href: '/industries/environment', icon: GlobeAltIcon },
         { name: 'Seguridad e infraestructura crítica', description: 'Evidencia que resiste después del incidente', href: '/industries/security', icon: ShieldIcon },
-        { name: 'Ciudades y servicios públicos', description: 'Respuesta a desastres, catastro, residuos y agua en un solo cuadro', href: '/industries/cities', icon: BuildingLibraryIcon },
-        { name: 'Agricultura y acuicultura', description: 'Proteja la cosecha, de la orilla de la piscina a la planta', href: '/industries/agriculture', icon: ShieldIcon },
       ],
       cta: { name: 'Todas las industrias', href: '/industries' },
     },
     {
       name: 'Cómo funciona',
       href: '/how-it-works',
-      variant: 'stacked',
-      items: [
-        { name: 'El cuadro operativo', description: 'Del satélite al SCADA y al campo', href: '/how-it-works', icon: LinkIcon },
-        { name: 'Cómo se ejecuta un compromiso', description: 'De una prueba de valor a un servicio anual', href: '/how-it-works/engagement', icon: WrenchScrewdriverIcon },
-        { name: 'Soberanía, alojamiento y gobernanza', description: 'Qué se queda en su país y qué puede hacer la IA', href: '/how-it-works/sovereignty', icon: LockClosedIcon },
-      ],
+      items: [],
       cta: { name: 'Cómo funciona', href: '/how-it-works' },
     },
     {
@@ -304,18 +265,12 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       cta: { name: 'Trabajo de referencia', href: '/proof' },
     },
     {
-      name: 'Socios',
-      href: '/partners',
-      items: [],
-      cta: { name: 'Socios', href: '/partners' },
-    },
-    {
       name: 'Empresa',
       href: '/company/about',
       variant: 'stacked',
       items: [
         { name: 'Nosotros', description: 'Nuestra misión y el equipo detrás de Quatro', href: '/company/about', icon: BuildingLibraryIcon },
-        { name: 'Liderazgo', description: 'Las personas que dirigen Quatro', href: '/company/leadership', icon: BriefcaseIcon },
+        { name: 'Socios', description: 'Usted tiene la relación con el cliente y conoce el mercado.', href: '/partners', icon: BriefcaseIcon },
         { name: 'Contacto', description: 'Hable con nuestro equipo', href: '/contact', icon: NewspaperIcon },
       ],
       cta: { name: 'Sobre Quatro', href: '/company/about' },
