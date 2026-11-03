@@ -180,6 +180,7 @@ Page `<title>`: "How it works | Quatro" / "Cómo funciona | Quatro".
 
 - Section label: "Leadership" / "Liderazgo".
 - Body: carry verbatim the people and bios from `company/leadership.astro` / `es/company/leadership.astro`, placed after the About page's existing sections and before its CTA.
+- Correction (2026-11-02): the `team` collection is empty, so there is nothing to carry. Names, titles and bios come from Jonathan via `SPEC-COPY-10`; the section does not render until they exist.
 
 ---
 
