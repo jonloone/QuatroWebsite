@@ -80,25 +80,25 @@
 # Use cases: six kept and rewritten, the rest retired (UC-1, §8)
 [[redirects]]
   from = "/industries/cities/galapagos-conservation"
-  to = "/industries/environment/marine-reserve-vigilance"
+  to = "/industries/environment"
   status = 301
   force = true
 
 [[redirects]]
   from = "/industries/industrial/mining-operations"
-  to = "/industries/mining/mining-remediation"
+  to = "/industries/mining"
   status = 301
   force = true
 
 [[redirects]]
   from = "/industries/energy/grid-operations"
-  to = "/industries/energy/dry-season-operations"
+  to = "/industries/energy"
   status = 301
   force = true
 
 [[redirects]]
   from = "/industries/defense/maritime-awareness"
-  to = "/industries/security/maritime-awareness"
+  to = "/industries/security"
   status = 301
   force = true
 
@@ -395,5 +395,120 @@
 [[redirects]]
   from = "/es/industries/agriculture"
   to = "/es/industries/environment"
+  status = 301
+  force = true
+
+# LEGACY-1 (CULL §F): resources, case studies, ES solutions, use-case routes
+[[redirects]]
+  from = "/resources"
+  to = "/insights"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/case-studies"
+  to = "/proof"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/documentation"
+  to = "/insights"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/white-papers"
+  to = "/insights"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/insights"
+  to = "/insights"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/resources"
+  to = "/insights"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/resources/case-studies"
+  to = "/es/proof"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/resources/documentation"
+  to = "/insights"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/resources/white-papers"
+  to = "/insights"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/resources/insights"
+  to = "/insights"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/energy/dry-season-operations"
+  to = "/industries/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/energy/environmental-compliance-energy"
+  to = "/industries/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/environment/marine-reserve-vigilance"
+  to = "/industries/environment"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/mining/mining-remediation"
+  to = "/industries/mining"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/security/maritime-awareness"
+  to = "/industries/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/energy/pipeline-integrity"
+  to = "/industries/energy"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/case-studies/*"
+  to = "/proof"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/resources/case-studies/*"
+  to = "/es/proof"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/solutions/*"
+  to = "/es/capabilities"
   status = 301
   force = true

@@ -18,8 +18,9 @@ const ctaLabel = t('nav.getQuote', lang)
 const switchLabel = t('lang.switch', lang)
 // Language switch: the counterpart page if it exists, else the closest equivalent (LINK-1)
 const alternate = getAlternateUrl(Astro.url, lang === 'en' ? 'es' : 'en')
-const insightsFallback = lang === 'en' ? '/es/resources/insights' : '/insights'
-const onInsights = lang === 'en' ? Astro.url.pathname.startsWith('/insights') : Astro.url.pathname.startsWith('/es/resources/insights')
+// Insights has no Spanish listing (LEGACY-1 retired the /es/resources placeholder), so the ES side falls back to /es/
+const insightsFallback = lang === 'en' ? '/es/' : '/insights'
+const onInsights = lang === 'en' && Astro.url.pathname.startsWith('/insights')
 const switchHref = (await routeExists(alternate))
   ? alternate
   : onInsights ? insightsFallback : (lang === 'en' ? '/es/' : '/')

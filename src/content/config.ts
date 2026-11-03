@@ -232,39 +232,6 @@ const solutionsCollection = defineCollection({
   }),
 })
 
-const testimonialsCollection = defineCollection({
-  type: 'data',
-  schema: z.object({
-    quote: z.string(),
-    author: z.string(),
-    title: z.string(),
-    company: z.string(),
-    avatar: z.string().optional(),
-    industry: z.string().optional(),
-    order: z.number().optional(),
-  }),
-})
-
-const caseStudiesCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    industryLabel: z.string(),
-    headline: z.string(),
-    excerpt: z.string(),
-    company: z.string().optional(),
-    stats: z
-      .array(
-        z.object({
-          value: z.string(),
-          label: z.string(),
-        })
-      )
-      .optional(),
-    order: z.number().optional(),
-  }),
-})
-
 const useCasesCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -362,8 +329,6 @@ export const collections = {
   industries: industriesCollection,
   capabilities: capabilitiesCollection,
   solutions: solutionsCollection,
-  testimonials: testimonialsCollection,
-  'case-studies': caseStudiesCollection,
   team: teamCollection,
   'use-cases': useCasesCollection,
   insights: insightsCollection,
@@ -371,5 +336,4 @@ export const collections = {
   'solutions-es': solutionsCollection,
   'industries-es': industriesCollection,
   'capabilities-es': capabilitiesCollection,
-  'case-studies-es': caseStudiesCollection,
 }

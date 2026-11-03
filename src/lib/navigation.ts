@@ -127,7 +127,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       items: [
         { name: 'Cómo funciona', href: '/how-it-works' },
         { name: 'Trabajo de referencia', href: '/proof' },
-        { name: 'Artículos', href: '/es/resources/insights', localize: false },
+        { name: 'Artículos', href: '/insights', localize: false },
       ],
     },
     company: {
@@ -260,7 +260,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       variant: 'stacked',
       items: [
         { name: 'Trabajo de referencia', description: 'Lo que vio el operador, lo que hizo el equipo, lo que tomó', href: '/proof', icon: ChartBarIcon },
-        { name: 'Artículos', description: 'Perspectivas sobre inteligencia operativa', href: '/es/resources/insights', icon: LightBulbIcon },
+        { name: 'Artículos', description: 'Perspectivas sobre inteligencia operativa', href: '/insights', icon: LightBulbIcon, localize: false },
       ],
       cta: { name: 'Trabajo de referencia', href: '/proof' },
     },
