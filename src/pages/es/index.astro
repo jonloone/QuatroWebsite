@@ -17,11 +17,21 @@ const layerCaptions: Record<string, string> = {
 }
 const layerBeats = layersEs.map((layer) => ({ id: layer.id, index: layer.index, label: layer.label, oneLiner: layer.headline, caption: layerCaptions[layer.id] }))
 
+// Capability cards (CULL §G; COPY_CULL §6)
+const capabilityCards = [
+  { name: 'DataMiner xOps', line: 'Todos los sistemas que opera, en un solo modelo operativo en vivo.', href: '/es/capabilities/operational-intelligence' },
+  { name: 'Quatro Klarety', line: 'Monitoreo territorial desde el espacio, con la evidencia adjunta.', href: '/es/capabilities/quatro-klarety' },
+  { name: 'DataOS', line: 'Las reglas de su operación y agentes que proponen dentro de ellas.', href: '/es/capabilities/dataos-ontology-agents' },
+  { name: 'Bloques de energía', line: 'Potencia firme en 90 a 120 días.', href: '/capabilities/energy-blocks' },
+]
+
+// Industry rows: the four industries, in nav order (COPY_CULL §6)
+const industryOrder = ['energy', 'mining', 'environment', 'security']
 // Industry rows: the active and emerging industries, in spec order
 const industryRows = (await getCollection('industries-es'))
   .filter((i: any) => i.data.status === 'active' || i.data.status === 'emerging')
-  .sort((a: any, b: any) => a.data.order - b.data.order)
-  .map((i: any) => ({ title: i.data.title, line: i.data.hero?.title, href: `/es/industries/${i.id.replace(/\.md$/, '')}` }))
+  .sort((a: any, b: any) => industryOrder.indexOf(a.id.replace(/\.md$/, '')) - industryOrder.indexOf(b.id.replace(/\.md$/, '')))
+  .map((i: any) => ({ title: i.data.title, line: i.data.tagline, href: `/es/industries/${i.id.replace(/\.md$/, '')}` }))
 
 const proofCards = [
   {
@@ -30,14 +40,6 @@ const proofCards = [
     did: 'Programó radar a través de nubes sobre las celdas marcadas, correlacionó con la presión de línea y entregó un sitio confirmado a la capa de inteligencia.',
     took: 'Días, del primer tamizado a la celda confirmada.',
     asset: '/images/proof-energy-corridor.png',
-    href: '/es/proof',
-  },
-  {
-    title: 'El estiaje de una reserva, evaluado desde cuatro sistemas.',
-    saw: 'Anomalía de temperatura superficial del mar, lluvia, extensión de agua superficial y verdor de la vegetación para un territorio, comparados con el año anterior, respondidos en lenguaje corriente con cada cifra citada.',
-    did: 'Fusionó registros públicos oceánicos, meteorológicos y satelitales en una evaluación y una vigilancia que marca el cambio.',
-    took: 'Sin hardware de campo; la primera evaluación dentro de un mes.',
-    asset: null,
     href: '/es/proof',
   },
 ]
@@ -111,7 +113,7 @@ const proofCards = [
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="3">
             <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Después del terremoto, los barrios a los que llegar primero</p>
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Ciudades y servicios públicos</p>
+            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/20 mt-2">Seguridad e infraestructura crítica</p>
           </div>
           <div class="hero-slide-caption absolute bottom-0 left-0 right-0 flex flex-col items-start transition-all duration-700 ease-in-out opacity-0 translate-y-4" data-slide="4">
             <p class="font-display font-light text-lg md:text-xl lg:text-2xl text-white/50 tracking-tight leading-[1.2]">Un solo informe de estiaje para todas las cuencas</p>
@@ -413,8 +415,21 @@ const proofCards = [
     })();
   </script>
 
-  <!-- 1b. THREE-LAYER BAND (§2, §10) -->
-  <SpineBand beats={layerBeats} promise={layerPromiseEs} showPromise={false} foundation={null} ariaLabel="Territorio, operación, la capa de Quatro" />
+
+  <!-- 1b. CAPABILITIES (CULL §G; COPY_CULL §6) -->
+  <section id="capabilities" class="py-20 lg:py-28 px-6 lg:px-12" style="border-top: 1px solid var(--color-structure);">
+    <div class="mx-auto max-w-6xl">
+      <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12" style="color: var(--color-forest);">Capacidades</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {capabilityCards.map((card) => (
+          <a href={card.href} class="group block rounded-xl p-6 lg:p-8 transition-colors duration-300 hover:bg-white fade-up" style="border: 1px solid var(--color-structure);">
+            <h3 class="font-sans text-lg font-medium tracking-tight mb-3 transition-colors duration-300 group-hover:text-[var(--color-forest)]" style="color: var(--color-neutral-800);">{card.name}</h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: var(--color-neutral-500);">{card.line}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
        2. INDUSTRIES — the active industries, from the collection
@@ -435,315 +450,21 @@ const proofCards = [
     ))}
   </section>
 
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       5a. TECHNOLOGY PARTNERS — Logo strip with editorial label
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative py-20 lg:py-28 px-6 overflow-hidden" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
-
-    <!-- Subtle grain overlay -->
-    <div class="absolute inset-0 opacity-[0.04] pointer-events-none"
-      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27np1%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23np1)%27/%3E%3C/svg%3E');"></div>
-
-    <div class="relative z-10 mx-auto max-w-6xl">
-
-      <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">El ecosistema</p>
-      <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-5xl leading-[1.15] tracking-tight text-white mb-16 lg:mb-20 fade-up">
-        Tecnología probada en cada capa, integrada y operada por Quatro.
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-10 fade-up max-w-4xl">
-        <div class="flex flex-col">
-          <p class="font-sans font-medium text-base text-white mb-1">Quatro Klarety</p>
-          <p class="font-sans text-sm text-white/60">Monitoreo territorial desde el espacio, entregado con nuestro socio de observación de la Tierra, Klarety.</p>
-        </div>
-        <div class="flex flex-col">
-          <p class="font-sans font-medium text-base text-white mb-1">DataMiner xOps</p>
-          <p class="font-sans text-sm text-white/60">El modelo operativo: más de 8.000 integraciones, en producción con operadores en todo el mundo.</p>
-        </div>
-        <div class="flex flex-col">
-          <p class="font-sans font-medium text-base text-white mb-1">La Quatro IoT &amp; Edge Suite</p>
-          <p class="font-sans text-sm text-white/60">Sensores, gateways y comunicaciones OT en campo.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- 2b. THREE-LAYER BAND (§2, §10) -->
+  <SpineBand beats={layerBeats} promise={layerPromiseEs} showPromise={false} foundation={null} ariaLabel="Territorio, operación, la capa de Quatro" />
 
 
   <!-- 7b. PROOF STORIES (§9A) -->
   <section class="py-24 lg:py-32 px-6 lg:px-12" style="border-top: 1px solid var(--color-structure);">
     <div class="mx-auto max-w-6xl">
       <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-12 fade-up" style="color: var(--color-forest);">Trabajo de referencia</p>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="max-w-3xl">
         {proofCards.map((card) => <ProofCard card={card} lang="es" />)}
       </div>
       <a href="/es/proof" class="inline-block mt-10 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Trabajo de referencia &rarr;</a>
     </div>
   </section>
 
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       8. WHERE WE OPERATE — Rotating globe with dither overlay
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative overflow-hidden" style="background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);">
-
-    <!-- Dotted wireframe globe background (D3 canvas) -->
-    <canvas id="globe-canvas" class="absolute inset-0 w-full h-full z-[1] pointer-events-none" style="opacity: 0.7;"></canvas>
-
-    <!-- Grain overlay -->
-    <div class="absolute inset-0 z-[3] opacity-[0.04] pointer-events-none"
-      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27nm%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.65%27 numOctaves=%273%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23nm)%27/%3E%3C/svg%3E');"></div>
-
-    <!-- Radial vignette for depth -->
-    <div class="absolute inset-0 z-[4] pointer-events-none" style="background: radial-gradient(ellipse at 60% 50%, transparent 30%, rgba(10,10,10,0.35) 60%, rgba(10,10,10,0.8) 90%);"></div>
-
-    <!-- Content — centered over the globe -->
-    <div class="relative z-10 py-32 lg:py-44 px-6">
-      <div class="mx-auto max-w-6xl">
-
-        <div class="max-w-2xl">
-          <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/40 mb-6 fade-up">Dónde operamos</p>
-          <h2 class="font-sans font-light text-3xl sm:text-4xl lg:text-6xl leading-[1.1] tracking-tight text-white mb-6 fade-up">
-            Sede en Quito, Ecuador, con una entidad en Estados Unidos.
-          </h2>
-          <p class="font-sans text-base lg:text-lg leading-relaxed text-white/60 mb-10 fade-up">
-            Activos en Ecuador, Colombia, Venezuela, Panamá y Guyana, y en MENA a través de un socio de canal.
-          </p>
-          <a href="/es/partners" class="group inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.08em] px-7 py-3.5 rounded-full transition-all duration-300 ease-out hover:scale-[1.03] mb-16 fade-up" style="border: 1px solid rgba(255,255,255,0.25); color: white;">
-            Hágase socio
-            <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
-        </div>
-
-        <!-- Region markers (§1e) -->
-        <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 fade-up">
-          {['Ecuador', 'Colombia', 'Venezuela', 'Panamá', 'Guyana', 'MENA (socio de canal)'].map((m) => (
-            <p class="font-mono text-[10px] uppercase tracking-[0.1em] text-white/70">{m}</p>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Dotted Wireframe Globe (D3 orthographic projection, 21st.dev/shadway style) -->
-  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function () {
-      var canvas = document.getElementById('globe-canvas');
-      if (!canvas || typeof d3 === 'undefined') return;
-      var ctx = canvas.getContext('2d');
-      if (!ctx) return;
-
-      // ─── Sizing ───
-      var section = canvas.parentElement;
-      var w, h, radius;
-
-      function resize() {
-        var rect = section.getBoundingClientRect();
-        var dpr = Math.min(window.devicePixelRatio || 1, 2);
-        w = rect.width;
-        h = rect.height;
-        canvas.width = w * dpr;
-        canvas.height = h * dpr;
-        canvas.style.width = w + 'px';
-        canvas.style.height = h + 'px';
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        radius = Math.min(w, h) * 0.42;
-        projection.scale(radius).translate([w * 0.62, h * 0.48]);
-      }
-
-      // ─── D3 Projection ───
-      var projection = d3.geoOrthographic().clipAngle(90);
-      var path = d3.geoPath().projection(projection);
-      var rotation = [30, -15];
-      var rotationSpeed = 0.18;
-
-      // ─── Colors (forest green palette) ───
-      var dotColor = 'rgba(15, 76, 58, 0.7)';
-      var graticuleColor = 'rgba(15, 76, 58, 0.15)';
-      var outlineColor = 'rgba(15, 76, 58, 0.3)';
-      var sphereStroke = 'rgba(15, 76, 58, 0.2)';
-
-      // Operational presence markers
-      var regions = [
-        { coords: [-98.5, 39.8], size: 6 },   // US HQ
-        { coords: [-78.5, -1.8], size: 6 },   // Ecuador / LATAM
-        { coords: [45, 25], size: 5 },         // MENA
-        { coords: [-99.1, 19.4], size: 4 },   // Mexico
-        { coords: [36.8, -1.3], size: 4 },    // East Africa
-        { coords: [-47.9, -15.8], size: 3 },  // Brazil
-        { coords: [-0.1, 51.5], size: 3 },    // UK
-        { coords: [54.4, 24.5], size: 3 },    // UAE
-        { coords: [3.4, 6.5], size: 3 },      // West Africa
-      ];
-
-      // ─── Point-in-polygon ───
-      function pointInPolygon(pt, ring) {
-        var x = pt[0], y = pt[1], inside = false;
-        for (var i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-          var xi = ring[i][0], yi = ring[i][1];
-          var xj = ring[j][0], yj = ring[j][1];
-          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) {
-            inside = !inside;
-          }
-        }
-        return inside;
-      }
-
-      function pointInFeature(pt, feature) {
-        var geom = feature.geometry;
-        if (geom.type === 'Polygon') {
-          if (!pointInPolygon(pt, geom.coordinates[0])) return false;
-          for (var i = 1; i < geom.coordinates.length; i++) {
-            if (pointInPolygon(pt, geom.coordinates[i])) return false;
-          }
-          return true;
-        } else if (geom.type === 'MultiPolygon') {
-          for (var p = 0; p < geom.coordinates.length; p++) {
-            var poly = geom.coordinates[p];
-            if (pointInPolygon(pt, poly[0])) {
-              var inHole = false;
-              for (var h = 1; h < poly.length; h++) {
-                if (pointInPolygon(pt, poly[h])) { inHole = true; break; }
-              }
-              if (!inHole) return true;
-            }
-          }
-        }
-        return false;
-      }
-
-      function generateDots(feature, step) {
-        var dots = [];
-        var bounds = d3.geoBounds(feature);
-        var stepSize = step * 0.08;
-        for (var lng = bounds[0][0]; lng <= bounds[1][0]; lng += stepSize) {
-          for (var lat = bounds[0][1]; lat <= bounds[1][1]; lat += stepSize) {
-            var pt = [lng, lat];
-            if (pointInFeature(pt, feature)) dots.push(pt);
-          }
-        }
-        return dots;
-      }
-
-      // ─── Render ───
-      var allDots = [];
-      var landFeatures = null;
-      var graticule = d3.geoGraticule();
-
-      function render() {
-        ctx.clearRect(0, 0, w, h);
-        path.context(ctx);
-
-        // Sphere outline
-        ctx.beginPath();
-        path({ type: 'Sphere' });
-        ctx.strokeStyle = sphereStroke;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-
-        // Graticule grid
-        ctx.beginPath();
-        path(graticule());
-        ctx.strokeStyle = graticuleColor;
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-
-        if (landFeatures) {
-          // Land outlines
-          ctx.beginPath();
-          landFeatures.features.forEach(function (f) { path(f); });
-          ctx.strokeStyle = outlineColor;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-
-          // Halftone dots on land
-          allDots.forEach(function (dot) {
-            var projected = projection(dot);
-            if (projected) {
-              // Only draw if on visible hemisphere (check against clip)
-              var dist = d3.geoDistance(dot, projection.invert([w * 0.62, h * 0.48]));
-              if (dist < Math.PI / 2) {
-                ctx.beginPath();
-                ctx.arc(projected[0], projected[1], 1.0, 0, 2 * Math.PI);
-                ctx.fillStyle = dotColor;
-                ctx.fill();
-              }
-            }
-          });
-
-          // Operational presence markers (brighter, pulsing)
-          var t = Date.now() / 1000;
-          regions.forEach(function (r) {
-            var projected = projection(r.coords);
-            if (projected) {
-              var dist = d3.geoDistance(r.coords, projection.invert([w * 0.62, h * 0.48]));
-              if (dist < Math.PI / 2) {
-                // Pulse glow
-                var pulse = 0.4 + 0.3 * Math.sin(t * 2 + r.coords[0]);
-                ctx.beginPath();
-                ctx.arc(projected[0], projected[1], r.size * 2.5, 0, 2 * Math.PI);
-                ctx.fillStyle = 'rgba(15, 76, 58, ' + (pulse * 0.3) + ')';
-                ctx.fill();
-
-                // Core dot
-                ctx.beginPath();
-                ctx.arc(projected[0], projected[1], r.size, 0, 2 * Math.PI);
-                ctx.fillStyle = '#0f4c3a';
-                ctx.fill();
-                ctx.strokeStyle = 'rgba(255,255,255,0.15)';
-                ctx.lineWidth = 0.8;
-                ctx.stroke();
-              }
-            }
-          });
-        }
-      }
-
-      // ─── Animation ───
-      var animId;
-      function animate() {
-        rotation[0] += rotationSpeed;
-        projection.rotate(rotation);
-        render();
-        animId = requestAnimationFrame(animate);
-      }
-
-      // ─── Visibility gating ───
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            resize();
-            animId = requestAnimationFrame(animate);
-          } else {
-            cancelAnimationFrame(animId);
-          }
-        });
-      }, { threshold: 0.05 });
-
-      observer.observe(canvas);
-      window.addEventListener('resize', function () {
-        resize();
-        render();
-      });
-
-      // ─── Load land data ───
-      resize();
-      fetch('https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/110m/physical/ne_110m_land.json')
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          landFeatures = data;
-          data.features.forEach(function (feature) {
-            var dots = generateDots(feature, 18);
-            dots.forEach(function (d) { allDots.push(d); });
-          });
-          render();
-        })
-        .catch(function () {
-          // Graceful fallback — render graticule only
-          render();
-        });
-    });
-  </script>
 
   <!-- ═══════════════════════════════════════════════════════════════
        10. CTA — Dithering Canvas (kept from previous design)
@@ -933,63 +654,6 @@ const proofCards = [
       observer.observe(canvas);
     })();
   </script>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       11. FAQ — Simplified (KT clean typography)
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="py-32 lg:py-40 px-8 lg:px-12" style="border-top: 1px solid var(--color-structure);">
-    <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-[35%_1fr] gap-12 lg:gap-16">
-
-      <!-- Left label + heading -->
-      <div class="fade-up">
-        <p class="font-mono text-[10px] uppercase tracking-[0.1em] mb-6" style="color: var(--color-forest);">Preguntas frecuentes</p>
-        <h2 class="font-sans font-light text-3xl lg:text-4xl leading-[1.15] tracking-tight" style="color: var(--color-neutral-800);">
-          Lo que conviene saber antes de hablar.
-        </h2>
-      </div>
-
-      <!-- Right: questions -->
-      <div class="fade-up">
-        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
-          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
-            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">¿En qué se diferencia Quatro de un integrador de sistemas?</h3>
-            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-          </summary>
-          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            Un integrador de sistemas hace un largo descubrimiento y le entrega una hoja de ruta. Nosotros empezamos por su área de mayor riesgo con una línea base satelital, conectamos los sistemas que tienen la respuesta y le damos a su equipo un cuadro operativo funcionando en semanas. El compromiso tiene una entrega, y lo que deja es suyo.
-          </p>
-        </details>
-        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
-          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
-            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">¿Y la dependencia del proveedor?</h3>
-            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-          </summary>
-          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            El modelo operativo, los datos, los productos derivados y las llaves son suyos desde el primer día. Corre en su país, sobre la infraestructura que usted elige, y puede migrar entre opciones de alojamiento. Las reglas y los flujos le llegan en formatos abiertos, y una salida incluye una exportación completa y eliminación certificada.
-          </p>
-        </details>
-        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
-          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
-            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">¿Cómo es el compromiso?</h3>
-            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-          </summary>
-          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            Una prueba de valor de 30 a 90 días sobre su área de mayor riesgo, primero la línea base satelital, medida contra indicadores acordados de antemano. Luego un servicio anual que opera su equipo y, para programas nacionales, una construcción por tramos a través de un integrador local.
-          </p>
-          <a href="/es/how-it-works/engagement" class="inline-block mt-4 font-mono text-[10px] uppercase tracking-[0.1em]" style="color: var(--color-forest);">Cómo se ejecuta un compromiso &rarr;</a>
-        </details>
-        <details class="group py-8" style="border-top: 1px solid var(--color-structure);">
-          <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
-            <h3 class="font-sans font-light text-xl tracking-tight" style="color: var(--color-neutral-800);">¿Puede correr en nuestro país?</h3>
-            <svg class="w-5 h-5 shrink-0 mt-1 transition-transform duration-300 group-open:rotate-45" style="color: var(--color-forest);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
-          </summary>
-          <p class="mt-4 font-sans text-sm leading-relaxed max-w-3xl" style="color: var(--color-neutral-500);">
-            Sí. La inferencia, los datos, los respaldos, los registros y las llaves se quedan en el país: en un centro de datos en el país gestionado por nosotros, en una nube de gobierno o privada en el país, o en sus propias instalaciones. Lo opera Quatro Ecuador, con soporte en español.
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
 
   <SiteFooter lang="es" />
 
