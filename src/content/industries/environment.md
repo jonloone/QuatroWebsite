@@ -1,5 +1,5 @@
 ---
-title: Environment and protected areas
+title: Environment, forestry and protected areas
 tagline: "One record of what moves through a protected area, on the water and on land."
 heroImage: /images/industry-environment-reserve.png
 description: "Vessel tracking, permits, zoning and satellite imagery each sit in their own system, so a boat that switches off its transponder simply disappears. Quatro connects them into one picture your rangers decide from, in Spanish, hosted in your country."
@@ -8,7 +8,7 @@ status: active
 proofBadge: Demonstrated on a reserve
 authorityLine: "We know the reserve's working day: vessels that go dark near the limit, permits and zoning held in separate systems, cloud over the highlands, and the institutions that answer for it (MAE, INOCAR, INAMHI, SNGR)."
 hero:
-  eyebrow: Environment and protected areas
+  eyebrow: Environment, forestry and protected areas
   title: "One record of what moves through a protected area, on the water and on land."
   description: "Vessel tracking, permits, zoning and satellite imagery each sit in their own system, so a boat that switches off its transponder simply disappears. Quatro connects them into one picture your rangers decide from, in Spanish, hosted in your country."
   primaryCta:
@@ -27,8 +27,6 @@ stats:
 challenges:
 - title: A boat that switches off its transponder leaves the record.
   description: "Tracking, permits and imagery are held apart, so a vessel that goes dark near the limit is gone until someone finds it by chance."
-- title: Fishing presence is visible; fishing effort is not.
-  description: "Without effort by vessel, zone and period, there is nothing to hold against quotas and zoning."
 - title: Land change is checked by hand.
   description: "Invasive spread and encroachment are surveyed on incomplete schedules, often under cloud."
 - title: The climate data never reaches the decision.
@@ -44,14 +42,12 @@ capabilities:
   featured: true
   image: /images/cap-environment-land-change.png
   outcome: "Encroachment and invasive spread flagged between field visits."
-- name: Alerts where your team already works
-  description: "Configurable triggers delivered by webhook: a restricted-zone visit, a boundary crossing, a dark vessel in the reserve, fishing in a no-take zone, a tour boat off its itinerary, a transponder switched off."
+- name: Watch the forest estate between inventories
+  description: "Every canopy change across the estate dated and matched to the harvest plan. Thinning and clear-fell are confirmed as they happen, fire scars, windthrow and stress are flagged within weeks, and new tracks or clearings near the boundary are located for the field team. Volume stays measured at the plots; the satellite says where the next plot should go."
   featured: true
-  image: /images/cap-environment-alerts.png
-  outcome: "The alert reaches the ranger on duty, with the record behind it."
-- name: Ask in plain Spanish
-  description: "Staff without GIS training ask a question and get a mappable, auditable answer with every source cited."
-  outcome: "The question \"which vessels without a transponder were in the reserve last night\" answered in one step."
+  outcome: "Harvest, damage and boundary change dated across the estate, with the scenes behind each one."
+- name: Aquaculture perimeters, day and night
+  description: "Thermal cameras on the dykes and radar on the water approach, scheduled by tide and moon, with weigh-and-seal custody from pond to plant and the land around the farm read from satellite."
 - name: Read El Niño against your territory
   description: "Sea-surface temperature anomaly, the official ENSO indices, rainfall and a baseline per zone, with alerts when an anomaly coincides with vegetation or fishing-effort change. We do not forecast El Niño; the forecast belongs to the agencies that own it."
   outcome: "The season read against your own zones, scoped in two to four weeks."

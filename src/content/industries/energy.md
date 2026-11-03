@@ -1,5 +1,5 @@
 ---
-title: Energy and pipelines
+title: Energy and hydrocarbons
 tagline: "One operational picture for electricity, hydrocarbons, mining and water."
 heroImage: /images/industry-energy-andes-hydro.png
 description: "The same ministry now answers for the dams, the grid, the pipelines, the concessions and the rivers between them. The agencies still report separately. Quatro connects what each of them already runs, from satellite to SCADA to the field, into one live picture your people decide from, hosted in your country and owned by you from day one."
@@ -8,7 +8,7 @@ status: active
 proofBadge: Demonstrated on a corridor
 authorityLine: "We know the control room and the right of way: SCADA alarms, leak-detection systems, dispatch under a dry-season deficit, and the regulators who hold you to it (ARCERNNR, ARCOM, CENACE, SNGR, MAE)."
 hero:
-  eyebrow: Energy and pipelines
+  eyebrow: Energy and hydrocarbons
   title: "One operational picture for electricity, hydrocarbons, mining and water."
   description: "The same ministry now answers for the dams, the grid, the pipelines, the concessions and the rivers between them. The agencies still report separately. Quatro connects what each of them already runs, from satellite to SCADA to the field, into one live picture your people decide from, hosted in your country and owned by you from day one."
   primaryCta:
@@ -28,9 +28,6 @@ challenges:
 - title: The dry season arrives before the data does.
   description: "Reservoir levels, inflows, dispatch, imports and the forecast live in four institutions. By the time someone reconciles them, a basin is already at its limit and the decision is rationing."
   image: /images/challenge-energy-dry-season.png
-- title: Illegal extraction moves faster than inspection.
-  description: "Hundreds of illegal mining points across a dozen provinces, inspected by drone and patrol. Sites reopen after an operation and nobody sees it until the river turns."
-  image: /images/challenge-energy-illegal-mining.png
 - title: A clandestine tap is found after the loss.
   description: "Pressure drops, a field crew drives out, the barrels are gone. The precursors were visible from orbit days earlier; no one was looking at the right of way that way."
   image: /images/challenge-energy-corridor-theft.png
@@ -63,10 +60,6 @@ capabilities:
   description: "Metering and consumption data from the distributors, correlated with meter events and field reports, rank loss hotspots by feeder and neighborhood. Loading and asset health on the priority transmission nodes sit on the same picture, so a substation running near its limit is seen before it fails."
   outcome: "Where the losses are, ranked, and a defensible record for recovery and for the investigations already underway. Scoped after the first 90 days, on the same picture."
   image: /images/cap-energy-loss-recovery.png
-- name: Leave a live model behind
-  description: "When a distributed control system is assessed for replacement, the field survey usually ends in a document. Quatro captures the assessment into a connected operational model as it is built, so what was found in the field is visible online, queryable and ready to carry into the design phase. Existing control systems are integration targets, never replacement candidates for us."
-  outcome: An engineering assessment your team can keep working from.
-  image: /images/cap-energy-refinery-model.png
 serviceLines:
   text: "Energy blocks serve four needs: capacity for the grid, industrial and remote power, resilience of critical services, and sovereign compute and water. Each is delivered in the same 4 MW block."
   href: /capabilities/energy-blocks

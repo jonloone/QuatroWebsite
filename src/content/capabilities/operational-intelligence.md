@@ -25,7 +25,7 @@ whatYouGet:
 - "Field sensing and OT communications bring remote sites into the model: sensors on sites, vehicles and people, with satellite as the primary link, L-band failover, cellular backup and LoRaWAN in the field. Hardware goes only where confirmed risk justifies it."
 - "More than eight variables correlated on one event: pressure, flow, temperature, operational status, acoustic, vibration, observation from orbit and field reports. Correlation is how false alarms come down, so the alarm that reaches your operator arrives already triaged."
 showsUp:
-- industry: Energy and pipelines
+- industry: Energy and hydrocarbons
   href: /industries/energy
   text: "The three SCADA systems, historians, GIS, leak-detection outputs, metering, dispatch and reserve data, the forecasts, field sensing and video, and the territory itself from satellite. Existing systems are integration targets."
 substrateLine: "The operational-model layer is DataMiner xOps, deployed by operators in 125+ countries and recognized with 14+ technology awards. Quatro resells and integrates it, and operates it in your country with your team."

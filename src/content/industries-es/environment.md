@@ -1,5 +1,5 @@
 ---
-title: "Ambiente y áreas protegidas"
+title: "Ambiente, bosques y áreas protegidas"
 tagline: "Un solo registro de lo que se mueve en un área protegida, en el agua y en tierra."
 heroImage: /images/industry-environment-reserve.png
 description: "El rastreo de embarcaciones, los permisos, la zonificación y las imágenes satelitales viven cada uno en su sistema, y una embarcación que apaga su transpondedor simplemente desaparece. Quatro los conecta en un cuadro desde el cual deciden sus guardaparques, en español y alojado en su país."
@@ -8,7 +8,7 @@ status: active
 proofBadge: "Demostrado en una reserva"
 authorityLine: "Conocemos la jornada de una reserva: embarcaciones que se apagan cerca del límite, permisos y zonificación en sistemas separados, nubes sobre las tierras altas, y las instituciones que responden por ello (MAE, INOCAR, INAMHI, SNGR)."
 hero:
-  eyebrow: "Ambiente y áreas protegidas"
+  eyebrow: "Ambiente, bosques y áreas protegidas"
   title: "Un solo registro de lo que se mueve en un área protegida, en el agua y en tierra."
   description: "El rastreo de embarcaciones, los permisos, la zonificación y las imágenes satelitales viven cada uno en su sistema, y una embarcación que apaga su transpondedor simplemente desaparece. Quatro los conecta en un cuadro desde el cual deciden sus guardaparques, en español y alojado en su país."
   primaryCta:
@@ -27,8 +27,6 @@ stats:
 challenges:
 - title: "Una embarcación que apaga su transpondedor sale del registro."
   description: "Rastreo, permisos e imágenes viven separados, y una embarcación que se apaga cerca del límite desaparece hasta que alguien la encuentra por casualidad."
-- title: "Se ve la presencia pesquera, no el esfuerzo."
-  description: "Sin esfuerzo por embarcación, zona y periodo, no hay con qué contrastar cuotas y zonificación."
 - title: "El cambio en tierra se revisa a mano."
   description: "La expansión de invasoras y la ocupación se levantan con calendarios incompletos, muchas veces bajo nubes."
 - title: "Los datos del clima no llegan a la decisión."
@@ -44,14 +42,12 @@ capabilities:
   featured: true
   outcome: "Ocupación e invasoras marcadas entre visitas de campo."
   image: /images/cap-environment-land-change.png
-- name: "Alertas donde su equipo ya trabaja"
-  description: "Disparadores configurables entregados por webhook: visita a zona restringida, cruce de límite, embarcación oscura en la reserva, pesca en zona de no captura, embarcación turística fuera de itinerario, transpondedor apagado."
+- name: "Vigilar el patrimonio forestal entre inventarios"
+  description: "Cada cambio de dosel en el patrimonio, fechado y contrastado con el plan de cosecha. Raleos y talas rasas se confirman a medida que ocurren, las cicatrices de fuego, el volteo por viento y el estrés se marcan en semanas, y los caminos o claros nuevos cerca del lindero se ubican para el equipo de campo. El volumen se sigue midiendo en las parcelas; el satélite indica dónde va la próxima parcela."
   featured: true
-  outcome: "La alerta llega al guardaparque de turno, con el registro detrás."
-  image: /images/cap-environment-alerts.png
-- name: "Preguntar en español corriente"
-  description: "Personal sin formación en GIS hace una pregunta y recibe una respuesta en mapa, auditable y con cada fuente citada."
-  outcome: "\"Qué embarcaciones sin transpondedor estuvieron anoche en la reserva\", respondido en un paso."
+  outcome: "Cosecha, daños y cambios en el lindero fechados en todo el patrimonio, con las escenas detrás de cada uno."
+- name: "Perímetros acuícolas, de día y de noche"
+  description: "Cámaras térmicas en los muros y radar sobre el acceso por agua, programados según la marea y la luna, con pesaje y sellado de la piscina a la planta y el terreno alrededor de la finca leído desde satélite."
 - name: "Leer El Niño sobre su territorio"
   description: "Anomalía de temperatura superficial del mar, índices ENSO oficiales, lluvia y una línea base por zona, con alertas cuando una anomalía coincide con cambios de vegetación o de esfuerzo pesquero. No pronosticamos El Niño; el pronóstico es de las agencias que lo producen."
   outcome: "La temporada leída sobre sus propias zonas, con un alcance definido en dos a cuatro semanas."

@@ -67,7 +67,7 @@
 
 [[redirects]]
   from = "/industries/transportation"
-  to = "/industries/cities"
+  to = "/industries/security"
   status = 301
   force = true
 
@@ -128,19 +128,19 @@
 
 [[redirects]]
   from = "/industries/infrastructure/fleet-logistics"
-  to = "/industries/cities"
+  to = "/industries/security"
   status = 301
   force = true
 
 [[redirects]]
   from = "/industries/infrastructure/noc-operations"
-  to = "/industries/cities"
+  to = "/industries/security"
   status = 301
   force = true
 
 [[redirects]]
   from = "/industries/infrastructure/smart-facilities"
-  to = "/industries/cities"
+  to = "/industries/security"
   status = 301
   force = true
 
@@ -152,7 +152,7 @@
 
 [[redirects]]
   from = "/industries/cities/youth-violence-prevention"
-  to = "/industries/cities"
+  to = "/industries/security"
   status = 301
   force = true
 
@@ -240,7 +240,7 @@
 
 [[redirects]]
   from = "/es/industries/transportation"
-  to = "/es/industries/cities"
+  to = "/es/industries/security"
   status = 301
   force = true
 
@@ -370,5 +370,30 @@
 [[redirects]]
   from = "/how-it-works/architecture"
   to = "/how-it-works#picture"
+  status = 301
+  force = true
+
+# CULL-2 (CULL §D): Cities and Agriculture retired
+[[redirects]]
+  from = "/industries/cities"
+  to = "/industries/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/cities"
+  to = "/es/industries/security"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/industries/agriculture"
+  to = "/industries/environment"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/industries/agriculture"
+  to = "/es/industries/environment"
   status = 301
   force = true

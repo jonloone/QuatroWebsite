@@ -27,8 +27,6 @@ stats:
 challenges:
 - title: Illegal extraction moves faster than inspection.
   description: Sites reopen after an operation and nobody sees it until the river turns.
-- title: There is no baseline.
-  description: "No national satellite monitoring program exists for mining, and a remediation site can start with zero installed sensors."
 - title: Contamination is expensive to find.
   description: "Field sampling costs money, so the first question is where to sample."
 - title: The site's data is scattered.
@@ -49,8 +47,6 @@ capabilities:
   featured: true
   image: /images/cap-mining-sampling.png
   outcome: "Fewer samples, placed where they count. Field sampling still confirms."
-- name: Read vegetation and watershed impact
-  description: "Vegetation and water change around the site, asked in plain language and answered with every figure cited."
 - name: Remediation on one site record
   description: "The site's existing data audited and brought into one record, role dashboards with threshold alerts, a roadmap for the field gaps, and an engineer on site."
   outcome: "First results in the second week and a review against agreed criteria in the fourth."

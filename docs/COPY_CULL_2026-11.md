@@ -11,8 +11,7 @@ named file unchanged (EN and ES). Only the strings written out in this deck are 
 **Spanish.** Neutral LATAM, usted. New Spanish strings below are for Esteban's read before publish (§0.6); carried
 Spanish strings are already on the site.
 
-**Marked [confirm]:** choices the spec leaves open (which cards and challenges are cut to reach five and three).
-They are the deck's proposal; Jonathan confirms or swaps before `CULL-2` ships.
+**§3.5 cuts:** proposed by the deck and confirmed by Jonathan on 2026-11-02.
 
 ---
 
@@ -136,7 +135,7 @@ Hero title, tagline and description: carry verbatim.
 
 Carry verbatim from `industries/cities.md` and `industries-es/cities.md`: the "Triage the worst-hit neighborhoods from orbit" / "Priorizar los barrios más afectados desde órbita" card (name, description, outcome, image, `featured: true`) and its energy-blocks `addendum`. ES addendum text: "Un bloque de almacenamiento y uno de agua entregados juntos restablecen energía y agua potable en albergues y centros de salud a días de su llegada." (COPY_ENERGY_BLOCKS §3).
 
-### §3.5 Cards cut to five, challenges cut to three [confirm]
+### §3.5 Cards cut to five, challenges cut to three (confirmed by Jonathan, 2026-11-02)
 
 Cut cards and challenges move to `.retired` notes in the build commit, not deleted from history. EN and ES mirror.
 

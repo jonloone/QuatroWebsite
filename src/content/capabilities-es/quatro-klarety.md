@@ -27,7 +27,7 @@ showsUp:
 - industry: Minería y remediación
   href: /es/industries/mining
   text: "Los sitios ilegales conocidos y las cuencas a las que drenan, vigilados de forma continua. Las concesiones se contrastan con la huella de su licencia, y los sitios que reabren tras un operativo se marcan solos."
-- industry: Ambiente y áreas protegidas
+- industry: Ambiente, bosques y áreas protegidas
   href: /es/industries/environment
   text: "La vegetación y el agua superficial de un territorio comparadas con el año anterior, respondidas en lenguaje corriente con cada cifra citada."
 substrateLine: "Quatro Klarety se entrega con nuestro socio de observación de la Tierra, Klarety. Los hallazgos entran al modelo operativo (DataMiner xOps) y a la capa de razonamiento."

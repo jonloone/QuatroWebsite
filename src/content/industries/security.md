@@ -29,8 +29,6 @@ challenges:
   description: "The precursors on the right of way (clearing, pooling, vehicles in quiet segments) were visible days earlier."
 - title: Guard posts cannot cover a dark perimeter.
   description: "Kilometers of fence line, dyke or coast, and entry by water at night."
-- title: Theft is a network.
-  description: "Buyers, logistics and inside information sit behind every tap and every raid."
 - title: Response is fast; prosecution is weak.
   description: "Without a record that holds up, a confirmed event does not become a case."
 capabilities:
@@ -48,10 +46,14 @@ capabilities:
   description: "Every verified event packaged with clips, timestamps, sensor tracks and a tamper-evident log, ready for the prosecutor."
   featured: true
   outcome: A confirmed event becomes a case file.
-- name: Watch the water approach
-  description: "Radar and thermal sensing on coastlines and estuaries, where small boats carry no transponder."
-- name: Map the network behind the losses
-  description: "Threat-network mapping, part of the Quatro risk baseline: who is behind the losses and how the network is financed."
+- name: Triage the worst-hit neighborhoods from orbit
+  description: "Satellite damage and debris assessment after an earthquake, flood-risk mapping for El Niño, and infrastructure risk on the same map."
+  featured: true
+  outcome: "The neighborhoods to reach first, ranked, with the evidence attached."
+  image: /images/cap-cities-infra-monitoring.png
+  addendum:
+    text: "A storage block and a water block delivered together restore power and potable water to shelters and clinics within days of arrival."
+    href: /capabilities/energy-blocks
 - name: Power for the services a country cannot allow to fail
   description: "Grid-forming blocks at hospitals, telecom sites and forward bases keep essential services energized through a system event; with a water block they restore two services after a disaster."
   href: /capabilities/energy-blocks

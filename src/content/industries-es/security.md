@@ -29,8 +29,6 @@ challenges:
   description: "Los precursores en el derecho de vía (desbroce, pozas, vehículos en tramos silenciosos) eran visibles días antes."
 - title: "Las garitas no cubren un perímetro oscuro."
   description: "Kilómetros de cerca, muro o costa, y entrada por agua de noche."
-- title: "El robo es una red."
-  description: "Compradores, logística e información interna están detrás de cada toma y de cada asalto."
 - title: "La respuesta es rápida; el proceso penal es débil."
   description: "Sin un registro que resista, un evento confirmado no se convierte en caso."
 capabilities:
@@ -48,10 +46,14 @@ capabilities:
   description: "Cada evento verificado se empaqueta con clips, marcas de tiempo, trazas de sensores y un registro a prueba de alteraciones, listo para la Fiscalía."
   featured: true
   outcome: "Un evento confirmado se convierte en expediente."
-- name: "Vigilar el acceso por agua"
-  description: "Radar y sensores térmicos en costas y estuarios, donde las lanchas no llevan transpondedor."
-- name: "Mapear la red detrás de las pérdidas"
-  description: "El mapeo de redes de amenaza, parte de la línea base de riesgo de Quatro: quién está detrás de las pérdidas y cómo se financia la red."
+- name: "Priorizar los barrios más afectados desde órbita"
+  description: "Evaluación satelital de daños y escombros después de un terremoto, mapa de riesgo de inundación ante El Niño y riesgo de infraestructura en el mismo mapa."
+  featured: true
+  outcome: "Los barrios a los que llegar primero, ordenados y con la evidencia adjunta."
+  image: /images/cap-cities-infra-monitoring.png
+  addendum:
+    text: "Un bloque de almacenamiento y uno de agua entregados juntos restablecen energía y agua potable en albergues y centros de salud a días de su llegada."
+    href: /es/capabilities/energy-blocks
 platformMapping:
   see: "Video, sensores de campo, sistemas de detección, SCADA y presión de línea, informes de patrulla y de campo, y el territorio y la costa desde satélite. Los sistemas existentes son objetivos de integración."
   correlate: "Cada fuente sobre un mismo evento, con las falsas alarmas filtradas por correlación y cada cifra trazada a su origen."

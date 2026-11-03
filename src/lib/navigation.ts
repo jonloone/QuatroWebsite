@@ -83,8 +83,8 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
     industries: {
       title: 'Industries',
       items: [
-        { name: 'Energy and pipelines', href: '/industries/energy' },
-        { name: 'Environment and protected areas', href: '/industries/environment' },
+        { name: 'Energy and hydrocarbons', href: '/industries/energy' },
+        { name: 'Environment, forestry and protected areas', href: '/industries/environment' },
         { name: 'Mining and remediation', href: '/industries/mining' },
         { name: 'Security and critical infrastructure', href: '/industries/security' },
         { name: 'Cities and public services', href: '/industries/cities' },
@@ -128,7 +128,7 @@ const footerNavigationData: Record<Locale, Record<string, { title: string; items
       title: 'Industrias',
       items: [
         { name: 'Energía e hidrocarburos', href: '/industries/energy' },
-        { name: 'Ambiente y áreas protegidas', href: '/industries/environment' },
+        { name: 'Ambiente, bosques y áreas protegidas', href: '/industries/environment' },
         { name: 'Minería y remediación', href: '/industries/mining' },
         { name: 'Seguridad e infraestructura crítica', href: '/industries/security' },
         { name: 'Ciudades y servicios públicos', href: '/industries/cities' },
@@ -205,8 +205,8 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       href: '/industries',
       variant: 'stacked',
       items: [
-        { name: 'Energy and pipelines', description: 'Electricity, hydrocarbons, mining and water in one picture', href: '/industries/energy', icon: BoltIcon },
-        { name: 'Environment and protected areas', description: 'What moves through a protected area, on the water and on land', href: '/industries/environment', icon: GlobeAltIcon },
+        { name: 'Energy and hydrocarbons', description: 'Electricity, hydrocarbons, mining and water in one picture', href: '/industries/energy', icon: BoltIcon },
+        { name: 'Environment, forestry and protected areas', description: 'What moves through a protected area, on the water and on land', href: '/industries/environment', icon: GlobeAltIcon },
         { name: 'Mining and remediation', description: 'Every concession and the river below it, on one record', href: '/industries/mining', icon: BeakerIcon },
         { name: 'Security and critical infrastructure', description: 'Evidence that holds up after the incident', href: '/industries/security', icon: ShieldIcon },
         { name: 'Cities and public services', description: 'Disaster response, cadaster, waste and water on one picture', href: '/industries/cities', icon: BuildingLibraryIcon },
@@ -274,7 +274,7 @@ const primaryNavigationData: Record<Locale, PrimaryNavItem[]> = {
       variant: 'stacked',
       items: [
         { name: 'Energía e hidrocarburos', description: 'Electricidad, hidrocarburos, minería y agua en un solo cuadro', href: '/industries/energy', icon: BoltIcon },
-        { name: 'Ambiente y áreas protegidas', description: 'Lo que se mueve en un área protegida, en el agua y en tierra', href: '/industries/environment', icon: GlobeAltIcon },
+        { name: 'Ambiente, bosques y áreas protegidas', description: 'Lo que se mueve en un área protegida, en el agua y en tierra', href: '/industries/environment', icon: GlobeAltIcon },
         { name: 'Minería y remediación', description: 'Cada concesión y el río de abajo, en un solo registro', href: '/industries/mining', icon: BeakerIcon },
         { name: 'Seguridad e infraestructura crítica', description: 'Evidencia que resiste después del incidente', href: '/industries/security', icon: ShieldIcon },
         { name: 'Ciudades y servicios públicos', description: 'Respuesta a desastres, catastro, residuos y agua en un solo cuadro', href: '/industries/cities', icon: BuildingLibraryIcon },

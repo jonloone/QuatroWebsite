@@ -16,7 +16,7 @@ whatYouGet:
 - "Questions asked in plain Spanish, answered with every figure traced to its source."
 - "The ontology, the rules and the agent definitions are yours, in open formats, and they move with you."
 showsUp:
-- industry: Energy and pipelines
+- industry: Energy and hydrocarbons
   href: /industries/energy
   text: "A pressure drop, a flagged cell on the right of way and a field report land on one event. The triage agent confirms it, the evidence agent builds the package and the dispatch agent proposes the crew."
 - industry: Security and critical infrastructure

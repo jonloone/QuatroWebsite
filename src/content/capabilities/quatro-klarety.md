@@ -21,13 +21,13 @@ whatYouGet:
 - "Questions asked in plain Spanish, answered on the map with every figure cited to its source."
 - "Every finding dated, georeferenced and kept in one governed record your team can query and audit."
 showsUp:
-- industry: Energy and pipelines
+- industry: Energy and hydrocarbons
   href: /industries/energy
   text: "The right of way screened weekly, a handful of cells flagged, radar confirming through cloud, and the confirmed site handed to the control room."
 - industry: Mining and remediation
   href: /industries/mining
   text: "Known illegal sites and the basins they drain into watched continuously. Concessions are checked against the license footprint, and sites that reopen after an operation are flagged on their own."
-- industry: Environment and protected areas
+- industry: Environment, forestry and protected areas
   href: /industries/environment
   text: "Vegetation and surface water for one territory compared to the prior year, answered in plain language with every number cited."
 substrateLine: "Quatro Klarety is delivered with our earth-observation partner Klarety. Findings flow into the operational model (DataMiner xOps) and the reasoning layer."

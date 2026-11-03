@@ -27,9 +27,6 @@ challenges:
 - title: El estiaje llega antes que los datos.
   description: "Niveles de embalse, caudales, despacho, importaciones y pronóstico viven en cuatro instituciones. Cuando alguien los concilia, una cuenca ya está en su límite y la decisión es racionar."
   image: /images/challenge-energy-dry-season.png
-- title: La extracción ilegal se mueve más rápido que la inspección.
-  description: "Cientos de puntos de minería ilegal en una docena de provincias, inspeccionados con dron y patrulla. Los sitios reabren después de un operativo y nadie lo ve hasta que el río cambia de color."
-  image: /images/challenge-energy-illegal-mining.png
 - title: La perforación clandestina se descubre después de la pérdida.
   description: "Cae la presión, sale una cuadrilla, los barriles ya no están. Los precursores eran visibles desde órbita días antes; nadie miraba el derecho de vía de esa manera."
   image: /images/challenge-energy-corridor-theft.png
@@ -56,10 +53,6 @@ capabilities:
   description: "Datos de medición y consumo de las distribuidoras, correlacionados con eventos de medidor y reportes de campo, para clasificar focos de pérdida por alimentador y barrio. La carga y la salud de activos en los nodos de transmisión prioritarios viven en el mismo cuadro, de modo que una subestación cerca de su límite se ve antes de que falle."
   outcome: "Dónde están las pérdidas, en orden, y un registro defendible para la recuperación y para las investigaciones en curso. Se alcanza después de los primeros 90 días, sobre el mismo cuadro."
   image: /images/cap-energy-loss-recovery.png
-- name: Modernización del control de refinerías y plantas
-  description: "Cuando un sistema de control distribuido se evalúa para reemplazo, el levantamiento de campo suele terminar en un documento. Quatro captura la evaluación en un modelo operativo conectado mientras se construye, de modo que lo encontrado en campo queda visible en línea, consultable y listo para la fase de diseño. Los sistemas de control existentes son objetivos de integración, nunca candidatos a reemplazo por nuestra parte."
-  outcome: Una evaluación de ingeniería desde la que su equipo puede seguir trabajando.
-  image: /images/cap-energy-refinery-model.png
 proofCards:
 - title: Un corredor tamizado desde órbita, confirmado por radar.
   saw: "Todo el derecho de vía tamizado cada semana con datos satelitales abiertos, un puñado de celdas marcadas, imagen de antes y después en cada una."

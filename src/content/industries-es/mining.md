@@ -27,8 +27,6 @@ stats:
 challenges:
 - title: "La extracción ilegal se mueve más rápido que la inspección."
   description: "Los sitios reabren después de un operativo y nadie lo ve hasta que el río cambia de color."
-- title: "No hay línea base."
-  description: "No existe un programa nacional de monitoreo satelital de la minería, y un sitio de remediación puede empezar sin sensores instalados."
 - title: "Encontrar la contaminación cuesta."
   description: "El muestreo de campo es caro, así que la primera pregunta es dónde muestrear."
 - title: "Los datos del sitio están dispersos."
@@ -49,8 +47,6 @@ capabilities:
   featured: true
   outcome: "Menos muestras, puestas donde cuentan. El muestreo de campo sigue confirmando."
   image: /images/cap-mining-sampling.png
-- name: "Leer el impacto en vegetación y cuencas"
-  description: "Cambios de vegetación y agua alrededor del sitio, preguntados en lenguaje corriente y respondidos con cada cifra citada."
 - name: "La remediación en un solo registro del sitio"
   description: "Los datos existentes del sitio auditados y reunidos en un registro, tableros por rol con alertas por umbral, una hoja de ruta para los vacíos de campo y un ingeniero en sitio."
   outcome: "Primeros resultados en la segunda semana y revisión contra criterios acordados en la cuarta."
