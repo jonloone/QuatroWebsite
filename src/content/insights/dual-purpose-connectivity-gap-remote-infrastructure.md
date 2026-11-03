@@ -1,7 +1,7 @@
 ---
 title: "The Dual-Purpose Connectivity Gap: When Operational Networks and Community Broadband Don't Share Infrastructure"
 category: "industry-trends"
-industry: "networks"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-04-06
 featured: true

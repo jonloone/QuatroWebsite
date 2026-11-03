@@ -1,7 +1,7 @@
 ---
 title: "The 311 Problem Nobody Talks About: Why Cross-Agency Response Breaks at the Point of Need"
 category: "use-cases"
-industry: "cities"
+industry: "security"
 author: "Quatro Team"
 publishDate: 2026-03-25
 featured: false

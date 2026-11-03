@@ -1,7 +1,7 @@
 ---
 title: "The Confidentiality Split: Why Worker Health Records and Operational Risk Never Meet"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-08-24
 featured: true

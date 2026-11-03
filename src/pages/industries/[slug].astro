@@ -54,6 +54,7 @@ const exampleCards = (await getCollection('solutions'))
 
 // Related insights — one pinned post per `insightTags` entry (§9C), then fill by industry slug or tag
 const allInsights = (await getCollection('insights'))
+  .filter((i: any) => i.data.industry !== 'archive')
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
 const slug = industry.id.replace(/\.md$/, '')
 const pinnedInsights = (insightTags ?? [])

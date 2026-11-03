@@ -1,7 +1,7 @@
 ---
 title: "Severity Is Not Priority: The Ranking Problem in Operations Centers"
 category: "industry-trends"
-industry: "transportation"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-08-19
 featured: true

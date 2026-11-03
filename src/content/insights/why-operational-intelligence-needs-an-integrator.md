@@ -1,7 +1,6 @@
 ---
 title: "Why Operational Intelligence Needs an Integrator — Not Another Platform"
 category: "platform"
-industry: ""
 author: "Quatro Team"
 publishDate: 2026-04-04
 featured: false

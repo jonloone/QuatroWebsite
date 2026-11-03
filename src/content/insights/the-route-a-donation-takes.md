@@ -1,7 +1,7 @@
 ---
 title: "The Route a Donation Takes: Why Custody Design Decides Cost and Trust"
 category: "industry-trends"
-industry: "finance"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-08-10
 featured: true

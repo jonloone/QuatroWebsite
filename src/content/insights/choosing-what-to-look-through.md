@@ -1,7 +1,7 @@
 ---
 title: "Choosing What to Look Through: The Sensing Decision Nobody Writes Down"
 category: "industry-trends"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-08-17
 featured: true

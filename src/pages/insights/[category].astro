@@ -19,7 +19,7 @@ const { category } = Astro.props
 const meta = categoryMeta[category]
 
 const articles = (await getCollection('insights'))
-  .filter(a => a.data.category === category)
+  .filter(a => a.data.category === category && a.data.industry !== 'archive')
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
 
 const lead = articles[0]

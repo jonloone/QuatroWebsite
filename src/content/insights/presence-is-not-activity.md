@@ -1,7 +1,7 @@
 ---
 title: "Presence Is Not Activity"
 category: "industry-trends"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-09-14
 featured: true

@@ -1,7 +1,7 @@
 ---
 title: "The Detection Came From Orbit. The Decision Still Happens on the Ground."
 category: "industry-trends"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-06-22
 featured: true

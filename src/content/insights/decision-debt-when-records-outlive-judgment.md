@@ -1,7 +1,7 @@
 ---
 title: "Decision Debt: When the Record Outlives the Judgment"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-06-15
 featured: true

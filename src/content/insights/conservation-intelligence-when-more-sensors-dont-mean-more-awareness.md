@@ -1,7 +1,7 @@
 ---
 title: "Conservation Intelligence: When More Sensors Don't Mean More Awareness"
 category: "use-cases"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-03-18
 featured: false

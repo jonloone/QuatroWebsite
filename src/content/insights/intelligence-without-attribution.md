@@ -1,7 +1,7 @@
 ---
 title: "Intelligence Without Attribution: How a Sector Learns What No Single Operator Will Admit"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-08-10
 featured: true

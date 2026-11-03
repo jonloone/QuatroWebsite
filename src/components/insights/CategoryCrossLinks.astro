@@ -8,7 +8,7 @@ interface Props {
 
 const { currentCategory } = Astro.props
 
-const allInsights = await getCollection('insights')
+const allInsights = (await getCollection('insights')).filter((i: any) => i.data.industry !== 'archive')
 
 const otherCategories = Object.entries(categoryMeta)
   .filter(([slug]) => slug !== currentCategory)

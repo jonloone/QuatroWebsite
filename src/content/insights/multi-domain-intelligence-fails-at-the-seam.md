@@ -1,7 +1,7 @@
 ---
 title: "Why Multi-Domain Intelligence Fails at the Seam"
 category: "industry-trends"
-industry: "defense"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-04-08
 featured: true

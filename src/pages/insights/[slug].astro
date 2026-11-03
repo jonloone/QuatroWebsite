@@ -21,7 +21,7 @@ const { title, excerpt, category, industry, heroImage, author, publishDate, read
 // Get related articles (same industry or category, excluding current)
 const allInsights = await getCollection('insights')
 const related = allInsights
-  .filter(a => a.id !== article.id && (a.data.industry === industry || a.data.category === category))
+  .filter(a => a.id !== article.id && a.data.industry !== 'archive' && (a.data.industry === industry || a.data.category === category))
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
   .slice(0, 3)
 

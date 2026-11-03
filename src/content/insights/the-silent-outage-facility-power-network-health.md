@@ -1,7 +1,7 @@
 ---
 title: "The Silent Outage: When Facility Power and Network Health Don't Share a Model"
 category: "industry-trends"
-industry: "networks"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-07-06
 featured: true

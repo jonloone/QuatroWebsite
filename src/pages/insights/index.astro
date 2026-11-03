@@ -6,7 +6,9 @@ import SiteFooter from '@/components/layout/SiteFooter.astro'
 import DualCta from '@/components/marketing/DualCta.astro'
 import { categoryMeta } from '@/lib/category-meta'
 
+// Archived posts (CULL §F) stay reachable by URL but leave the listings
 const allInsights = (await getCollection('insights'))
+  .filter((i: any) => i.data.industry !== 'archive')
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
 
 const featured = allInsights.find(i => i.data.featured) || allInsights[0]

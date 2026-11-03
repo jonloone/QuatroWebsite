@@ -1,7 +1,7 @@
 ---
 title: "Ground-to-Orbit NOC: Why Satellite and Terrestrial Operations Need One Intelligence Model"
 category: "industry-trends"
-industry: "networks"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-04-06
 featured: false

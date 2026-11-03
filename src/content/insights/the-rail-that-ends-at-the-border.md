@@ -1,7 +1,7 @@
 ---
 title: "The Rail That Ends at the Border"
 category: "industry-trends"
-industry: "finance"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-09-08
 featured: true

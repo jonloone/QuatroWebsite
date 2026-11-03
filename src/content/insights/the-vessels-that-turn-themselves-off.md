@@ -1,7 +1,7 @@
 ---
 title: "The Vessels That Turn Themselves Off"
 category: "industry-trends"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-08-31
 featured: true

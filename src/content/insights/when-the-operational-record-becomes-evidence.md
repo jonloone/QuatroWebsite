@@ -1,7 +1,7 @@
 ---
 title: "When the Operational Record Becomes Evidence"
 category: "industry-trends"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-07-13
 featured: true

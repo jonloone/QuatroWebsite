@@ -1,7 +1,7 @@
 ---
 title: "When Collection Routes Don't Talk to Fill Sensors: The Structural Gap in Municipal Waste"
 category: "use-cases"
-industry: "cities"
+industry: "security"
 author: "Quatro Team"
 publishDate: 2026-03-21
 featured: false

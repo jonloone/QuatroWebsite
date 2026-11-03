@@ -1,7 +1,7 @@
 ---
 title: "The Vertical Software Illusion: Why Operational Exceptions Look the Same Everywhere"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-07-13
 featured: true

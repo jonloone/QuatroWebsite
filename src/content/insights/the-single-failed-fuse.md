@@ -1,7 +1,7 @@
 ---
 title: "The Single Failed Fuse"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-09-28
 featured: true

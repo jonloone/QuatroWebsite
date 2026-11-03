@@ -1,7 +1,7 @@
 ---
 title: "Development Finance as Intelligence Infrastructure: Why Multilateral Funders Now Buy Platforms, Not Projects"
 category: "industry-trends"
-industry: "finance"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-04-20
 featured: true

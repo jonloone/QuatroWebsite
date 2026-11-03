@@ -1,7 +1,7 @@
 ---
 title: "Proving It Before You Connect It"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-10-19
 featured: true

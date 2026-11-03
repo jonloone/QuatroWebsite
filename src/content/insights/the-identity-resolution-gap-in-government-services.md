@@ -1,7 +1,7 @@
 ---
 title: "The Identity Resolution Gap: Why Government Systems Can't Find the Same Person"
 category: "platform"
-industry: "cities"
+industry: "security"
 author: "Quatro Team"
 publishDate: 2026-03-10
 featured: false

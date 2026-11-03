@@ -1,7 +1,7 @@
 ---
 title: "One Office, Many Systems"
 category: "industry-trends"
-industry: "cities"
+industry: "security"
 author: "Quatro Team"
 publishDate: 2026-09-28
 featured: true

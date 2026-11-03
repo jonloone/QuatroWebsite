@@ -1,7 +1,7 @@
 ---
 title: "The Port Is Four Companies Sharing One Fence Line"
 category: "industry-trends"
-industry: "transportation"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-08-24
 featured: true

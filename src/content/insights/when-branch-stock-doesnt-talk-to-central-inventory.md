@@ -1,7 +1,7 @@
 ---
 title: "When Branch Stock Doesn't Talk to Central Inventory: The Structural Gap in Distributed Parts and Service Networks"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-07-06
 featured: true

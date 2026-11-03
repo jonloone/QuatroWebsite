@@ -1,7 +1,7 @@
 ---
 title: "When the Mandate Arrives Faster Than the Procurement"
 category: "industry-trends"
-industry: "cities"
+industry: "security"
 author: "Quatro Team"
 publishDate: 2026-08-17
 featured: true

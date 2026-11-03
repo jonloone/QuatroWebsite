@@ -1,7 +1,7 @@
 ---
 title: "The Line Item Nobody Quoted"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-10-12
 featured: true

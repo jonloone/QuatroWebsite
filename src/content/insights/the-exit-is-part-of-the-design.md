@@ -1,7 +1,7 @@
 ---
 title: "The Exit Is Part of the Design"
 category: "industry-trends"
-industry: "cities"
+industry: "security"
 author: "Quatro Team"
 publishDate: 2026-10-05
 featured: true

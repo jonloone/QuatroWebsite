@@ -1,7 +1,7 @@
 ---
 title: "The Tasking Order Is a Disclosure"
 category: "industry-trends"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-10-05
 featured: true

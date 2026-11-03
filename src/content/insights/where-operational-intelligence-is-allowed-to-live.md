@@ -1,7 +1,7 @@
 ---
 title: "The Sovereignty Question: Where Operational Intelligence Is Allowed to Live"
 category: "industry-trends"
-industry: "defense"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-06-29
 featured: true

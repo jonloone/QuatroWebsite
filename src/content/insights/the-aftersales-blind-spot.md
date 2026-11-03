@@ -1,7 +1,7 @@
 ---
 title: "The Aftersales Blind Spot: When the Best Revenue Runs on the Least System"
 category: "industry-trends"
-industry: "transportation"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-07-20
 featured: true

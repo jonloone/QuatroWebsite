@@ -1,7 +1,7 @@
 ---
 title: "The Consortium Pattern: Why No Single Agency Can Build a National Protection System Alone"
 category: "industry-trends"
-industry: "cities"
+industry: "security"
 author: "Quatro Team"
 publishDate: 2026-04-20
 featured: true

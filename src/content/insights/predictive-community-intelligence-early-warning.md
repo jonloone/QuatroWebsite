@@ -1,7 +1,7 @@
 ---
 title: "From Reactive Intervention to Early Warning: The Case for Predictive Community Intelligence"
 category: "platform"
-industry: "cities"
+industry: "security"
 author: "Quatro Team"
 publishDate: 2026-03-14
 featured: false

@@ -1,7 +1,7 @@
 ---
 title: "When the Sensor Decides: Governing Intelligence at the Edge"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-06-22
 featured: true

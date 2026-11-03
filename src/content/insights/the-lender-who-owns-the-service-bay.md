@@ -1,7 +1,7 @@
 ---
 title: "The Lender Who Owns the Service Bay"
 category: "industry-trends"
-industry: "finance"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-08-19
 featured: true

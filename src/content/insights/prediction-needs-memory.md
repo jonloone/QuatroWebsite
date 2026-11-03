@@ -1,7 +1,7 @@
 ---
 title: "Prediction Needs Memory: The Data Problem Underneath Predictive Operations"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-06-29
 featured: true

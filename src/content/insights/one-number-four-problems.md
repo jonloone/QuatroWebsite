@@ -1,7 +1,7 @@
 ---
 title: "One Number, Four Problems: Why Aggregate Loss Defeats Every Single Control"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-08-03
 featured: true

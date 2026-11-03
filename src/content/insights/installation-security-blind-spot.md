@@ -1,7 +1,7 @@
 ---
 title: "The Installation Security Blind Spot: When Physical and Cyber Threat Data Live in Different Systems"
 category: "use-cases"
-industry: "defense"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-04-07
 featured: false

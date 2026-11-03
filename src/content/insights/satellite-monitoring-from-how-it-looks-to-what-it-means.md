@@ -1,7 +1,7 @@
 ---
 title: "From How It Looks to What It Means: The Quiet Shift in Satellite Monitoring"
 category: "industry-trends"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-06-15
 featured: true

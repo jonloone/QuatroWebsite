@@ -1,7 +1,7 @@
 ---
 title: "When the Capability Arrives Through a Partner"
 category: "industry-trends"
-industry: "industrial"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-09-08
 featured: true

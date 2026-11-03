@@ -1,7 +1,7 @@
 ---
 title: "The Post-Consolidation Intelligence Gap: Why Merged Operators Still Operate Like Separate Companies"
 category: "industry-trends"
-industry: "networks"
+industry: "archive"
 author: "Quatro Team"
 publishDate: 2026-03-28
 featured: false

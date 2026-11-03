@@ -1,7 +1,7 @@
 ---
 title: "The Economics of Watching: Why More Guards Never Meant Less Loss"
 category: "industry-trends"
-industry: "water-environment"
+industry: "environment"
 author: "Quatro Team"
 publishDate: 2026-08-03
 featured: true
